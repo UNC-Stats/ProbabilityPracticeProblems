@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-BP" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Basic Probability Concepts</title>
+
+  <p> 
+  </p>
+
+
+ <exercises xml:id="hw-basic-probability-concepts-3children" >
+   <title>Three Children</title>
+   <introduction>
+     <p>
+       Suppose that a couple has three children. We are concerned with the sex of the children at birth. 
+     </p>
+   </introduction>
+
+   <exercise label="BP-MCR-Sample-Space-3children">
+    <title>Sample Space</title>
+    <statement>
+      <p>
+        Which option best describes the sample space here?
+      </p>
+    </statement>
+
+    <choices randomize="yes" multiple-correct="yes">
+      <choice correct="yes">
+        <statement>
+          <p>
+            <m> \{BBB, GBB, BGB, BBG, GGB, GBG, BGG, GGG\} </m>
+          </p>
+        </statement>
+
+        <feedback>
+          <p>
+            Correct! This set provides a list of all possible outcomes.
+          </p>
+        </feedback>
+      </choice>
+
+      <choice>
+        <statement>
+          <p>
+            <m> \{BBB, GGG, BBG, GGB\} </m>
+          </p>
+        </statement>
+
+        <feedback>
+          <p>
+            This option does not take the order of the births into account. 
+          </p>
+        </feedback>
+      </choice>
+
+      <choice>
+        <statement>
+          <p>
+            <m> \{B, G\} </m>
+          </p>
+        </statement>
+
+        <feedback>
+          <p>
+            This would be the sample space for the birth of a SINGLE child, not three children.
+          </p>
+        </feedback>
+      </choice>
+
+      <choice>
+        <statement>
+          <p>
+            <m> \{B, G, BG, GB, BBB, GBB, BGB, BBG, GGB, GBG, BGG, GGG\} </m>
+          </p>
+        </statement>
+
+        <feedback>
+          <p>
+            This would be the sample space if the couple were to have up to three children, not exactly three children.
+          </p>
+        </feedback>
+      </choice>
+    </choices>
+
+   </exercise>
+
+   <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
+ 
+   <exercise label="BP-fillin-probability-A-3children">
+    <title>Probability A</title>
+
+    <statement>
+      <p>
+        Determine the probability that the second child born will be female. Write your answer as a decimal, accurate to three
+        decimal places.
+      </p>
+
+      <p>
+        <fillin width="8" answer="0.500"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! Four out of 8 outcomes in the sample space involve the second child being female.
+            </p>
+          </feedback>
+        </test>
+      
+        <test>
+        <numcmp min="1.001" max="100"/>
+        <feedback>
+          <p>
+            Probabilities can not be larger than 1.
+          </p>
+        </feedback>
+      </test>
+      </evaluate>
+    </evaluation>
+   </exercise>
+
+   <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
+
+   <exercise label="BP-fillin-probability-B-3children">
+    <title>Probability B</title>
+
+    <statement>
+      <p>
+        Determine the probability that <em>at least</em> the second child will be female. Write your answer as a decimal, accurate to three decimal places.
+      </p>
+
+      <p>
+        <fillin width="8" answer="0.500"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! Four out of 8 outcomes in the sample space involve the second child and possibly another child being female.
+            </p>
+          </feedback>
+        </test>
+      
+        <test>
+          <numcmp value="0.375"/>
+          <feedback>
+            <p>
+              Close! Reread the prompt to make sure you are computing the desired probability.
+            </p>
+          </feedback>
+        </test>
+
+        <test>
+          <numcmp min="1.001" max="100"/>
+          <feedback>
+            <p>
+              Probabilities can not be larger than 1.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+    </evaluation>
+   </exercise>
+
+  </exercises>
+
+
+ <!-- Visual Divider ############################################################################################### -->
+ <!-- ############################################################################################################## -->
+
+
+ <exercises xml:id="hw-basic-probability-concepts-Blood-Type" >
+   <title>Blood Type</title>
+   <introduction>
+     <p>
+       An experiment consists of randomly selecting a person and recording their blood type, which could be A, B, AB, or O, and the status of their Rhesus (Rh) factor, which is either present (+) or not (−). 
+     </p>
+   </introduction>
+   
+   <exercise label="matching-sample-space-blood-type">
+     <title>Sample Space</title>
+
+     <statement>
+       <p>
+         List the sample space for this experiment by dragging relevant outcomes to the right.
+       </p>
+     </statement>
+
+     <feedback>
+       <p>
+         Add later.
+       </p>
+     </feedback>
+
+     <cardsort>
+       <match>
+         <premise order="3">A+</premise>
+         <premise order="3">A-</premise>
+         <premise order="3">B-</premise>
+         <premise order="3">B+</premise>
+         <premise order="3">AB-</premise>
+         <premise order="3">AB+</premise>
+         <premise order="3">0-</premise>
+         <premise order="3">0+</premise>
+         <response>Sample Space { ... }</response>
+       </match>
+       <match>
+         <premise order="2">(+)</premise>
+         <premise order="2">(-)</premise>
+         <premise order="1">A</premise>
+         <premise order="1">B</premise>
+         <premise order="1">AB</premise>
+         <premise order="1">O</premise>
+       </match>
+     </cardsort>
+   </exercise>
+
+   <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
+
+   <exercise xml:id="TF-sample-space-blood-type" >
+     <title>True or False</title>
+
+     <statement correct="no">
+       <p>
+         All outcomes in the sample space equally likely.
+       </p>
+     </statement>
+
+     <feedback>
+       <p>
+         Are some blood types less common than others?
+       </p>
+     </feedback>
+   </exercise>
+
+
+  </exercises>
+
+
+ <!-- Visual Divider ############################################################################################### -->
+ <!-- ############################################################################################################## -->
+
+</section>
