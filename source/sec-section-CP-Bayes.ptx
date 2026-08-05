@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-section-SO" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Practice with Set Operations</title>
+<section xml:id="sec-section-CP-Bayes" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Bayes' Theorem</title>
 
  <p> 
     Write intro to homework set.....  Goal, Purpose, Instructions....
   </p>
 
 
- <exercises xml:id="hw-set-operations" >
+ <exercises xml:id="hw-CP-Bayes" >
    <title>Interactive Exercises</title>
    <introduction>
      <p>
@@ -20,7 +20,7 @@
 
 
 
-<exercises xml:id="hw-set-operations-turn-in" >
+<exercises xml:id="hw-CP-Bayes-turn-in" >
    <title>Written Exercises</title>
    <introduction>
      <p>

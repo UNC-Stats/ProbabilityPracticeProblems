@@ -4,24 +4,32 @@
   <title>Basic Probability Concepts</title>
 
   <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
   </p>
 
 
- <exercises xml:id="hw-basic-probability-concepts-3children" >
-   <title>Three Children</title>
+ <exercises xml:id="hw-basic-probability-concepts" >
+   <title>Interactive Exercises</title>
    <introduction>
      <p>
-       Suppose that a couple has three children. We are concerned with the sex of the children at birth. 
+       Write intro to interactive homework set.....
      </p>
    </introduction>
 
-   <exercise label="BP-MCR-Sample-Space-3children">
-    <title>Sample Space</title>
-    <statement>
-      <p>
-        Which option best describes the sample space here?
-      </p>
-    </statement>
+   <exercise label="BP-3children">
+      <title>Three Children</title>
+       <introduction>
+         <p>
+           Suppose that a couple has three children. We are concerned with the sex of the children at birth. 
+         </p>
+        </introduction>
+
+      <task>
+        <statement>
+           <p>
+             Which option best describes the sample space here?
+           </p>
+        </statement>
 
     <choices randomize="yes" multiple-correct="yes">
       <choice correct="yes">
@@ -81,14 +89,13 @@
       </choice>
     </choices>
 
-   </exercise>
+   </task>
 
    <!-- Visual Divider ############################################################################################### -->
    <!-- ############################################################################################################## -->
  
-   <exercise label="BP-fillin-probability-A-3children">
-    <title>Probability A</title>
-
+   <task>
+   
     <statement>
       <p>
         Determine the probability that the second child born will be female. Write your answer as a decimal, accurate to three
@@ -121,13 +128,13 @@
       </test>
       </evaluate>
     </evaluation>
-   </exercise>
+   </task>
+   
 
    <!-- Visual Divider ############################################################################################### -->
    <!-- ############################################################################################################## -->
 
-   <exercise label="BP-fillin-probability-B-3children">
-    <title>Probability B</title>
+   <task>
 
     <statement>
       <p>
@@ -169,31 +176,32 @@
         </test>
       </evaluate>
     </evaluation>
+    </task>
    </exercise>
 
-  </exercises>
+  
 
 
  <!-- Visual Divider ############################################################################################### -->
  <!-- ############################################################################################################## -->
 
 
- <exercises xml:id="hw-basic-probability-concepts-Blood-Type" >
-   <title>Blood Type</title>
-   <introduction>
-     <p>
-       An experiment consists of randomly selecting a person and recording their blood type, which could be A, B, AB, or O, and the status of their Rhesus (Rh) factor, which is either present (+) or not (−). 
-     </p>
-   </introduction>
    
-   <exercise label="matching-sample-space-blood-type">
-     <title>Sample Space</title>
+   <exercise label="BP-blood-type">
+     <title>Blood Type</title>
 
-     <statement>
+     <introduction>
        <p>
-         List the sample space for this experiment by dragging relevant outcomes to the right.
+         An experiment consists of randomly selecting a person and recording their blood type, which could be A, B, AB, or O, and the status of their Rhesus (Rh) factor, which is either present (+) or not (-).
        </p>
-     </statement>
+     </introduction>
+
+<task>
+  <statement>
+    <p>
+      List the sample space for this experiment by dragging relevant outcomes to the right.
+    </p>
+  </statement>
 
      <feedback>
        <p>
@@ -222,13 +230,12 @@
          <premise order="1">O</premise>
        </match>
      </cardsort>
-   </exercise>
+   </task>
 
    <!-- Visual Divider ############################################################################################### -->
    <!-- ############################################################################################################## -->
 
-   <exercise xml:id="TF-sample-space-blood-type" >
-     <title>True or False</title>
+   <task>
 
      <statement correct="no">
        <p>
@@ -241,6 +248,7 @@
          Are some blood types less common than others?
        </p>
      </feedback>
+     </task>
    </exercise>
 
 
@@ -250,4 +258,47 @@
  <!-- Visual Divider ############################################################################################### -->
  <!-- ############################################################################################################## -->
 
+<exercises xml:id="hw-basic-probability-concepts-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+<exercise label="ex-library-books">
+<title>Library Books</title>
+
+<introduction>
+  <p>
+    A library has five copies of a popular textbook. Two of the
+    copies have missing pages, while the remaining three are in good condition.
+    A student requests two copies of the textbook, and the librarian fulfills the requests by randomly selecting two from the five available.
+  </p>
+
+  <p>
+    Label the damaged books <m>D_1</m> and <m>D_2</m>, and label the books in
+    good condition <m>G_1</m>, <m>G_2</m>, and <m>G_3</m>.
+  </p>
+</introduction>
+
+  <task>
+  <statement>
+    <p>
+      List the sample space for this experiment.
+    </p>
+  </statement>
+  </task>
+
+  <task>
+  <statement>
+    <p>
+      Determine the probability that the student receives two books that are in good
+    condition.
+    </p>
+  </statement>
+  </task>
+</exercise>
+
+</exercises>
 </section>

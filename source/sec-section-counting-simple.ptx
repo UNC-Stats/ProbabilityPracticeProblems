@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-counting-simple" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Practice Each Counting Technique</title>
+
+  <p> 
+     Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+ <exercises xml:id="hw-counting-simple" >
+    <title>Interactive Exercises</title>
+    <introduction>
+      <p>
+       Write intro to interactive homework set.....
+
+      </p>
+    </introduction>
+   
+   <exercise label="Count-simple-Korean-BBQ">
+      <title>Korean BBQ</title>
+
+      <introduction>
+        <p>
+          Your professor went to Suh Sushi Korean BBQ in Fort Collins, CO for Valentine's Day. The restaurant offered a special where a couple could choose one appetizer, two entrees, one dessert, and two drinks.
+        </p>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+              How many different shared dinners were available if a couple could choose between six appetizers, fourteen entrees, three desserts, and three drinks.
+          </p>
+        </statement>
+
+
+      <choices randomize="yes" multiple-correct="yes">
+         <choice correct="yes">
+            <statement>
+              <p>
+                <m> 31752 </m>
+              </p>
+            </statement>
+
+            <feedback>
+              <p>
+                Correct! 
+              </p>
+            </feedback>
+          </choice>
+
+          <choice>
+           <statement>
+             <p>
+               <m> 756 </m>
+             </p>
+           </statement>
+
+           <feedback>
+             <p>
+                Close! Make sure each person gets a drink and entree while counting. 
+             </p>
+           </feedback>
+         </choice>
+
+         <choice>
+           <statement>
+              <p>
+                <m> 19656 </m>
+              </p>
+           </statement>
+
+           <feedback>
+             <p>
+               Are there any rules saying the couple has to order different items from each other?
+             </p>
+           </feedback>
+         </choice>
+
+         <choice>
+           <statement>
+             <p>
+               <m> 571536 </m>
+             </p>
+           </statement>
+
+           <feedback>
+             <p>
+               This answer includes ordering too many items. Check the special again.
+            </p>
+           </feedback>
+         </choice>
+      </choices>
+   </task>
+
+ <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
+
+   <task>
+
+      <statement>
+         <p> 
+            For the entrees, a couple can choose between BBQ meals and there are five choices for meats (galbi, beef bulgogi, beef brisket, pork belly, pork bulgogi) and specialty sushi rolls (there are 9 rolls: rainbow, dragon, french kiss, rose, unagi bomb, golden tiger, diablo, tropical, veggie kimbap). How many shared dinners are possible if a couple specifically wants to order one BBQ meal and one specialty roll?
+         </p>
+             
+          <p>
+            <fillin width="8" answer="2430"/>
+          </p>
+      </statement>
+  
+      <evaluation>
+         <evaluate>
+           <test correct="yes">
+             <numcmp use-answer="yes"/>
+             <feedback>
+               <p>
+                Correct! 
+               </p>
+             </feedback>
+           </test>
+          
+           <test>
+             <numcmp value="45"/>
+              <feedback>
+                <p>
+                  This answer only counts entrees, rather than the entire shared meal.
+                </p>
+              </feedback>
+            </test>
+        
+         </evaluate>
+      </evaluation>
+   </task>
+</exercise>
+
+ <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
+ 
+<exercise label="counting-simple-committee-seating">
+    <title>Committee Seating Arrangements</title>
+    <statement>
+        <p>
+            Eight committee members are meeting in a room that has twelve chairs.
+        </p>
+    </statement>
+
+    <!-- Part 1: Combinations (Choosing the chairs) -->
+    <task>
+        <statement>
+            <p>
+                In how many distinct ways can the group choose which <m>8</m> chairs will be occupied, if we do not care yet who sits in which chair?
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement><m>\binom{12}{8} = 495</m> ways</statement>
+                <feedback>
+                    <p>
+                        Correct! Since we are only choosing a subset of chairs to be occupied and the order does not matter, we use the combination formula <m>C(12,8)</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><m>P(12,8) = 19,958,400</m> ways</statement>
+                <feedback>
+                    <p>
+                        Incorrect. This counts the number of ways to assign specific people to specific chairs, which factors in order.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><m>12 \times 8 = 96</m> ways</statement>
+                <feedback>
+                    <p>
+                        Incorrect. This applies the multiplication rule incorrectly instead of choosing a subset.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><m>8! = 40,320</m> ways</statement>
+                <feedback>
+                    <p>
+                        Incorrect. This is the number of ways to arrange the 8 members linearly, but it doesn't account for choosing from the 12 chairs.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+        <hint>
+            <p>
+                Does the order in which the empty chairs are left over matter, or are we just selecting a subset?
+            </p>
+        </hint>
+    </task>
+
+    <!-- Part 2: Permutations (Assigning people to chairs) -->
+    <task>
+        <statement>
+            <p>
+                In how many distinct ways can the <m>8</m> individual committee members actually sit down in the <m>12</m> available chairs?
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement><m>P(12,8) = 19,958,400</m> ways</statement>
+                <feedback>
+                    <p>
+                        Correct! Since each committee member is distinct, the order in which they occupy the chairs matters. We use permutations, or calculate <m>495 \times 8!</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><m>\binom{12}{8} = 495</m> ways</statement>
+                <feedback>
+                    <p>
+                        Incorrect. This only selects which chairs are used, treating all committee members as if they were identical.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><m>12^8 = 429,981,696</m> ways</statement>
+                <feedback>
+                    <p>
+                        Incorrect. This would allow multiple committee members to sit in the same chair, which is not physically possible.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+        <hint>
+            <p>
+                Think about the options available for the first person, then the second person, and so on, until all 8 are seated.
+            </p>
+        </hint>
+    </task>
+</exercise>
+
+
+ <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
+
+
+<exercise label="counting-simple-exam-probability">
+    <title>Exam Problem Probability</title>
+    <statement>
+        <p>
+            A student prepares for an exam by studying a list of ten problems. She can solve six of them. For the exam, the instructor selects five problems at random from the ten on the list given to the students.
+        </p>
+        <p>
+            What is the probability that the student can solve all five problems on the exam?
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+            <statement>
+                <m>\frac{1}{42}</m> (or approximately <m>0.0238</m>)
+            </statement>
+            <feedback>
+                <p>
+                    Correct! The total number of ways to choose 5 problems out of 10 is <m>\binom{10}{5} = 252</m>. The number of favorable ways to choose 5 problems from the 6 she knows is <m>\binom{6}{5} = 6</m>. Therefore, the probability is <m>\frac{6}{252} = \frac{1}{42}</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>\frac{1}{2}</m> (or <m>0.5000</m>)
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This assumes a simple linear probability ratio (<m>5/10</m>) instead of evaluating the combinations of choosing groups of questions without replacement.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>\frac{5}{6}</m> (or approximately <m>0.8333</m>)
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This is the ratio of exam problems to known problems, but it doesn't represent the likelihood of drawing all five from her known pool.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>\frac{1}{252}</m> (or approximately <m>0.0040</m>)
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. You correctly calculated the total sample space size (<m>\binom{10}{5} = 252</m>), but there is more than just <m>1</m> way to choose <m>5</m> questions out of the <m>6</m> she prepared.
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+    <hint>
+        <p>
+            Use the hypergeometric approach or combination formulas. Find the total number of ways to choose <m>5</m> questions from <m>10</m> (the denominator) and the number of ways to choose <m>5</m> questions entirely out of the <m>6</m> she knows how to solve (the numerator).
+        </p>
+    </hint>
+    <solution>
+        <p>
+            To find the probability, we divide the number of successful combinations by the total possible combinations:
+        </p>
+        <p>
+            1. Total ways the instructor can choose 5 problems out of 10: 
+            <me>\binom{10}{5} = \frac{10 \times 9 \times 8 \times 7 \times 6}{5 \times 4 \times 3 \times 2 \times 1} = 252</me>
+        </p>
+        <p>
+            2. Favorable ways the instructor can select 5 problems that the student knows (from her pool of 6):
+            <me>\binom{6}{5} = 6</me>
+        </p>
+        <p>
+            3. Calculating the probability:
+            <me>P(\text{all 5 solved}) = \frac{\binom{6}{5}}{\binom{10}{5}} = \frac{6}{252} = \frac{1}{42} \approx 0.0238</me>
+        </p>
+    </solution>
+</exercise>
+
+ <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
+
+ 
+ <exercise label="count-simple-5x6-array" >
+    <title>5-by-6 Array</title>
+    
+      <statement>
+        <p>
+          Thirty items are arranged in a 5-by-6 array as shown below. Calculate the number of ways to form a set of three distinct items such that no two of the selected items are in the same row or same column.
+       </p>
+
+       <image source="Images/5x6-array.png" width="60%"/>
+      </statement>
+
+      <choices randomize="yes" multiple-correct="yes">
+         <choice correct="yes">
+            <statement>
+              <p>
+                <m> 1200 </m>
+              </p>
+            </statement>
+
+            <feedback>
+              <p>
+                Correct! 
+              </p>
+            </feedback>
+          </choice>
+
+          <choice>
+           <statement>
+             <p>
+               <m> 2000 </m>
+             </p>
+           </statement>
+
+           <feedback>
+             <p>
+                
+             </p>
+           </feedback>
+         </choice>
+
+         <choice>
+           <statement>
+              <p>
+                <m> 4060 </m>
+              </p>
+           </statement>
+
+           <feedback>
+             <p>
+               
+             </p>
+           </feedback>
+         </choice>
+
+         <choice>
+           <statement>
+             <p>
+               <m> 6000 </m>
+             </p>
+           </statement>
+
+           <feedback>
+             <p>
+               
+            </p>
+           </feedback>
+         </choice>
+
+         <choice>
+           <statement>
+             <p>
+               <m> 7200 </m>
+             </p>
+           </statement>
+
+           <feedback>
+             <p>
+               
+            </p>
+           </feedback>
+         </choice>
+      </choices>
+   </exercise>
+
+ <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
+
+
+ </exercises>
+
+
+
+
+
+<exercises xml:id="hw-counting-simple-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+<exercise label="counting-simple-10digit-phone-num">
+<title>Unique Phone Numbers</title>
+
+<introduction>
+  <p>
+    Consider ten-digit phone numbers in the United States.
+  </p>
+
+</introduction>
+
+  <task>
+  <statement>
+    <p>
+      How many different ten-digit phone numbers are possible? 
+      </p>
+      <p>
+Note: Creating a mathematical model that accurately reflects the real world is extremely important and frequently difficult. Rules that govern the problem should be understood and listed. In this case, we assume that the first digit cannot be 0 or 1, and the fourth digit cannot be zero. 
+
+    </p>
+  </statement>
+  </task>
+
+  <task>
+  <statement>
+    <p>
+      Toll free numbers are telephone numbers that can be called at no charge to the person placing the call. Such numbers allow callers to reach businesses out of the area without being charged a long-distance fee. Toll free numbers start with a distinct three-digit code, such as 800. How many ten-digit phone numbers are possible if we exclude toll free numbers starting with 800?
+    </p>
+  </statement>
+  </task>
+</exercise>
+
+
+<exercise label="counting-simple-bday-problem">
+<title>Unique Phone Numbers</title>
+
+<introduction>
+  <p>
+    	Consider an experiment that consists of recording the birth month for each of 7 randomly selected persons. 
+  </p>
+
+</introduction>
+
+  <task>
+  <statement>
+    <p>
+      	Find the number of outcomes in the sample space S for this experiment. 
+      </p>
+
+  </statement>
+  </task>
+
+  <task>
+  <statement>
+    <p>
+      	If we assume that months are equally likely, what is the probability that each person had a different birth month? 
+    </p>
+  </statement>
+  </task>
+</exercise>
+
+
+   </exercises>
+
+</section>

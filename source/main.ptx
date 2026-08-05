@@ -12,15 +12,11 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-Basic-Probability.ptx" />
-    <xi:include href="./ch-chapter-Counting-Techniques.ptx" />
+    <xi:include href="./ch-chapter-Basic-Probability-and-Counting.ptx" />
     <xi:include href="./ch-chapter-Set-Operations.ptx" />
     <xi:include href="./ch-chapter-Conditional-Probability.ptx" />
-    <xi:include href="./ch-chapter-Conditional-Probability-Bayes-Theorem.ptx" />
     <xi:include href="./ch-chapter-Discrete-RVs.ptx" />
-    <xi:include href="./ch-chapter-Common-Discrete-RVs.ptx" />
     <xi:include href="./ch-chapter-Continuous-RVs.ptx" />
-    <xi:include href="./ch-chapter-Common-Continuous-RVs.ptx" />
     <xi:include href="./ch-chapter-Joint-RVs.ptx" />
 
     <!-- Include backmatter -->

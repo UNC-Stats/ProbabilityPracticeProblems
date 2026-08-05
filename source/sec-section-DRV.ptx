@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Discrete RVs</title>
+
+
+  
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  <!-- ==================================================================== -->
+  <!-- EXERCISE 1: DISCRETE PROBABILITY SYSTEM                              -->
+  <!-- ==================================================================== -->
+  <exercise xml:id="ex-int-discrete-prob">
+    <title>Interactive Analysis: Discrete Asset Metrics</title>
+    <statement>
+      <p>
+        When evaluating market assets, analysts utilize probabilistic frameworks to model the time remaining on a product's patent after deducting regulatory delays. A biomedical firm tracks the actual commercial patent life, <m>Y</m>, rounded to the nearest integer year, for a recent portfolio of medical software systems. The probability distribution of <m>Y</m> is given in the table below:
+      </p>
+      <table>
+        <title>Discrete Distribution for Software Patent Lifespan <m>Y</m></title>
+        <tabular halign="center" top="minor" left="minor" bottom="minor" right="minor">
+          <row header="yes">
+            <cell>Actual Patent Life, <m>y</m> (years)</cell>
+            <cell>Probability, <m>P(y)</m></cell>
+          </row>
+          <row><cell>4</cell><cell>0.05</cell></row>
+          <row><cell>5</cell><cell>0.10</cell></row>
+          <row><cell>6</cell><cell>0.20</cell></row>
+          <row><cell>7</cell><cell>0.35</cell></row>
+          <row><cell>8</cell><cell>0.20</cell></row>
+          <row><cell>9</cell><cell>0.10</cell></row>
+        </tabular>
+      </table>
+    </statement>
+    
+
+
+    <!-- Part A: Interactive Multiple Choice -->
+    <task>
+      <statement>
+        <p>
+          Calculate the probability that a randomly chosen software portfolio piece features a commercial patent lifespan of <strong>at least 7 years</strong>; that is, find <m>P(Y \ge 7)</m>.
+        </p>
+      </statement>
+      <choices>
+        <choice>
+          <statement><p><m>0.35</m></p></statement>
+          <feedback>
+            <p>Incorrect. This is only the isolated probability of exactly 7 years: <m>P(Y = 7)</m>. The phrase <q>at least 7</q> requires including all outcomes greater than or equal to 7.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement><p><m>0.65</m></p></statement>
+          <feedback>
+            <p>Correct! The event <m>Y \ge 7</m> aggregates the mutually exclusive states where <m>y = 7, 8,</m> or <m>9</m>. Summing these yields: <m>0.35 + 0.20 + 0.10 = 0.65</m>.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p><m>0.30</m></p></statement>
+          <feedback>
+            <p>Incorrect. This corresponds to the structural complement <m>P(Y \lt 6)</m>, rather than the subset equal to or exceeding 7 years.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p><m>0.95</m></p></statement>
+          <feedback>
+            <p>Incorrect. Double check your summation boundaries; this configuration over-includes lower years that fall out of bounds.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </task>
+
+    <!-- Part B: Interactive Fill-in Numeric Entry -->
+    <task>
+      <statement>
+        <p>
+          Calculate the expected value, <m>\mu = E(Y)</m>, of the commercial patent life for these software products (in years). Input your final value as a exact decimal.
+        </p>
+      </statement>
+      <evaluation>
+        <evaluate>
+          <test correct="yes">6.85</test>
+          <feedback>
+            <p>Excellent! The expected value is the probability-weighted sum of all outcomes: <m>4(0.05) + 5(0.10) + 6(0.20) + 7(0.35) + 8(0.20) + 9(0.10) = 0.20 + 0.50 + 1.20 + 2.45 + 1.60 + 0.90 = 6.85</m> years.</p>
+          </feedback>
+        </evaluate>
+        <evaluate>
+          <test>6.5</test>
+          <feedback><p>Incorrect. It appears you calculated an unweighted average of the years rather than applying their respective probabilities.</p></feedback>
+        </evaluate>
+      </evaluation>
+    </task>
+  </exercise>
+
+  
+</section>

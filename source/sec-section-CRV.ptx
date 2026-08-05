@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-CRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Discrete RVs</title>
+
+
+  
+  <introduction>
+    <p>
+    </p>
+  </introduction>
+
+  
+
+  <!-- ==================================================================== -->
+  <!-- EXERCISE 2: CONTINUOUS PROBABILITY SYSTEM                            -->
+  <!-- ==================================================================== -->
+  <exercise xml:id="ex-int-continuous-prob">
+    <title>Interactive Analysis: Continuous Asset Metrics</title>
+    <statement>
+      <p>
+        While the data in <xref ref="ex-int-discrete-prob"/> aggregates timelines into integers, true regulatory pipeline terminations happen continuously down to the exact day. Analysts use a continuous random variable <m>X</m> (measured in years) to evaluate precision biological hardware lifelines spanning an operational domain from 8 to 20 years.
+      </p>
+      <p>
+        The probability density function (PDF) for <m>X</m> is defined as:
+        <me>
+          f(x) = \begin{cases} \frac{1}{72}(20 - x) \amp \text{for } 8 \le x \le 20 \\ 0 \amp \text{elsewhere} \end{cases}
+        </me>
+      </p>
+    </statement>
+    
+    <introduction>
+      <p>Analyze the continuous density behavior to answer the following interactive problems.</p>
+    </introduction>
+
+    <!-- Part A: Interactive CDF Identification -->
+    <task>
+      <statement>
+        <p>
+          Determine the correct mathematical structure of the Cumulative Distribution Function (CDF), <m>F(x) = P(X \le x)</m>, across the active operational interval <m>8 \le x \le 20</m>.
+        </p>
+      </statement>
+      <choices>
+        <choice>
+          <statement><p><m>F(x) = \frac{1}{72}(20x - \frac{x^2}{2})</m></p></statement>
+          <feedback>
+            <p>Incorrect. This expression forgets to subtract the definite lower-bound accumulation constant evaluated at the start point <m>x = 8</m>.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement><p><m>F(x) = 1 - \frac{(20 - x)^2}{144}</m></p></statement>
+          <feedback>
+            <p>Correct! Integrating <m>\int_{8}^{x} \frac{1}{72}(20-t)\,dt</m> and evaluating terms yields <m>1 - \frac{(20-x)^2}{144}</m>. Note that evaluating at <m>x=8</m> returns 0, and <m>x=20</m> returns 1, matching boundary standards perfectly.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement><p><m>F(x) = \frac{(20 - x)^2}{144}</m></p></statement>
+          <feedback>
+            <p>Incorrect. This expression evaluates to the survival probability function <m>P(X \gt x)</m> rather than the left-tailed cumulative distribution probability.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </task>
+
+    <!-- Part B: Interactive Decimal Calculation Verification -->
+    <task>
+      <statement>
+        <p>
+          Using the structural CDF established above, compute the probability that a random continuous bio-hardware patent line operates for <strong>more than 12 years</strong>: <m>P(X \gt 12)</m>. Express your response as a fraction or a decimal rounded to four places.
+        </p>
+      </statement>
+      <evaluation>
+        <evaluate>
+          <test correct="yes">4/9</test>
+          <test correct="yes">0.4444</test>
+          <feedback>
+            <p>Splendid! Using the complement rule with our CDF framework: <m>P(X \gt 12) = 1 - F(12) = 1 - [1 - \frac{(20-12)^2}{144}] = \frac{8^2}{144} = \frac{64}{144} = \frac{4}{9} \approx 0.4444</m>.</p>
+          </feedback>
+        </evaluate>
+        <evaluate>
+          <test>5/9</test>
+          <test>0.5556</test>
+          <feedback><p>Incorrect. This result yields the value of <m>F(12) = P(X \le 12)</m>. Remember to compute the complement to evaluate the right hand tail area representing <q>more than 12 years</q>.</p></feedback>
+        </evaluate>
+      </evaluation>
+    </task>
+  </exercise>
+</section>

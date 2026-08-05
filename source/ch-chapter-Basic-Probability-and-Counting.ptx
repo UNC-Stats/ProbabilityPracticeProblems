@@ -9,6 +9,8 @@
 
   <!-- include sections -->
   <xi:include href="sec-section-BP.ptx" /> 
+  <xi:include href="sec-section-counting-simple.ptx" /> 
+  <xi:include href="sec-section-counting-harder.ptx" /> 
 
 
 </chapter>

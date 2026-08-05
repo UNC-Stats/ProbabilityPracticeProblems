@@ -3,8 +3,32 @@
 <section xml:id="sec-section-SO-proofs" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Proofs!</title>
 
-  <p> 
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
   </p>
+
+
+ <exercises xml:id="hw-set-proofs" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-set-proofs-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+   </exercises>
 
 
   </section>

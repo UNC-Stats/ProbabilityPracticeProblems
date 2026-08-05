@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-counting-harder" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>More Counting Problems</title>
+
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+
+ <exercises xml:id="hw-counting-harder" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+
+   <exercise label="counting-harder-interview-coding-challenge">
+    <title>Technical Interview</title>
+    <statement>
+        <p>
+            A computer science student prepares for a technical interview by studying a custom deck of fourteen coding challenges on an app. They have mastered eight of these problems (meaning six remain unmastered). During the live interview, the automated platform randomly selects six problems from this deck of fourteen.
+            
+        </p>
+        <p>
+            Match each mathematical step on the left with its correct structural meaning on the right for finding the probability that the student gets an interview set with exactly <m>4</m> mastered and <m>2</m> unmastered problems.
+        </p>
+    </statement>
+    
+    <cardsort>
+        <!-- Pair 1 -->
+        <match>
+            <premise><m>\binom{14}{6} = 3,003</m></premise>
+            <response>The total size of the sample space (all possible combinations of interview problem sets).</response>
+        </match>
+        
+        <!-- Pair 2 -->
+        <match>
+            <premise><m>\binom{8}{4} = 70</m></premise>
+            <response>The number of ways to select the mastered coding challenges from the known pool.</response>
+        </match>
+        
+        <!-- Pair 3 -->
+        <match>
+            <premise><m>\binom{6}{2} = 15</m></premise>
+            <response>The number of ways to select the unmastered coding challenges from the remaining pool.</response>
+        </match>
+        
+        <!-- Pair 4 -->
+        <match>
+            <premise><m>70 \times 15 = 1,050</m></premise>
+            <response>The total number of favorable outcomes for this specific mixed-success interview set.</response>
+        </match>
+        
+        <!-- Pair 5 -->
+        <match>
+            <premise><m>\frac{1050}{3003} = \frac{50}{143}</m></premise>
+            <response>The total probability of drawing exactly 4 mastered and 2 unmastered problems.</response>
+        </match>
+    </cardsort>
+
+    <hint>
+        <p>
+            Identify your three individual combination elements first: choosing 4 from the 8 mastered, choosing 2 from the 6 unmastered, and choosing a total of 6 from the 14 available.
+        </p>
+    </hint>
+</exercise>
+
+
+
+<exercise xml:id="counting-harder-housing-multinomial">
+    <title>Campus Housing Room Assignments</title>
+    <statement>
+        <p>
+            A group of <m>12</m> college students are selected to live on a specialized floor in a residence hall. The floor has exactly <m>6</m> rooms available that must be filled: one triple room (<m>3</m> students), three double rooms (<m>2</m> students each), and three single rooms (<m>1</m> student each). 
+        </p>
+        <p>
+            If the housing department assigns the <m>12</m> students completely at random to fill these specific spots, how many distinct ways can the students be distributed among the rooms?
+        </p>
+    </statement>
+
+    <choices randomize="yes">
+        <choice correct="yes">
+            <statement>
+                <m>\frac{12!}{3! \times 2! \times 2! \times 2! \times 1! \times 1! \times 1!} = 1,663,200</m> ways
+            </statement>
+            <feedback>
+                <p>
+                    Correct! Because the rooms themselves are distinct entities, we use the multinomial coefficient to partition the 12 individuals into groups of sizes 3, 2, 2, 2, 1, 1, and 1.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>12! = 479,001,600</m> ways
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This counts every single linear permutation of the 12 students, which overcounts because rearranging students *within* the exact same room does not create a new room assignment configuration.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>\binom{12}{3} \times \binom{9}{2} \times \binom{7}{1} = 55,440</m> ways
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This calculation treats the three double rooms as a single giant group and the three single rooms as a single group, rather than distributing students into separate, distinct rooms.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>\frac{12!}{3! \times 3! \times 3!} = 369,600</m> ways
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This uses the wrong numbers in the denominator partition pool, misrepresenting the physical configuration of the rooms.
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+
+    <hint>
+        <p>
+            Think about partitioning a single pool of <m>12</m> distinct people into multiple specific bucket sizes. The sizes of your buckets are defined by the capacity of each distinct room on the floor.
+        </p>
+    </hint>
+
+    <solution>
+        <p>
+            This problem requires partitioning a set of distinct elements into multiple groups where the order within each group does not matter, but the groups themselves are distinct. This is calculated using the multinomial coefficient formula:
+            <me>\binom{n}{n_1, n_2, n_3, \dots, n_k} = \frac{n!}{n_1! \times n_2! \times n_3! \dots n_k!}</me>
+        </p>
+        <p>
+            1. Total number of students to assign: <m>n = 12</m>.
+        </p>
+        <p>
+            2. Identify the target group (room) sizes from the problem description:
+            <ul>
+                <li><p>One triple room: <m>3</m> students</p></li>
+                <li><p>Three double rooms: <m>2</m> students, <m>2</m> students, and <m>2</m> students</p></li>
+                <li><p>Three single rooms: <m>1</m> student, <m>1</m> student, and <m>1</m> student</p></li>
+            </ul>
+            Note that <m>3 + 2 + 2 + 2 + 1 + 1 + 1 = 12</m>.
+        </p>
+        <p>
+            3. Apply the multinomial formula directly:
+            <me>\frac{12!}{3! \times 2! \times 2! \times 2! \times 1! \times 1! \times 1!}</me>
+        </p>
+        <p>
+            4. Evaluate the factorials to find the final total:
+            <me>\frac{479,001,600}{6 \times 2 \times 2 \times 2 \times 1 \times 1 \times 1} = \frac{479,001,600}{48} = 1,663,200</me>
+        </p>
+    </solution>
+</exercise>
+
+
+
+<exercise xml:id="counting-harder-student-org-grant-assignments">
+    <title>Campus Grant Distribution</title>
+    <introduction>
+        <p>
+            Five student organizations (<m>O_1, O_2, \dots, O_5</m>) submit applications for three distinct campus funding awards: the Sustainability Grant, the Diversity Grant, and the Innovation Grant. Each grant must be awarded to a single organization, and no organization can receive more than one grant.
+        </p>
+    </introduction>
+
+    <!-- Part 1: Fill-In-The-Blank Numeric Input -->
+    <task>
+        <statement>
+            <p>
+                How many distinct outcomes are possible for assigning these three unique grants to the five student organizations? Enter your answer as a whole number.
+            </p>
+    <p>
+      <fillin width="8" answer="60"/>
+    </p>
+  </statement>
+  <evaluation>
+    <evaluate>
+      <test correct="yes">
+        <numcmp use-answer="yes"/>
+        <feedback>
+          <p>
+
+                Because the grants are different and an organization can win at most one, this is a permutation problem where we arrange 3 organizations out of a pool of 5:
+                <me>P(5,3) = \frac{5!}{(5-3)!} = 5 \times 4 \times 3 = 60 \text{ outcomes}</me>
+
+          </p>
+        </feedback>
+      </test>
+</evaluate>
+</evaluation>
+
+        <hint>
+            <p>
+                Since the three grants are completely distinct from each other, the order in which we assign the organizations matters. Think about choosing an ordered sequence of 3 distinct organizations from a pool of 5.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                Because the grants are different and an organization can win at most one, this is a permutation problem where we arrange 3 organizations out of a pool of 5:
+                <me>P(5,3) = \frac{5!}{(5-3)!} = 5 \times 4 \times 3 = 60 \text{ outcomes}</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 2: Multiple Choice Input -->
+    <task>
+        <statement>
+            <p>
+                Under the assumption that all assignment outcomes are equally likely, what is the probability that Organization 1 (<m>O_1</m>) is awarded one of the grants?
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    <m>0.6</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! If <m>O_1</m> wins a specific grant, there are <m>P(4,2) = 12</m> ways to assign the remaining grants. Multiplying by the 3 possible grants <m>O_1</m> could win gives 36 favorable outcomes. Dividing by the total pool yields <m>\frac{36}{60} = 0.6</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>0.2</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This is the probability that <m>O_1</m> wins a single, specific grant (like <m>12/60</m>). Remember that <m>O_1</m> could win any one of the 3 available grants.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>0.5</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This looks like a guess based on splitting the odds. You must count the distinct successful combinations where <m>O_1</m> occupies one of the three grant slots.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>0.4</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This is the probability that <m>O_1</m> does *not* win any grant (<m>P(4,3)/60 = 24/60 = 0.4</m>). Subtract this from 1 to find the probability that they do win!
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+        <hint>
+            <p>
+                Calculate how many ways <m>O_1</m> can win a specific grant while the other two grants are distributed among the remaining 4 organizations. Multiply by the 3 possible grants <m>O_1</m> could win, and divide by the total sample space of 60.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                To find the probability that <m>O_1</m> receives a grant, we determine the number of favorable outcomes and divide by the total sample space:
+            </p>
+            <p>
+                1. Suppose <m>O_1</m> is assigned to a specific grant. There are <m>4</m> remaining organizations left to fill the other <m>2</m> unique grants, which can happen in:
+                <me>P(4,2) = 4 \times 3 = 12 \text{ ways}</me>
+            </p>
+            <p>
+                2. Since there are <m>3</m> different grants that <m>O_1</m> could possibly win, we multiply those permutations by 3:
+                <me>\text{Favorable Outcomes} = 3 \times 12 = 36 \text{ ways}</me>
+            </p>
+            <p>
+                3. Divide by the total sample space found in Part 1 to compute the final probability:
+                <me>P(O_1 \text{ wins a grant}) = \frac{36}{60} = 0.6</me>
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+<exercise label="counting-harder-hackathon-partition">
+    <title>Hackathon Team Formations</title>
+    <statement>
+        <p>
+            A class of <m>15</m> computer science students is collaborating on a major weekend hackathon project. They decide to split up into two development teams of exactly <m>7</m> students each to work on separate microservices, leaving <m>1</m> remaining student to act as the overall Project Manager. 
+        </p>
+        <p>
+            The two development teams are completely identical in function and do not have specific names or distinct track assignments. How many truly distinct ways can the students be partitioned?Enter your answer as a whole number.
+            </p>
+    <p>
+      <fillin width="8" answer="25740"/>
+    </p>
+  </statement>
+  <evaluation>
+    <evaluate>
+      <test correct="yes">
+        <numcmp use-answer="yes"/>
+        <feedback>
+          <p>
+            This problem requires finding the number of ways to partition a set into unlabeled, identical groups alongside one distinct element.
+        </p>
+        <p>
+            1. Calculate the intermediate count using the multinomial coefficient as if the teams were distinct (e.g., Team A and Team B):
+            <me>\binom{15}{7, 7, 1} = \frac{15!}{7! \times 7! \times 1!} = 51,480 \text{ ways}</me>
+        </p>
+        <p>
+            2. Account for the identical team structures. Because the two development teams are completely indistinguishable, swapping the entire roster of one team with the other does not create a new assignment. We must divide by <m>2! = 2</m> to eliminate overcounting from group order:
+            <me>\text{Total Distinct Partitions} = \frac{51,480}{2!} = 25,740</me>
+        </p>
+
+        </feedback>
+      </test>
+</evaluate>
+</evaluation>
+       
+
+    <hint>
+        <p>
+            Start by calculating the standard multinomial coefficient for groups of sizes <m>7</m>, <m>7</m>, and <m>1</m>: <m>\binom{15}{7, 7, 1} = \frac{15!}{7! \times 7! \times 1!}</m>. Then, because the two teams of <m>7</m> are completely indistinguishable (unlabeled), divide that intermediate result by <m>2!</m> to remove the duplicate ordered configurations.
+        </p>
+    </hint>
+
+</exercise>
+
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-counting-harder-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+<exercise label="counting-harder-coffee-order">
+<title>Coffee Order</title>
+
+  <statement>
+    <p>
+     	A coffee shop has 4 different types of coffee. You can order your coffee in a small, medium, or large cup. You can also choose whether you want to add cream, sugar, or milk (any combination is possible, for example, you can choose to add all three). In how many ways can you order your coffee?
+    </p>
+  </statement>
+
+</exercise>
+
+
+<exercise label="counting-harder-housing-multinomial-prob">
+
+<title>Campus Housing Room Assignments</title>
+    <statement>
+        <p>
+            Refer to the problem above with the same name. A group of <m>12</m> college students are selected to live on a specialized floor in a residence hall. The floor has exactly <m>6</m> rooms available that must be filled: one triple room (<m>3</m> students), three double rooms (<m>2</m> students each), and three single rooms (<m>1</m> student each). 
+        </p>
+        <p>
+            
+                Suppose two of the students, Alex and Jordan, are best friends. What is the probability that they are assigned to room together in the same room? Recall: The housing department assigns the <m>12</m> students completely at random to fill these specific spots.
+            </p>
+        </statement>
+        <answers>
+            <answer>
+                <string>6/11</string>
+            </answer>
+        </answers>
+        <hint>
+            <p>
+                Alex and Jordan cannot room together in any of the single rooms. Calculate the number of favorable assignments if they are placed together in the triple room, and add that to the configurations where they are placed together in one of the three double rooms. Then, divide by the total possible ways (<m>1,663,200</m>).
+            </p>
+        </hint>
+        <solution>
+            <p>
+                To find the probability, we look at the two distinct scenarios where Alex and Jordan share a room:
+            </p>
+            <p>
+                1. <term>Case 1: They share the Triple Room.</term> Two of the three spots are locked down by Alex and Jordan. The remaining <m>10</m> students must be distributed into the 1 leftover spot in the triple, the three double rooms, and the three single rooms. This yields:
+                <me>\frac{10!}{1! \times 2! \times 2! \times 2! \times 1! \times 1! \times 1!} = 453,600 \text{ ways}</me>
+            </p>
+            <p>
+                2. <term>Case 2: They share a Double Room.</term> There are 3 distinct double rooms they could share. If they take over one specific double room, it becomes completely filled. The remaining <m>10</m> students must fill the triple room, the other 2 double rooms, and the three single rooms:
+                <me>\frac{10!}{3! \times 2! \times 2! \times 1! \times 1! \times 1!} = 151,200 \text{ ways per room}</me>
+                Multiplying by the <m>3</m> optional double rooms gives: <m>3 \times 151,200 = 453,600</m> ways.
+            </p>
+            <p>
+                3. <term>Combine and Calculate Probability:</term> Adding the favorable layouts gives <m>453,600 + 453,600 = 907,200</m> successful configurations. Dividing by our total from Part 1:
+                <me>P(\text{Rooming Together}) = \frac{907,200}{1,663,200} = \frac{6}{11} \approx 0.5455</me>
+            </p>
+        </solution>
+
+       
+</exercise>
+
+ <exercise label="counting-harder-powerball-lose">
+
+<introduction>
+  <p>
+    See the Powerball in-class activity. 
+    
+    
+  </p>
+</introduction>
+
+<task>
+  <statement>
+    <p>
+      What outcomes result in someone not winning a prize? 
+    </p>
+  </statement>
+</task>
+
+<task>
+  <statement>
+    <p>
+      Compute the probability for each of these outcomes.
+    </p>
+  </statement>
+</task>
+
+<task>
+  <statement>
+    <p>
+      What is the overall probability of not winning a prize when playing Powerball? 
+    </p>
+  </statement>
+</task>
+
+</exercise>
+   </exercises>
+
+
+  </section>

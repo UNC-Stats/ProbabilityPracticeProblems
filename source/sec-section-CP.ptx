@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-CP" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Compute Conditional Probabilities</title>
+
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+
+ <exercises xml:id="hw-cond-prob" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+ 
+
+
+      <exercise label="CP-2dice">
+          <title>Roll Two Dice</title>
+          <introduction>
+              <p>
+                You roll two fair dice. The sample space for this experiment is shown below.
+                 
+             </p>
+             <image source="Images/Roll-Two-Dice.png" width="60%"/>
+          </introduction>
+
+            <task>
+                <statement>
+                    <p>
+                        What is the probability that at least one of two dice lands on the number 4, <em>given</em> that the sum of the two dice is 9? 
+                    </p>
+                </statement>
+            
+          <choices randomize="yes" multiple-correct="yes">
+              <choice correct="yes">
+                  <statement>
+                       <p>
+                          <m> 0.500 </m>
+                      </p>
+                   </statement>
+
+                  <feedback>
+                      <p>
+                          Correct! 
+                      </p>
+                 </feedback>
+             </choice>
+
+             <choice>
+                 <statement>
+                       <p>
+                          <m> 0.056 </m>
+                       </p>
+                 </statement>
+
+                 <feedback>
+                      <p> </p>
+                 </feedback>
+              </choice>
+
+             <choice>
+                 <statement>
+                       <p>
+                          <m> 0.111 </m>
+                       </p>
+                 </statement>
+
+                 <feedback>
+                      <p> </p>
+                 </feedback>
+              </choice>
+
+             <choice>
+                 <statement>
+                       <p>
+                          <m> 0.306 </m>
+                       </p>
+                 </statement>
+
+                 <feedback>
+                      <p> </p>
+                 </feedback>
+              </choice>
+
+              <choice>
+                 <statement>
+                       <p>
+                          <m> 0.944 </m>
+                       </p>
+                 </statement>
+
+                 <feedback>
+                      <p> </p>
+                 </feedback>
+              </choice>
+          </choices>
+
+        </task>
+
+        <task>
+
+           <statement>
+                <p>
+                   What is the probability that the sum of the two dice is 7, <em>given</em> that at least one of two dice lands on the number 2? Write your answer as a decimal, rounded to three decimal places.
+               </p>
+
+               <p>
+                  <fillin width="8" answer="0.182"/>
+               </p>
+           </statement>
+  
+           <evaluation>
+              <evaluate>
+                 <test correct="yes">
+                     <numcmp use-answer="yes"/>
+                     <feedback>
+                         <p>
+                             Correct! 
+                         </p>
+                     </feedback>
+                  </test>
+
+                  <test>
+                     <numcmp use-answer="yes" tolerance="0.01"/>
+                     <feedback>
+                         <p>
+                             Your answer is within 0.01 of the value wanted.
+                         </p>
+                     </feedback>
+                  </test>
+                </evaluate>
+
+            </evaluation>
+            </task>
+      </exercise>
+
+
+
+   <exercise xml:id="CP-generic-practice-A" >
+     <title>Formula/Rule Practice</title>
+     <introduction>
+          <p>
+             If <m>P(E \cap F)=0.024</m>, <m>P(E | F)=0.06</m>, and <m>P(F| E)=0.10</m>....
+          </p>
+      </introduction>
+      
+     
+
+         <statement>
+             <p>
+                  ...then match the following probabilities to their values.
+             </p>
+         </statement>
+
+         <feedback>
+             <p>
+                 Add later.
+              </p>
+         </feedback>
+
+         <cardsort>
+                <match>
+                    <premise order="1"><m> P(E)</m></premise>
+                    <response>0.24</response>
+                </match>
+                <match>
+                    <premise order="1"><m> P(F)</m></premise>
+                    <response>0.40</response>
+                </match>
+                <match>
+                    <premise order="1"><m> P(E \cup F)</m></premise>
+                    <response>0.62</response>
+                </match>
+                <match>
+                    <response>0.64</response>
+                </match>
+         </cardsort>
+
+         
+        </exercise>
+
+
+    <exercise xml:id="CP-independence" >
+      <title>Independence</title>
+      <introduction>
+          <p>
+             Suppose that <m>A</m> and <m>B</m> are two independent events for which <m>P(A)=0.2</m> and <m>P(B)=0.56</m>. 
+          </p>
+      </introduction>
+    
+      <task>
+
+           <statement>
+                <p>
+                  Find <m>P(A|B)</m>. Write your answer as a decimal, rounded to three decimal places.
+               </p>
+
+               <p>
+                  <fillin width="8" answer="0.560"/>
+               </p>
+           </statement>
+  
+           <evaluation>
+              <evaluate>
+                 <test correct="yes">
+                     <numcmp use-answer="yes"/>
+                     <feedback>
+                         <p>
+                             Correct! The probability of B does not depend on whether A has occurred.
+                         </p>
+                     </feedback>
+                  </test>             
+              </evaluate>
+            </evaluation>
+      </task>
+
+      <task>
+
+           <statement>
+                <p>
+                  Find <m>P(A \cap B)</m>. Write your answer as a decimal, rounded to three decimal places.
+               </p>
+
+               <p>
+                  <fillin width="8" answer="0.112"/>
+               </p>
+           </statement>
+  
+           <evaluation>
+              <evaluate>
+                 <test correct="yes">
+                     <numcmp use-answer="yes"/>
+                     <feedback>
+                         <p>
+                             Correct! When events are independent you can multiply them together to find the probability of their intersection.
+                         </p>
+                     </feedback>
+                  </test>             
+              </evaluate>
+            </evaluation>
+      </task>
+
+      <task>
+
+           <statement>
+                <p>
+                  Find <m>P(A\cup B)</m>. Write your answer as a decimal, rounded to three decimal places.
+               </p>
+
+               <p>
+                  <fillin width="8" answer="0.648"/>
+               </p>
+           </statement>
+  
+           <evaluation>
+              <evaluate>
+                 <test correct="yes">
+                     <numcmp use-answer="yes"/>
+                     <feedback>
+                         <p>
+                             Correct! Independent <m>\neq</m> Disjoint or Mutually Exclusive.
+                         </p>
+                     </feedback>
+                  </test>             
+              </evaluate>
+            </evaluation>
+            </task>
+      </exercise>
+  </exercises>
+
+
+
+  <exercises xml:id="hw-cond-prob-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+   </exercises>
+
+  </section>
