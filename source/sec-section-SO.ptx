@@ -16,7 +16,446 @@
      </p>
    </introduction>
 
+
+   <exercise xml:id="SO-generic-A">
+    <title>Set Operations and Cardinality</title>
+    <statement>
+        <p>
+            Suppose that the universal set <m>U</m> is defined as <m>U = \{1,2,3,4,5,6,7,8,9,10,11,12\}</m>, and sets <m>A</m>, <m>B</m>, and <m>C</m> are defined as:
+            <me>A = \{1,2,3\}</me>
+            <me>B = \{2,3,4,5,6,7,8\}</me>
+            <me>C = \{6,8,10,12\}</me>
+        </p>
+        <p>
+            Match each set operation on the left with its correct resulting set on the right. Note that there are extra sets on the right that do not match any operation!
+        </p>
+    </statement>
+    
+    <cardsort>
+        <!-- Pair 1 -->
+        <match>
+            <premise><m>A \cup B</m></premise>
+            <response><m>\{1,2,3,4,5,6,7,8\}</m></response>
+        </match>
+        
+        <!-- Pair 2 -->
+        <match>
+            <premise><m>(A \cup C) - B</m></premise>
+            <response><m>\{1,10,12\}</m></response>
+        </match>
+        
+        <!-- Pair 3 -->
+        <match>
+            <premise><m>A^c \cup (B - C)</m></premise>
+            <response><m>\{2,3,4,5,6,7,8,9,10,11,12\}</m></response>
+        </match>
+        
+        <!-- Pair 4 -->
+        <match>
+            <premise><m>A^c \cap C^c</m></premise>
+            <response><m>\{4,5,7,9,11\}</m></response>
+        </match>
+
+        <!-- DISTRACTOR 1 (Empty Premise) -->
+        <match>
+            <response><m>\{2,3\}</m></response>
+        </match>
+
+        <!-- DISTRACTOR 2 (Empty Premise) -->
+        <match>
+            <response><m>\{6,8\}</m></response>
+        </match>
+
+        <!-- DISTRACTOR 3 (Empty Premise) -->
+        <match>
+            <response><m>\{1,10,11,12\}</m></response>
+        </match>
+    </cardsort>
+
+    <hint>
+        <p>
+            Remember that <m>\cup</m> represents the union (combining all unique elements), <m>\cap</m> represents the intersection (only elements present in both sets), <m>-</m> represents the relative complement (subtracting elements), and <m>A^c</m> represents all items in <m>U</m> that are not in <m>A</m>.
+        </p>
+    </hint>
+
+    <solution>
+        <p>
+            Step-by-step evaluation of each operation:
+        </p>
+        <p>
+            1. For <m>A \cup B</m>: Combine all unique elements from <m>A</m> and <m>B</m>, which yields <m>\{1,2,3,4,5,6,7,8\}</m>.
+        </p>
+        <p>
+            2. For <m>(A \cup C) - B</m>: First, find <m>A \cup C = \{1,2,3,6,8,10,12\}</m>. Then remove any elements that belong to <m>B</m>, leaving <m>\{1,10,12\}</m>.
+        </p>
+        <p>
+            3. For <m>A^c \cup (B - C)</m>: The complement <m>A^c = \{4,5,6,7,8,9,10,11,12\}</m> and the set difference <m>B - C = \{2,3,4,5,7\}</m>. Taking their union merges them into <m>\{2,3,4,5,6,7,8,9,10,11,12\}</m>.
+        </p>
+        <p>
+            4. For <m>A^c \cap C^c</m>: We cross-reference <m>A^c = \{4,5,6,7,8,9,10,11,12\}</m> with <m>C^c = \{1,2,3,4,5,7,9,11\}</m>. Their shared elements are <m>\{4,5,7,9,11\}</m>.
+        </p>
+    </solution>
+</exercise>
+
+
+<exercise xml:id="SO-cardinality">
+    <title>Cardinality of a Partitioned Set</title>
+    <statement>
+        <p>
+            Suppose that <m>A_1</m>, <m>A_2</m>, and <m>A_3</m> form a partition of the sample space <m>S</m>. Let <m>B</m> be an arbitrary set within <m>S</m>, and assume that we know the sizes of its intersections with each partition piece:
+            <me>|B \cap A_1| = 10</me>
+            <me>|B \cap A_2| = 20</me>
+            <me>|B \cap A_3| = 15</me>
+        </p>
+        <p>
+            Find the total number of elements in set <m>B</m> (i.e., find <m>|B|</m>). Enter your answer as a whole number.
+        </p>
+        
+        <p>
+        <fillin width="8" answer="45"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! Four out of 8 outcomes in the sample space involve the second child being female.
+            </p>
+          </feedback>
+        </test>
+          </evaluate>
+            </evaluation>
+    
+
+    <hint>
+        <p>
+            Recall that a partition divides a set into disjoint subsets that do not overlap. This means that the pieces <m>B \cap A_1</m>, <m>B \cap A_2</m>, and <m>B \cap A_3</m> share no elements in common and completely cover the set <m>B</m>. Apply the Addition Rule.
+        </p>
+    </hint>
+
+    <solution>
+        <p>
+            Because <m>A_1</m>, <m>A_2</m>, and <m>A_3</m> form a partition of the sample space <m>S</m>, they are mutually exclusive (disjoint) sets whose union equals <m>S</m>. 
+        </p>
+        <p>
+            Consequently, the intersections <m>B \cap A_1</m>, <m>B \cap A_2</m>, and <m>B \cap A_3</m> form a disjoint partition of the set <m>B</m> itself. By the Addition Rule for disjoint sets, we can find the total cardinality of <m>B</m> by summing the sizes of these individual components:
+            <me>|B| = |B \cap A_1| + |B \cap A_2| + |B \cap A_3|</me>
+            <me>|B| = 10 + 20 + 15 = 45</me>
+        </p>
+    </solution>
+</exercise>
+
+
+
+<exercise xml:id="SO-ticket-raffle-prob">
+    <title>Campus Ticket Raffle Probability</title>
+    <statement>
+        <p>
+            A high-demand campus music festival has a limited ticket lottery. There are <m>50</m> students who enter the raffle, and the event organizers choose <m>15</m> winners at random. 
+        </p>
+        <p>
+            What is the probability that either you or your friend Brenda (or both of you) are among the chosen winners?
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+            <statement>
+                <m>0.514</m>
+            </statement>
+            <feedback>
+                <p>
+                    Correct! The easiest way to calculate this is by taking the complement of neither you nor Brenda being selected. The number of ways to pick 15 winners entirely from the other 48 students is <m>\binom{48}{15}</m>. Subtracting this ratio from 1 yields: <m>1 - \frac{\binom{48}{15}}{\binom{50}{15}} = 1 - 0.486 = 0.514</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.486</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This is the probability that <term>neither</term> you nor Brenda get selected (<m>\frac{\binom{48}{15}}{\binom{50}{15}} = 0.486</m>). You must subtract this value from 1 to find the probability that at least one of you is chosen.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.600</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This is the simple linear ratio of winners to total entrants (<m>2 \times \frac{15}{50} = 0.60</m>). This ignores the fact that selections are made without replacement, which overcounts the scenario where both of you win.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.114</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This result occurs if you accidentally subtract the complement from <m>0.600</m> instead of <m>1</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.914</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This value represents an arithmetic error in evaluating the combinations pool. Make sure to compute the full combinations <m>\binom{48}{15}</m> and <m>\binom{50}{15}</m> precisely.
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+    <hint>
+        <p>
+            Think about the complement of the event. It is much easier to compute the probability that <term>neither</term> you nor Brenda are selected out of the 15 winners. If neither of you win, all 15 winners must be chosen from the remaining 48 students.
+        </p>
+    </hint>
+    <solution>
+        <p>
+            To solve this, we find the probability of the complementary event (that neither you nor Brenda win a ticket) and subtract it from 1:
+        </p>
+        <p>
+            1. Find the total number of ways to choose 15 winners out of 50 students:
+            <me>\text{Total Outcomes} = \binom{50}{15}</me>
+        </p>
+        <p>
+            2. Find the number of ways to choose 15 winners such that both you and Brenda are excluded. This means all 15 winners must be chosen from the other <m>50 - 2 = 48</m> students:
+            <me>\text{Favorable to Complement} = \binom{48}{15}</me>
+        </p>
+        <p>
+            3. Compute the probability that neither of you win:
+            <me>P(\text{Neither}) = \frac{\binom{48}{15}}{\binom{50}{15}} = \frac{48! \cdot 15! \cdot 35!}{15! \cdot 33! \cdot 50!} = \frac{35 \times 34}{50 \times 49} = \frac{1190}{2450} \approx 0.486</me>
+        </p>
+        <p>
+            4. Subtract from 1 to find the probability that at least one of you wins:
+            <me>P(\text{You or Brenda}) = 1 - P(\text{Neither}) = 1 - 0.486 = 0.514</me>
+        </p>
+    </solution>
+</exercise>
+
+
+<exercise xml:id="ex-venn-diagram-matching-expanded">
+    <title>Matching Venn Diagrams to Set Expressions</title>
+    <statement>
+        <p>
+            Four different Venn diagrams are rendered below with specific regions shaded. Match each visual diagram on the left with its correct mathematical set description on the right.
+        </p>
+    </statement>
+
+        <!-- Diagram 1: Symmetric Difference of A and C -->
+        <matching>
+            <premise ref="sym-diff sym-diff2">
+              <p><term>Diagram 1:</term></p>
+                <image xml:id="tikz-vennD-symmetric-diff">
+                    <description>Symmetric difference of A and C</description>
+                    <latex-image>
+                        \begin{tikzpicture}[scale=0.6]
+                            % Render a solid white canvas background
+                            \fill[white] (-1.8,-2.5) rectangle (3,2);
+                            
+                            \def\circleA{(0,0.4) circle (1.2)}
+                            \def\circleB{(1.2,0.4) circle (1.2)}
+                            \def\circleC{(0.6,-0.5) circle (1.2)}
+                            
+                            % Fill A and C symmetric difference
+                            \begin{scope}
+                                \clip \circleA;
+                                \fill[gray!50] \circleA;
+                            \end{scope}
+                            \begin{scope}
+                                \clip \circleC;
+                                \fill[gray!50] \circleC;
+                            \end{scope}
+                            \begin{scope}
+                                \clip \circleA;
+                                \clip \circleC;
+                                \fill[white] \circleC;
+                            \end{scope}
+                            
+                            % Draw outlines and labels
+                            \draw \circleA node[left] at (-1,1.2) {$A$};
+                            \draw \circleB node[right] at (2.2,1.2) {$B$};
+                            \draw \circleC node[below] at (0.6,-1.8) {$C$};
+                            \draw (-1.8,-2.5) rectangle (3,2);
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </premise>
+            
+            
+            
+            <response xml:id="sym-diff">
+                <m>(A \cup C) - (A \cap C)</m>
+            </response>
+
+                        <response xml:id="sym-diff2">
+                <m>(A - C) \cup (C - A)</m>
+            </response>
+
+        
+        <!-- Diagram 2: A intersect (B union C) -->
+
+            <premise ref="distr distr2">
+              <p><term>Diagram 2:</term></p>
+                <image xml:id="tikz-vennD-distributive">
+                    <description>Intersection of A with the union of B and C</description>
+                    <latex-image>
+                        \begin{tikzpicture}[scale=0.6]
+                            % Render a solid white canvas background
+                            \fill[white] (-1.8,-2.5) rectangle (3,2);
+                            
+                            \def\circleA{(0,0.4) circle (1.2)}
+                            \def\circleB{(1.2,0.4) circle (1.2)}
+                            \def\circleC{(0.6,-0.5) circle (1.2)}
+                            
+                            % Fill A intersected with B
+                            \begin{scope}
+                                \clip \circleA;
+                                \fill[gray!50] \circleB;
+                            \end{scope}
+                            % Fill A intersected with C
+                            \begin{scope}
+                                \clip \circleA;
+                                \fill[gray!50] \circleC;
+                            \end{scope}
+                            
+                            % Draw outlines and labels
+                            \draw \circleA node[left] at (-1,1.2) {$A$};
+                            \draw \circleB node[right] at (2.2,1.2) {$B$};
+                            \draw \circleC node[below] at (0.6,-1.8) {$C$};
+                            \draw (-1.8,-2.5) rectangle (3,2);
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </premise>
+
+
+            <response xml:id="distr">
+                <m>(A \cap B) \cup (A \cap C)</m>
+            </response>
+
+            <response xml:id="distr2">
+                <m>A  \cap (B \cup C)</m>
+            </response>
+
+            <response>
+                <m>A \cup C</m>
+            </response>
+
+        
+        <!-- Diagram 3: B - C -->
+
+            <premise ref="rel-diff rel-diff2 rel-diff3 rel-diff4">
+              <p><term>Diagram 3:</term></p>
+                <image xml:id="tikz-vennD-relative-diff">
+                    <description>C or (B minus A)</description>
+                    <latex-image>
+                        \begin{tikzpicture}[scale=0.6]
+                            % Render a solid white canvas background
+                            \fill[white] (-1.8,-2.5) rectangle (3,2);
+                            
+                            \def\circleA{(0,0.4) circle (1.2)}
+                            \def\circleB{(1.2,0.4) circle (1.2)}
+                            \def\circleC{(0.6,-0.5) circle (1.2)}
+                            
+                            % Fill B, then mask A out with white
+                            %Then fill C.
+                            \fill[gray!50] \circleB;
+                            \fill[white] \circleA;
+                            \fill[gray!50] \circleC;
+                            
+                            % Draw outlines and labels
+                            \draw \circleA node[left] at (-1,1.2) {$A$};
+                            \draw \circleB node[right] at (2.2,1.2) {$B$};
+                            \draw \circleC node[below] at (0.6,-1.8) {$C$};
+                            \draw (-1.8,-2.5) rectangle (3,2);
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </premise>
+
+
+            <response xml:id="rel-diff">
+                <m>C \cup (B - A)</m>
+            </response>
+
+             <response xml:id="rel-diff2">
+                <m>C \cup (B \cap A^c)</m>
+            </response>
+
+            <response xml:id="rel-diff3">
+                <m>(C \cup B) \cap (C \cup A^c)</m>
+            </response>
+
+            <response xml:id="rel-diff4">
+                <m>A^c  \cup C </m>
+            </response>
+
+        
+        <!-- Diagram 4: Complex Multi-Region Split -->
+
+            <premise ref="comp">
+              <p><term>Diagram 4:</term></p>
+                <image xml:id="tikz-vennD-complex">
+                    <description>Complex region shading</description>
+                    <latex-image>
+                        \begin{tikzpicture}[scale=0.6]
+                            % Render a solid white canvas background
+                            \fill[white] (-1.8,-2.5) rectangle (3,2);
+                            
+                            \def\circleA{(0,0.4) circle (1.2)}
+                            \def\circleB{(1.2,0.4) circle (1.2)}
+                            \def\circleC{(0.6,-0.5) circle (1.2)}
+                            
+                            % Fill C first
+                            \fill[gray!50] \circleC;
+                            % Mask out A and B from C
+                            \fill[white] \circleA;
+                            \fill[white] \circleB;
+
+                            % Now add back (A intersect B) 
+                            \begin{scope}
+                                \clip \circleA;
+                                \clip \circleB;
+                                \fill[gray!50] \circleB;
+                            \end{scope}
+
+                            
+                            % Draw outlines and labels
+                            \draw \circleA node[left] at (-1,1.2) {$A$};
+                            \draw \circleB node[right] at (2.2,1.2) {$B$};
+                            \draw \circleC node[below] at (0.6,-1.8) {$C$};
+                            \draw (-1.8,-2.5) rectangle (3,2);
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </premise>
+
+
+            <response>
+                <m>[C - (A \cup B)] \cup [(A \cap B) - C]</m>
+            </response>
+
+                        <response xml:id="comp">
+                <m>(A\cup B)^c \cup (A \cap B)</m>
+            </response>
+        </matching>
+</exercise>
+
+
    </exercises>
+
+
+
+
+
 
 
 
@@ -28,7 +467,197 @@
      </p>
    </introduction>
 
+
+
+<exercise xml:id="ex-venn-diagram-probabilities-tasks">
+    <title>Probability and Set Operations</title>
+    <introduction>
+        <p>
+            Let <m>A</m> and <m>B</m> be two events such that <m>P(A) = 0.4</m>, <m>P(B) = 0.7</m>, and <m>P(A \cup B) = 0.9</m>. Use a Venn diagram to help you find the following probabilities.
+        </p>
+    </introduction>
+    
+    <hint>
+        <p>
+            Start by calculating the intersection <m>P(A \cap B)</m> using the inclusion-exclusion principle formula: <m>P(A \cup B) = P(A) + P(B) - P(A \cap B)</m>. Sketch a Venn diagram with two overlapping circles and place this intersection value in the middle. Subtract it from <m>P(A)</m> and <m>P(B)</m> to find the values for the remaining crescent regions, and subtract <m>P(A \cup B)</m> from 1 to find the region outside both circles.
+        </p>
+    </hint>
+
+    <!-- Part 1 -->
+    <task>
+        <statement>
+            <p>
+                Find <m>P(A \cap B)</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Using the inclusion-exclusion identity:
+                <me>P(A \cap B) = P(A) + P(B) - P(A \cup B) = 0.4 + 0.7 - 0.9 = 0.2</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 2 -->
+    <task>
+        <statement>
+            <p>
+                Find <m>P(A^c \cap B)</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                This represents the region containing elements strictly inside circle <m>B</m> but outside circle <m>A</m>:
+                <me>P(A^c \cap B) = P(B) - P(A \cap B) = 0.7 - 0.2 = 0.5</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 3 -->
+    <task>
+        <statement>
+            <p>
+                Find <m>P(A - B)</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                This represents the set difference, which isolates the region containing elements strictly inside circle <m>A</m> but completely outside circle <m>B</m>:
+                <me>P(A - B) = P(A) - P(A \cap B) = 0.4 - 0.2 = 0.2</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 4 -->
+    <task>
+        <statement>
+            <p>
+                Find <m>P(A^c - B)</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                This isolates elements outside circle <m>A</m>, with any elements belonging to circle <m>B</m> removed. This leaves only the universal region completely outside both circles:
+                <me>P(A^c - B) = 1 - P(A \cup B) = 1 - 0.9 = 0.1</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 5 -->
+    <task>
+        <statement>
+            <p>
+                Find <m>P(A^c \cup B)</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                This includes everything outside circle <m>A</m>, combined with the entire area of circle <m>B</m>. It can be computed by taking the complement of the region containing elements strictly in <m>A</m>:
+                <me>P(A^c \cup B) = 1 - P(A - B) = 1 - 0.2 = 0.8</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 6 -->
+    <task>
+        <statement>
+            <p>
+                Find <m>P(A \cap (B \cup A^c))</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Distributing the intersection across the union gives <m>(A \cap B) \cup (A \cap A^c)</m>. Since <m>A \cap A^c = \emptyset</m>, this simplifies down directly to the center intersection region:
+                <me>P(A \cap (B \cup A^c)) = P(A \cap B) = 0.2</me>
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+<exercise label="ex-streaming-watchlist-probabilities-updated">
+    <title>Streaming Platform Media Logistics</title>
+    <introduction>
+        <p>
+            An analysis of a college student's saved media watchlist on a streaming app reveals the following platform statistics:
+            <ul>
+                <li><p><m>62\%</m> of the saved titles are comedy films.</p></li>
+                <li><p><m>45\%</m> of the saved titles are produced by independent studios.</p></li>
+                <li><p><m>24\%</m> of the saved titles are comedies produced by independent studios.</p></li>
+            </ul>
+            If the student selects a title completely at random from this watchlist, what is the probability that it is a non-comedy film produced by a major (non-independent) studio?
+        </p>
+    </introduction>
+
+    <!-- Part 1: Solving via set laws -->
+    <task>
+        <statement>
+            <p>
+                Calculate the probability using standard probability rules, laws, and complement principles. Specify each rule/law/principal as you use it.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Let <m>C</m> be the event that a selected film is a comedy, and let <m>I</m> be the event that it is an independent studio production. We are given:
+                <me>P(C) = 0.62, \quad P(I) = 0.45, \quad P(C \cap I) = 0.24</me>
+                We want to find the probability that the film is both a non-comedy (<m>C^c</m>) and from a major studio (<m>I^c</m>). This is represented by the intersection <m>P(C^c \cap I^c)</m>.
+            </p>
+            <p>
+                1. First, find the probability that a film is either a comedy or from an independent studio using the <term>Inclusion-Exclusion Principle</term>:
+                <me>P(C \cup I) = P(C) + P(I) - P(C \cap I)</me>
+                <me>P(C \cup I) = 0.62 + 0.45 - 0.24 = 0.83</me>
+            </p>
+            <p>
+                2. Next, apply <term>De Morgan's Laws</term> to rewrite our target intersection as the complement of a union:
+                <me>C^c \cap I^c = (C \cup I)^c</me>
+            </p>
+            <p>
+                3. Use the <term>Complement Rule</term> to find the final probability value:
+                <me>P(C^c \cap I^c) = 1 - P(C \cup I) = 1 - 0.83 = 0.17</me>
+                Thus, there is a <m>17\%</m> chance (or a probability of <m>0.17</m>) that the title is a non-comedy from a major studio.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 2: Venn Diagram verification -->
+    <task>
+        <statement>
+            <p>
+                Verify your calculation by mapping out the regions of a Venn diagram.
+            </p>
+        </statement>
+        
+    </task>
+</exercise>
+
+
+<exercise label="SO-dice-complement">
+<title>Untititled</title>
+   <introduction>
+   <p>
+      I roll a six-sided die 15 times. 
+      </p>
+    </introduction>
+
+    <task>
+        <statement>
+            <p>
+                 Find the probability that the number 2 is never observed.
+            </p>
+        </statement>
+    </task>
+    
+    <task>
+        <statement>
+            <p>
+                 Find the probability that numbers 3 and 4 are both observed at least once.
+            </p>
+        </statement>
+    </task>
+   
+</exercise>
    </exercises>
 
+
+ 
 
   </section>

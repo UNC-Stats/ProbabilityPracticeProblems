@@ -16,6 +16,317 @@
      </p>
    </introduction>
 
+
+<exercise xml:id="ex-demorgan-proof-parsons">
+    <title>Interactive Proof: DeMorgan's Law</title>
+    <introduction>
+        <p>
+            In class, we proved one half of DeMorgan's Law: <m>(A \cap B)^c = A^c \cup B^c</m>. Taking the same approach, it is your job to prove the other half: 
+            <me>(A \cup B)^c = A^c \cap B^c</me>
+        </p>
+        <p>
+            Recall: To prove that two sets are equal, we must demonstrate mutual subset containment, i.e. for <m>X=Y</m>, we must have <m>X \subseteq Y</m> and <m>Y \subseteq X</m>.
+        </p>
+
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    First, show that <m>(A \cup B)^c \subseteq A^c \cap B^c</m>. 
+                </p>
+                <p>
+                  Start by letting <m>x \in (A \cup B)^c</m>. By definition of a complement, this means <m>x \notin (A \cup B)</m>.
+                </p>
+                
+    
+                <p>
+                    Arrange the <term>remaining steps</term> below in the correct logical sequence to complete both the proof. You may or may not use all of the blocks.
+                </p>
+    </statement>
+    
+  <blocks>
+        <!-- Step 2 -->
+        <block order="1">
+            <p>
+                This means that <m>x </m> is not in either set, and we can say: <m>x \notin A</m> and <m>x \notin B</m>. 
+            </p>
+        </block>
+
+
+        <block order="2">
+            <p>
+                Thus, <m>x \in A^c</m> and <m>x \in B^c</m>, which implies <m>x \in A^c \cap B^c</m>. 
+            </p>
+        </block>
+        
+
+
+        <block order="3">
+            <p>
+                        Therefore, <m>(A \cup B)^c \subseteq A^c \cap B^c</m>.
+            </p>
+        </block>
+
+        <!-- Step 3 -->
+
+
+       
+
+        <!-- DISTRACTOR -->
+        <block  correct="no">
+            <p>
+                This means that either <m>x \notin A</m> or <m>x \notin B</m>. 
+                
+            </p>
+        </block>
+
+        <block correct="no">
+            <p>
+                Thus, <m>x \in A^c</m> or <m>x \in B^c</m>, which implies <m>x \in A^c \cup B^c</m>. 
+            </p>
+        </block>
+    </blocks>
+
+    </task>
+
+
+     <task>
+            <statement>
+                <p>
+                    Next, show the reverse containment: <me>A^c \cap B^c \subseteq (A \cup B)^c</me>. Start by letting <m>y \in A^c \cap B^c</m>. 
+                </p>
+
+                <p>
+                    Arrange the remaining steps below in the correct logical sequence to complete the rest of the proof. You may or may not use all of the provided blocks.
+                </p>
+    </statement>
+    
+      <blocks>
+  
+
+       <block order="1">
+            <p>
+               By definition of an intersection, <m>y \in A^c</m> and <m>y \in B^c</m>.
+            </p>
+        </block>
+        
+        <!-- Step 4 -->
+        <block order="2">
+            <p>
+                This means <m>y \notin A</m> and <m>y \notin B</m>. 
+            </p>
+        </block>
+
+        <block order="3">
+            <p>
+                Because <m>y</m> fails to belong to either individual set, it cannot belong to their union, implying <m>y \notin (A \cup B)</m>.
+            </p>
+        </block>
+
+        <block order="4">
+            <p>
+                Thus, <m>y \in (A \cup B)^c</m>. 
+            </p>
+        </block>
+        
+        <!-- Step 5 -->
+        <block order="8">
+            <p>
+                Therefore, <m>A^c \cap B^c \subseteq (A \cup B)^c</m>.
+            </p>
+        </block>
+
+
+
+        <!-- DISTRACTOR -->
+        <block  correct="no">
+            <p>
+                By definition of an intersection, <m>y \in A^c</m> or <m>y \in B^c</m>.
+            </p>
+        </block>
+
+        <block correct="no">
+            <p>
+                Thus, <m>y \in A^c</m> or <m>y \in B^c</m>, which implies <m>y \in A^c \cup B^c</m>. 
+            </p>
+        </block>
+    </blocks>
+
+    
+    
+    <hint>
+        <p>
+            Pay close attention to logical connectives! The negation of an "or" statement (the union) results in an "and" statement. Look for the draggable block that sets up the backward direction (<m>Y \subseteq X</m>) once you finish concluding the forward containment.
+        </p>
+    </hint>
+
+    </task>
+</exercise>
+
+
+<exercise xml:id="ex-probability-proof-parsons">
+    <title>Interactive Proof: Probability of a Set Difference</title>
+    <statement>
+        <p>
+            During class, we established the following property: For any two events <m>A</m> and <m>B</m>, <me>P(A - B) = P(A) - P(A \cap B)</me> Use the axioms of probability to prove this property by reordering the steps below into the correct logical sequence. You may or may not need to use all of the provided blocks.
+        </p>
+    </statement>
+    <blocks>
+        <!-- Step 1 -->
+        <block order="1">
+            <p>
+                Write event <m>A</m> as a union of two disjoint sets: 
+                <me>A = (A \cap B) \cup (A \cap B^c)</me>
+            </p>
+        </block>
+        
+        <!-- Step 2 -->
+        <block order="2">
+            <p>
+               Take the probability of both sides: 
+                <me>P(A) = P[(A \cap B) \cup (A \cap B^c)]</me>
+            </p>
+        </block>
+        <block order="3">
+            <p>
+                Apply Axiom 3: 
+                <me>P(A) = P(A \cap B) + P(A \cap B^c)</me>
+            </p>
+        </block>
+      
+        
+        <!-- Step 3 -->
+        <block order="4">
+            <p>
+                Isolate the relative components on the right side: 
+                <me>P(A) - P(A \cap B) = P(A \cap B^c)</me>
+            </p>
+        </block>
+        
+        <!-- Step 4 -->
+        <block order="5">
+            <p>
+                Substitute the definition of a set difference into the equation: 
+                <me>P(A) - P(A \cap B) = P(A - B)</me>
+            </p>
+        </block>
+
+        <!-- DISTRACTOR (Incorrect formula component) -->
+        <block correct="no">
+            <p>
+                Apply the inclusion-exclusion principle: 
+                <me>P(A) = P(A \cap B) + P(A \cup B^c) - P(B)</me>
+            </p>
+        </block>
+    </blocks>
+    
+    <hint>
+        <p>
+            Start by visually partitioning circle <m>A</m> inside a Venn diagram into two non-overlapping pieces: the piece that intersects <m>B</m>, and the piece that does not touch <m>B</m>. Apply the axioms of probability to that structural split.
+        </p>
+    </hint>
+</exercise>
+
+
+<exercise xml:id="ex-probability-continuity-parsons-fixed">
+    <title>Challenge Problem: Continuity of Probability</title>
+    <statement>
+        <p>
+            Let <m>A_1, A_2, A_3, \dots</m> be a sequence of increasing events, meaning that <m>A_1 \subseteq A_2 \subseteq A_3 \subseteq \dots</m>. 
+            We want to prove the continuity property of probability: 
+            <me>P\left(\bigcup_{i=1}^{\infty} A_i\right) = \lim_{n \to \infty} P(A_n)</me>
+        </p>
+        <p>
+            <bold>Step 1 (Given):</bold> First, we define a sequence of disjoint events <m>B_i</m> to isolate the increments between the nested sets:
+            <md>
+                <mrow>B_1 \amp = A_1</mrow>
+                <mrow>B_2 \amp = A_2 - A_1</mrow>
+                <mrow>B_3 \amp = A_3 - A_2</mrow>
+                <mrow>\amp \dots</mrow>
+                <mrow>B_i \amp = A_i - A_{i-1}</mrow>
+            </md>
+        </p>
+        <p>
+            Arrange the <term>remaining steps</term> below in the correct logical sequence underneath this initial construction. The next step has been labeled for you. You will use all of the provided blocks.
+        </p>
+    </statement>
+    <blocks>
+        <!-- Step 2 (Now the first draggable block) -->
+        <block order="1">
+            <p>
+                Step 2: Observe that for any finite <m>n</m>, the following are true:
+                <me>\bigcup_{i=1}^n A_i = A_n \mbox{  and  } \bigcup_{i=1}^n B_i =A_n</me>
+            </p>
+        </block>
+        
+        <block order="2">
+            <p>
+              Therefore, we know that: <me> \bigcup_{i=1}^n A_i = \bigcup_{i=1}^n B_i</me>. 
+            </p>
+        </block>
+
+        <block order="3">
+            <p>
+              This equality holds true as <m>n \to \infty</m>. So we can also write: <me> \bigcup_{i=1}^\infty A_i = \bigcup_{i=1}^\infty B_i</me>. 
+            </p>
+        </block>
+
+
+
+        <!-- Step 3 -->
+                <block order="4">
+            <p>
+                Take the probability of each side:
+                <me> P\left(\bigcup_{i=1}^{\infty} A_i\right) = P\left(\bigcup_{i=1}^{\infty} B_i\right) </me>
+            </p>
+        </block>
+        <block order="5">
+            <p>
+                Since the <m>B_i's</m> are disjoint, we can apply Axiom 3:
+                <me> P\left(\bigcup_{i=1}^{\infty} B_i\right) = \sum_{i=1}^{\infty} P(B_i)</me>
+            </p>
+        </block>
+        
+        <!-- Step 4 -->
+        <block order="6">
+            <p>
+                Express the infinite sum as the limit of its finite partial sums (by definition):
+                <me>\sum_{i=1}^{\infty} P(B_i) = \lim_{n \to \infty} \sum_{i=1}^n P(B_i)</me>
+            </p>
+        </block>
+        
+        <!-- Step 5 -->
+        <block order="7">
+            <p>
+                Applying Axiom 3 again (backwards), we have:
+                <me> \lim_{n \to \infty} \sum_{i=1}^n P(B_i) = \lim_{n \to \infty} P\left(\bigcup_{i=1}^n B_i\right) </me>
+            </p>
+        </block>
+
+        <block order="8">
+            <p>
+                 We know that <m>\bigcup_{i=1}^n B_i = A_n </m>. Thus:
+                <me> \lim_{n \to \infty} P\left(\bigcup_{i=1}^n B_i\right) = \lim_{n \to \infty} P(A_n)</me>
+            </p>
+        </block>
+
+            <block order="9">
+            <p>
+                We are done! Putting the pieces together, we have shown that: 
+                <me>P\left(\bigcup_{i=1}^{\infty} A_i\right) = \lim_{n \to \infty} P(A_n)</me>
+            </p>
+        </block>
+        
+    </blocks>
+    
+    <hint>
+        <p>
+            Since you are given the disjoint sets <m>B_i</m> in the problem statement, look for the draggable block that sets up how the finite unions of <m>A_n</m> and <m>B_i</m> match up before you introduce any limits or summation signs.
+        </p>
+    </hint>
+</exercise>
+
+
    </exercises>
 
 
@@ -27,6 +338,48 @@
        Write intro to written part of homework set.....
      </p>
    </introduction>
+
+
+<exercise label="SO-inclusion-exclusion-proof">
+<title>Inclusion-Exclusion principal</title>
+
+  <statement>
+    <p>
+      Use the axioms of probability to prove the inclusion-exclusion principal. 
+    </p>
+
+    <p> For any two events <m>A</m> and <m>B</m>, 
+    </p>
+
+    <me>P(A\cup B)=P(A)+P(B)-P(A \cap B). </me>
+  </statement>
+
+</exercise>
+
+
+<exercise label="SO-distributive-law-proof">
+    <title>Distributive Law</title>
+    <statement>
+<p>
+In-class we proved the first part of the Distributive Law: <me>A \cup (B \cap C)=(A \cup B) \cap (A \cup C).</me>
+</p>
+    
+    <p>
+Taking the same approach, it is your job is to prove the other half! Show that the following is true:
+<me>
+   A \cap (B \cup C)=(A \cap B) \cup (A \cap C) 
+</me>
+
+</p>
+
+<p>
+    Recall: To prove that two sets are equal, we must demonstrate mutual subset containment, i.e. for <m>X=Y</m>, we must have <m>X \subseteq Y</m> and <m>Y \subseteq X</m>.
+</p>
+</statement>
+
+</exercise>
+
+
 
    </exercises>
 

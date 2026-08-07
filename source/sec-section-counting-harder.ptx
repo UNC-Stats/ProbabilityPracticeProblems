@@ -429,6 +429,35 @@
 </task>
 
 </exercise>
+
+<exercise label="counting-harder-poker-lose">
+
+<introduction>
+  <p>
+    See the Poker Hands  in-class activity. 
+    
+    
+  </p>
+</introduction>
+
+<task>
+  <statement>
+    <p>
+      Compute the probability of being dealt a “three-of-a-kind.”
+    </p>
+  </statement>
+</task>
+
+
+<task>
+  <statement>
+    <p>
+      What would be your strategy for computing the probability of not being dealt any of the poker hands? [This is also referred to as a “High Card” hand.] No computations necessary! Just explain what you think the correct approach would be.
+    </p>
+  </statement>
+</task>
+
+</exercise>
    </exercises>
 
 
