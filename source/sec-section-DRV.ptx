@@ -5,17 +5,26 @@
 
 
   
-  <introduction>
-    <p>
-    </p>
-  </introduction>
+<p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+
+ <exercises xml:id="hw-discrete-rv" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
 
   <!-- ==================================================================== -->
   <!-- EXERCISE 1: DISCRETE PROBABILITY SYSTEM                              -->
   <!-- ==================================================================== -->
   <exercise xml:id="ex-int-discrete-prob">
     <title>Interactive Analysis: Discrete Asset Metrics</title>
-    <statement>
+    <introduction>
       <p>
         When evaluating market assets, analysts utilize probabilistic frameworks to model the time remaining on a product's patent after deducting regulatory delays. A biomedical firm tracks the actual commercial patent life, <m>Y</m>, rounded to the nearest integer year, for a recent portfolio of medical software systems. The probability distribution of <m>Y</m> is given in the table below:
       </p>
@@ -34,7 +43,7 @@
           <row><cell>9</cell><cell>0.10</cell></row>
         </tabular>
       </table>
-    </statement>
+    </introduction>
     
 
 
@@ -42,26 +51,26 @@
     <task>
       <statement>
         <p>
-          Calculate the probability that a randomly chosen software portfolio piece features a commercial patent lifespan of <strong>at least 7 years</strong>; that is, find <m>P(Y \ge 7)</m>.
+          Calculate the probability that a randomly chosen software portfolio piece features a commercial patent lifespan of <strong>at least 8 years</strong>; that is, find <m>P(Y \ge 8)</m>.
         </p>
       </statement>
       <choices>
         <choice>
-          <statement><p><m>0.35</m></p></statement>
+          <statement><p><m>0.20</m></p></statement>
           <feedback>
-            <p>Incorrect. This is only the isolated probability of exactly 7 years: <m>P(Y = 7)</m>. The phrase <q>at least 7</q> requires including all outcomes greater than or equal to 7.</p>
+            <p>Incorrect. This is only the isolated probability of exactly 8 years: <m>P(Y = 8)</m>. The phrase <q>at least 8</q> requires including all outcomes greater than or equal to 8.</p>
           </feedback>
         </choice>
         <choice correct="yes">
-          <statement><p><m>0.65</m></p></statement>
+          <statement><p><m>0.30</m></p></statement>
           <feedback>
-            <p>Correct! The event <m>Y \ge 7</m> aggregates the mutually exclusive states where <m>y = 7, 8,</m> or <m>9</m>. Summing these yields: <m>0.35 + 0.20 + 0.10 = 0.65</m>.</p>
+            <p>Correct! The event <m>Y \ge 8</m> aggregates the mutually exclusive states where <m>y = 8</m> or <m>9</m>. Summing these yields: <m>0.20 + 0.10 = 0.30</m>.</p>
           </feedback>
         </choice>
         <choice>
-          <statement><p><m>0.30</m></p></statement>
+          <statement><p><m>0.10</m></p></statement>
           <feedback>
-            <p>Incorrect. This corresponds to the structural complement <m>P(Y \lt 6)</m>, rather than the subset equal to or exceeding 7 years.</p>
+            <p>Incorrect. This corresponds to the probability <m>P(Y \gt 8)=P(Y=9)</m>, rather than the subset equal to or exceeding 8 years.</p>
           </feedback>
         </choice>
         <choice>
@@ -79,13 +88,21 @@
         <p>
           Calculate the expected value, <m>\mu = E(Y)</m>, of the commercial patent life for these software products (in years). Input your final value as a exact decimal.
         </p>
+
+        <p>
+        <fillin width="8" answer="6.85"/>
+      </p>
       </statement>
+
+      
       <evaluation>
         <evaluate>
-          <test correct="yes">6.85</test>
+          <test correct="yes">
+          <numcmp use-answer="yes"/>
           <feedback>
             <p>Excellent! The expected value is the probability-weighted sum of all outcomes: <m>4(0.05) + 5(0.10) + 6(0.20) + 7(0.35) + 8(0.20) + 9(0.10) = 0.20 + 0.50 + 1.20 + 2.45 + 1.60 + 0.90 = 6.85</m> years.</p>
           </feedback>
+          </test>
         </evaluate>
         <evaluate>
           <test>6.5</test>
@@ -93,7 +110,1005 @@
         </evaluate>
       </evaluation>
     </task>
+
+
+    <task>
+      <statement>
+        <p>
+          Also find <m>F(6)</m>. Input your final value as a exact decimal.
+        </p>
+
+        <p>
+        <fillin width="8" answer="0.35"/>
+      </p>
+      </statement>
+
+      
+      <evaluation>
+        <evaluate>
+          <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>Yes! <m>F(6)=P(Y\leq 6)=0.05 + 0.10 + 0.20   = 0.35</m> years.</p>
+          </feedback>
+          </test>
+        </evaluate>
+      </evaluation>
+    </task>
+
+
+    <task>
+      <statement>
+        <p>
+          What is the probability that that a company has at most 6 years to recover research and development costs and make a profit? Input your final value as a exact decimal.
+        </p>
+
+        <p>
+        <fillin width="8" answer="0.35"/>
+      </p>
+      </statement>
+
+      
+      <evaluation>
+        <evaluate>
+          <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>Yes! This is <m>F(6)</m>, which you already computed!</p>
+          </feedback>
+          </test>
+        </evaluate>
+      </evaluation>
+    </task>
+
   </exercise>
 
+
+
+<exercise xml:id="ex-drone-coverage-distribution">
+    <title> campus Drone Logistics and Expected Values</title>
+    <introduction>
+        <p>
+            An automated campus drone delivery service operates from a central hub. The total number of student housing units, <m>N</m>, that the service can reliably reach depends directly on the maximum flight radius clearance distance <m>R</m> (measured in hundreds of meters). 
+        </p>
+        <p>
+            Because the coverage area scales radially outward, the number of reachable units is proportional to the area of a circle defined by radius <m>R</m>, yielding the model:
+            <me>N = C \pi R^2</me>
+            where <m>C</m> is a spatial density constant. For this specific campus cluster, <m>C = 6</m>, and the probability distribution for the random maximum radius clearance <m>R</m> across varying weather/interference thresholds is given below:
+        </p>
+        <table xml:id="table-drone-pmf">
+            <title>Probability Distribution for Flight Radius clearance <m>R</m></title>
+            <tabular halign="center" top="minor" left="minor" bottom="minor" right="minor">
+                <row>
+                    <cell header="yes"><m>r</m></cell>
+                    <cell>21</cell>
+                    <cell>22</cell>
+                    <cell>23</cell>
+                    <cell>24</cell>
+                    <cell>25</cell>
+                    <cell>26</cell>
+                </row>
+                <row>
+                    <cell header="yes"><m>P(R = r)</m></cell>
+                    <cell>0.05</cell>
+                    <cell>0.20</cell>
+                    <cell>0.30</cell>
+                    <cell>0.25</cell>
+                    <cell>0.15</cell>
+                    <cell>0.05</cell>
+                </row>
+            </tabular>
+        </table>
+    </introduction>
+
+    <!-- Part 1: Expected Value of R (Fill-in) -->
+    <task xml:id="task-drone-mean-r">
+        <statement>
+            <p>
+                Find the expected value for the flight radius clearance distance, <m>E(R)</m>. Enter your answer as a decimal.
+            </p>
+
+ <p>
+        <fillin width="8" answer="23.4"/>
+      </p>
+    </statement>
   
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! The expected clearance radius is <m>\mu_R = 23.4</m> (in hundreds of meters):
+
+                <md>
+                    <mrow>E(R) \amp = (21)(0.05) + (22)(0.20) + (23)(0.30) + (24)(0.25) + (25)(0.15) + (26)(0.05)</mrow>
+                    <mrow>E(R) \amp = 1.05 + 4.40 + 6.90 + 6.00 + 3.75 + 1.30 = 23.4</mrow>
+                </md>
+                
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+</evaluation>
+
+
+        <hint>
+            <p>
+                Apply the discrete expected value formula: <m>E(R) = \sum r \cdot P(R = r)</m>. Multiply each radius score by its matching column weight and sum them up.
+            </p>
+        </hint>
+    </task>
+
+    <!-- Part 2: Variance of R (Multiple Choice) -->
+    <task xml:id="task-drone-var-r">
+        <statement>
+            <p>
+                Find the variance for the expected clearance distance, <m>V(R)</m>.
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    <m>1.54</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! First compute the expected value of the squared terms: <m>E(R^2) = \sum r^2 \cdot P(R = r) = 549.1</m>. Then apply the variance short-cut formula: <m>V(R) = E(R^2) - [E(R)]^2 = 549.1 - (23.4)^2 = 549.1 - 547.56 = 1.54</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>549.10</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This value is <m>E(R^2)</m>. To find the true variance, you must subtract the square of the mean, <m>[E(R)]^2</m>, from this intermediate value.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>1.24</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This reflects an arithmetic error during the computation of the individual squared products. Ensure every category value is squared before multiplying by its probability weight.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>23.40</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This is simply the mean value <m>E(R)</m> computed in the previous task, not the measure of dispersion.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+        <hint>
+            <p>
+                Use the variance short-cut formula: <m>V(R) = E(R^2) - [E(R)]^2</m>. First construct <m>E(R^2)</m> by evaluating <m>\sum r^2 \cdot P(R = r)</m>.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                To evaluate the variance of <m>R</m>, we employ the short-cut identity:
+            </p>
+            <p>
+                1. Calculate the raw expectation of the squared values, <m>E(R^2)</m>:
+                <md>
+                    <mrow>E(R^2) \amp = (21^2)(0.05) + (22^2)(0.20) + (23^2)(0.30) + (24^2)(0.25) + (25^2)(0.15) + (26^2)(0.05)</mrow>
+                    <mrow>E(R^2) \amp = (441)(0.05) + (484)(0.20) + (529)(0.30) + (576)(0.25) + (625)(0.15) + (676)(0.05)</mrow>
+                    <mrow>E(R^2) \amp = 22.05 + 96.80 + 158.70 + 144.00 + 93.75 + 33.80 = 549.1</mrow>
+                </md>
+            </p>
+            <p>
+                2. Subtract the squared mean to finalize the variance:
+                <me>V(R) = E(R^2) - [E(R)]^2 = 549.1 - (23.4)^2 = 549.1 - 547.56 = 1.54</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 3: Expected Value of N (Fill-in) -->
+    <task xml:id="task-drone-mean-n">
+        <statement>
+            <p>
+                Compute the expected value for <m>N</m>, the total number of student housing units that the drone platform can serve. Enter your answer as a rounded value to two decimal places.
+            </p>
+        </statement>
+               <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    Approximately <m>10,350.29</m> units
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! By linearity of expectation, we pull out the scalar coefficients: <m>E(N) = E(6 \pi R^2) = 6 \pi E(R^2)</m>. Substituting our previous calculation for <m>E(R^2) = 549.1</m> yields: <m>6 \times \pi \times 549.1 = 3294.6 \pi \approx 10,350.29</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    Approximately <m>10,321.24</m> units
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This error occurs if you mistakenly evaluate the square of the expectation instead of the expectation of the square, computing <m>6 \pi [E(R)]^2 = 6 \pi (23.4)^2 \approx 10,321.24</m>. Remember that for nonlinear functions, <m>E(R^2) \neq [E(R)]^2</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    Approximately <m>3,294.60</m> units
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This is the exact numeric multiplier coefficient matching <m>6 \times 549.1</m>, but you forgot to multiply by the geometric scalar constant <m>\pi \approx 3.14159</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    Approximately <m>441.07</m> units
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This value stems from applying the linear mean value <m>E(R) = 23.4</m> directly to the formula without squaring it, evaluating <m>6 \pi (23.4)</m>.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+        <hint>
+            <p>
+                By linearity of expectation, you can factor out constant multipliers: <m>E(6 \pi R^2) = 6 \pi E(R^2)</m>. Make sure to use the value of <m>E(R^2) = 549.1</m> that you uncovered during your intermediate variance calculations, rather than squaring the final mean from Part 1.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                Because expectation behaves as a linear operator, we can move deterministic multipliers outside the expectation symbol:
+                <me>E(N) = E(C \pi R^2) = C \pi E(R^2)</me>
+                Substituting our structural values (<m>C = 6</m> and our intermediate value <m>E(R^2) = 549.1</m> from the variance step):
+                <me>E(N) = 6 \times \pi \times 549.1 = 3294.6 \pi \approx 10,350.2912</me>
+                Thus, the expected number of reachable campus units is approximately <m>10,350.29</m>.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+
+<exercise xml:id="ex-api-demand-mgf-complex">
+    <title>API Call Demands and Moment Generating Functions</title>
+    <introduction>
+        <p>
+            A backend system developer constructs a discrete probability distribution for the daily demand for a specific cloud-hosted premium AI API script. Let the random variable <m>Y</m> represent the number of daily execution blocks, measured in hundreds of calls (so <m>Y = 1</m> means 100 calls, <m>Y = 2</m> means 200 calls, etc.):
+            <ul>
+                <li><p><m>P(Y = 0) = 0.1</m> (0 calls are made)</p></li>
+                <li><p><m>P(Y = 1) = 0.3</m> (100 calls are made)</p></li>
+                <li><p><m>P(Y = 2) = 0.4</m> (200 calls are made)</p></li>
+                <li><p><m>P(Y = 3) = 0.2</m> (300 calls are made)</p></li>
+            </ul>
+        </p>
+    </introduction>
+
+    <!-- Part 1: Finding M_Y(s) (5-Option Multiple Choice) -->
+    <task xml:id="task-mgf-base-v5">
+        <statement>
+            <p>
+                Find the moment generating function <m>M_Y(s)</m> for the random variable <m>Y</m>.
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    <m>M_Y(s) = 0.1 + 0.3e^s + 0.4e^{2s} + 0.2e^{3s}</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! By definition, the MGF of a discrete random variable is <m>M_Y(s) = E[e^{sY}] = \sum e^{sy} \cdot P(Y = y)</m>. Substituting our weights yields <m>0.1e^{0} + 0.3e^{1s} + 0.4e^{2s} + 0.2e^{3s} = 0.1 + 0.3e^s + 0.4e^{2s} + 0.2e^{3s}</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>M_Y(s) = 0.1e^s + 0.3e^{2s} + 0.4e^{3s} + 0.2e^{4s}</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This shifts the values of the support array forward by 1 index point instead of matching them directly to the exponents of <m>e</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>M_Y(s) = 1.7e^s</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This looks like you tried to use the expected value <m>E(Y) = 1.7</m> directly inside a single exponent. The MGF must preserve the individual probabilities as distinct exponential coefficients.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>M_Y(s) = 0.1 + 0.3s + 0.4s^2 + 0.2s^3</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This is the structural format for a standard probability generating function (PGF) rather than a moment generating function (MGF), which requires the base Euler variable <m>e</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>M_Y(s) = 0.2 + 0.4e^s + 0.3e^{2s} + 0.1e^{3s}</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This reverses the order of the probability weights, assigning the higher probabilities to the wrong values of the support array.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part 2: Finding M_C(s) (5-Option Multiple Choice) -->
+    <task xml:id="task-mgf-cost-v5">
+        <statement>
+            <p>
+                The platform bills the developer at a basic linear rate of <m>\$0.10</m> per single API execution, which equates to a flat cost of <m>\$10</m> per unit block of 100 calls. Find the moment generating function <m>M_C(s)</m> for the daily operational cost <m>C = 10Y</m>.
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    <m>M_C(s) = 0.1 + 0.3e^{10s} + 0.4e^{20s} + 0.2e^{30s}</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! For a linear transformation scaling a random variable by a constant <m>k</m>, the scaling identity states that <m>M_{kY}(s) = M_Y(ks)</m>. Substituting <m>10s</m> into our function from Part 1 transforms <m>e^s \to e^{10s}</m>, <m>e^{2s} \to e^{20s}</m>, and <m>e^{3s} \to e^{30s}</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>M_C(s) = 1.0 + 3.0e^s + 4.0e^{2s} + 2.0e^{3s}</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This scales the outer probability weights by 10 instead of mapping the transformation multiplier inside the structural exponents.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>M_C(s) = 10 \cdot (0.1 + 0.3e^s + 0.4e^{2s} + 0.2e^{3s})</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. Multiplying the entire MGF by 10 implies an expansion of the total probability area out of unity, which breaks foundational scaling rules.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>M_C(s) = 0.1 + 0.3e^{s+10} + 0.4e^{2s+10} + 0.2e^{3s+10}</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. Adding 10 to the exponent is the rule for translating a random variable by a constant addition (<m>Y + 10</m>), not scaling it by a multiplier product (<m>10Y</m>).
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>M_C(s) = 0.1 + 0.3e^{10s} + 0.4e^{100s} + 0.2e^{1000s}</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This squares or cubes the multiplier scaling factor inside the exponent instead of keeping the constant linear scaling factor of 10 intact across all tasks.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part 3: Expected Value (Fill-in) -->
+    <task xml:id="task-mgf-expectation-v5">
+        <statement>
+            <p>
+                Use your moment generating function from Part 2 to find the expected daily linear cost of using the tool, <m>E(C)</m>. Enter your answer as an integer dollar value.
+            </p>
+       <p>
+        <fillin width="8" answer="17"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! The expected daily server cost is <m>\$17</m>:
+</p>
+<p>
+               We differentiate <m>M_C(s) = 0.1 + 0.3e^{10s} + 0.4e^{20s} + 0.2e^{30s}</m> with respect to <m>s</m>:
+                <me>M_C'(s) = 0 + 0.3(10)e^{10s} + 0.4(20)e^{20s} + 0.2(30)e^{30s} = 3e^{10s} + 8e^{20s} + 6e^{30s}</me>
+                Evaluating this first derivative at <m>s = 0</m> yields the expected value:
+                <me>E(C) = M_C'(0) = 3e^{0} + 8e^{0} + 6e^{0} = 3(1) + 8(1) + 6(1) = 17</me>
+            </p>
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+        <hint>
+            <p>
+                Recall that the first derivative of the moment generating function evaluated at zero gives the raw first moment: <m>E(C) = M_C'(0)</m>. Take the derivative of your expression with respect to <m>s</m>, then plug in <m>s = 0</m>.
+            </p>
+        </hint>
+    </task>
+
+    <!-- Part 4: Variance (Fill-in) -->
+    <task xml:id="task-mgf-variance-v5">
+        <statement>
+            <p>
+                Use your moment generating function from Part 2 to find the variance for the daily cost of using the script, <m>V(C)</m>. Enter your answer as an integer value.
+            </p>
+               <p>
+        <fillin width="8" answer="81"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! The variance for the daily operational cost is <m>81</m>.
+</p>
+                          <p>
+                1. Take the second derivative of the cost MGF by differentiating <m>M_C'(s) = 3e^{10s} + 8e^{20s} + 6e^{30s}</m>:
+                <me>M_C''(s) = 3(10)e^{10s} + 8(20)e^{20s} + 6(30)e^{30s} = 30e^{10s} + 160e^{20s} + 180e^{30s}</me>
+            </p>
+            <p>
+                2. Evaluate this second derivative at <m>s = 0</m> to isolate the second raw moment:
+                <me>E(C^2) = M_C''(0) = 30e^{0} + 160e^{0} + 180e^{0} = 30 + 160 + 180 = 370</me>
+            </p>
+            <p>
+                3. Apply the variance shortcut formula utilizing our mean <m>E(C) = 17</m> found in Part 3:
+                <me>V(C) = E(C^2) - [E(C)]^2 = 370 - (17)^2 = 370 - 289 = 81</me>
+                
+            </p>
+
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+
+        <hint>
+            <p>
+                Find the second raw moment by taking the second derivative: <m>E(C^2) = M_C''(0)</m>. Once computed, use the shortcut identity to isolate variance: <m>V(C) = E(C^2) - [E(C)]^2</m>.
+            </p>
+        </hint>
+
+    </task>
+<!-- Part 5: SD (fill-in)-->
+    <task xml:id="task-mgf-variance-to-sd">
+        <statement>
+            <p>
+                Now find the standard deviation for the daily cost of using the script. Enter your answer as an integer value.
+            </p>
+               <p>
+        <fillin width="8" answer="9"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! The standard deviation is the square root of the variance.
+</p>
+
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+    </task>
+
+
+    <!-- Part 6: Complex Nonlinear Pricing Structure (Fill-in) -->
+    <task xml:id="task-mgf-complex-cost">
+        <statement>
+        <p>
+            Suppose the cloud host updates their enterprise billing plan to a nonlinear structure. The developer pays a fixed baseline fee of <m>\$5</m> per day, plus a variable optimization surcharge that tracks quadratically with execution volume, modeled as <m>2Y^2</m>. The total daily cost is given by the random variable:
+            <me>Z = 5 + 2Y^2</me>
+        </p>
+        <p>
+            Utilize the derivative properties of the moment generating function to compute the expected daily cost under this updated plan, <m>E(Z)</m>.
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+            <statement>
+                <m>\$12.40</m>
+            </statement>
+            <feedback>
+                <p>
+                    Correct! By linearity of expectation, <m>E(Z) = 5 + 2E(Y^2)</m>. Differentiating the base MGF twice yields <m>M_Y''(s) = 0.3e^s + 1.6e^{2s} + 1.8e^{3s}</m>. Evaluating at zero gives the second raw moment: <m>E(Y^2) = M_Y''(0) = 0.3 + 1.6 + 1.8 = 3.7</m>. Plugging this back in yields <m>E(Z) = 5 + 2(3.7) = 12.40</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>\$10.78</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This occurs if you evaluate the square of the linear mean instead of using the second moment, computing <m>5 + 2[E(Y)]^2 = 5 + 2(1.7)^2 = 10.78</m>. Remember that for nonlinear models, <m>E(Y^2) \neq [E(Y)]^2</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>\$7.40</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. You successfully determined the variable surcharge component <m>2E(Y^2) = 2(3.7) = 7.40</m>, but you forgot to add the fixed daily baseline subscription fee of <m>\$5</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>\$8.70</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This happens if you find the raw second moment <m>E(Y^2) = 3.7</m> and add the fixed fee of <m>\$5</m> directly, forgetting to multiply the variable term by its scalar coefficient of 2.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>\$3.70</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This value is only the raw second moment <m>E(Y^2) = M_Y''(0) = 3.7</m>. You must evaluate this value through the complete transformation function <m>5 + 2E(Y^2)</m>.
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+    <hint>
+        <p>
+            By linearity of expectation, you can split up the expression: <m>E(5 + 2Y^2) = 5 + 2E(Y^2)</m>. Recall that the second raw moment of a random variable is found by evaluating the second derivative of its MGF at zero: <m>E(Y^2) = M_Y''(0)</m>. Differentiate <m>M_Y(s)</m> twice with respect to <m>s</m>, plug in <m>s = 0</m>, and finish the arithmetic.
+        </p>
+    </hint>
+    <solution>
+        <p>
+            To evaluate the expected value of the nonlinear pricing model <m>Z = 5 + 2Y^2</m>, we invoke the linearity property of expectations:
+            <me>E(Z) = E(5 + 2Y^2) = 5 + 2E(Y^2)</me>
+        </p>
+        <p>
+            1. Find the second raw moment <m>E(Y^2)</m> by taking the second derivative of the given demand MGF, <m>M_Y(s) = 0.1 + 0.3e^s + 0.4e^{2s} + 0.2e^{3s}</m>:
+            <me>M_Y'(s) = 0.3e^s + 0.8e^{2s} + 0.6e^{3s}</me>
+            <me>M_Y''(s) = 0.3e^s + 1.6e^{2s} + 1.8e^{3s}</me>
+        </p>
+        <p>
+            2. Evaluate <m>M_Y''(0)</m> by substituting <m>s = 0</m> to solve for the second moment:
+            <me>E(Y^2) = M_Y''(0) = 0.3e^0 + 1.6e^0 + 1.8e^0 = 0.3 + 1.6 + 1.8 = 3.7</me>
+        </p>
+        <p>
+            3. Substitute <m>E(Y^2) = 3.7</m> back into our linear expectation equation to calculate the total expected daily cost:
+            <me>E(Z) = 5 + 2(3.7) = 5 + 7.4 = 12.4</me>
+            Under the quadratic pricing system, the expected daily server bill is <m>\$12.40</m>.
+        </p>
+    </solution>
+</task>
+</exercise>
+
+
+</exercises>
+  
+
+
+
+
+
+
+  <exercises xml:id="hw-discrete-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+
+<exercise xml:id="ex-matching-children-distribution">
+    <title>Discrete Distribution: Matching Animals</title>
+    <introduction>
+        <p>
+            A problem in a test given to small children asks them to match each of three pictures of animals to the word identifying that animal. Define the random variable <m>Y</m> to be the number of correct matches. Suppose a child assigns the three words completely at random to the three pictures.
+        </p>
+    </introduction>
+    
+    <hint>
+        <p>
+            List out all <m>3! = 6</m> permutations of assigning words to pictures to find out how many matches occur in each layout. Notice that it is physically impossible to get exactly 2 matches out of 3 total items—if two are correct, the third must be correct as well.
+        </p>
+    </hint>
+
+    <!-- Part 1: Probability Distribution -->
+    <task xml:id="task-matching-probability-dist">
+        <introduction>
+            <p>
+                Find the probability distribution for the random variable <m>Y</m>.
+            </p>
+        </introduction>
+        <solution>
+            <p>
+                Let the correct matching order of the three animal words be represented by the sequence <m>1, 2, 3</m>. There are <m>3! = 6</m> equally likely ways a child can randomly assign the three words:
+                <ul>
+                    <li><p><m>(1, 2, 3)</m> gives <m>3</m> matches.</p></li>
+                    <li><p><m>(1, 3, 2)</m> gives <m>1</m> match.</p></li>
+                    <li><p><m>(2, 1, 3)</m> gives <m>1</m> match.</p></li>
+                    <li><p><m>(2, 3, 1)</m> gives <m>0</m> matches.</p></li>
+                    <li><p><m>(3, 1, 2)</m> gives <m>0</m> matches.</p></li>
+                    <li><p><m>(3, 2, 1)</m> gives <m>1</m> match.</p></li>
+                </ul>
+                Summarizing these counts into a discrete probability mass function <m>P(Y = y)</m>:
+                <table xml:id="table-matching-pmf">
+                    <title>Probability Distribution of <m>Y</m></title>
+                    <tabular halign="center" top="minor" left="minor" bottom="minor" right="minor">
+                        <row>
+                            <cell header="yes"><m>y</m></cell>
+                            <cell>0</cell>
+                            <cell>1</cell>
+                            <cell>2</cell>
+                            <cell>3</cell>
+                        </row>
+                        <row>
+                            <cell header="yes"><m>P(Y = y)</m></cell>
+                            <cell><m>\frac{2}{6} = \frac{1}{3}</m></cell>
+                            <cell><m>\frac{3}{6} = \frac{1}{2}</m></cell>
+                            <cell><m>0</m></cell>
+                            <cell><m>\frac{1}{6}</m></cell>
+                        </row>
+                    </tabular>
+                </table>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 2: Expected Value -->
+    <task xml:id="task-matching-expected-value">
+        <statement>
+            <p>
+                Find the expected number of matches, <m>E(Y)</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Using the definition of expected value for a discrete random variable, <m>\mu_Y = E(Y) = \sum y \cdot P(Y = y)</m>:
+                <md>
+                    <mrow>E(Y) \amp = (0)\left(\frac{2}{6}\right) + (1)\left(\frac{3}{6}\right) + (2)(0) + (3)\left(\frac{1}{6}\right)</mrow>
+                    <mrow>E(Y) \amp = 0 + \frac{3}{6} + 0 + \frac{3}{6} = \frac{6}{6} = 1</mrow>
+                </md>
+                The expected number of correct matches is <m>\mu_Y = 1</m>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 3: Variance and Standard Deviation -->
+    <task xml:id="task-matching-variance-sd">
+        <statement>
+            <p>
+                Find the variance and standard deviation for the expected number of matches. Use the limit definition of variance rather than the short-cut formula: <m>V(Y) = E[(Y - \mu_Y)^2]</m>, where <m>\mu_Y = E(Y)</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Using the definition-based variance formula with our mean <m>\mu_Y = 1</m>:
+                <md>
+                    <mrow>V(Y) \amp = \sum (y - \mu_Y)^2 \cdot P(Y = y)</mrow>
+                    <mrow>V(Y) \amp = (0 - 1)^2\left(\frac{2}{6}\right) + (1 - 1)^2\left(\frac{3}{6}\right) + (2 - 1)^2(0) + (3 - 1)^2\left(\frac{1}{6}\right)</mrow>
+                    <mrow>V(Y) \amp = (-1)^2\left(\frac{2}{6}\right) + (0)^2\left(\frac{3}{6}\right) + (1)^2(0) + (2)^2\left(\frac{1}{6}\right)</mrow>
+                    <mrow>V(Y) \amp = 1\left(\frac{2}{6}\right) + 0 + 0 + 4\left(\frac{1}{6}\right) = \frac{2}{6} + \frac{4}{6} = \frac{6}{6} = 1</mrow>
+                </md>
+                The variance is <m>V(Y) = 1</m>. To find the standard deviation <m>\sigma_Y</m>, we take the square root of the variance:
+                <me>\sigma_Y = \sqrt{V(Y)} = \sqrt{1} = 1</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 4: Interpretation -->
+    <task xml:id="task-matching-interpretation">
+        <statement>
+            <p>
+                Write a one-sentence interpretation, in the context of the scenario, for the mean (expected value) and standard deviation that you computed.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                If a large number of small children guess the animal matches completely at random, they will correctly identify an average of <m>1</m> animal picture, with a typical deviation of <m>1</m> correct match away from that average.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+<exercise xml:id="ex-server-security-distribution">
+    <title>Discrete Distributions: Server Security Audits</title>
+    <introduction>
+        <p>
+            During a campus hackathon, the computer science department audited student web servers for two critical security configuration vulnerabilities. The automated scanner found that <m>20\%</m> of the student servers had neither vulnerability, <m>40\%</m> had Vulnerability A, and <m>50\%</m> had Vulnerability B (and of course, some had both tracking vulnerabilities). 
+        </p>
+
+        <p>
+            Suppose a student web server is randomly selected from those audited in the county. We define the discrete random variable <m>X</m> to be the total number of security vulnerabilities found on that server.
+        </p>
+    </introduction>
+    
+    <hint>
+        <p>
+            Start by calculating the intersection of having both vulnerabilities using the inclusion-exclusion principle. Remember that the complement of having at least one vulnerability is having neither (<m>0.20</m>). Therefore, the union of having at least one vulnerability is <m>1 - 0.20 = 0.80</m>.
+        </p>
+    </hint>
+
+    <!-- Part 1: Probability Distribution PMF and Graph -->
+    <task xml:id="task-security-pmf">
+        <statement>
+            <p>
+                Find the probability distribution (Probability Mass Function) for the random variable <m>X</m> and sketch a graph of the resulting distribution.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Let <m>A</m> be the event a server has Vulnerability A, and <m>B</m> be the event a server has Vulnerability B. We are given <m>P(A) = 0.40</m>, <m>P(B) = 0.50</m>, and the probability of neither is <m>P((A \cup B)^c) = 0.20</m>.
+                <ul>
+                    <li><p>The probability of having at least one vulnerability is: <m>P(A \cup B) = 1 - 0.20 = 0.80</m>.</p></li>
+                    <li><p>Using the Inclusion-Exclusion Principle, find the overlap of having both vulnerabilities (<m>X = 2</m>): 
+                        <me>P(A \cap B) = P(A) + P(B) - P(A \cup B) = 0.40 + 0.50 - 0.80 = 0.10</me>
+                    </p></li>
+                    <li><p>The probability of having exactly one vulnerability (<m>X = 1</m>) is the remainder of the union:
+                        <me>P(X = 1) = P(A \cup B) - P(A \cap B) = 0.80 - 0.10 = 0.70</me>
+                    </p></li>
+                    <li><p>The probability of having zero vulnerabilities (<m>X = 0</m>) is given directly as <m>0.20</m>.</p></li>
+                </ul>
+            </p>
+            <p>
+                Summarizing this into the Probability Mass Function (PMF):
+                <table xml:id="table-security-pmf-values">
+                    <title>Probability Mass Function for <m>X</m></title>
+                    <tabular halign="center" top="minor" left="minor" bottom="minor" right="minor">
+                        <row>
+                            <cell header="yes"><m>x</m></cell>
+                            <cell>0</cell>
+                            <cell>1</cell>
+                            <cell>2</cell>
+                        </row>
+                        <row>
+                            <cell header="yes"><m>P(X = x)</m></cell>
+                            <cell>0.20</cell>
+                            <cell>0.70</cell>
+                            <cell>0.10</cell>
+                        </row>
+                    </tabular>
+                </table>
+            </p>
+            <p>
+                Below is the plotted line-pin graph representing this discrete probability distribution:
+            </p>
+            <image xml:id="tikz-security-pmf-graph">
+                <description>A discrete line plot showing bars at x=0 with height 0.2, x=1 with height 0.7, and x=2 with height 0.1.</description>
+                <latex-image>
+                    \begin{tikzpicture}[scale=0.8]
+                        \fill[white] (-1,-1) rectangle (4,5);
+                        \draw[-&gt;,thick] (-0.5,0) -- (3.5,0) node[right] {$x$};
+                        \draw[-&gt;,thick] (0,-0.2) -- (0,4.5) node[above] {$P(X=x)$};
+                        
+                        % Gridlines and ticks
+                        \foreach \y/\label in {1/0.2, 2/0.4, 3/0.6, 3.5/0.7, 4/0.8} {
+                            \draw[gray!30,dashed] (-0.2,\y) -- (3.2,\y);
+                            \draw (0.05,\y) -- (-0.05,\y) node[left,scale=0.8] {\label};
+                        }
+                        \foreach \x in {0,1,2,3} {
+                            \draw (\x,0.05) -- (\x,-0.05) node[below,scale=0.8] {\x};
+                        }
+                        
+                        % PMF Lines
+                        \draw[draw=blue,line width=2pt] (0,0) -- (0,1);
+                        \fill[blue] (0,1) circle (2.5pt);
+                        
+                        \draw[draw=blue,line width=2pt] (1,0) -- (1,3.5);
+                        \fill[blue] (1,3.5) circle (2.5pt);
+                        
+                        \draw[draw=blue,line width=2pt] (2,0) -- (2,0.5);
+                        \fill[blue] (2,0.5) circle (2.5pt);
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+        </solution>
+    </task>
+
+    <!-- Part 2: Cumulative Distribution Function CDF and Graph -->
+    <task xml:id="task-security-cdf">
+        <statement>
+            <p>
+                Find the cumulative distribution function (CDF) for the random variable <m>X</m>, defined as <m>F_X(x) = P(X \le x)</m>, and sketch a graph of the resulting distribution.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                The cumulative distribution function is a step function that accumulates probabilities at each discrete integer step:
+                <me>
+                    F_X(x) = \begin{cases} 
+                    0 \amp \text{for } x \lt 0 \\ 
+                    0.20 \amp \text{for } 0 \le x \lt 1 \\ 
+                    0.90 \amp \text{for } 1 \le x \lt 2 \\ 
+                    1.00 \amp \text{for } x \ge 2 
+                    \end{cases}
+                </me>
+            </p>
+            <p>
+                Below is the plotted step-graph representing this cumulative distribution function:
+            </p>
+            <image xml:id="tikz-security-cdf-graph">
+                <description>A step function plot showcasing flat lines with solid starting circles and open ending circles at y=0.2 from 0 to 1, y=0.9 from 1 to 2, and y=1.0 for x equal to or greater than 2.</description>
+                <latex-image>
+                    \begin{tikzpicture}[scale=0.8]
+                        \fill[white] (-1.5,-1) rectangle (4.5,5.5);
+                        \draw[-&gt;,thick] (-1,0) -- (4,0) node[right] {$x$};
+                        \draw[-&gt;,thick] (0,-0.2) -- (0,5.2) node[above] {$F_X(x)$};
+                        
+                        % Ticks and labels
+                        \draw (0.05,1) -- (-0.05,1) node[left,scale=0.8] {0.2};
+                        \draw (0.05,4.5) -- (-0.05,4.5) node[left,scale=0.8] {0.9};
+                        \draw (0.05,5) -- (-0.05,5) node[left,scale=0.8] {1.0};
+                        
+                        \foreach \x in {-1,1,2,3} {
+                            \draw (\x,0.05) -- (\x,-0.05) node[below,scale=0.8] {\x};
+                        }
+                        
+                        % Step lines
+                        \draw[blue,very thick] (-1,0) -- (0,0);
+                        \fill[white] (0,0) circle (2pt); \draw[blue] (0,0) circle (2pt);
+                        
+                        \draw[blue,very thick] (0,1) -- (1,1);
+                        \fill[blue] (0,1) circle (2pt);
+                        \fill[white] (1,1) circle (2pt); \draw[blue] (1,1) circle (2pt);
+                        
+                        \draw[blue,very thick] (1,4.5) -- (2,4.5);
+                        \fill[blue] (1,4.5) circle (2pt);
+                        \fill[white] (2,4.5) circle (2pt); \draw[blue] (2,4.5) circle (2pt);
+                        
+                        \draw[blue,very thick] (2,5) -- (3.8,5);
+                        \fill[blue] (2,5) circle (2pt);
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+        </solution>
+    </task>
+
+    <!-- Part 3: Expected Value -->
+    <task xml:id="task-security-expected-value">
+        <statement>
+            <p>
+                Compute the expected number of vulnerabilities, <m>E(X)</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Using the definition of expected value for a discrete random variable, <m>E(X) = \sum x \cdot P(X = x)</m>:
+                <md>
+                    <mrow>E(X) \amp = (0)(0.20) + (1)(0.70) + (2)(0.10)</mrow>
+                    <mrow>E(X) \amp = 0 + 0.70 + 0.20 = 0.90</mrow>
+                </md>
+                The expected number of configuration vulnerabilities per server is <m>0.90</m>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 4: Shortcut Variance -->
+    <task xml:id="task-security-variance">
+        <statement>
+            <p>
+                Compute the variance for the expected number of vulnerabilities using the variance short-cut formula: <m>V(X) = E(X^2) - [E(X)]^2</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                1. First, compute the expected value of the squared random variable, <m>E(X^2) = \sum x^2 \cdot P(X = x)</m>:
+                <md>
+                    <mrow>E(X^2) \amp = (0^2)(0.20) + (1^2)(0.70) + (2^2)(0.10)</mrow>
+                    <mrow>E(X^2) \amp = (0)(0.20) + (1)(0.70) + (4)(0.10)</mrow>
+                    <mrow>E(X^2) \amp = 0 + 0.70 + 0.40 = 1.10</mrow>
+                </md>
+            </p>
+            </solution>
+</task>
+</exercise>
+
+
+
+<exercise xml:id="ex-server-security-distribution-mgf">
+    <title>Discrete Distributions: Server Security Audits - Part 2</title>
+    <introduction>
+        <p>
+            Refer to the previous problem. During a campus hackathon, the computer science department audited student web servers for two critical security configuration vulnerabilities. The automated scanner found that <m>20\%</m> of the student servers had neither vulnerability, <m>40\%</m> had Vulnerability A, and <m>50\%</m> had Vulnerability B (and of course, some had both tracking vulnerabilities). 
+        </p>
+        
+        <p>
+            Suppose a student web server is randomly selected from those audited in the county. We define the discrete random variable <m>X</m> to be the total number of security vulnerabilities found on that server.
+        </p>
+    </introduction>
+    
+    <hint>
+        <p>
+            Recall: <m>	 M_X (s)=E(e^{sX}).</m>.
+        </p>
+    </hint>
+
+    <!-- Part 1: MGF -->
+    <task xml:id="task-security-mgf">
+        <statement>
+            <p>
+                Find the moment generating function (MGF) for random variable <m>X</m>.
+            </p>
+        </statement>
+        <solution>
+            <p> 
+               <me>M_X (s)=0.2+0.7e^s+0.1e^{2s}</me>
+            </p>
+            
+    
+        </solution>
+    </task>
+
+    <!-- Part 2: Expected-Value-MGF -->
+    <task xml:id="task-security-mgf-expected-value">
+        <statement>
+            <p>
+              Use the MGF to recompute the expected number of impurities. Recall: 
+              <me>M_X^{(k)} (0)=E(X^k)</me>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <me>
+                  E(X)=M_X^{'} (0)=0.7e^0+0.2e^{2(0)}=0.90
+                </me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 3: MGF-Variance -->
+    <task xml:id="task-security-mgf-variance">
+        <statement>
+            <p>
+                Use the moment generating function to recompute the variance for the expected number of impurities. You'll need to use the MGF to find the second moment, and then apply the variance short-cut formula.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <me>E(X^2 )=M_X^{''} (0)=0.7e^0+0.4e^{2(0)} =1.1   \implies V(X)=0.29 </me>
+            </p>
+            </solution>
+</task>
+</exercise>
+
+
+
+   </exercises>
+
 </section>
