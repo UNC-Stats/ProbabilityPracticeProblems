@@ -16,6 +16,399 @@
      </p>
    </introduction>
 
+
+<exercise xml:id="ex-notification-filter-bayes">
+    <title>Smart Filter Metrics and Bayes' Theorem</title>
+    <introduction>
+        <p>
+            An AI-powered notification app filters a student's incoming phone pings into three mutually exclusive categories that partition their daily alerts: Academic alerts (<m>A_1</m>), Student Club updates (<m>A_2</m>), and Promotional spam (<m>A_3</m>). The base probabilities for an incoming notification falling into these groups are:
+            <me>P(A_1) = 0.3, \quad P(A_2) = 0.1, \quad P(A_3) = 0.6</me>
+            Let <m>E</m> be the event that a notification triggers an immediate haptic vibration alert. The app's filter settings yield the following conditional probabilities:
+            <me>P(E \mid A_1) = 0.3, \quad P(E \mid A_2) = 0.5, \quad P(E \mid A_3) = 0.7</me>
+        </p>
+    </introduction>
+
+    <!-- Part 1: Law of Total Probability (Fill-in-the-blank) -->
+    <task>
+        <statement>
+            <p>
+                What is the total probability <m>P(E)</m> that a randomly arriving notification will trigger a haptic vibration alert? Enter your answer as a decimal value rounded to two decimal places.
+            </p>
+       <p>
+        <fillin width="8" answer="0.56"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              To find the total probability of event <m>E</m>, we apply the <term>Law of Total Probability</term> across the partition:
+                <md>
+                    <mrow>P(E) \amp = P(E \mid A_1)P(A_1) + P(E \mid A_2)P(A_2) + P(E \mid A_3)P(A_3)</mrow>
+                    <mrow>P(E) \amp = (0.3)(0.3) + (0.5)(0.1) + (0.7)(0.6)</mrow>
+                    <mrow>P(E) \amp = 0.09 + 0.05 + 0.42 = 0.56</mrow>
+                </md>
+                Thus, the overall probability that an incoming alert vibrates is <m>0.56</m>.
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+</evaluation>
+        <hint>
+            <p>
+                Apply the Law of Total Probability: <m>P(E) = P(E \mid A_1)P(A_1) + P(E \mid A_2)P(A_2) + P(E \mid A_3)P(A_3)</m>. Multiply each conditional probability by its corresponding category weight, then add them all together.
+            </p>
+        </hint>
+    </task>
+
+    <!-- Part 2: Bayes' Theorem (Multiple Choice) -->
+    <task>
+        <statement>
+            <p>
+                Suppose the student's phone vibrates, indicating event <m>E</m> has occurred. What is the updated posterior probability <m>P(A_2 \mid E)</m> that this specific notification came from a Student Club update?
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    <m>0.0893</m> 
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! By applying Bayes' Theorem, we calculate the joint intersection of a Club update vibrating divided by the total vibration probability found in Part 1: <m>\frac{P(E \mid A_2)P(A_2)}{P(E)} = \frac{0.5 \times 0.1}{0.56} = \frac{0.05}{0.56} \approx 0.0893</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>0.5000</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This is the forward conditional probability <m>P(E \mid A_2)</m>. You must look for the backward posterior probability <m>P(A_2 \mid E)</m> by factoring in how rare Club updates are relative to everything else.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>0.1000</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This is the prior baseline probability <m>P(A_2)</m> before checking if the phone vibrated. Because Club alerts are less likely to vibrate than promotional updates, knowing that a vibration happened should decrease this probability slightly.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>0.1786</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This mistake occurs if you forget to factor in the base rate, dividing <m>P(E \mid A_2)</m> directly by <m>P(E)</m> (<m>0.5 / 0.56</m>). Remember to multiply the numerator by the prior probability weight <m>P(A_2) = 0.1</m>.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+        <hint>
+            <p>
+                Apply Bayes' Theorem: <me>P(A_2 \mid E) = \frac{P(E \mid A_2)P(A_2)}{P(E)}</me> Substitute your individual target segment count into the numerator and utilize the total probability value calculated in Part 1 as your denominator.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                To solve for the conditional inverse probability, we employ <term>Bayes' Theorem</term>:
+                <me>P(A_2 \mid E) = \frac{P(E \mid A_2)P(A_2)}{P(E)}</me>
+            </p>
+            <p>
+                1. Compute the numerator (the probability that a notification is a Club alert AND triggers a vibration):
+                <me>P(E \cap A_2) = P(E \mid A_2)P(A_2) = 0.5 \times 0.1 = 0.05</me>
+            </p>
+            <p>
+                2. Divide by the total probability space <m>P(E) = 0.56</m> evaluated in the previous task:
+                <me>P(A_2 \mid E) = \frac{0.05}{0.56} = \frac{5}{56} \approx 0.0893</me>
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+
+<exercise xml:id="ex-heart-disease-bayes-matching">
+    <title>Periodontal Disease and Heart Attack Risks</title>
+    <statement>
+        <p>
+            Medical researchers have uncovered strong statistical links between oral health and cardiovascular conditions: <m>83\%</m> of people who have suffered a heart attack had periodontal disease (an inflammation of the gums), while only <m>34\%</m> of heart-healthy people have this disease. 
+        </p>
+        <p>
+            Suppose that in a certain community, heart attacks occur with a baseline probability of <m>15\%</m>. Let <m>H</m> represent the event that an individual has a heart attack, and let <m>G</m> represent the event that an individual has periodontal gum disease.
+        </p>
+        <p>
+            Match each probability description or algebraic notation on the left with its correct calculated numerical value or expression on the right. Note that there are extra numbers on the right that act as distractors!
+        </p>
+    </statement>
+
+    <matching>
+        <!-- Part 1: Component Identification Given Values -->
+  
+            <premise ref="h" > <m>P(H)</m></premise>
+            <response xml:id="h"><m>0.1500</m></response>
+
+            <premise ref="g_giv_h"><m>P(G \mid H)</m></premise>
+            <response xml:id="g_giv_h"><m>0.8300</m></response>
+
+            <premise ref="g_giv_hc"> <m>P(G \mid H^c)</m></premise>
+            <response xml:id="g_giv_hc"><m>0.3400</m></response>
+
+
+        <!-- Part 2: Intermediate and Final Computations -->
+
+            <premise ref="g"><m>P(G)</m></premise>
+            <response xml:id="g"><m>0.4135</m></response>
+
+            <premise ref="h_giv_g"> <m>P(H \mid G)</m></premise>
+            <response xml:id="h_giv_g"><m>0.3011</m></response>
+
+
+        <!-- DISTRACTORS (Empty premises create options on the right with no matching pair) -->
+  
+            <response><m>0.1245</m></response>
+            <response><m>0.0674</m></response>
+            <response><m>0.5865</m></response>
+
+    </matching>
+    
+    <hint>
+        <p>
+            First identify your baseline priors: <m>P(H) = 0.15</m> and its complement <m>P(H^c) = 0.85</m>. Then locate the two conditional values from the text. Use the Law of Total Probability to compute the total rate of gum disease <m>P(G) = P(G \mid H)P(H) + P(G \mid H^c)P(H^c)</m> before evaluating your final Bayes' Theorem formula.
+        </p>
+    </hint>
+    
+    <solution>
+        <p>
+            Let <m>H</m> denote the event that a person has a heart attack, and let <m>G</m> denote the event that a person has periodontal gum disease. From the problem setup, we can pull out our given components directly:
+            <ul>
+                <li><p><m>P(H) = 0.15 \implies P(H^c) = 1 - 0.15 = 0.85</m></p></li>
+                <li><p><m>P(G \mid H) = 0.83</m></p></li>
+                <li><p><m>P(G \mid H^c) = 0.34</m></p></li>
+            </ul>
+        </p>
+        <p>
+            <bold>Step-by-step Solution for the Remaining Calculations:</bold>
+        </p>
+        <p>
+            1. <term>Find the Total Probability of Gum Disease, <m>P(G)</m>:</term>
+            We apply the Law of Total Probability to find the total weighted footprint of the disease across the community:
+            <md>
+                <mrow>P(G) \amp = P(G \mid H)P(H) + P(G \mid H^c)P(H^c)</mrow>
+                <mrow>P(G) \amp = (0.83)(0.15) + (0.34)(0.85)</mrow>
+                <mrow>P(G) \amp = 0.1245 + 0.2890 = 0.4135</mrow>
+            </md>
+            Thus, <m>P(G) = 0.4135</m> (this matches option d from your original list).
+        </p>
+        <p>
+            2. <term>Find the Posterior Conditional Probability, <m>P(H \mid G)</m>:</term>
+            Now, we apply Bayes' Theorem to find the probability that a person who is confirmed to have gum disease will go on to have a heart attack:
+            <me>P(H \mid G) = \frac{P(G \mid H)P(H)}{P(G)} = \frac{0.1245}{0.4135} \approx 0.301088</me>
+            Rounding to four decimal places yields <m>0.3011</m> (which matches option c from your original list).
+        </p>
+    </solution>
+</exercise>
+
+
+
+<exercise xml:id="ex-employment-drug-test-matching">
+    <title>Workplace Drug Testing and Conditional Probability</title>
+    <statement>
+        <p>
+            An logistics company uses a rapid oral fluid screening test to determine whether machine operators have controlled substances in their system. The rapid screening kit is not totally reliable:
+            <ul>
+                <li><p><m>5\%</m> of employees who <bold>have not</bold> consumed a controlled substance give a false-positive reading (the test indicates drug presence).</p></li>
+                <li><p><m>10\%</m> of employees who <bold>have</bold> consumed a controlled substance give a false-negative reading (the test indicates no drug presence).</p></li>
+            </ul>
+            Suppose that, in fact, <m>17\%</m> of the applicant pool has consumed a controlled substance, and the safety manager tests an employee at random. 
+        </p>
+        <p>
+            Match each conditional probability question on the left with its correct calculated value on the right. Note that there are extra numbers on the right that do not match either scenario!
+        </p>
+    </statement>
+
+    <cardsort>
+        <!-- Part A Pair -->
+        <match>
+            <premise>
+                Find the probability that the employee has consumed the substance, given that the test reading is positive.
+            </premise>
+            <response>
+                <m>0.7866</m>
+            </response>
+        </match>
+        
+        <!-- Part B Pair -->
+        <match>
+            <premise>
+                Find the probability that the employee has not consumed the substance, given that the test reading is negative.
+            </premise>
+            <response>
+                <m>0.9789</m>
+            </response>
+        </match>
+
+        <!-- DISTRACTOR 1 (Empty Premise) -->
+        <match>
+            <response><m>0.1945</m></response>
+        </match>
+
+        <!-- DISTRACTOR 2 (Empty Premise) -->
+        <match>
+            <response><m>0.8055</m></response>
+        </match>
+
+        <!-- DISTRACTOR 3 (Empty Premise) -->
+        <match>
+            <response><m>0.9000</m></response>
+        </match>
+    </cardsort>
+    
+    <hint>
+        <p>
+            Let <m>D</m> be the event the drug is present, and <m>T</m> be a positive test. Organize your components first: <m>P(D) = 0.17</m>, <m>P(T \mid D^c) = 0.05</m>, and <m>P(T^c \mid D) = 0.10</m>. Use the Law of Total Probability to find the baseline denominators <m>P(T)</m> and <m>P(T^c)</m> before finalizing your Bayes' Theorem matrices.
+        </p>
+    </hint>
+    
+    <solution>
+        <p>
+            Let <m>D</m> denote the event that the employee has consumed the substance, and let <m>T</m> denote a positive test reading. We are given the following information:
+            <me>P(D) = 0.17 \implies P(D^c) = 0.83</me>
+            <me>P(T \mid D^c) = 0.05 \implies P(T^c \mid D^c) = 0.95 \quad \text{(False Positive Rate)}</me>
+            <me>P(T^c \mid D) = 0.10 \implies P(T \mid D) = 0.90 \quad \text{(False Negative Rate)}</me>
+        </p>
+        <p>
+            <bold>Step-by-step Solution for Each Scenario:</bold>
+        </p>
+        <p>
+            1. <term>Question A: Finding <m>P(D \mid T)</m></term>
+            First, find the total probability of a positive test, <m>P(T)</m>, using the Law of Total Probability:
+            <md>
+                <mrow>P(T) \amp = P(T \mid D)P(D) + P(T \mid D^c)P(D^c)</mrow>
+                <mrow>P(T) \amp = (0.90)(0.17) + (0.05)(0.83)</mrow>
+                <mrow>P(T) \amp = 0.1530 + 0.0415 = 0.1945</mrow>
+            </md>
+            Now, apply Bayes' Theorem to calculate the posterior probability:
+            <me>P(D \mid T) = \frac{P(T \mid D)P(D)}{P(T)} = \frac{0.1530}{0.1945} \approx 0.78663</me>
+        </p>
+        <p>
+            2. <term>Question B: Finding <m>P(D^c \mid T^c)</m></term>
+            First, find the total probability of a negative test, <m>P(T^c)</m>:
+            <me>P(T^c) = 1 - P(T) = 1 - 0.1945 = 0.8055</me>
+            Now, apply Bayes' Theorem to find the probability of being drug-free given a negative screen:
+            <me>P(D^c \mid T^c) = \frac{P(T^c \mid D^c)P(D^c)}{P(T^c)} = \frac{(0.95)(0.83)}{0.8055} = \frac{0.7885}{0.8055} \approx 0.97889</me>
+        </p>
+    </solution>
+</exercise>
+
+
+
+<exercise xml:id="ex-world-cup-bayes-mc">
+    <title>World Cup Tournament Odds and Bayes' Theorem</title>
+    <statement>
+        <p>
+            Your favorite national football team is competing in the FIFA World Cup. Based on their qualifying record and performance metrics (compiled by sports analytics models), you assign an initial probability of <m>64\%</m> that they will win the entire championship. 
+        </p>
+        <p>
+            Historical tournament records indicate that when a team ultimately wins the World Cup, they win their first group stage match <m>71\%</m> of the time. When they fail to win the championship, they win their first group stage match only <m>20\%</m> of the time. 
+        </p>
+        <p>
+            The opening match is over, and your favorite team has lost. Assuming group stage matches cannot end in a draw for this scenario, what is the probability that they will still go on to win the World Cup?
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+            <statement>
+                <m>0.392</m>
+            </statement>
+            <feedback>
+                <p>
+                    Correct! Let <m>W</m> be winning the tournament and <m>L</m> be losing the first match. We find the conditional complements: <m>P(W^c) = 0.36</m>, <m>P(L \mid W) = 1 - 0.71 = 0.29</m>, and <m>P(L \mid W^c) = 1 - 0.20 = 0.80</m>. Using the Law of Total Probability, the total probability of losing the first match is <m>P(L) = (0.29)(0.64) + (0.80)(0.36) = 0.1856 + 0.2880 = 0.4736</m>. Applying Bayes' Theorem yields <m>P(W \mid L) = \frac{0.1856}{0.4736} \approx 0.3919</m>, which rounds to <m>0.392</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.473</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This value represents the total probability that the team loses their opening match, <m>P(L) = 0.4736</m>. You must use this value as the denominator in Bayes' Theorem rather than the final conditional answer.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.512</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This distractor corresponds to an arithmetic tracking error where the forward probability of winning the first match is substituted instead of its complementary loss.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.556</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This occurs if you fail to calculate the total probability space properly, using un-weighted conditional segments in your denominator.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.640</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This is your initial prior probability <m>P(W)</m>. Losing the opening game provides new, negative evidence, meaning your updated tournament outlook must be strictly lower than <m>0.640</m>.
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+    <hint>
+        <p>
+            You are looking for the conditional probability <m>P(\text{Win World Cup} \mid \text{Lost First Match})</m>. First, calculate the probability of a team losing their first match given they win the tournament (<m>1 - 0.71 = 0.29</m>) and given they lose the tournament (<m>1 - 0.20 = 0.80</m>). Use these to calculate the total probability of a first-match loss before evaluating Bayes' Theorem.
+        </p>
+    </hint>
+    <solution>
+        <p>
+            We define our events as follows: Let <m>W</m> be the event that the team wins the World Cup championship, and let <m>L</m> be the event that the team loses their first group stage match. We are given:
+            <me>P(W) = 0.64 \implies P(W^c) = 1 - 0.64 = 0.36</me>
+            <me>P(\text{Win First} \mid W) = 0.71 \implies P(L \mid W) = 1 - 0.71 = 0.29</me>
+            <me>P(\text{Win First} \mid W^c) = 0.20 \implies P(L \mid W^c) = 1 - 0.20 = 0.80</me>
+        </p>
+        <p>
+            We want to find the posterior conditional probability <m>P(W \mid L)</m>.
+        </p>
+        <p>
+            1. <term>Find the overall probability of losing the first match, <m>P(L)</m>:</term>
+            Using the Law of Total Probability:
+            <md>
+                <mrow>P(L) \amp = P(L \mid W)P(W) + P(L \mid W^c)P(W^c)</mrow>
+                <mrow>P(L) \amp = (0.29)(0.64) + (0.80)(0.36)</mrow>
+                <mrow>P(L) \amp = 0.1856 + 0.2880 = 0.4736</mrow>
+            </md>
+        </p>
+        <p>
+            2. <term>Apply Bayes' Theorem to calculate the final probability:</term>
+            <me>P(W \mid L) = \frac{P(L \mid W)P(W)}{P(L)} = \frac{0.1856}{0.4736} \approx 0.39189</me>
+            Rounding to three decimal places matches option (a): <m>0.392</m>.
+        </p>
+    </solution>
+</exercise>
+
    </exercises>
 
 

@@ -143,17 +143,9 @@
 
    <exercise xml:id="CP-generic-practice-A" >
      <title>Formula/Rule Practice</title>
-     <introduction>
-          <p>
-             If <m>P(E \cap F)=0.024</m>, <m>P(E | F)=0.06</m>, and <m>P(F| E)=0.10</m>....
-          </p>
-      </introduction>
-      
-     
-
          <statement>
-             <p>
-                  ...then match the following probabilities to their values.
+          <p>
+             If <m>P(E \cap F)=0.024</m>, <m>P(E | F)=0.06</m>, and <m>P(F| E)=0.10</m>, then match the following probabilities to their values.
              </p>
          </statement>
 
@@ -271,6 +263,106 @@
             </evaluation>
             </task>
       </exercise>
+
+
+
+
+<exercise xml:id="ex-server-filter-bayes">
+    <title>Smart Filter Diagnostics and Bayes' Theorem</title>
+    <statement>
+        <p>
+            An automated campus server uses a machine learning filter to scan incoming files. Let <m>A</m> be the event that a file is malicious software, and let <m>B</m> be the event that the filter flags the file as a threat. The system analytics provide the following base probabilities:
+            <me>P(A) = 0.44, \quad P(B \mid A) = 0.03, \quad P(B^c \mid A^c) = 0.06</me>
+            If a randomly arriving file is flagged as a threat by the filter, what is the posterior probability <m>P(A \mid B)</m> that it is actually a malicious software file?
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+            <statement>
+                <m>0.0245</m> 
+            </statement>
+            <feedback>
+                <p>
+                    Correct! First, find the complements: <m>P(A^c) = 1 - 0.44 = 0.56</m> and <m>P(B \mid A^c) = 1 - 0.06 = 0.94</m>. Next, apply the Law of Total Probability to find the denominator: <m>P(B) = (0.03)(0.44) + (0.94)(0.56) = 0.0132 + 0.5264 = 0.5396</m>. Finally, apply Bayes' Theorem: <m>P(A \mid B) = \frac{0.0132}{0.5396} \approx 0.0245</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.5396</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This value is the total probability that a file gets flagged by the filter, <m>P(B)</m>. You must use this number as your denominator in Bayes' Theorem to find the conditional probability <m>P(A \mid B)</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.0132</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This value is the joint probability of the intersection <m>P(A \cap B) = P(B \mid A)P(A) = 0.0132</m>. Remember to divide this numerator by the total probability space <m>P(B)</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.9400</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This value is the false positive rate condition, <m>P(B \mid A^c) = 1 - P(B^c \mid A^c) = 0.94</m>. This represents the probability of a safe file being flagged, not a flagged file being malicious.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.0236</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This result stems from a minor arithmetic carrying error when computing the intersection components. Double-check your decimals during the summation phase.
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+    <hint>
+        <p>
+            You need to set up Bayes' Theorem: <m>P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}</m>. Before calculating, look closely at your given values: you are given <m>P(B^c \mid A^c) = 0.06</m>, which means its conditional complement is <m>P(B \mid A^c) = 1 - 0.06 = 0.94</m>. Use that to find <m>P(B)</m> first.
+        </p>
+    </hint>
+    <solution>
+        <p>
+            To evaluate the conditional probability <m>P(A \mid B)</m>, we utilize the conditional base rules and apply Bayes' Theorem:
+        </p>
+        <p>
+            1. <term>Find the prior and conditional complements:</term>
+            <ul>
+                <li><p>The probability that a file is safe (<m>A^c</m>): <m>P(A^c) = 1 - P(A) = 1 - 0.44 = 0.56</m></p></li>
+                <li><p>The conditional probability that a safe file is flagged (<m>B \mid A^c</m>): <m>P(B \mid A^c) = 1 - P(B^c \mid A^c) = 1 - 0.06 = 0.94</m></p></li>
+            </ul>
+        </p>
+        <p>
+            2. <term>Calculate the total probability space for the denominator, <m>P(B)</m>:</term>
+            Using the Law of Total Probability:
+            <md>
+                <mrow>P(B) \amp = P(B \mid A)P(A) + P(B \mid A^c)P(A^c)</mrow>
+                <mrow>P(B) \amp = (0.03)(0.44) + (0.94)(0.56)</mrow>
+                <mrow>P(B) \amp = 0.0132 + 0.5264 = 0.5396</mrow>
+            </md>
+        </p>
+        <p>
+            3. <term>Apply Bayes' Theorem to find the posterior probability:</term>
+            <me>P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)} = \frac{0.0132}{0.5396} \approx 0.02446</me>
+            Rounding to four decimal places yields <m>0.0245</m>.
+        </p>
+    </solution>
+</exercise>
+
+
+
   </exercises>
 
 
@@ -282,6 +374,330 @@
        Write intro to written part of homework set.....
      </p>
    </introduction>
+
+
+<exercise xml:id="ex-ball-selection-probabilities-tasks">
+    <title>Combinatorial Selection and Conditional Probabilities</title>
+    <introduction>
+        <p>
+            A box contains six colored spheres: one yellow (<m>Y</m>), two red (<m>R</m>), and three green (<m>G</m>). Two spheres are chosen randomly at the same time (without replacement). Define the following events:
+            <ul>
+                <li><p><m>A</m>: One of the chosen spheres is yellow.</p></li>
+                <li><p><m>B</m>: At least one of the chosen spheres is red.</p></li>
+                <li><p><m>C</m>: Both chosen spheres are green.</p></li>
+                <li><p><m>D</m>: Both chosen spheres are of the same color.</p></li>
+            </ul>
+        </p>
+    </introduction>
+    
+    <hint>
+        <p>
+            Start by calculating the total sample space using combinations: <m>\binom{6}{2} = 15</m> possible pairs. Break down the 15 outcomes by counting how many match each combination type (e.g., <m>YR</m>, <m>YG</m>, <m>RR</m>, <m>RG</m>, <m>GG</m>). Use those sub-counts to calculate the conditional intersections.
+        </p>
+    </hint>
+
+    <!-- Part 1 -->
+    <task>
+        <statement>
+            <p>
+                Find <m>P(B \mid A^c)</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                By definition of conditional probability, <m>P(B \mid A^c) = \frac{P(B \cap A^c)}{P(A^c)}</m>.
+            </p>
+            <p>
+                The event <m>A^c</m> means no yellow sphere is selected, leaving <m>15 - \binom{5}{2} = 10</m> outcomes. The intersection <m>B \cap A^c</m> means selecting at least one red sphere and <term>no</term> yellow sphere, which covers the <m>RR</m> and <m>RG</m> categories (<m>1 + 6 = 7</m> outcomes). Therefore:
+                <me>P(B \mid A^c) = \frac{7/15}{10/15} = \frac{7}{10} = 0.70</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 2 -->
+    <task>
+        <statement>
+            <p>
+                Find <m>P(C \mid D)</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                By definition of conditional probability, <m>P(C \mid D) = \frac{P(C \cap D)}{P(D)}</m>.
+            </p>
+            <p>
+                The event <m>D</m> (same color) includes <m>RR</m> (<m>1</m> way) and <m>GG</m> (<m>3</m> ways), yielding <m>4</m> total outcomes. The intersection <m>C \cap D</m> requires both spheres to be green and both to be the same color, which is just event <m>C</m> (<m>3</m> outcomes). Therefore:
+                <me>P(C \mid D) = \frac{3/15}{4/15} = \frac{3}{4} = 0.75</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 3 -->
+    <task>
+        <statement>
+            <p>
+                Find <m>P(A \cap D)</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                This intersection requires choosing exactly one yellow sphere, while simultaneously picking two spheres of the exact same color. Because there is only <m>1</m> yellow sphere available in the box, it is physically impossible to draw a matching pair of yellow spheres. Therefore, these two events are mutually exclusive:
+                <me>P(A \cap D) = 0</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 4 -->
+    <task>
+        <statement>
+            <p>
+                Are any of the four events independent of each other? Explain your reasoning.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Two events <m>X</m> and <m>Y</m> are independent if and only if <m>P(X \cap Y) = P(X) \times P(Y)</m>. Let us test the relationships:
+                <ul>
+                    <li><p>For <m>A</m> and <m>D</m>: <m>P(A \cap D) = 0</m>, but <m>P(A) \times P(D) = \frac{5}{15} \times \frac{4}{15} = \frac{4}{45} \neq 0</m>.</p></li>
+                    <li><p>For <m>C</m> and <m>D</m>: <m>P(C \cap D) = P(C) = 0.2</m>, but <m>P(C) \times P(D) = \frac{3}{15} \times \frac{4}{15} = \frac{4}{75} \neq 0.2</m>.</p></li>
+                    <li><p>For <m>A</m> and <m>B</m>: <m>P(A \cap B) = \frac{2}{15} \approx 0.1333</m> (the <m>YR</m> pair), but <m>P(A) \times P(B) = \frac{5}{15} \times \frac{9}{15} = 0.20</m>.</p></li>
+                    <li><p>For <m>B</m> and <m>C</m>: Events <m>B</m> and <m>C</m> are mutually exclusive, so <m>P(B \cap C) = 0</m>, but <m>P(B) \times P(C) \neq 0</m>.</p></li>
+                </ul>
+                Consequently, <bold>no</bold>, none of the four events are independent of each other. Every pairing exhibits mathematical dependence due to drawing without replacement from a small finite pool.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+<exercise xml:id="ex-gallup-poll-probabilities">
+    <title>Gallup Poll Political Affiliation Probabilities</title>
+    <introduction>
+        <p>
+            A September 2024 Gallup poll asked: <q>As of today, do you consider yourself a Republican, a Democrat or an independent?</q> Responses are shown below, separated by gender, for the 1,000 U.S. adult respondents.
+        </p>
+        <p>
+            <table xml:id="table-gallup-data">
+                <title>Political Affiliation Survey Data by Gender</title>
+                <tabular halign="center" top="minor" left="minor" bottom="minor" right="minor">
+                    <row header="yes">
+                        <cell></cell>
+                        <cell>Republican (<m>R</m>)</cell>
+                        <cell>Democrat (<m>D</m>)</cell>
+                        <cell>Independent (<m>I</m>)</cell>
+                        <cell>Total</cell>
+                    </row>
+                    <row>
+                        <cell header="yes">Male (<m>M</m>)</cell>
+                        <cell>158</cell>
+                        <cell>133</cell>
+                        <cell>218</cell>
+                        <cell><m>\mathbf{509}</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes">Female (<m>F</m>)</cell>
+                        <cell>130</cell>
+                        <cell>183</cell>
+                        <cell>175</cell>
+                        <cell><m>\mathbf{488}</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes">Non-Binary (<m>N</m>)</cell>
+                        <cell>0</cell>
+                        <cell>1</cell>
+                        <cell>2</cell>
+                        <cell><m>\mathbf{3}</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes">Total</cell>
+                        <cell><m>\mathbf{288}</m></cell>
+                        <cell><m>\mathbf{317}</m></cell>
+                        <cell><m>\mathbf{395}</m></cell>
+                        <cell><m>\mathbf{1000}</m></cell>
+                    </row>
+                </tabular>
+            </table>
+        </p>
+    </introduction>
+    
+    <hint>
+        <p>
+            For simple or joint probabilities (Parts i and ii), use the grand total of 1,000 as your denominator. For conditional probabilities (Parts iii and iv), restrict your denominator strictly to the sub-total of the given condition row or column before pulling the numerator count.
+        </p>
+    </hint>
+
+    <!-- Part A Block -->
+    <task xml:id="task-gallup-part-a">
+        <introduction>
+            <p>
+                Based on this data, if a random U.S. adult is chosen from the survey participants, find the probability that the person is:
+            </p>
+        </introduction>
+        
+        <task xml:id="task-gallup-a-i">
+            <statement>
+                <p>i. Independent?</p>
+            </statement>
+            <solution>
+                <p>
+                    We check the column total for Independents and divide by the grand total:
+                    <me>P(I) = \frac{395}{1000} = 0.395</me>
+                </p>
+            </solution>
+        </task>
+        
+        <task xml:id="task-gallup-a-ii">
+            <statement>
+                <p>ii. Female and Democrat?</p>
+            </statement>
+            <solution>
+                <p>
+                    We locate the cell intersection where the Female row meets the Democrat column and divide by the grand total:
+                    <me>P(F \cap D) = \frac{183}{1000} = 0.183</me>
+                </p>
+            </solution>
+        </task>
+        
+        <task xml:id="task-gallup-a-iii">
+            <statement>
+                <p>iii. Democrat given that the person is male?</p>
+            </statement>
+            <solution>
+                <p>
+                    This is a conditional probability, <m>P(D \mid M)</m>. We restrict our pool strictly to the Male row total (509) as the denominator, and select the Male Democrats (133) for the numerator:
+                    <me>P(D \mid M) = \frac{133}{509} \approx 0.2613</me>
+                </p>
+            </solution>
+        </task>
+        
+        <task xml:id="task-gallup-a-iv">
+            <statement>
+                <p>iv. Male given that the person is an Independent?</p>
+            </statement>
+            <solution>
+                <p>
+                    This is a conditional probability, <m>P(M \mid I)</m>. We restrict our pool strictly to the Independent column total (395) as the denominator, and select the Male Independents (218) for the numerator:
+                    <me>P(M \mid I) = \frac{218}{395} \approx 0.5519</me>
+                </p>
+            </solution>
+        </task>
+    </task>
+
+    <!-- Part B Block -->
+    <task xml:id="task-gallup-part-b">
+        <statement>
+            <p>
+                Are the events <term>Female</term> and <term>not-Republican</term> independent? Explain your answer based on the data.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Two events <m>X</m> and <m>Y</m> are independent if and only if <m>P(X \mid Y) = P(X)</m> or <m>P(X \cap Y) = P(X) \times P(Y)</m>. Let us define the events <m>F</m> (Female) and <m>R^c</m> (not-Republican):
+                <ul>
+                    <li><p>The probability that a respondent is Female is: <me>P(F) = \frac{488}{1000} = 0.488</me></p></li>
+                    <li><p>The total number of respondents who are not-Republican is: <me>1000 - 288 = 712 \implies P(R^c) = \frac{712}{1000} = 0.712</me></p></li>
+                    <li><p>The number of Females who are not-Republican is found by adding Female Democrats and Female Independents: <me>183 + 175 = 358 \implies P(F \cap R^c) = \frac{358}{1000} = 0.358</me></p></li>
+                </ul>
+            </p>
+            <p>
+                Now we check the mathematical equality condition for independent events:
+                <me>P(F) \times P(R^c) = 0.488 \times 0.712 = 0.347456</me>
+                Comparing this product to our joint observation:
+                <me>P(F \cap R^c) = 0.358 \neq 0.3475</me>
+                Alternatively, we can evaluate using conditional rates: <m>P(F \mid R^c) = \frac{358}{712} \approx 0.5028</m>, which does not equal <m>P(F) = 0.488</m>. 
+            </p>
+            <p>
+                Because these mathematical values do not balance, the survey attributes are conditionally linked. Consequently, the answer is <bold>No</bold>, the events are not independent.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+<exercise xml:id="ex-restaurant-credit-cards-noninteractive">
+    <title>Credit Card Acceptance Probability</title>
+    <introduction>
+        <p>
+            In a large city, <m>37\%</m> of all restaurants accept both Mastercard and Visa credit cards, <m>50\%</m> accept Mastercard, and <m>60\%</m> accept Visa. A tourist visiting the city picks a restaurant at random to have lunch. We define the following events:
+            <ul>
+                <li><p><m>M</m>: The randomly chosen restaurant accepts Mastercard credit cards.</p></li>
+                <li><p><m>V</m>: The randomly chosen restaurant accepts Visa credit cards.</p></li>
+            </ul>
+        </p>
+    </introduction>
+    
+    <hint>
+        <p>
+            Recall that <m>P(M \cap V) = 0.37</m> represents the probability of accepting both cards. For the independence check, test if <m>P(M \cap V) = P(M) \times P(V)</m>. To find the probability that a restaurant accepts neither card, calculate the complement of the union: <m>1 - P(M \cup V)</m>.
+        </p>
+    </hint>
+
+    <!-- Part A -->
+    <task xml:id="task-cards-disjoint">
+        <statement>
+            <p>
+                Are <m>M</m> and <m>V</m> disjoint? Explain your answer.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Two events are disjoint (mutually exclusive) if they cannot occur at the same time, meaning their intersection is empty: <m>P(M \cap V) = 0</m>. 
+            </p>
+            <p>
+                According to the given data, <m>37\%</m> of restaurants accept both cards, meaning <m>P(M \cap V) = 0.37</m>. Because this probability is greater than zero, the events overlap. Consequently, the answer is <bold>No</bold>, <m>M</m> and <m>V</m> are not disjoint.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B -->
+    <task xml:id="task-cards-independent">
+        <statement>
+            <p>
+                Are <m>M</m> and <m>V</m> independent? Explain your answer.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Two events are independent if and only if the probability of their intersection equals the product of their individual probabilities:
+                <me>P(M \cap V) = P(M) \times P(V)</me>
+            </p>
+            <p>
+                We are given <m>P(M) = 0.50</m> and <m>P(V) = 0.60</m>. Computing their product yields:
+                <me>P(M) \times P(V) = 0.50 \times 0.60 = 0.30</me>
+                Comparing this product to our given intersection probability:
+                <me>P(M \cap V) = 0.37 \neq 0.30</me>
+            </p>
+            <p>
+                Because these mathematical values are not equal, accepting one type of card dynamically alters the likelihood of accepting the other. Consequently, the answer is <bold>No</bold>, <m>M</m> and <m>V</m> are not independent.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part C -->
+    <task xml:id="task-cards-neither">
+        <statement>
+            <p>
+                What is the probability that a given restaurant does not accept Mastercard or Visa credit cards?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                We want to find the probability that a restaurant accepts neither card, which is represented by the complement of their union, <m>P((M \cup V)^c)</m>.
+            </p>
+            <p>
+                1. First, find the probability that a restaurant accepts at least one of the cards using the <term>Inclusion-Exclusion Principle</term>:
+                <me>P(M \cup V) = P(M) + P(V) - P(M \cap V)</me>
+                <me>P(M \cup V) = 0.50 + 0.60 - 0.37 = 0.73</me>
+            </p>
+            <p>
+                2. Use the <term>Complement Rule</term> to find the probability that a restaurant accepts neither card:
+                <me>P((M \cup V)^c) = 1 - P(M \cup V) = 1 - 0.73 = 0.27</me>
+                Thus, there is a <m>0.27</m> (or <m>27\%</m>) chance that a randomly chosen restaurant accepts neither card.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+
 
    </exercises>
 
