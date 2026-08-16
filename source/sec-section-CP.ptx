@@ -699,6 +699,80 @@
 
 
 
-   </exercises>
+
+
+<exercise xml:id="ex-tetris-bag-probability">
+    <title>Tetris Game Mechanics and Bag Sampling Systems</title>
+    <introduction>
+        <p>
+            In modern versions of the popular tile-matching block game Tetris, pieces appear in shapes labeled <m>I</m>, <m>J</m>, <m>L</m>, <m>O</m>, <m>S</m>, <m>T</m>, and <m>Z</m>. To ensure fair gameplay, the engine uses a <term>7-Bag Random Generator</term>. This algorithm places exactly one copy of each of the seven unique shapes into a virtual bag, shuffles them completely, and dispenses them one by one until the bag is empty, at which point a fresh bag of seven pieces is generated and shuffled.
+        </p>
+        <p>
+            Suppose a brand-new game has just started, meaning the first bag of seven pieces has just been shuffled.
+        </p>
+    </introduction>
+    
+    <hint>
+        <p>
+            Because the game samples without replacement *inside* any given bag, the trials within that bag are dependent. Pay close attention to how many pieces have already been removed from the bag when evaluating your conditional pools.
+        </p>
+    </hint>
+
+    <!-- Part 1: First Piece Probability -->
+    <task xml:id="task-tetris-first-piece">
+        <statement>
+            <p>
+                What is the probability that the very first piece dispensed at the start of the game is the <m>I</m>-piece (the straight line block)?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                At the absolute start of the game, the full bag contains 7 distinct, equally likely pieces. Since exactly 1 of those 7 pieces is an <m>I</m>-piece, the probability is a simple uniform ratio:
+                <me>P(\text{First piece is } I) = \frac{1}{7} \approx 0.1429</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 2: Conditional Probability Within the Bag -->
+    <task xml:id="task-tetris-conditional-bag">
+        <statement>
+            <p>
+                Suppose the first three pieces dealt from the bag are observed to be a <m>J</m>, an <m>O</m>, and a <m>Z</m> shape. Given this specific information, what is the conditional probability that the fourth piece dealt will be the <m>I</m>-piece?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Because the game draws from a closed bag without replacement, the remaining composition of the bag changes dynamically:
+                <ul>
+                    <li><p>Initial Bag: <m>\{I, J, L, O, S, T, Z\}</m> (7 items)</p></li>
+                    <li><p>Removed Pieces: <m>\{J, O, Z\}</m> (3 items)</p></li>
+                    <li><p>Remaining Bag: <m>\{I, L, S, T\}</m> (4 items)</p></li>
+                </ul>
+                Since the <m>I</m>-piece is still waiting inside the remaining pool of 4 equally likely options, the updated conditional probability is:
+                <me>P(\text{4th is } I \mid \text{First three are } J, O, Z) = \frac{1}{4} = 0.2500</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 3: Idealized Streak Comparison -->
+    <task xml:id="task-tetris-streak-comparison">
+        <statement>
+            <p>
+                A player claims that during a live game match, they observed a consecutive sequence of three identical <m>S</m>-shaped pieces in a row. Explain mathematically why this event is completely impossible under the 7-Bag Generator system at the start of a game, and state what type of sampling system would be required to make that streak possible.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Under the 7-Bag System, each distinct bag contains exactly <term>one</term> copy of the <m>S</m>-piece. Therefore, the maximum number of <m>S</m>-pieces that can ever appear inside a single 7-piece block is one. The only way to get a consecutive streak of <m>S</m>-pieces is if one bag finishes with an <m>S</m>-piece and the subsequent bag starts with an <m>S</m>-piece, which caps the maximum possible consecutive streak at exactly <m>2</m>. A consecutive streak of <m>3</m> identical pieces is mathematically impossible within this system.
+            </p>
+            <p>
+                To make a streak of three or more identical pieces possible, the game engine would have to utilize a <term>Uniform Discrete Distribution with Replacement</term> (pure independent random sampling), where every single piece drop has an independent <m>\frac{1}{7}</m> chance of generating any shape regardless of history.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+</exercises>
 
   </section>

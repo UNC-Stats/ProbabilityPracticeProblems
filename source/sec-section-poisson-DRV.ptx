@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-poisson-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Poisson Random Variable</title>
+
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+
+ <exercises xml:id="hw-poisson-rv" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+
+<exercise label="ex-poisson-er-triage">
+    <title>Emergency Room Patient Intake</title>
+    <introduction>
+        <p>
+            During a busy weekend shift, trauma patients arrive at an urban emergency room triage desk according to a Poisson process with a mean rate of 80 patients per hour. If the triage nurse steps away to grab a clean stethoscope, leaving the desk unattended for exactly one minute, what is the probability that at least 1 patient arrives during that brief interval?
+        </p>
+    </introduction>
+    <choices>
+        <choice>
+            <statement><p><m>0.2636</m></p></statement>
+            <feedback>
+                <p>
+                    Incorrect. This is the probability that <em>zero</em> patients arrive during the one-minute window (<m>P(Y=0)</m>). Remember to use the complement rule to find the probability of <m>\text{at least } 1</m> arrival.
+                </p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement><p><m>0.7364</m></p></statement>
+            <feedback>
+                <p>
+                    Correct! 
+                    First, convert the hourly arrival rate to a 1-minute time block: <m>\lambda = \frac{80 \text{ patients}}{60 \text{ minutes}} = \frac{4}{3} \approx 1.3333</m> arrivals per minute.
+                </p>
+                <p>
+                    Then, apply the complement rule: 
+                    <me>P(Y \ge 1) = 1 - P(Y = 0) = 1 - \frac{(1.3333)^0 e^{-1.3333}}{0!} = 1 - e^{-1.3333} \approx 1 - 0.2636 = 0.7364</me>
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement><p><m>0.3515</m></p></statement>
+            <feedback>
+                <p>
+                    Incorrect. This is the probability that <em>exactly</em> one patient arrives (<m>P(Y=1)</m>). The question requires the probability of <m>\text{at least } 1</m>, which accounts for multiple simultaneous patient walk-ins.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement><p><m>0.5488</m></p></statement>
+            <feedback>
+                <p>
+                    Incorrect. It looks like you didn't properly scale your time interval or miscalculated the exponent. Double-check your calculation for converting 80 patients per hour down to a single minute.
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
+
+
+<exercise label="ex-poisson-campus-security">
+    <title>Campus Security Patrol Allocation</title>
+    <introduction>
+        <p>
+            Suppose that a campus security department devises a randomized patrol pattern to ensure unpredictability. A security vehicle may visit a high-priority quad location <m>Y = 0, 1, 2, 3, \dots</m> times per one-hour night shift block. Over a long observation window, records show each location is visited an average of once per hour. Assume that <m>Y</m> follows a Poisson probability distribution.
+        </p>
+    </introduction>
+
+    <!-- Task 1: Identification Criteria & Lambda Identification -->
+    <task xml:id="task-poisson-id">
+        <statement>
+            <p>
+                How could you identify that <m>Y</m> is a Poisson random variable if that information had not been explicitly provided? 
+            </p>
+        </statement>
+        <choices>
+            <choice correct="yes">
+                <statement>
+                    <p>The variable counts random, independent events occurring over a fixed continuum of time, where the rate is proportional to the interval size. </p>
+                </statement>
+                <feedback>
+                    <p>Correct! The Poisson distribution models the counts of independent occurrences over a continuous interval (like an hour) given a known average rate (<m>\lambda = 1</m> visit per hour).</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>The variable counts independent trials that can only result in binary success or failure outcomes from a fixed set of trials. </p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. That description fits a Binomial distribution. Poisson distributions do not have a fixed upper limit of discrete trials.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>The variable tracks the total number of consecutive trials required until the very first success is observed. </p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. That description defines a Geometric random variable. Here, we are counting occurrences within a standard time block.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p>The visits have a uniform chance of happening at any point, meaning the count is steady. </p></statement>
+                <feedback><p>Incorrect. Uniform distributions track spatial or temporal position variations, not accumulated integer incidence tallies. Also, \(\lambda\) is the mean rate, which is 1.</p></feedback>
+            </choice>
+<choice>
+                <statement><p>It tracks changing success probabilities across consecutive non-replacement choices. </p></statement>
+                <feedback><p>Incorrect. That description applies to a Hypergeometric distribution, not a time-series event sequence.</p></feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Task 2: Calculate Missing Probability -->
+    <task xml:id="task-poisson-miss">
+        <statement>
+            <p>
+                Calculate the probability that the campus security officer will completely miss a given high-priority location during a specific one-hour time period. In other words, compute  <m>P(Y = 0)</m>. Write your answer as a decimal rounded to three decimal places.
+            </p>
+        <p>
+        <fillin width="8" answer="0.368"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! Using the Poisson probability mass function <m>P(Y = y) = \frac{\lambda^y e^{-\lambda}}{y!}</m> with parameter <m>\lambda = 1</m>:
+                <me>P(Y = 0) = \frac{1^0 \cdot e^{-1}}{0!} = \frac{1 \cdot e^{-1}}{1} = e^{-1} \approx 0.368</me>
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+        </evaluation>
+
+    </task>
+
+    <!-- Task 3: Calculate More Than Once Probability -->
+    <task xml:id="task-poisson-more">
+        <statement>
+            <p>
+                 What is the probability that the location will be visited more than once during a single one-hour shift block?
+            </p>
+               <p>
+        <fillin width="8" answer="0.264"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct!                 To find <m>P(Y \gt 1)</m>, we utilize the complement rule: 
+                <me>P(Y \gt 1) = 1 - P(Y \le 1) = 1 - [P(Y = 0) + P(Y = 1)]</me>
+                We already know <m>P(Y = 0) \approx 0.3679</m>. Next, calculate <m>P(Y = 1)</m>:
+                <me>P(Y = 1) = \frac{1^1 \cdot e^{-1}}{1!} = e^{-1} \approx 0.3679</me>
+                Combine and subtract from 1:
+                <me>P(Y \gt 1) = 1 - (0.3679 + 0.3679) = 1 - 0.7358 = 0.2642</me>
+                Rounded to three decimal places, the final probability value is <m>0.264</m>.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+        </evaluation>
+    </task>
+</exercise>
+
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-poisson-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+   </exercises>
+
+  </section>

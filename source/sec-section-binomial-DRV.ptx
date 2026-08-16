@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-binomial-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Bernoulli and Binomial Random Variables</title>
+
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+
+ <exercises xml:id="hw-binom-rv" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-binom-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+
+
+<exercise xml:id="ex-antenna-network-binomial">
+    <title>Discrete Distributions: Smart Antenna Connectivity</title>
+    <introduction>
+        <p>
+            A high-performance mobile streaming device utilizes three redundant cellular data antennas acting independently of each other. The device succeeds in sending a data packet if any one or more of the antennas successfully establish a connection with the local network hub.
+        </p>
+        <p>
+            During peak hours, each individual antenna possesses a baseline probability of <m>p = 0.8</m> of successfully establishing a network connection. Suppose the device attempts to send a packet during peak hours. Let the random variable <m>X_i</m> indicate whether antenna <m>i</m> successfully connects (for <m>i=1,2,3</m>), and let <m>Y = \sum_{i=1}^3 X_i</m> represent the total number of operational antennas.
+        </p>
+    </introduction>
+    
+    <hint>
+        <p>
+            
+        </p>
+    </hint>
+
+    <!-- Part 1: Random Variable Identification -->
+    <task xml:id="task-network-rv-classification">
+        <statement>
+            <p>
+                What type of random variables are <m>X_i</m> (for <m>i=1,2,3</m>) and <m>Y</m>? Explain your reasoning.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <ul>
+                    <li>
+                        <p>
+                            Each individual variable <m>X_i</m> is a <term>Bernoulli random variable</term>. This is because each antenna represents a single isolated trial with exactly two outcomes: success (connecting with probability <m>0.8</m>) or failure (not connecting with probability <m>0.2</m>).
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The total sum variable <m>Y</m> is a <term>Binomial random variable</term>. This is because it represents the total number of successes compiled across a fixed number (<m>n = 3</m>) of independent and identically distributed (i.i.d.) Bernoulli trials.
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part 2: PMFs and Bar Charts -->
+    <task xml:id="task-network-pmfs-and-graphs">
+        <statement>
+            <p>
+                Specify the probability distribution functions (PMFs) for the random variables <m>X_i</m> and <m>Y</m>, plugging in the correct values for the parameter(s). Also sketch graphs (bar charts) of the resulting distributions.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                The PMF for each individual Bernoulli variable <m>X_i</m> with parameter <m>p = 0.8</m> is defined as:
+                <me>P(X_i = x) = 0.8^x(0.2)^{1-x} \quad \text{for } x \in \{0, 1\}</me>
+                The PMF for the aggregate Binomial variable <m>Y</m> with parameters <m>n = 3</m> and <m>p = 0.8</m> uses the formula <m>P(Y = y) = \binom{3}{y}(0.8)^y(0.2)^{3-y}</m>, which yields:
+                <ul>
+                    <li><p><m>P(Y = 0) = \binom{3}{0}(0.8)^0(0.2)^3 = 1 \times 1 \times 0.008 = 0.008</m></p></li>
+                    <li><p><m>P(Y = 1) = \binom{3}{1}(0.8)^1(0.2)^2 = 3 \times 0.8 \times 0.04 = 0.096</m></p></li>
+                    <li><p><m>P(Y = 2) = \binom{3}{2}(0.8)^2(0.2)^1 = 3 \times 0.64 \times 0.2 = 0.384</m></p></li>
+                    <li><p><m>P(Y = 3) = \binom{3}{3}(0.8)^3(0.2)^0 = 1 \times 0.512 \times 1 = 0.512</m></p></li>
+                </ul>
+            </p>
+            <p>
+                Below are the rendered bar charts for both probability distributions:
+            </p>
+            <sidebyside widths="45% 45%">
+                <!-- Graph for Xi -->
+                <image xml:id="tikz-network-xi-pmf">
+                    <description>Bar chart of the Bernoulli PMF for Xi showing heights of 0.2 at x=0 and 0.8 at x=1.</description>
+                    <latex-image>
+                        \begin{tikzpicture}[scale=0.7]
+                            \fill[white] (-1,-1) rectangle (3,5);
+                            \draw[-&gt;,thick] (-0.5,0) -- (2.5,0) node[right] {$x$};
+                            \draw[-&gt;,thick] (0,-0.2) -- (0,4.5) node[above] {$P(X_i=x)$};
+                            \foreach \y/\l in {1/0.2, 2/0.4, 3/0.6, 4/0.8} {
+                                \draw[gray!20,dashed] (-0.2,\y) -- (2.2,\y);
+                                \draw (0.05,\y) -- (-0.05,\y) node[left,scale=0.8] {\l};
+                            }
+                            \draw (0,0.05) -- (0,-0.05) node[below,scale=0.8] {0};
+                            \draw (1,0.05) -- (1,-0.05) node[below,scale=0.8] {1};
+                            
+                            \fill[blue!50,draw=blue,thick] (-0.2,0) rectangle (0.2,1);
+                            \fill[blue!50,draw=blue,thick] (0.8,0) rectangle (1.2,4);
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+                <!-- Graph for Y -->
+                <image xml:id="tikz-network-y-pmf">
+                    <description>Bar chart of the Binomial PMF for Y showing columns at y=0,1,2,3 with matching evaluated probability weights.</description>
+                    <latex-image>
+                        \begin{tikzpicture}[scale=0.7]
+                            \fill[white] (-1,-1) rectangle (4.5,5.5);
+                            \draw[-&gt;,thick] (-0.5,0) -- (4,0) node[right] {$y$};
+                            \draw[-&gt;,thick] (0,-0.2) -- (0,5.2) node[above] {$P(Y=y)$};
+                            \foreach \y/\l in {1/0.1, 2/0.2, 3/0.3, 4/0.4, 5/0.5} {
+                                \draw[gray!20,dashed] (-0.2,\y) -- (3.7,\y);
+                                \draw (0.05,\y) -- (-0.05,\y) node[left,scale=0.8] {\l};
+                            }
+                            \foreach \x in {0,1,2,3} \draw (\x,0.05) -- (\x,-0.05) node[below,scale=0.8] {\x};
+                            
+                            \fill[red!50,draw=red,thick] (-0.15,0) rectangle (0.15,0.08);
+                            \fill[red!50,draw=red,thick] (0.85,0) rectangle (1.15,0.96);
+                            \fill[red!50,draw=red,thick] (1.85,0) rectangle (2.15,3.84);
+                            \fill[red!50,draw=red,thick] (2.85,0) rectangle (3.15,5.12);
+                        \end{tikzpicture}
+                    </latex-image>
+                </image>
+            </sidebyside>
+        </solution>
+    </task>
+
+    <!-- Part 3: Cumulative Distribution Function -->
+    <task xml:id="task-network-cdf-graph">
+        <statement>
+            <p>
+                Find the cumulative distribution function (CDF) for the random variable <m>Y</m> and sketch its resulting graph (step function).
+            </p>
+        </statement>
+        <solution>
+            <p>
+                The cumulative distribution function <m>F_Y(y) = P(Y \le y)</m> accumulates the discrete probability steps step-by-step:
+                <me>
+                    F_Y(y) = \begin{cases} 
+                    0 \amp \text{for } y \lt 0 \\ 
+                    0.008 \amp \text{for } 0 \le y \lt 1 \\ 
+                    0.104 \amp \text{for } 1 \le y \lt 2 \\ 
+                    0.488 \amp \text{for } 2 \le y \lt 3 \\ 
+                    1.000 \amp \text{for } y \ge 3 
+                    \end{cases}
+                </me>
+            </p>
+            <p>
+                Below is the plotted step-graph representing the cumulative distribution function:
+            </p>
+            <image xml:id="tikz-network-y-cdf">
+                <description>A step function plot showing flat lines with solid starting circles and open ending circles at each discrete threshold point.</description>
+                <latex-image>
+                    \begin{tikzpicture}[scale=0.8]
+                        \fill[white] (-1.5,-1) rectangle (5,6);
+                        \draw[-&gt;,thick] (-1,0) -- (4.5,0) node[right] {$y$};
+                        \draw[-&gt;,thick] (0,-0.2) -- (0,5.5) node[above] {$F_Y(y)$};
+                        
+                        \draw (0.05,0.08) -- (-0.05,0.08) node[left,scale=0.7] {0.008};
+                        \draw (0.05,1.04) -- (-0.05,1.04) node[left,scale=0.7] {0.104};
+                        \draw (0.05,2.44) -- (-0.05,2.44) node[left,scale=0.7] {0.488};
+                        \draw (0.05,5) -- (-0.05,5) node[left,scale=0.7] {1.0};
+                        
+                        \foreach \x in {1,2,3} \draw (\x,0.05) -- (\x,-0.05) node[below,scale=0.8] {\x};
+                        
+                        \draw[purple,very thick] (-1,0) -- (0,0);
+                        \fill[white] (0,0) circle (2pt); \draw[purple] (0,0) circle (2pt);
+                        
+                        \draw[purple,very thick] (0,0.08) -- (1,0.08);
+                        \fill[purple] (0,0.08) circle (2pt);
+                        \fill[white] (1,0.08) circle (2pt); \draw[purple] (1,0.08) circle (2pt);
+                        
+                        \draw[purple,very thick] (1,1.04) -- (2,1.04);
+                        \fill[purple] (1,1.04) circle (2pt);
+                        \fill[white] (2,1.04) circle (2pt); \draw[purple] (2,1.04) circle (2pt);
+                        
+                        \draw[purple,very thick] (2,2.44) -- (3,2.44);
+                        \fill[purple] (2,2.44) circle (2pt);
+                        \fill[white] (3,2.44) circle (2pt); \draw[purple] (3,2.44) circle (2pt);
+                        
+                        \draw[purple,very thick] (3,5) -- (4.2,5);
+                        \fill[purple] (3,5) circle (2pt);
+                        
+\end{tikzpicture}
+</latex-image>
+</image>
+</solution>
+</task>
+<task xml:id="task-network-prob-sent">
+        <statement>
+            <p>
+                Copmute the probability that the device succeeds in sending a data packet during peak usage hours.
+            </p>
+        </statement>
+        </task>
+</exercise>
+
+
+
+
+   </exercises>
+
+  </section>

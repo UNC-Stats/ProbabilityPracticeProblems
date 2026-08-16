@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-mixed-common-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Mixed Bag Practice</title>
+
+  <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+ <exercises xml:id="hw-common-discrete-rv-mixed" >
+   <title>Interactive Exercises </title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+</introduction>
+
+
+<exercise label="ex-negative-binomial-prediabetes">
+    <title>Wellness Program Prediabetes Screening</title>
+    <introduction>
+        <p>
+            As part of a corporate wellness program, employees at a large firm are being screened for indicators of prediabetes using an HbA1c blood test. Human Resources has been requested to identify and refer exactly three employees who show positive indicators of prediabetes to an onsite health coach for preventative tracking. According to national health statistics, approximately 40% of the adult employee population possesses positive indicators for prediabetes.
+        </p>
+    </introduction>
+
+    <task >
+  
+    <statement>
+        <p>
+             Match each question with its correct numeric answer.
+        </p>
+    </statement>
+    
+    <cardsort>
+        <!-- Part A Match -->
+        <match>
+            <premise>
+                <p>What is the probability that exactly 6 employees must be tested in order to identify the 3 required positive individuals?</p>
+            </premise>
+            <response>
+                <p><m>0.138</m></p>
+            </response>
+        </match>
+        
+        <!-- Part B Match -->
+        <match>
+            <premise>
+                <p>What is the probability that at most 6 employees must be tested in order to identify the 3 required positive individuals?</p>
+            </premise>
+            <response>
+                <p><m>0.455</m></p>
+            </response>
+        </match>
+        
+        <!-- Part C Match -->
+        <match>
+            <premise>
+                <p>What is the probability that the team tests exactly 2 negative employees before successfully locating the first positive individual.</p>
+            </premise>
+            <response>
+                <p><m>0.144</m></p>
+            </response>
+        </match>
+    </cardsort>
+    
+    <!-- Solutions reveal for instructors or post-submission view -->
+    <solution>
+        <p>
+            <strong>Mathematical Derivations:</strong>
+            <ul>
+                <li>
+                    <p>
+                        <strong>Exactly 6 tests:</strong> This is a Negative Binomial exact probability calculation:
+                        <me>P(Y=6) = \binom{6-1}{3-1}(0.40)^3(0.60)^{6-3} = 10(0.064)(0.216) \approx 0.138</me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>At most 6 tests:</strong> This is a cumulative Negative Binomial probability calculation:
+                        <me>P(Y \le 6) = P(Y=3) + P(Y=4) + P(Y=5) + P(Y=6) = 0.064 + 0.115 + 0.138 + 0.138 = 0.455</me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Exactly 2 negative outcomes before the first positive:</strong> This means the first success lands exactly on trial 3, following a Geometric distribution:
+                        <me>P(X=3) = (0.60) \cdot (0.60) \cdot (0.40) = 0.144</me>
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </solution>
+</task>
+
+
+    <!-- Part D: Mean and Variance of linear cost conversion -->
+    <task xml:id="task-prediabetes-cost">
+        <statement>
+            <p>
+                 If each HbA1c blood test costs $20 to process, find the expected value and standard deviation for the total cost of conducting the tests necessary to successfully locate the three positive employees. Write your answers rounded to the nearest dollar.
+            </p>
+        <p>
+      Expected Cost = 
+      <fillin  width="8"  name="firstD" answer="150"/> and Standard Deviation = 
+   
+      <fillin width="8"  name="secondD" answer="67"/>
+    </p>
+  </statement>
+  <evaluation>
+    <evaluate submit="firstD">
+      <test correct="yes">
+        <mathcmp use-answer="yes"/>
+      </test>
+      </evaluate>
+    <evaluate submit="secondD">
+      <test correct="yes">
+        <mathcmp use-answer="yes"/>
+      </test>
+      </evaluate>
+    </evaluation>
+        <solution>
+            <p>
+                Let <m>Y</m> be the total number of tests needed to find <m>r = 3</m> positives. The cost function is a linear transformation: <m>\text{Cost} = 20Y</m>.
+            </p>
+            <p>
+                First, find the mean and variance of the underlying Negative Binomial random variable <m>Y</m>:
+                <me>E(Y) = \frac{r}{p} = \frac{3}{0.40} = 7.5 \text{ tests}</me>
+                <me>V(Y) = \frac{r(1-p)}{p^2} = \frac{3(0.60)}{0.40^2} = \frac{1.8}{0.16} = 11.25</me>
+            </p>
+            <p>
+                Now apply expectations rules for linear properties:
+                <me>E(\text{Cost}) = E(20Y) = 20 \cdot E(Y) = 20 \cdot 7.5 = \$150</me>
+                <me>V(\text{Cost}) = V(20Y) = 20^2 \cdot V(Y) = 400 \cdot 11.25 = 4500</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part E: Shift to Binomial setup -->
+    <task xml:id="task-prediabetes-binomial">
+        <statement>
+            <p>
+                Suppose that instead of testing sequentially, the team decides to just randomly select a group of ten employees from the company database and test them all simultaneously. What is the probability that they find at least three positive results?
+            </p>
+        </statement>
+        <choices>
+        <choice>
+            <statement><p><m>0.121</m></p></statement>
+            <feedback>
+                <p>
+                    Incorrect. This is only the probability of finding <em>exactly</em> two positive results, <m>P(X = 2)</m>. The question asks for <em>at least</em> three positives.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement><p><m>0.167</m></p></statement>
+            <feedback>
+                <p>
+                    Incorrect. This is the cumulative probability of finding two or fewer positives, <m>P(X \le 2)</m>. You need to subtract this value from 1 to find the complement.
+                </p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement><p><m>0.833</m></p></statement>
+            <feedback>
+                <p>
+                    Correct! Because the sample size is fixed at <m>n = 10</m>, this follows a Binomial distribution. To find <m>P(X \ge 3)</m>, use the complement rule:
+                    <me>P(X \ge 3) = 1 - P(X \le 2) = 1 - [P(X=0) + P(X=1) + P(X=2)]</me>
+                </p>
+                <p>
+                    Calculating individual baseline probabilities:
+                    <md>
+                        <mrow>P(X=0) \amp = \binom{10}{0}(0.40)^0(0.60)^{10} \approx 0.006</mrow>
+                        <mrow>P(X=1) \amp = \binom{10}{1}(0.40)^1(0.60)^9 \approx 0.040</mrow>
+                        <mrow>P(X=2) \amp = \binom{10}{2}(0.40)^2(0.60)^8 \approx 0.121</mrow>
+                    </md>
+                    Subtract the sum of these probabilities from 1:
+                    <me>P(X \ge 3) = 1 - (0.006 + 0.040 + 0.121) = 1 - 0.167 = 0.833</me>
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement><p><m>0.215</m></p></statement>
+            <feedback>
+                <p>
+                    Incorrect. This is the probability of finding <em>exactly</em> three positive results, <m>P(X = 3)</m>. Remember that "at least three" means you must include the probabilities for 3, 4, 5, ..., up to 10 successes.
+                </p>
+            </feedback>
+        </choice>
+                <choice>
+            <statement><p><m>0.785</m></p></statement>
+            <feedback>
+                <p>
+                    Incorrect. This is the complement of finding <em>exactly</em> three positive results, <m>1-P(X = 3)</m>. Remember that "at least three" means you must include the probabilities for 3, 4, 5, ..., up to 10 successes. Your computation removes 3 and adds 0,1,2. 
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+        <solution>
+            <p>
+                Because the sample size is fixed at <m>n = 10</m>, this shifts to a Binomial distribution setup with parameters <m>n = 10</m> and <m>p = 0.40</m>. We need to calculate <m>P(X \ge 3)</m>.
+                <me>P(X \ge 3) = 1 - P(X \le 2) = 1 - [P(X=0) + P(X=1) + P(X=2)]</me>
+                Calculate individual baseline probabilities using binomial expansion:
+                <md>
+                    <mrow>P(X=0) \amp = \binom{10}{0}(0.40)^0(0.60)^{10} \approx 0.006</mrow>
+                    <mrow>P(X=1) \amp = \binom{10}{1}(0.40)^1(0.60)^9 \approx 0.040</mrow>
+                    <mrow>P(X=2) \amp = \binom{10}{2}(0.40)^2(0.60)^8 \approx 0.121</mrow>
+                </md>
+                Combine terms inside the complement bracket:
+                <me>P(X \ge 3) = 1 - (0.006 + 0.040 + 0.121) = 1 - 0.167 = 0.833</me>
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+
+
+     <exercise xml:id="ex-cloud-load-balancer-refined">
+    <title>Discrete Distributions: Server Load Balancing Architecture</title>
+    <introduction>
+        <p>
+            An enterprise cloud-computing load balancer dynamically distributes incoming requests across seven distinct backup processing servers, labeled with the unique identifiers: <c>Alpha</c>, <c>Beta</c>, <c>Gamma</c>, <c>Delta</c>, <c>Epsilon</c>, <c>Zeta</c>, and <c>Eta</c>. 
+        </p>
+        <p>
+            Assume that at any given moment, the routing algorithm ensures all seven server nodes are equally likely to be selected, completely independent of which servers have processed previous request payloads. Let the random variable <m>X</m> represent the specific identifier node chosen for the next single incoming transaction task.
+        </p>
+    </introduction>
+
+    <!-- Part 1: Single Event Probability (Fill-in-the-blank) -->
+    <task xml:id="task-cloud-prob-single-numeric">
+        <statement>
+            <p>
+                What is the probability that the server labeled <c>Zeta</c> is chosen for the next incoming transaction? Enter your answer as decimal rounded to three decimal places.
+            </p>
+        <p>
+        <fillin width="8" answer="0.143"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct!  Because there are exactly seven unique server outcomes in the sample space and all choices are completely symmetric and equally likely, the probability of selecting any single specific node is <m>\frac{1}{7}</m>.
+            </p>
+          </feedback>
+        </test>
+      </evaluate>
+      </evaluation>
+    </task>
+
+    <!-- Part 2: Uniform Check (Multiple Choice) -->
+    <task xml:id="task-cloud-is-uniform-refined">
+        <statement correct="yes">
+            <p>
+                The random variable <m>X</m> can be considered a discrete uniform random variable.
+            </p>
+        </statement>
+        
+                <feedback>
+                    <p>
+                        By definition, a random variable is discrete uniform if its distribution maps an identical, constant probability mass to every single distinct outcome in its finite set pool. Here, each of the seven options has a probability of exactly <m>\frac{1}{7}</m>.
+                    </p>
+                </feedback>
+
+    </task>
+
+    <!-- Part 3: Bernoulli Check (Multiple Choice) -->
+    <task xml:id="task-cloud-is-bernoulli-refined">
+        <statement>
+            <p>
+                Why would the random variable <m>X</m> not be considered a Bernoulli random variable? 
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    A Bernoulli random variable is strictly limited to an outcome space containing exactly two binary values (usually coded as <m>0</m> and <m>1</m>), whereas <m>X</m> has seven distinct outcomes.
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! A Bernoulli distribution is defined exclusively over a binary outcome trial (success or failure). Because <m>X</m> can track seven separate target locations, it does not fit a single Bernoulli structure.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                     Each transaction trial behaves independently and can be run over and over again without replacement limits.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. While independence matches the baseline criteria for compound trials, it does not turn a multi-outcome variable into a primary binary Bernoulli variable.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    The sum of all probabilities in the uniform support pool adds up to 1.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. Every valid probability distribution must have probabilities that sum to 1; this property is not unique to Bernoulli trials.
+                    </p>
+                </feedback>
+            </choice>
+                       <choice>
+                <statement>
+                    <bold>No</bold>, because a Bernoulli variable requires drawing items without replacement, which forces probabilities to shift dynamically.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. You are confusing a Bernoulli trial with a hypergeometric draw. Bernoulli trials must have independent setups with a constant probability of success across binary options.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <bold>Yes</bold>, because any multi-categorical model can be classified as a Bernoulli variable as long as the sample space is finite.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. A finite sample space is required for any discrete variable, but a Bernoulli distribution specifically restricts the number of categories to exactly two.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <bold>No</bold>, because the expected value of a Bernoulli variable must always be greater than 1, which is impossible given a uniform sample size of seven.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. The expected value of a Bernoulli random variable is simply its success probability <m>p</m>, which must always fall strictly between 0 and 1.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part 4a: Define the Distribution (Multiple Choice) -->
+    <task xml:id="task-cloud-define-distribution">
+        <statement>
+            <p>
+                Consider a sequence of <m>5</m> consecutive transactions observed running through the load balancer. Let a new random variable <m>Y</m> represent the total number of times the server node <c>Alpha</c> is chosen across these five trials. What kind of random variable is <m>Y</m>?
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    <term>Binomial </term> with parameters <m>n = 5</m> and <m>p = \frac{1}{7}</m>.
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! We are counting the total number of successes (routing to <c>Alpha</c>) across a fixed sequence of <m>n = 5</m> independent trials, where each trial has a constant binary success probability of <m>p = \frac{1}{7}</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <term>Geometric distribution</term> with parameter <m>p = \frac{1}{7}</m>.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. A geometric model tracks the number of attempts needed to reach the *very first* success. Here, we are observing a fixed window of exactly 5 trials and counting the total accumulation of successes.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <term>Hypergeometric distribution</term> with parameters <m>N = 7</m>, <m>n = 5</m>, and <m>k = 1</m>.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. Hypergeometric distributions apply when sampling occurs *without replacement*, causing the odds to shift. Because the routing algorithm treats each choice independently, the parameters do not alter between runs.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <term>Negative Binomial distribution</term> with parameters <m>r = 5</m> and <m>p = \frac{1}{7}</m>.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. A negative binomial distribution counts the number of failures or total trials encountered before accumulating a fixed number of target successes r, which is not the case here.
+                        </p>
+                        </feedback>
+                        </choice>
+                        
+                        <choice>
+                            <statement>
+                                <p>
+                                   Discrete Uniform distribution with parameter k = 5. 
+                                </p>
+                            </statement>
+                            <feedback>
+                                <p>
+                                    Incorrect. While the underlying single selection X is uniform, the aggregated count of occurrences Y across multiple independent trials is not equally likely across its values (e.g., getting zero successes is far more likely than getting three).
+                                </p>
+                            </feedback>
+
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part 4b: Compute the Probability (Fill-in-the-blank) -->
+    <task xml:id="task-cloud-compute-probability-numeric">
+        <statement>
+            <p>
+                Using the distribution model defined in the previous part, compute the exact probability that the sequence of <m>5</m> consecutive transactions does not contain a single transaction routed to the <c>Alpha</c> server Enter your answer as a decimal rounded to four decimal places.
+            </p>
+            <p>
+        <fillin width="8" answer="0.4627"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! Four out of 8 outcomes in the sample space involve the second child being female.
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+</evaluation>
+
+        <hint>
+            <p>
+                The probability of *not* selecting server <c>Alpha</c> on any single given turn is <m>1 - \frac{1}{7} = \frac{6}{7}</m>. Since the trials are independent, evaluate <m>\left(\frac{6}{7}\right)^3</m> to find the probability that this failure occurs three times in a row.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                To evaluate the probability of getting zero allocations to server <c>Alpha</c> across <m>5</m> trials, we apply the binomial probability mass function:
+                <me>P(Y = y) = \binom{n}{y} p^y (1-p)^{n-y}</me>
+                where the number of trials is <m>n = 5</m>, the success parameter is <m>p = \frac{1}{7}</m>, and the target number of successes is <m>y = 0</m>:
+                <md>
+                    <mrow>P(Y = 0) \amp = \binom{5}{0} \left(\frac{1}{7}\right)^0 \left(\frac{6}{7}\right)^{5-0}</mrow>
+                    <mrow>\amp = 1 \times 1 \times \left(\frac{6}{7}\right)^5</mrow>
+                    <mrow>\amp  \approx 0.462664366</mrow>
+                </md>
+                Rounding to four decimal places yields <m>0.4627</m>.
+            </p>
+        </solution>
+    </task>
+
+   </exercise>
+
+
+
+
+
+
+
+        <exercise label="hypergeometric-wildlife-context">
+    <introduction>
+        <p>
+            In a remote wildlife sanctuary, conservation biologists are auditing a small batch of animal tracking collars before deployment. An inventory box contains a total of <m>10</m> tracking collars: <m>6</m> are advanced GPS-enabled collars and <m>4</m> are traditional VHF radio collars. A researcher randomly selects <m>4</m> collars from the box to take into the field. Let <m>Y</m> be the number of GPS-enabled collars selected.
+        </p>
+    </introduction>
+
+    <!-- Part 1: Distribution Identification -->
+    <task>
+        <statement>
+            <p><strong>Part A:</strong> What type of random variable is <m>Y</m>? Explain your reasoning.</p>
+        </statement>
+
+    <choices>
+        <choice correct="yes">
+            <statement><p>Hypergeometric</p></statement>
+            <feedback>
+                <p>
+                    Correct! The selection is done without replacement from a finite population (<m>N=10</m>) containing a specific number of successes (<m>K=6</m> GPS collars). The trials are dependent.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement><p>Binomial</p></statement>
+            <feedback>
+                <p>
+                    Incorrect. Because the selection is made without replacement from a very small finite population, the probability of choosing a GPS collar changes with each pick.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement><p>Geometric</p></statement>
+            <feedback>
+                <p>
+                    Incorrect. A geometric variable counts the number of trials until the first success occurs, whereas we have a fixed sample size of <m>n=4</m>.
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+</task>
+    <!-- Part 2: Probability Calculation -->
+    <task>
+        <statement>
+            <p><strong>Part B:</strong> Find the probability that three or more GPS-enabled collars are selected.</p>
+        </statement>
+
+    <choices>
+        <choice>
+            <statement><p><m>0.3810</m></p></statement>
+            <feedback><p>Incorrect. This is only the probability of getting exactly 3 GPS collars: <m>P(Y = 3)</m>.</p></feedback>
+        </choice>
+        <choice correct="yes">
+            <statement><p><m>0.4524</m></p></statement>
+            <feedback>
+                <p>
+                    Correct! We sum the individual probabilities for <m>Y=3</m> and <m>Y=4</m>:
+                    <me>P(Y \ge 3) = \frac{\binom{6}{3}\binom{4}{1}}{\binom{10}{4}} + \frac{\binom{6}{4}\binom{4}{0}}{\binom{10}{4}} = \frac{80}{210} + \frac{15}{210} = \frac{95}{210} \approx 0.4524</me>
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement><p><m>0.0714</m></p></statement>
+            <feedback><p>Incorrect. This is only the probability of getting exactly 4 GPS collars: <m>P(Y = 4)</m>.</p></feedback>
+        </choice>
+    </choices>
+</task>
+    <!-- Part 3: Expected Value and Standard Deviation -->
+    <task>
+        <statement>
+            <p><strong>Part C:</strong> What are the mean (<m>\mu</m>) and standard deviation (<m>\sigma</m>) for <m>Y</m>?</p>
+        </statement>
+
+    <choices>
+        <choice correct="yes">
+            <statement><p><m>\mu = 2.4</m>, <m>\sigma = 0.8000</m></p></statement>
+            <feedback>
+                <p>
+                    Correct! 
+                    The mean is calculated as: <m>\mu = n \left(\frac{K}{N}\right) = 4 \left(\frac{6}{10}\right) = 2.4</m>.
+                    The variance is: <m>\sigma^2 = n \left(\frac{K}{N}\right)\left(\frac{N-K}{N}\right)\left(\frac{N-n}{N-1}\right) = 4(0.6)(0.4)\left(\frac{6}{9}\right) = 0.64</m>.
+                    The standard deviation is: <m>\sigma = \sqrt{0.64} = 0.8000</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement><p><m>\mu = 2.4</m>, <m>\sigma = 0.6400</m></p></statement>
+            <feedback><p>Incorrect. You found the variance (<m>\sigma^2</m>) instead of taking its square root for the standard deviation.</p></feedback>
+        </choice>
+        <choice>
+            <statement><p><m>\mu = 2.0</m>, <m>\sigma = 1.0000</m></p></statement>
+            <feedback><p>Incorrect. Please recheck the formulas using parameters <m>N=10</m>, <m>K=6</m>, and <m>n=4</m>.</p></feedback>
+        </choice>
+    </choices>
+    </task>
+</exercise>
+        
+
+
+<exercise label="ex-poisson-ecoli-outbreaks">
+    <title>Epidemiology Study: E. Coli Dynamics</title>
+    <introduction>
+        <p>
+            Increased medical research has focused on tracking severe illnesses caused by the organism <em>Escherichia coli</em> (O157:H7), a bacterium that can trigger intestinal hemorrhages and a critical breakdown of red blood cells. Historical epidemiology data shows that sporadic outbreaks of E.coli have occurred in Colorado at a rate of approximately 2.4 per 100,000 per year. 
+        </p>
+        <p>
+If this rate has not changed and if 100,000 cases from Colorado are reviewed for this year, what is the probability that 5 cases of E.coli will be observed? Complete the following questions to find the answer: 
+        </p>
+    </introduction>
+
+    <!-- Part A: Random Variable Definition (Multiple Choice) -->
+    <task xml:id="task-ecoli-rv-definition">
+        <statement>
+            <p>
+                 Define a random variable <m>X</m> for this scenario and specify what type of random variable it is.
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement>
+                    <p><m>X</m> represents the number of reviews required until the first E. coli case is found; it is a Geometric random variable.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. A geometric model would look at the number of sequential patients screened until a positive case is encountered, rather than counting total instances in a fixed population sample.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p><m>X</m> represents the proportion of infected individuals out of the 100,000 screened; it is a Uniform random variable.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. Uniform random variables model experiments where every discrete outcome has an identical probability weight, or areas where probabilities are flat across an interval.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement>
+                    <p><m>X</m> represents the exact count of E. coli cases observed in the sample of 100,000 people over the year; it is a Poisson random variable.</p>
+                </statement>
+                <feedback>
+                    <p>Correct! Because we are tracking the number of occurrences of a rare event within a specified, fixed continuum of space and time (100,000 people over one year) with a known constant average rate, it is a Poisson process.</p>
+                </feedback>
+            </choice>
+<choice>
+                <statement>
+                    <p><m>X</m> represents whether a single randomly chosen case has an E. coli infection or not; it is a Binomial random variable with <m>n=1</m>.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. A single binary trial would be a Bernoulli trial, but we are aggregating counts across a vast population group.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p><m>X</m> represents the number of positive E. coli cases out of exactly 5 selected files; it is a Hypergeometric random variable.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. While we are looking for 5 cases in the final step, <m>Z</m> itself must be capable of tracking any count of outbreaks across the entire 100,000-person continuum.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part B: PMF Identification (Multiple Choice) -->
+    <task xml:id="task-ecoli-pmf-selection">
+        <statement>
+            <p>
+                 Which of the following functions correctly specifies the probability mass function (PMF) for your random variable <m>X</m>?
+            </p>
+        </statement>
+        <choices>
+            <choice correct="yes">
+                <statement>
+                    <p><m>p(x) = \frac{e^{-2.4} \cdot (2.4)^x}{x!}</m></p>
+                </statement>
+                <feedback>
+                    <p>Correct! The baseline rate is 2.4 per 100,000, and our sample group matches that unit size exactly (100,000 people). Therefore, the expected value parameter is <m>\lambda = 2.4</m>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p><m>p(x) = \binom{100000}{x}(0.000024)^x(0.999976)^{100000-x}</m></p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. While a Binomial distribution can model vast population sets, evaluating a binomial expansion with an <m>n</m> of 100,000 is mathematically inefficient and outside the scope of utilizing standard Poisson interval parameters directly.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p><m>p(x) = \frac{e^{-100000} \cdot (100000)^x}{x!}</m></p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. You used the size of the population sample (<m>100,000</m>) as the expected arrival rate <m>\lambda</m>, instead of the actual average number of cases (<m>2.4</m>).</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p><m>p(X) = (0.000024)(0.999976)^{x-1}</m></p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This matches a geometric waiting distribution style rather than a Poisson count distribution function.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p><m>p(x) = \frac{e^{-5} \cdot (5)^x}{x!}</m></p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. You used the target value of interest (<m>x=5</m> cases) as the expected mean parameter <m>\lambda</m>. The average rate remains <m>2.4</m>.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part C: Target Calculation (Short Answer Text Field) -->
+    <task xml:id="task-ecoli-calculation">
+        <statement>
+            <p>
+                 Now, calculate the probability that precisely 5 cases of E. coli will be observed. Write your answer as a decimal rounded to 4 decimal places.
+            </p>
+      <p>
+        <fillin width="8" answer="0.0602"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Yes!  Using the Poisson probability mass function established in Part B with a target of <m>z = 5</m> and a mean rate of <m>\lambda = 2.4</m>:
+                <me>P(Z = 5) = \frac{e^{-2.4} \cdot (2.4)^5}{5!}</me>
+                Evaluating individual components:
+                <md>
+                    <mrow>e^{-2.4} \amp \approx 0.090718</mrow>
+                    <mrow>(2.4)^5 \amp = 79.62624</mrow>
+                    <mrow>5! \amp = 120</mrow>
+                </md>
+                Combine terms to find the final metric:
+                <me>P(Z = 5) = \frac{0.090718 \cdot 79.62624}{120} = \frac{7.2235}{120} \approx 0.0602</me>
+            </p>
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+        
+    </task>
+</exercise>
+
+
+
+
+
+<exercise xml:id="ex-medical-treatment-binomial-updated-p">
+    <title>Discrete Distributions: Clinical Trial Therapeutic Efficacy</title>
+    <introduction>
+        <p>
+            Historical epidemiological data demonstrates that <m>55\%</m> of all patients afflicted by a specific chronic inflammatory illness can successfully achieve temporary remission and recover naturally without any clinical intervention. 
+        </p>
+        <p>
+            A biomedical research group develops an innovative targeted therapeutic treatment. They randomly select <m>10</m> diagnosed patients and administer the new treatment; <m>9</m> of these patients achieve full clinical remission shortly thereafter. To analyze whether the new therapy provides a statistically significant benefit, assume the baseline hypothesis that the treatment is completely ineffective and worthless.
+        </p>
+    </introduction>
+
+    <!-- Part 1: Random Variable Classification (Multiple Choice) -->
+    <task xml:id="task-trial-rv-type-v2">
+        <statement>
+            <p>
+                Let the random variable <m>Y</m> represent the total number of patients who successfully achieve remission out of the 10 selected. Under the assumption that the new treatment is completely ineffective, what type of random variable is <m>Y</m>?
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    <term>Binomial distribution</term>, because there is a fixed number of independent patient observations (<m>n = 10</m>), each trial results in a binary outcome (recovers or fails to recover), and the baseline recovery probability remains constant at <m>p = 0.55</m>.
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! Because we assume the treatment is worthless, the probability of recovery on each trial stays locked at the natural background rate of <m>0.55</m>. Since the patient responses behave independently and the total sample size is fixed at <m>10</m>, this satisfies all criteria for a binomial model.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <term>Geometric distribution</term>, because we are measuring a sequence of binary recovery outcomes across a group of clinical subjects.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. A geometric model counts the number of separate trials required to reach the very first success. Here, the number of total trials is pre-fixed at 10, and we are counting the total accumulated successes.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <term>Hypergeometric distribution</term>, because we are selecting a subset of clinical subjects out of a specific regional medical facility pool.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. Hypergeometric distributions apply when sampling is conducted <term>without replacement</term> from a small, finite total population, causing probabilities to shift on each draw. The problem specifies a random selection from an overall large background patient environment.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <term>Poisson distribution</term>, because we are counting patient recoveries that occur over a fixed window of clinical observation time.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. While time is mentioned conceptually, the mathematical support is explicitly a count of successes across a finite, bounded pool of 10 individual patient subjects.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part 2: Probability of At Least Nine (Fill-in) -->
+    <task xml:id="task-trial-prob-at-least-nine-v2">
+        <statement>
+            <p>
+                Under the assumption that the new treatment is completely ineffective, compute the exact probability that at least <m>9</m> of the ten patients successfully achieve remission. Enter your answer as a decimal rounded to four decimal places.
+            </p>
+            <p>
+        <fillin width="8" answer="0.0233"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! Four out of 8 outcomes in the sample space involve the second child being female.
+            </p>
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+        <hint>
+            <p>
+                To find the probability of at least 9, calculate the sum of the two mutually exclusive target cases: <m>P(Y \ge 9) = P(Y = 9) + P(Y = 10)</m>. Apply the binomial formula <m>\binom{n}{y}p^y(1-p)^{n-y}</m> using <m>n = 10</m> and <m>p = 0.55</m> for both values.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                We evaluate the cumulative tail probability using the binomial mass function:
+                <me>P(Y = y) = \binom{10}{y} (0.55)^y (0.45)^{10-y}</me>
+                <ul>
+                    <li>
+                        <p>
+                            For exactly 9 recoveries (<m>y = 9</m>):
+                            <me>P(Y = 9) = \binom{10}{9} (0.55)^9 (0.45)^1 = 10 \times 0.0046049 \times 0.45 \approx 0.02072</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            For exactly 10 recoveries (<m>y = 10</m>):
+                            <me>P(Y = 10) = \binom{10}{10} (0.55)^{10} (0.45)^0 = 1 \times 0.0025327 \times 1 \approx 0.00253</me>
+                        </p>
+                    </li>
+                </ul>
+                Summing these individual probabilities together yields:
+                <me>P(Y \ge 9) = 0.02072 + 0.00253 = 0.02325 \implies \text{Recalculating precise values: } 0.0233 \text{ for exact match}</me>
+                Let's double-check the arithmetic via formula: <m>10 \cdot (0.55)^9 \cdot 0.45 + (0.55)^{10} = 0.020722 + 0.002533 = 0.023255 \approx 0.0233</m>.
+            </p>
+            
+        </solution>
+</task>
+
+    <!-- Part 3: Expected Value (Fill-in) -->
+    <task xml:id="task-trial-expectation-v2">
+        <statement>
+            <p>
+                If the therapeutic treatment is absolutely ineffective, how many of the 10 selected patients would you expect to achieve remission naturally? Enter your answer as a decimal value.
+            </p>
+    <p>
+        <fillin width="8" answer="5.5"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+               Yes! Using the mean formula for a binomial random variable where <m>n = 10</m> and <m>p = 0.55</m>:
+                <me>E(Y) = n \cdot p = 10 \times 0.55 = 5.5</me>
+                We would expect an average of <m>5.5</m> patients to achieve remission on their own.
+            </p>
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+        <hint>
+            <p>
+                The expected value (mean) of a binomial distribution simplifies down directly to the product formula: <m>E(Y) = n \cdot p</m>.
+            </p>
+        </hint>
+       
+    </task>
+
+    <!-- Part 4: Statistical Conclusion Analysis (Multiple Choice) -->
+    <task xml:id="task-trial-statistical-conclusion-v2">
+        <statement>
+            <p>
+                Based on your calculations for the expectation and tail probability, do you think it is reasonable to conclude that the new medical treatment is actually ineffective, or is that baseline assumption likely incorrect?
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    The baseline assumption that the treatment is ineffective is <bold>likely incorrect</bold>. Observing 9 patient recoveries is higher than the natural expected average of 5.5, and the probability of getting 9 or more recoveries completely by chance is low (<m>P \approx 0.0233</m>), indicating the therapy is highly likely to be genuinely effective.
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! This aligns with standard alpha significance testing thresholds (typically <m>\alpha = 0.05</m>). Because a tail probability of <m>2.33\%</m> falls below the <m>5\%</m> significance benchmark, researchers would reject the baseline hypothesis and determine that the new treatment provides a statistically significant improvement over natural background recovery rates.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    The baseline assumption that the treatment is ineffective is <bold>correct</bold>. Since the tail probability of <m>0.0233</m> is greater than zero, it remains entirely possible that this surge in patient recoveries was an ordinary random fluctuation.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. While it is not physically impossible to get 9 or 10 recoveries by pure luck, landing below the conventional <m>5\%</m> threshold gives enough mathematical confidence to support efficacy in medical research.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    The baseline assumption is correct, because an expected value of 5.5 naturally rounds up to 6, and an observation of 9 is close enough to 6 to be ignored as background variance.
+                    </statement>
+                    </choice>
+                    <choice>
+                        <statement>
+                            <p>
+                                Incorrect. A difference of several patients out of a small group of 10 creates an entirely distinct distribution profile, moving far beyond ordinary background variance limits.
+                            </p>
+                        </statement>
+                    </choice>
+                    </choices>
+                    </task>
+                    </exercise>
+                    
+
+
+
+
+
+
+                      
+   </exercises>
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+
+
+
+
+
+   <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+   <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+
+
+
+
+
+
+<exercises xml:id="hw-common-discrete-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+
+
+
+
+
+
+
+
+   </exercises>
+
+
+  </section>

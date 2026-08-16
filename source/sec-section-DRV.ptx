@@ -165,6 +165,8 @@
 
 
 
+
+
 <exercise xml:id="ex-drone-coverage-distribution">
     <title> campus Drone Logistics and Expected Values</title>
     <introduction>
@@ -378,6 +380,9 @@
         </solution>
     </task>
 </exercise>
+
+
+
 
 
 

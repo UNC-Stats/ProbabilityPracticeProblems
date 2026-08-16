@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-hypergeometric-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Hypergeometric Random Variable</title>
+
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+
+ <exercises xml:id="hw-hyper-rv" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+
+<exercise xml:id="ex-cookie-jar-hypergeometric-expanded">
+    <title>Discrete Distributions: The Cookie Jar Selection</title>
+    <introduction>
+        <p>
+            A cookie jar currently holds <m>21</m> total cookies: <m>13</m> are chocolate-chip cookies, and <m>8</m> are brussels-sprout-with-turnip-chip cookies. You pick <m>3</m> cookies at random from the jar without looking.
+        </p>
+    </introduction>
+
+    <!-- Part 1: Explaining WHY it is Hypergeometric -->
+    <task xml:id="task-cookie-rv-why-hypergeometric-v2">
+        <statement>
+            <p>
+                Let the random variable <m>X</m> represent the number of brussels-sprout-with-turnip-chip cookies found in your sample. This scenario is modeled using a <term>Hypergeometric distribution</term>. Which of the following best explains why the Hypergeometric model applies here?
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    Because we are sampling a fixed number of items from a finite population containing two distinct categories without replacement, meaning individual trial outcomes are dependent.
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! A hypergeometric random variable tracks a fixed sample size drawn from a small finite population divided into two groups. Because cookies are eaten or set aside (sampling <term>without replacement</term>), the probability of drawing a specific cookie type shifts dynamically with each draw, making the choices dependent.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    Because each draw is independent, and the probability of picking a brussels-sprout-with-turnip-chip cookie remains perfectly constant at <m>\frac{8}{21}</m> for all three selections.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. Constant probabilities and trial independence only hold true if you put each cookie back into the jar before selecting the next one (sampling with replacement), which fits a Binomial distribution.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    Because we are tracking the infinite number of attempts required to pull our very first edible chocolate-chip cookie.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. Counting the number of independent trials required until a success occurs describes a Geometric distribution, not a Hypergeometric distribution.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    Because the cookies are randomly distributed over a continuous geometric interval of volume or surface area.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. Continuous intervals track Poisson patterns or geometric density functions, not discrete group partitions.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part 2: Probability of None -->
+    <task xml:id="task-cookie-prob-none-v2">
+        <statement>
+            <p>
+                Find the probability that you get none of the brussels-sprout-with-turnip-chip cookies. Enter your answer as a decimal rounded to three decimal places.
+            </p>
+        <p>
+        <fillin width="8" answer="0.215"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! We compute the combination footprints for the total sample space and successful subset partitions:
+                <ul>
+                    <li><p>Total ways to pick any 3 cookies out of 21: <me>\binom{21}{3} = \frac{21 \times 20 \times 19}{3 \times 2 \times 1} = 1330</me></p></li>
+                    <li><p>Ways to choose 0 brussels-sprout cookies (meaning all 3 are chocolate-chip): <me>\binom{8}{0} \times \binom{13}{3} = 1 \times \frac{13 \times 12 \times 11}{3 \times 2 \times 1} = 286</me></p></li>
+                </ul>
+                Dividing the favorable outcomes by the sample space yields:
+                <me>P(X = 0) = \frac{286}{1330} = \frac{143}{665} \approx 0.215</me>
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+</evaluation>
+
+        <hint>
+            <p>
+                Use combinations to find the ratio: <me>P(X = 0) = \frac{\binom{8}{0} \times \binom{13}{3}}{\binom{21}{3}}</me> Find how many ways to pick 3 cookies exclusively from the 13 chocolate-chip options, and divide by the total ways to draw any 3 cookies from the jar.
+            </p>
+        </hint>
+
+    </task>
+
+    <!-- Part 3: Probability of At Most One -->
+    <task xml:id="task-cookie-prob-at-most-one-v2">
+        <statement>
+            <p>
+                Compute the probability that your sample contains at most one (<m>X \le 1</m>) brussels-sprout-with-turnip-chip cookie. Enter your answer as a decimal rounded to three decimal places.
+            </p>
+               <p>
+        <fillin width="8" answer="0.684"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! <p>
+                "At most one" means we calculate the combined probabilities for <m>X = 0</m> and <m>X = 1</m>:
+                <me>P(X \le 1) = P(X = 0) + P(X = 1)</me>
+            </p>
+            <p>
+                1. Calculate the probability of choosing exactly 1 brussels-sprout cookie and 2 chocolate-chip cookies:
+                <me>P(X = 1) = \frac{\binom{8}{1} \times \binom{13}{2}}{\binom{21}{3}} = \frac{8 \times 78}{1330} = \frac{624}{1330} \approx 0.469</me>
+            </p>
+            <p>
+                2. Sum the two discrete probabilities together:
+                <me>P(X \le 1) = \frac{286}{1330} + \frac{624}{1330} = \frac{910}{1330} = \frac{455}{665} = \frac{13}{19} \approx 0.684</me>
+                Thus, the cumulative probability of drawing at most one brussels-sprout cookie is <m>0.684</m>.
+            </p>
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+</evaluation>
+        <hint>
+            <p>
+                To find <m>P(X \le 1)</m>, calculate the sum of the two disjoint cases: <m>P(X = 0) + P(X = 1)</m>. You found <m>P(X = 0) = \frac{286}{1330}</m> in the previous part. Now evaluate <m>P(X = 1) = \frac{\binom{8}{1} \times \binom{13}{2}}{\binom{21}{3}}</m> and combine them.
+            </p>
+        </hint>
+
+    </task>
+
+    <!-- Part 4: Expected Value & Interpretation (5-Option Multiple Choice) -->
+    <task xml:id="task-cookie-expected-value">
+        <statement>
+            <p>
+                Compute the expected number of brussels-sprout-with-turnip-chip cookies in your sample, <m>E(X)</m>, and select its correct long-term interpretation.
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    <m>E(X) \approx 1.143</m>. If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 1.143 brussels-sprout cookies per sample.
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! For a hypergeometric distribution, the expected value formula is <m>E(X) = n \left(\frac{r}{N}\right)</m>, where <m>n=3</m> is the sample size, <m>r=8</m> is the number of target items (brussels-sprout cookies), and <m>N=21</m> is the total population. This yields <m>3 \times \left(\frac{8}{21}\right) = \frac{24}{21} = \frac{8}{7} \approx 1.143</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>E(X) \approx 1.857</m>. If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 1.857 brussels-sprout cookies per sample.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This calculation uses the wrong category pool in the numerator, solving for the expected number of <term>chocolate-chip</term> cookies instead: <m>3 \times \left(\frac{13}{21}\right) \approx 1.857</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>E(X) = 1.143</m>. In any given single sample of 3 cookies, you are guaranteed to get exactly 1 full brussels-sprout cookie and a fraction of another.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. The value is mathematically right, but the interpretation is wrong. Expected values represent long-run averages over repeated trials; a single discrete draw can only yield integer values (0, 1, 2, or 3 cookies), never a fractional decimal amount.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>E(X) = 0.381</m>. If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 0.381 brussels-sprout cookies per sample.
+                </statement>
+                <feedback>
+                    <p>
+                      Incorrect. This is the simple ratio of brussels-sprout cookies in the jar (\frac{8}{21} \approx 0.381). You forgot to multiply by the sample size multiplier (n = 3).
+                      </p>
+</feedback>
+</choice>
+<choice>
+  <statement>
+    <p>
+      E(X) = 1.500. If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of exactly 1.500 brussels-sprout cookies per sample.
+    </p>
+  </statement>
+  <feedback>
+    <p>
+      Incorrect. This is a blind guess assuming the two cookie types split the sample capacity perfectly in half (3/2 = 1.5), which ignores the actual proportions of cookies in the jar.
+    </p>
+  </feedback>
+</choice>      
+</choices>     
+</task>           
+        </exercise>      
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-hyper-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+   </exercises>
+
+
+
+<exercises xml:id="binomial-approximation-mixed">
+    <title>Binomial Approximation to the Hypergeometric Distribution</title>
+    
+    <p>
+        Recall that the binomial distribution is used when we want to calculate the likelihood that an event happens a certain number of times during <m>n</m> independent Bernoulli trials. The binomial distribution can be used to approximate the hypergeometric distribution if the sample size, <m>n</m>, is small relative to the population size <m>N</m> (e.g., the sample is at most 5% of the population, meaning <m>\frac{n}{N} \le 0.05</m>). To understand how and why this works, answer the questions that follow.
+    </p>
+
+    <exercise label="ex-fish-hypergeometric">
+        <title>Capture-Recapture Scenario [Revisited]</title>
+        <introduction>
+            <p>
+                Suppose there are 1,000 fish in a lake. During the first week, 65 fish are captured, tagged, and released. Then, 30 fish are captured two weeks later. Let <m>X</m> be a hypergeometric random variable representing the number of tagged fish found in the sample of size 30.
+            </p>
+        </introduction>
+        <!-- Interactive short answer for calculation -->
+        <task>
+        <statement>
+          <p>
+            	Let <m>X</m> be a hypergeometric random variable representing the number of tagged fish found in the sample of size 30. What is the probability that 3 of the 30 fish will be tagged? In other words, use the hypergeometric probability distribution to find <m>P(X=3)</m>.  
+              Write your answer as a decimal rounded to three places. 
+            </p>
+            <p>
+        <fillin width="8" answer="0.184"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! Using the hypergeometric formula:
+                <me>P(X=3) = \frac{\binom{65}{3}\binom{935}{27}}{\binom{1000}{30}} \approx 0.184</me>
+            </p>
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+</task>
+
+    <task> 
+        <statement>
+            <p>
+                Consider the capture of each fish to be a trial. If the sample is taken without replacement, then we have 30 trials.  Compute each of the following probabilities. Write your answer as a decimal rounded to four decimal places. Remember - The sample of size 30 is taken <em>without replacement</em>.
+            </p>
+        </statement>
+        
+        <!-- Part B1: First fish -->
+        <task>
+            <statement>
+                <p>What is the probability that the first fish captured is tagged?
+                </p> 
+                <p>
+        <fillin width="8" answer="0.0650"/>
+      </p>
+    </statement>
+            <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! 
+            </p>
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+</task>
+        <!-- Part B2: Second fish -->
+        <task>
+            <statement>
+                <p>Suppose that the first fish was tagged. What is the probability that the second fish captured is also tagged?</p>
+                  <p>
+          <fillin width="8" answer="0.0641"/>
+      </p>
+    </statement>
+            <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! 
+            </p>
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+        </task>
+
+        <!-- Part B3: Third fish -->
+        <task>
+            <statement>
+                <p>Suppose that the first fish was tagged but the second one was not. What is the probability that the third fish captured is tagged?</p>
+                  <p>
+         <fillin width="8" answer="0.0641"/>
+      </p>
+    </statement>
+            <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! 
+            </p>
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+        </task>
+
+        <!-- Part B4: Last fish -->
+        <task>
+            <statement>
+                <p>4. Suppose 29 fish have been caught and that two of these were tagged. What is the probability that the last fish captured (number 30 in our sample) is tagged?</p>
+
+                  <p>
+           <fillin width="8" answer="0.0649"/>
+      </p>
+    </statement>
+            <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! 
+            </p>
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+        </task>
+    </task>
+
+    <!-- Non-interactive conceptual explanations using essay text boxes -->
+   <task>
+     <statement correct="yes">
+    <p>
+      These trials can be considered Bernoulli trials.
+    </p>
+  </statement>
+
+  <feedback>
+    <p>
+      Write.
+    </p>
+  </feedback>
+
+    </task>
+
+    <task>
+        <statement>
+            <p>
+                Explain why our random variable <m>X</m> (number of tagged fish found in the sample of size 60) is NOT a binomial random variable. Also tell me, What changes would you have to make to the physical capture-recapture protocol in order for <m>X</m> to be a true binomial random variable?
+            </p>
+        </statement>
+         <response/>
+        <solution>
+            <p>
+                It is not binomial because true binomial distribution requires completely independent trials with a constant probability of success. To make it a true binomial setup, you would have to sample <strong>with replacement</strong>: throw each fish back into the lake immediately after checking it before drawing the next one.
+            </p>
+        </solution>
+    </task>
+
+    <task>
+        <statement>
+            <p>
+                Because the sample size is small relative to the population (<m>30/1000 = 0.03 \lt 0.05</m>), the probabilities you calculated earlier quite similar! It is therefore reasonable to just fix the probability of success at <m>p = \frac{65}{1000} = 0.065</m> for all 30 trials. This would allow us to use the binomial distribution to get an <em>approximation</em> for <m>P(X=3)</m>! 
+            </p>
+            <p>
+                 Re-compute the probability that exactly 3 of the 30 fish will be tagged using the binomial approximation. Write your answer as a decimal rounded to three places. 
+                 
+                 </p>
+                  <p>
+                  How does this compare to your initial answer using the hypergeometric distribution in Part A? 
+            </p>
+         <p>
+           <fillin width="8" answer="0.182"/>
+      </p>
+    </statement>
+            <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! Using the Binomial formula:
+                <me>P(X=3) = \binom{30}{3}(0.065)^3(0.935)^{27} \approx 0.182</me>
+                Comparing this to the hypergeometric result (<m>0.184</m>), the binomial approximation is incredibly close and accurate to within two-thousandths.
+            </p>
+          </feedback>
+        </test>
+        </evaluate>
+        </evaluation>
+        </task>
+        </exercise>
+
+
+
+
+<exercise label="ex-cookie-analysis">
+        <title>Analyzing the Cookie Problem Approximation</title>
+        <introduction>
+            <p>
+                Refer back to the Brussels-Sprout-with-Turnip-Chip cookie problem. You originally used a hypergeometric framework because you sampled a total of 3 cookies from a small batch of 21 cookies (where 8 were Brussels-Sprout-with-Turnip-Chip flavors).
+            </p>
+            </introduction>
+
+            <task>
+              <statement>
+                <p>
+                 Comment on whether a binomial approximation is mathematically appropriate for that cookie scenario. Justify your reasoning.
+                </p>
+              </statement>
+            
+        <solution>
+            <p>
+                The binomial approximation is <strong>not appropriate</strong> here. Testing the population threshold: <m>\frac{n}{N} = \frac{3}{21} \approx 0.143</m>. Because <m>14.3\% \gt 5\%</m>, the sample size is too large relative to the population. Each draw alters the remaining cookie composition too dramatically to ignore.
+            </p>
+        </solution>
+    </task>
+
+    <task>
+        <statement>
+            <p>
+                Regardless of appropriateness, let's see how much error occurs if we force a binomial calculation anyway. Let the constant probability of picking a Brussels-Sprout cookie be <m>p = \frac{8}{21} \approx 0.38</m>.
+            </p>
+            <p>
+                 Use the binomial distribution to compute the probability of getting exactly one Brussels-Sprout-with-Turnip-Chip cookie in your sample of 3 cookies.
+            </p>
+        </statement>
+         <solution>
+            <p>
+               Using the Binomial formula:P(X=1) = \binom{3}{1}(0.38)^1(0.62)^2 \approx 0.438
+            </p>
+        </solution>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Compare your answers using the hypergeometric and binomial distributions. What do you notice? Why did this occur?
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The exact hypergeometric result was 0.469. Because the sample size threshold was violated, the approximation is noticeably inaccurate (off by roughly 0.031 or over 3%).
+            </p>
+          </solution>
+        </task>
+       
+</exercise>
+
+
+
+
+
+
+
+        </exercises>
+
+    
+
+
+  </section>

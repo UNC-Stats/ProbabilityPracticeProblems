@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-proofs-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Property Derivations</title>
+
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+
+ <exercises xml:id="hw-proof-disc-rv" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+<exercise label="parsons-expectation-proof-discrete-distractors">
+    <statement>
+        <p>
+            Let <m>Y=aX+b</m> be a linear transformation of random variable <m>X</m>, where <m>a</m> and <m>b</m> are constants. Then, 
+            <me>E(Y)=E(aX + b) = aE(X) + b</me>. 
+            </p>    
+            
+            <p>Reorder the blocks below to prove that this property is true. (Go step by step! Don't skip or combine steps.) You may or may not use all provided blocks.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <p>
+                By definition, 
+                <me>E(aX + b) = \sum_{x} (ax + b)P(X = x)</me>
+            </p>
+        </block>
+        <block order="2" >
+            <p>
+              <m>  = \sum_{x} \left[ axP(X = x) + bP(X = x) \right] \quad</m> (distribute)
+            </p>
+        </block>
+        <block order="3">
+            <p>
+                <m> = \sum_{x} axP(X = x) + \sum_{x} bP(X = x) \quad</m> (property of sums)
+            </p>
+        </block>
+        <block order="4">
+            <p>
+
+                <me> = a \sum_{x} xP(X = x) + b \sum_{x} P(X = x) \quad</me> (property of sums)
+            </p>
+        </block>
+        <block order="5">
+            <p>
+                
+                <me> = aE(X)  + b \sum_{x} P(X = x) \quad</me> (by definition)
+            </p>
+        </block>
+                <block order="6">
+            <p>
+                <me>  = aE(X) + b(1) = aE(X) + b,</me>
+                since <m>\sum_{x} P(X = x)=1</m>
+            </p>
+        </block>
+        <!-- Distractor 1 -->
+        <block  correct="no">
+            <p>
+
+                <m>= \sum_{x} axP(X = x) + bP(X = x) \quad</m> (distribute)
+            </p>
+        </block>
+        <!-- Distractor 2 -->
+        <block correct="no">
+            <p>
+
+                <m>= \left(\sum_{all \, x} (ax + b)\right) \cdot \left(\sum_{all \, x} P(X = x)\right)\quad </m> (property of sums)
+            </p>
+        </block>
+    </blocks>
+</exercise>
+
+
+<exercise xml:id="ex-variance-shortcut-proof-parsons">
+    <title>Interactive Proof: The Variance Shortcut Formula</title>
+    <statement>
+        <p>
+            The variance of a random variable <m>X</m> measures the expected value of the squared deviations around its mean, <m>\mu = E(X)</m>. Thus, the formula for variance can be written as:
+            <me>V(X) = E\left[(X - E(X))^2\right] = E\left[(X - \mu)^2\right]</me>
+            
+            Prove that, from this definition, we can derive the variance shortcut formula:
+            <me>V(X) = E(X^2) - [E(X)]^2 =  E(X^2) - \mu^2  </me>
+        </p>
+        
+        <p>
+            Arrange the blocks below in the correct logical sequence. You may or may not use all blocks.
+        </p>
+    </statement>
+    <blocks>
+        <block order="1">
+            <p>
+             Expand the perfect square polynomial inside the expectation brackets:
+            <me>\implies V(X) = E\left[X^2 - 2\mu X + \mu^2\right]</me>
+        </p>
+        </block>
+        <!-- Step 2 -->
+        <block order="2">
+            <p>
+                Apply the linearity property of expectations to split the expression into three terms:
+                <me>
+                    \implies V(X)  = E(X^2) - E(2\mu X) + E(\mu^2)
+                </me>
+            </p>
+        </block>
+        
+        <!-- Step 3 -->
+        <block order="3">
+            <p>
+                Apply the linearity property of expectations to handle the constant terms and simplify the expression:
+                <me>
+                  \implies V(X)  = E(X^2) - 2\mu E(X) + \mu^2
+                </me>
+            </p>
+        </block>
+        
+        <!-- Step 4 -->
+        <block order="4">
+            <p>
+                Substitute the identity <m>E(X) = \mu</m> into the linear expression:
+                <me>
+                   \implies V(X) = E(X^2) - 2\mu(\mu) + \mu^2 
+                </me>
+            </p>
+        </block>
+
+        <!-- Step 5 -->
+        <block order="4">
+            <p>
+                Combine like terms:
+                <me>
+                    \implies V(X) = E(X^2) - 2\mu^2 + \mu^2 = E(X^2) - \mu^2
+                </me>
+            </p>
+        </block>
+
+        <!-- DISTRACTOR (Incorrect linearity handling) -->
+        <block  correct="no">
+            <p>
+                Distribute the expectation operator inside the square brackets:
+                <me>
+                   \implies V(X)  = \left[E(X) - E(\mu)\right]^2 
+                </me>
+            </p>
+        </block>
+    </blocks>
+    
+    <hint>
+        <p>
+            Remember that the expectation operator <m>E</m> is linear, so it distributes across addition and subtraction. Once distributed, remember that <m>\mu</m> and <m>\mu^2</m> are static numbers, which means <m>E(\mu^2) = \mu^2</m>. Look for the block that distributes the expectation operator across the polynomial first.
+        </p>
+    </hint>
+</exercise>
+
+
+
+
+   <exercise xml:id="ex-mgf-sum-independent-proof">
+    <title>Interactive Proof: MGF of a Sum of Independent Variables</title>
+    <statement>
+        <p>
+            Let <m>Y = X_1 + X_2 + \dots + X_n</m>, where the <m>X_i</m>'s are mutually independent random variables. Prove the multiplicative property for moment generating functions:
+            <me>M_Y(s) = M_{X_1}(s) \cdot M_{X_2}(s) \dots M_{X_n}(s)</me>
+        </p>
+        
+        <p>
+            Arrange the blocks below in the correct logical sequence. You will use all blocks. Start with the definition of a moment generating function.
+        </p>
+    </statement>
+    <blocks>
+<block order="1">
+    <p>
+            By definition of a moment generating function:
+            <me>M_Y(s) = E\left[e^{sY}\right]</me>
+        </p>
+</block>
+
+<block order="2">
+    <p>
+            Substitute <m>Y = X_1 + X_2 + \dots + X_n</m>:
+            <me>\implies M_Y(s) = E\left[e^{s(X_1 + X_2 + \dots + X_n)}\right]</me>
+        </p>
+</block>
+
+        <!-- Step 2 -->
+        <block order="3">
+            <p>
+                Distribute the <m>s</m>:
+                <me>
+                    \implies M_Y(s)  = E\left[e^{sX_1 + sX_2 + \dots + sX_n}\right]
+                </me>
+            </p>
+        </block>
+
+
+                <block order="4">
+            <p>
+                Apply laws of exponents:
+                <me>
+                    \implies M_Y(s)  = E\left[e^{sX_1} \cdot e^{sX_2} \dots e^{sX_n}\right]
+                </me>
+            </p>
+        </block>
+        
+        <!-- Step 3 -->
+        <block order="5">
+            <p>
+                Apply the expectation property for independent random variables:
+                <me>
+                  \implies M_Y(s)  = E\left[e^{sX_1}\right] \cdot E\left[e^{sX_2}\right] \dots E\left[e^{sX_n}\right]
+                </me>
+            </p>
+        </block>
+        
+        <!-- Step 4 -->
+        <block order="6">
+            <p>
+                We can now rewrite the expression as:
+                <me>
+                   \implies M_Y(s) = M_{X_1}(s) \cdot M_{X_2}(s) \dots M_{X_n}(s),
+                </me>
+                since <m>M_{X_i}(s) = E\left[e^{sX_i}\right]</m> (by definition).
+            </p>
+        </block>
+
+    </blocks>
+    
+    <hint>
+        <p>
+            After using exponent laws to write the expression as a product of exponentials, you must apply the special expectation property that is only valid when variables are explicitly given as <term>independent</term>.
+        </p>
+    </hint>
+</exercise>
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-proof-disc-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+<exercise xml:id="ex-mgf-linear-transform-proof-static">
+    <title>Proof: Linear Transformations of MGFs</title>
+    <statement>
+        <p>
+            Let <m>X</m> be a random variable with moment generating function <m>M_X(s)</m>, and let <m>a</m> and <m>b</m> be constant scalars. Prove the linear transformation property for moment generating functions:
+            <me>M_{aX+b}(s) = e^{bs}M_X(as)</me>
+        </p>
+    </statement>
+    
+    <hint>
+        <p>
+            Start with the definition of a moment generating function, <m>M_Z(s) = E\left[e^{sZ}\right]</m>, substituting <m>Z = aX + b</m>. Distribute the parameter <m>s</m> inside the exponent, split the exponential term into a product, and identify which component behaves as a deterministic constant relative to the expectation operator.
+        </p>
+    </hint>
+
+    <solution>
+        <p>
+            To prove the property, we evaluate the expression directly from the foundational definition of a moment generating function:
+        </p>
+        <p>
+            1. <term>Apply the MGF Definition:</term> Express the moment generating function of the transformed variable as an expectation:
+            <me>M_{aX+b}(s) = E\left[e^{s(aX + b)}\right]</me>
+        </p>
+        <p>
+            2. <term>Distribute and Split the Exponents:</term> Apply the algebraic distributive law inside the exponent power. Then, use the laws of exponents to convert the single exponential of a sum into a product of two distinct exponential bases:
+            <md>
+                <mrow>M_{aX+b}(s) \amp = E\left[e^{asX + bs}\right]</mrow>
+                <mrow>\amp = E\left[e^{asX} \cdot e^{bs}\right]</mrow>
+            </md>
+        </p>
+        <p>
+            3. <term>Invoke the Linearity of Expectation:</term> The term <m>e^{bs}</m> contains only constant parameters and is completely free of the random variable <m>X</m>. Relative to the expectation operator, it behaves as a deterministic scalar and can be factored completely outside the bracket:
+            <me>M_{aX+b}(s) = e^{bs} \cdot E\left[e^{asX}\right]</me>
+        </p>
+        <p>
+            4. <term>Identify the Resulting MGF:</term> Recognize that the remaining expression, <m>E\left[e^{(as)X}\right]</m>, matches the exact functional definition of the moment generating function for the base variable <m>X</m>, evaluated at the scaled parameter input <m>as</m> instead of <m>s</m>:
+            <me>E\left[e^{(as)X}\right] = M_X(as)</me>
+            Substituting this back into our equation completes the proof:
+            <me>M_{aX+b}(s) = e^{bs} \cdot M_X(as)</me>
+        </p>
+    </solution>
+</exercise>
+
+
+
+   </exercises>
+
+  </section>

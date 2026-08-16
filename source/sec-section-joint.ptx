@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-section-common-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Common Discrete Random Variables</title>
+<section xml:id="sec-section-joint" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Common Continuous Random Variables</title>
 
-  <p> 
+ <p> 
     Write intro to homework set.....  Goal, Purpose, Instructions....
   </p>
 
 
- <exercises xml:id="hw-common-discrete-rv" >
+ <exercises xml:id="hw-joint-rv" >
    <title>Interactive Exercises</title>
    <introduction>
      <p>
@@ -20,7 +20,7 @@
 
 
 
-<exercises xml:id="hw-common-discrete-rv-turn-in" >
+<exercises xml:id="hw-joint-rv-turn-in" >
    <title>Written Exercises</title>
    <introduction>
      <p>
@@ -29,6 +29,5 @@
    </introduction>
 
    </exercises>
-
 
   </section>

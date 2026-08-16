@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-section-CRV" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Discrete RVs</title>
+  <title>Continuous RVs</title>
 
 
   
@@ -11,13 +11,150 @@
   </introduction>
 
   
+<exercises xml:id="hw-cont-rv" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+
+
+<exercise label="ex-continuous-pdf-all-mc">
+    <title>Properties of Continuous Density Functions</title>
+    <introduction>
+        <p>
+            Consider a continuous random variable <m>Y</m> defined by the probability density function (PDF):
+            <me>f_Y(y) = ky^2, \quad \text{for } 0 \le y \le 2</me>,
+            where <m>k</m> is a constant. 
+        </p>
+    </introduction>
+
+    <!-- Part A: Solving for k -->
+    <task xml:id="task-mc-solve-k">
+        <statement>
+            <p>
+                What must the value of the constant <m>k</m> equal for <m>f_Y(y)</m> to be a mathematically valid probability density function?
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>k = 1/2</m></p></statement>
+                <feedback><p>Incorrect. Remember that the total area under the curve from <m>y=0</m> to <m>y=2</m> must integrate to exactly 1.</p></feedback></choice>
+            <choice><statement><p><m>k = 1/8</m></p></statement>
+                <feedback><p>Incorrect. It looks like you evaluated the anti-derivative boundaries but forgot to incorporate the denominator from the power rule integration.</p></feedback></choice>
+            <choice correct="yes"><statement><p><m>k = 3/8</m></p></statement>
+                <feedback>
+                    <p>Correct! Using the total area property:</p>
+                    <p><me>\int_{0}^{2} ky^2 \, dy = \left[ \frac{k y^3}{3} \right]_{0}^{2} = \frac{8k}{3} - 0 = 1 \implies k = \frac{3}{8}</me></p>
+                </feedback></choice>
+            <choice><statement><p><m>k = 3/4</m></p></statement>
+                <feedback><p>Incorrect. Double-check your calculation when evaluating <m>y^3</m> at the upper bound of 2.</p></feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part B: Expected Value -->
+    <task xml:id="task-mc-expected-value">
+        <statement>
+            <p>
+                 Compute the expected value <m>E(Y)</m>.
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>E(Y) = 1.00</m></p></statement>
+                <feedback><p>Incorrect. Remember that for a continuous variable, <m>E(Y) = \int y \cdot f_Y(y) \, dy</m>, which shifts the integrand power to <m>y^3</m>.</p></feedback></choice>
+            <choice correct="yes"><statement><p><m>E(Y) = 1.50</m></p></statement>
+                <feedback>
+                    <p>Correct! Setting up the expectation integral:</p>
+                    <p><me>E(Y) = \int_{0}^{2} y \cdot \left(\frac{3}{8}y^2\right) \, dy = \frac{3}{8} \int_{0}^{2} y^3 \, dy = \frac{3}{8} \left[ \frac{y^4}{4} \right]_{0}^{2} = \frac{3}{8} \left(\frac{16}{4}\right) = 1.5</me></p>
+                </feedback></choice>
+            <choice><statement><p><m>E(Y) = 1.33</m></p></statement>
+                <feedback><p>Incorrect. This looks like the result of calculating the anti-derivative without scaling by the constant factor <m>k = 3/8</m>.</p></feedback></choice>
+            <choice><statement><p><m>E(Y) = 1.75</m></p></statement>
+                <feedback><p>Incorrect. Double-check your evaluation steps when raising the upper bound to the 4th power.</p></feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part C: Variance -->
+    <task xml:id="task-mc-variance">
+        <statement>
+            <p>
+                 Compute the variance <m>V(Y)</m> for this random variable.
+            </p>
+        </statement>
+        <choices>
+            <choice correct="yes"><statement><p><m>V(Y) = 0.15</m></p></statement>
+                <feedback>
+                    <p>Correct! First, compute the intermediate term <m>E(Y^2)</m>:</p>
+                    <p><me>E(Y^2) = \int_{0}^{2} y^2 \cdot \left(\frac{3}{8}y^2\right) \, dy = \frac{3}{8} \left[ \frac{y^5}{5} \right]_{0}^{2} = \frac{3}{8} \left(\frac{32}{5}\right) = \frac{12}{5} = 2.4</me></p>
+                    <p>Now, use the variance identity <m>V(Y) = E(Y^2) - [E(Y)]^2</m>:</p>
+                    <p><me>V(Y) = 2.4 - (1.5)^2 = 2.4 - 2.25 = 0.15</me></p>
+                </feedback></choice>
+            <choice><statement><p><m>V(Y) = 2.40</m></p></statement>
+                <feedback><p>Incorrect. This is the value of <m>E(Y^2)</m> before subtracting the squared mean.</p></feedback></choice>
+            <choice><statement><p><m>V(Y) = 0.25</m></p></statement>
+                <feedback><p>Incorrect. Make sure to square the mean (<m>1.5^2 = 2.25</m>) when applying the variance formula subtraction step.</p></feedback></choice>
+            <choice><statement><p><m>V(Y) = 0.90</m></p></statement>
+                <feedback><p>Incorrect. Ensure you use the formula <m>E(Y^2) - [E(Y)]^2</m> instead of subtracting the raw mean value from <m>E(Y^2)</m>.</p></feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part D: Probability Interval -->
+    <task xml:id="task-mc-interval">
+        <statement>
+            <p>
+                 Find the probability <m>P(1 \le Y \le 2)</m>.
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>0.500</m></p></statement>
+                <feedback><p>Incorrect. Remember that the distribution is skewed toward higher values because of the quadratic weight, so the upper half of the range contains a larger share of the probability.</p></feedback></choice>
+            <choice><statement><p><m>0.125</m></p></statement>
+                <feedback><p>Incorrect. This is the lower tail probability <m>P(0 \le Y \le 1)</m>. Subtract this value from 1 to find the correct upper tail area.</p></feedback></choice>
+            <choice correct="yes"><statement><p><m>0.875</m></p></statement>
+                <feedback>
+                    <p>Correct! Integrating between the specified boundaries:</p>
+                    <p><me>P(1 \le Y \le 2) = \int_{1}^{2} \frac{3}{8}y^2 \, dy = \left[ \frac{y^3}{8} \right]_{1}^{2} = \frac{2^3}{8} - \frac{1^3}{8} = 1 - \frac{1}{8} = 0.875</me></p>
+                </feedback></choice>
+            <choice><statement><p><m>0.750</m></p></statement>
+                <feedback><p>Incorrect. Double-check your subtraction arithmetic when plugging the lower bound into your anti-derivative tool.</p></feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part E: CDF Derivation (Now Multiple Choice) -->
+    <task xml:id="task-mc-cdf-derivation">
+        <statement>
+            <p>
+                 Find the cumulative distribution function (CDF), <m>F_Y(y)</m>, for the interval <m>0 \le y \le 2</m>. 
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>F_Y(y) = \frac{y^3}{3}</m></p></statement>
+                <feedback><p>Incorrect. You integrated <m>y^2</m> correctly to get <m>\frac{y^3}{3}</m>, but you forgot to multiply by the constant multiplier <m>k = \frac{3}{8}</m>.</p></feedback></choice>
+            <choice correct="yes"><statement><p><m>F_Y(y) = \frac{y^3}{8}</m></p></statement>
+                <feedback>
+                    <p>Correct! To find the general cumulative distribution function, integrate the PDF from the lower limit 0 up to an arbitrary point <m>y</m>:</p>
+                    <p><me>F_Y(y) = \int_{0}^{y} \frac{3}{8}t^2 \, dt = \left[ \frac{t^3}{8} \right]_{0}^{y} = \frac{y^3}{8}</me></p>
+                    <p>Evaluating this function at the boundaries confirms the probability from Part D: <m>F_Y(2) - F_Y(1) = \frac{8}{8} - \frac{1}{8} = 0.875</m>.</p>
+                </feedback></choice>
+            <choice><statement><p><m>F_Y(y) = \frac{3y^3}{8}</m></p></statement>
+                <feedback><p>Incorrect. It looks like you forgot to apply the power rule integration denominator (<m>3</m>) to cancel out the numerator coefficient when taking the anti-derivative.</p></feedback></choice>
+            <choice><statement><p><m>F_Y(y) = \frac{y^2}{4}</m></p></statement>
+                <feedback><p>Incorrect. Remember that integrating a function increases the polynomial power by 1 (<m>y^2 \rightarrow y^3</m>).</p></feedback></choice>
+        </choices>
+    </task>
+</exercise>
+
+
+
+
 
   <!-- ==================================================================== -->
   <!-- EXERCISE 2: CONTINUOUS PROBABILITY SYSTEM                            -->
   <!-- ==================================================================== -->
   <exercise xml:id="ex-int-continuous-prob">
     <title>Interactive Analysis: Continuous Asset Metrics</title>
-    <statement>
+    <introduction>
       <p>
         While the data in <xref ref="ex-int-discrete-prob"/> aggregates timelines into integers, true regulatory pipeline terminations happen continuously down to the exact day. Analysts use a continuous random variable <m>X</m> (measured in years) to evaluate precision biological hardware lifelines spanning an operational domain from 8 to 20 years.
       </p>
@@ -27,10 +164,10 @@
           f(x) = \begin{cases} \frac{1}{72}(20 - x) \amp \text{for } 8 \le x \le 20 \\ 0 \amp \text{elsewhere} \end{cases}
         </me>
       </p>
-    </statement>
+    </introduction>
     
     <introduction>
-      <p>Analyze the continuous density behavior to answer the following interactive problems.</p>
+      <p>Analyze the continuous density behavior to answer the following problems.</p>
     </introduction>
 
     <!-- Part A: Interactive CDF Identification -->
@@ -68,21 +205,234 @@
         <p>
           Using the structural CDF established above, compute the probability that a random continuous bio-hardware patent line operates for <strong>more than 12 years</strong>: <m>P(X \gt 12)</m>. Express your response as a fraction or a decimal rounded to four places.
         </p>
-      </statement>
-      <evaluation>
-        <evaluate>
-          <test correct="yes">4/9</test>
-          <test correct="yes">0.4444</test>
+            <p>
+        <fillin width="8" answer="0.4444"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
           <feedback>
-            <p>Splendid! Using the complement rule with our CDF framework: <m>P(X \gt 12) = 1 - F(12) = 1 - [1 - \frac{(20-12)^2}{144}] = \frac{8^2}{144} = \frac{64}{144} = \frac{4}{9} \approx 0.4444</m>.</p>
+            <p>
+              Splendid! Using the complement rule with our CDF framework: <m>P(X \gt 12) = 1 - F(12) = 1 - [1 - \frac{(20-12)^2}{144}] = \frac{8^2}{144} = \frac{64}{144} = \frac{4}{9} \approx 0.4444</m>.</p>
           </feedback>
-        </evaluate>
-        <evaluate>
-          <test>5/9</test>
-          <test>0.5556</test>
-          <feedback><p>Incorrect. This result yields the value of <m>F(12) = P(X \le 12)</m>. Remember to compute the complement to evaluate the right hand tail area representing <q>more than 12 years</q>.</p></feedback>
+        </test>
         </evaluate>
       </evaluation>
     </task>
   </exercise>
+
+
+<exercise label="ex-continuous-drone-battery">
+    <title>Reliability Engineering: Drone Battery Lifespans</title>
+    <introduction>
+        <p>
+            The continuous operational lifespan before failure (measured in hundreds of hours) for a high-performance drone battery pack is modeled by a continuous random variable <m>Y</m> with the cumulative distribution function (CDF):
+            <me>F_Y(y) = 1 - e^{-y^2}, \quad y \le 0</me>
+            Complete the multiple-choice tasks below to analyze the reliability profile of these battery components.
+        </p>
+    </introduction>
+
+    <!-- Task A: At least 200 hours -->
+    <task xml:id="task-drone-at-least-200">
+        <statement>
+            <p>
+                 Find the probability that a randomly selected drone battery pack operates continuously for at least 200 hours.
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>0.9817</m></p></statement>
+                <feedback><p>Incorrect. This is the probability that the battery fails <em>before</em> 200 hours, <m>P(Y \le 2) = F_Y(2)</m>. You need the complement for "at least".</p></feedback></choice>
+            <choice correct="yes"><statement><p><m>0.0183</m></p></statement>
+                <feedback>
+                    <p>Correct! Since the time unit is in hundreds of hours, 200 hours corresponds to <m>y = 2</m>.</p>
+                    <p>Using the complement rule: 
+                    <me>P(Y \ge 2) = 1 - F_Y(2) = 1 - (1 - e^{-2^2}) = e^{-4} \approx 0.0183</me></p>
+                </feedback></choice>
+            <choice><statement><p><m>0.1353</m></p></statement>
+                <feedback><p>Incorrect. It looks like you forgot to square the time parameter in the exponent, computing <m>e^{-2}</m> instead of <m>e^{-4}</m>.</p></feedback></choice>
+            <choice><statement><p><m>0.3679</m></p></statement>
+                <feedback><p>Incorrect. This is the probability of lasting at least 100 hours (<m>y=1</m>). Recompute using the target boundary for 200 hours.</p></feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Task B: Conditional Probability -->
+    <task xml:id="task-drone-conditional">
+        <statement>
+            <p>
+                 What is the probability that a drone battery pack operates for more than 100 hours given that it operates for at most 200 hours? In other words, evaluate the conditional probability: <m>P(Y \gt 1 \mid Y \le 2)</m>.
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>0.3496</m></p></statement>
+                <feedback><p>Incorrect. This is only the numerator value, which is the unconditional interval probability <m>P(1 \lt Y \le 2)</m>. You must divide this by the condition space <m>P(Y \le 2)</m>.</p></feedback></choice>
+            <choice correct="yes"><statement><p><m>0.3561</m> </p></statement>
+                <feedback>
+                    <p>Correct! Using the conditional probability identity:</p>
+                    <p><me>P(Y \gt 1 \mid Y \le 2) = \frac{P(1 \lt Y \le 2)}{P(Y \le 2)} = \frac{F_Y(2) - F_Y(1)}{F_Y(2)}</me></p>
+                    <p>Evaluating the individual components:
+                    <md>
+                        <mrow>F_Y(1) \amp = 1 - e^{-1} \approx 0.6321</mrow>
+                        <mrow>F_Y(2) \amp = 1 - e^{-4} \approx 0.9817</mrow>
+                    </md>
+                    Substituting back into the formula:
+                    <me>\frac{0.9817 - 0.6321}{0.9817} = \frac{0.3496}{0.9817} \approx 0.3561 \approx 0.36</me></p>
+                </feedback></choice>
+            <choice><statement><p><m>0.6321</m></p></statement>
+                <feedback><p>Incorrect. This is the baseline probability of failure occurring within the first 100 hours, <m>F_Y(1)</m>.</p></feedback></choice>
+            <choice><statement><p><m>0.5000</m></p></statement>
+                <feedback><p>Incorrect. Review the conditional division rules for non-linear exponential distribution subsets.</p></feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Task C: PDF Identification -->
+    <task xml:id="task-drone-pdf-id">
+        <statement>
+            <p>
+                 Which of the following expressions represents the mathematically valid probability density function (PDF), <m>f_Y(y)</m>, derived from the baseline battery model?
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>f_Y(y) = e^{-y^2}, \quad y \le 0</m></p></statement>
+                <feedback><p>Incorrect. This leaves out the necessary chain rule derivative multiplier when dealing with the variable inside the exponent.</p></feedback></choice>
+            <choice correct="yes"><statement><p><m>f_Y(y) = 2ye^{-y^2}, \quad y \le 0</m></p></statement>
+                <feedback>
+                    <p>Correct! To obtain the probability density function <m>f_Y(y)</m> from the cumulative distribution function <m>F_Y(y)</m>, apply the first derivative with respect to <m>y</m> using the chain rule:</p>
+                    <p><me>f_Y(y) = \frac{d}{dy}[1 - e^{-y^2}] = 0 - e^{-y^2} \cdot \left(\frac{d}{dy}[-y^2]\right) = -e^{-y^2} \cdot (-2y) = 2ye^{-y^2}</me></p>
+                </feedback></choice>
+            <choice><statement><p><m>f_Y(y) = -2ye^{-y^2}, \quad y \le 0</m></p></statement>
+                <feedback><p>Incorrect. A valid probability density function cannot evaluate to negative values over its valid domain support. Watch your signs when subtracting the internal derivative.</p></feedback></choice>
+            <choice><statement><p><m>f_Y(y) = y^2 e^{-y^2}, \quad y \le 0</m></p></statement>
+                <feedback><p>Incorrect. Remember that the power rule derivative of <m>y^2</m> yields <m>2y</m>, not <m>y^2</m>.</p></feedback></choice>
+        </choices>
+    </task>
+</exercise>
+
+  </exercises>
+
+
+
+
+  <exercises xml:id="hw-cont-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+
+
+
+    <exercise label="ex-continuous-fiber-strength">
+        <title>Breaking Strength Analysis</title>
+        <introduction>
+          <p>
+
+        The breaking strength (in Newtons) of a new grade of advanced structural carbon fiber cables is modeled by a continuous random variable <m>X</m> with the cumulative distribution function:
+        <me>F_X(x) = 1 - kx^{-3}, \quad x \gt 44000</me>
+        where <m>k</m> is a positive proportionality constant. Complete the analytical derivations below to evaluate this structural model.
+
+          </p>
+        </introduction>
+        <!-- Part A: Deriving PDF from CDF -->
+        <task xml:id="task-fiber-pdf">
+            <statement>
+                <p>
+                    Show that the probability density function (PDF) for <m>X</m> is given by:
+                    <me>f_X(x) = 3kx^{-4}, \quad x \gt 44000</me>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    To find the probability density function <m>f_X(x)</m> from the cumulative distribution function <m>F_X(x)</m>, we take the first derivative with respect to <m>x</m>:
+                    <md>
+                        <mrow>f_X(x) \amp = \frac{d}{dx}[F_X(x)]</mrow>
+                        <mrow>\amp = \frac{d}{dx}[1 - kx^{-3}]</mrow>
+                        <mrow>\amp = 0 - k \cdot (-3)x^{-4}</mrow>
+                        <mrow>\amp = 3kx^{-4}, \quad \text{for } x \gt 44000</mrow>
+                    </md>
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part B: Solving for Constant k -->
+        <task xml:id="task-fiber-constant">
+            <statement>
+                <p>
+                    Show that the value of the proportionality constant <m>k</m> must be  <m>44000^3</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    By definition, the support of the distribution begins at the lower boundary <m>x = 44000</m>. Because no cables can break at a force less than this threshold, the cumulative probability at this boundary must equal zero (<m>F_X(44000) = 0</m>):
+                    <md>
+                        <mrow>1 - k(44000)^{-3} \amp = 0</mrow>
+                        <mrow>1 \amp = \frac{k}{44000^3}</mrow>
+                        <mrow>k \amp = 44000^3</mrow>
+                    </md>
+                    Alternatively, using total area under the density function curve:
+                    <md>
+                        <mrow>\int_{44000}^{\infty} 3kx^{-4} \, dx \amp = 1</mrow>
+                        <mrow>\left[ -kx^{-3} \right]_{44000}^{\infty} \amp = 1</mrow>
+                        <mrow>0 - \left( -k(44000)^{-3} \right) \amp = 1 \implies k = 44000^3</mrow>
+                    </md>
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part C: Finding the Mean -->
+        <task xml:id="task-fiber-mean">
+            <statement>
+                <p>
+                     Show that the mean breaking strength, given by this model, is <m>\mu = E(X) = 66,000</m> Newtons.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The expected value is computed by integrating <m>x \cdot f_X(x)</m> over the domain:
+                    <md>
+                        <mrow>E(X) \amp = \int_{44000}^{\infty} x \cdot \left(3kx^{-4}\right) \, dx</mrow>
+                        <mrow>\amp = 3k \int_{44000}^{\infty} x^{-3} \, dx</mrow>
+                        <mrow>\amp = 3k \left[ \frac{x^{-2}}{-2} \right]_{44000}^{\infty}</mrow>
+                        <mrow>\amp = -\frac{3k}{2} \left[ 0 - (44000)^{-2} \right]</mrow>
+                        <mrow>\amp = \frac{3k}{2 \cdot 44000^2}</mrow>
+                    </md>
+                    Substituting <m>k = 44000^3</m> into our simplified equation:
+                    <md>
+                        <mrow>E(X) \amp = \frac{3 \cdot 44000^3}{2 \cdot 44000^2}</mrow>
+                        <mrow>\amp = \frac{3}{2} \cdot 44000</mrow>
+                        <mrow>\amp = 1.5 \cdot 44000 = 66000 \text{ Newtons}</mrow>
+                    </md>
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part D: Evaluating Proportion Under Mean -->
+        <task xml:id="task-fiber-proportion">
+            <statement>
+                <p>
+                     Show that the theoretical proportion of structural cables possessing a breaking strength less than the calculated mean is approximately 70%.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    We need to find the cumulative probability evaluated at the mean value, <m>P(X \lt 66000) = F_X(66000)</m>. Substituting <m>k = 44000^3</m> into the original CDF formula:
+                    <md>
+                        <mrow>F_X(66000) \amp = 1 - 44000^3 \cdot (66000)^{-3}</mrow>
+                        <mrow>\amp = 1 - \left( \frac{44000}{66000} \right)^3</mrow>
+                        <mrow>\amp = 1 - \left( \frac{2}{3} \right)^3</mrow>
+                        <mrow>\amp = 1 - \frac{8}{27}</mrow>
+                        <mrow>\amp = \frac{19}{27} \approx 0.7037</mrow>
+                    </md>
+                    Thus, approximately <m>70.37\%</m> (or roughly 70%) of the cables possess a breaking strength below the statistical mean.
+                </p>
+            </solution>
+        </task>
+    </exercise>
+
+</exercises>
+
 </section>

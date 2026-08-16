@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-chapter-Common-Discrete-RVs" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Common Discrete Random Variables</title>
+
+  <introduction>
+    <p> Text before the first section. </p>
+  </introduction>
+
+  <!-- include sections -->
+
+   <xi:include href="sec-section-uniform-DRV.ptx" /> 
+   <xi:include href="sec-section-binomial-DRV.ptx" /> 
+   <xi:include href="sec-section-hypergeometric-DRV.ptx" /> 
+   <xi:include href="sec-section-geometric-DRV.ptx" /> 
+  <xi:include href="sec-section-neg-binomial-DRV.ptx" /> 
+  <xi:include href="sec-section-poisson-DRV.ptx" /> 
+  <xi:include href="sec-section-mixed-DRV.ptx" /> 
+  
+</chapter>

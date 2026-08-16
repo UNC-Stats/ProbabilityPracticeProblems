@@ -9,5 +9,5 @@
 
   <!-- include sections -->
   <xi:include href="sec-section-DRV.ptx" /> 
-<xi:include href="sec-section-common-DRV.ptx" /> 
+  <xi:include href="sec-section-proofs-DRV.ptx" /> 
 </chapter>

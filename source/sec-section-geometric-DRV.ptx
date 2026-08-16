@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-geometric-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Geometric Random Variable</title>
+
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+
+ <exercises xml:id="hw-geo-rv" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+ 
+<exercise xml:id="ex-password-guess-geometric-refined">
+    <title>Discrete Distributions: Password Guessing Logistics</title>
+    <introduction>
+        <p>
+            A new secretary has been given <m>27</m> computer passwords, only one of which will permit access to a secure computer file. Because the secretary has no idea which password is correct, he chooses one of the passwords at random and tries it. If it does not work, he puts it back in with the other passwords before randomly selecting the next password to try (not a very clever secretary!). 
+        </p>
+    </introduction>
+
+    <!-- Part 1: Explaining WHY it is Geometric (Multiple Choice) -->
+    <task xml:id="task-pass-rv-why-geometric">
+        <statement>
+            <p>
+                Let the random variable <m>Y</m> represent the total number of tries required to successfully access the file. This scenario is modeled using a geometric random variable. Which of the following best explains why the geometric model is appropriate here? 
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    Because we are counting the number of independent, identical trials required to achieve the very first success, and the probability of success remains constant on each attempt due to replacement.
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! A geometric random variable specifically tracks the number of independent trials up to and including the first success. Because the secretary replaces the incorrect passwords back into the pool, the trials are independent and the probability of success remains a constant <m>p = \frac{1}{27}</m> each time.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    Because there are exactly two outcomes (success or failure) per guess, and the process is restricted to a fixed, predetermined maximum ceiling of 27 total attempts.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. A fixed number of trials <m>n</m> describes a Binomial distribution. In this geometric scenario, the secretary has no set limit and will keep guessing indefinitely until they finally hit the correct password.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    Because we are sampling from a small, finite pool of passwords, which causes the probability of success to change dynamically after each incorrect attempt.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. If the secretary threw away incorrect passwords (sampling <term>without replacement</term>), the probability would change, requiring a Hypergeometric distribution. Because he puts them back, the probability does not change.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    Because we are calculating the continuous average rate of server logins across a fixed interval of time.
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. Tracking arrivals over a continuous interval describes a Poisson or Exponential process, not a series of distinct, separate button-press trials.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part 2: Probability Mass Function (Fill-in) -->
+    <task xml:id="task-pass-pmf-equation-refined">
+        <statement>
+            <p>
+                Specify the probability distribution function (or probability mass function) for your random variable <m>Y</m>. 
+            </p>
+        </statement>
+      <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    <m>P(Y = y) = \left(\frac{1}{27}\right)\left(\frac{26}{27}\right)^{y-1}</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Correct!             
+                Since there is only <m>1</m> correct password out of <m>27</m>, the constant probability of success on each independent trial is <m>p = \frac{1}{27}</m>. The probability of a failed attempt is <m>1 - p = \frac{26}{27}</m>. Substituting these into the formula for a geometric random variable, we get the probability it takes <m>y</m> total tries is:
+                <me>P(Y = y) = \left(\frac{1}{27}\right)\left(\frac{26}{27}\right)^{y-1} </me>
+            </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>P(Y = y) = \left(\frac{1}{27}\right)\left(\frac{26}{27}\right)^{y}</m>
+                </statement>
+                <feedback>
+                    <p>
+                        
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>P(Y=y)=\choose{27,y} \left(\frac{1}{27}\right)^y\left(\frac{26}{27}\right)^{27-y}</m>
+                </statement>
+                <feedback>
+                    <p>
+                        
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>P(Y=y)=\choose{27,y} \left(\frac{1}{27}\right)^y\left(\frac{26}{27}\right)^{27-y}</m>
+                </statement>
+                <feedback>
+                    <p>
+                        
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+       </task>
+
+
+    <!-- Part 3: Computing Desired Probability (Fill-in) -->
+    <task xml:id="task-pass-probability-value-refined">
+        <statement>
+            <p>
+                Compute the probability that the correct password is found on the sixth try. Enter your answer as a decimal rounded to four decimal places.
+            </p>
+     <p>
+        <fillin width="8" answer="0.0307"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! 
+            </p>
+          </feedback>
+        </test>
+       </evaluate>
+       </evaluation>
+    </task>
+
+    <!-- Part 4: Mean and Standard Deviation Only (Multiple Choice) -->
+      <task xml:id="task-pass-mean-sd-only">
+        <statement>
+            <p>
+                Calculate the mean <m>E(Y)</m> and standard deviation <m>\sigma_Y</m> for the trial number on which the correct password is first identified.
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement>
+                    <m>E(Y) = 27</m> and <m>\sigma_Y \approx 26.5</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Correct! For a geometric distribution, the expected value is <m>E(Y) = \frac{1}{p} = \frac{1}{1/27} = 27</m>. The variance is <m>V(Y) = \frac{1-p}{p^2} = \frac{26/27}{(1/27)^2} = 26 \times 27 = 702</m>. Taking the square root gives the standard deviation: <m>\sigma_Y = \sqrt{702} \approx 26.495</m>, which rounds to <m>26.5</m>.
+                    </p>
+                </feedback>
+            </choice>
+            <choice >
+                <statement>
+                    <m>E(Y) = 26</m> and <m>\sigma_Y \approx 26.5</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect!  This gives the expected number of failures, instead of the expected number of trials. 
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>E(Y) = 13.5</m> and <m>\sigma_Y \approx 3.7</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This treats the process as if it were sampling <term>without replacement</term>, splitting the mid-point of the stack. Because of duplicate guesses, the true mean wait time is longer.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>E(Y) = 27</m> and <m>\sigma_Y = 702.0</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. The value <m>702</m> is the population variance <m>V(Y)</m>. You must take the square root of the variance to find the standard deviation metric.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>E(Y) = 1.0</m> and <m>\sigma_Y \approx 0.98</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. This uses the success probability parameters directly rather than inverting the fractions into tracking averages.
+                    </p>
+                </feedback>
+            </choice>
+        </choices>
+        <hint>
+            <p>
+                Use the geometric formulas: <m>E(Y) = \frac{1}{p}+1</m> and <m>V(Y) = \frac{1-p}{p^2}</m>. Once you calculate the variance value, take its square root to isolate the standard deviation <m>\sigma_Y</m>.
+            </p>
+        </hint>
+    </task>
+</exercise>
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-geo-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+   
+
+
+
+
+    
+
+
+    <exercise label="ex-geometric-mgf-proof">
+        <title>Derivation of the Geometric MGF</title>
+        <introduction>
+            <p>
+                 Let <m>Y</m> be a discrete geometric random variable representing the total number of trials required to achieve the first success, with a constant success probability <m>p</m> (where <m>0 \lt p \le 1</m>). Its probability mass function (PMF) is given by:
+        <me>p(y) = (1-p)^{y-1}p, \quad \text{for } y = 1, 2, 3, \dots</me>
+        Complete the tasks below to derive its moment generating function, <m>M_Y(t) = E(e^{tY})</m>.
+            </p>
+        </introduction>
+        <!-- Task 1: Expectation Summation Setup -->
+        <task xml:id="task-mgf-summation-setup">
+            <statement>
+                <p>
+                     Express the moment generating function <m>M_Y(s)</m> as an infinite sum using the definition of expected value, and then simplify the expression, grouping terms and combining exponents where allowed. 
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    By definition, the moment generating function is the expected value of <m>e^{tY}</m>. Setting up the summation over the support of <m>Y</m>:
+                    <md>
+                        <mrow>M_Y(t) \amp = E(e^{tY}) = \sum_{y=1}^{\infty} e^{ty} \cdot p(y)</mrow>
+                        <mrow>\amp = \sum_{y=1}^{\infty} e^{ty} \cdot (1-p)^{y-1}p</mrow>
+                    </md>
+                    To group the terms sharing a power index of <m>y</m>, we factor out one constant factor of <m>e^t</m> and reorganize the expression:
+                    <md>
+                        <mrow>M_Y(t) \amp = \sum_{y=1}^{\infty} e^t \cdot e^{t(y-1)} (1-p)^{y-1}p</mrow>
+                        <mrow>\amp = pe^t \sum_{y=1}^{\infty} \left[ (1-p)e^t \right]^{y-1}</mrow>
+                    </md>
+                </p>
+            </solution>
+        </task>
+
+        <!-- Task 2: Geometric Series Evaluation -->
+        <task xml:id="task-mgf-series-evaluation">
+            <statement>
+                <p>
+                    Evaluate the infinite sum from Part A using a geometric series convergence formula. Explicitly state the mathematical convergence condition required for the domain of <m>s</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Recall the standard infinite geometric series convergence shortcut:
+                    <me>\sum_{n=0}^{\infty} a r^n = \frac{a}{1 - r}, \quad \text{provided } |r| \lt 1</me>
+                    Let us adjust our indices by introducing a placeholder variable <m>n = y - 1</m>. When <m>y = 1</m>, <m>n = 0</m>. This maps our proof function directly to the standard shortcut:
+                    <me>M_Y(t) = pe^t \sum_{n=0}^{\infty} \left[ (1-p)e^t \right]^n</me>
+                    Here, the leading structural coefficient is <m>a = 1</m> and the common geometric ratio is <m>r = (1-p)e^t</m>. Substituting these values into the reduction formula yields the closed-form MGF:
+                    <me>M_Y(t) = pe^t \left( \frac{1}{1 - (1-p)e^t} \right) = \frac{pe^t}{1 - (1-p)e^t}</me>
+                </p>
+                <p>
+                    <strong>Convergence Condition:</strong> This infinite series only converges to a stable, finite valuation if the absolute value of the common ratio is strictly less than 1:
+                    <md>
+                        <mrow>|(1-p)e^t| \amp \lt 1</mrow>
+                        <mrow>(1-p)e^t \amp \lt 1 \implies e^t \lt \frac{1}{1-p}</mrow>
+                        <mrow>t \amp \lt \ln\left(\frac{1}{1-p}\right) \implies t \lt -\ln(1-p)</mrow>
+                    </md>
+                </p>
+            </solution>
+        </task>
+    </exercise>
+
+
+</exercises>
+
+
+  </section>

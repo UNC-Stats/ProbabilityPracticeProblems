@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-neg-binomial-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Negative Binomial Random Variable</title>
+
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+
+ <exercises xml:id="hw-neg-binom-rv" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+
+<exercise label="ex-negbin-curb-painting-interactive">
+    <title>Direct Sales Optimization: Curb Painting Metrics</title>
+    <introduction>
+        <p>
+            Your professor is annoyed by pushy door-to-door salespeople who walk through neighborhoods offering house painting  services. Let's say that the probability of a salesperson securing a customer agreement at any individual home is a constant <m>p = 0.10</m> (or 10%). Assume that all individual household interactions behave as completely independent trials.
+        </p>
+    </introduction>
+
+    <!-- Task A: First sale on 10th house (Short Answer Input) -->
+    <task xml:id="task-curb-first-sale">
+        <statement>
+            <p>
+                Compute the probability that the salesperson secures their <strong>first customer agreement</strong> exactly at the 10th house they visit. Write your answer as a decimal rounded to three decimal places.
+            </p>
+
+            <p>Try this two ways - using the geometric distribution and the negative binomial distribution. You should  notice that the geometric distribution is just a special case of the negative binomial where <m>r=1</m>!
+            </p>
+              <p>
+        <fillin width="8" answer="0.039"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct!  This calculation can be viewed in two identical ways:
+                <ul>
+                    <li><p><strong>Geometric Model:</strong> Looking for the 1st success on trial 10, which implies 9 consecutive rejections followed by 1 success: <me>P(Y_G = 10) = (0.90)^9 \cdot (0.10) \approx 0.0387 \approx 0.039</me></p></li>
+                    <li><p><strong>Negative Binomial Model:</strong> Setting the success parameter quota to <m>r = 1</m>: <me>P(Y_{NB} = 10) = \binom{10-1}{1-1}(0.10)^1(0.90)^{10-1} = 1 \cdot (0.10) \cdot (0.90)^9 \approx 0.039</me></p></li>
+                </ul>
+                This demonstrates that the geometric distribution is simply a specialized sub-case of the negative binomial where <m>r = 1</m>.
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+        </evaluation>
+        
+    </task>
+
+    <!-- Task B: 60 houses to make 7 sales (Short Answer Input) -->
+    <task xml:id="task-curb-seven-sales">
+        <statement>
+            <p>
+                Compute the probability that it requires visiting exactly 60  houses in order to successfully close 7 painting agreements. Write your answer as a decimal rounded to three decimal places.
+            </p>
+         <p>
+        <fillin width="8" answer="0.017"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct!  This follows a total-trials Negative Binomial model where the <m>r = 7</m>th success occurs precisely on trial <m>y = 60</m>:
+                <me>P(Y = 60) = \binom{60-1}{7-1}(0.10)^7(0.90)^{60-7} = \binom{59}{6}(0.10)^7(0.90)^{53}</me>
+                <me>P(Y = 60) = 45,057,474 \cdot (10^{-7}) \cdot (0.003759) \approx 0.0169 \approx 0.017</me>
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+        </evaluation>
+       
+    </task>
+
+    <!-- Task C: B vs C conceptual difference (Inline Dropdowns) -->
+    <task xml:id="task-curb-conceptual-shift">
+        <statement>
+            <p>
+                 Compute the probability that the salesperson receives exactly 53 rejections  <em>before</em> the 7th painting agreement is completed.  Write your answer as a decimal rounded to three decimal places.
+            </p>
+            <p>
+              Before you begin, think about how this question differs from part (b).   
+            </p>
+              <p>
+        <fillin width="8" answer="0.017"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! This is identical to Part B, because 53 rejections plus 7 successful agreements equals exactly 60 total household visits.
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+        </evaluation>
+    </task>
+
+    <!-- Task D: Expected houses for 25 sales (Short Answer Input) -->
+    <task xml:id="task-curb-expected-quota">
+        <statement>
+            <p>
+                 How many total houses do you expect the salesperson will have to visit in order to successfully accumulate a quota of exactly 25  painting agreements? Write your answer as a whole number.
+            </p>
+                 <p>
+        <fillin width="8" answer="250"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! Using the expected value formula for a total-trials Negative Binomial random variable:
+                <me>E(Y) = \frac{r}{p} = \frac{25}{0.10} = 250 \text{ houses}</me>
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+        </evaluation>
+
+    </task>
+
+    <!-- Task E: Expected houses for revenue milestone (Multiple Choice) -->
+    <task xml:id="task-curb-revenue-mc">
+        <statement>
+            <p>
+                If the salesperson gets a $250 bonus for each painting agreement secured, what is the mean number of household visits required to hit a bonus target of $3,000?
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>12</m> houses</p></statement>
+                <feedback>
+                    <p>Incorrect. This is the value of <m>r</m>, the number of successful painting agreements required to hit $3,000 (<m>\frac{3000}{250} = 12</m>). You still need to calculate the expected number of total household visits required to land that many sales.</p>
+                </feedback></choice>
+            <choice><statement><p><m>30,000</m> houses</p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you divided the entire $3,000 revenue target by the probability parameter <m>p = 0.10</m>. Make sure to convert your revenue target to a target number of successful sales (<m>r</m>) first.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>120</m> houses</p></statement>
+                <feedback>
+                    <p>Correct! First, determine the number of target successes (<m>r</m>) needed to reach the financial goal:
+                    <me>r = \frac{\$3000 \text{ target}}{\$250 \text{ per job}} = 12 \text{ agreements}</me>
+                    Next, apply the expected value function using our parameter count of <m>r = 12</m> and success probability <m>p = 0.10</m>:
+                    <me>E(Y) = \frac{r}{p} = \frac{12}{0.10} = 120 \text{ houses}</me></p>
+                </feedback></choice>
+            <choice><statement><p><m>1.2</m> houses</p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you multiplied the target sales number of 12 by the probability parameter <m>p = 0.10</m> instead of dividing by it. The expected number of trials will always be larger than the target number of successes when <m>p \lt 1</m>.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+</exercise>
+
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-neg-binom-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+
+
+
+
+    <exercise label="ex-negative-binomial-coin-flips">
+        <title>Weighted Coin Experiment</title>
+<introduction>
+
+        <p>
+        Recall our previous work with a weighted coin, where the probability of landing on tails is <m>p = 0.70</m>. This time, let's flip the weighted coin until it has landed on tails exactly three times. Define <m>Y</m> to be the random variable representing the total number of coin flips required to complete the experiment (the total flips to reach 3 tails).
+    </p>
+
+</introduction>
+        <!-- Part A: Classification and Relations -->
+        <task xml:id="task-coin-classification">
+            <statement>
+                <p>
+                   Explain why the random variable <m>Y</m> is NOT a binomial random variable and NOT a geometric random variable. Describe how <m>Y</m> is structurally related to these other types of random variables.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <strong>Why it is not Binomial:</strong> A binomial random variable counts the number of successes in a <em>fixed number of total trials</em> (<m>n</m>). In this experiment, the number of successes is fixed at 3, and the total number of trials is the random variable.
+                </p>
+                <p>
+                    <strong>Why it is not Geometric:</strong> A geometric random variable counts the number of trials required until the <em>very first success</em> occurs. This experiment continues past the first success until a target of three successes is reached.
+                </p>
+                <p>
+                    <strong>Structural Relationship:</strong> <m>Y</m> is a <strong>Negative Binomial</strong> random variable. It can be viewed as the sum of three independent, identical geometric random variables (<m>Y = G_1 + G_2 + G_3</m>), where each <m>G_i</m> tracks the waiting time for the next single tail. Furthermore, any individual step calculation uses a binomial framework to position the first 2 successes among the initial trials.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part B: Exact Calculations -->
+        <task xml:id="task-coin-probabilities">
+            <statement>
+                <p>
+                    Compute the specified probabilities:
+                    <ol marker="I">
+                        <li><p><m>P(Y=3)</m></p></li>
+                        <li><p><m>P(Y=4)</m></p></li>
+                        <li><p><m>P(Y=5)</m></p></li>
+                    </ol>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <ol marker="I">
+                        <li>
+                            <p>
+                                <m>P(Y=3)</m>: To get 3 tails in 3 flips, all 3 flips must be tails.
+                                <me>P(Y=3) = (0.7)^3 = 0.343</me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>P(Y=4)</m>: The last flip must be the 3rd tail. This means exactly 2 tails must occur in the first 3 flips.
+                                <me>P(Y=4) = \binom{3}{2}(0.7)^2(0.3)^1 \cdot (0.7) = 3(0.49)(0.3)(0.7) = 0.3087 \approx 0.309</me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>P(Y=5)</m>: The last flip must be the 3rd tail. This means exactly 2 tails must occur in the first 4 flips.
+                                <me>P(Y=5) = \binom{4}{2}(0.7)^2(0.3)^2 \cdot (0.7) = 6(0.49)(0.09)(0.7) = 0.18522 \approx 0.185</me>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part C: General PMF -->
+        <task xml:id="task-coin-general-pmf">
+            <statement>
+                <p>
+                    Write a general formula for the probability distribution function <m>p(y)</m> of <m>Y</m>. Explicitly define the valid domain support for <m>y</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The general probability mass function for this negative binomial variable is:
+                    <me>p(y) = \binom{y-1}{3-1}(0.7)^3 (0.3)^{y-3}, \quad \text{for } y = 3, 4, 5, \dots</me>
+                    Simplifying the combination term yields:
+                    <me>p(y) = \binom{y-1}{2}(0.7)^3 (0.3)^{y-3}, \quad \text{for } y = 3, 4, 5, \dots</me>
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part D: Intuitive Expected Value -->
+        <task xml:id="task-coin-intuition">
+            <statement>
+                <p>
+                    How many times do you think you would need to flip the weighted coin in order to get the coin to land on tails three times? No mathematical computations are necessary; provide an intuitive guess and explain the baseline logic behind your estimation.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <strong>Sample Student Reasoning:</strong> If a coin hits tails 70% of the time, we expect roughly 7 out of 10 flips to be tails. Since we only need 3 successes (which is slightly less than half of 7), it makes logical sense that it should take between 4 and 5 total flips on average to accumulate 3 tails.
+                </p>
+                <p>
+                    <em>Note to Instructor:</em> This question prompts students to estimate the true mathematical expected value, which is formally defined as:
+                    <me>E(Y) = \frac{r}{p} = \frac{3}{0.70} \approx 4.29 \text{ flips}</me>
+                </p>
+            </solution>
+        </task>
+    </exercise>
+
+
+
+<exercise label="ex-negative-binomial-theory">
+    <title>Theoretical Foundations of the Negative Binomial Distribution</title>
+    <introduction>
+        <p>
+            The discrete random variable explored in the previous problem is formally known as a <strong>Negative Binomial</strong> (or <strong>Pascal</strong>) random variable. Here is one general definition:
+        </p>
+        <p>
+            <em> Consider a sequence of independent Bernoulli trials, each possessing an identical probability of success <m>p</m>. Let the random variable <m>Y</m> represent the total number of  trials required to reach  the <m>r</m>-th success.</em> 
+        </p>
+        <p>
+          Through this problem you will learn more about the negative binomial random variable, and you will ultimately derive its probability distribution function and other properties.
+        </p>
+    </introduction>
+
+    <!-- Task A: General PDF Formula -->
+    <task xml:id="task-negbin-general-pmf">
+        <statement>
+            <p>
+                 Using the parameters provided (<m>p = </m> probability of success, <m>r = </m> target number of successes), write a generalized formula for the probability distribution function <m>p(y)</m> of <m>Y</m>. Explicitly state its mathematical domain constraints.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                The general probability mass function (PMF) for a Negative Binomial random variable counting total trials is:
+                <me>p(y) = \binom{y-1}{r-1} p^r (1-p)^{y-r}, \quad \text{for } y = r, r+1, r+2, \dots</me>
+                <strong>Reasoning:</strong> For the experiment to terminate exactly on trial <m>y</m>, that final trial must result in a success. This implies that exactly <m>r-1</m> successes must have occurred in any order within the preceding <m>y-1</m> trials. We use the binomial coefficient <m>\binom{y-1}{r-1}</m> to count those spatial configurations, then multiply by the cumulative independent probabilities: <m>p^r</m> for the <m>r</m> successes and <m>(1-p)^{y-r}</m> for the remaining failures.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Task B: New Original Scenario Creation -->
+    <task xml:id="task-negbin-new-scenario">
+        <statement>
+            <p>
+                 Describe a new real-world scenario, outside of coin flipping, where the variable of interest behaves as a Negative Binomial random variable. Explain your reasoning, outline its underlying assumptions, and write out the explicit probability distribution function for your scenario with its localized parameters plugged in.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <strong>Example Scenario (Aviation Component Quality Control):</strong> A quality assurance inspector at an aerospace plant examines manufactured landing gear hydraulic seals. Suppose 5% of the produced batch contains microscopic imperfections (<m>p = 0.05</m> is our success metric if we define locating a defect as a "success"). The inspector is tasked with sampling units until they find exactly <m>r = 2</m> defective seals to send to engineering for structural failure analysis. Let <m>Y</m> be the total number of seals inspected.
+            </p>
+            <p>
+                <strong>Justification:</strong> This fits a Negative Binomial model because the individual inspections are independent trials (drawn from a vast population), the probability of finding a defect remains constant at <m>0.05</m>, and the testing process runs dynamically until a fixed quota of successes (<m>2</m> defects) is achieved.
+            </p>
+            <p>
+                <strong>Plugging in the parameters (<m>r=2, p=0.05</m>):</strong>
+                <me>p(y) = \binom{y-1}{2-1}(0.05)^2 (0.95)^{y-2} = \binom{y-1}{1}(0.0025)(0.95)^{y-2}</me>
+                <me>p(y) = (y-1)(0.0025)(0.95)^{y-2}, \quad \text{for } y = 2, 3, 4, \dots</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Task C: Formula Statement for EV, VAR, MGF -->
+    <task xml:id="task-negbin-formulas">
+        <statement>
+            <p>
+                 State the closed-form theoretical formulas for the following properties of a general Negative Binomial variable <m>Y</m>:
+                <ol marker="I">
+                    <li><p>Expected Value, <m>E(Y)</m></p></li>
+                    <li><p>Variance, <m>V(Y)</m></p></li>
+                    <li><p>Moment Generating Function, <m>M_Y(s)</m></p></li>
+                </ol>
+            </p>
+        </statement>
+        <hint>
+          <p>
+            Hint: We can write a binomial random variable as a sum of Bernoulli’s. This made finding the expected value and other formulas for a binomial very easy! Can we take a similar approach here? 
+          </p>
+        </hint>
+        <solution>
+            <p>
+                <ol marker="1">
+                    <li>
+                        <p>
+                            <strong>Expected Value (Mean):</strong>
+                            <me>E(Y) = \frac{r}{p}</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Variance:</strong>
+                            <me>V(Y) = \frac{r(1-p)}{p^2}</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Moment Generating Function:</strong>
+                            <me>M_Y(t) = \left[ \frac{pe^t}{1 - (1-p)e^t} \right]^r, \quad \text{for } t \lt -\ln(1-p)</me>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Task D: Application to Weighted Coin Problems -->
+    <task xml:id="task-negbin-coin-application">
+        <statement>
+            <p>
+                Use your generalized mathematical formulas established in Part C to compute the following for the weighted coin-flipping experiment (<m>r = 3</m> tails, success probability <m>p = 0.70</m>):
+                <ol marker="1">
+                    <li><p>Determine the  expected total number of coin flips required. Comment on how well this theoretical mean matches your intuitive guess from the previous worksheet problem.</p></li>
+                    <li><p>Compute the standard deviation (<m>\sigma</m>) of the total number of flips required.</p></li>
+                    <li><p>Write a brief, one-sentence contextual interpretation that explains what this calculated mean and standard deviation represent regarding the behavior of the coin experiment.</p></li>
+                </ol>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <ol marker="1">
+                    <li>
+                        <p>
+                            <strong>Expected Value Calculation:</strong>
+                            <me>E(Y) = \frac{r}{p} = \frac{3}{0.70} = \frac{30}{7} \approx 4.29 \text{ flips}</me>
+                            Rounded to one decimal place, this evaluates to <strong>4.3 flips</strong>. This analytical result aligns with our intuitive assessment that it should take between 4 and 5 total flips to gather 3 successes given the highly favorable 70% odds.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Standard Deviation Calculation:</strong>
+                            First, find the theoretical variance metric:
+                            <me>V(Y) = \frac{r(1-p)}{p^2} = \frac{3(1 - 0.70)}{(0.70)^2} = \frac{3(0.30)}{0.49} = \frac{0.90}{0.49} \approx 1.8367</me>
+                            Take the square root of the variance to evaluate the standard deviation:
+                            <me>\sigma = \sqrt{V(Y)} = \sqrt{1.8367} \approx 1.3553 \approx 1.36 \text{ flips}</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Contextual Interpretation:</strong>
+                            On average, it will take approximately 4.3 flips of this weighted coin to accumulate exactly 3 tails, with an expected variation or spread of roughly 1.36 flips around that mean depending on individual experimental run randomness.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+    
+
+    <exercise label="ex-alternative-rv-transformations">
+       <title>Alternative Definitions for Waiting-Time Distributions</title>
+    <introduction>
+    <p>
+        Both the geometric and negative binomial random variables can be defined ed by tracking either the <em>total number of trials</em> or the <em>total number of failures</em>. Let us define the alternative frameworks:
+        <ul>
+            <li><p><strong>Failures-Only Framework:</strong> </p>
+              
+              <ul>
+              <li>
+                <p>
+                  Geometric: Let <m>X_G</m> be the number of failures before the first success occurs.
+                </p>
+              </li>
+              <li>
+                <p>
+                 Negative Binomial: Let <m>X_{NB}</m> be the number of failures before the <m>r</m>-th success occurs.
+                </p>
+              </li>
+            </ul>
+            </li>
+            <li><p><strong>Total-Trials Framework:</strong> </p>
+              <ul>
+                <li>
+                  <p>
+                    Geometric: Let <m>Y_G</m> be the total number of trials required to reach the first success.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Negative Binomial: Let <m>Y_{NB}</m> be the total number of trials required to reach the <m>r</m>-th success.
+                  </p>
+                </li>
+              </ul>
+              </li>
+
+        </ul>
+    </p>
+</introduction>
+        <!-- Task A: Linear Relationships -->
+        <task xml:id="task-linear-relations">
+            <statement>
+                <p>
+                     Write an algebraic equation relating the random variables <m>X_G</m> and <m>Y_G</m>, and another equation relating <m>X_{NB}</m> and <m>Y_{NB}</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Because total trials always equal the sum of all failures plus all successes, and the number of target successes is a fixed constant in each experiment, the linear equations are:
+                    <me>X_G + 1 = Y_G \quad (\text{or } Y_G - 1 = X_G)</me>
+                    <me>X_{NB} + r = Y_{NB} \quad (\text{or } Y_{NB} - r = X_{NB})</me>
+                </p>
+            </solution>
+        </task>
+
+        <!-- Task B: Alternative Geometric PMF -->
+        <task xml:id="task-alt-geometric-pmf">
+            <statement>
+                <p>
+                    Determine the probability distribution function of <m>X_G</m>  (failures-only geometric variable). Explain the reasoning behind your answer and state its domain support.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The probability mass function is:
+                    <me>p(x_g) = (1-p)^{x_g}p, \quad \text{for } x_g = 0, 1, 2, \dots</me>
+                    <strong>Reasoning:</strong> To observe exactly <m>x_g</m> failures before the very first success occurs, the experiment must yield <m>x_g</m> consecutive failures (each with independent probability <m>1-p</m>) followed immediately by a single success (with probability <m>p</m>). Because the experiment can result in zero failures if the first flip is a success, the domain begins at <m>0</m>.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Task C: Alternative Geometric Properties -->
+        <task xml:id="task-alt-geometric-properties">
+            <statement>
+                <p>
+                    Find the following properties for the failures-only geometric variable <m>X_G</m> using your linear transformation rules from Part A:
+                    <ol marker="1">
+                        <li><p>Expected Value, <m>E(X_G)</m></p></li>
+                        <li><p>Variance, <m>V(X_G)</m></p></li>
+                        <li><p>Moment Generating Function, <m>M_{X_G}(t)</m></p></li>
+                    </ol>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Recall the baseline properties of the total-trials geometric variable <m>Y_G</m>: <m>E(Y_G) = \frac{1}{p}</m>, <m>V(Y_G) = \frac{1-p}{p^2}</m>, and <m>M_{Y_G}(t) = \frac{pe^t}{1-(1-p)e^t}</m>. Applying linear substitution properties where <m>X_G = Y_G - 1</m>:
+                    <ol marker="1">
+                        <li>
+                            <p>
+                                <strong>Expected Value:</strong> By linearity, shifts affect the mean directly:
+                                <me>E(X_G) = E(Y_G - 1) = E(Y_G) - 1 = \frac{1}{p} - 1 = \frac{1-p}{p}</me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <strong>Variance:</strong> Constant additive shifts do not alter the spread or variability of a distribution:
+                                <me>V(X_G) = V(Y_G - 1) = V(Y_G) = \frac{1-p}{p^2}</me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <strong>Moment Generating Function:</strong> Using the transformation identity <m>M_{aY+b}(t) = e^{bt}M_Y(at)</m> with <m>a=1</m> and <m>b=-1</m>:
+                                <me>M_{X_G}(t) = M_{Y_G - 1}(t) = e^{-t} M_{Y_G}(t) = e^{-t} \left[ \frac{pe^t}{1-(1-p)e^t} \right] = \frac{p}{1-(1-p)e^t}</me>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </solution>
+        </task>
+
+        <!-- Task D: Alternative Negative Binomial PMF -->
+        <task xml:id="task-alt-negbin-pmf">
+            <statement>
+                <p>
+                     Determine the probability distribution function for <m>X_{NB}</m> (failures-only negative binomial variable). Explain the reasoning behind your answer and state its domain support.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The probability mass function is:
+                    <me>p(x_{nb}) = \binom{x_{nb} + r - 1}{r - 1} p^r (1-p)^{x_{nb}}, \quad \text{for } x_{nb} = 0, 1, 2, \dots</me>
+                    <strong>Reasoning:</strong> We map the total-trials PMF by replacing every instance of <m>y</m> with <m>x_{nb} + r</m>. The total trials required is <m>x_{nb} + r</m>, and the final trial must be a success. Thus, we choose the remaining <m>r-1</m> successes out of the preceding <m>(x_{nb} + r) - 1 = x_{nb} + r - 1</m> spots. The cumulative success terms evaluate to <m>p^r</m> and failure terms evaluate to <m>(1-p)^{x_{nb}}</m>.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Task E: Alternative Negative Binomial Properties -->
+        <task xml:id="task-alt-negbin-properties">
+            <statement>
+                <p>
+                     Find the following properties for the failures-only negative binomial variable <m>X_{NB}</m> using your linear transformation rules from Part A:
+                    <ol marker="1">
+                        <li><p>Expected Value, <m>E(X_{NB})</m></p></li>
+                        <li><p>Variance, <m>V(X_{NB})</m></p></li>
+                        <li><p>Moment Generating Function, <m>M_{X_{NB}}(t)</m></p></li>
+                    </ol>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Recall the baseline properties of the total-trials negative binomial variable <m>Y_{NB}</m>: <m>E(Y_{NB}) = \frac{r}{p}</m>, <m>V(Y_{NB}) = \frac{r(1-p)}{p^2}</m>, and <m>M_{Y_{NB}}(t) = \left[\frac{pe^t}{1-(1-p)e^t}\right]^r</m>. Applying linear properties where <m>X_{NB} = Y_{NB} - r</m>:
+                    <ol marker="1">
+                        <li>
+                            <p>
+                                <strong>Expected Value:</strong> Subtraction shifts the mean downstream by exactly <m>r</m> units:
+                                <me>E(X_{NB}) = E(Y_{NB} - r) = E(Y_{NB}) - r = \frac{r}{p} - r = \frac{r - rp}{p} = \frac{r(1-p)}{p}</me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <strong>Variance:</strong> Bounding shifts preserve scaling properties entirely:
+                                <me>V(X_{NB}) = V(Y_{NB} - r) = V(Y_{NB}) = \frac{r(1-p)}{p^2}</me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <strong>Moment Generating Function:</strong> Shifting backward by <m>r</m> scales the generator expression by a factor of <m>e^{-rt}</m>:
+                                <me>M_{X_{NB}}(t) = M_{Y_{NB} - r}(t) = e^{-rt} M_{Y_{NB}}(t) = e^{-rt} \left[ \frac{pe^t}{1-(1-p)e^t} \right]^r = \left[ \frac{p}{1-(1-p)e^t} \right]^r</me>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </solution>
+        </task>
+    </exercise>
+
+
+   </exercises>
+
+  </section>
+
+
