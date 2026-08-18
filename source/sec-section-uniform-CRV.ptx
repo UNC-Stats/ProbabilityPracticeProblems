@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-uniform-CRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Uniform Random Variable</title>
+
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+
+ <exercises xml:id="hw-uniform-cont-rv" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+
+<exercise label="ex-uniform-quiz-times-5options" xmlns:pi="http://pretextbook.org">
+    <title>Continuous Distributions: Statistics Quiz Completion Times</title>
+    <introduction>
+        <p>
+            The amount of time it takes a MATH 350 student to complete a probability exam can be modeled by a continuous uniform distribution between 25 and 55 minutes. If one students is selected completely at random from the class, compute the following probabilities for that student.
+        </p>
+    </introduction>
+
+    <!-- Part A: More than 51 minutes (5 Options) -->
+    <task xml:id="task-quiz-more-51">
+        <statement>
+            <p>
+                 Find the probability that the student requires more than 51 minutes to complete the exam (<m>P(X \gt 51)</m>).
+            </p>
+            
+        </statement>
+        <choices>
+
+                <choice><statement><p><m>0.8667</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This is the probability that the student takes <em>less</em> than 51 minutes (<m>P(X \le 51)</m>). Remember to find the area of the upper tail corresponding to "more than."</p>
+                    </feedback></choice>
+                <choice correct="yes"><statement><p><m>0.1333</m> </p></statement>
+                    <feedback>
+                        <p>Correct! For a uniform distribution on the interval <m>[a, b] = [25, 55]</m>, the total width is <m>b - a = 55 - 25 = 30</m> minutes. The target width for taking more than 51 minutes spans from 51 to 55:</p>
+                        <me>P(X \gt 51) = \frac{55 - 51}{55 - 25} = \frac{4}{30} \approx 0.1333</me>
+                    </feedback></choice>
+                <choice><statement><p><m>0.0727</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. It looks like you divided the target width of 4 minutes by the upper boundary of 55 instead of the actual total width of the distribution support interval (<m>30</m> minutes).</p>
+                    </feedback></choice>
+                <choice><statement><p><m>0.1600</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This distractor assumes a baseline width calculation slip where the interval was mistakenly calculated out of 25 instead of 30. Check your <m>b - a</m> subtraction.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>0.0667</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This matches only a 2-minute interval width over the 30-minute support space. Review the limits bounding the upper tail area.</p>
+                    </feedback>
+                    </choice>
+             </choices>
+    </task>
+
+    <!-- Part B: Between 31 and 35 minutes (5 Options) -->
+    <task xml:id="task-quiz-between-31-35">
+        <statement>
+            <p>
+                Find the probability that the student completes the exam in a time frame between 31 and 35 minutes (<m>P(31 \le X \le 35)</m>).
+            </p>
+            </statement>
+            <choices>
+                <choice correct="yes"><statement><p><m>0.1333</m> </p></statement>
+                    <feedback>
+                        <p>Correct! The length of the target sub-interval is <m>d - c = 35 - 31 = 4</m> minutes. Dividing this by the total distribution support width of 30 minutes gives:</p>
+                        <me>P(31 \le X \le 35) = \frac{35 - 31}{55 - 25} = \frac{4}{30} \approx 0.1333</me>
+                        <p>Notice that because the uniform distribution has a constant flat probability density, any sub-interval of width 4 within the main domain boundaries has an identical likelihood weight.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>0.2000</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This looks like a mistake where a width of 5 minutes was used in the numerator (<m>35 - 30</m>) instead of evaluating the true net difference between 35 and 31.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>0.1143</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. It looks like you divided the sub-interval width of 4 by the upper bound of 35 instead of using the total uniform interval width parameter (<m>30</m>).</p>
+                    </feedback></choice>
+                <choice><statement><p><m>0.3333</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This matches a full 10-minute interval block over the support range. Re-verify your boundary subtraction steps.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>0.1000</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This matches a 3-minute sub-interval step. The distance between 31 minutes and 35 minutes is exactly 4 minutes.</p>
+                    </feedback>
+                  </choice>
+                  </choices>
+
+    </task>
+</exercise>
+
+
+
+<exercise label="ex-uniform-greeley-high-temps" xmlns:pi="http://pretextbook.org">
+    <title>Continuous Distributions: Greeley Winter High Temperatures</title>
+    <introduction>
+        <p>
+            Historical climate records indicate that the daily daytime high temperature during the month of December in Greeley, Colorado follows a continuous uniform distribution over the interval from 32 to 52 degrees Fahrenheit. A business traveler arrives in the city on a randomly selected day in December.
+        </p>
+    </introduction>
+
+    <!-- Part A: Above 43 degrees -->
+    <task xml:id="task-weather-greeley-above-43">
+        <statement>
+            <p>
+                 What is the probability that the daytime high temperature will be above 43 degrees Fahrenheit (<m>P(X \gt 43)</m>)?
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>0.5500</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the probability that the high temperature is <em>below</em> 43 degrees (<m>P(X \le 43)</m>). Remember to isolate the upper portion of the interval for "above."</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>0.4500</m></p></statement>
+                <feedback>
+                    <p>Correct! The total width of the uniform distribution support is <m>b - a = 52 - 32 = 20</m> degrees. The target interval width for high temperatures above 43 degrees spans from 43 to 52:</p>
+                    <me>P(X \gt 43) = \frac{52 - 43}{52 - 32} = \frac{9}{20} = 0.4500</me>
+                </feedback></choice>
+            <choice><statement><p><m>0.1731</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you divided the target width of 9 by the upper bound of 52 instead of using the total uniform interval width parameter (<m>20</m>).</p>
+                </feedback></choice>
+            <choice><statement><p><m>0.4300</m></p></statement>
+                <feedback>
+                    <p>Incorrect. Do not confuse the boundary threshold value (43) with a probability ratio. Calculate the width of the target zone over the total zone width.</p>
+                </feedback></choice>
+            <choice><statement><p><m>0.3500</m></p></statement>
+                <feedback>
+                    <p>Incorrect. Review your boundary subtraction steps. The distance between 43 and 52 is exactly 9 units.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part B: Between 34 and 46 degrees -->
+    <task xml:id="task-weather-greeley-between-34-46">
+        <statement>
+            <p>
+                 What is the probability that the daily high temperature will be between 34 and 46 degrees Fahrenheit (<m>P(34 \le X \le 46)</m>)?
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>0.4000</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This matches a target width of 8 units instead of the true distance between 34 and 46.</p>
+                </feedback></choice>
+            <choice><statement><p><m>0.7000</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the cumulative probability area to the left of the upper boundary (<m>P(X \le 46)</m>). You still need to subtract the lower tail area under 34 degrees.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>0.6000</m></p></statement>
+                <feedback>
+                    <p>Correct! The length of our target sub-interval is <m>d - c = 46 - 34 = 12</m> degrees. Dividing this by the total distribution support width of 20 degrees gives:</p>
+                    <me>P(34 \le X \le 46) = \frac{46 - 34}{52 - 32} = \frac{12}{20} = 0.6000</me>
+                </feedback></choice>
+            <choice><statement><p><m>0.1000</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the lower tail probability of experiencing a high temperature cooler than 34 degrees (<m>P(X \lt 34)</m>).</p>
+                </feedback></choice>
+            <choice><statement><p><m>0.2609</m></p></statement>
+                <feedback>
+                    <p>Incorrect. Make sure to divide the sub-interval distance by the true width parameter (<m>b - a = 20</m>) rather than an upper boundary score.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part C: Expected Value and Standard Deviation (Matching Task) -->
+    <task xml:id="task-weather-greeley-high-matching">
+        <statement>
+            <p>
+                Find the expected daily high temperature and its standard deviation.
+            </p>
+              <p>
+        Expected = <fillin width="8" answer="42" name="Uexp"/><m>^\circ\text{F}</m> 
+        </p> 
+        <p>
+        Standard Deviation = <fillin width="8" answer="5.8" name="Usd"/><m>^\circ\text{F}</m>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate submit ="Uexp">
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! For any continuous uniform random variable on the interval <m>[a, b]</m>, the expected value maps to the exact spatial midpoint:
+                <me>E(X) = \frac{a + b}{2} = \frac{32 + 52}{2} = \frac{84}{2} = 42 ^\circ\text{F}</me>
+            </p>
+          </feedback>
+        </test> 
+      </evaluate>  
+      <evaluate submit ="Usd">
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! Evaluate the continuous distribution variance parameter using its analytical shortcut identity:
+                <me>V(X) = \frac{(b - a)^2}{12} = \frac{(52 - 32)^2}{12} = \frac{20^2}{12} = \frac{400}{12} \approx 33.333 \text{ degrees}^2</me>
+                Take the square root of the variance to determine the standard deviation:
+                <me>\sigma = \sqrt{V(X)} = \sqrt{33.333} \approx 5.7735 \approx 5.8 ^\circ\text{F}</me>
+            </p>
+          </feedback>
+        </test> 
+      </evaluate> 
+      </evaluation>         
+
+    </task>
+</exercise>
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-uniform-cont-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+
+
+  
+    
+
+
+    <exercise label="ex-uniform-mean-variance-proof">
+        <title>Analytical Derivations of Mean and Variance</title>
+<introduction>
+    <p>
+        Let <m>X</m> be a continuous uniform random variable defined over the real-numbered interval <m>[A, B]</m>, where <m>A \lt B</m>. The constant probability density function (PDF) is given by:
+        <me>f_X(x) = \frac{1}{B - A}, \quad \text{for } A \le x \le B</me>
+        and <m>f_X(x) = 0</m> elsewhere. Complete the analytical derivations below to verify its expected value and variance.
+    </p>
+    </introduction>
+        <!-- Task A: Deriving Expected Value -->
+        <task xml:id="task-uniform-proof-mean">
+            <statement>
+                <p>
+                    <strong>Part A:</strong> Prove that the expected value (mean) for a continuous uniform random variable on the interval <m>[A, B]</m> is:
+                    <me>E(X) = \frac{A + B}{2}</me>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    By definition, the expected value of a continuous random variable is calculated by integrating <m>x \cdot f_X(x)</m> over its support interval:
+                    <md>
+                        <mrow>E(X) \amp = \int_{A}^{B} x \cdot \left(\frac{1}{B - A}\right) \, dx</mrow>
+                        <mrow>\amp = \frac{1}{B - A} \int_{A}^{B} x \, dx</mrow>
+                    </md>
+                    Evaluating the basic power-rule anti-derivative over the definite boundaries:
+                    <md>
+                        <mrow>E(X) \amp = \frac{1}{B - A} \left[ \frac{x^2}{2} \right]_{A}^{B}</mrow>
+                        <mrow>\amp = \frac{1}{B - A} \left( \frac{B^2 - A^2}{2} \right)</mrow>
+                    </md>
+                    Factoring the numerator as a difference of squares allows us to cancel the denominator interval term:
+                    <md>
+                        <mrow>E(X) \amp = \frac{1}{B - A} \cdot \frac{(B - A)(B + A)}{2}</mrow>
+                        <mrow>\amp = \frac{B + A}{2} = \frac{A + B}{2}</mrow>
+                    </md>
+                    This analytical result matches our spatial intuition that the center of mass for a completely flat distribution sits at its exact geometric midpoint.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Task B: Deriving Variance -->
+        <task xml:id="task-uniform-proof-variance">
+            <statement>
+                <p>
+                    <strong>Part B:</strong> Show that the mathematical variance for a continuous uniform random variable on the interval <m>[A, B]</m> is given by the formula:
+                    <me>V(X) = \frac{(B - A)^2}{12}</me>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    To find the variance, we leverage the algebraic identity <m>V(X) = E(X^2) - [E(X)]^2</m>. First, compute the intermediate second moment term, <m>E(X^2)</m>:
+                    <md>
+                        <mrow>E(X^2) \amp = \int_{A}^{B} x^2 \cdot \left(\frac{1}{B - A}\right) \, dx</mrow>
+                        <mrow>\amp = \frac{1}{B - A} \int_{A}^{B} x^2 \, dx</mrow>
+                        <mrow>\amp = \frac{1}{B - A} \left[ \frac{x^3}{3} \right]_{A}^{B}</mrow>
+                        <mrow>\amp = \frac{1}{B - A} \left( \frac{B^3 - A^3}{3} \right)</mrow>
+                    </md>
+                    Factoring the numerator using the algebraic difference of cubes rule (<m>B^3 - A^3 = (B - A)(B^2 + AB + A^2)</m>):
+                    <md>
+                        <mrow>E(X^2) \amp = \frac{1}{B - A} \cdot \frac{(B - A)(B^2 + AB + A^2)}{3}</mrow>
+                        <mrow>\amp = \frac{B^2 + AB + A^2}{3}</mrow>
+                    </md>
+                    Now substitute both <m>E(X^2)</m> and our squared mean from Part A into the final variance identity, expanding to a common denominator of 12:
+                    <md>
+                        <mrow>V(X) \amp = E(X^2) - [E(X)]^2</mrow>
+                        <mrow>\amp = \frac{B^2 + AB + A^2}{3} - \left(\frac{A + B}{2}\right)^2</mrow>
+                        <mrow>\amp = \frac{B^2 + AB + A^2}{3} - \frac{A^2 + 2AB + B^2}{4}</mrow>
+                        <mrow>\amp = \frac{4(B^2 + AB + A^2) - 3(A^2 + 2AB + B^2)}{12}</mrow>
+                        <mrow>\amp = \frac{4B^2 + 4AB + 4A^2 - 3A^2 - 6AB - 3B^2}{12}</mrow>
+                        <mrow>\amp = \frac{B^2 - 2AB + A^2}{12}</mrow>
+                    </md>
+                    Factoring the numerator into its perfect square trinomial form yields our target closed-form identity:
+                    <me>V(X) = \frac{(B - A)^2}{12}</me>
+                </p>
+            </solution>
+        </task>
+    </exercise>
+
+
+   </exercises>
+
+  </section>

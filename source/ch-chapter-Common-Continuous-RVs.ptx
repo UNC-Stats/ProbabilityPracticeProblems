@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-chapter-Common-Continuous-RVs" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Common Continuous Random Variables</title>
+
+  <introduction>
+    <p> Text before the first section. </p>
+  </introduction>
+
+  <!-- include sections -->
+
+   <xi:include href="sec-section-uniform-CRV.ptx" /> 
+   <xi:include href="sec-section-exponential-CRV.ptx" /> 
+   <xi:include href="sec-section-normal-CRV.ptx" /> 
+   <xi:include href="sec-section-gamma-CRV.ptx" /> 
+   <xi:include href="sec-section-beta-CRV.ptx" /> 
+  
+</chapter>
+
+
+

@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-normal-CRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Normal Random Variable</title>
+
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+        <figure>
+        <caption>StatKey Normal Distribution Applet</caption>
+        <interactive xml:id="statkey-nromal-applet" iframe="https://lock5stat.com/StatKey/theoretical_distribution/theoretical_distribution.html#normal" width="100%" />
+     </figure>
+
+
+ <exercises xml:id="hw-normal-rv" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+
+<exercise label="ex-normal-quiz-times-5options" xmlns:pi="http://pretextbook.org">
+    <title>Continuous Distributions: Normal Distribution Exam Times</title>
+    <introduction>
+        <p>
+            We previously modeled the amount of time that it takes a MATH 350 student to complete a probability exam as a continuous uniform random variable. A more realistic and accurate model would be the normal distribution.
+            </p> 
+        <p>Assuming exam completion times follow a normal distirbution with a mean of 40 minutes and a standard deviation of 5 minutes,  compute the following probabilities.
+        </p>
+    </introduction>
+
+    <!-- Part A: More than 51 minutes -->
+    <task xml:id="task-quiz-normal-more-51">
+        <statement>
+            <p>
+                Find the probability that a randomly selected student requires more than 51 minutes to complete the exam (<m>P(X \gt 51)</m>).
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement><p><m>0.9861</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the probability that the student takes <em>less</em> than 51 minutes (<m>P(X \le 51)</m>). Remember to use the complement rule to find the area of the upper tail for "more than."</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement><p><m>0.0139</m></p></statement>
+                <feedback>
+                    <p>Correct! First, standardize the target value to find the Z-score:</p>
+                    <me>Z = \frac{51 - 40}{5} = \frac{11}{5} = 2.2</me>
+                    <p>Using a standard normal table or technology, the area to the left of <m>Z = 2.2</m> is <m>0.9861</m>. Finding the upper tail gives:</p>
+                    <me>P(X \gt 51) = P(Z \gt 2.2) = 1 - 0.9861 = 0.0139</me>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.0179</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you might have used the variance (<m>\sigma^2 = 25</m>) in the denominator instead of the standard deviation (<m>\sigma = 5</m>) when calculating your Z-score.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.1333</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This was the answer from the uniform distribution version of this problem. Under a normal curve, the probability density drops significantly as you move out into the tails.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.0228</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the probability of a value falling more than 2 standard deviations away (<m>Z \gt 2.0</m>). Recheck your subtraction arithmetic for the Z-score numerator.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part B: Between 31 and 35 minutes -->
+    <task xml:id="task-quiz-normal-between-31-35">
+        <statement>
+            <p>
+                Find the probability that a randomly selected student completes the exam in a time frame between 31 and 35 minutes (<m>P(31 \le X \le 35)</m>).
+            </p>
+        </statement>
+        <choices>
+            <choice correct="yes">
+                <statement><p><m>0.1227</m></p></statement>
+                <feedback>
+                    <p>Correct! First, convert both boundary thresholds into their respective standard normal Z-scores:</p>
+                    <me>Z_1 = \frac{31 - 40}{5} = -1.8 \quad \text{and} \quad Z_2 = \frac{35 - 40}{5} = -1.0</me>
+                    <p>Find the cumulative area to the left for both scores from your standard normal distribution curve tables:</p>
+                    <me>P(Z \le -1.0) = 0.1587 \quad \text{and} \quad P(Z \le -1.8) = 0.0360</me>
+                    <p>Subtracting the lower boundary area from the upper boundary area yields the interval probability:</p>
+                    <me>P(-1.8 \le Z \le -1.0) = 0.1587 - 0.0360 = 0.1227</me>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.1587</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is only the cumulative area to the left of 35 minutes (<m>P(X \le 35)</m>). You still need to subtract the lower tail area corresponding to times under 31 minutes.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.1947</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you added the two boundary probabilities together instead of subtracting them to find the area contained between them.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.1333</m></p></statement>
+                <feedback>
+                    <p>Incorrect. Remember that unlike the uniform distribution, intervals of equal width do not have equal probabilities in a normal distribution because the curve is non-linear and changes height.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.0360</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the lower tail probability of a student completing the exam in fewer than 31 minutes (<m>P(X \lt 31)</m>).</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+</exercise>
+
+
+
+
+<exercise label="ex-normal-hybrid-mpg" xmlns:pi="http://pretextbook.org">
+    <title>Continuous Distributions: Hybrid Fuel Efficiency</title>
+    <introduction>
+        <p>
+            A new gas- and electric-powered hybrid car has recently hit the consumer automotive market. The distance traveled on one gallon of fuel is modeled by a normal distribution with a mean of 65 miles and a standard deviation of 8 miles. If one car is tested at random, compute the following probabilities.
+        </p>
+    </introduction>
+
+    <!-- Part A: More than 71 mpg -->
+    <task xml:id="task-hybrid-more-71">
+        <statement>
+            <p>
+                Find the probability that the car travels more than 71 miles per gallon.
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement><p><m>0.7734</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the probability that the car travels <em>less</em> than 71 miles per gallon (<m>P(X \le 71)</m>). Remember to find the upper tail area for "more than."</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement><p><m>0.2266</m> </p></statement>
+                <feedback>
+                    <p>Correct! First, find the standard normal Z-score:</p>
+                    <me>Z = \frac{71 - 65}{8} = \frac{6}{8} = 0.75</me>
+                    <p>The cumulative area to the left of <m>Z = 0.75</m> is <m>0.7734</m>. Subtracting from 1 to find the upper tail gives:</p>
+                    <me>P(X \gt 71) = P(Z \gt 0.75) = 1 - 0.7734 = 0.2266</me>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.2734</m></p></statement>
+                <feedback>
+                    <p>Incorrect. Double-check your numerator subtraction and division when standardizing your raw score into a Z-score.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.1587</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This matches a Z-score of exactly <m>1.0</m>. Make sure to divide by the standard deviation parameter <m>\sigma = 8</m>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.4701</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This looks like the raw area between the mean and the target score instead of the remaining tail probability.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part B: Less than 58 mpg -->
+    <task xml:id="task-hybrid-less-58">
+        <statement>
+            <p>
+                Find the probability that the car travels less than 58 miles per gallon.
+            </p>
+        </statement>
+        <choices>
+            <choice correct="yes">
+                <statement><p><m>0.1908</m></p></statement>
+                <feedback>
+                    <p>Correct! Convert the threshold parameter into a standard normal Z-score:</p>
+                    <me>Z = \frac{58 - 65}{8} = \frac{-7}{8} = -0.875 \approx -0.88</me>
+                    <p>Looking up the lower tail area directly to the left of <m>Z = -0.88</m> yields:</p>
+                    <me>P(X \lt 58) = P(Z \lt -0.88) \approx 0.1894 \quad \text{(or } 0.1908 \text{ unrounded)}</me>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.8092</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the probability that the vehicle gets <em>more</em> than 58 miles per gallon (<m>P(X \ge 58)</m>).</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.2119</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you rounded your Z-score aggressively to <m>-0.80</m> or <m>-0.85</m> instead of evaluating <m>-0.88</m>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.3106</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This matches a Z-score calculation slip where the denominator was misidentified. Double-check your parameter targets.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.0548</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This represents a value significantly further out in the distribution tail than 58 miles per gallon.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part C: Between 57 and 73 mpg -->
+    <task xml:id="task-hybrid-between-57-73">
+        <statement>
+            <p>
+                Find the probability that the car travels between 57 and 73 miles per gallon.
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement><p><m>0.3413</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is only the probability area between the mean and one standard deviation above the mean.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.8413</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is only the cumulative area to the left of the upper bound (<m>P(X \le 73)</m>). Remember to subtract the lower tail area below 57 mpg.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement><p><m>0.6826</m> </p></statement>
+                <feedback>
+                    <p>Correct! Convert both boundary limits into standard normal Z-scores:</p>
+                    <me>Z_1 = \frac{57 - 65}{8} = \frac{-8}{8} = -1.0 \quad \text{and} \quad Z_2 = \frac{73 - 65}{8} = \frac{8}{8} = 1.0</me>
+                    <p>Notice that these bounds map precisely to exactly <m>\pm 1</m> standard deviation away from the distribution mean. Applying the <strong>Empirical Rule</strong> (the 68-95-99.7 rule), any symmetric normal interval within one standard deviation of the center encompasses approximately <strong>68%</strong> of total data entries:</p>
+                    <me>P(-1.0 \le Z \le 1.0) = 0.8413 - 0.1587 = 0.6826</me>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.9544</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the empirical probability contained within <em>two</em> standard deviations of the mean (<m>\pm 2\sigma</m>).</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.4972</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This matches an asymmetric interval evaluation error. Review your standard lookup tables for <m>Z = 1.0</m> and <m>Z = -1.0</m>.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+
+    <!-- Part D: Inverse Normal Top 5% Milestone -->
+    <task xml:id="task-hybrid-top-5-percent">
+        <statement>
+            <p>
+                A group of eco-conscious drivers are competing in a "hypermiling" distance challenge using this hybrid model to see who can get the most out of a single gallon of gas under various driving conditions. To earn an elite efficiency certificate, a driver's trip must rank in the <strong>top 5%</strong> of all recorded fuel economy outcomes for this vehicle. Find the minimum miles per gallon a participant must achieve to qualify for the certificate.
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement><p><m>51.84 \text{ mpg}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you subtracted the value from the mean (<m>65 - 1.645 \cdot 8</m>). This gives the threshold for the <em>bottom</em> 5% of fuel efficiency rather than the top 5%.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>75.20 \text{ mpg}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This calculation uses a Z-score of <m>Z = 1.28</m>, which corresponds to the top 10% (the 90th percentile) instead of the top 5% (the 95th percentile).</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement><p><m>78.16 \text{ mpg}</m> </p></statement>
+                <feedback>
+                    <p>Correct! Being in the top 5% means that 95% of all cars have a lower fuel efficiency (the 95th percentile). Looking up a cumulative area of <m>0.9500</m> in a standard normal distribution table gives a critical Z-score of approximately <m>Z = 1.645</m>.</p>
+                    <p>Now, use the inverse transformation formula to solve for the raw value <m>x</m>:</p>
+                    <me>x = \mu + Z \cdot \sigma = 65 + 1.645 \cdot 8 = 65 + 13.16 = 78.16 \text{ mpg}</me>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>81.44 \text{ mpg}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This calculation uses a Z-score of <m>Z = 2.056</m>, which maps to the top 2% of the data distribution instead of the targeted top 5% tier.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>65.05 \text{ mpg}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This value is barely above the distribution mean of 65. Remember that achieving a top 5% metric requires a value significantly further out in the positive direction of the distribution curve.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+</exercise>
+
+
+
+<exercise label="ex-normal-habanero-wings" xmlns:pi="http://pretextbook.org">
+    <title>Campus Life: The Habanero Hot Sauce Challenge</title>
+    <introduction>
+        <p>
+            A popular diner near campus offers an infamous "Habanero Wings Challenge." The maximum Scoville heat units (SHU) of spice that contestants can handle before chugging a glass of milk and disqualifying themselves is normally distributed with a mean of <m>\mu = 200,000</m> SHU and a standard deviation of <m>\sigma = 50,000</m> SHU. 
+        </p>
+    </introduction>
+
+    <!-- Part A: Do not satisfy 230,000 requirement -->
+    <task xml:id="task-wings-habanero-fail">
+        <statement>
+            <p>
+                The diner's signature "Level 4" hot sauce hits a blistering heat intensity rating of <m>230,000</m> SHU. What percentage of students fail to satisfy this spice requirement (meaning they break down and reach for the milk strictly before finishing the plate)?
+            </p>
+            <p>
+                Proportion = <fillin mode="string" answer="0.73" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <stringmatch mode="string" case="insensitive"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To find the proportion of students who drop out, we calculate the lower tail probability <m>P(X \lt 230,000)</m>. First, standardize the target heat rating to find its corresponding standard normal Z-score:
+                <me>Z = \frac{230,000 - 200,000}{50,000} = \frac{30,000}{50,000} = 0.60</me>
+            </p>
+            <p>
+                Using a standard normal distribution cumulative lookup table, find the total area to the left of <m>Z = 0.60</m>:
+                <me>P(X \lt 230,000) = P(Z \lt 0.60) \approx 0.7257</me>
+                Rounded to two decimal places, this evaluates to a proportion of <strong>0.73</strong>. This means approximately 73% of brave students will give up and reach for the milk.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Inverse Normal 70% threshold -->
+    <task xml:id="task-wings-habanero-inverse">
+        <statement>
+            <p>
+                 The diner wants to introduce an entry-level "Freshman Flame" sauce. They want to dial down the spice level so that at least 70% of students can successfully finish the plate without quitting. What should the maximum Scoville heat units (SHU) be set at for this new sauce?
+            </p>
+            <p>
+                Target Spice Level = <fillin mode="string" answer="174000" width="10"/> SHU
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <stringmatch mode="string" case="insensitive"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                For 70% of students to successfully <em>satisfy</em> the challenge, 70% must be able to handle a heat level above the cut-off, leaving the remaining 30% in the bottom tail below it. This corresponds to finding the 30th percentile of our normal curve (<m>P(X \lt x) = 0.30</m>).
+            </p>
+            <p>
+                Using an inverse normal standard table lookup for a cumulative probability area of <m>0.3000</m>, locate the corresponding critical Z-score:
+                <me>Z \approx -0.5244 \approx -0.52</me>
+            </p>
+            <p>
+                Apply the inverse transformation formula to map this standardized score back to the raw Scoville scale:
+                <me>x = \mu + Z \cdot \sigma = 200,000 + (-0.52) \cdot 50,000 = 200,000 - 26,000 = 174,000 \text{ SHU}</me>
+                Therefore, the new recipe's heat profile should be capped at approximately <strong>174,000</strong> SHU.
+            </p>
+        </solution>
+    </task>
+
+    <task xml:id="task-wings-habanero-interval">
+        <statement>
+            <p>
+                 A group of friends wants to order a mild custom blend. What is the probability that a randomly chosen student has a maximum spice tolerance between <m>150,000</m> and <m>250,000</m> SHU?
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement><p><m>0.3413</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is only the area from the mean to one standard deviation above the mean (<m>P(0 \le Z \le 1.0)</m>). Remember to find the total area spanning across both symmetric sides of the mean.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement><p><m>0.6826</m></p></statement>
+                <feedback>
+                    <p>Correct! Standardize both boundaries to find their respective Z-scores:</p>
+                    <me>Z_1 = \frac{150,000 - 200,000}{50,000} = -1.0 \quad \text{and} \quad Z_2 = \frac{250,000 - 200,000}{50,000} = 1.0</me>
+                    <p>These boundaries map exactly to <m>\pm 1</m> standard deviation away from the distribution mean. Applying the <strong>Empirical Rule</strong> (the 68-95-99.7 rule), any symmetric normal interval within one standard deviation of the center encompasses approximately <strong>68%</strong> of total outcomes:</p>
+                    <me>P(-1.0 \le Z \le 1.0) = 0.8413 - 0.1587 = 0.6826</me>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.8413</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is only the cumulative area to the left of the upper bound (<m>P(X \le 250,000)</m>). You still need to subtract the lower tail area corresponding to tolerances under 150,000 SHU.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.9544</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the empirical probability contained within <em>two</em> standard deviations of the mean (<m>\pm 2\sigma</m>), which would correspond to a range of 100,000 to 300,000 SHU.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>0.5000</m></p></statement>
+                <feedback>
+                    <p>Incorrect. Review your standard lookup tables for <m>Z = 1.0</m> and <m>Z = -1.0</m> to calculate the exact net area contained between the two boundaries.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+</exercise>
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-normal-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+
+
+    
+
+    <exercise label="ex-normal-enzyme-concentration">
+        <title>Normal Distribution Models in Deep-Sea Biochemistry - Enzyme Concentration Metrics</title>
+        <introduction>
+    
+    <p>
+        The bio-extract of a specialized bacterium native to deep-sea hydrothermal vents has been tested as a baseline agent for cancer cell lifecycle inhibition. One of the primary organic chemical compounds isolated from this marine extract was monitored for a specific enzyme profile. The baseline enzyme concentration amount was found to be normally distributed with a mean of <m>\mu = 80</m> grams per mL and a standard deviation of <m>\sigma = 7</m> grams per mL. Complete the non-interactive analytical questions below to evaluate this dataset.
+    </p>
+    </introduction>
+        <!-- Part A: Greater than 74 -->
+        <task xml:id="task-enzyme-greater-74">
+            <statement>
+                <p>
+                     What is the probability that a randomly analyzed compound sample possesses an enzyme concentration greater than 74 grams per mL ?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    First, calculate the corresponding standard normal Z-score for our lower boundary threshold:
+                    <me>Z = \frac{74 - 80}{7} = \frac{-6}{7} \approx -0.8571 \approx -0.86</me>
+                </p>
+                <p>
+                    Using standard normal cumulative distribution tables, the tail area to the left of <m>Z = -0.86</m> evaluates to <m>0.1949</m>. To evaluate the probability of being <em>greater than</em> this value, compute the upper tail area complement:
+                    <me>P(X \gt 74) = P(Z \gt -0.86) = 1 - P(Z \le -0.86) = 1 - 0.1949 = 0.8051 \approx 0.80</me>
+                    The probability that the enzyme amount exceeds 74 grams per mL is approximately <strong>0.80</strong>.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part B: Less than 90 -->
+        <task xml:id="task-enzyme-less-90">
+            <statement>
+                <p>
+                     What is the probability that the concentration of this target enzyme in a randomly selected extract sample is less than 90 grams per mL (<m>P(X \lt 90)</m>)?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Convert our target threshold parameter into its equivalent standard normal Z-score:
+                    <me>Z = \frac{90 - 80}{7} = \frac{10}{7} \approx 1.4286 \approx 1.43</me>
+                </p>
+                <p>
+                    Using standard normal cumulative probability lookup metrics, evaluate the lower tail area to the left of our computed Z-score directly:
+                    <me>P(X \lt 90) = P(Z \lt 1.43) \approx 0.9236 \approx 0.92</me>
+                    The probability that the enzyme concentration is less than 90 grams per mL is approximately <strong>0.92</strong>.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part C: Empirical Rule Application -->
+        <task xml:id="task-enzyme-empirical-rule">
+            <statement>
+                <p>
+                     What percentage of isolated chemical compounds formed from this marine bio-extract fall within exactly 2 standard deviations of the mean?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    According to the foundational <strong>Empirical Rule</strong> (also referred to as the 68-95-99.7 rule) for any perfectly symmetric, bell-shaped normal distribution curve:
+                    <ul>
+                        <li><p>Approximately 68% of observation entries fall within 1 standard deviation of the mean (<m>\mu \pm 1\sigma</m>).</p></li>
+                        <li><p>Approximately 95% of observation entries fall within 2 standard deviations of the mean (<m>\mu \pm 2\sigma</m>).</p></li>
+                        <li><p>Approximately 99.7% of observation entries fall within 3 standard deviations of the mean (<m>\mu \pm 3\sigma</m>).</p></li>
+                    </ul>
+                </p>
+                <p>
+                    Therefore, without requiring explicit integration or table lookup steps, the theoretical percentage of compounds falling within 2 standard deviations of the mean is approximately <strong>95%</strong> (analytically <m>P(-2 \le Z \le 2) = 0.9545</m>).
+                </p>
+            </solution>
+        </task>
+    </exercise>
+
+
+   </exercises>
+
+  </section>

@@ -19,11 +19,11 @@
 
 <exercise label="ex-poisson-er-triage">
     <title>Emergency Room Patient Intake</title>
-    <introduction>
+    <statement>
         <p>
             During a busy weekend shift, trauma patients arrive at an urban emergency room triage desk according to a Poisson process with a mean rate of 80 patients per hour. If the triage nurse steps away to grab a clean stethoscope, leaving the desk unattended for exactly one minute, what is the probability that at least 1 patient arrives during that brief interval?
         </p>
-    </introduction>
+    </statement>
     <choices>
         <choice>
             <statement><p><m>0.2636</m></p></statement>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-section-common-CRV" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Common Continuous Random Variables</title>
+<section xml:id="sec-section-gamma-CRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Gamma Random Variable</title>
 
  <p> 
     Write intro to homework set.....  Goal, Purpose, Instructions....
   </p>
 
 
- <exercises xml:id="hw-common-cont-rv" >
+ <exercises xml:id="hw-gamma-rv" >
    <title>Interactive Exercises</title>
    <introduction>
      <p>
@@ -20,7 +20,7 @@
 
 
 
-<exercises xml:id="hw-common-cont-rv-turn-in" >
+<exercises xml:id="hw-gamma-rv-turn-in" >
    <title>Written Exercises</title>
    <introduction>
      <p>

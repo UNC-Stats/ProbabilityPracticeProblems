@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-exponential-CRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exponential Random Variable</title>
+
+ <p> 
+    Write intro to homework set.....  Goal, Purpose, Instructions....
+  </p>
+
+
+ <exercises xml:id="hw-exponential-rv" >
+   <title>Interactive Exercises</title>
+   <introduction>
+     <p>
+       Write intro to interactive homework set.....
+     </p>
+   </introduction>
+
+
+<exercise label="ex-exponential-tech-support-memoryless" xmlns:pi="http://pretextbook.org">
+    <title>Systems Engineering: Tech Support Ticket Arrival</title>
+    <introduction>
+        <p>
+            The idle time (in minutes) separating consecutive inbound service tickets at an IT help desk is modeled by a continuous exponential distribution with a mean of <m>\mu = 0.49</m> minutes.
+        </p>
+    </introduction>
+
+    <!-- Part A: Less than 15 seconds -->
+    <task xml:id="task-it-less-than-15">
+        <statement>
+            <p>
+                 What is the probability that the idle time between consecutive incoming service tickets is at least 15 seconds?
+            </p>
+            <p>
+                Probability = <fillin answer="0.60" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                First, convert the target time window from seconds to minutes to align with the parameter units: 15 seconds matches <m>\frac{15}{60} = 0.25</m> minutes. The distribution scale parameter is the mean <m>\mu = 0.49</m> (which implies an incoming ticket arrival rate of <m>\lambda = \frac{1}{0.49}</m> tickets per minute).
+            </p>
+            <p>
+                Using the cumulative distribution function (CDF) for an exponential random variable, <m>F(x) = 1 - e^{-x/\mu}</m>:
+                <me>P(X \lt 0.25) = 1 - e^{-\frac{0.25}{0.49}} = 1 - e^{-\frac{25}{49}} \approx 1 - 0.6004 = 0.3996</me>
+                Rounded to two decimal places, the final probability value is <strong>0.40</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Between 10 and 15 seconds -->
+    <task xml:id="task-it-between-10-15">
+        <statement>
+            <p>
+                 Find the probability that the idle time passing between consecutive incoming service tickets is between ten and fifteen seconds.
+            </p>
+            <p>
+                Probability = <fillin  answer="0.11" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                   <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Convert both boundary constraints from seconds to minutes: 10 seconds matches <m>\frac{10}{60} \approx 0.1667</m> minutes, and 15 seconds matches <m>0.25</m> minutes.
+            </p>
+            <p>
+                To calculate the probability over this interval, find the net change between the two corresponding CDF positions:
+                <me>P(0.1667 \le X \le 0.25) = F(0.25) - F(0.1667)</me>
+                <me>= \left(1 - e^{-\frac{0.25}{0.49}}\right) - \left(1 - e^{-\frac{0.1667}{0.49}}\right) = e^{-\frac{10}{29.4}} - e^{-\frac{15}{29.4}}</me>
+                <me>= e^{-0.3401} - e^{-0.5102} \approx 0.7117 - 0.6004 = 0.1113</me>
+                Rounded to two decimal places, the final probability value is <strong>0.11</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part C: The Memoryless Property (Multiple Choice) -->
+    <task xml:id="task-it-memoryless-mc">
+        <statement>
+            <p>
+                 Suppose that exactly 2.0 minutes have passed since the last support ticket arrived, and the system is currently completely idle. What is the conditional probability that the dashboard will have to wait <em>at least an additional 15 seconds</em> before the next ticket hits the firewall?
+            </p>
+            <p>
+                <m>P(X\gt 2.25| X \gt2)</m> = <fillin  answer="0.60" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate >
+                <test correct="yes">
+                <numcmp use-answer="yes"/>
+                
+                    <feedback>
+                        <p>Correct! Also, notice that this is the same answer as in part A. The exponential distributions possess the <strong>memoryless property</strong>, written formally as <m>P(X \gt s + t \mid X \gt s) = P(X \gt t)</m>.</p>
+                        <p>Knowing that the system has already waited for <m>s = 2.0</m> minutes has absolutely no bearing on future waiting times. The clock effectively "resets," making the probability of waiting an additional <m>0.25</m> minutes (15 seconds) identical to the specified conditional probability:</p>
+                        <me>P(X \gt 2.0 + 0.25 \mid X \gt 2.0) = P(X \gt 0.25) = e^{-\frac{0.25}{0.49}} \approx 0.600</me>
+                    </feedback>
+                </test>
+            </evaluate>
+        </evaluation>
+    </task>
+</exercise>
+
+
+<exercise label="ex-exponential-machine-repair" xmlns:pi="http://pretextbook.org">
+    <title>Reliability Engineering: Industrial Machine Repair Timelines</title>
+    <introduction>
+        <p>
+            The continuous time <m>T</m> (measured in hours) required for an automation engineer to repair a critical assembly line machine is modeled by an exponential distribution with probability density function (PDF) given by:
+            <me>f_T(t) = \frac{1}{7}e^{-\frac{1}{7}t}, \quad \text{for } t \ge 0</me>
+            and <m>f_T(t) = 0</m> elsewhere. 
+        </p>
+    </introduction>
+
+    <!-- Part A: Mean (Multiple Choice) -->
+    <task xml:id="task-repair-mean">
+        <statement>
+            <p>
+                Identify the expected value (mean repair duration), <m>E(T)</m>, directly from the structure of the provided probability density function.
+            </p>
+            <p>
+        <fillin width="8" answer="7"/> hours.
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! For any standard continuous exponential density function written in the form <m>f(t) = \lambda e^{-\lambda t}</m>, the expected value is <m>E(T) = \frac{1}{\lambda}</m>. Since <m>\lambda = \frac{1}{7}</m>, the mean is exactly 7 hours.
+            </p>
+          </feedback>
+        </test>
+            </evaluate>
+        </evaluation>
+    </task>
+
+    <!-- Part B: Standard Deviation (Multiple Choice) -->
+    <task xml:id="task-repair-sd">
+        <statement>
+            <p>
+                 Compute the standard deviation (<m>\sigma</m>) for the machine repair duration random variable <m>T</m>.
+            </p>
+               <p>
+        <fillin width="8" answer="7"/> hours.
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! One of the unique defining structural properties of any continuous exponential distribution is that its expected value and standard deviation are mathematically identical (<m>\mu = \sigma = \frac{1}{\lambda} = 7</m>).
+            </p>
+          </feedback>
+        </test>
+            </evaluate>
+        </evaluation>          
+    </task>
+
+    <!-- Part C: Probability at least 12.5 hours (Short Answer Entry) -->
+    <task xml:id="task-repair-prob-baseline">
+        <statement>
+            <p>
+                Calculate the probability that a randomly scheduled machine repair will require at least 12.5 hours to finish. Write your answer as a decimal rounded to four decimal places
+            </p>
+               <p>
+        <fillin width="8" answer="0.1676"/> hours.
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct!  To calculate the probability that the variable exceeds a threshold, we evaluate the upper tail survival function, <m>P(T \ge t) = \int_{t}^{\infty} \lambda e^{-\lambda x} \, dx = e^{-\lambda t}</m>. Plugging in our parameters:
+                <me>P(T \ge 12.5) = e^{-\frac{1}{7}(12.5)} = e^{-\frac{25}{14}} \approx e^{-1.7857} \approx 0.1676</me>
+            </p>
+          </feedback>
+        </test>
+            </evaluate>
+        </evaluation>   
+
+    </task>
+
+   <task>
+      <statement>
+       <p>  
+        Calculate the probability that a randomly scheduled machine repair will require at least half an hour to finish. Write your answer as a decimal rounded to four decimal places.
+       </p>
+             <p>
+        <fillin width="8" answer="0.9311"/> hours.
+      </p>
+    </statement>
+ <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! <me>P(T \ge 0.5) = e^{-\frac{0.5}{7}} \approx e^{-0.0714} \approx 0.9311</me>.
+            </p>
+          </feedback>
+        </test>
+            </evaluate>
+        </evaluation>  
+   </task>
+
+
+    <!-- Part D: Conditional / Memoryless property (Multiple Choice Dropdown) -->
+    <task xml:id="task-repair-prob-conditional">
+        <statement>
+            <p>
+                 Suppose that a repair job has already been going on for exactly 12 hours and is still incomplete. What is the conditional probability that the final duration will end up taking at least 12.5 hours in total? Write your answer as a decimal rounded to four decimal places. 
+            </p>
+             <p>
+        <fillin width="8" answer="0.9311"/> hours.
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! <m>P(T \ge 12.5 \mid T \gt 12)=\frac{P(T \ge 12.5)}{P(T \gt 12)} = \frac{0.1676}{0.1800} \approx 0.9311</m>. OR we can use the <em>memoryless property</em> of the exponential distribution to simplify this computation.  Here, the system has already survived for <m>s = 12</m> hours, and we want to know if it will survive for at least an additional <m>t = 0.5</m> hours to hit 12.5 total hours:
+                        <me>P(T \ge 12 + 0.5 \mid T \gt 12) = P(T \ge 0.5) = e^{-\frac{0.5}{7}} \approx e^{-0.0714} \approx 0.9311</me> This is the probability that we computed in part d.
+            </p>
+          </feedback>
+        </test>
+            </evaluate>
+        </evaluation>  
+   </task>
+  
+</exercise>
+
+
+
+
+
+<exercise label="proof-exponential-expected-value" exercise-customization="parsons">
+    <title>Proof Derivation: Expected Value of an Exponential Distribution</title>
+    <statement>
+        <p>
+            Let <m>X</m> be a continuous random variable following an exponential distribution with rate parameter <m>\lambda</m>, where its probability density function (PDF) is defined as <m>f_X(x) = \lambda e^{-\lambda x}</m> for <m>x \ge 0</m>. 
+        </p>
+        <p>
+            Arrange the blocks below in the correct logical sequence to derive the expected value. Recall: <m>E(X) = \frac{1}{\lambda}</m>.
+        </p>
+    </statement>
+    <blocks>
+        <!-- Step 1: Definition Setup -->
+        <block order="1">
+            <p>Set up the integral definition for the expected value:</p>
+            <me>E(X) = \int_{0}^{\infty} x \cdot \left(\lambda e^{-\lambda x}\right) \, dx</me>
+        </block>
+
+        <!-- Step 2: IBP Variable Assignments -->
+        <block order="2">
+            <p>Get ready to apply integration by parts! Assign your terms:</p>
+            <md>
+                <mrow>u = x \amp \implies du = dx</mrow>
+                <mrow>dv = \lambda e^{-\lambda x} \, dx \amp \implies v = -e^{-\lambda x}</mrow>
+            </md>
+        </block>
+
+        <!-- Step 3: Expanded IBP Layout -->
+        <block order="3">
+            <p>Substitute these terms into the integration by parts formula <m>\int u \, dv = uv - \int v \, du</m>:</p>
+            <me>E(X) = \left[ -x e^{-\lambda x} \right]_{0}^{\infty} - \int_{0}^{\infty} \left(-e^{-\lambda x}\right) \, dx</me>
+        </block>
+
+        <!-- Step 4: Evaluating the uv limits -->
+        <block order="4">
+            <p>Evaluate the limits for the first term <m>uv</m>, noticing that the upper limit goes to 0 by L'Hôpital's Rule:</p>
+            <me>E(X) = 0 + \int_{0}^{\infty} e^{-\lambda x} \, dx</me>
+        </block>
+
+        <!-- Step 5: Final Antiderivative and Answer -->
+        <block order="5">
+            <p> Compute the remaining integral. First find the anti-derivative:</p>
+            <me>E(X) = \left[ -\frac{1}{\lambda} e^{-\lambda x} \right]_{0}^{\infty} </me>
+        </block>
+                <block order="6">
+            <p> Evaluate the anti-derivative from 0 to <m>\infty</m>:</p>
+            <me>E(X) =  0 - \left( -\frac{1}{\lambda} \cdot 1 \right) = \frac{1}{\lambda}</me>
+        </block>
+    </blocks>
+    
+</exercise>
+
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-exponential-rv-turn-in" >
+   <title>Written Exercises</title>
+   <introduction>
+     <p>
+       Write intro to written part of homework set.....
+     </p>
+   </introduction>
+
+
+
+
+    
+    
+    
+
+    <exercise label="ex-banking-marketing-myth">
+        <title>Auditing the Apex Bank Billboard Campaign</title>
+
+        <introduction>
+
+            <p>
+        A regional mega-bank, desperate to steal customers from its competitors, launches a flashy billboard campaign asserting they have the absolute fastest tellers in the tri-state area. Their main marketing slogan claims that <em>"virtually all of our customers are served in less than 10 minutes!"</em> 
+    </p>
+    <p>
+        An amused data scientist opens an account, sits in the lobby with a hidden stopwatch, and collects a large sample of service times. They conclude that the customer service times are actually exponentially distributed with a long-run mean of <m>\mu = 5.5</m> minutes. Let us investigate what the bank's marketing department mathematically means by "virtually all."
+    </p>
+  
+        </introduction>
+
+        <!-- Task A: Finding proportion using PDF Integration -->
+        <task xml:id="task-bank-pdf-audit">
+            <statement>
+                <p>
+                    State the  probability density function (PDF), <m>f_X(x)</m>, for this service model. Then use this PDF to compute the proportion of customers who are actually served in under 10 minutes.
+                </p>
+            </statement>
+            <hint>
+              <p>
+               This is the same as finding the probability that customers are served in under ten minutes!
+              </p>
+            </hint>
+            <solution>
+                <p>
+                    An exponential distribution with a mean of <m>\mu = 5.5</m> minutes yields an operational rate parameter of <m>\lambda = \frac{1}{\mu} = \frac{1}{5.5} = \frac{2}{11} \approx 0.1818</m> customers per minute. The formal probability density function is:
+                    <me>f_X(x) = \frac{2}{11}e^{-\frac{2}{11}x}, \quad \text{for } x \ge 0</me>
+                </p>
+                <p>
+                    To find the proportion of customers served in under ten minutes, we integrate this PDF from the lower boundary of 0 minutes up to the 10-minute marketing threshold:
+                    <md>
+                        <mrow>P(X \lt 10) \amp = \int_{0}^{10} \frac{2}{11}e^{-\frac{2}{11}x} \, dx</mrow>
+                        <mrow>\amp = \left[ -e^{-\frac{2}{11}x} \right]_{0}^{10}</mrow>
+                        <mrow>\amp = \left( -e^{-\frac{20}{11}} \right) - \left( -e^{0} \right)</mrow>
+                        <mrow>\amp = 1 - e^{-\frac{20}{11}} \approx 1 - e^{-1.8182}</mrow>
+                        <mrow>\amp \approx 1 - 0.1623 = 0.8377 \approx 0.84</mrow>
+                    </md>
+                    Thus, direct integration shows that exactly <strong>84%</strong> of customers are served within the 10-minute window.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Task B: Recomputing using the closed-form CDF -->
+        <task xml:id="task-bank-cdf-audit">
+            <statement>
+                <p>
+                     State the cumulative distribution function (CDF), <m>F_X(x)</m>, for this service model. Use it to  recompute the proportion of customers served in under 10 minutes.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    By evaluating the general indefinite anti-derivative of our PDF, the continuous closed-form cumulative distribution function is defined as:
+                    <me>F_X(x) = 1 - e^{-\frac{2}{11}x}, \quad \text{for } x \ge 0</me>
+                </p>
+                <p>
+                    To quickly evaluate the proportion of items arriving under the 10-minute threshold, we compute the cumulative height directly at <m>x = 10</m>:
+                    <md>
+                        <mrow>P(X \lt 10) \amp = F_X(10)</mrow>
+                        <mrow>\amp = 1 - e^{-\frac{2}{11}(10)}</mrow>
+                        <mrow>\amp = 1 - e^{-\frac{20}{11}} \approx 0.84</mrow>
+                    </md>
+                    This verifies our finding of <strong>84%</strong>. Mathematically speaking, the bank's marketing department considers "virtually all" to mean roughly 84 out of 100 people. (Leaving a glaring 16% of frustrated customers waiting longer than 10 minutes!)
+                </p>
+            </solution>
+        </task>
+                <!-- Task C: Finding the Median Wait Time -->
+        <task xml:id="task-bank-median-audit">
+            <statement>
+                <p>
+                     While the bank's average (mean) service time is 5.5 minutes, the exponential distribution is heavily skewed toward longer wait times. Find the <em>median</em> service time to determine how fast the middle customer (the 50th percentile) actually gets served.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    By definition, the median is the value <m>m</m> where exactly 50% of the population is served quicker, which means <m>F_X(m) = 0.50</m>. Using our derived cumulative distribution function from Part B:
+                    <md>
+                        <mrow>1 - e^{-\frac{2}{11}m} \amp = 0.50</mrow>
+                        <mrow>e^{-\frac{2}{11}m} \amp = 0.50</mrow>
+                    </md>
+                    Taking the natural logarithm of both sides to isolate the exponential variable:
+                    <md>
+                        <mrow>-\frac{2}{11}m \amp = \ln(0.50)</mrow>
+                        <mrow>-\frac{2}{11}m \amp \approx -0.6931</mrow>
+                    </md>
+                    Solving directly for the median value <m>m</m>:
+                    <md>
+                        <mrow>m \amp = \frac{11 \cdot \ln(0.50)}{-2}</mrow>
+                        <mrow>m \amp \approx 3.81 \text{ minutes}</mrow>
+                    </md>
+                    Alternatively, using the standard shortcut formula for any continuous exponential distribution: <m>\text{Median} = \mu \cdot \ln(2) = 5.5 \cdot 0.6931 \approx 3.81</m> minutes.
+                </p>
+                <p>
+                    <strong>Pedagogical Insight:</strong> This shows that the typical "middle customer" waits only <strong>3.81 minutes</strong>—significantly faster than the 5.5-minute average. This occurs because a small percentage of heavily delayed customers stretch the mean upward, while the median remains an accurate representation of the typical daily user experience.
+                </p>
+            </solution>
+        </task>
+
+    </exercise>
+
+
+<exercise label="ex-exponential-mgf-variance">
+        <title>Analytical Derivations using the MGF</title>
+<introduction>
+ <p>
+        Let <m>X</m> be a continuous random variable following an exponential distribution with rate parameter <m>\lambda \gt 0</m>, defined by the probability density function (PDF) <m>f_X(x) = \lambda e^{-\lambda x}</m> for <m>x \ge 0</m>. Complete the analytical derivations below to determine its moment generating function and theoretical variance.
+    </p>
+    </introduction>
+        <!-- Task A: Deriving the MGF -->
+        <task xml:id="task-exponential-mgf">
+            <statement>
+                <p>
+                    Derive the equation for the moment generating function of the exponential distribution.  State the constraint required for the domain of <m>s</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    By definition, the moment generating function is the expected value of <m>e^{sX}</m>. Setting up the improper integral over the non-negative support of <m>X</m>:
+                    <md>
+                        <mrow>M_X(s) \amp = E(e^{sX}) = \int_{0}^{\infty} e^{sx} \cdot \left(\lambda e^{-\lambda x}\right) \, dx</mrow>
+                        <mrow>\amp = \lambda \int_{0}^{\infty} e^{x(s - \lambda)} \, dx</mrow>
+                    </md>
+                    Evaluating the anti-derivative using definite boundary limits:
+                    <md>
+                        <mrow>M_X(s) \amp = \lambda \left[ \frac{e^{x(s - \lambda)}}{s - \lambda} \right]_{0}^{\infty}</mrow>
+                    </md>
+                    For the upper limit to converge as <m>x \to \infty</m>, the exponent coefficient must be strictly negative, meaning <m>s - \lambda \lt 0</m> (or <m>s \lt \lambda</m>). Under this condition, <m>\lim_{x \to \infty} e^{x(s-\lambda)} = 0</m>:
+                    <md>
+                        <mrow>M_X(s) \amp = \lambda \left( 0 - \frac{1}{s - \lambda} \right) = -\frac{\lambda}{s - \lambda}</mrow>
+                        <mrow>\amp = \frac{\lambda}{\lambda - s} = \frac{1}{1 - \frac{s}{\lambda}}, \quad \text{for } s \lt \lambda</mrow>
+                    </md>
+                </p>
+            </solution>
+        </task>
+
+        <!-- Task B: Differentiating the MGF for Variance -->
+        <task xml:id="task-exponential-variance-proof">
+            <statement>
+                <p>
+                    Differentiate your moment generating function expression from Part A to find the first and second moments about the origin (<m>E(X)</m> and <m>E(X^2)</m>). Use these to show that the theoretical variance for an exponential random variable is <m>V(X) = \frac{1}{\lambda^2}</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    First, rewrite the moment generating function using a negative exponent to simplify chain rule differentiation: <m>M_X(s) = \left(1 - \frac{s}{\lambda}\right)^{-1}</m>.
+                </p>
+                <p>
+                    <strong>First Derivative and Expected Value <m>E(X)</m>:</strong>
+                    Take the first derivative with respect to <m>s</m>:
+                    <md>
+                        <mrow>M_X'(s) \amp = -1\left(1 - \frac{s}{\lambda}\right)^{-2} \cdot \left(-\frac{1}{\lambda}\right) = \frac{1}{\lambda}\left(1 - \frac{s}{\lambda}\right)^{-2}</mrow>
+                    </md>
+                    Evaluating at <m>s = 0</m> yields the first raw moment, which is the expected value (mean):
+                    <md>
+                        <mrow>E(X) \amp = M_X'(0) = \frac{1}{\lambda}\left(1 - 0\right)^{-2} = \frac{1}{\lambda}</mrow>
+                    </md>
+                </p>
+                <p>
+                    <strong>Second Derivative and Second Moment <m>E(X^2)</m>:</strong>
+                    Differentiate a second time with respect to <m>s</m>:
+                    <md>
+                        <mrow>M_X''(s) \amp = \frac{1}{\lambda} \cdot (-2)\left(1 - \frac{s}{\lambda}\right)^{-3} \cdot \left(-\frac{1}{\lambda}\right) = \frac{2}{\lambda^2}\left(1 - \frac{s}{\lambda}\right)^{-3}</mrow>
+                    </md>
+                    Evaluating at <m>s = 0</m> yields the second raw moment:
+                    <md>
+                        <mrow>E(X^2) \amp = M_X''(0) = \frac{2}{\lambda^2}\left(1 - 0\right)^{-3} = \frac{2}{\lambda^2}</mrow>
+                    </md>
+                </p>
+                <p>
+                    <strong>Variance Computation:</strong>
+                    Apply the standard variance identity formula <m>V(X) = E(X^2) - [E(X)]^2</m>:
+                    <md>
+                        <mrow>V(X) \amp = \frac{2}{\lambda^2} - \left(\frac{1}{\lambda}\right)^2</mrow>
+                        <mrow>\amp = \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2}</mrow>
+                    </md>
+                    This completes the analytical proof for the variance of an exponential random variable.
+                </p>
+            </solution>
+        </task>
+    </exercise>
+
+   </exercises>
+
+  </section>

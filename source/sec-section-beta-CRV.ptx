@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-section-joint" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Jointly Distributed Discrete Random Variables</title>
+<section xml:id="sec-section-beta-CRV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Beta Random Variable</title>
 
  <p> 
     Write intro to homework set.....  Goal, Purpose, Instructions....
   </p>
 
 
- <exercises xml:id="hw-joint-rv" >
+ <exercises xml:id="hw-beta-rv" >
    <title>Interactive Exercises</title>
    <introduction>
      <p>
@@ -20,7 +20,7 @@
 
 
 
-<exercises xml:id="hw-joint-rv-turn-in" >
+<exercises xml:id="hw-beta-rv-turn-in" >
    <title>Written Exercises</title>
    <introduction>
      <p>
