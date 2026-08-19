@@ -252,6 +252,143 @@
    </exercise>
 
 
+
+
+<exercise label="ex-probability-streaming-experiment" xmlns:pi="http://pretextbook.org">
+    <title>Probability Theory: Sequential Sample Spaces</title>
+    <introduction>
+        <p>
+            An undecided college student wants to watch something online but cannot decide how to proceed. They first toss a fair coin to choose a streaming platform: if it lands heads (<m>H</m>), they log into Netflix; if it lands tails (<m>T</m>), they log into Hulu. 
+        </p>
+        <p>
+            Once logged in, they randomly select a piece of content:
+            <ul>
+                <li><p>If they are on Netflix, they choose randomly between a Movie (<m>M</m>) or a documentary Video (<m>V</m>).</p></li>
+                <li><p>If they are on Hulu, they choose randomly between a Comedy show (<m>C</m>), an Anime series (<m>A</m>), or a Reality TV episode (<m>R</m>).</p></li>
+            </ul>
+            The "experiment" is to observe the combination of the platform selection and the specific content type they choose to watch.
+        </p>
+    </introduction>
+    <task xml:id="task-streaming-space-id">
+        <statement>
+            <p>
+                Which of the following sets correctly and comprehensively lists the complete sample space <m>S</m> for this compound experimental sequence?
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement><p><m>S = \{(H, M), (H, V), (T, C), (T, A)\}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This subset leaves out the outcome <m>(T, R)</m> for watching a Reality TV episode on Hulu. A complete sample space must list every possible outcome.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>S = \{(H, M), (H, V), (H, C), (H, A), (H, R), (T, M), (T, V), (T, C), (T, A), (T, R)\}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This list includes combinations that are physically impossible based on the rules of the experiment. For example, they cannot watch a Comedy (<m>C</m>) if they landed on Heads (<m>H</m>) and logged into Netflix.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement><p><m>S = \{(H, M), (H, V), (T, C), (T, A), (T, R)\}</m></p></statement>
+                <feedback>
+                    <p>Correct! The sample space must accurately capture the conditional nature of the choices. If they land on heads (<m>H</m>), only <m>M</m> and <m>V</m> are possible. If they land on tails (<m>T</m>), only <m>C</m>, <m>A</m>, and <m>R</m> are possible. This set contains exactly all 5 valid, mutually exclusive outcomes.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>S = \{H, T, M, V, C, A, R\}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is a flat list of individual choices rather than an tracking space of ordered outcome pairs representing the entire multi-stage experiment execution loop.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>S = \{(H, T), (M, V), (C, A, R)\}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is just a grouping of the category parameters rather than mapping out the combined sequential actions of the student.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+    <task xml:id="task-streaming-event-subset">
+        <statement>
+            <p>
+                <strong>Part B:</strong> Let <m>E</m> denote the compound event that the student chooses to watch a scripted narrative project (defined here as a Movie, a Comedy show, or an Anime series). Which subset correctly defines the event space <m>E</m>?
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>E = \{M, C, A\}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This list contains only the raw content tags. In a compound sample space, elements of an event subset must be written as the full ordered pairs mapped in Part A.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>E = \{(H, M), (T, C), (T, A)\}</m></p></statement>
+                <feedback>
+                    <p>Correct! The subset <m>E</m> filters the total sample space <m>S</m> to capture only the elements matching our narrative constraint: a Movie on Netflix <m>(H, M)</m>, a Comedy on Hulu <m>(T, C)</m>, or an Anime on Hulu <m>(T, A)</m>. It excludes the unscripted options (<m>(H, V)</m> and <m>(T, R)</m>).</p>
+                </feedback></choice>
+            <choice><statement><p><m>E = \{(H, M), (H, V), (T, C), (T, A), (T, R)\}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This subset is identical to the entire sample space <m>S</m>. It fails to filter out the unscripted categories (documentary videos <m>V</m> and reality television <m>R</m>).</p>
+                </feedback></choice>
+            <choice><statement><p><m>E = \{(T, C), (T, A)\}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This subset is missing the Netflix Movie outcome <m>(H, M)</m>, which is a valid scripted narrative element of this challenge experiment.</p>
+                </feedback></choice>
+            <choice><statement><p><m>E = \{(H, V), (T, R)\}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This subset captures the exact opposite condition, defining the event that the student watches an <em>unscripted</em> project (the complement event, <m>E^c</m>).</p>
+                </feedback></choice>
+        </choices>
+    </task>
+<task xml:id="task-streaming-likelihood-mc">
+        <statement>
+            <p>
+                <strong>Part C:</strong> Are the five outcomes in the sample space <m>S</m> equally likely to happen? Why or why not?
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement>
+                    <p>Yes, because there are 5 final outcomes, so each outcome automatically has a probability of exactly <m>\frac{1}{5} = 0.20</m>.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. Do not assume a sample space is equally likely just because it is finite. The multi-stage branch structures split the initial coin probabilities into different numbers of subsequent choices.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement>
+                    <p>No, because the coin probability of 0.50 is split evenly among 2 options on Netflix but split evenly among 3 options on Hulu.</p>
+                </statement>
+                <feedback>
+                    <p>Correct! We find individual outcome probabilities by multiplying along the decision branches. Landing on Netflix (<m>H</m>) has a probability of <m>\frac{1}{2}</m>, which is split between 2 choices, making <m>P(H, M) = P(H, V) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4} = 0.25</m>. Landing on Hulu (<m>T</m>) also has a probability of <m>\frac{1}{2}</m>, but it is split among 3 choices, making <m>P(T, C) = P(T, A) = P(T, R) = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6} \approx 0.1667</m>. Because <m>0.25 \neq 0.1667</m>, the outcomes are not equally likely.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>Yes, because the fair coin split guarantees that the conditional options cancel each other out during the second stage selection process.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. The branching fractions do not cancel out; they scale down the probability weight. A choice on Netflix inherits a heavier mathematical weight than a choice on Hulu because it belongs to a smaller final pool.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>No, because the student prefers Netflix over Hulu, which means the coin flip parameters are unweighted and independent.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. The problem explicitly defines the initial stage as a coin flip and states choices are made randomly at each step. Personal preference is not modeled in this experiment.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>Yes, because any experiment tracking a finite sequence of independent Bernoulli events yields flat distribution profiles.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This is not a sequence of identical Bernoulli trials (such as flipping the same coin multiple times), but rather a dependent step progression where the second pool size depends on the first outcome.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+</exercise>
+
+
   </exercises>
 
 

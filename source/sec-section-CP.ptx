@@ -17,7 +17,140 @@
    </introduction>
 
  
+<exercise xml:id="ex-tetris-bag-probability">
+    <title>Tetris Game Mechanics and Bag Sampling Systems</title>
+    <introduction>
+        <p>
+            In modern versions of the popular tile-matching block game Tetris, pieces appear in shapes labeled <m>I</m>, <m>J</m>, <m>L</m>, <m>O</m>, <m>S</m>, <m>T</m>, and <m>Z</m>. To ensure fair gameplay, the engine uses a <term>7-Bag Random Generator</term>. This algorithm places exactly one copy of each of the seven unique shapes into a virtual bag, shuffles them completely, and dispenses them one by one until the bag is empty, at which point a fresh bag of seven pieces is generated and shuffled.
+        </p>
+        <p>
+            Suppose a brand-new game has just started, meaning the first bag of seven pieces has just been shuffled.
+        </p>
+    </introduction>
+    
+    <hint>
+        <p>
+            Because the game samples without replacement *inside* any given bag, the trials within that bag are dependent. Pay close attention to how many pieces have already been removed from the bag when evaluating your conditional pools.
+        </p>
+    </hint>
 
+    <!-- Part 1: First Piece Probability -->
+    <task xml:id="task-tetris-first-piece">
+        <statement>
+            <p>
+                What is the probability that the very first piece dispensed at the start of the game is the <m>I</m>-piece (the straight line block)? Write your answer as a decimal rounded to four decimal places.
+            </p>
+      <p>
+        <fillin width="8" answer="0.1429"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! At the absolute start of the game, the full bag contains 7 distinct, equally likely pieces. Since exactly 1 of those 7 pieces is an <m>I</m>-piece, the probability is a simple uniform ratio:
+                <me>P(\text{First piece is } I) = \frac{1}{7} \approx 0.1429</me>
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+</evaluation>
+    </task>
+
+    <!-- Part 2: Conditional Probability Within the Bag -->
+    <task xml:id="task-tetris-conditional-bag">
+        <statement>
+            <p>
+                Suppose the first three pieces dealt from the bag are observed to be a <m>J</m>, an <m>O</m>, and a <m>Z</m> shape. Given this specific information, what is the conditional probability that the fourth piece dealt will be the <m>I</m>-piece? Write your answer as a decimal rounded to four decimal places.
+            </p>
+      <p>
+        <fillin width="8" answer="0.2500"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct!  Because the game draws from a closed bag without replacement, the remaining composition of the bag changes dynamically:
+                <ul>
+                    <li><p>Initial Bag: <m>\{I, J, L, O, S, T, Z\}</m> (7 items)</p></li>
+                    <li><p>Removed Pieces: <m>\{J, O, Z\}</m> (3 items)</p></li>
+                    <li><p>Remaining Bag: <m>\{I, L, S, T\}</m> (4 items)</p></li>
+                </ul>
+                Since the <m>I</m>-piece is still waiting inside the remaining pool of 4 equally likely options, the updated conditional probability is:
+                <me>P(\text{4th is } I \mid \text{First three are } J, O, Z) = \frac{1}{4} = 0.2500</me>
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+</evaluation>
+
+    </task>
+
+    <!-- Part 3: Idealized Streak Comparison -->
+    <task xml:id="task-tetris-streak-comparison">
+        <statement>
+            <p>
+                A player claims that during a live game match, they observed a consecutive sequence of three identical <m>S</m>-shaped pieces in a row. 
+            </p>
+
+            <p>
+                Which of the following statements provides the correct mathematical evaluation of the player's claim under the standard 7-Bag Generator system, along with the correct underlying sampling framework?
+            </p>
+        </statement>
+
+
+        <choices>
+            <choice>
+                <statement>
+                    <p>The claim is possible but highly unlikely, with a probability of <m>(\frac{1}{7})^3 \approx 0.0029</m>.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This calculation assumes that every piece dropped is completely independent of historical drops. Because the standard 7-Bag system utilizes dependent sampling without replacement inside each bag block, a streak of three identical pieces cannot happen at all.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>The claim is completely impossible under the 7-Bag system because a single 7-piece bag contains exactly one <m>S</m>-piece, meaning the absolute maximum consecutive streak length for any identical shape is capped at exactly 1.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. While a single bag is capped at one copy, consecutive streaks can span across bag boundaries. If Bag 1 ends with an <m>S</m>-piece and Bag 2 immediately starts with an <m>S</m>-piece, a consecutive streak of 2 identical pieces is entirely possible.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement>
+                    <p>The claim is completely impossible under the 7-Bag system because the maximum consecutive streak of identical shapes is capped at 2 across bag boundaries. To make a streak of 3 possible, the engine would require a selection with replacement into the bag.</p>
+                </statement>
+                <feedback>
+                    <p>Correct! Because each 7-piece bag holds exactly one <m>S</m>-piece, a single bag block cannot generate a duplicate. The absolute longest streak occurs if an <m>S</m>-piece drops on the 7th slot of Bag 1 and the 1st slot of Bag 2, creating a hard mathematical cap of 2 consecutive identical pieces. To allow 3 or more identical pieces in a row, the engine would have to switch to pure independent random sampling (sampling with replacement), where every drop maintains a flat, unconditional <m>\frac{1}{7}</m> chance.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>The claim is possible if the system experiences severe memory lag, which dynamically stretches the piece distribution rate past the hard 2-piece constraint limit.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. Hardware lag does not alter the logical algorithmic execution code or mathematical constraints of the discrete bag array distribution sequence.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>The claim is possible because if the player performs a specific layout configuration, the engine will force consecutive identical pieces using an alternative sampling framework to balance the sequence.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. The 7-Bag generator shuffles the piece sequence completely independent of a player's active grid layout. </p>
+                </feedback>
+            </choice>
+        </choices>
+
+    </task>
+</exercise>
 
       <exercise label="CP-2dice">
           <title>Roll Two Dice</title>
@@ -141,6 +274,488 @@
 
 
 
+
+
+<exercise label="ex-joint-probability-campus-coffee" xmlns:pi="http://pretextbook.org">
+    <title>Probability Theory: Joint Tables and Independence Metrics</title>
+    <introduction>
+        <p>
+            A university campus coffee shop conducts a sustainability audit on a busy morning. The cross-tabulated joint probabilities associated with a customer's order temperature and their beverage container choice are detailed in the matrix below:
+        </p>
+        <p>
+            <table>
+                <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+                    <row header="yes">
+                        <cell></cell>
+                        <cell>Iced Drink</cell>
+                        <cell>Hot Drink</cell>
+                    </row>
+                    <row>
+                        <cell header="yes">Reusable Mug</cell>
+                        <cell><m>0.02</m></cell>
+                        <cell><m>0.08</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes">Single-Use Cup</cell>
+                        <cell><m>0.18</m></cell>
+                        <cell><m>0.72</m></cell>
+                    </row>
+                </tabular>
+            </table>
+        </p>
+        <p>
+            Suppose one customer transaction is selected completely at random from this audit group. Complete the interactive tasks below to analyze the dataset.
+        </p>
+    </introduction>
+
+    <!-- Part A: Marginal Iced Drink -->
+    <task xml:id="task-joint-iced">
+        <statement>
+            <p>
+                What is the probability that the randomly selected customer ordered an iced drink?
+            </p>
+            <p>
+                Probability = <fillin  answer="0.20" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+            <test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To find the marginal probability of an iced drink order, sum the joint probabilities down the entire "Iced Drink" column:
+                <me>P(\text{Iced}) = 0.02 \text{ (Reusable Mug)} + 0.18 \text{ (Single-Use Cup)} = 0.20</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Marginal Reusable Mug -->
+    <task xml:id="task-joint-reusable">
+        <statement>
+            <p>
+                 What is the probability that the randomly selected customer brought a reusable mug?
+            </p>
+            <p>
+                Probability = <fillin  answer="0.10" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To find the marginal probability of a reusable mug container choice, sum the joint probabilities across the entire "Reusable Mug" row:
+                <me>P(\text{Reusable Mug}) = 0.02 \text{ (Iced)} + 0.08 \text{ (Hot)} = 0.10</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part C: Conditional Given Iced Drink -->
+    <task xml:id="task-joint-cond-iced">
+        <statement>
+            <p>
+                 What is the probability that the customer ordered an iced drink in a reusable mug?
+            </p>
+            <p>
+                Probability = <fillin answer="0.02" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                <m>P(\text{Reusable Mug} \cap \text{Iced})0.02</m>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part D: Conditional Given Hot Drink -->
+    <task xml:id="task-joint-cond-hot">
+        <statement>
+            <p>
+                 What is the conditional probability that the customer used a reusable mug, given that they ordered a iced drink?
+            </p>
+            <p>
+                Probability = <fillin mode="string" answer="0.10" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Evaluate the conditional probability:
+                <me>P(\text{Reusable Mug} \mid \text{Iced}) = \frac{P(\text{Reusable Mug} \cap \text{Iced})}{P(\text{Iced})} = \frac{0.02}{0.20} = 0.10</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part E: Evaluation of Independence (Multiple Choice) -->
+    <task xml:id="task-joint-coffee-independence">
+        <statement>
+            <p>
+                Based on the calculations completed above, are the events <q>Ordering an Iced Drink</q> and <q>Using a Reusable Mug</q> statistically independent within this campus audit? Why or why not?
+            </p>
+        </statement>
+        <choices>
+            <choice correct="yes">
+                <statement>
+                    <p>Yes, because the conditional probability of using a reusable mug remains exactly 0.10 regardless of the beverage temperature choice.</p>
+                </statement>
+                <feedback>
+                    <p>Correct! Two events are statistically independent if the conditional probability of one event matches its baseline marginal probability: <m>P(\text{Reusable Mug} \mid \text{Iced}) = P(\text{Reusable Mug})</m>.</p>
+                    <p>Let us check the baseline marginal rate found in Part B: <m>P(\text{Reusable Mug}) = 0.10</m>. Since <m>P(\text{Reusable Mug} \mid \text{Iced}) = 0.10</m> and <m>P(\text{Reusable Mug} \mid \text{Hot}) = 0.10</m>, knowing the beverage temperature provides absolutely zero predictive information about whether the customer brought a mug. They are perfectly independent.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>No, because the joint matrix intersection probability is <m>P(\text{Reusable Mug} \cap \text{Iced}) = 0.02</m>, which is strictly greater than zero.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. An intersection being greater than zero simply means the two events are not <em>mutually exclusive</em>. Mutual exclusivity and independence are entirely distinct properties.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>No, because the absolute proportion of hot drinks in reusable mugs (0.08) is higher than iced drinks in reusable mugs (0.02).</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. While the raw cell numbers differ, they must be scaled against their column totals. Because the total morning volume features far more hot drinks overall (80%) than iced drinks (20%), the proportion of container choice inside each sub-category is what determines independence parity.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>Yes, because the sum of all individual cells inside the joint probability grid adds up to exactly 1.00.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. Every valid joint probability table must sum to 1.00 by definition. This structural requirement has no bearing on whether the variables are independent or dependent.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>No, because customers are physically much more likely to want a straw or a lid layout configuration that depends entirely on ice levels.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. Do not answer probability modeling questions using outside physical intuition alone. You must audit independence strictly using the arithmetic proportions provided inside this specific dataset.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+</exercise>
+
+
+
+
+
+<exercise label="ex-conditional-venn-calculations" xmlns:pi="http://pretextbook.org">
+    <title>Probability Theory: Conditional Calculations from a Venn Diagram</title>
+    <introduction>
+        <p>
+            Consider the following Venn diagram showing the probabilities of various events and their intersections. For example, <m>P(A\cap B \cap C^c)=0.10.</m> 
+        </p>
+        <p>
+            <image xml:id="tikz-three-set-conditional-venn">
+                <description>A 3-set Venn diagram showing regional probabilities for events A, B, and C.</description>
+                <latex-image>
+                    \begin{tikzpicture}[scale=1.2]
+                        % Render solid white background rectangle for canvas spacing
+                        \fill[white] (-2.2,-2.2) rectangle (3.4,2.5);
+                        
+                        % Define the baseline circular geometries
+                        \def\circleA{(0,-.45) circle (1.3)}
+                        \def\circleB{(1.2,-.45) circle (1.3)}
+                        \def\circleC{(0.6,0.6) circle (1.3)}
+                        
+                        % Draw the structural outlines of the circles
+                        \draw \circleA;
+                        \draw \circleB;
+                        \draw \circleC;
+                        
+                        % Set and event namespace labels
+                        \node[left] at (-1.1,-1.25) {\large $A$};
+                        \node[right] at (2.3,-1.25) {\large $B$};
+                        \node[above] at (0.6,1.95) {\large $C$};
+                        
+                        % Precise geometric coordinate placement for intersection values
+                        \node at (0.6,1.3) {0.05};   % Only C
+                        \node at (-.2,0.4) {0.15};   % A and C alone
+                        \node at (1.4,0.4) {0.20};   % B and C alone
+                        \node at (0.6,-.05) {0.15};   % Triple intersection (A and B and C)
+                        \node at (-0.6,-0.75) {0.05};  % Only A
+                        \node at (0.6,-1.0) {0.10};   % A and B alone
+                        \node at (1.8,-0.75) {0.15};   % Only B
+                        
+                        % Universal Sample Space bounding box frame
+                        \draw (-2.2,-2.2) rectangle (3.4,2.5);
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+        </p>
+
+    </introduction>
+    <hint>
+        <p>
+            Remember how we think about conditional probability! <m>P(A|B)</m> is the probability that <m>A</m> happens in the universe where <m>B</m> has already happened. So, it may be helpful to reframe some of the probabilities within your “new universe”.
+        </p>
+    </hint>
+
+    <!-- 1. P(A | C) -->
+    <task xml:id="task-calc-a-given-c">
+        <statement>
+            <p>
+                
+                Use the Venn diagram to compute each conditional probability specified below. Enter all answers as decimals rounded to three decimal places.
+            
+            </p>
+
+            <p>
+                <m>P(C \mid A)</m> = <fillin answer="0.667" width="8" name="ansC|A"/>
+            </p>
+            
+
+            <p>
+                <m>P(A \mid C)</m> = <fillin answer="0.545" width="8" name="ansA|C"/>
+            </p>
+
+
+             <p>
+                <m>P(A \mid C^c)</m> = <fillin answer="0.333" width="8" name="ansA|Cc"/>
+            </p>
+
+             <p>
+                <m>P(A^c \mid C)</m> = <fillin answer="0.455" width="8" name="ansAc|C"/>
+            </p>
+
+            <p>
+                <m>P(C-A \mid C)</m> = <fillin answer="0.455" width="8" name="ansAc|C_v2"/>
+            </p>
+
+             <p>
+                <m>P((A\cup B) \mid C)</m> = <fillin answer="0.909" width="8" name="ansAB|C"/>
+            </p>
+
+            <p>
+                <m>P(A \mid (B\cup C))</m> = <fillin answer="0.5" width="8" name="ansA|BC"/>
+            </p>
+
+        </statement>
+        <evaluation>
+            <evaluate submit="ansC|A">
+            <test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test>
+            </evaluate>
+
+            <evaluate submit="ansA|C">
+            <test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test>
+            </evaluate>
+
+            <evaluate submit="ansA|Cc">
+            <test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test>
+            </evaluate>
+
+            <evaluate submit="ansAc|C">
+            <test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test>
+            </evaluate>
+
+            <evaluate submit="ansAc|C_v2">
+            <test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test>
+            </evaluate>
+
+            <evaluate submit="ansAB|C">
+            <test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test>
+            </evaluate>
+
+            <evaluate submit="ansA|BC">
+            <test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test>
+            </evaluate>
+        </evaluation>
+       
+       <!--
+        <solution>
+            <p>
+                The new universe is circle <m>C</m>. Summing all regions in <m>C</m>: 
+                <me>P(C) = 0.05 + 0.15 + 0.15 + 0.20 = 0.55</me>
+                The intersection <m>A \cap C</m> is the parts of <m>A</m> inside <m>C</m>: 
+                <me>P(A \cap C) = 0.15 + 0.15 = 0.30</me>
+                Evaluating the conditional formula:
+                <me>P(A \mid C) = \frac{P(A \cap C)}{P(C)} = \frac{0.30}{0.55} = \frac{6}{11} \approx 0.545</me>
+            </p>
+        </solution>
+
+
+        <solution>
+            <p>
+                Intersecting the event <m>A \cup (B \cap C^c)</m> with the condition universe <m>C</m> simplifies to:
+                <me>(A \cap C) \cup ((B \cap C^c) \cap C) = (A \cap C) \cup \emptyset = A \cap C</me>
+                Because <m>B \cap C^c</m> lives entirely outside <m>C</m>, it contributes zero weight within the <m>C</m> universe. Thus, this is equivalent to Part 1:
+                <me>\frac{P(A \cap C)}{P(C)} = \frac{0.30}{0.55} \approx 0.545</me>
+            </p>
+        </solution>
+    
+        <solution>
+            <p>
+                Using the conditional complement rule within the <m>C</m> universe space:
+                <me>P(A^c \mid C) = 1 - P(A \mid C) = 1 - \frac{6}{11} = \frac{5}{11} \approx 0.455</me>
+            </p>
+        </solution>
+    
+        <solution>
+            <p>
+                The set difference <m>C \setminus A</m> means the parts of <m>C</m> that are not in <m>A</m> (<m>C \cap A^c</m>). Summing these regions: 
+                <me>P(C \cap A^c) = 0.05 \text{ (only C)} + 0.20 \text{ (B and C alone)} = 0.25</me>
+                Evaluating over the <m>C</m> universe:
+                <me>P(C \setminus A \mid C) = \frac{P(C \cap A^c)}{P(C)} = \frac{0.25}{0.55} = \frac{5}{11} \approx 0.455</me>
+            </p>
+        </solution>
+    
+        <solution>
+            <p>
+                The new universe is circle <m>A</m>. Summing all regions in <m>A</m>:
+                <me>P(A) = 0.05 + 0.15 + 0.15 + 0.10 = 0.45</me>
+                The parts of <m>C</m> that overlap inside <m>A</m> are: <m>P(A \cap C) = 0.15 + 0.15 = 0.30</m>.
+                <me>P(C \mid A) = \frac{P(A \cap C)}{P(A)} = \frac{0.30}{0.45} = \frac{2}{3} \approx 0.667</me>
+            </p>
+        </solution>
+ 
+        <solution>
+            <p>
+                The universe is everything outside circle <m>C</m>:
+                <me>P(C^c) = 1 - P(C) = 1 - 0.55 = 0.45</me>
+                The parts of <m>A</m> that sit completely outside <m>C</m> are:
+                <me>P(A \cap C^c) = 0.05 \text{ (only A)} + 0.10 \text{ (A and B alone)} = 0.15</me>
+                Evaluating the conditional fraction:
+                <me>P(A \mid C^c) = \frac{P(A \cap C^c)}{P(C^c)} = \frac{0.15}{0.45} = \frac{1}{3} \approx 0.333</me>
+            </p>
+        </solution>
+   
+        <solution>
+            <p>
+                The universe is the entire combined space of circle <m>B</m> and circle <m>C</m>:
+                <me>P(B \cup C) = 0.05 + 0.15 + 0.15 + 0.20 + 0.10 + 0.15 = 0.80</me>
+                The sections of <m>A</m> that sit inside this combined union space are:
+                <me>P(A \cap (B \cup C)) = 0.15 + 0.15 + 0.10 = 0.40</me>
+                Evaluating the fraction:
+                <me>P(A \mid B \cup C) = \frac{0.40}{0.80} = 0.500</me>
+            </p>
+        </solution>
+   
+        <solution>
+            <p>
+                The universe is circle <m>C</m> (<m>P(C) = 0.55</m>). The sections of the union <m>A \cup B</m> that are contained inside <m>C</m> are:
+</p>
+    </solution> -->
+    </task>
+
+    <task>
+        <statement>
+            <p>
+            Events <m>A</m> and <m>C</m> are _________.
+        </p>
+    </statement>
+    <choices>
+            <choice correct="yes">
+                <statement><p>Positively Correlated</p></statement>
+                <feedback>
+                    <p>Correct! To determine the relationship, compare the conditional probability to the baseline probability. From previous parts, we know <m>P(A \mid C) \approx 0.545</m> and the baseline probability is <m>P(A) = 0.05 + 0.15 + 0.15 + 0.10 = 0.450</m>.</p>
+                    <p>Because <m>P(A \mid C) \gt P(A)</m> (or equivalently, <m>P(A \cap C) = 0.30 \gt P(A) \cdot P(C) = 0.45 \cdot 0.55 = 0.2475</m>), the occurrence of event <m>C</m> increases the likelihood of event <m>A</m> occurring. Therefore, they are <strong>positively correlated</strong>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p>Negatively Correlated</p></statement>
+                <feedback>
+                    <p>Incorrect. If they were negatively correlated, the conditional probability <m>P(A \mid C)</m> would be strictly less than the baseline probability <m>P(A)</m>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p>Independent</p></statement>
+                <feedback>
+                    <p>Incorrect. For two events to be independent, the occurrence of one must not change the probability of the other, meaning <m>P(A \mid C) = P(A)</m>. Here, <m>0.545 \neq 0.450</m>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p>Not Enough Information</p></statement>
+                <feedback>
+                    <p>Incorrect. There is sufficient information since all region weights within the sample space boundaries are explicitly defined on the diagram, allowing you to compute and compare both <m>P(A \cap C)</m> and <m>P(A) \cdot P(C)</m>.</p>
+                </feedback>
+            </choice>
+        </choices>
+</task>
+
+<task xml:id="task-calc-correlation-independence-ab">
+    <statement>
+        <p>
+            Events <m>A</m> and <m>B</m> are _________.
+        </p>
+    </statement>
+    <choices>
+            <choice>
+                <statement><p>Positively Correlated</p></statement>
+                <feedback>
+                    <p>Incorrect. If they were positively correlated, the actual intersection probability <m>P(A \cap B)</m> would be strictly greater than the expected product of their individual probabilities under independence.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement><p>Negatively Correlated</p></statement>
+                <feedback>
+                    <p>Correct! To determine the relationship, let us compute and compare their intersection probability to the expected probability under independence:</p>
+                    <ul>
+                        <li><p><m>P(A) = 0.05 + 0.15 + 0.15 + 0.10 = 0.45</m></p></li>
+                        <li><p><m>P(B) = 0.10 + 0.15 + 0.20 + 0.15 = 0.60</m></p></li>
+                        <li><p>Actual intersection: <m>P(A \cap B) = 0.10 \text{ (A and B alone)} + 0.15 \text{ (triple)} = 0.25</m></p></li>
+                        <li><p>Expected under independence: <m>P(A) \cdot P(B) = 0.45 \cdot 0.60 = 0.27</m></p></li>
+                    </ul>
+                    <p>Because <m>P(A \cap B) = 0.25 \lt P(A) \cdot P(B) = 0.27</m> (or equivalently, <m>P(A \mid B) = \frac{0.25}{0.60} \approx 0.417 \lt P(A) = 0.450</m>), the occurrence of event <m>B</m> decreases the likelihood of event <m>A</m> occurring. Therefore, they are <strong>negatively correlated</strong>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p>Independent</p></statement>
+                <feedback>
+                    <p>Incorrect. For <m>A</m> and <m>B</m> to be independent, we would need <m>P(A \cap B) = P(A) \cdot P(B)</m>. Here, <m>0.25 \neq 0.27</m>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p>Not Enough Information</p></statement>
+                <feedback>
+                    <p>Incorrect. There is sufficient information since summing the regional values completely defines the probabilities of <m>A</m>, <m>B</m>, and their overlapping spaces.</p>
+                </feedback>
+            </choice>
+</choices>
+</task>
+
+            
+    </exercise>
+
+
+
+
+
+
+
+
+
+
    <exercise xml:id="CP-generic-practice-A" >
      <title>Formula/Rule Practice</title>
          <statement>
@@ -157,8 +772,8 @@
 
          <cardsort>
                 <match>
-                    <premise order="1"><m> P(E)</m></premise>
-                    <response>0.24</response>
+                    <premise order="1"><m> P(E^c)</m></premise>
+                    <response>0.76</response>
                 </match>
                 <match>
                     <premise order="1"><m> P(F)</m></premise>
@@ -171,6 +786,9 @@
                 <match>
                     <response>0.64</response>
                 </match>
+                  <match>
+                    <response>0.24</response>
+                </match>
          </cardsort>
 
          
@@ -181,7 +799,7 @@
       <title>Independence</title>
       <introduction>
           <p>
-             Suppose that <m>A</m> and <m>B</m> are two independent events for which <m>P(A)=0.2</m> and <m>P(B)=0.56</m>. 
+             Suppose that <m>A</m>, <m>B</m>, and <m>C</m> are three mutually independent events for which <m>P(A)=0.20</m>, <m>P(B)=0.56</m>, and <m>P(C)=0.37</m>. 
           </p>
       </introduction>
     
@@ -262,104 +880,65 @@
               </evaluate>
             </evaluation>
             </task>
+
+
+             <task>
+
+           <statement>
+                <p>
+                  Find <m>P(B-A)</m>. Write your answer as a decimal, rounded to three decimal places.
+               </p>
+
+               <p>
+                  <fillin width="8" answer="0.448"/>
+               </p>
+           </statement>
+  
+           <evaluation>
+              <evaluate>
+                 <test correct="yes">
+                     <numcmp use-answer="yes"/>
+                     <feedback>
+                         <p>
+                             Correct! <m>P(B-A)=P(B\cap A^c)=P(B)P(A^c)</m>
+                         </p>
+                     </feedback>
+                  </test>             
+              </evaluate>
+            </evaluation>
+      </task>
+
+                  <task>
+
+           <statement>
+                <p>
+                  Find <m>P(A\cup B \cup C)</m>. Write your answer as a decimal, rounded to three decimal places.
+               </p>
+
+               <p>
+                  <fillin width="8" answer="0.778"/>
+               </p>
+           </statement>
+  
+           <evaluation>
+              <evaluate>
+                 <test correct="yes">
+                     <numcmp use-answer="yes"/>
+                     <feedback>
+                         <p>
+                             Correct! <m>P(A\cup B \cup C)=.....</m>
+                         </p>
+                     </feedback>
+                  </test>             
+              </evaluate>
+            </evaluation>
+      </task>
       </exercise>
 
 
 
 
-<exercise xml:id="ex-server-filter-bayes">
-    <title>Smart Filter Diagnostics and Bayes' Theorem</title>
-    <statement>
-        <p>
-            An automated campus server uses a machine learning filter to scan incoming files. Let <m>A</m> be the event that a file is malicious software, and let <m>B</m> be the event that the filter flags the file as a threat. The system analytics provide the following base probabilities:
-            <me>P(A) = 0.44, \quad P(B \mid A) = 0.03, \quad P(B^c \mid A^c) = 0.06</me>
-            If a randomly arriving file is flagged as a threat by the filter, what is the posterior probability <m>P(A \mid B)</m> that it is actually a malicious software file?
-        </p>
-    </statement>
-    <choices randomize="yes">
-        <choice correct="yes">
-            <statement>
-                <m>0.0245</m> 
-            </statement>
-            <feedback>
-                <p>
-                    Correct! First, find the complements: <m>P(A^c) = 1 - 0.44 = 0.56</m> and <m>P(B \mid A^c) = 1 - 0.06 = 0.94</m>. Next, apply the Law of Total Probability to find the denominator: <m>P(B) = (0.03)(0.44) + (0.94)(0.56) = 0.0132 + 0.5264 = 0.5396</m>. Finally, apply Bayes' Theorem: <m>P(A \mid B) = \frac{0.0132}{0.5396} \approx 0.0245</m>.
-                </p>
-            </feedback>
-        </choice>
-        <choice>
-            <statement>
-                <m>0.5396</m>
-            </statement>
-            <feedback>
-                <p>
-                    Incorrect. This value is the total probability that a file gets flagged by the filter, <m>P(B)</m>. You must use this number as your denominator in Bayes' Theorem to find the conditional probability <m>P(A \mid B)</m>.
-                </p>
-            </feedback>
-        </choice>
-        <choice>
-            <statement>
-                <m>0.0132</m>
-            </statement>
-            <feedback>
-                <p>
-                    Incorrect. This value is the joint probability of the intersection <m>P(A \cap B) = P(B \mid A)P(A) = 0.0132</m>. Remember to divide this numerator by the total probability space <m>P(B)</m>.
-                </p>
-            </feedback>
-        </choice>
-        <choice>
-            <statement>
-                <m>0.9400</m>
-            </statement>
-            <feedback>
-                <p>
-                    Incorrect. This value is the false positive rate condition, <m>P(B \mid A^c) = 1 - P(B^c \mid A^c) = 0.94</m>. This represents the probability of a safe file being flagged, not a flagged file being malicious.
-                </p>
-            </feedback>
-        </choice>
-        <choice>
-            <statement>
-                <m>0.0236</m>
-            </statement>
-            <feedback>
-                <p>
-                    Incorrect. This result stems from a minor arithmetic carrying error when computing the intersection components. Double-check your decimals during the summation phase.
-                </p>
-            </feedback>
-        </choice>
-    </choices>
-    <hint>
-        <p>
-            You need to set up Bayes' Theorem: <m>P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}</m>. Before calculating, look closely at your given values: you are given <m>P(B^c \mid A^c) = 0.06</m>, which means its conditional complement is <m>P(B \mid A^c) = 1 - 0.06 = 0.94</m>. Use that to find <m>P(B)</m> first.
-        </p>
-    </hint>
-    <solution>
-        <p>
-            To evaluate the conditional probability <m>P(A \mid B)</m>, we utilize the conditional base rules and apply Bayes' Theorem:
-        </p>
-        <p>
-            1. <term>Find the prior and conditional complements:</term>
-            <ul>
-                <li><p>The probability that a file is safe (<m>A^c</m>): <m>P(A^c) = 1 - P(A) = 1 - 0.44 = 0.56</m></p></li>
-                <li><p>The conditional probability that a safe file is flagged (<m>B \mid A^c</m>): <m>P(B \mid A^c) = 1 - P(B^c \mid A^c) = 1 - 0.06 = 0.94</m></p></li>
-            </ul>
-        </p>
-        <p>
-            2. <term>Calculate the total probability space for the denominator, <m>P(B)</m>:</term>
-            Using the Law of Total Probability:
-            <md>
-                <mrow>P(B) \amp = P(B \mid A)P(A) + P(B \mid A^c)P(A^c)</mrow>
-                <mrow>P(B) \amp = (0.03)(0.44) + (0.94)(0.56)</mrow>
-                <mrow>P(B) \amp = 0.0132 + 0.5264 = 0.5396</mrow>
-            </md>
-        </p>
-        <p>
-            3. <term>Apply Bayes' Theorem to find the posterior probability:</term>
-            <me>P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)} = \frac{0.0132}{0.5396} \approx 0.02446</me>
-            Rounding to four decimal places yields <m>0.0245</m>.
-        </p>
-    </solution>
-</exercise>
+
 
 
 
@@ -701,77 +1280,86 @@
 
 
 
-<exercise xml:id="ex-tetris-bag-probability">
-    <title>Tetris Game Mechanics and Bag Sampling Systems</title>
-    <introduction>
-        <p>
-            In modern versions of the popular tile-matching block game Tetris, pieces appear in shapes labeled <m>I</m>, <m>J</m>, <m>L</m>, <m>O</m>, <m>S</m>, <m>T</m>, and <m>Z</m>. To ensure fair gameplay, the engine uses a <term>7-Bag Random Generator</term>. This algorithm places exactly one copy of each of the seven unique shapes into a virtual bag, shuffles them completely, and dispenses them one by one until the bag is empty, at which point a fresh bag of seven pieces is generated and shuffled.
-        </p>
-        <p>
-            Suppose a brand-new game has just started, meaning the first bag of seven pieces has just been shuffled.
-        </p>
-    </introduction>
-    
-    <hint>
-        <p>
-            Because the game samples without replacement *inside* any given bag, the trials within that bag are dependent. Pay close attention to how many pieces have already been removed from the bag when evaluating your conditional pools.
-        </p>
-    </hint>
 
-    <!-- Part 1: First Piece Probability -->
-    <task xml:id="task-tetris-first-piece">
-        <statement>
-            <p>
-                What is the probability that the very first piece dispensed at the start of the game is the <m>I</m>-piece (the straight line block)?
-            </p>
-        </statement>
-        <solution>
-            <p>
-                At the absolute start of the game, the full bag contains 7 distinct, equally likely pieces. Since exactly 1 of those 7 pieces is an <m>I</m>-piece, the probability is a simple uniform ratio:
-                <me>P(\text{First piece is } I) = \frac{1}{7} \approx 0.1429</me>
-            </p>
-        </solution>
-    </task>
+    <exercise label="ex-static-conditional-convention-merch">
+        <title>Fandom Convention Demographics Analysis</title>
 
-    <!-- Part 2: Conditional Probability Within the Bag -->
-    <task xml:id="task-tetris-conditional-bag">
-        <statement>
+        <introduction>
             <p>
-                Suppose the first three pieces dealt from the bag are observed to be a <m>J</m>, an <m>O</m>, and a <m>Z</m> shape. Given this specific information, what is the conditional probability that the fourth piece dealt will be the <m>I</m>-piece?
-            </p>
-        </statement>
-        <solution>
-            <p>
-                Because the game draws from a closed bag without replacement, the remaining composition of the bag changes dynamically:
-                <ul>
-                    <li><p>Initial Bag: <m>\{I, J, L, O, S, T, Z\}</m> (7 items)</p></li>
-                    <li><p>Removed Pieces: <m>\{J, O, Z\}</m> (3 items)</p></li>
-                    <li><p>Remaining Bag: <m>\{I, L, S, T\}</m> (4 items)</p></li>
-                </ul>
-                Since the <m>I</m>-piece is still waiting inside the remaining pool of 4 equally likely options, the updated conditional probability is:
-                <me>P(\text{4th is } I \mid \text{First three are } J, O, Z) = \frac{1}{4} = 0.2500</me>
-            </p>
-        </solution>
-    </task>
+        An organizer at a multi-genre pop culture convention conducts an entry poll of attendees. The survey data reveals that 28% of the attendees are wearing apparel from an Anime series. Among those wearing Anime apparel, exactly 25% are also wearing merchandise from a Sci-Fi media franchise. Additionally, it is recorded that 35% of all surveyed convention attendees are wearing merchandise from a Sci-Fi media franchise.
+    </p>
+    <p>
+        Suppose an attendee is selected completely at random from this convention crowd. Complete the analytical steps below to map out the structural probability space.
+    </p>
+        </introduction>
 
-    <!-- Part 3: Idealized Streak Comparison -->
-    <task xml:id="task-tetris-streak-comparison">
-        <statement>
-            <p>
-                A player claims that during a live game match, they observed a consecutive sequence of three identical <m>S</m>-shaped pieces in a row. Explain mathematically why this event is completely impossible under the 7-Bag Generator system at the start of a game, and state what type of sampling system would be required to make that streak possible.
-            </p>
-        </statement>
-        <solution>
-            <p>
-                Under the 7-Bag System, each distinct bag contains exactly <term>one</term> copy of the <m>S</m>-piece. Therefore, the maximum number of <m>S</m>-pieces that can ever appear inside a single 7-piece block is one. The only way to get a consecutive streak of <m>S</m>-pieces is if one bag finishes with an <m>S</m>-piece and the subsequent bag starts with an <m>S</m>-piece, which caps the maximum possible consecutive streak at exactly <m>2</m>. A consecutive streak of <m>3</m> identical pieces is mathematically impossible within this system.
-            </p>
-            <p>
-                To make a streak of three or more identical pieces possible, the game engine would have to utilize a <term>Uniform Discrete Distribution with Replacement</term> (pure independent random sampling), where every single piece drop has an independent <m>\frac{1}{7}</m> chance of generating any shape regardless of history.
-            </p>
-        </solution>
-    </task>
-</exercise>
+        <!-- Part A: Conditional Probability Calculation -->
+        <task xml:id="task-static-merch-conditional">
+            <statement>
+                <p>
+                     What is the conditional probability that the randomly selected attendee is wearing apparel from an Anime series, given that they are wearing merchandise from a Sci-Fi media franchise?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    First, use the multiplicative multiplication rule to calculate the joint intersection probability of an attendee wearing both items simultaneously (<m>P(\text{Anime} \cap \text{Sci-Fi})</m>):
+                    <me>P(\text{Anime} \cap \text{Sci-Fi}) = P(\text{Anime}) \cdot P(\text{Sci-Fi} \mid \text{Anime}) = 0.28 \cdot 0.25 = 0.0700</me>
+                </p>
+                <p>
+                    Now, evaluate the requested conditional probability by restricting the target space to the Sci-Fi attendee universe (<m>P(\text{Sci-Fi}) = 0.35</m>):
+                    <me>P(\text{Anime} \mid \text{Sci-Fi}) = \frac{P(\text{Anime} \cap \text{Sci-Fi})}{P(\text{Sci-Fi})} = \frac{0.0700}{0.3500} = 0.2000</me>
+                    The conditional probability is exactly <strong>0.2000</strong>.
+                </p>
+            </solution>
+        </task>
 
+        <!-- Part B: Dependence and Correlation -->
+        <task xml:id="task-static-merch-dependence">
+            <statement>
+                <p>
+                     Determine if the selection of Anime apparel and Sci-Fi media franchise merchandise are independent, positively correlated, or negatively correlated. Mathematically justify your reasoning.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    To establish the statistical relationship, compare the conditional probability found in Part A to the unconditional baseline probability:
+                    <ul>
+                        <li><p>Unconditional baseline probability of wearing Anime apparel: <m>P(\text{Anime}) = 0.2800</m></p></li>
+                        <li><p>Conditional probability of wearing Anime apparel given Sci-Fi gear: <m>P(\text{Anime} \mid \text{Sci-Fi}) = 0.2000</m></p></li>
+                    </ul>
+                </p>
+                <p>
+                    Because <m>P(\text{Anime} \mid \text{Sci-Fi}) \neq P(\text{Anime})</m>, the two events are not independent. Furthermore, because <m>P(\text{Anime} \mid \text{Sci-Fi}) \lt P(\text{Anime})</m> (meaning the introduction of the condition reduces the likelihood weight), the events are <strong>negatively correlated</strong>. Alternatively, this is verified because the actual intersection (<m>0.0700</m>) is less than the expected product under independence (<m>0.28 \cdot 0.35 = 0.0980</m>).
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part C: Probability of Neither Item -->
+        <task xml:id="task-static-merch-neither">
+            <statement>
+                <p>
+                     What is the probability that a randomly selected convention attendee is wearing <em>neither</em> Anime apparel nor Sci-Fi media franchise merchandise?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    To find the probability that an attendee wears neither item, we compute the complement of the union of both events: <m>P((\text{Anime} \cup \text{Sci-Fi})^c) = 1 - P(\text{Anime} \cup \text{Sci-Fi})</m>.
+                </p>
+                <p>
+                    First, apply the general addition rule to calculate the probability that an attendee is wearing at least one of the two types of merchandise:
+                    <md>
+                        <mrow>P(\text{Anime} \cup \text{Sci-Fi}) \amp = P(\text{Anime}) + P(\text{Sci-Fi}) - P(\text{Anime} \cap \text{Sci-Fi})</mrow>
+                        <mrow>\amp = 0.2800 + 0.3500 - 0.0700 = 0.5600</mrow>
+                    </md>
+                </p>
+                <p>
+                    Now, apply the complement rule to calculate the remaining area outside of both sets:
+                    <me>P((\text{Anime} \cup \text{Sci-Fi})^c) = 1 - 0.5600 = 0.4400</me>
+                    The probability that an attendee is wearing neither type of merchandise is exactly <strong>0.4400</strong>.
+                </p>
+            </solution>
+        </task>
+    </exercise>
 
 </exercises>
 

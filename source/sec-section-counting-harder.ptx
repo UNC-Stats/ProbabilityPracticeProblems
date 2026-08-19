@@ -160,6 +160,244 @@
 
 
 
+<exercise label="ex-interactive-poker-prob" xmlns:pi="http://pretextbook.org">
+    <title>Combinatorics in Action: Card Game Distributions</title>
+    <introduction>
+        <p>
+            A standard deck of 52 cards features 13 distinct numerical ranks (Ace through King) distributed across 4 distinct suits (Hearts, Diamonds, Clubs, and Spades). In a standard 5-card poker match, a player is dealt a hand of 5 cards completely at random. 
+        </p>
+    </introduction>
+
+    <!-- Part A: Three of a Kind Calculation -->
+    <task xml:id="task-poker-three-kind">
+        <statement>
+            <p>
+                A "Three of a Kind" hand contains exactly 3 cards of one identical rank, and 2 remaining cards that each possess different, non-matching ranks (for example: three Jacks, one 4, and one 7). 
+            </p>
+            <p>
+                Compute the  probability of being dealt a Three of a Kind.
+            </p>
+            <p>
+                Probability (rounded to four decimal places) = <fillin  answer="0.0211" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To find the number of successful hand arrangements, we complete a sequence of independent selection stages:
+                <ol marker="1">
+                    <li><p>Choose 1 rank out of the 13 available options to serve as the triple: <m>\binom{13}{1}</m></p></li>
+                    <li><p>Choose 3 specific cards out of the 4 available matching suits for that triple: <m>\binom{4}{3}</m></p></li>
+                    <li><p>Choose 2 distinct ranks out of the remaining 12 options for the remaining cards: <m>\binom{12}{2}</m></p></li>
+                    <li><p>Choose 1 specific card out of the 4 available suits for each of those 2 separate ranks: <m>\binom{4}{1} \cdot \binom{4}{1} = 4^2</m></p></li>
+                </ol>
+                Multiplying these combinatorial choices together yields the total number of successful hands:
+                <me>n(E) = \binom{13}{1}\binom{4}{3}\binom{12}{2}4^2 = 13 \cdot 4 \cdot 66 \cdot 16 = 54,912 \text{ hands}</me>
+                Dividing by the total size of the unrestricted poker sample space:
+                <me>P(\text{Three of a Kind}) = \frac{54,912}{2,598,960} = \frac{88}{4165} \approx 0.021128</me>
+                Rounded to four decimal places, the final probability value is <strong>0.0211</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: High Card Strategy -->
+    <!-- Part B: High Card Strategy (Converted to Multiple Choice) -->
+    <task xml:id="task-poker-high-card-mc">
+        <statement>
+           <p>
+            What would be your strategy for computing the probability of not being dealt any of the poker hands? This is also referred to as a “High Card” hand.
+            </p>
+            <p>
+                Select the equation that correctly represents the strategic approach for computing the number of possible High Card hands?
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement>
+                    <p><m> \binom{13}{5} \cdot 4^5</m></p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This expression simply counts the number of ways to pick 5 completely different numerical ranks (<m>\binom{13}{5}</m>) and assign a suit to each card (<m>4^5</m>). However, this broad pool accidentally includes hands that form Straights (5 consecutive ranks) and Flushes (all 5 cards sharing the same suit), which cannot be part of a pure High Card hand.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement>
+                    <p><m> \left[ \binom{13}{5} - 10 \right] \cdot (4^5 - 4)</m></p>
+                </statement>
+                <feedback>
+                    <p>Correct! To build a High Card hand, you must pick 5 distinct numerical ranks out of 13, but you must subtract the 10 possible rank sequences that form a Straight: <m>\left[\binom{13}{5} - 10\right]</m>. Then, you assign suits to those cards, but you must subtract the 4 suit configurations where all cards share the same suit (which would make it a Flush): <m>(4^5 - 4)</m>. Multiplying these filtered pools isolates the pure High Card combinations exactly.</p>
+                </feedback>
+            </choice>
+            
+            <choice>
+                <statement>
+                    <p><m> \binom{13}{5} \cdot \binom{4}{1}^5 - 40</m></p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This attempt tries to handle the overlap adjustments by simply subtracting a flat constant of 40 (the total number of Straight Flushes) at the very end. This misapplies the fundamental intersection properties of the separate rank and suit multiplier pools.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p><m>\binom{13}{1}\binom{4}{1} \cdot \binom{12}{1}\binom{4}{1} \cdot \binom{11}{1}\binom{4}{1} \cdot \binom{10}{1}\binom{4}{1} \cdot \binom{9}{1}\binom{4}{1}</m></p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This expression models a dependent permutation selection sequence, which tracks the internal dealt order of the cards. Because poker hands are unordered subsets, this counts identical hands multiple times and fails to filter out Straights and Flushes.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+</exercise>
+
+
+<exercise label="ex-interactive-poker-joker-prob" xmlns:pi="http://pretextbook.org">
+    <title>Poker with Jokers</title>
+    <introduction>
+        <p>
+            Two jokers are added to the deck, bringing the total to 54 cards. These are wild cards and can count as any rank or suit. Compute the probability of being dealt a "Three of a Kind" in this new scenario, where your hand could include 0, 1, or 2 joker cards. 
+        </p>
+
+        <p>
+            Recall: A standard deck of 52 cards features 13 distinct numerical ranks (Ace through King) distributed across 4 distinct suits (Hearts, Diamonds, Clubs, and Spades). In a standard 5-card poker match, a player is dealt a hand of 5 cards completely at random. 
+        </p>
+    </introduction>
+
+    <!-- Part C: 1 Joker Counting (Short Answer Entry) -->
+    <task xml:id="task-poker-one-joker-count">
+        <statement>
+            <p>
+                Calculate the  number of 5-card hands that contain exactly 1 Joker and form a Three of a Kind.
+                </p>
+
+                <p>
+                    Recall: A "Three of a Kind" hand contains exactly 3 cards of one identical rank, and 2 remaining cards that each possess different, non-matching ranks (for example: three Jacks, one 4, and one 7).
+                </p>
+
+                <p>
+                 Note: If a Joker can optimize a hand into a higher category (like a Full House or Four of a Kind), it must. 
+            </p>
+                    </statement>
+    
+<hint>
+    <p>
+                Hint: To avoid completing a better hand, the remaining 4 natural cards must consist of one natural pair and two separate singletons of unique ranks.
+            </p>
+            </hint>
+            
+
+        <choices>
+            <choice><statement><p><m>\binom{13}{1}\binom{4}{3}\binom{12}{2}4^2\binom{2}{1} = 109,824</m> hands</p></statement>
+                <feedback>
+                    <p>Incorrect. This configuration assumes the other four cards contain a natural triple (<m>\binom{4}{3}</m>). If a hand has a natural triple and you add a wild Joker, that card will optimize to match the triple, forcing a Four of a Kind instead of exactly a Three of a Kind.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>\binom{13}{1}\binom{4}{2}\binom{12}{2}4^2\binom{2}{1} = 164,736</m> hands</p></statement>
+                <feedback>
+                    <p>Correct! To form exactly a Three of a Kind with 1 Joker, the other 4 cards must consist of a natural pair and two separate singletons of unique ranks (e.g., J-J-4-7 + Joker). The calculation evaluates as follows:</p>
+                    <ul>
+                        <li><p>Choose 1 rank out of 13 for the natural pair: <m>\binom{13}{1} = 13</m></p></li>
+                        <li><p>Choose 2 suits out of 4 for that pair: <m>\binom{4}{2} = 6</m></p></li>
+                        <li><p>Choose 2 unique ranks out of the remaining 12 for singletons: <m>\binom{12}{2} = 66</m></p></li>
+                        <li><p>Choose 1 suit out of 4 for each singleton: <m>4^2 = 16</m></p></li>
+                        <li><p>Choose 1 Joker out of the 2 available in the deck: <m>\binom{2}{1} = 2</m></p></li>
+                    </ul>
+                    <p>Multiplying these independent stages together yields: <m>13 \cdot 6 \cdot 66 \cdot 16 \cdot 2 = 164,736</m> hands.</p>
+                </feedback></choice>
+            <choice><statement><p><m>\binom{13}{1}\binom{4}{2}\binom{12}{1}\binom{4}{2}\binom{2}{1} = 5,616</m> hands</p></statement>
+                <feedback>
+                    <p>Incorrect. This counts a hand consisting of two natural pairs and 1 Joker (e.g., J-J-7-7 + Joker). In this scenario, the wild Joker will optimize to match either pair, completing a Full House instead of a Three of a Kind.</p>
+                </feedback></choice>
+            <choice><statement><p><m>\binom{13}{4}4^4\binom{2}{1} = 366,080</m> hands</p></statement>
+                <feedback>
+                    <p>Incorrect. This counts a hand where the 4 natural cards are all completely unique ranks (e.g., A-K-Q-J + Joker). Adding a Joker to 4 unique cards will only pair up with one of them, resulting in exactly One Pair rather than a Three of a Kind.</p>
+                </feedback></choice>
+            <choice><statement><p><m>\binom{52}{4}\binom{2}{1} = 541,450</m> hands</p></statement>
+                <feedback>
+                    <p>Incorrect. This broadly counts every single 5-card hand that contains exactly 1 Joker by selecting any 4 cards from the standard deck. It completely ignores what poker hand combination those cards actually form.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part D: 2 Joker Counting (Short Answer Entry) -->
+    <task xml:id="task-poker-two-joker-count">
+        <statement>
+            <p>
+                Calculate the  number of 5-card hands that contain exactly 2 Jokers and form a Three of a Kind. 
+            </p>
+
+            <p>
+                Number of hands = <fillin  answer="54912" width="10"/> hands
+            </p>
+        </statement>
+<hint>
+                    <p>
+                <em>Hint: The remaining 3 natural cards must all possess completely different ranks. The two Jokers will then match one of those three available ranks to force the triple.</em>
+            </p>
+            </hint>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                   <numcmp use-answer="yes"/> 
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To form a Three of a Kind with exactly 2 Jokers, the remaining 3 natural cards must all have different ranks (e.g., K-7-5 + 2 Jokers). If there were a natural pair, the 2 Jokers would promote the hand into a Four of a Kind.
+                <ol marker="1">
+                    <li><p>Choose 3 unique ranks out of 13 for the natural cards: <m>\binom{13}{3} = 286</m></p></li>
+                    <li><p>Choose 1 suit out of 4 for each of those 3 distinct cards: <m>4^3 = 64</m></p></li>
+                    <li><p>Select both wild Jokers out of the deck: <m>\binom{2}{2} = 1</m></p></li>
+                    <li><p>Choose which of the 3 natural ranks the Jokers will replicate to build the Three of a Kind: <m>\binom{3}{1} = 3</m> options.</p></li>
+                </ol>
+                Multiplying these stages together yields:
+                <me>n(\text{2 Joker Case}) = 286 \cdot 64 \cdot 1 \cdot 3 = 54,912 \text{ hands}</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part E: Final Probability with Wild Jokers (Short Answer Entry) -->
+    <task xml:id="task-poker-jokers-prob-final">
+        <statement>
+            <p>
+                Combine counts from the separate sub-cases (0, 1, or 2 Jokers) to determine the final  probability of being dealt a Three of a Kind hand from the 54-card deck.
+            </p>
+            <p>
+                Probability (rounded to four decimal places) = <fillin  answer="0.0868" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Summing the successful hand configurations evaluated across our three mutually exclusive sub-case scenarios:
+                <ul>
+                    <li><p><strong>0 Jokers:</strong> <m>54,912</m> hands (calculated in Part A)</p></li>
+                    <li><p><strong>1 Joker:</strong> <m>164,736</m> hands (calculated in Part C)</p></li>
+                    <li><p><strong>2 Jokers:</strong> <m>54,912</m> hands (calculated in Part D)</p></li>
+                </ul>
+                <me>n(\text{Total Successful w/ Jokers}) = 54,912 + 164,736 + 54,912 = 274,560 \text{ hands}</me>
+                Dividing this cumulative successful count by the full expanded 54-card sample space:
+                <me>P(\text{Three of a Kind w/ Jokers}) = \frac{274,560}{\binom{54}{5}} = \frac{274,560}{3,162,510} \approx 0.086817</me>
+                Rounded to four decimal places, the final evaluation is <strong>0.0868</strong>.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+
+
 <exercise xml:id="counting-harder-student-org-grant-assignments">
     <title>Campus Grant Distribution</title>
     <introduction>
@@ -326,6 +564,105 @@
 </exercise>
 
 
+
+<exercise label="ex-multinomial-die-rolls" xmlns:pi="http://pretextbook.org">
+    <title>Combinatorics and Probability: Joint Dice Frequencies</title>
+    <introduction>
+        <p>
+            We have two dice, a fair 6-sided die and a fair 10-sided die. The six sided die is rolled 14 times in a row. The 10-sided die is rolled 8 times in a row. Each individual roll is completely independent of the others. 
+        </p>
+    </introduction>
+
+    <!-- Part A: Combinatorial Setup (Dropdown Selection) -->
+    <task xml:id="task-die-setup-mc">
+        <statement>
+            <p>
+                Consider the 6-sided die only. Which of the following expressions correctly counts the number of successful 14-roll sequence configurations containing exactly 4 ones and 4 twos?
+            </p>
+            
+        </statement>
+        <choices>
+                <choice correct="yes"><statement><p><m>\binom{14}{4}\binom{10}{4}4^6</m></p></statement>
+                    <feedback>
+                        <p>Correct! First, choose 4 positions out of the 14 available slots for the ones: <m>\binom{14}{4}</m>. Next, choose 4 positions out of the remaining 10 vacant slots for the twos: <m>\binom{10}{4}</m>. Finally, fill the remaining 6 slots with any of the 4 other numbers (3, 4, 5, or 6), which gives <m>4^6</m> possibilities. Multiplying these together gives the total number of successful arrangements.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>\binom{14}{4}\binom{14}{4}4^6</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. After placing the 4 ones, there are only 10 available slots left in the sequence, not 14. The second combination term must select from the remaining unassigned positions.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>\binom{14}{4}\binom{10}{4}6^6</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. The remaining 6 positions can only be filled by numbers <em>other than</em> 1 and 2. This leaves exactly 4 options (3, 4, 5, and 6) for each remaining slot, which means there are <m>4^6</m> options, not <m>6^6</m>.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>\binom{14}{4} + \binom{10}{4} + 4^6</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. By the Fundamental Counting Principle, since these choices are made sequentially to construct a single outcome configuration, the step values must be multiplied together rather than added.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>6^{14}</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This counts the size of the total universal sample space (<m>|\Omega|</m>) because each of the 14 independent rolls can yield any of the 6 sides. It does not isolate the targeted successful frequency states.</p>
+                    </feedback></choice>
+            </choices>
+    </task>
+
+    <!-- Part B: Numerical Probability (Short Answer Entry) -->
+    <task xml:id="task-die-prob-input">
+        <statement>
+            <p>
+                Considering just the 6-sided die again. Compute the probability that the 14 rolls result in exactly 4 ones and exactly 4 twos. 
+            </p>
+            <p>
+                Probability (rounded to four decimal places) = <fillin  answer="0.0110" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To evaluate the probability of event <m>A</m>, divide the number of successful sequence arrangements from Part A by the total size of the unrestricted sample space:
+                <ul>
+                    <li><p>Successful outcomes: <m>n(E) = \binom{14}{4}\binom{10}{4}4^6 = 1001 \cdot 210 \cdot 4096 = 861,024,240</m></p></li>
+                    <li><p>Total sample space outcomes: <m>n(\Omega) = 6^{14} = 78,364,164,096</m></p></li>
+                </ul>
+                Setting up the probability fraction:
+                <me>P(A) = \frac{\binom{14}{4}\binom{10}{4}4^6}{6^{14}} = \frac{861,024,240}{78,364,164,096} \approx 0.010987</me>
+                Rounded to four decimal places, the final evaluation yields <strong>0.0110</strong>.
+            </p>
+        </solution>
+    </task>
+
+     <task xml:id="task-die-prob-input2">
+        <statement>
+            <p>
+                Now considering just the 10-sided die. Compute the probability that its 8 rolls result in 2 nines being rolled, while the rest are numbers less than or equal to seven. 
+            </p>
+            <p>
+                Probability (rounded to four decimal places) = <fillin  answer="0.0329" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                <me>\frac{\binom{8}{2}7^6}{10^{8}} </me>
+                Rounded to four decimal places, the final evaluation yields 0.0329.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+
    </exercises>
 
 
@@ -430,34 +767,7 @@
 
 </exercise>
 
-<exercise label="counting-harder-poker-lose">
 
-<introduction>
-  <p>
-    See the Poker Hands  in-class activity. 
-    
-    
-  </p>
-</introduction>
-
-<task>
-  <statement>
-    <p>
-      Compute the probability of being dealt a “three-of-a-kind.”
-    </p>
-  </statement>
-</task>
-
-
-<task>
-  <statement>
-    <p>
-      What would be your strategy for computing the probability of not being dealt any of the poker hands? [This is also referred to as a “High Card” hand.] No computations necessary! Just explain what you think the correct approach would be.
-    </p>
-  </statement>
-</task>
-
-</exercise>
    </exercises>
 
 

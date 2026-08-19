@@ -409,6 +409,101 @@
     </solution>
 </exercise>
 
+
+<exercise xml:id="ex-server-filter-bayes">
+    <title>Smart Filter Diagnostics and Bayes' Theorem</title>
+    <statement>
+        <p>
+            An automated campus server uses a machine learning filter to scan incoming files. Let <m>A</m> be the event that a file is malicious software, and let <m>B</m> be the event that the filter flags the file as a threat. The system analytics provide the following base probabilities:
+            <me>P(A) = 0.44, \quad P(B \mid A) = 0.03, \quad P(B^c \mid A^c) = 0.06</me>
+            If a randomly arriving file is flagged as a threat by the filter, what is the posterior probability <m>P(A \mid B)</m> that it is actually a malicious software file?
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+            <statement>
+                <m>0.0245</m> 
+            </statement>
+            <feedback>
+                <p>
+                    Correct! First, find the complements: <m>P(A^c) = 1 - 0.44 = 0.56</m> and <m>P(B \mid A^c) = 1 - 0.06 = 0.94</m>. Next, apply the Law of Total Probability to find the denominator: <m>P(B) = (0.03)(0.44) + (0.94)(0.56) = 0.0132 + 0.5264 = 0.5396</m>. Finally, apply Bayes' Theorem: <m>P(A \mid B) = \frac{0.0132}{0.5396} \approx 0.0245</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.5396</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This value is the total probability that a file gets flagged by the filter, <m>P(B)</m>. You must use this number as your denominator in Bayes' Theorem to find the conditional probability <m>P(A \mid B)</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.0132</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This value is the joint probability of the intersection <m>P(A \cap B) = P(B \mid A)P(A) = 0.0132</m>. Remember to divide this numerator by the total probability space <m>P(B)</m>.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.9400</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This value is the false positive rate condition, <m>P(B \mid A^c) = 1 - P(B^c \mid A^c) = 0.94</m>. This represents the probability of a safe file being flagged, not a flagged file being malicious.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>0.0236</m>
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This result stems from a minor arithmetic carrying error when computing the intersection components. Double-check your decimals during the summation phase.
+                </p>
+            </feedback>
+        </choice>
+    </choices>
+    <hint>
+        <p>
+            You need to set up Bayes' Theorem: <m>P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}</m>. Before calculating, look closely at your given values: you are given <m>P(B^c \mid A^c) = 0.06</m>, which means its conditional complement is <m>P(B \mid A^c) = 1 - 0.06 = 0.94</m>. Use that to find <m>P(B)</m> first.
+        </p>
+    </hint>
+    <solution>
+        <p>
+            To evaluate the conditional probability <m>P(A \mid B)</m>, we utilize the conditional base rules and apply Bayes' Theorem:
+        </p>
+        <p>
+            1. <term>Find the prior and conditional complements:</term>
+            <ul>
+                <li><p>The probability that a file is safe (<m>A^c</m>): <m>P(A^c) = 1 - P(A) = 1 - 0.44 = 0.56</m></p></li>
+                <li><p>The conditional probability that a safe file is flagged (<m>B \mid A^c</m>): <m>P(B \mid A^c) = 1 - P(B^c \mid A^c) = 1 - 0.06 = 0.94</m></p></li>
+            </ul>
+        </p>
+        <p>
+            2. <term>Calculate the total probability space for the denominator, <m>P(B)</m>:</term>
+            Using the Law of Total Probability:
+            <md>
+                <mrow>P(B) \amp = P(B \mid A)P(A) + P(B \mid A^c)P(A^c)</mrow>
+                <mrow>P(B) \amp = (0.03)(0.44) + (0.94)(0.56)</mrow>
+                <mrow>P(B) \amp = 0.0132 + 0.5264 = 0.5396</mrow>
+            </md>
+        </p>
+        <p>
+            3. <term>Apply Bayes' Theorem to find the posterior probability:</term>
+            <me>P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)} = \frac{0.0132}{0.5396} \approx 0.02446</me>
+            Rounding to four decimal places yields <m>0.0245</m>.
+        </p>
+    </solution>
+</exercise>
+
    </exercises>
 
 
@@ -420,6 +515,109 @@
        Write intro to written part of homework set.....
      </p>
    </introduction>
+
+
+
+
+    
+    
+
+
+    
+
+
+
+    <exercise label="ex-bayes-custom-dice">
+        <title>The Weighted Collectible Die Experiment</title>
+<introduction>
+
+            <p>
+        A tabletop gaming store owner purchases an unverified chest containing a total of 16 identical-looking custom, collectible d20 (20-sided) gaming dice. Within the chest, 11 are authentic factory originals that are perfectly balanced and fair, landing on the maximum critical hit symbol exactly 5% of the time. The remaining 5 dice are counterfeit, weighted so that they land on the critical hit symbol with a probability of <m>1/4</m>.
+    </p>
+
+</introduction>
+        <!-- Part A: Total Probability Theorem -->
+        <task xml:id="task-dice-total-prob">
+            <statement>
+                <p>
+                    Suppose the store owner reaches into the chest, picks exactly one die completely at random, and rolls it once. What is the probability that the die lands on the critical hit symbol?
+                </p>
+            </statement>
+            <!--<solution>
+                <p>
+                    Let <m>F</m> denote the event that a fair factory original die is selected, and let <m>B</m> denote the event that a biased counterfeit die is selected. Their initial baseline selection probabilities are:
+                    <me>P(F) = \frac{11}{16} \quad \text{and} \quad P(B) = \frac{5}{16}</me>
+                    Let <m>H</m> denote the event that the chosen die lands on the critical hit symbol. According to the <strong>Law of Total Probability</strong>:
+                    <md>
+                        <mrow>P(H) \amp = P(F) \cdot P(H \mid F) + P(B) \cdot P(H \mid B)</mrow>
+                        <mrow>\amp = \left(\frac{11}{16} \cdot \frac{1}{2}\right) + \left(\frac{5}{16} \cdot \frac{3}{4}\right)</mrow>
+                        <mrow>\amp = \frac{11}{32} + \frac{15}{64}</mrow>
+                        <mrow>\amp = \frac{22}{64} + \frac{15}{64} = \frac{37}{64} \approx 0.5781</mrow>
+                    </md>
+                    The probability that the randomly selected die lands on a critical hit is exactly <strong>37/64</strong> (or approximately 57.81%).
+                </p>
+            </solution> -->
+        </task>
+
+        <!-- Part B: Single-Stage Bayes' Theorem -->
+        <task xml:id="task-dice-bayes-single">
+            <statement>
+                <p>
+                    Suppose the store owner picks a die completely at random and rolls it once, and it lands on a critical hit. Given this outcome, what is the  probability that the dice is one of the counterfeits?
+                </p>
+            </statement>
+            <!--<solution>
+                <p>
+                    We want to evaluate the posterior probability <m>P(B \mid H)</m>. Applying <strong>Bayes' Theorem</strong> and leveraging our total probability denominator calculated in Part A:
+                    <md>
+                        <mrow>P(B \mid H) \amp = \frac{P(B) \cdot P(H \mid B)}{P(H)}</mrow>
+                        <mrow>\amp = \frac{\frac{5}{16} \cdot \frac{3}{4}}{\frac{37}{64}}</mrow>
+                        <mrow>\amp = \frac{\frac{15}{64}}{\frac{37}{64}} = \frac{15}{37} \approx 0.4054</mrow>
+                    </md>
+                    Given a single critical hit result, the probability that the chosen die is a counterfeit weighted fake increases from its baseline rate of 31.25% up to approximately <strong>40.54%</strong>.
+                </p>
+            </solution> -->
+        </task>
+
+        <!-- Part C: Multi-Stage Sequential Replication Bayes' Theorem -->
+        <task xml:id="task-dice-bayes-multi">
+            <statement>
+                <p>
+Suppose the store owner picks a die completely at random and rolls <em>that same exact die</em> three times in a row, and it lands on a critical hit every time. Given this consecutive streak, what is the probability that the dice is one of the counterfeits?
+                </p>
+            </statement>
+            <!--<solution>
+                <p>
+                    Let <m>H_5</m> denote the event of observing five consecutive critical hits from the same chosen die. Because the five rolls are conditionally independent given the specific die's true identity, we raise the single-trial probabilities to the 5th power:
+                    <ul>
+                        <li><p>Conditional probability if the die is a fair original: <m>P(H_5 \mid F) = \left(\frac{1}{2}\right)^5 = \frac{1}{32} = \frac{32}{1024}</m></p></li>
+                        <li><p>Conditional probability if the die is a biased counterfeit: <m>P(H_5 \mid B) = \left(\frac{3}{4}\right)^5 = \frac{243}{1024}</m></p></li>
+                    </ul>
+                </p>
+                <p>
+                    First, calculate the updated total probability denominator for this sequential replication outcome across the whole chest:
+                    <md>
+                        <mrow>P(H_5) \amp = P(F) \cdot P(H_5 \mid F) + P(B) \cdot P(H_5 \mid B)</mrow>
+                        <mrow>\amp = \left(\frac{11}{16} \cdot \frac{1}{32}\right) + \left(\frac{5}{16} \cdot \frac{243}{1024}\right)</mrow>
+                        <mrow>\amp = \frac{11}{512} + \frac{1215}{16384} = \frac{352}{16384} + \frac{1215}{16384} = \frac{1567}{16384} \approx 0.0956</mrow>
+                    </md>
+                </p>
+                <p>
+                    Now apply Bayes' Theorem to find the updated posterior weight:
+                    <md>
+                        <mrow>P(B \mid H_5) \amp = \frac{P(B) \cdot P(H_5 \mid B)}{P(H_5)}</mrow>
+                        <mrow>\amp = \frac{\frac{1215}{16384}}{\frac{1567}{16384}} = \frac{1215}{1567} \approx 0.7754</mrow>
+                    </md>
+                    Observing five consecutive critical hits from the same die provides massive statistical evidence, causing our confidence that you picked a counterfeit weighted die to jump up to approximately <strong>77.54%</strong>.
+                </p>
+            </solution>-->
+        </task>
+    </exercise>
+
+
+
+
+
 
    </exercises>
 

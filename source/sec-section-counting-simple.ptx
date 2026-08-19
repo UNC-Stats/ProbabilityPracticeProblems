@@ -15,6 +15,82 @@
 
       </p>
     </introduction>
+
+
+    <exercise label="ex-combinatorics-different-die-rolls" xmlns:pi="http://pretextbook.org">
+    <title>Combinatorics and Probability: Distinct Die Sequences</title>
+    <introduction>
+        <p>
+            A standard, fair 6-sided die is rolled 5 times in a row.   Find the probability that all 5 numbers rolled are completely different from one another.
+        </p>
+    </introduction>
+
+    <!-- Part A: Permutation Numerator (Dropdown Selection) -->
+    <task xml:id="task-die-numerator-mc">
+        <statement>
+            <p>
+                To find the total number of outcomes where all 5 rolls yield different values, which counting principle should be used? 
+            </p>
+            
+        </statement>
+        <choices>
+                <choice><statement><p><m>6^5 = 7776</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This calculates the size of the total universal sample space (<m>n(S)</m>) because each of the 5 rolls has 6 unrestricted options. For the numerator, the options must shrink with each roll to remain distinct.</p>
+                    </feedback></choice>
+                <choice correct="yes"><statement><p><m>_6P_5 = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 = 720</m></p></statement>
+                    <feedback>
+                        <p>Correct! Because the 5 rolled numbers must all be different, order matters and repetition is not allowed. The first roll can be any of the 6 numbers, the second roll has 5 options left, the third has 4, and so on. This maps perfectly to a permutation of choosing and arranging 5 unique items from a pool of 6: <m>_6P_5 = 720</m>.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>\binom{6}{5} = \frac{6!}{5!1!} = 6</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This is a combination formula, which ignores the rolling sequence order. Because rolling <c>1, 2, 3, 4, 5</c> is a completely different sequential outcome than rolling <c>5, 4, 3, 2, 1</c>, you must track the spatial arrangements using a permutation instead.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>5^6 = 15625</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This is a common formula inversion distractor. The total number of generic sequential outcomes for independent trials with <m>n</m> sides rolled <m>k</m> times is <m>n^k</m>, which would be <m>6^5</m> for the baseline sample space, not <m>5^6</m>.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>5! = 120</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This only accounts for rearranging a fixed set of 5 pre-selected items. It forgets that there are 6 possible target faces to choose from to build that set.</p>
+                    </feedback></choice>
+            </choices>
+
+    </task>
+
+    <!-- Part B: Exact Probability Calculation (Short Answer Entry) -->
+    <task xml:id="task-die-probability-input">
+        <statement>
+            <p>
+                 Using your answer to part A, determine the probability of rolling 5  different numbers.
+            </p>
+            <p>
+                Probability = <fillin  answer="0.0926" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <!-- Accept 0.0926 via native string matching engine -->
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To evaluate the probability of the event, divide the number of successful distinct permutations found in Part A by the total number of items inside the universal unrestricted sample space:
+                <ul>
+                    <li><p>Successful outcomes (all distinct): <m>n(E) = _6P_5 = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 = 720</m></p></li>
+                    <li><p>Total unrestricted outcomes: <m>n(S) = 6^5 = 6 \cdot 6 \cdot 6 \cdot 6 \cdot 6 = 7776</m></p></li>
+                </ul>
+                Setting up the probability fraction:
+                <me>P(\text{All Different}) = \frac{n(E)}{n(S)} = \frac{720}{7776} = \frac{5}{54} \approx 0.092592</me>
+                Rounded to four decimal places, the final evaluation yields <strong>0.0926</strong>.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
    
    <exercise label="Count-simple-Korean-BBQ">
       <title>Korean BBQ</title>
@@ -452,7 +528,7 @@ Note: Creating a mathematical model that accurately reflects the real world is e
 
 
 <exercise label="counting-simple-bday-problem">
-<title>Unique Phone Numbers</title>
+<title>Birthdays</title>
 
 <introduction>
   <p>
