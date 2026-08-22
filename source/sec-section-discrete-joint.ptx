@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-section-discrete-joint" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Joint Discrete Random Variables</title>
+
+ <introduction>
+ <p> 
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
+  </p>
+</introduction>
+
+
+ <exercises xml:id="hw-joint-rv" >
+   <title>Interactive Exercises</title>
+ 
+
+
+
+<exercise label="ex-joint-independent-distributions" xmlns:pi="http://pretextbook.org">
+    <title>Joint Distributions: Independent Random Variables</title>
+       <statement>
+        <p>
+            A popular campus food truck tracks the ordering habits of students during the lunch rush. Let the random variable <m>X</m> denote the type of main course ordered (<m>0 = </m> Vegetarian, <m>1 = </m> Meat-based), and let the random variable <m>Y</m> denote the side dish choice (<m>1 = </m> Fries, <m>2 = </m> Salad, <m>3 = </m> Fruit). 
+        </p>
+        <p>
+            The separate, marginal probability distributions for <m>X</m> and <m>Y</m> are known to be:
+        </p>
+        <p>
+            <sidebyside widths="45% 45%" valigns="top top">
+                <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+                    <row header="yes">
+                        <cell><m>X</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>P(X)</m></cell>
+                        <cell><m>0.3</m></cell>
+                        <cell><m>0.7</m></cell>
+                    </row>
+                </tabular>
+                <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+                    <row header="yes">
+                        <cell><m>Y</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>2</m></cell>
+                        <cell><m>3</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>P(Y)</m></cell>
+                        <cell><m>0.4</m></cell>
+                        <cell><m>0.5</m></cell>
+                        <cell><m>0.1</m></cell>
+                    </row>
+                </tabular>
+            </sidebyside>
+        </p>
+        <p>
+            Assuming that a student's main course choice (<m>X</m>) and side dish selection (<m>Y</m>) behave as independent random variables, fill in the missing joint probabilities in the distribution table below.
+        </p>
+
+            <p>
+                <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+                    <row header="yes">
+                        <cell></cell>
+                        <cell colspan="2"><m>X</m></cell>
+                    </row>
+                    <row header="yes">
+                        <cell><m>Y</m></cell>
+                        <cell><m>0</m></cell>
+                        <cell><m>1</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>1</m></cell>
+                        <cell><fillin  answer="0.12" width="6" name="p01"/></cell>
+                        <cell><fillin  answer="0.28" width="6" name="p11"/></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>2</m></cell>
+                        <cell>0.15</cell>
+                        <cell><fillin answer="0.35" width="6" name="p12"/></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>3</m></cell>
+                        <cell><fillin  answer="0.03" width="6" name="p03"/></cell>
+                        <cell>0.07</cell>
+                    </row>
+                </tabular>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate submit="p01">
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+             <evaluate submit="p11">
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+             <evaluate submit="p12">
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+             <evaluate submit="p03">
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Because random variables <m>X</m> and <m>Y</m> are defined as statistically independent, their joint probabilities are found by multiplying their corresponding marginal probabilities together for every coordinate intersection cell:
+                <me>P(X = x \cap Y = y) = P(X = x) \cdot P(Y = y)</me>
+            </p>
+            <p>
+                Evaluating each cell in the table row-by-row:
+                <ul>
+                    <li><p>Row <m>Y = 1</m>:</p>
+                        <ul>
+                            <li><p><m>P(0, 1) = P(X=0) \cdot P(Y=1) = 0.3 \cdot 0.4 = 0.12</m></p></li>
+                            <li><p><m>P(1, 1) = P(X=1) \cdot P(Y=1) = 0.7 \cdot 0.4 = 0.28</m></p></li>
+                        </ul>
+                    </li>
+                    <li><p>Row <m>Y = 2</m>:</p>
+                        <ul>
+                            <li><p><m>P(0, 2) = P(X=0) \cdot P(Y=2) = 0.3 \cdot 0.5 = 0.15</m></p></li>
+                            <li><p><m>P(1, 2) = P(X=1) \cdot P(Y=2) = 0.7 \cdot 0.5 = 0.35</m></p></li>
+                        </ul>
+                    </li>
+                    <li><p>Row <m>Y = 3</m>:</p>
+                        <ul>
+                            <li><p><m>P(0, 3) = P(X=0) \cdot P(Y=3) = 0.3 \cdot 0.1 = 0.03</m></p></li>
+                            <li><p><m>P(1, 3) = P(X=1) \cdot P(Y=3) = 0.7 \cdot 0.1 = 0.07</m></p></li>
+                        </ul>
+                    </li>
+                </ul>
+                Summing all elements across the table confirms that the entire joint distribution sums to exactly <m>0.12 + 0.28 + 0.15 + 0.35 + 0.03 + 0.07 = 1.00</m>.
+            </p>
+        </solution>
+
+</exercise>
+
+
+
+<exercise label="ex-joint-pmf-conditional-distribution" xmlns:pi="http://pretextbook.org">
+    <title>Joint Distributions: Conditional PMFs and Independence</title>
+    <introduction>
+        <p>
+            An e-commerce platform maps user behavior across an active shopping session. Let the discrete random variable <m>X</m> denote the user's browsing engagement tier (<m>1, 2, \text{ or } 3</m>), and let the discrete random variable <m>Y</m> denote their final purchase category tier (<m>1, 2, \text{ or } 3</m>).
+</p>
+
+<p>
+  Browsing engagement tier definitions:
+</p>
+
+<ul>
+  <li>
+    <p>
+      Tier 1: Shallow Engagement (Bounce / Skim): The user clicks a direct link, views a single landing page, or briefly skims a product description for under a minute before either checking out or exiting.
+    </p>
+  </li>
+  <li>
+    <p>
+      Tier 2: Moderate Engagement (Active Browsing): The user actively navigates the site. They use the search bar, apply filtering tags, compare 2 to 5 different products, or read a few customer reviews.
+    </p>
+  </li>
+  <li>
+    <p>
+       Tier 3: Deep Engagement (Immersive Research): The user goes down a rabbit hole. They interact with 3D product models, watch video demonstrations, read long-form support wikis, customize item configurations, or post questions in the community forum.
+    </p>
+  </li>
+</ul>
+
+<p>
+  Purchase category tier definitions:
+</p>
+
+<ul>
+  <li>
+    <p>
+      Tier 1: Low-Value / Essential Items: Inexpensive items like single phone cases, charging cables, basic stickers, or simple clearance items (e.g., spending under $15).
+    </p>
+  </li>
+  <li>
+    <p>
+      Tier 2: Mid-Value / Standard Merchandise: Mid-range purchases like standard hoodies, board games, vinyl records, or mid-tier apparel (e.g., spending $15 to $75).
+    </p>
+  </li>
+  <li>
+    <p>
+       Tier 3: High-Value / Premium Goods: High-end items like premium collector’s editions, electronics, high-end mechanical keyboards, or leather outerwear items (e.g., spending over $75).
+    </p>
+  </li>
+</ul>
+
+            
+        <p>
+            The joint probability distribution, <m>p(x, y) = P(X = x \cap Y = y)</m>, is shown below:
+        </p>
+        <p>
+            <sidebyside width="60%">
+                <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+                    <row header="yes">
+                        <cell></cell>
+                        <cell colspan="3"><m>X</m></cell>
+                    </row>
+                    <row header="yes">
+                        <cell><m>Y</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>2</m></cell>
+                        <cell><m>3</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>1</m></cell>
+                        <cell><m>0.15</m></cell>
+                        <cell><m>0.05</m></cell>
+                        <cell><m>0.05</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>2</m></cell>
+                        <cell><m>0.05</m></cell>
+                        <cell><m>0.35</m></cell>
+                        <cell><m>0.10</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>3</m></cell>
+                        <cell><m>0.10</m></cell>
+                        <cell><m>0.10</m></cell>
+                        <cell><m>0.05</m></cell>
+                    </row>
+                </tabular>
+            </sidebyside>
+        </p>
+       
+    </introduction>
+
+    <!-- Part A: Conditional PMF given X=2 (Fill in the Blank) -->
+    <task xml:id="task-joint-cond-pmf-input">
+        <statement>
+            <p>
+                Compute the conditional mass function of <m>Y</m> given that <m>X = 2</m>. Enter all values as exact decimals or decimals rounded to exactly three places.
+            </p>
+            <p><m>P(Y = 1 \mid X = 2) = </m> <fillin  answer="0.10" width="8" name="cp12"/>
+              </p>
+            <p><m>P(Y = 2 \mid X = 2) = </m> <fillin  answer="0.70" width="8" name="cp22"/>
+              </p>
+            <p><m>P(Y = 3 \mid X = 2) = </m> <fillin answer="0.20" width="8" name="cp32"/>
+              </p>
+        </statement>
+        <evaluation>
+         <evaluate submit="name=cp12">
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+             <evaluate submit="name=cp22">
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+            <evaluate submit="name=cp32">
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To evaluate any conditional probability from a joint mass function, use the formula:
+                <me>P(Y = y \mid X = x) = \frac{p(x, y)}{P(X = x)}</me>
+                First, compute the marginal probability of the conditioning event by summing down the column corresponding to <m>X = 2</m>:
+                <me>P(X = 2) = p(2, 1) + p(2, 2) + p(2, 3) = 0.05 + 0.35 + 0.10 = 0.50</me>
+            </p>
+            <p>
+                Now, scale each cell inside that column by the marginal total of 0.50:
+                <ul>
+                    <li><p><m>P(Y = 1 \mid X = 2) = \frac{0.05}{0.50} = 0.10</m></p></li>
+                    <li><p><m>P(Y = 2 \mid X = 2) = \frac{0.35}{0.50} = 0.70</m></p></li>
+                    <li><p><m>P(Y = 3 \mid X = 2) = \frac{0.10}{0.50} = 0.20</m></p></li>
+                </ul>
+                Notice that the conditional distribution sums perfectly to certainty within its restricted universe: <m>0.10 + 0.70 + 0.20 = 1.00</m>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Check for Independence (Short Answer Entry) -->
+    <task xml:id="task-joint-check-independence">
+        
+        <statement correct="no">
+    <p>
+      Random variables <m>X</m> and <m>Y</m> are independent.
+    </p>
+  </statement>
+
+  <feedback>
+<p>
+                For two discrete random variables to be independent, the multiplication property must hold for <em>every single cell intersection</em> in the grid layout: <m>p(x, y) = P(X = x) \cdot P(Y = y)</m>.
+            </p>
+            <p>
+                Let us check the first upper-left cell entry at position <m>(1, 1)</m>:
+                <ul>
+                    <li><p>Actual intersection: <m>p(1, 1) = 0.15</m></p></li>
+                    <li><p>Marginal column total for <m>X = 1</m>: <m>P(X=1) = 0.15 + 0.05 + 0.10 = 0.30</m></p></li>
+                    <li><p>Marginal row total for <m>Y = 1</m>: <m>P(Y=1) = 0.15 + 0.05 + 0.05 = 0.25</m></p></li>
+                </ul>
+                Evaluating the independence product:
+                <me>P(X=1) \cdot P(Y=1) = 0.30 \cdot 0.25 = 0.075</me>
+                Because <m>p(1, 1) = 0.15 \neq 0.075</m>, the conditions for statistical independence are violated. Alternatively, we can see that the conditional profile found in Part A (<m>P(Y=1 \mid X=2) = 0.10</m>) does not match the baseline marginal rate (<m>P(Y=1) = 0.25</m>). Therefore, the answer is <strong>NO</strong>.
+            </p>
+  </feedback>
+        
+
+    </task>
+
+        <!-- Part C: Covariance Calculation (Converted to Multiple Choice) -->
+    <task xml:id="task-joint-covariance-mc">
+        <statement>
+            <p>
+                Calculate the covariance, <m>\text{Cov}(X, Y)</m>, for this joint probability distribution to evaluate the directional relationship between browsing engagement and purchase tiers (i.e. how they vary together).
+            </p>
+             </statement>
+        <choices>
+                <choice><statement><p><m>\text{Cov}(X, Y) = 0.00</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. A covariance of exactly zero implies that the random variables have no linear relationship, which is a property of independent variables. As verified in Part B, these variables are dependent, so their covariance is non-zero.</p>
+                    </feedback></choice>
+                <choice correct="yes"><statement><p><m>\text{Cov}(X, Y) = 0.05</m></p></statement>
+                    <feedback>
+                        <p>Correct! To calculate covariance, we use the identity formula: <m>\text{Cov}(X, Y) = E(XY) - E(X)E(Y)</m>.</p>
+                        <ul>
+                            <li><p><strong>Step 1:</strong> Find the expected values from the row and column totals: <m>E(X) = 1(0.30) + 2(0.50) + 3(0.20) = 1.90</m> and <m>E(Y) = 1(0.25) + 2(0.50) + 3(0.25) = 2.00</m>.</p></li>
+                            <li><p><strong>Step 2:</strong> Compute the joint expectation by summing <m>x \cdot y \cdot p(x,y)</m> for all 9 cells: <m>E(XY) = (1\cdot1\cdot0.15) + (1\cdot2\cdot0.05) + \dots + (3\cdot3\cdot0.05) = 3.85</m>.</p></li>
+                            <li><p><strong>Step 3:</strong> Substitute into the identity formula: <m>\text{Cov}(X,Y) = 3.85 - (1.90 \cdot 2.00) = 3.85 - 3.80 = 0.05</m>.</p></li>
+                        </ul>
+                        <p>The positive value indicates that higher browsing engagement is weakly associated with higher purchase tiers.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>\text{Cov}(X, Y) = 3.85</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This is the value of the joint expectation <m>E(XY)</m> alone. You still need to complete the formula steps by subtracting the product of the individual expected values, <m>E(X)E(Y)</m>.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>\text{Cov}(X, Y) = -0.05</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This value indicates a negative relationship, but our joint expectation product <m>E(XY) = 3.85</m> is strictly larger than the individual expected product baseline <m>E(X)E(Y) = 3.80</m>, leading to a positive net difference.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>\text{Cov}(X, Y) = 0.15</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This looks like an tracking calculation error when evaluating the sum of the coordinate combinations for the joint expectation <m>E(XY)</m>. Re-verify your arithmetic products for each grid position.</p>
+                    </feedback></choice>
+</choices>
+    </task>
+
+</exercise>
+
+
+
+
+<exercise label="ex-joint-pmf-operations-airport" xmlns:pi="http://pretextbook.org">
+    <title>Joint Distributions: Air Traffic Logistics Matrix</title>
+    <introduction>
+        <p>
+            An air traffic logistical platform monitors seasonal airport hub operations using two discrete random variables spanning four operational tiers. Let <m>X</m> denote the flight delay severity scale ranking (<m>1, 2,\text{ or } 3</m>), and let <m>Y</m> denote the terminal departure gate passenger density category ranking (<m>1, 2, 3, \text{ or } 4</m>).
+        </p>
+        <p>
+            The joint probability distribution is shown below:
+        </p>
+        <p>
+            <sidebyside width="75%">
+  
+                <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+                    <row header="yes">
+                        <cell></cell>
+                        <cell colspan="3"><m>X</m></cell>
+                    </row>
+                    <row header="yes">
+                        <cell><m>Y</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>2</m></cell>
+                        <cell><m>3</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>1</m></cell>
+                        <cell><m>0.25</m></cell>
+                        <cell><m>0.08</m></cell>
+                        <cell><m>0.04</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>2</m></cell>
+                        <cell><m>0.05</m></cell>
+                        <cell><m>0.15</m></cell>
+                        <cell><m>0.06</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>3</m></cell>
+                        <cell><m>0.02</m></cell>
+                        <cell><m>0.05</m></cell>
+                        <cell><m>0.10</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>4</m></cell>
+                        <cell><m>0.04</m></cell>
+                        <cell><m>0.06</m></cell>
+                        <cell><m>0.10</m></cell>
+                    </row>
+                </tabular>
+            </sidebyside>
+
+        </p>
+      
+    </introduction>
+
+    <!-- Part A: P(X + Y > 6) -->
+    <task xml:id="task-airport-op-sum">
+        <statement>
+            <p>
+                 If we add the delay severity rank and the gate passenger density rank together, we get a measure of total terminal gridlock. Values higher than 6 represent a logistical crisis. You have severely delayed flights sitting at gates that are already dangerously overcrowded with travelers.
+                 </p>
+<p>
+                 Find the probability of a logistical crisis occurring, i.e. compute  <m>P(X + Y \gt 6)</m>.
+            </p>
+            <p>
+                Probability = <fillin  answer="0.10" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To evaluate <m>P(X + Y \gt 6)</m>, we parse the grid to identify every cell coordinate <m>(x, y)</m> where the sum of the column index and row index is strictly greater than 6:
+                <ul>
+                    <li><p>Coordinate <m>(3, 4)</m> gives <m>3 + 4 = 7 \gt 6</m>, with a probability of <m>0.02</m>.</p></li>
+                    <li><p>Coordinate <m>(4, 3)</m> gives <m>4 + 3 = 7 \gt 6</m>, with a probability of <m>0.03</m>.</p></li>
+                    <li><p>Coordinate <m>(4, 4)</m> gives <m>4 + 4 = 8 \gt 6</m>, with a probability of <m>0.05</m>.</p></li>
+                    <li><p>Note: Coordinates like <m>(3,3)</m>, <m>(2,4)</m>, or <m>(4,2)</m> sum to exactly 6, which does not satisfy the strict inequality constraint loop.</p></li>
+                </ul>
+                Summing these matching independent cells together:
+                <me>P(X + Y \gt 6) = p(3, 4) + p(4, 3) + p(4, 4) = 0.02 + 0.03 + 0.05 = 0.10</me>
+                The probability is exactly <strong>0.10</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: P(XY = 4) -->
+    <task xml:id="task-airport-op-product">
+        <statement>
+          <p>
+            Multiplying the variables together gives us another measure of the state of the airport: The Passenger Hardship Multiplier. In other words, we can use <m>XY </m> to model the total volume of human frustration.
+          </p>
+            <p>
+                 Find the probability that the product of the flight delay rank and gate passenger density rank is exactly equal to 4, which would represent a moderate volume of affected passengers. 
+            </p>
+            <p>
+                <m>P(XY = 4)</m> = <fillin answer="0.19" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To find <m>P(XY = 4)</m>, trace all coordinate intersection points <m>(x, y)</m> within our domain <m>\{1, 2, 3, 4\}</m> where the mathematical product is exactly 4:
+                <ul>
+                    <li><p>Coordinate <m>(1, 4)</m>: <m>1 \cdot 4 = 4</m>, with a cell probability of <m>0.01</m>.</p></li>
+                    <li><p>Coordinate <m>(2, 2)</m>: <m>2 \cdot 2 = 4</m>, with a cell probability of <m>0.15</m>.</p></li>
+                    <li><p>Coordinate <m>(4, 1)</m>: <m>4 \cdot 1 = 4</m>, with a cell probability of <m>0.03</m>.</p></li>
+                </ul>
+                Summing these valid disjoint outcomes:
+                <me>P(XY = 4) = p(1, 4) + p(2, 2) + p(4, 1) = 0.01 + 0.15 + 0.03 = 0.19</me>
+                The probability is exactly <strong>0.19</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part C: P(X / Y >= 3) -->
+    <task xml:id="task-airport-op-quotient">
+        <statement>
+            <p>
+                Dividing the delay severity (\(X\)) by the passenger density (\(Y\)) calculates how "justifiable" a delay is relative to the crowd size. Larger values represent more inefficient delays.
+                </p>
+                <p>
+                 Find the probability that the quotient is greater than or equal to 2. .
+            </p>
+            <p>
+                <m>P\left(\frac{X}{Y} \ge 2\right)</m> = <fillin answer="0.12" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To evaluate <m>P\left(\frac{X}{Y} \ge 3\right)</m>, check the division ratio for entries where the column value is at least three times the row value:
+                <ul>
+                    <li><p>Coordinate <m>(3, 1)</m> yields <m>\frac{3}{1} = 3 \ge 2</m>, matching a probability weight of <m>0.04</m>.</p></li>
+                    <li><p>Coordinate <m>(2, 1)</m> yields <m>\frac{2}{1} = 2 \ge 2</m>, matching a probability weight of <m>0.08</m>.</p></li>
+
+                </ul>
+                Summing the successful cells that meet or exceed our threshold ratio:
+                <me>P\left(\frac{X}{Y} \ge 2\right) = p(3, 1) + p(2, 1) = 0.04 + 0.08 = 0.12</me>
+                
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+<exercise label="ex-joint-pmf-expectations-esports" xmlns:pi="http://pretextbook.org">
+    <title>Joint Distributions: Esports Team Performance Metrics</title>
+    <introduction>
+        <p>
+            An analytics platform for competitive multiplayer video games reviews performance data from a professional tournament. Let the discrete random variable <m>X</m> denote the tactical communication pings sent by a team's primary attacker during a round (<m>X \in \{1, 2, 3\}</m>). Let the discrete random variable <m>Y</m> denote the number of heavy protective defense walls deployed by their support teammate during the same match loop (<m>Y \in \{1, 2, 3\}</m>).
+        </p>
+        <p>
+            The joint probability distribution, <m>p(x, y)</m>, is shown below:
+        </p>
+        <p>
+            <sidebyside width="60%">
+                <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+                    <row header="yes">
+                        <cell></cell>
+                        <cell colspan="3"><m>X</m> (Pings Sent)</cell>
+                    </row>
+                    <row header="yes">
+                        <cell><m>Y</m> (Walls Deployed)</cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>2</m></cell>
+                        <cell><m>3</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>1</m></cell>
+                        <cell><m>0.10</m></cell>
+                        <cell><m>0.15</m></cell>
+                        <cell><m>0.05</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>2</m></cell>
+                        <cell><m>0.05</m></cell>
+                        <cell><m>0.30</m></cell>
+                        <cell><m>0.15</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>3</m></cell>
+                        <cell><m>0.05</m></cell>
+                        <cell><m>0.10</m></cell>
+                        <cell><m>0.05</m></cell>
+                    </row>
+                </tabular>
+            </sidebyside>
+        </p>
+ 
+    </introduction>
+
+    <!-- Part A: Marginal Expectation E(X) -->
+    <task xml:id="task-esports-marginal-expectation-x">
+        <statement>
+            <p>
+                 Find the marginal expected value of <m>X</m>. This represents the long-run average number of tactical pings sent by the attacker in a randomly chosen round. Write your answer as a decimal rounded to 2 decimal places.
+            </p>
+            <p>
+                <m>E(X) = </m> <fillin answer="2.05" width="8"/> pings
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To calculate the marginal expected value <m>E(X)</m>, we first find the marginal probability distribution of <m>X</m> by summing the joint probabilities down each individual column:
+                <ul>
+                    <li><p><m>P(X = 1) = 0.10 + 0.05 + 0.05 = 0.20</m></p></li>
+                    <li><p><m>P(X = 2) = 0.15 + 0.30 + 0.10 = 0.55</m></p></li>
+                    <li><p><m>P(X = 3) = 0.05 + 0.15 + 0.05 = 0.25</m></p></li>
+                </ul>
+                Now, apply the standard expectation formula for a single discrete variable, <m>E(X) = \sum x \cdot P(X = x)</m>:
+                <md>
+                    <mrow>E(X) \amp = 1(0.20) + 2(0.55) + 3(0.25)</mrow>
+                    <mrow>\amp = 0.20 + 1.10 + 0.75 = 2.05</mrow>
+                </md>
+                The expected tactical ping frequency count is exactly <strong>2.05</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Joint Expectation E(XY) -->
+    <task xml:id="task-esports-joint-expectation-xy-mc">
+        <statement>
+            <p>
+                Compute the joint expected value of the product of the two cooperation variables, written as <m>E(XY)</m>. Multiplying Pings Sent  (\(X\)) and Defensive Walls Deployed (\(Y\))gives us a measure of Team Cohesion and Synchronization, where low  values represent Unsynchronized or Disconnected Play, moderate values represent standard, balanced play, and high values represent High-Intensity Strategic Synergy. 
+            </p>
+            
+        </statement>
+        <choices>
+                <choice><statement><p><m>E(XY) = 2.05</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This is just the marginal expectation <m>E(X)</m> calculated in Part A. To find <m>E(XY)</m>, you must cross-multiply every single cell index coordinate weight across all 9 regions of the joint matrix.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>E(XY) = 3.995</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This is the result of multiplying <m>E(X) \cdot E(Y)</m>. This shortcut identity formula only holds true if the two random variables are completely independent. Because ping actions and defensive wall positioning are dependent in this matrix, you must calculate the sum of products cell-by-cell.</p>
+                    </feedback></choice>
+                <choice correct="yes"><statement><p><m>E(XY) = 4.05</m></p></statement>
+                    <feedback>
+                        <p>Correct! To evaluate the joint expectation of a product, we sum the product of the coordinates multiplied by their corresponding cell weight across all 9 positions in the matrix grid: <m>E(XY) = \sum \sum x \cdot y \cdot p(x,y)</m>.</p>
+                        <md>
+                            <mrow>E(XY) \amp = (1 \cdot 1 \cdot 0.10) + (2 \cdot 1 \cdot 0.15) + (3 \cdot 1 \cdot 0.05)</mrow>
+                            <mrow>\amp + (1 \cdot 2 \cdot 0.05) + (2 \cdot 2 \cdot 0.30) + (3 \cdot 2 \cdot 0.15)</mrow>
+                            <mrow>\amp + (1 \cdot 3 \cdot 0.05) + (2 \cdot 3 \cdot 0.10) + (3 \cdot 3 \cdot 0.05)</mrow>
+                            <mrow>\amp = 0.10 + 0.30 + 0.15 + 0.10 + 1.20 + 0.90 + 0.15 + 0.60 + 0.45 = 4.05</mrow>
+                        </md>
+                        <p>The joint expected value of the product is exactly <strong>4.05</strong>.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>E(XY) = 1.00</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This is the sum of the raw probability weights inside the grid. The expected value requires scaling those baseline weights by their structural coordinate indices.</p>
+                    </feedback></choice>
+                <choice><statement><p><m>E(XY) = 4.50</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. This looks like a tracking index error where row and column headings were accidentally offset during the evaluation step. Re-verify the cross-multiplication matrix pairs.</p>
+                    </feedback></choice>
+            </choices>
+    </task>
+</exercise>
+
+   </exercises>
+
+
+
+<exercises xml:id="hw-joint-rv-turn-in" >
+   <title>Written Exercises</title>
+
+
+
+
+<exercise label="ex-joint-pmf-cov-esports" xmlns:pi="http://pretextbook.org">
+    <title>Joint Distributions: Esports Team Performance Metrics Continued</title>
+    <introduction>
+        <p>
+            As a continuation of the previous problem, compute the covariance for the joint probability distribution to determine if an increase in tactical communication pings mathematically links to a higher volume of walls deployed..
+        </p>
+        <p>
+            The joint probability distribution, <m>p(x, y)</m>, is provided again below:
+        </p>
+        <p>
+            <sidebyside width="60%">
+                <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+                    <row header="yes">
+                        <cell></cell>
+                        <cell colspan="3"><m>X</m> (Pings Sent)</cell>
+                    </row>
+                    <row header="yes">
+                        <cell><m>Y</m> (Walls Deployed)</cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>2</m></cell>
+                        <cell><m>3</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>1</m></cell>
+                        <cell><m>0.10</m></cell>
+                        <cell><m>0.15</m></cell>
+                        <cell><m>0.05</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>2</m></cell>
+                        <cell><m>0.05</m></cell>
+                        <cell><m>0.30</m></cell>
+                        <cell><m>0.15</m></cell>
+                    </row>
+                    <row>
+                        <cell header="yes"><m>3</m></cell>
+                        <cell><m>0.05</m></cell>
+                        <cell><m>0.10</m></cell>
+                        <cell><m>0.05</m></cell>
+                    </row>
+                </tabular>
+            </sidebyside>
+        </p>
+ 
+    </introduction>
+
+    <!-- Part C: Covariance Calculation (Short Answer Entry) -->
+    <task xml:id="task-esports-covariance-input">
+        <statement>
+            <p>
+                Calculate the covariance, <m>\text{Cov}(X, Y)</m>. Show all work, including all intermediate steps.
+            </p>
+
+        </statement>
+        
+        <solution>
+            <p>
+                To calculate the covariance between the two variables, use the shortcut identity formula:
+                <me>\text{Cov}(X, Y) = E(XY) - E(X)E(Y)</me>
+            </p>
+            <p>
+                <strong>Step 1: Compute the marginal expected value of <m>Y</m>, <m>E(Y)</m>:</strong>
+                First, sum the row entries to find the marginal probability distribution for the number of walls deployed:
+                <ul>
+                    <li><p><m>P(Y = 1) = 0.10 + 0.15 + 0.05 = 0.30</m></p></li>
+                    <li><p><m>P(Y = 2) = 0.05 + 0.30 + 0.15 = 0.50</m></p></li>
+                    <li><p><m>P(Y = 3) = 0.05 + 0.10 + 0.05 = 0.20</m></p></li>
+                </ul>
+                Evaluate the single-variable expectation formula:
+                <me>E(Y) = 1(0.30) + 2(0.50) + 3(0.20) = 0.30 + 1.00 + 0.60 = 1.90</me>
+            </p>
+            <p>
+                <strong>Step 2: Substitute known elements into the covariance equation:</strong>
+                Using <m>E(X) = 2.05</m> from Part A and <m>E(XY) = 4.05</m> from Part B:
+                <me>\text{Cov}(X, Y) = 4.05 - (2.05 \cdot 1.90) = 4.05 - 3.895 = 0.155</me>
+                The covariance between tactical pings and wall placements is exactly <strong>0.155</strong>.
+            </p>
+            <p>
+                <strong>Interpretation for Students:</strong> Because the calculated covariance is strictly <strong>positive</strong>, it provides concrete statistical proof that the two variables move together. Ramping up tactical communication pings does, on average, correlate with the support player deploying a higher volume of protective utility coverage during a round.
+            </p>
+        </solution>
+    </task>
+
+    <task xml:id="task-static-esports-correlation">
+            <statement>
+                <p>
+                    Now, calculate the covariance, <m>\rho</m>. Make sure to show your calculations  of each required standard deviation!
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    To calculate the correlation coefficient, we use the formula:
+                    <me>\rho = \frac{\text{Cov}(X, Y)}{\sigma_X \cdot \sigma_Y}</me>
+                    First, we must calculate the variances and standard deviations for both <m>X</m> and <m>Y</m> by evaluating their second moments (<m>E(X^2)</m> and <m>E(Y^2)</m>):
+                </p>
+                <p>
+                    <strong>1. Standard Deviation of <m>X</m> (Tactical Pings):</strong>
+                    <md>
+                        <mrow>E(X^2) \amp = 1^2(0.20) + 2^2(0.55) + 3^2(0.25) = 0.20 + 2.20 + 2.25 = 4.65</mrow>
+                        <mrow>V(X) \amp = E(X^2) - [E(X)]^2 = 4.65 - (2.05)^2 = 4.65 - 4.2025 = 0.4475</mrow>
+                        <mrow>\sigma_X \amp = \sqrt{0.4475} \approx 0.6690</mrow>
+                    </md>
+                </p>
+                <p>
+                    <strong>2. Standard Deviation of <m>Y</m> (Walls Deployed):</strong>
+                    <md>
+                        <mrow>E(Y^2) \amp = 1^2(0.30) + 2^2(0.50) + 3^2(0.20) = 0.30 + 2.00 + 1.80 = 4.10</mrow>
+                        <mrow>V(Y) \amp = E(Y^2) - [E(Y)]^2 = 4.10 - (1.90)^2 = 4.10 - 3.61 = 0.5000</mrow>
+                        <mrow>\sigma_Y \amp = \sqrt{0.5000} \approx 0.7071</mrow>
+                    </md>
+                </p>
+                <p>
+                    <strong>3. Final Correlation Coefficient Substitution:</strong>
+                    Using our known covariance value of <m>\text{Cov}(X,Y) = 0.155</m>:
+                    <me>\rho = \frac{0.155}{0.6690 \cdot 0.7071} = \frac{0.155}{0.4731} \approx 0.3276</me>
+                    The Pearson correlation coefficient is approximately <strong>0.328</strong>.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part E: Logistical Strategic Interpretation (Non-Interactive) -->
+        <task xml:id="task-static-esports-interpretation">
+            <statement>
+                <p>
+                    Provide a comprehensive data-analytics interpretation of what the resulting correlation coefficient fundamentally implies about this professional esports team's live gameplay synergy.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    A correlation coefficient of <m>\rho \approx 0.328</m> indicates a <strong>moderate positive linear relationship</strong> between the attacker's communication pings and the support player's defensive wall placements. 
+                </p>
+                <p>
+                    From a competitive strategy standpoint, this delivers several key operational insights:
+                    <ul>
+                        <li>
+                            <p>
+                                <strong>Active Cooperative Synergy:</strong> Because the relationship is positive and non-zero, we can mathematically reject the hypothesis that these players are operating in isolation. Increased map-ping callouts are successfully prompting active, corresponding utility backup from the support teammate.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <strong>The "Fog of War" Variable:</strong> While a value of 0.328 proves a clear cooperative bond, it is far from a perfect linear lock (<m>\rho = 1.00</m>). In live competitive environments, this "loose" alignment is caused by unavoidable external match noise. For example, a support player might drop multiple walls during a silent ambush with zero pings (<m>X=1, Y=3</m>), or an attacker might frantically ping target vectors during an intense, wide-open flank where dropping a solid wall would accidentally block their own team's line of sight (<m>X=3, Y=1</m>).
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <strong>Analytical Takeaway:</strong> This value models a highly flexible, human communication system. The data captures clear, proactive coordination without the absolute rigid predictability of a completely automated script.
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </solution>
+        </task>
+</exercise>
+
+   </exercises>
+
+  </section>

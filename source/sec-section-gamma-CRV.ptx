@@ -3,18 +3,138 @@
 <section xml:id="sec-section-gamma-CRV" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Gamma Random Variable</title>
 
+<introduction>
  <p> 
-    Write intro to homework set.....  Goal, Purpose, Instructions....
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
   </p>
+</introduction>
 
 
  <exercises xml:id="hw-gamma-rv" >
    <title>Interactive Exercises</title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-   </introduction>
+
+
+
+<exercise label="ex-gamma-rainfall-distribution" xmlns:pi="http://pretextbook.org">
+    <title>Continuous Distributions: Gamma Modeling of Regional Rainfall</title>
+    <introduction>
+        <p>
+            Meteorological models indicate that four-week summer rainfall totals (measured in inches) in specific sections of the Western United States can be modeled using a continuous Gamma distribution. 
+        </p>
+      
+    </introduction>
+
+    <!-- Part A: Mean and Standard Deviation (Fill in the Blank) -->
+    <task xml:id="task-gamma-summary-statistics">
+        <statement>
+            <p>
+                For one section, the totals follow a Gamma distribution with shape parameter <m>\alpha = 1.6</m> and  rate parameter  <m>\lambda = 0.50</m>. Find the long-run expected mean rainfall total and the corresponding standard deviation for this four-week summer window.
+            </p>
+            <p>
+                Enter your answers as decimals rounded to exactly two decimal places.
+            </p>
+            <p>Expected Mean = <fillin  answer="3.20" width="8" name="mean_gamma"/> inches</p>
+            <p>Standard Deviation = <fillin  answer="2.53" width="8" name="sd_gamma"/> inches</p>
+        </statement>
+        <evaluation>
+            <evaluate submit = "mean_gamma"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+            <evaluate submit = "sd_gamma"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                For a continuous random variable <m>X</m> tracking a Gamma distribution parameterized by a shape parameter <m>\alpha</m> and a rate parameter <m>\lambda</m>:
+                <ul>
+                    <li><p><strong>Expected Mean, <m>E(X)</m>:</strong>
+                        <me>E(X) = \frac{\alpha}{\lambda} = \frac{1.6}{0.50} = 3.20 \text{ inches}</me>
+                    </p></li>
+                    <li><p><strong>Variance, <m>\text{Var}(X)</m>:</strong>
+                        <me>\text{Var}(X) = \frac{\alpha}{\lambda^2} = \frac{1.6}{(0.50)^2} = \frac{1.6}{0.25} = 6.40 \text{ inches}^2</me>
+                    </p></li>
+                    <li><p><strong>Standard Deviation, <m>\sigma_X</m>:</strong>
+                        <me>\sigma_X = \sqrt{\text{Var}(X)} = \sqrt{6.40} \approx 2.5298 \text{ inches}</me>
+                    </p></li>
+                </ul>
+                Rounded to two decimal places, the final parameters are a mean of <strong>3.20</strong> inches and a standard deviation of <strong>2.53</strong> inches.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: PDF Functional Mapping (Multiple Choice) -->
+        <!-- Part B: PDF Functional Mapping (Independent Distribution Task) -->
+    <task xml:id="task-gamma-pdf-algebraic-mc-v2">
+        <statement>
+            <p>
+                 Now consider a completely separate geographical zone in the Western United States where the average four-week summer rainfall totals is 3.2 inches with a standard deviation of 2.07 inches.
+                 
+            </p>
+            <p>
+                Assuming rainfall totals still follow a Gamma distribution, which of the following expressions represents the correct probability density function (PDF), <m>f(x)</m>, for this geographical zone?
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement><p><m>f(x) = \frac{0.75}{\Gamma(2.4)} x^{1.4} e^{-0.75x}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. Review the coefficient multiplier outside the variable pool. The numerator must raise the rate parameter <m>\lambda</m> to the power of the shape parameter <m>\alpha</m>, written as <m>\lambda^{\alpha}</m>, which is <m>0.75^{2.4}</m> rather than a linear <m>0.75</m>.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement><p><m>f(x) = \frac{0.75^{2.4}}{\Gamma(2.4)} x^{1.4} e^{-0.75x}</m></p></statement>
+                <feedback>
+                    <p>Correct! The standard algebraic blueprint for a Gamma distribution PDF using rate parameterization is defined as:</p>
+                    <me>f(x) = \frac{\lambda^{\alpha}}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\lambda x}</me>
+                    <p>Substituting the specific parameters for this separate zone (<m>\alpha = 2.4</m> and <m>\lambda = 0.75</m>) maps directly to the targeted functional structure:</p>
+                    <ul>
+                        <li><p>The variable exponent drops by exactly 1: <m>\alpha - 1 = 2.4 - 1 = 1.4</m>.</p></li>
+                        <li><p>The decay coefficient matches the new rate: <m>-\lambda x = -0.75x</m>.</p></li>
+                        <li><p>The normalizing scalar constant reduces to: <m>\frac{0.75^{2.4}}{\Gamma(2.4)}</m>.</p></li>
+                    </ul>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>f(x) = \frac{0.75^{2.4}}{\Gamma(2.4)} x^{2.4} e^{-0.75x}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you forgot to subtract 1 from the power index of the base variable term. The polynomial part must scale to <m>x^{\alpha - 1}</m>, which evaluates to <m>x^{1.4}</m>, not <m>x^{2.4}</m>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>f(x) = \frac{2.4^{0.75}}{\Gamma(0.75)} x^{-0.2} e^{-2.4x}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This expression parameterizes the distribution backwards by completely swapping the roles of the shape variable <m>\alpha</m> and the rate variable <m>\lambda</m>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>f(x) = \frac{1}{\Gamma(2.4)} x^{1.4} e^{-0.75x}</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This expression drops the <m>\lambda^{\alpha}</m> multiplier entirely from the fraction numerator. Without this scaling component, the total integrated area beneath the density curve would not sum to 1.00, rendering the PDF mathematically invalid.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+</exercise>
 
    </exercises>
 
@@ -22,11 +142,7 @@
 
 <exercises xml:id="hw-gamma-rv-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+
 
    </exercises>
 

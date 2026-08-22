@@ -3,18 +3,350 @@
 <section xml:id="sec-section-binomial-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Bernoulli and Binomial Random Variables</title>
 
+ <introduction>
  <p> 
-    Write intro to homework set.....  Goal, Purpose, Instructions....
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
   </p>
+</introduction>
 
 
  <exercises xml:id="hw-binom-rv" >
    <title>Interactive Exercises</title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-   </introduction>
+
+
+
+<exercise label="ex-binomial-colorado-energy-realistic" xmlns:pi="http://pretextbook.org">
+    <title>Binomial Distributions: Colorado Energy Conservation Audits</title>
+    <introduction>
+        <p>
+            Many utility companies promote environmental sustainability and energy conservation by offering discount rates to consumers who keep their monthly energy usage below certain established subsidy standards. A recent state environmental report notes that 35% of residential energy consumers in Colorado have reduced their home electricity usage sufficiently to qualify for these discounted rates. 
+        </p>
+        <p>
+            Suppose an energy inspector randomly selects a sample of 5 residential subscribers from Denver, Colorado. Let <m>X</m> denote the number of chosen subscribers who qualify for the favorable discounted rates. 
+        </p>
+
+    </introduction>
+
+    <!-- Part A: Probability Calculation (At least 4) -->
+    <task xml:id="task-colorado-energy-prob-at-least-4">
+        <statement>
+            <p>
+                Find the probability that at least four of the five randomly selected residential subscribers qualify for the favorable discounted energy rates.
+            </p>
+            <p>
+                Probability = <fillin  answer="0.0540" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Because we are drawing a fixed sample of independent residential households (<m>n = 5</m>) where each household has a constant, binary success probability of qualifying (<m>p = 0.35</m>), the random variable <m>X</m> follows a standard Binomial distribution: <m>X \sim \text{Binomial}(n = 5, p = 0.35)</m>.
+            </p>
+            <p>
+                The query asks for the probability that <term>at least four</term> households qualify, which corresponds to the sum of the disjoint discrete point probabilities for exactly 4 and exactly 5 successes:
+                <me>P(X \ge 4) = P(X = 4) + P(X = 5)</me>
+            </p>
+            <p>
+                Evaluating each point using the standard Binomial probability mass function formula, <m>P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}</m>:
+                <ul>
+                    <li>
+                        <p>
+                            <strong>Exactly 4 Qualify:</strong>
+                            <me>P(X = 4) = \binom{5}{4} (0.35)^4 (0.65)^1 = 5 \cdot 0.015006 \cdot 0.65 \approx 0.04877</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Exactly 5 Qualify:</strong>
+                            <me>P(X = 5) = \binom{5}{5} (0.35)^5 (0.65)^0 = 1 \cdot 0.005252 \cdot 1 \approx 0.00525</me>
+                        </p>
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Summing these individual probabilities together yields the cumulative interval area:
+                <me>P(X \ge 4) = 0.04877 + 0.00525 = 0.05402</me>
+                Rounded to four decimal places, the final probability that at least four households qualify for the favorable rates is exactly <strong>0.0540</strong> (or a 5.40% chance).
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Second Probability Computation Task (Fewer than 2) -->
+    <task xml:id="task-colorado-energy-prob-fewer-than-2">
+        <statement>
+            <p>
+                Find the probability that fewer than two of the five randomly selected residential subscribers qualify for the favorable discounted energy rates.
+            </p>
+            <p>
+                Probability = <fillin answer="0.4284" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                The query asks for the probability that <term>fewer than two</term> households qualify, which corresponds to the sum of the disjoint discrete point probabilities for exactly 0 and exactly 1 success:
+                <me>P(X \lt 2) = P(X = 0) + P(X = 1)</me>
+            </p>
+            <p>
+                Evaluating each point using the Binomial probability mass function formula:
+                <ul>
+                    <li>
+                        <p>
+                            <strong>Exactly 0 Qualify:</strong>
+                            <me>P(X = 0) = \binom{5}{0} (0.35)^0 (0.65)^5 = 1 \cdot 1 \cdot 0.11603 \approx 0.11603</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Exactly 1 Qualifies:</strong>
+                            <me>P(X = 1) = \binom{5}{1} (0.35)^1 (0.65)^4 = 5 \cdot 0.35 \cdot 0.17851 \approx 0.31239</me>
+                        </p>
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Summing these individual probabilities together yields the cumulative interval area:
+                <me>P(X \lt 2) = 0.11603 + 0.31239 = 0.42842</me>
+                Rounded to four decimal places, the final probability that fewer than two households qualify for the favorable rates is exactly <strong>0.4284</strong> (or a 42.84% chance).
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part C: Expected Value and Variance -->
+        <!-- Part C: Expected Value and Variance (Converted to Multiple Choice with Interpretation) -->
+    <task xml:id="task-colorado-energy-moments-mc">
+        <statement>
+
+            <p>
+                Calculate the expected number and the variance of qualifying households within a random sample of  <m>5</m> subscribers. Which option correctly identifies these values and delivers the most accurate  interpretation of their meaning?
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement>
+                    <p><m>E(X) = 3.50</m> households, <m>\text{Var}(X) = 1.05</m>. This indicates that a clear majority of the sampled households will reliably qualify for the subsidy standard during most audit cycles.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This configuration uses a success probability of <m>p = 0.70</m> from the old scenario. With Colorado's realistic baseline rate of 35%, the mean must shift lower, indicating that qualifying is the minority outcome state rather than the majority default.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement>
+                    <p><m>E(X) = 1.75</m> households, <m>\text{Var}(X) = 1.14</m>. This indicates that while you expect nearly 2 households to qualify on average, a variance close to the mean reveals high relative sample-to-sample volatility.</p>
+                </statement>
+                <feedback>
+                    <p>Correct! For any valid discrete random variable following a standard Binomial distribution, we evaluate the summary moments using algebraic parameter shortcuts:</p>
+                    <ul>
+                        <li><p><strong>Expected Value (Mean):</strong> <m>E(X) = n \cdot p = 5 \cdot 0.35 = 1.75</m> households.</p></li>
+                        <li><p><strong>Variance:</strong> <m>\text{Var}(X) = n \cdot p \cdot (1 - p) = 5 \cdot 0.35 \cdot 0.65 = 1.1375 \approx 1.14</m>.</p></li>
+                    </ul>
+                    <p><strong>Strategic Interpretation:</strong> In a small sample of 5, an expected value of 1.75 paired with a variance of 1.14 tells auditors to expect massive cluster fluctuations. Because the variance is high relative to the mean, drawing a sample with absolutely 0 qualifiers or a sample where 4 out of 5 qualify are both standard operational occurrences, rather than highly unusual anomalies.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p><m>E(X) = 1.75</m> households, <m>\text{Var}(X) = 1.75</m>. This indicates that the system behaves as a standard Poisson stream where the arrival count and dispersion are perfectly locked.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. While a Poisson distribution features an identical mean and variance (<m>\mu = \sigma^2</m>), a Binomial distribution's variance formula incorporates a regular dampening multiplier for failures, <m>(1 - p)</m>. Because <m>1 - 0.35 = 0.65 \lt 1</m>, the variance must be strictly smaller than the mean: <m>1.14 \lt 1.75</m>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p><m>E(X) = 2.50</m> households, <m>\text{Var}(X) = 1.25</m>. This indicates a perfectly symmetric, unskewed coin-tossing model where succeeding or failing to qualify are completely equally likely.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This matches a uniform or fair-coin system where <m>p = 0.50</m>. Because Colorado's actual conservation rate is lower (<m>p = 0.35</m>), the center of gravity shifts left and the distribution is right-skewed.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+</exercise>
+
+
+<exercise label="ex-binomial-drone-thrusters" xmlns:pi="http://pretextbook.org">
+    <title>Binomial Distributions: Redundant Engineering Systems in Gaming Tech</title>
+    <introduction>
+        <p>
+            During a championship sci-fi esports tournament, a media production company deploys an automated broadcast drone array to hover over the arena. To ensure stability, the drone's primary stabilization subsystem features a redundant bank of four identical hover-thrusters. Each individual thruster operates completely independently of the others.
+        </p>
+        <p>
+            Due to the extreme heat during the live event match, each individual thruster has a probability of <m>p = 0.20</m> of overheating and failing before the 1,000-second match countdown timer finishes. Crucially, the stabilization subsystem is designed with fail-safes: it will keep the drone airborne if any two of the  four thrusters  remain operational.
+        </p>
+
+    </introduction>
+
+    <!-- Part C: Exact Failures (Short Answer Entry) -->
+    <task xml:id="task-drone-exact-failures-input">
+<statement>
+            <p>
+                Calculate the  probability that  3 of the 4 thrusters will fail during the match.
+            </p>
+            
+            <p>
+                Probability (rounded to four decimal places) = <fillin  answer="0.0256" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                We are asked to find the probability of experiencing exactly 3 failures across the 4 independent components. In terms of our random variable <m>X</m> (which tracks the number of *surviving* thrusters), this is mathematically equivalent to solving for the point probability of exactly 1 success:
+                <me>P(\text{Exactly 3 Fail}) = P(X = 1)</me>
+            </p>
+            <p>
+                Evaluate this specific coordinate point using the standard Binomial probability mass function formula, where <m>n = 4</m>, <m>k = 1</m>, and the success probability is <m>p = 0.80</m>:
+                <md>
+                    <mrow>P(X = 1) \amp = \binom{4}{1} p^1 (1-p)^{n-1}</mrow>
+                    <mrow>\amp = \binom{4}{1} (0.80)^1 (0.20)^3</mrow>
+                    <mrow>\amp = 4 \cdot 0.80 \cdot 0.0080 = 0.0256</mrow>
+                </md>
+                The exact probability that exactly 3 thrusters fail is precisely <strong>0.0256</strong> (or a 2.56% chance). Notice that this matches the intermediate baseline component we isolated while setting up the complement subtraction loop in Part A!
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part A: Probability of Operation (Fill in the Blank) -->
+    <task xml:id="task-drone-survival-probability">
+        <statement>
+
+            <p>
+                Calculate the  probability that the drone stabilization subsystem successfully operates longer than the 1,000-second tournament window.
+            </p>
+
+            
+        </statement>
+       <choices>
+            <choice>
+                <statement><p>A. <m>0.1536</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the isolated point probability that exactly two components survive (<m>P(X = 2)</m>). The drone subsystem remains operational if <m>two, three, \text{ or } four</m> components function cleanly, so you must find the cumulative area for the entire interval.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p>B. <m>0.0272</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the catastrophic failure rate (<m>P(X \lt 2)</m>), which counts the scenarios where either 0 or only 1 thruster stays online. Subtract this value from total certainty (1.00) to isolate the successful operating space.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement><p>C. <m>0.9728</m></p></statement>
+                <feedback>
+                    <p>Correct! Because we have a fixed set of independent components (<m>n = 4</m>) where each has a constant binary success rate of remaining online (<m>p_{\text{success}} = 1 - 0.20 = 0.80</m>), the random count <m>X</m> follows a standard Binomial profile: <m>X \sim \text{Binomial}(n = 4, p = 0.80)</m>.</p>
+                    <p>The system successfully operates if <m>X \ge 2</m>. Applying the <strong>Complement Rule</strong> makes this check highly efficient:</p>
+                    <me>P(X \ge 2) = 1 - P(X \lt 2) = 1 - \left[ P(X = 0) + P(X = 1) \right]</me>
+                    <p>Evaluating the individual failure states using the Binomial PMF:</p>
+                    <ul>
+                        <li><p>Exactly 0 components survive: <m>\binom{4}{0} (0.80)^0 (0.20)^4 = 1 \cdot 1 \cdot 0.0016 = 0.0016</m></p></li>
+                        <li><p>Exactly 1 component survives: <m>\binom{4}{1} (0.80)^1 (0.20)^3 = 4 \cdot 0.80 \cdot 0.0080 = 0.0256</m></p></li>
+                    </ul>
+                    <p>Summing these lower tail blocks and subtracting from 1 yields: <m>1 - (0.0016 + 0.0256) = 1 - 0.0272 = 0.9728</m>. The cluster completes its run with a 97.28% reliability rate.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p>D. <m>0.8192</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This represents the probability that the system encounters at most one failure, but the calculation step forgot to include the perfect scenario where absolutely zero thrusters overheat (<m>P(X = 4)</m>).</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p>E. <m>0.4096</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This looks like the isolated point probability that exactly three components survive (<m>P(X = 3)</m>). Make sure to gather the full structural interval area across all operating states.</p>
+                </feedback>
+            </choice>
+        </choices>
+
+    </task>
+
+    <!-- Part B: Summary Moments & Volatility Analysis (Multiple Choice) -->
+    <task xml:id="task-drone-moments-mc">
+        <statement>
+
+            <p>
+                Calculate the  expected number and the variance of surviving thrusters in this 4-element array block. Which option correctly identifies these values and maps out the true risk behavior of the tech array?
+            </p>
+        </statement>
+        <choices>
+            <choice>
+                <statement>
+                    <p><m>E(X) = 0.80</m> thrusters, <m>\text{Var}(X) = 0.64</m>. This indicates that under normal conditions, almost all thrusters are expected to burn out immediately during the countdown launch sequence.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This option swaps the probability parameters, using the failure rate of 0.20 as the target success probability. Because each thruster has a dominant 80% chance of staying online, the expected survival count must be high.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement>
+                    <p><m>E(X) = 3.20</m> thrusters, <m>\text{Var}(X) = 0.64</m>. This confirms that while the vast majority of parts stay operational on average, a low variance keeps the cluster highly clustered around safe operating levels.</p>
+                </statement>
+                <feedback>
+                    <p>Correct! For any valid discrete random variable following a standard Binomial distribution, we evaluate the summary moments using algebraic parameter shortcuts based on our success parameters (<m>n = 4</m>, <m>p = 0.80</m>):</p>
+                    <ul>
+                        <li><p><strong>Expected Value (Mean):</strong> <m>E(X) = n \cdot p = 4 \cdot 0.80 = 3.20</m> operational thrusters.</p></li>
+                        <li><p><strong>Variance:</strong> <m>\text{Var}(X) = n \cdot p \cdot (1 - p) = 4 \cdot 0.80 \cdot 0.20 = 0.64</m>.</p></li>
+                    </ul>
+                    <p><strong>Operational Interpretation:</strong> An expected value of 3.20 proves that the system is engineered defensively. Since you only need 2 thrusters to survive, a mean of 3.20 paired with a very tight variance of 0.64 ensures that the random outcome is strongly squashed against the upper boundary, making a catastrophic drop down to 0 or 1 active thrusters an exceedingly rare edge case anomaly.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p><m>E(X) = 3.20</m> thrusters, <m>\text{Var}(X) = 3.20</m>. This implies the system's failure patterns behave like a standard continuous Poisson decay field.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. While a Poisson system features a locked mean and variance, a Binomial distribution dampens its variance by multiplying by the failure weight, <m>(1-p)</m>. Since <m>0.20 \lt 1</m>, the variance must be strictly smaller than the mean: <m>0.64 \lt 3.20</m>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p><m>E(X) = 2.00</m> thrusters, <m>\text{Var}(X) = 1.00</m>. This models a perfectly balanced system where turning on or burning out are entirely equally likely.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This matches a fair coin model where <m>p = 0.50</m>. Because the components are high-grade and heavily biased toward survival (<m>p = 0.80</m>), the center of mass sits much further right.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+</exercise>
 
    </exercises>
 
@@ -22,11 +354,7 @@
 
 <exercises xml:id="hw-binom-rv-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+   
 
 
 

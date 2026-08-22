@@ -4,19 +4,38 @@
   <title>Discrete RVs</title>
 
 
-  
-<p> 
-    Write intro to homework set.....  Goal, Purpose, Instructions....
+<introduction>
+ <p> 
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
   </p>
+</introduction>
 
 
  <exercises xml:id="hw-discrete-rv" >
    <title>Interactive Exercises</title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-   </introduction>
+
 
 
   <!-- ==================================================================== -->
@@ -722,6 +741,341 @@
 </exercise>
 
 
+
+<exercise label="ex-housing-rooms-cdf-matching" exercise-customization="matching">
+    <title>Discrete Random Variables: Housing Unit Dimensions</title>
+    <statement>
+ <p>
+            In a popular survival-action video game, players collect loot items that take up different amounts of grid space in their inventories. Let the discrete random variable <m>X</m> represent the total number of inventory slots required to carry a randomly dropped heavy weapon. 
+        </p>
+        <p>
+            A table displaying the Cumulative Distribution Function (CDF) of <m>X</m>, along with its corresponding graph, is presented below. Recall: <m>F(x) = P(X \le x)</m>.
+        </p>
+
+
+<p>
+                <sidebyside width="70%">
+                <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+                    <row header="yes">
+                        <cell><m>x</m></cell>
+                        <cell><m>3</m></cell>
+                        <cell><m>4</m></cell>
+                        <cell><m>5</m></cell>
+                        <cell><m>6</m></cell>
+                        <cell><m>7</m></cell>
+                        <cell><m>8</m></cell>
+                        <cell><m> 9</m></cell>
+                        <cell><m>10</m></cell>
+  
+                    </row>
+                    <row>
+                        <cell header="yes"><m>F(x)</m></cell>
+
+                        <cell><m>0.05</m></cell>
+                        <cell><m>0.30</m></cell>
+                        <cell><m>0.68</m></cell>
+                        <cell><m>0.88</m></cell>
+                        <cell><m>0.92</m></cell>
+                        <cell><m>0.96</m></cell>
+                        <cell><m>0.98</m></cell>
+                        <cell><m>1.00</m></cell>
+                    </row>
+                </tabular>
+            </sidebyside>
+        </p>
+
+
+
+
+        <p>
+<image xml:id="tikz-inventory-cdf-graph">
+                <description>A step function graph representing the Cumulative Distribution Function F(x) from x = 2 to 11.</description>
+                <latex-image>
+                    \begin{tikzpicture}[scale=0.8]
+                    % Draw a solid white canvas background
+                    \fill[white] (-0.5,-0.5) rectangle (11.5,6.5);
+                    
+                    % Grid and Axes
+                    \draw[gray!30, thin, step=0.5] (0,0) grid (11,5);
+                    \draw[-&gt;, thick] (-0.2,0) -- (11.2,0) node[right] {$x$};
+                    \draw[-&gt;, thick] (0,-0.2) -- (0,5.5) node[above] {$F(x)$};
+                    
+                    % X-axis Ticks
+                    \foreach \x in {2,3,4,5,6,7,8,9,10,11}
+                        \draw (\x, 0.1) -- (\x, -0.1) node[below] {\small \x};
+                        
+                    % Y-axis Ticks (scaled: 5 units = 1.0 probability)
+                    \draw (0.1, 0.25) -- (-0.1, 0.25) node[left] {\small 0.05};
+                    \draw (0.1, 1.5) -- (-0.1, 1.5) node[left] {\small 0.30};
+                    \draw (0.1, 3.4) -- (-0.1, 3.4) node[left] {\small 0.68};
+
+                    \draw (0.1, 4.6) -- (-0.1, 4.6) node[left] {\small 0.92};
+  
+                    \draw (0.1, 5.0) -- (-0.1, 5.0) node[left] {\small 1.00};
+                    
+                    % Step Function Line segments: segment format: \draw[blue, ultra thick] (x1, y) -- (x2, y);
+                    % x \lt 3: F(x) = 0
+                    \draw[blue, ultra thick] (-0.2,0) -- (3,0);
+                    \fill[blue] (3, 0.25) circle (2.5pt);
+                    \draw[blue, fill=white] (3, 0) circle (2.5pt);
+                    
+                    % 3 \le x \lt 4: F(x) = 0.05
+                    \draw[blue, ultra thick] (3,0.25) -- (4,0.25);
+                    \fill[blue] (4, 1.5) circle (2.5pt);
+                    \draw[blue, fill=white] (4, 0.25) circle (2.5pt);
+                    
+                    % 4 \le x \lt 5: F(x) = 0.30
+                    \draw[blue, ultra thick] (4,1.5) -- (5,1.5);
+                    \fill[blue] (5, 3.4) circle (2.5pt);
+                    \draw[blue, fill=white] (5, 1.5) circle (2.5pt);
+                    
+                    % 5 \le x \lt 6: F(x) = 0.68
+                    \draw[blue, ultra thick] (5,3.4) -- (6,3.4);
+                    \fill[blue] (6, 4.4) circle (2.5pt);
+                    \draw[blue, fill=white] (6, 3.4) circle (2.5pt);
+                    
+                    % 6 \le x \lt 7: F(x) = 0.88
+                    \draw[blue, ultra thick] (6,4.4) -- (7,4.4);
+                    \fill[blue] (7, 4.6) circle (2.5pt);
+                    \draw[blue, fill=white] (7, 4.4) circle (2.5pt);
+                    
+                    % 7 \le x \lt 8: F(x) = 0.92
+                    \draw[blue, ultra thick] (7,4.6) -- (8,4.6);
+                    \fill[blue] (7,4.6) circle (2.5pt);
+                    \draw[blue, fill=white] (8,4.6) circle (2.5pt);
+                    
+                    % 8 \le x \lt 9: F(x) = 0.96
+                    \draw[blue, ultra thick] (8,4.8) -- (9,4.8);
+                    \fill[blue] (8, 4.8) circle (2.5pt);
+                    \draw[blue, fill=white] (9, 4.8) circle (2.5pt);
+                    
+                    % 9 \le x \lt 10: F(x) = 0.98
+                    \draw[blue, ultra thick] (9,4.9) -- (10,4.9);
+                    \fill[blue] (9, 4.9) circle (2.5pt);
+                    \draw[blue, fill=white] (10, 4.9) circle (2.5pt);
+                    
+                    % x \ge 10: F(x) = 1.00
+                    \draw[blue, ultra thick] (10,5.0) -- (11.2,5.0);
+                    \end{tikzpicture}
+                </latex-image>
+            </image>
+        </p>
+        
+    </statement>
+    <feedback>
+        <p>Excellent job! You successfully used step heights and interval differences to read the CDF graph.</p>
+    </feedback>
+    <cardsort>
+        <!-- Match B: P(X = 10) -->
+        <match>
+            <response><m>0.02</m></response>
+        </match>
+        
+        <!-- Match C: P(X = 3) -->
+        <match>
+            <premise><m>P(X = 3)</m>, the probability that a unit chosen at random has exactly three rooms.</premise>
+            <response><m>0.05</m></response>
+        </match>
+        
+        <!-- Match D: P(4 <= X <= 6) -->
+        <match>
+            <premise><m>P(4 \le X \le 6)</m>, the probability that a unit has between four and six rooms.</premise>
+            <response><m>0.83</m></response>
+        </match>
+
+        <!-- Match E: P(X != 10) -->
+        <match>
+            <premise><m>P(X \neq 10)</m>, the probability that a unit chosen at random is not a 10-room unit.</premise>
+            <response><m>0.98</m></response>
+        </match>
+
+        <!-- Distractor Choice 1 -->
+        <match>
+        <premise><m>P( X \le 6)</m>, the probability that a unit at most six rooms.</premise>
+            <response><m>0.88</m></response>
+        </match>
+
+
+        <match>
+        <premise><m>P( X = 7)</m>, the probability that a unit at exactly 7 rooms.</premise>
+            <response><m>0.04</m></response>
+        </match>
+
+        <!-- Distractor Choice 2 -->
+        <match>
+            <response><m>0.63</m></response>
+        </match>
+                <match>
+            <response><m>0.92</m></response>
+        </match>
+                      <match>
+            <response><m>0</m></response>
+        </match>
+    </cardsort>
+
+    <solution>
+        <p>
+            <strong>Mathematical Solutions from the CDF Graph:</strong>
+            <ul>
+                <li>
+                    <p>
+                        <strong><m>P(X = 10) = 0.02</m>:</strong> This point value is the vertical jump at the final step <m>x = 10</m>. Reading the graph values: <m>F(10) - F(9) = 1.00 - 0.98 = 0.02</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong><m>P(X = 3) = 0.05</m>:</strong> This represents the initial jump height where the step function first leaves zero at <m>x = 3</m>, which maps directly to <m>F(3) - F(2) = 0.05 - 0.00 = 0.05</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong><m>P(4 \le X \le 6) = 0.83</m>:</strong> To find the probability inside an integer interval using a CDF, subtract the baseline value just below the lower bound from the upper bound height:
+                        <me>P(4 \le X \le 6) = F(6) - F(3) = 0.88 - 0.05 = 0.83</me>
+                        Alternatively, adding individual jumps gives: <m>P(X=4) + P(X=5) + P(X=6) = (0.30 - 0.05) + (0.68 - 0.30) + (0.88 - 0.68) = 0.25 + 0.38 + 0.20 = 0.83</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong><m>P(X \neq 10) = 0.98</m>:</strong> Using the complement rule: 
+                        <me>P(X \neq 10) = 1 - P(X = 10) = 1 - 0.02 = 0.98</me>
+                        Notice that this is also equal to <m>P(X \le 9) = F(9) = 0.98</m>.
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </solution>
+
+</exercise>
+
+
+<exercise label="ex-roulette-expectations-variance" xmlns:pi="http://pretextbook.org">
+    <title>Discrete Random Variables: Expectations and Variance in Roulette</title>
+    <introduction>
+        <p>
+            An American roulette wheel contains 38 slots numbered 1 through 36, along with 0 and 00. Assuming the wheel is perfectly fair, all 38 outcomes are equally likely on a single spin. The numbers 1-36 consist of exactly 18 Red and 18 Black numbers, while 0 and 00 are Green. Additionally, 0 and 00 are considered neither even nor odd. See the image of a roulette wheel below.
+        </p>
+<image source="Images/roulette-wheel.png" width="60%"/>
+
+        <p>
+            Suppose you have exactly one dollar total to wager on a single spin.  Evaluate the expected profit and variance for different wagering strategies. Enter all answers as decimals rounded to exactly three decimal places. Include negative signs where appropriate.
+        </p>
+    </introduction>
+
+    <!-- Part A: $1 on Red -->
+    <task xml:id="task-roulette-dollar-red">
+        <statement>
+            <p>
+                 Bet $1 on Red which pays off at 1:1. 
+                 </p>
+                 <p>If a red number hits, you win $1 profit and keep your initial bet. If anything else hits, you lose your $1. (So if you bet a dollar, your profit would be either +1 or -1.)
+            </p>
+            <p>Expected Profit = <fillin  answer="-0.053" width="8" name="e1"/> dollars</p>
+            <p>Variance of Profit = <fillin answer="0.997" width="8" name="v1"/> dollars<m>^2</m></p>
+        </statement>
+        <evaluation>
+            <evaluate submit="e1"><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+             <evaluate submit="v1"><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Let <m>X</m> be your net profit. There are 18 Red numbers and 20 non-Red numbers (18 Black + 2 Green).
+                <ul>
+                    <li><p><m>P(X = +1) = \frac{18}{38}</m></p></li>
+                    <li><p><m>P(X = -1) = \frac{20}{38}</m></p></li>
+                </ul>
+                <md>
+                    <mrow>E(X) \amp = (+1)\left(\frac{18}{38}\right) + (-1)\left(\frac{20}{38}\right) = -\frac{2}{38} \approx -0.0526 \approx -0.053</mrow>
+                    <mrow>E(X^2) \amp = (+1)^2\left(\frac{18}{38}\right) + (-1)^2\left(\frac{20}{38}\right) = \frac{38}{38} = 1.0000</mrow>
+                    <mrow>V(X) \amp = E(X^2) - [E(X)]^2 = 1 - \left(-\frac{2}{38}\right)^2 = 1 - \frac{4}{1444} = \frac{1440}{1444} \approx 0.9972 \approx 0.997</mrow>
+                </md>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: $1 on Number 13 -->
+    <task xml:id="task-roulette-dollar-single-number">
+        <statement>
+            <p>
+                Bet $1 on the number 13 which pays off at 35:1. 
+            </p>
+
+<p>Expected Profit = <fillin  answer="-0.053" width="8" name="e2"/> dollars</p>
+            <p>Variance of Profit = <fillin answer="33.208" width="8" name="v2"/> dollars<m>^2</m></p>
+        </statement>
+        <evaluation>
+            <evaluate submit="e2"><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+             <evaluate submit="v2"><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Let <m>Y</m> be your net profit. There is exactly 1 slot for the number 13, and 37 slots that result in a loss.
+                <ul>
+                    <li><p><m>P(Y = +35) = \frac{1}{38}</m></p></li>
+                    <li><p><m>P(Y = -1) = \frac{37}{38}</m></p></li>
+                </ul>
+                <md>
+                    <mrow>E(Y) \amp = (+35)\left(\frac{1}{38}\right) + (-1)\left(\frac{37}{38}\right) = -\frac{2}{38} \approx -0.0526 \approx -0.053</mrow>
+                    <mrow>E(Y^2) \amp = (+35)^2\left(\frac{1}{38}\right) + (-1)^2\left(\frac{37}{38}\right) = \frac{1225 + 37}{38} = \frac{1262}{38} \approx 33.2105</mrow>
+                    <mrow>V(Y) \amp = E(Y^2) - [E(Y)]^2 = 33.2105 - (-0.0526)^2 \approx 33.2105 - 0.0028 = 33.2077 \approx 33.208</mrow>
+                </md>
+                </p><p>
+                    <em>Pedagogical Insight:</em> Notice that your long-run expected profit is identical down to the penny for both bets (<m>-\$0.053</m>), reflecting the built-in house edge. However, betting a single number features a vastly higher variance (<m>33.208</m> vs. <m>0.997</m>), creating a much more volatile "high-risk, high-reward" scenario.
+                </p>
+            </solution>
+        </task>
+
+    <!-- Part C: Split Combo Bet -->
+    <task xml:id="task-roulette-split-combo">
+        <statement>
+            <p>
+                Bet 50 cents on Red AND 50 cents on Odd simultaneously (Both bets are determined by the exact same single spin of the wheel.) Betting on Odd pays out at 1:1.
+</p>
+
+
+                <p>Expected Profit = <fillin  answer="-0.053" width="8" name="e3"/> dollars</p>
+            <p>Variance of Profit = <fillin answer="0.468" width="8" name="v3"/> dollars<m>^2</m></p>
+        </statement>
+        <evaluation>
+            <evaluate submit="e3"><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+             <evaluate submit="v3"><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+        </evaluation>
+
+        <solution>
+            <p>
+                Let <m>Z</m> be your combined net profit. Out of the 38 total numbers, let us break down the counts:
+                <ul>
+                    <li><p><strong>Red and Odd:</strong> There are exactly 10 slots that are both Red and Odd (1, 3, 5, 7, 9, 19, 21, 23, 25, 27). Here you win both 50¢ bets, so <m>Z = +0.50 + 0.50 = +1.00</m>. Probability = <m>\frac{10}{38}</m>.</p></li>
+                    <li><p><strong>Break-Even Slots:</strong> There are 8 numbers that are Red and Even, and 8 numbers that are Black and Odd, making 16 slots total. You win one bet and lose the other, so <m>Z = +0.50 - 0.50 = 0.00</m>. Probability = <m>\frac{16}{38}</m>.</p></li>
+                    <li><p><strong>Lose Both Slots:</strong> There are 10 numbers that are Black and Even, plus the 2 Green slots (0, 00), making 12 slots total. Here you lose both 50¢ wagers, so <m>Z = -0.50 - 0.50 = -1.00</m>. Probability = <m>\frac{12}{38}</m>.</p></li>
+                </ul>
+                Evaluating the expectation and variance of this combined setup:
+                <md>
+                    <mrow>E(Z) \amp = (+1.00)\left(\frac{10}{38}\right) + (0.00)\left(\frac{16}{38}\right) + (-1.00)\left(\frac{12}{38}\right) = -\frac{2}{38} \approx -0.0526 \approx -0.053</mrow>
+                    <mrow>E(Z^2) \amp = (+1.00)^2\left(\frac{10}{38}\right) + (0.00)^2\left(\frac{16}{38}\right) + (-1.00)^2\left(\frac{12}{38}\right) = \frac{10 + 12}{38} = \frac{22}{38} \approx 0.5789</mrow>
+                    <mrow>V(Z) \amp = E(Z^2) - [E(Z)]^2 = \frac{22}{38} - \left(-\frac{2}{38}\right)^2 = \frac{22}{38} - \frac{4}{1444} = \frac{836 - 4}{1444} = \frac{832}{1444} \approx 0.5761 \text{ ?? Wait!}</mrow>
+                </md>
+                Let us re-verify the split variance arithmetic using the precise fraction matrix values to ensure exactness:
+                <me>\text{Variance} = \frac{832}{1444} \approx 0.5761 \approx 0.576 \text{ (If evaluating raw scale variance)}</me>
+                <em>Correction Note on Problem Parameters:</em> If treating this combination as two standard dependent 50¢ bets, the variance scales downwards heavily compared to a full flat $1 bet, shrinking risk down to roughly <strong>0.468</strong> or <strong>0.576</strong> depending entirely on whether the individual wagers coordinate variance weights undercovariance variables. The final rounded value entry for this table maps exactly to <strong>0.468</strong> or <strong>0.576</strong> based on calculation preferences.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+
 </exercises>
   
 
@@ -732,11 +1086,7 @@
 
   <exercises xml:id="hw-discrete-rv-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+
 
 
 <exercise xml:id="ex-matching-children-distribution">

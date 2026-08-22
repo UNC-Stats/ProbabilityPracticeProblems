@@ -3,17 +3,37 @@
 <section xml:id="sec-section-mixed-common-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Mixed Bag Practice</title>
 
-  <p> 
-    Write intro to homework set.....  Goal, Purpose, Instructions....
+<introduction>
+ <p> 
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
   </p>
+</introduction>
 
  <exercises xml:id="hw-common-discrete-rv-mixed" >
    <title>Interactive Exercises </title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-</introduction>
+
 
 
 <exercise label="ex-negative-binomial-prediabetes">
@@ -929,11 +949,7 @@ If this rate has not changed and if 100,000 cases from Colorado are reviewed for
 
 <exercises xml:id="hw-common-discrete-rv-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+
 
 
 

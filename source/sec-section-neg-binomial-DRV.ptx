@@ -3,18 +3,38 @@
 <section xml:id="sec-section-neg-binomial-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Negative Binomial Random Variable</title>
 
+<introduction>
  <p> 
-    Write intro to homework set.....  Goal, Purpose, Instructions....
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
   </p>
+</introduction>
 
 
  <exercises xml:id="hw-neg-binom-rv" >
    <title>Interactive Exercises</title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-   </introduction>
+
 
 
 <exercise label="ex-negbin-curb-painting-interactive">
@@ -174,17 +194,141 @@
 </exercise>
 
 
+
+<exercise label="ex-negative-binomial-airline-calls" xmlns:pi="http://pretextbook.org">
+    <title>Discrete Distributions: Geometric and Negative Binomial Processes</title>
+    <introduction>
+        <p>
+            An automated audit of an airline reservation office establishes that during peak travel windows, the telephone lines are completely busy 60% of the time. 
+        </p>
+
+        <p>
+           Enter all parameters and final probabilities as decimals rounded to exactly four decimal places.
+        </p>
+    </introduction>
+
+    <!-- Part A: Geometric Distribution -->
+    <task xml:id="task-airline-geometric-input">
+        <statement>
+
+            <p>
+                Suppose you are calling the office during the peak travel window. Find the probability that it takes you exactly 4 total attempts to get through to an agent for the first time.
+            </p>
+            <p>
+                Probability = <fillin answer="0.0864" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Let the discrete random variable <m>X</m> denote the number of attempts required to secure the first successful connection. Because we are counting trials until a single binary success occurs, <m>X</m> follows a standard Geometric distribution: <m>X \sim \text{Geometric}(p = 0.40)</m>.
+            </p>
+            <p>
+                Evaluating the Geometric PMF expression, <m>P(X = x) = (1-p)^{x-1}p</m>, at <m>x = 4</m>:
+                <me>P(X = 4) = (0.60)^{4-1} \cdot 0.40 = (0.60)^3 \cdot 0.40 = 0.216 \cdot 0.40 = 0.0864</me>
+                The probability that your first connection occurs on exactly the 4th attempt is precisely <strong>0.0864</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Negative Binomial (Total Trials) -->
+    <task xml:id="task-airline-negbin-trials-input">
+        <statement>
+            <p>
+                Now suppose that both you and a friend must each complete a separate reservation call to this office. If you take turns calling, find the probability that it takes a total of 4 tries for both of you to get through and reach agents.
+            </p>
+            <p>
+                Probability = <fillin mode="string" answer="0.1728" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Let the random variable <m>Y</m> denote the total number of combined attempts required to secure exactly <m>r = 2</m> successful connections. Because we are tracking total trials until a specific number of successes is reached, <m>Y</m> follows a Negative Binomial distribution parameterized by trials: <m>Y \sim \text{NegBinomial}(r = 2, p = 0.40)</m>.
+            </p>
+            <p>
+                To hit the 2nd success on exactly the 4th try, the system must capture exactly 1 success during the first 3 tries, and then finish with a guaranteed success on the 4th try:
+                <me>P(Y = y) = \binom{y-1}{r-1} p^r (1-p)^{y-r}</me>
+                <me>P(Y = 4) = \binom{4-1}{2-1} (0.40)^2 (0.60)^{4-2} = \binom{3}{1} (0.16) (0.36) = 3 \cdot 0.0576 = 0.1728</me>
+                The probability that a total of 4 tries is required to complete both calls is precisely <strong>0.1728</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part C: Alternative Negative Binomial (Worded as Failures) -->
+    <task xml:id="task-airline-negbin-failures-input">
+        <statement>
+
+            <p>
+                Again, suppose that both you and a friend must each complete a separate reservation call to this office. Calculate the probability that you all encounter a busy line exactly 3 times before both of you eventually get through to an agent.
+            </p>
+            <p>
+                Probability = <fillin mode="string" answer="0.1382" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Let the random variable <m>F</m> denote the number of busy signals (failures) encountered before securing <m>r = 2</m> active connections. Under this shifted phrasing model, if we want exactly 3 failures, the total number of trials scales directly to: <m>\text{Trials} = \text{Successes} + \text{Failures} = 2 + 3 = 5 \text{ total tries}</m>.
+            </p>
+            <p>
+                Evaluating the alternative shifted Negative Binomial PMF at <m>F = 3</m>:
+                <me>P(F = f) = \binom{f + r - 1}{f} p^r (1-p)^f</me>
+                <me>P(F = 3) = \binom{3 + 2 - 1}{3} (0.40)^2 (0.60)^3 = \binom{4}{3} (0.16) (0.216) = 4 \cdot 0.03456 = 0.13824</me>
+                Rounded to four decimal places, the probability of enduring exactly 3 failures before completing both calls is exactly <strong>0.1382</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part D: Long-Run Expected Moments -->
+    <task xml:id="task-airline-moments-input">
+        <statement>
+            <p>
+                Find the expected number of total combined calling attempts required for you and your friend to both get through.
+            </p>
+            <p>Expected Total Tries = <fillin answer="5.00" width="8"/> </p>
+
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                For a Negative Binomial process tracking total trials until <m>r = 2</m> successes are met with an individual success probability of <m>p = 0.40</m>, we apply the shortcut moment formulas:
+                <ul>
+                    <li>
+                        <p>
+                            <strong>Expected Value (Mean Total Trials):</strong>
+                            <me>E(\text{Total}) = \frac{r}{p} = \frac{2}{0.40} = 5.00 \text{ attempts}</me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Variance of Total Trials:</strong>
+                            <me>\text{Var}(\text{Total}) = \frac{r(1-p)}{p^2} = \frac{2(0.60)}{(0.40)^2} = \frac{1.20}{0.16} = 3.75 \text{ attempts}^2</me>
+                        </p>
+                    </li>
+                </ul>
+                Rounded to two decimal places, the expected total attempts required is <strong>5.00</strong> with an underlying variance of <strong>3.75</strong>.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+
    </exercises>
 
 
 
 <exercises xml:id="hw-neg-binom-rv-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
 
 
 

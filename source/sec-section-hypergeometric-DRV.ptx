@@ -3,18 +3,38 @@
 <section xml:id="sec-section-hypergeometric-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Hypergeometric Random Variable</title>
 
+<introduction>
  <p> 
-    Write intro to homework set.....  Goal, Purpose, Instructions....
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
   </p>
+</introduction>
 
 
  <exercises xml:id="hw-hyper-rv" >
    <title>Interactive Exercises</title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-   </introduction>
+
 
 
 <exercise xml:id="ex-cookie-jar-hypergeometric-expanded">
@@ -221,17 +241,296 @@
 </task>           
         </exercise>      
 
+
+
+
+<exercise label="ex-hypergeometric-aerospace-assembly" xmlns:pi="http://pretextbook.org">
+    <title>Hypergeometric Distributions: Sampling Without Replacement in Precision Assembly</title>
+    <introduction>
+        <p>
+            An aerospace cleanroom facility assembles tracking  modules onto satellite chassis blocks. A plug-and-play module with properly drilled alignment holes takes exactly 1 minute to secure. However, if the mounting holes were improperly drilled at the supplier facility, the technicians must manually re-drill the bracket, stretching the installation time out to 10 minutes.
+        </p>
+        <p>
+            The staging inventory area holds a total batch of 20 modules in stock, of which exactly 2 contain improperly drilled alignment holes. A technician randomly selects a subset of 5 tracking modules from the 20 available items to install on the next 5 satellites on the floor. 
+        </p>
+       
+        <p>
+            Note: Enter all final probability and timing answers as decimals rounded to exactly three decimal places.
+        </p>
+    </introduction>
+
+    <!-- Part A: Probability all 5 fit perfectly -->
+    <task xml:id="task-hyper-perfect-fit-probability">
+        <statement>
+            <p>
+                 Find the probability that all 5 randomly selected tracking modules fit properly on the first attempt, requiring zero re-drilling work.
+            </p>
+            <p>
+                <m>P(X = 0)</m> = <fillin answer="0.553" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To evaluate <m>P(X = 0)</m>, use the standard Hypergeometric probability mass function (PMF). We need to choose exactly 0 defective modules from the 2 available, and exactly 5 flawless modules from the 18 working items, divided by the total combinations of drawing 5 cards from a pool of 20:
+                <me>P(X = k) = \frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{N}{n}}</me>
+                <me>P(X = 0) = \frac{\binom{2}{0}\binom{18}{5}}{\binom{20}{5}} = \frac{1 \cdot 8568}{15504} = \frac{8568}{15504} \approx 0.55263</me>
+                Rounded to three decimal places, the probability that all 5 modules install cleanly with zero re-drilling is exactly <strong>0.553</strong> (a 55.3% chance).
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Mean Time to Install -->
+    <task xml:id="task-hyper-mean-time">
+        <statement>
+            <p>
+                 Let the  random variable <m>T</m> represent the total combined time (in minutes) required to complete the installation of all 5 selected tracking modules. Find the expected mean and standard deviation for the installation time.
+            </p>
+            <p>
+                Expected Mean Time = <fillin  answer="9.500" width="8" name="mean_install"/> minutes
+                Standard Deviation = <fillin  answer="5.394" width="8" name= "sd_install"/> minutes
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate submit="mean_install">
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+             <evaluate submit="sd_install">
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                First, calculate the expected number of defective units <m>E(X)</m> pulled inside a standard Hypergeometric draft:
+                <me>E(X) = n \cdot \left(\frac{M}{N}\right) = 5 \cdot \left(\frac{2}{20}\right) = 5 \cdot 0.10 = 0.50 \text{ expected defective modules}</me>
+            </p>
+            <p>
+                Next, define the linear time function, <m>T</m>. Each of the <m>X</m> defective units takes 10 minutes, while each of the remaining <m>(5 - X)</m> working units takes 1 minute:
+                <me>T = 10X + 1(5 - X) = 9X + 5</me>
+            </p>
+            <p>
+                By the linear properties of expected value models, apply the expectation transformation:
+                <me>E(T) = E(9X + 5) = 9E(X) + 5 = 9(0.50) + 5 = 4.50 + 5 = 9.50</me>
+                The expected baseline time to finish the entire assembly sequence is exactly <strong>9.500</strong> minutes.
+            </p>
+       
+   
+            <p>
+                To evaluate the spread parameter of our timing distribution, we first find the variance of our underlying Hypergeometric counting variable <m>\text{Var}(X)</m>, which incorporates the finite population correction fraction:
+                <me>\text{Var}(X) = n \cdot \left(\frac{M}{N}\right) \cdot \left(1 - \frac{M}{N}\right) \cdot \left(\frac{N-n}{N-1}\right)</me>
+                <me>\text{Var}(X) = 5 \cdot (0.10) \cdot (0.90) \cdot \left(\frac{20-5}{20-1}\right) = 0.45 \cdot \left(\frac{15}{19}\right) = \frac{6.75}{19} \approx 0.355263</me>
+            </p>
+            <p>
+                Now, scale this variance parameter up to match our linear time transformation matrix <m>T = 9X + 5</m>. Remember that additive constant displacements disappear under variance operations, while coefficient weights grow quadratically:
+                <me>\text{Var}(T) = \text{Var}(9X + 5) = 9^2 \cdot \text{Var}(X) = 81 \cdot 0.355263 \approx 28.776315</me>
+            </p>
+            <p>
+                Take the square root of the system variance to isolate the final standard deviation performance metric:
+                <me>\sigma_T = \sqrt{\text{Var}(T)} = \sqrt{28.776315} \approx 5.36435</me>
+                Let us re-verify using exact fractions to confirm precision limits:
+                <me>\sigma_T = \sqrt{81 \cdot \frac{27}{76}} = \sqrt{\frac{2187}{76}} = \sqrt{28.7763} \approx 5.36435</me>
+                Rounded to three decimal places, the standard deviation for the total satellite component assembly operation is exactly <strong>5.364</strong> minutes.
+            </p>
+        </solution>
+    </task>
+
+        <!-- Part D: Time Threshold Inequality Probability (Short Answer Entry) -->
+    <task xml:id="task-hyper-time-threshold-probability">
+        <statement>
+            <p>
+                <strong>Part D: Downside Schedule Risk Assessment</strong>
+            </p>
+            <p>
+                A project manager flags any assembly block sequence that takes strictly longer than 10 minutes to complete, as it threatens to bottleneck the downstream cleanroom satellite alignment schedule.
+            </p>
+            <p>
+                Calculate the  probability that the installation of the 5 chosen modules takes longer than 10 minutes.
+            </p>
+            <p>
+                <m>P(T \gt 10)</m> = <fillin answer="0.447" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To evaluate the schedule risk parameter, we translate the timing constraint inequality condition <m>T \gt 10</m> back into an equivalent condition for our underlying discrete counting variable <m>X</m> (the number of improperly drilled modules selected).
+            </p>
+            <p>
+                Using the linear time transformation formula derived in Part B, <m>T = 9X + 5</m>:
+                <me>T \gt 10 \implies 9X + 5 \gt 10 \implies 9X \gt 5 \implies X \gt \frac{5}{9} \approx 0.556</me>
+                Because <m>X</m> is a discrete counting variable that can only take on whole integer values (<m>X \in \{0, 1, 2\}</m>), the condition <m>X \gt 0.556</m> is mathematically equivalent to stating that <m>X \ge 1</m>. 
+            </p>
+            <p>
+                We can compute <m>P(X \ge 1)</m> efficiently by applying the **Complement Rule**:
+                <me>P(T \gt 10) = P(X \ge 1) = 1 - P(X = 0)</me>
+                Leveraging the baseline clean-fit probability calculated in Part A (<m>P(X = 0) = \frac{8568}{15504} \approx 0.55263</m>):
+                <me>P(X \ge 1) = 1 - \frac{8568}{15504} = \frac{6936}{15504} \approx 0.44737</me>
+                Rounded to three decimal places, the final probability that the assembly process takes strictly longer than 10 minutes is exactly <strong>0.447</strong> (or a 44.7% chance).
+            </p>
+        </solution>
+    </task>
+
+</exercise>
+
+
+
+<exercise label="ex-hypergeometric-student-rentals" xmlns:pi="http://pretextbook.org">
+    <title>Hypergeometric Distributions: Student Equipment Rentals</title>
+    <introduction>
+        <p>
+            At the beginning of the semester, a campus student housing agency prepares a batch of used dorm mini-fridges that were returned by departing students, cleaned, and processed to go back out on lease agreements. Because major mechanical overhauls are not performed, a portion of the inventory remains prone to malfunctioning. 
+        </p>
+        <p>
+            Among a specific cluster of eight mini-fridges available today, exactly three are malfunctioning. A student group arrives and needs to lease four mini-fridges. So, four of the eight available  are randomly selected and leased to the students.
+        </p>
+        
+        <p>
+           Enter all answers as decimals. Round probabilities to exactly four decimal places. Round expected values and standard deviations to exactly two decimal places.
+        </p>
+    </introduction>
+
+    <!-- Part A: Probability of at least one malfunctioning -->
+    <task xml:id="task-rental-at-least-one">
+        <statement>
+            <p>
+                Find the probability that the students receive at least one malfunctioning mini-fridge.
+            </p>
+            <p>
+                Probability = <fillin mode="string" answer="0.9286" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                We track a total population of <m>N = 8</m> fridges, containing <m>M = 3</m> defective units and <m>N - M = 5</m> flawless units. A sample size of <m>n = 4</m> is drawn without replacement. To find <m>P(X \ge 1)</m>, it is most efficient to apply the **Complement Rule**:
+                <me>P(X \ge 1) = 1 - P(X = 0)</me>
+            </p>
+            <p>
+                Evaluate the probability of drawing absolutely zero malfunctioning appliances using the Hypergeometric probability mass function formula, <m>P(X = k) = \frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{N}{n}}</m>:
+                <me>P(X = 0) = \frac{\binom{3}{0}\binom{5}{4}}{\binom{8}{4}} = \frac{1 \cdot 5}{70} = \frac{5}{70} = \frac{1}{14} \approx 0.0714</me>
+            </p>
+            <p>
+                Completing the subtraction from certainty:
+                <me>P(X \ge 1) = 1 - \frac{1}{14} = \frac{13}{14} \approx 0.92857</me>
+                Rounded to four decimal places, the probability is exactly <strong>0.9286</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Probability of exactly two malfunctioning -->
+    <task xml:id="task-rental-exactly-two">
+        <statement>
+            <p>
+               Find the probability that the students receive exactly two malfunctioning mini fridges.
+            </p>
+            <p>
+                Probability = <fillin  answer="0.4286" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To evaluate the probability of hitting exactly two malfunctions, we configure the Hypergeometric PMF at <m>k = 2</m>:
+                <me>P(X = 2) = \frac{\binom{3}{2}\binom{5}{2}}{\binom{8}{4}} = \frac{3 \cdot 10}{70} = \frac{30}{70} = \frac{3}{7} \approx 0.42857</me>
+                Rounded to four decimal places, the probability is exactly <strong>0.4286</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part C: Expected Value -->
+    <task xml:id="task-rental-expected-value">
+        <statement>
+            <p>
+                 Calculate the expected number of malfunctioning appliances the group of students will get. 
+            </p>
+            <p>
+                Expected Value = <fillin answer="1.50" width="8"/> malfunctioning fridges
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                For a Hypergeometric variable, the long-run expectation scales simply as the sample size multiplied by the underlying defective ratio of the population pool:
+                <me>E(X) = n \cdot \left(\frac{M}{N}\right) = 4 \cdot \left(\frac{3}{8}\right) = \frac{12}{8} = 1.50</me>
+                The expected average is exactly <strong>1.50</strong> malfunctioning appliances.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part D: Standard Deviation -->
+    <task xml:id="task-rental-standard-deviation">
+        <statement>
+            <p>
+                 Compute the standard deviation for the expected number of malfunctioning appliances.
+            </p>
+            <p>
+                Standard Deviation = <fillin  answer="0.73" width="8"/> malfunctioning fridges
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To calculate the standard deviation, we evaluate the Hypergeometric variance model, which incorporates the finite population correction adjustment fraction, <m>\frac{N-n}{N-1}</m>:
+                <me>\text{Var}(X) = n \cdot \left(\frac{M}{N}\right) \cdot \left(1 - \frac{M}{N}\right) \cdot \left(\frac{N-n}{N-1}\right)</me>
+                <me>\text{Var}(X) = 4 \cdot \left(\frac{3}{8}\right) \cdot \left(\frac{5}{8}\right) \cdot \left(\frac{8-4}{8-1}\right) = 1.5 \cdot 0.625 \cdot \left(\frac{4}{7}\right) = \frac{15}{28} \approx 0.535714</me>
+            </p>
+            <p>
+                Take the square root of the variance to isolate the final standard deviation performance metric:
+                <me>\sigma_X = \sqrt{\frac{15}{28}} \approx 0.73192</me>
+                Rounded to two decimal places, the standard deviation is exactly <strong>0.73</strong>.
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
    </exercises>
 
 
 
 <exercises xml:id="hw-hyper-rv-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+
 
    </exercises>
 

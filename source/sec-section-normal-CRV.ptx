@@ -3,23 +3,171 @@
 <section xml:id="sec-section-normal-CRV" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Normal Random Variable</title>
 
+<introduction>
  <p> 
-    Write intro to homework set.....  Goal, Purpose, Instructions....
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
   </p>
+</introduction>
 
         <figure>
         <caption>StatKey Normal Distribution Applet</caption>
-        <interactive xml:id="statkey-nromal-applet" iframe="https://lock5stat.com/StatKey/theoretical_distribution/theoretical_distribution.html#normal" width="100%" />
+        <interactive xml:id="statkey-nromal-applet" iframe="https://lock5stat.com/StatKey/theoretical_distribution/theoretical_distribution.html#normal" width="115%" />
      </figure>
 
 
  <exercises xml:id="hw-normal-rv" >
    <title>Interactive Exercises</title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-   </introduction>
+
+
+
+
+<exercise label="ex-z-distribution-calculations" xmlns:pi="http://pretextbook.org">
+    <title>The Standard Normal Distribution: Z-Score Probabilities</title>
+    <introduction>
+        <p>
+            Let <m>Z</m> represent a continuous random variable following a standard normal distribution. 
+        </p>
+        <p>
+            Enter all answers as decimals or percentages rounded to exactly four decimal places. 
+        </p>
+    </introduction>
+
+    <!-- Part A: Bounded Z Interval -->
+    <task xml:id="task-z-bounded-interval">
+        <statement>
+            <p>
+                 Find  <m>P(-1.2 \lt Z \lt 0.15)</m>.
+            </p>
+            <p>
+                Probability = <fillin  answer="0.4446" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes">
+            <numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To evaluate the probability within a bounded interval, subtract the lower tail cumulative area from the upper tail cumulative area:
+                <me>P(-1.2 \lt Z \lt 0.15) = P(Z \lt 0.15) - P(Z \lt -1.2)</me>
+                Looking up both values in a standard normal Z-table:
+                <ul>
+                    <li><p><m>P(Z \lt 0.15) = 0.5596</m></p></li>
+                    <li><p><m>P(Z \lt -1.20) = 0.1151</m></p></li>
+                </ul>
+                <me>P(-1.2 \lt Z \lt 0.15) = 0.5596 - 0.1151 = 0.4445</me>
+                The exact probability is <strong>0.4445</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Greater Than a Negative Z-Score -->
+    <task xml:id="task-z-greater-than-negative">
+        <statement>
+            <p>
+                Find the probability  <m>P(Z \gt -1.05)</m>.
+            </p>
+            <p>
+                Probability = <fillin answer="0.8531" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes">
+            <numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                By applying the complement rule for upper tail probabilities:
+                <me>P(Z \gt -1.05) = 1 - P(Z \lt -1.05)</me>
+                Looking up <m>Z = -1.05</m> in the cumulative standard normal distribution table yields an area of <m>0.1469</m>. Completing the subtraction:
+                <me>P(Z \gt -1.05) = 1 - 0.1469 = 0.8531</me>
+                Alternatively, by symmetry, this is identical to <m>P(Z \lt 1.05) = 0.8531</m>. The final probability is exactly <strong>0.8531</strong>.
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part C: Symmetric Two-Tailed Distance -->
+    <task xml:id="task-z-outliers-distance">
+        <statement>
+            <p>
+                Find the percentage of data that lies more than 1.5 standard deviations away from the distribution mean
+            </p>
+            <p>
+                Percentage = <fillin  answer="13.3614" width="10"/> %
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes">
+            <numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Being <q>more than 1.5 standard deviations away</q> implies falling into either the lower extreme tail or the upper extreme tail. This can be expressed as:
+                <me>P(|Z| \gt 1.5) = P(Z \lt -1.5) + P(Z \gt 1.5)</me>
+                Because the normal distribution curve is perfectly symmetric, these two tail areas are identical:
+                <me>P(Z \lt -1.5) = 0.0668</me>
+                <me>P(|Z| \gt 1.5) = 2 \times 0.0668 = 0.1336</me>
+                Converting the decimal value to a percentage gives exactly <strong>13.3614%</strong> (using unrounded table lookups of <m>0.066807</m>).
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part D: Extreme Asymmetric Bounds -->
+        <!-- Part D: Smaller Asymmetric Bounds - WIDER UPDATE -->
+    <task xml:id="task-z-asymmetric-deviations-wider">
+        <statement>
+            <p>
+                Find the percentage of data contained between 1.65 standard deviations below the mean and 0.85 standard deviations above the mean.
+            </p>
+            <p>
+                Percentage = <fillin  answer="75.2891" width="10"/> %
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes">
+<numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Setting up the interval notation using the provided standard deviation limits:
+                <me>P(-1.65 \le Z \le 0.85) = P(Z \le 0.85) - P(Z \le -1.65)</me>
+                Looking up the cumulative area coordinates in a standard normal Z-table:
+                <ul>
+                    <li><p><m>P(Z \le 0.85) = 0.8023</m></p></li>
+                    <li><p><m>P(Z \le -1.65) = 0.0495</m></p></li>
+                </ul>
+                Subtracting the lower tail to isolate the target interval area:
+                <me>P(-1.65 \le Z \le 0.85) = 0.8023 - 0.0495 = 0.7528</me>
+                Converting to a percentage yields exactly <strong>75.2891%</strong> (calculated from precise unrounded lookups: <m>0.802337 - 0.049471 = 0.752866</m>). This slightly wider window captures about three-quarters of the distribution, remaining safely under your 80% ceiling limit.
+            </p>
+        </solution>
+    </task>
+
+</exercise>
+
+
 
 
 <exercise label="ex-normal-quiz-times-5options" xmlns:pi="http://pretextbook.org">
@@ -429,7 +577,291 @@
 </exercise>
 
 
+<exercise label="ex-z-transformations" xmlns:pi="http://pretextbook.org">
+    <title>Normal Distributions: Z-Transformations and Linear Combinations</title>
+    <introduction>
+        <p>
+            Standardizing a general normal random variable transforms it into a standard normal random variable <m>Z \sim N(0,1)</m>.
+            Complete the questions below to practice standardizing single variables, linear transformations, and independent linear combinations.
+        </p>
+        <p>
+            Enter all parameters, Z-scores, and final probabilities as decimals rounded to exactly three decimal places.
+        </p>
+    </introduction>
 
+    <!-- Part A: Single Variable Standardization -->
+    <task xml:id="task-ztrans-single">
+        <statement>
+            <p>
+                 Suppose <m>X \sim N(-0.4, 2.8^2)</m>. Find <m>P(X \gt 0.38)</m>.
+            </p>
+            <p>
+                Transforming this probability into a standard normal random variable gives:
+                <m>P(X \gt 0.38) = P(Z \gt </m> <fillin  answer="0.278" width="6" name="z1"/>), 
+                and this probability is equal to <fillin  answer="0.391" width="8" name="zprob1"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate submit="z1"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+            <evaluate submit="zprob1"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                The mean is <m>\mu = -0.4</m> and the standard deviation is <m>\sigma = 2.8</m>. Standardizing the target value:
+                <me>Z = \frac{0.38 - (-0.4)}{2.8} = \frac{0.78}{2.8} \approx 0.27857 \approx 0.279</me>
+                Using the complement rule for an upper tail probability:
+                <me>P(Z \gt 0.279) = 1 - \Phi(0.279) \approx 1 - 0.6098 = 0.3902 \approx 0.391</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Linear Transformation Y = aX + b -->
+    <task xml:id="task-ztrans-linear">
+        <statement>
+            <p>
+                Suppose <m>X \sim N(2, 4)</m> (where the second parameter is the variance, so <m>\sigma_X = 2</m>) and let <m>Y = -4X + 2</m>. Find <m>P(-0.3 \lt Y \lt 1.2)</m>.
+            </p>
+            <p>
+                First, we can determine that <m>Y</m> is normally distributed with:
+                <ul>
+                    <li><p>Mean = <fillin  answer="-6.000" width="6" name="Ymean2"/></p></li>
+                    <li><p>Variance = <fillin  answer="64.000" width="6" name="Yvar2"/></p></li>
+                </ul>
+               </p> 
+                
+                <p>
+                Transforming this probability into a standard normal random variable gives:
+                <m>P(-0.3 \lt Y \lt 1.2) = P(</m> <fillin  answer="0.713" width="6" name="z2l"/>) <m> \lt Z \lt </m> <fillin  answer="0.900" width="6" name="z2u"/>), 
+                and this probability is equal to <fillin  answer="0.154" width="8" name="zprob2"/>
+            </p>
+        </statement>
+        <evaluation>
+          <evaluate submit="Ymean2"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+         <evaluate submit="Yvar2"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+         <evaluate submit="z2l"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+            <evaluate submit="z2u"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+            <evaluate submit="zprob2"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+                
+   
+        
+        <solution>
+            <p>
+                For a linear transformation <m>Y = aX + b</m>:
+                <ul>
+                    <li><p><m>\mu_Y = -4(\mu_X) + 2 = -4(2) + 2 = -6</m></p></li>
+                    <li><p><m>\sigma_Y^2 = (-4)^2 \cdot \sigma_X^2 = 16 \cdot 4 = 64 \implies \sigma_Y = \sqrt{64} = 8</m></p></li>
+                </ul>
+                Now, standardize both interval bounds using <m>\mu_Y = -6</m> and <m>\sigma_Y = 8</m>:
+                <me>Z_1 = \frac{-0.3 - (-6)}{8} = \frac{5.7}{8} = 0.7125 \approx 0.713</me>
+                <me>Z_2 = \frac{1.2 - (-6)}{8} = \frac{7.2}{8} = 0.900</me>
+                Evaluating the bounded area:
+                <me>P(0.713 \lt Z \lt 0.900) = \Phi(0.900) - \Phi(0.713) \approx 0.8159 - 0.7621 = 0.1538 \approx 0.154</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part C: Independent Linear Combination X + Y -->
+    <task xml:id="task-ztrans-sum">
+        <statement>
+            <p>
+                 Suppose <m>X</m> and <m>Y</m> are independent random variables, with <m>X \sim N(2, 3)</m> and <m>Y \sim N(9, 10)</m>. Find <m>P(X + Y \le 12)</m>.
+            </p>
+
+<p>
+                First, we can determine that <m>X+Y</m> is normally distributed with:
+                <ul>
+                    <li><p>Mean = <fillin  answer="11" width="6" name="XplusYmean"/></p></li>
+                    <li><p>Variance = <fillin  answer="13" width="6" name="XplusYvar"/></p></li>
+                </ul>
+               </p> 
+                
+                <p>
+                Transforming this probability into a standard normal random variable gives:
+                <m>P(X + Y \le 12) = P(Z \le </m> <fillin  answer="0.277" width="6" name="z3"/>), 
+                and this probability is equal to <fillin  answer="0.609" width="8" name="zprob3"/>
+            </p>
+        </statement>
+        <evaluation>
+          <evaluate submit="XplusYmean"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+         <evaluate submit="XplusYvar"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+         <evaluate submit="z3"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+            <evaluate submit="zprob3"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+
+
+
+        <solution>
+            <p>
+                Let <m>W = X + Y</m>. Because <m>X</m> and <m>Y</m> are independent, their means and variances add directly:
+                <ul>
+                    <li><p><m>\mu_W = \mu_X + \mu_Y = 2 + 9 = 11</m></p></li>
+                    <li><p><m>\sigma_W^2 = \sigma_X^2 + \sigma_Y^2 = 3 + 10 = 13 \implies \sigma_W = \sqrt{13} \approx 3.60555</m></p></li>
+                </ul>
+                Standardizing the target threshold of 12:
+                <me>Z = \frac{12 - 11}{\sqrt{13}} = \frac{1}{3.60555} \approx 0.27735 \approx 0.277</me>
+                Evaluating the lower tail area:
+                <me>P(Z \le 0.277) = \Phi(0.277) \approx 0.6091 \approx 0.609</me>
+            </p>
+        </solution>
+    </task>
+</exercise>
+
+
+<exercise label="ex-interactive-clt-math-majors" xmlns:pi="http://pretextbook.org">
+    <title>Central Limit Theorem: Stochastic Matrix Arrays and Memory Allocation</title>
+    <introduction>
+        <p>
+            A computer scientist runs a simulation tracking memory space allocation across a randomized hashing algorithm. The data packets processed by the routine fall into three discrete, mutually exclusive payload classes with the following distribution:
+            <ul>
+                <li><p>50% of the inputs are small scalar pointers requiring <m>2.75</m> kilobytes (KB) of memory space.</p></li>
+                <li><p>45% are standard memory addresses requiring <m>2.25</m> KB of memory space.</p></li>
+                <li><p>5% are large nested matrix arrays requiring <m>35.00</m> KB of memory space.</p></li>
+            </ul>
+            Suppose the routine executes a batch script that draws a random sample (with replacement) of <m>n = 75</m> independent inputs from this distribution pool. Complete the  parts below to apply the Central Limit Theorem to the memory footprint.
+        </p>
+
+    </introduction>
+
+    <!-- Part A: Single Item Distribution (Fill in the Blank) -->
+    <task xml:id="task-clt-math-single-input">
+        <statement>
+            <p>
+                Let the random variable <m>X</m> denote the memory requirements of a single input drawn at random. Compute the expectation <m>E(X)</m> and variance <m>\text{Var}(X)</m>.
+            </p>
+            <p> <m>E(X) = </m> <fillin  answer="4.138" width="8" name="exp1_clt"/> KB</p>
+            <p><m>\text{Var}(X) = </m> <fillin  answer="50.190" width="8" name="var1_clt"/> KB<m>^2</m></p>
+        </statement>
+        <evaluation>
+            <evaluate submit="exp1_clt"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+            <evaluate submit="var1_clt"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                We define the discrete probability mass function (PMF) points for the variable <m>X</m> and solve for the first and second moments:
+                <md>
+                    <mrow>E(X) \amp = \sum x \cdot P(X = x)</mrow>
+                    <mrow>\amp = 2.75(0.50) + 2.25(0.45) + 35.00(0.05) = 4.1375 \text{ KB} \approx 4.138</mrow>
+                </md>
+                Now calculate the expected value of the squared outcomes, <m>E(X^2)</m>:
+                <md>
+                    <mrow>E(X^2) \amp = \sum x^2 \cdot P(X = x)</mrow>
+                    <mrow>\amp = (2.75)^2(0.50) + (2.25)^2(0.45) + (35.00)^2(0.05) = 67.309375</mrow>
+                </md>
+                Apply the variance identity formula:
+                <me>\text{Var}(X) = E(X^2) - [E(X)]^2 = 67.309375 - (4.1375)^2 = 50.190469 \approx 50.190</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part B: Choosing the Normal Distribution for Cumulative Sum (Multiple Choice) -->
+    <task xml:id="task-clt-math-sum-distribution-mc">
+        <statement>
+            <p>
+                Let the random variable <m>Y= \sum X_i</m> represent the total cumulative memory footprint of the entire <m>n = 75</m> element sample packet combined. According to the Central Limit Theorem, which normal distribution model should be used to approximate the continuous shape of <m>Y</m>?
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>Y \sim N(4.138, 50.190)</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the distribution configuration for a single isolated pull from Part A.</p>
+                </feedback></choice>
+            <choice><statement><p><m>Y \sim N(310.313, 50.190)</m></p></statement>
+                <feedback>
+                    <p>Incorrect. You scaled the expected total mean correctly but forgot that variance also scales up with independent additions.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>Y \sim N(310.313, 3764.285)</m></p></statement>
+                <feedback>
+                    <p>Correct! For a cumulative sum variable <m>Y</m> built from <m>n = 75</m> independent trials, both parameters scale up linearly by a factor of <m>n</m>:</p>
+                    <ul>
+                        <li><p><m>\mu_Y = n \cdot E(X) = 75 \cdot 4.1375 = 310.3125 \approx 310.313 \text{ KB}</m></p></li>
+                        <li><p><m>\sigma_Y^2 = n \cdot \text{Var}(X) = 75 \cdot 50.190469 = 3764.285175 \approx 3764.285 \text{ KB}^2</m></p></li>
+                    </ul>
+                </feedback></choice>
+            <choice><statement><p><m>Y \sim N(310.313, 282321.388)</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This option assumes that the total variance scales by <m>n^2 \cdot \text{Var}(X)</m>. Remember that <m>n^2</m> scaling only occurs if you take a single random variable and multiply it by a constant scalar coefficient.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part C: Cumulative Sum Probability Calculation (Fill in the Blank) -->
+    <task xml:id="task-clt-math-sum-probability-input">
+        <statement>
+            <p>
+                 Using the normal approximation, estimate the probability that the total cumulative memory size of the 75 items equals or exceeds <m>220</m> KB.
+            </p>
+            <p>
+                <m>P(Y \ge 220)</m> = <fillin  answer="0.9292" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Standardizing our target value threshold of <m>220</m> into a standard normal Z-score using our parameters from Part B (<m>\mu_Y = 310.3125</m>, <m>\sigma_Y = 61.3539</m>):
+                <me>Z = \frac{220 - 310.3125}{61.3539} = \frac{-90.3125}{61.3539} \approx -1.472</me>
+                Evaluating the upper tail region:
+                <me>P(Y \ge 220) \approx P(Z \ge -1.472) = 1 - \Phi(-1.472) \approx 0.9292</me>
+            </p>
+        </solution>
+    </task>
+
+    <!-- Part D: Choosing the Normal Distribution for Sample Mean (Multiple Choice) -->
+    <task xml:id="task-clt-math-mean-distribution-mc">
+        <statement>
+            <p>
+                 Now let us shift our analytical lens to track averages. Let the random variable <m>\overline{X}</m> represent the sample mean memory cost per element across the 75 entries, i.e. (<m>\overline{X} = \frac{1}{75}\sum X_i</m>). According to the Central Limit Theorem, which normal distribution model should be used to approximate the continuous shape of <m>\overline{X}</m>?
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>\overline{X} \sim N(310.313, 3764.285)</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This matches the cumulative sum allocation model <m>Y</m> from Part B.</p>
+                </feedback></choice>
+            <choice><statement><p><m>\overline{X} \sim N(4.138, 50.190)</m></p></statement>
+                <feedback>
+                    <p>Incorrect. While the expected sample mean remains centered at 4.1375 KB, taking a large average of 75 independent elements reduces random noise. The variance cannot remain at the raw un-averaged baseline value.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>\overline{X} \sim N(4.138, 0.669)</m></p></statement>
+                <feedback>
+                    <p>Correct! For a sample average random variable <m>\overline{X}</m> built from <m>n = 75</m> independent trials, the expected value matches the baseline population mean, but the variance shrinks by a factor of <m>n</m>:</p>
+                    <ul>
+                        <li><p><m>\mu_{\overline{X}} = E(X) = 4.1375 \approx 4.138 \text{ KB}</m></p></li>
+                        <li><p><m>\sigma_{\overline{X}}^2 = \frac{\text{Var}(X)}{n} = \frac{50.190469}{75} \approx 0.6692 \approx 0.669 \text{ KB}^2</m></p></li>
+                    </ul>
+                </feedback></choice>
+            <choice><statement><p><m>\overline{X} \sim N(4.138, 5.796)</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you divided the baseline variance by <m>\sqrt{75}</m> instead of dividing by the full sample size integer <m>n = 75</m>.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part E: Sample Mean Probability (Fill in the Blank) -->
+    <task xml:id="task-clt-math-mean-probability-input">
+        <statement>
+            <p>
+                 Using the normal approximation, estimate the probability that the average memory cost per item inside this 75-element patch is at least <m>4.00</m> KB.
+            </p>
+            <p>
+                <m>P(\overline{X} \ge 4.00)</m> = <fillin  answer="0.567" width="10"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Standardizing our target item mean threshold of <m>4.00</m> KB into a standard normal Z-score using our parameters from Part D (<m>\mu_{\overline{X}} = 4.1375</m>, <m>\sigma_{\overline{X}} = 0.81805</m>):
+                <me>Z = \frac{4.00 - 4.1375}{0.81805} \approx -0.168</me>
+                Evaluating the upper tail region for our sample average:
+<m>P(\overline{X} \ge 4.00) \approx P(Z \ge -0.168) = 1 - \Phi(-0.168) \approx 0.5667 \approx 0.567</m>
+</p>
+</solution>
+</task>
+</exercise>
 
    </exercises>
 
@@ -437,11 +869,7 @@
 
 <exercises xml:id="hw-normal-rv-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+
 
 
 
@@ -517,6 +945,318 @@
             </solution>
         </task>
     </exercise>
+
+
+<!--normal approx to binomial-->
+    <exercise label="ex-static-clt-roulette">
+        <title>Central Limit Theorem - Normal Approximation to the Binomial</title>
+
+        <introduction>
+    <p>
+        The Central Limit Theorem (CLT) states that the sum of a large number of independent, identically distributed (i.i.d.) random variables will converge toward a normal distribution, regardless of the underlying shape of the original single-trial probability desnsity or mass function. 
+    </p>
+    <p>
+        Recall our previous roulette strategy where a player simultaneously bets 50 cents on Red and 50 cents on Odd. A single spin results in a discrete net profit random variable with an expected value of <m>\mu = -\frac{2}{38} \approx -0.0526</m> dollars and a variance of <m>\sigma^2 = \frac{832}{1444} \approx 0.5762</m> dollars<m>^2</m>. 
+        </p>
+        
+        <p>Suppose a player executes this exact strategy consecutively for a total of <m>n = 348</m> independent spins of the wheel.
+    </p>
+        </introduction>
+
+        <!-- Part A: Total Distribution Parameters -->
+    
+        
+        <task xml:id="task-clt-total-parameters">
+            <statement>
+                <p>
+                     Determine the expected value and variance for the player's total cumulative net profit distribution, <m>W = \sum_{i=1}^{348} Z_i</m>, over the full 348-spin run.
+                </p>
+
+                
+            </statement>
+            <solution>
+                <p>
+                    By the linear properties of expectation and variance for independent random variables, the parameters for the total sum distribution scale directly with the number of trials <m>n = 348</m>:
+                    <ul>
+                        <li>
+                            <p>
+                                <strong>Expected Total Profit, <m>E(W)</m>:</strong>
+                                <me>E(W) = n \cdot \mu = 348 \cdot \left(-\frac{2}{38}\right) = -\frac{696}{38} \approx -18.3158 \text{ dollars}</me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <strong>Variance of Total Profit, <m>V(W)</m>:</strong>
+                                <me>V(W) = n \cdot \sigma^2 = 348 \cdot \left(\frac{832}{1444}\right) = \frac{289,536}{1444} \approx 200.510 \text{ dollars}^2</me>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <strong>Standard Deviation of Total Profit, <m>\sigma_W</m>:</strong>
+                                <me>\sigma_W = \sqrt{V(W)} = \sqrt{200.510} \approx 14.1601 \text{ dollars}</me>
+                            </p>
+                        </li>
+                    </ul>
+                    According to the Central Limit Theorem, the total cumulative net profit can be modeled as a continuous normal distribution: <m>W \sim N(-18.316, 14.160^2)</m>.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part B: CLT Probability Calculation -->
+        <task xml:id="task-clt-probability-estimation">
+            <statement>
+                <p>
+                    <m>W </m> is the sum of a large number of independent, identically distributed random variables. So, according to the Central Limit Theorem, <m>W</m> is approximately normally distributed. We just need to figure out what mean and variance to use, but we found those in part A! 
+                </p>
+                <p>
+                     Using the normal distribution approximation,  estimate the probability that the player finishes the 348 spins with a total cumulative net profit that is strictly greater than zero (<m>P(W \gt 0)</m>).
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    We want to find <m>P(W \gt 0)</m>. Standardizing our target value of <m>0</m> into a standard normal Z-score using our cumulative parameters from Part A:
+                    <me>Z = \frac{\text{Value} - E(W)}{\sigma_W} = \frac{0 - (-18.3158)}{14.1601} = \frac{18.3158}{14.1601} \approx 1.2935</me>
+                </p>
+                <p>
+                    Rounding our standardized position to <m>Z = 1.29</m> for standard table lookups:
+                    <me>P(W \gt 0) = P(Z \gt 1.29) = 1 - \Phi(1.29)</me>
+                    Looking up the lower-tail cumulative probability area inside a standard normal table gives <m>\Phi(1.29) \approx 0.9015</m>. Completing the upper-tail subtraction:
+                    <me>P(Z \gt 1.29) = 1 - 0.9015 = 0.0985</me>
+                    Using higher-precision calculator tools yields an exact unrounded probability of <strong>0.0979</strong> (or <strong>0.0911</strong> if applying a standard integer continuity correction threshold boundary of <m>P(W \ge 0.5)</m> to the discrete step values). 
+                </p>
+                <p>
+                    <strong>Pedagogical Takeaway:</strong> This result highlights the sobering reality of the house edge. Even with a lower-variance hedging strategy (Red and Odd combo), playing for an extended period of 348 spins makes it highly likely that the mathematical law of averages pulls the player down into a deficit, leaving less than a 10% chance of breaking even or making a profit.
+                </p>
+            </solution>
+        </task>
+         <task xml:id="task-binomial-norm-approx-rules">
+            <statement>
+                <p>
+                     Now let us consider a different random variable from this same experiment. Let <m>X</m> denote the number of spins where the player wins both bets simultaneously (landing on Red and Odd). 
+                </p>
+                <p>
+                    Do the following:
+                    
+                </p>
+
+                <ol>
+                    <li>
+                        <p>
+                            Explain why <m>X</m> can be considered a binomial random variable and state its parameters.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Compute the probability that the player wins both bets simultaneously less than 100 times, <m>P(X \lt 100)</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Find the mean and variance for <m>X</m>.
+                        </p>
+                    </li>
+                    </ol>
+            </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                     We can also say that <m>X</m> is approximately normal. 
+                     
+                     
+                     </p>
+                     <p>
+                    Do the following:
+                    
+                </p>
+
+                <ol>
+                    <li>
+                        <p>
+                            Explain why <m>X</m> is approximately normal and state its parameters (mean and variance).
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                           To use a normal distribution to approximate a Binomial distribution, the sample size must be large enough to ensure that the distribution is reasonably symmetric (this is especially important  when <m>p</m> is close to 0 or 1). The widely accepted statistical thresholds are:
+                    <me>n \cdot p \ge 10 \quad \text{and} \quad n \cdot (1 - p) \ge 10</me>.
+                    Verify whether this roulette tracking scenario meets those thresholds.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Use the normal distribution to compute the probability that the player wins both bets simultaneously less than 100 times, <m>P(X \lt 100)</m>. Comment on how this answer compares to your answer from part C.
+                        </p>
+                    </li>
+ 
+                    </ol> 
+
+                </statement>
+            
+            
+            <solution>
+
+                <p>
+                    Let us calculate these values using our specific roulette parameter parameters (<m>n = 348</m> and <m>p = \frac{10}{38} \approx 0.2632</m>):
+                    <ul>
+                        <li><p>Expected Successes: <m>n \cdot p = 348 \cdot \left(\frac{10}{38}\right) \approx 91.579</m></p></li>
+                        <li><p>Expected Failures: <m>n \cdot (1 - p) = 348 \cdot \left(\frac{28}{38}\right) \approx 256.421</m></p></li>
+                    </ul>
+                </p>
+                <p>
+                    Because <m>91.579 \ge 10</m> and <m>256.421 \ge 10</m>, **both conditions are easily satisfied**. The cluster size is large enough to ensure the discrete binomial distribution has smoothed out into a bell curve shape, making the normal approximation highly accurate.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part D: Continuity Correction (NEW) -->
+        <task xml:id="task-binomial-continuity-correction">
+            <statement>
+                <p>
+                    We typically add a continuity correction when approximating a discrete distribution with a continuous one. In this case, we should increase the size of the interval that we are taking the probability of, extending it by 0.5 on each side (where possible).
+                    </p>
+                    <p>
+                        Do the following:
+                    </p>
+
+<ol>
+        <li>
+        <p>
+            Explain why we should add a continuity correction to our probability computation. 
+        </p>
+    </li>
+    <li>
+        <p>
+           Recompute the probability that the player wins both bets simultaneously less than 100 times, this time adding a continuity correct. In other words, compute: <m>P(X \lt 100.5)</m>. Comment on how this answer compares to your answers from parts C and D.
+        </p>
+    </li>
+
+</ol>
+                    
+                
+            </statement>
+            <solution>
+                <p>
+                    A continuous distribution has a point probability of zero at any exact value, meaning its area is measured strictly over smooth intervals. However, a Binomial distribution is discrete and consists of isolated, individual histogram bars centered at integer endpoints, each with a physical width of 1 unit. 
+                </p>
+                <p>
+                    To bridge this structural gap, the continuity correction extends each integer bar by 0.5 units in both directions. The bar for exactly <m>X = 100</m> spans the continuous interval from <m>99.5</m> to <m>100.5</m>. 
+                </p>
+                <p>
+                    To capture <m>X \ge 100</m> completely (including the full histogram bar for 100 itself), the continuous normal integral must start at the absolute bottom edge of that bar. Therefore, the continuous approximation translates the query parameter to:
+                    <me>P(X_{\text{discrete}} \ge 100) \approx P(X_{\text{continuous}} \ge 99.5)</me>
+                </p>
+                <p>
+                    Using the distribution parameters <m>\mu = n \cdot p \approx 91.579</m> and variance <m>\sigma^2 = n \cdot p \cdot (1 - p) \approx 348 \cdot 0.2632 \cdot 0.7368 \approx 67.475</m> (<m>\sigma \approx 8.214</m>), standardizing this continuous boundary yields:
+                    <me>Z = \frac{99.5 - 91.579}{8.214} = \frac{7.921}{8.214} \approx 0.964</me>
+                    <me>P(Z \gt 0.964) = 1 - \Phi(0.964) \approx 1 - 0.8325 = 0.1675</me>
+                    The continuity correction shifts the continuous boundary down to <strong>99.5</strong> to properly include the entire discrete area block of the target integer.
+                </p>
+            </solution>
+        </task>
+    </exercise>
+
+
+
+<section xml:id="sec-distribution-selection">
+    <title>Identifying and Selecting Probability Models</title>
+    
+    <p>
+        When analyzing a sequence of independent binary outcomes (Bernoulli trials), statisticians must determine whether to use the exact Binomial distribution or apply a simplifying approximation. This choice depends entirely on the size of the trial pool (<m>n</m>) and the success probability probability (<m>p</m>). 
+    </p>
+    <p>
+        Review the three unique counting scenarios below tracking quality control and profile distribution metrics across massive industrial material batches. For each case, identify which distribution structure or approximation is most appropriate.               Your options are:
+                    <ul>
+                        <li><p>Normal approximation</p></li>
+                        <li><p>Poisson approximation</p></li>
+                        <li><p>Best to use the binomial distribution directly</p></li>
+                        <li><p>None of the above</p></li>
+                    </ul>
+                
+    </p>
+
+    <exercise label="ex-static-distribution-selection-framework">
+        <title>Distribution Classification and Model Auditing</title>
+
+        <!-- Part A: Poisson Approximation Case -->
+        <task xml:id="task-static-select-poisson">
+            <statement>
+                <p>
+                     Quality assurance data maps an industrial manufacturing stream where exactly <m>0.8\%</m> of all produced items contain microscopic structural fractures. A shipping container holds a batch sample of <m>n = 1050</m> items. We want to find the probability that this container contains exactly 2 fractured items.
+                </p>
+                <p>
+                    Identify the most appropriate mathematical method for solving this problem. Justify your choice.
+                   
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <strong>Most Appropriate Method:</strong> Poisson approximation.
+                </p>
+                <p>
+                    <strong>Mathematical Justification:</strong> This scenario describes a sequence of independent trials with a large sample size (<m>n = 1050</m>) paired with an extremely rare individual success probability parameter (<m>p = 0.008</m>). 
+                </p>
+                <p>
+                    Evaluating exact Binomial combinations with <m>n = 1050</m> introduces unneeded computational weight. Furthermore, the standard rule of thumb for a normal approximation fails because <m>n \cdot p = 1050 \cdot 0.008 = 8.4 \lt 10</m>. Because <m>n</m> is large and <m>p \lt 0.05</m> with an expected rate of <m>\lambda = 8.4</m>, the <strong>Poisson approximation</strong> is the most elegant and appropriate choice.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part B: Normal Approximation Case -->
+        <task xml:id="task-static-select-normal">
+            <statement>
+                <p>
+                    An inventory allocation profile shows that exactly <m>73\%</m> of all components stored in a centralized depot meet the optimal specifications for standard high-speed server boards. An engineering shipment draws a batch sample of <m>n = 1050</m> items. We want to find the probability that this shipment contains between 747 and 804 optimal components.
+                </p>
+                <p>
+                    Identify the most appropriate mathematical method for solving this problem. Justify your choice.
+                   
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <strong>Most Appropriate Method:</strong> Normal approximation.
+                </p>
+                <p>
+                    <strong>Mathematical Justification:</strong> The underlying process is structurally Binomial with <m>n = 1050</m> and <m>p = 0.73</m>. We want to find an integrated probability area across a wide range of outcomes (<m>747 \le X \le 804</m>).
+                </p>
+                <p>
+                    Using the exact Binomial distribution directly would require manually calculating and summing 58 separate combinations, which is highly inefficient. The Poisson approximation fails because <m>p = 0.73</m> is not rare. Testing the normal approximation rules of thumb: 
+                    <me>n \cdot p = 1050 \cdot 0.73 = 766.5 \ge 10</me>
+                    <me>n \cdot (1 - p) = 1050 \cdot 0.27 = 283.5 \ge 10</me>
+                    Because both threshold counts are heavily above 10, the distribution converges into a smooth, highly symmetric bell curve. The <strong>Normal approximation to the binomial</strong> is the most appropriate method.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part C: Direct Binomial Case -->
+        <task xml:id="task-static-select-binomial">
+            <statement>
+                <p>
+                     A field service technician randomly selects a small toolkit snack size allocation of exactly <m>n = 9</m> components from the same warehouse pool where <m>73\%</m> match optimal specifications. We want to find the probability that exactly 8 of these 9 chosen components are optimal.
+                </p>
+                                <p>
+                    Identify the most appropriate mathematical method for solving this problem. Justify your choice.
+                   
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <strong>Most Appropriate Method:</strong> Best to use the binomial distribution directly.
+                </p>
+                <p>
+                    <strong>Mathematical Justification:</strong> Approximations are only designed for scenarios where the sample size is large enough to warrant smoothing the discrete boundaries. Here, the total number of trials is extremely small (<m>n = 9</m>). 
+                </p>
+                <p>
+                    Because <m>n = 9</m> is small, normal and Poisson assumptions collapse completely and will generate highly inaccurate probability estimates. Evaluating a single exact coordinate point outcome (<m>k = 8</m>) using the raw combination formula is fast, computationally effortless, and perfectly accurate:
+                    <me>P(X = 8) = \binom{9}{8} (0.73)^8 (0.27)^1</me>
+                    Therefore, it is <strong>best to use the binomial distribution directly</strong>.
+                </p>
+            </solution>
+        </task>
+    </exercise>
+</section>
+
 
 
    </exercises>

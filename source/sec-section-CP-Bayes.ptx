@@ -3,18 +3,37 @@
 <section xml:id="sec-section-CP-Bayes" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Bayes' Theorem</title>
 
+<introduction>
  <p> 
-    Write intro to homework set.....  Goal, Purpose, Instructions....
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
   </p>
-
+</introduction>
 
  <exercises xml:id="hw-CP-Bayes" >
    <title>Interactive Exercises</title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-   </introduction>
+
 
 
 <exercise xml:id="ex-notification-filter-bayes">
@@ -510,11 +529,7 @@
 
 <exercises xml:id="hw-CP-Bayes-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+ 
 
 
 

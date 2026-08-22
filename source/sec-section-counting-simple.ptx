@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-section-counting-simple" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Practice Each Counting Technique</title>
-
-  <p> 
-     Write intro to homework set.....  Goal, Purpose, Instructions....
+  <title>Counting Techniques</title>
+<introduction>
+ <p> 
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
   </p>
+</introduction>
 
  <exercises xml:id="hw-counting-simple" >
     <title>Interactive Exercises</title>
-    <introduction>
-      <p>
-       Write intro to interactive homework set.....
 
-      </p>
-    </introduction>
 
 
     <exercise label="ex-combinatorics-different-die-rolls" xmlns:pi="http://pretextbook.org">
@@ -489,11 +507,7 @@
 
 <exercises xml:id="hw-counting-simple-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+
 
 <exercise label="counting-simple-10digit-phone-num">
 <title>Unique Phone Numbers</title>

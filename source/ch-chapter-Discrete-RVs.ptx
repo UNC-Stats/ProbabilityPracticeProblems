@@ -4,7 +4,13 @@
   <title>Discrete Random Variables</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    <p> The problem sets provided here will give you practice with ... </p>
+
+      <p> Each problem set contains two types of problems: interactive exercises and non-interactive ("written") exercises. You will be able to check your answers and get immediate feedback on the interactive portion.
+      </p>
+
+      <p> Note: This is a work in progress. These problems sets are still being edited and solutions checked for accuracy and clarity.
+      </p>
   </introduction>
 
   <!-- include sections -->

@@ -1,20 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-section-BP" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Basic Probability Concepts</title>
+  <title>Introductory Concepts</title>
 
-  <p> 
-    Write intro to homework set.....  Goal, Purpose, Instructions....
+<introduction>
+ <p> 
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          Identifying sample spaces.
+        </p>
+      </li>
+      <li>
+        <p>
+          Determining whether outcomes in a sample space are equally likely.
+        </p>
+      </li>
+      <li>
+        <p>
+          Defining events in terms of the outcomes in a sample space.
+        </p>
+      </li>
+      <li>
+        <p>
+          Using sample spaces to help you compute probabilities for events.
+        </p>
+      </li>
+    </ul>
   </p>
+</introduction>
+ 
+ <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
 
 
  <exercises xml:id="hw-basic-probability-concepts" >
    <title>Interactive Exercises</title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-   </introduction>
 
    <exercise label="BP-3children">
       <title>Three Children</title>
@@ -24,14 +46,14 @@
          </p>
         </introduction>
 
-      <task>
+      <task>. 
         <statement>
            <p>
              Which option best describes the sample space here?
            </p>
         </statement>
 
-    <choices randomize="yes" multiple-correct="yes">
+    <choices randomize="yes" >
       <choice correct="yes">
         <statement>
           <p>
@@ -90,20 +112,19 @@
     </choices>
 
    </task>
-
-   <!-- Visual Divider ############################################################################################### -->
+  
    <!-- ############################################################################################################## -->
- 
+
    <task>
    
     <statement>
       <p>
-        Determine the probability that the second child born will be female. Write your answer as a decimal, accurate to three
+        Determine the probability that the second child born will be female. Write your answer as a decimal, accurate to two
         decimal places.
       </p>
 
       <p>
-        <fillin width="8" answer="0.500"/>
+        <fillin width="8" answer="0.50"/>
       </p>
     </statement>
   
@@ -113,7 +134,7 @@
           <numcmp use-answer="yes"/>
           <feedback>
             <p>
-              Correct! Four out of 8 outcomes in the sample space involve the second child being female.
+              Correct! Four out of eight outcomes in the sample space involve the second child being female.
             </p>
           </feedback>
         </test>
@@ -131,18 +152,17 @@
    </task>
    
 
-   <!-- Visual Divider ############################################################################################### -->
    <!-- ############################################################################################################## -->
+  
 
    <task>
-
     <statement>
       <p>
-        Determine the probability that <em>at least</em> the second child will be female. Write your answer as a decimal, accurate to three decimal places.
+        Determine the probability that <em>at least</em> the second child will be female. Write your answer as a decimal, accurate to two decimal places.
       </p>
 
       <p>
-        <fillin width="8" answer="0.500"/>
+        <fillin width="8" answer="0.50"/>
       </p>
     </statement>
   
@@ -152,7 +172,7 @@
           <numcmp use-answer="yes"/>
           <feedback>
             <p>
-              Correct! Four out of 8 outcomes in the sample space involve the second child and possibly another child being female.
+              Correct! Four out of eight outcomes in the sample space involve the second child and possibly another child being female.
             </p>
           </feedback>
         </test>
@@ -199,13 +219,13 @@
 <task>
   <statement>
     <p>
-      List the sample space for this experiment by dragging relevant outcomes to the right.
+      Define the sample space for this experiment by dragging relevant outcomes to the right.
     </p>
   </statement>
 
      <feedback>
        <p>
-         Add later.
+        
        </p>
      </feedback>
 
@@ -219,7 +239,7 @@
          <premise order="3">AB+</premise>
          <premise order="3">0-</premise>
          <premise order="3">0+</premise>
-         <response>Sample Space { ... }</response>
+         <response>Sample Space <m>S=\{  \quad \quad   \}</m></response>
        </match>
        <match>
          <premise order="2">(+)</premise>
@@ -232,159 +252,132 @@
      </cardsort>
    </task>
 
-   <!-- Visual Divider ############################################################################################### -->
+
    <!-- ############################################################################################################## -->
 
    <task>
 
      <statement correct="no">
        <p>
-         All outcomes in the sample space equally likely.
+          All outcomes in the sample space are equally likely.
        </p>
      </statement>
 
      <feedback>
        <p>
-         Are some blood types less common than others?
+         Are some blood types less common than others? Yes! For example, Rh-present (+) blood types are much more common than Rh-negative (-) blood types. 
        </p>
      </feedback>
      </task>
    </exercise>
 
 
-
+ <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
 
 <exercise label="ex-probability-streaming-experiment" xmlns:pi="http://pretextbook.org">
-    <title>Probability Theory: Sequential Sample Spaces</title>
+    <title>Streaming Movies and TV</title>
     <introduction>
         <p>
-            An undecided college student wants to watch something online but cannot decide how to proceed. They first toss a fair coin to choose a streaming platform: if it lands heads (<m>H</m>), they log into Netflix; if it lands tails (<m>T</m>), they log into Hulu. 
+            Your professor wants to watch something but cannot decide on what. So, she first tosses a fair coin to choose a streaming platform. If the coin lands heads, she will log into Netflix (<m>N</m>); if it lands tails, she will log into Hulu (<m>H</m>). 
         </p>
         <p>
-            Once logged in, they randomly select a piece of content:
+            Once logged in, she randomly selects content (e.g., tv show, movie, etc):
             <ul>
-                <li><p>If they are on Netflix, they choose randomly between a Movie (<m>M</m>) or a documentary Video (<m>V</m>).</p></li>
-                <li><p>If they are on Hulu, they choose randomly between a Comedy show (<m>C</m>), an Anime series (<m>A</m>), or a Reality TV episode (<m>R</m>).</p></li>
+                <li><p>If she is on Netflix, she will choose randomly between a movie (<m>M</m>) or a documentary (<m>D</m>).</p></li>
+                <li><p>If she is on Hulu, she will choose randomly between a comedy show (<m>C</m>), an anime series (<m>A</m>), or a reality TV episode (<m>R</m>).</p></li>
             </ul>
-            The "experiment" is to observe the combination of the platform selection and the specific content type they choose to watch.
+            The "experiment" is to observe the combination of the streaming platform and specific content type chosen.
         </p>
     </introduction>
     <task xml:id="task-streaming-space-id">
         <statement>
             <p>
-                Which of the following sets correctly and comprehensively lists the complete sample space <m>S</m> for this compound experimental sequence?
+                Which of the following sets correctly describes the full sample space <m>S</m> for this experiment?
             </p>
         </statement>
-        <choices>
+        <choices randomize="yes">
             <choice>
-                <statement><p><m>S = \{(H, M), (H, V), (T, C), (T, A)\}</m></p></statement>
+                <statement><p><m> \{(N, M), (N, D), (H, C), (H, A)\}</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This subset leaves out the outcome <m>(T, R)</m> for watching a Reality TV episode on Hulu. A complete sample space must list every possible outcome.</p>
+                    <p>Incorrect. This subset leaves out the outcome <m>(H, R)</m> for watching a reality TV episode on Hulu. A complete sample space must list every possible outcome.</p>
                 </feedback>
             </choice>
             <choice>
-                <statement><p><m>S = \{(H, M), (H, V), (H, C), (H, A), (H, R), (T, M), (T, V), (T, C), (T, A), (T, R)\}</m></p></statement>
+                <statement><p><m> \{(N, M), (N, D), (N, C), (N, A), (N, R), (H, M), (H, D), (H, C), (H, A), (H, R)\}</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This list includes combinations that are physically impossible based on the rules of the experiment. For example, they cannot watch a Comedy (<m>C</m>) if they landed on Heads (<m>H</m>) and logged into Netflix.</p>
+                    <p>Incorrect. This list includes outcomes that are not possible! For example, she will not select a comedy show on Netflix.</p>
                 </feedback>
             </choice>
             <choice correct="yes">
-                <statement><p><m>S = \{(H, M), (H, V), (T, C), (T, A), (T, R)\}</m></p></statement>
+                <statement><p><m> \{(N, M), (N, D), (H, C), (H, A), (H, R)\}</m></p></statement>
                 <feedback>
-                    <p>Correct! The sample space must accurately capture the conditional nature of the choices. If they land on heads (<m>H</m>), only <m>M</m> and <m>V</m> are possible. If they land on tails (<m>T</m>), only <m>C</m>, <m>A</m>, and <m>R</m> are possible. This set contains exactly all 5 valid, mutually exclusive outcomes.</p>
+                    <p>Correct!  This set contains all 5 possible outcomes.</p>
                 </feedback>
             </choice>
             <choice>
-                <statement><p><m>S = \{H, T, M, V, C, A, R\}</m></p></statement>
+                <statement><p><m> \{N, H, M, D, C, A, R\}</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This is a flat list of individual choices rather than an tracking space of ordered outcome pairs representing the entire multi-stage experiment execution loop.</p>
+                    <p>Incorrect. This is a list of individual choices rather than combinations. The "experiment" is to observe the combination of the streaming platform AND specific content type chosen.</p>
                 </feedback>
             </choice>
             <choice>
-                <statement><p><m>S = \{(H, T), (M, V), (C, A, R)\}</m></p></statement>
+                <statement><p><m> \{(N, H), (M, D), (C, A, R)\}</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This is just a grouping of the category parameters rather than mapping out the combined sequential actions of the student.</p>
+                    <p>Incorrect. This lists groupings of the possible individual choices, rather than the possible combinations of streaming platform AND content.</p>
                 </feedback>
             </choice>
         </choices>
     </task>
+
+
+   <!-- ############################################################################################################## -->
     <task xml:id="task-streaming-event-subset">
         <statement>
             <p>
-                <strong>Part B:</strong> Let <m>E</m> denote the compound event that the student chooses to watch a scripted narrative project (defined here as a Movie, a Comedy show, or an Anime series). Which subset correctly defines the event space <m>E</m>?
+                 Let <m>E</m> be the event that the professor chooses to watch a fictional scripted story (defined here as a movie, a comedy show, or an anime series). Which subset correctly defines the event  <m>E</m>?
             </p>
         </statement>
-        <choices>
-            <choice><statement><p><m>E = \{M, C, A\}</m></p></statement>
+        <choices randomize="yes">
+            <choice><statement><p><m> \{M, C, A\}</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This list contains only the raw content tags. In a compound sample space, elements of an event subset must be written as the full ordered pairs mapped in Part A.</p>
+                    <p>Incorrect. This list contains only the individual content options. <m>E</m> should be a subset of outcomes from the sample space.</p>
                 </feedback></choice>
-            <choice correct="yes"><statement><p><m>E = \{(H, M), (T, C), (T, A)\}</m></p></statement>
+            <choice correct="yes"><statement><p><m>\{(N, M), (H, C), (H, A)\}</m></p></statement>
                 <feedback>
-                    <p>Correct! The subset <m>E</m> filters the total sample space <m>S</m> to capture only the elements matching our narrative constraint: a Movie on Netflix <m>(H, M)</m>, a Comedy on Hulu <m>(T, C)</m>, or an Anime on Hulu <m>(T, A)</m>. It excludes the unscripted options (<m>(H, V)</m> and <m>(T, R)</m>).</p>
+                    <p>Correct! The subset <m>E</m> filters the total sample space <m>S</m> to capture only the outcomes matching our event definition.
+                    </p>
                 </feedback></choice>
-            <choice><statement><p><m>E = \{(H, M), (H, V), (T, C), (T, A), (T, R)\}</m></p></statement>
+            <choice><statement><p><m>\{(N, M), (N, D), (H, C), (H, A), (H, R)\}</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This subset is identical to the entire sample space <m>S</m>. It fails to filter out the unscripted categories (documentary videos <m>V</m> and reality television <m>R</m>).</p>
+                    <p>Incorrect. This is the entire sample space <m>S</m>, but not all outcomes in the sample space belong to event <m>E</m>. 
+                    </p>
                 </feedback></choice>
-            <choice><statement><p><m>E = \{(T, C), (T, A)\}</m></p></statement>
+            <choice><statement><p><m> \{(H, C), (H, A)\}</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This subset is missing the Netflix Movie outcome <m>(H, M)</m>, which is a valid scripted narrative element of this challenge experiment.</p>
+                    <p>Incorrect. This subset is missing an outcome: the movie on Netflix.</p>
                 </feedback></choice>
-            <choice><statement><p><m>E = \{(H, V), (T, R)\}</m></p></statement>
+            <choice><statement><p><m>\{N, D), (H, R)\}</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This subset captures the exact opposite condition, defining the event that the student watches an <em>unscripted</em> project (the complement event, <m>E^c</m>).</p>
+                    <p>Incorrect. This subset captures the exact opposite of event <m>E</m>!</p>
                 </feedback></choice>
         </choices>
     </task>
+    
+ <!-- ############################################################################################################## -->
 <task xml:id="task-streaming-likelihood-mc">
-        <statement>
-            <p>
-                <strong>Part C:</strong> Are the five outcomes in the sample space <m>S</m> equally likely to happen? Why or why not?
-            </p>
-        </statement>
-        <choices>
-            <choice>
-                <statement>
-                    <p>Yes, because there are 5 final outcomes, so each outcome automatically has a probability of exactly <m>\frac{1}{5} = 0.20</m>.</p>
-                </statement>
-                <feedback>
-                    <p>Incorrect. Do not assume a sample space is equally likely just because it is finite. The multi-stage branch structures split the initial coin probabilities into different numbers of subsequent choices.</p>
-                </feedback>
-            </choice>
-            <choice correct="yes">
-                <statement>
-                    <p>No, because the coin probability of 0.50 is split evenly among 2 options on Netflix but split evenly among 3 options on Hulu.</p>
-                </statement>
-                <feedback>
-                    <p>Correct! We find individual outcome probabilities by multiplying along the decision branches. Landing on Netflix (<m>H</m>) has a probability of <m>\frac{1}{2}</m>, which is split between 2 choices, making <m>P(H, M) = P(H, V) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4} = 0.25</m>. Landing on Hulu (<m>T</m>) also has a probability of <m>\frac{1}{2}</m>, but it is split among 3 choices, making <m>P(T, C) = P(T, A) = P(T, R) = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6} \approx 0.1667</m>. Because <m>0.25 \neq 0.1667</m>, the outcomes are not equally likely.</p>
-                </feedback>
-            </choice>
-            <choice>
-                <statement>
-                    <p>Yes, because the fair coin split guarantees that the conditional options cancel each other out during the second stage selection process.</p>
-                </statement>
-                <feedback>
-                    <p>Incorrect. The branching fractions do not cancel out; they scale down the probability weight. A choice on Netflix inherits a heavier mathematical weight than a choice on Hulu because it belongs to a smaller final pool.</p>
-                </feedback>
-            </choice>
-            <choice>
-                <statement>
-                    <p>No, because the student prefers Netflix over Hulu, which means the coin flip parameters are unweighted and independent.</p>
-                </statement>
-                <feedback>
-                    <p>Incorrect. The problem explicitly defines the initial stage as a coin flip and states choices are made randomly at each step. Personal preference is not modeled in this experiment.</p>
-                </feedback>
-            </choice>
-            <choice>
-                <statement>
-                    <p>Yes, because any experiment tracking a finite sequence of independent Bernoulli events yields flat distribution profiles.</p>
-                </statement>
-                <feedback>
-                    <p>Incorrect. This is not a sequence of identical Bernoulli trials (such as flipping the same coin multiple times), but rather a dependent step progression where the second pool size depends on the first outcome.</p>
-                </feedback>
-            </choice>
-        </choices>
+        <statement correct="no">
+       <p>
+          All outcomes in the sample space are equally likely.
+       </p>
+     </statement>
+
+     <feedback>
+       <p>
+         The multi-stage structure of the experiment affects the probabilities of the sample space outcomes. After the initial coin flip, there are different numbers of subsequent choices. 
+       </p>
+     </feedback>
+       
     </task>
 </exercise>
 
@@ -397,25 +390,20 @@
 
 <exercises xml:id="hw-basic-probability-concepts-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+   
 
 <exercise label="ex-library-books">
 <title>Library Books</title>
 
 <introduction>
   <p>
-    A library has five copies of a popular textbook. Two of the
+    The university library has five copies of a popular textbook. Two of the
     copies have missing pages, while the remaining three are in good condition.
-    A student requests two copies of the textbook, and the librarian fulfills the requests by randomly selecting two from the five available.
+    A student requests two copies of the textbook, and the librarian on duty randomly selects two of the five available to check-out to the student.
   </p>
 
   <p>
-    Label the damaged books <m>D_1</m> and <m>D_2</m>, and label the books in
-    good condition <m>G_1</m>, <m>G_2</m>, and <m>G_3</m>.
+    Let <m>D_1</m> and <m>D_2</m> represent the damaged textbooks, and let <m>G_1</m>, <m>G_2</m>, and <m>G_3</m> represent the textbooks that are in good condition.
   </p>
 </introduction>
 

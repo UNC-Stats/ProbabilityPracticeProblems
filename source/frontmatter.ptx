@@ -10,23 +10,32 @@
       <personname>Kristin Kang</personname>
       <department>Department of Mathematical Sciences</department>
       <institution>University of Northern Colorado</institution>
+      <email>kristin.kang@unco.edu </email>
     </author>
+    
     <date>
       <today />
     </date>
 
     <website>
-      <url href="https://pretextbook.org">My Website</url>
+      <url href="https://pretextbook.org">PreTeXt Website</url>
     </website>
 
     <copyright>
-      <year>2020<ndash />2024</year>
-      <holder>You</holder>
+      <year>2026</year>
+      <holder>Kristin Kang</holder>
       <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
       </shortlicense>
+
+
     </copyright>
   
   </bibinfo>
+
+
+
+
+
 
   <titlepage>
     <titlepage-items/>
@@ -35,5 +44,35 @@
   <colophon xml:id="front-colophon">
     <colophon-items/>
   </colophon>
+
+
+
+
+  <acknowledgement>
+<p>I would like to acknowledge the following reviewers for their helpful comments and suggestions</p>
+  <ul>
+    <li>
+      <p>
+        insert names
+      </p>
+    </li>
+  </ul>
+
+ <p>I would also like to thank Nathaniel Eldredge, University of Northern Colorado, for his contributions....</p>
+
+<p>
+            AI Usage Statement:
+            </p>
+            <p>
+            The creation of this workbook involved a blend of traditional authorship and modern digital tools. While the pedagogical design, scope, and mathematical verification are entirely my own, I utilized Google's Gemini 1.5 Pro (2026) as a formatting and editorial assistant. 
+        </p>
+        <p>
+            Gemini helped convert raw text files into clean PreTeXt syntax, construct TikZ code for visuals/graphs, and expand details for provided solutions. I also used Gemini to brainstorm problem contexts, updating classic probability questions to better match the interests of today's students.
+        </p>
+  </acknowledgement>
+
+
+
+  
 </frontmatter>
 

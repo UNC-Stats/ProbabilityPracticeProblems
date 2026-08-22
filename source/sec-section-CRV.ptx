@@ -4,20 +4,38 @@
   <title>Continuous RVs</title>
 
 
-  
-  <introduction>
-    <p>
-    </p>
-  </introduction>
+<introduction>
+ <p> 
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
+  </p>
+</introduction>
 
   
 <exercises xml:id="hw-cont-rv" >
    <title>Interactive Exercises</title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-   </introduction>
+
 
 
 
@@ -143,130 +161,277 @@
                 <feedback><p>Incorrect. Remember that integrating a function increases the polynomial power by 1 (<m>y^2 \rightarrow y^3</m>).</p></feedback></choice>
         </choices>
     </task>
+
+        <!-- Part F: First Quartile Calculation -->
+    <task xml:id="task-unique-first-quartile">
+        <statement>
+            <p>
+                 Find the first quartile (<m>Q_1</m>) of this distribution. <m>Q_1</m> is the value below which exactly 25% of the probability mass lies.
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>Q_1 = 0.750</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the first quartile if the distribution were perfectly uniform over the domain. Because the quadratic curve squashes most of the area to the right, you must travel further down the axis to gather 25% of the total area.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>Q_1 \approx 1.889</m></p></statement>
+                <feedback>
+                    <p>Correct! To find the first quartile, set the cumulative distribution function (CDF) derived in Part E equal to <m>0.25</m> (or <m>\frac{1}{4}</m>) and isolate <m>y</m>:</p>
+                    <me>F_Y(Q_1) = \frac{Q_1^3}{27} = \frac{1}{4} \implies Q_1^3 = \frac{27}{4} = 6.75</me>
+                    <p>Taking the cube root of both sides yields the final percentile threshold:</p>
+                    <me>Q_1 = \sqrt[3]{6.75} \approx 1.88948</me>
+                    <p>Rounded to three decimal places, the first quartile is approximately <strong>1.889</strong>.</p>
+                </feedback></choice>
+            <choice><statement><p><m>Q_1 \approx 1.442</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you set the expression <m>\frac{y^3}{3} = 1/4</m>, forgetting to multiply by the baseline constant coefficient divisor of 9 in your integrated functional framework.</p>
+                </feedback></choice>
+            <choice><statement><p><m>Q_1 \approx 2.250</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This value matches the distribution mean <m>E(Y)</m> from Part B. For a highly left-skewed curve like this one, the mean is pulled right, so <m>Q_1 \lt E(Y)</m>.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part G: Expected Value of a Function E(sqrt(Y)) -->
+    <task xml:id="task-unique-expected-sqrt">
+        <statement>
+            <p>
+                Calculate  <m>E(\sqrt{Y})</m>.
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>E(\sqrt{Y}) = 1.500</m></p></statement>
+                <feedback>
+                    <p>Incorrect. Jensen's Inequality states that for a concave function like the square root, <m>E(\sqrt{Y}) \le \sqrt{E(Y)}</m>. Since <m>\sqrt{2.25} = 1.5</m>, your answer must be strictly less than 1.500. You cannot simply pull the expectation operator inside the radical.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>E(\sqrt{Y}) \approx 1.469</m></p></statement>
+                <feedback>
+                    <p>Correct! By the <strong>Law of the Unconscious Statistician (LOTUS)</strong>, to compute the expected value of a function <m>g(y) = \sqrt{y}</m>, we integrate <m>g(y) \cdot f_Y(y)</m> over the active domain boundaries:</p>
+                    <me>E(\sqrt{Y}) = \int_{0}^{3} \sqrt{y} \cdot \left(\frac{1}{9}y^2\right) \, dy = \frac{1}{9} \int_{0}^{3} y^{1/2} \cdot y^2 \, dy = \frac{1}{9} \int_{0}^{3} y^{5/2} \, dy</me>
+                    <p>Applying the standard power integration rule adds 1 to the exponent (<m>\frac{5}{2} + 1 = \frac{7}{2}</m>) and multiplies by its inverse coefficient multiplier:</p>
+                    <me>= \frac{1}{9} \left[ \frac{2}{7}y^{7/2} \right]_{0}^{3} = \frac{2}{63} \left( 3^{7/2} - 0 \right)</me>
+                    <p>Evaluating the fractional radical step:</p>
+                    <me>3^{7/2} = 3^3 \cdot \sqrt{3} = 27\sqrt{3} \implies \frac{2 \cdot 27\sqrt{3}}{63} = \frac{54\sqrt{3}}{63} = \frac{6\sqrt{3}}{7} \approx 1.46899</me>
+                    <p>Rounded to three decimal places, the final functional expectation evaluates to approximately <strong>1.469</strong>.</p>
+                </feedback></choice>
+            <choice><statement><p><m>E(\sqrt{Y}) \approx 1.286</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you evaluated the fraction <m>\frac{27}{21}</m> or dropped the trailing radical variable component during your anti-derivative conversion loop. Re-verify your index fractions.</p>
+                </feedback></choice>
+            <choice><statement><p><m>E(\sqrt{Y}) \approx 1.714</m></p></statement>
+                <feedback>
+                    <p>Incorrect. Double-check your fractional division hierarchy steps. Remember that dividing by <m>\frac{7}{2}</m> requires multiplying your integrated bracket by its flipped parameter form, <m>\frac{2}{7}</m>.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+
 </exercise>
 
 
 
 
 
-
-<exercise label="ex-continuous-ev-charging-capacity">
-    <title>Green Infrastructure: EV Charging Network Utilization</title>
+<exercise xml:id="sec-continuous-pdf-geometry-unique">
+    <title>Continuous Distributions: Interpreting PDF Geometry</title>
     <introduction>
-        <p>
-            The proportion of maximum daily grid capacity utilized during peak hours across a city's public electric vehicle (EV) charging network is modeled by a continuous random variable <m>X</m> with the probability density function (PDF) given by:
-            <me>f_X(x) = 12x^2(1-x), \quad \text{for } 0 \le x \le 1</me>
-            and <m>f_X(x) = 0</m> elsewhere. Grid utilization must stay above  40% (<m>x \gt 0.40</m>) on any given day for the network to operate without a financial loss. Otherwise, maintenance overhead outpaces charging revenue. Complete the tasks below to evaluate the network's performance.
-        </p>
-    </introduction>
+    <p>
+        The graph below displays the probability density function (PDF), denoted as <m>f_X(x)</m>, for a random variable <m>X</m>. Use the graph (and your  understanding of continuous random variables) to to answer the following questions.
+    </p>
 
-    <!-- Part A: Probability of Being Profitable / Operating at a Loss (Multiple Choice) -->
-    <task xml:id="task-ev-prob-loss">
+    <!-- Updated TikZ Visual Graph -->
+    <p>
+        <image xml:id="tikz-continuous-pdf-curves-shifted">
+            <description>A custom probability density function featuring a wide, flat plateau spanning from x=1 to x=5 and a sharp, narrow peak centered at x=8.</description>
+            <latex-image>
+                \begin{tikzpicture}[scale=1.1]
+                % Render a clean, crisp solid white canvas background
+                \fill[white] (-0.8,-0.8) rectangle (11.2,5.5);
+                
+                % Draw horizontal tick grid helper guidelines
+                \foreach \y in {0.5, 1.0, 1.5, 2.0, 2.5, 3.5, 4.0, 4.5}
+                    \draw[gray!20, ultra thin] (0, \y) -- (10, \y);
+                \foreach \x in {1,2,3,4,5,6,7,8,9}
+                    \draw[gray!20, ultra thin] (\x, 0) -- (\x, 5.0);
+                
+                % Draw Structural Axes
+                \draw[-&gt;, thick] (-0.2,0) -- (10.5,0) node[right] {$x$};
+                \draw[-&gt;, thick] (0,-0.2) -- (0,5.2) node[above] {$f_X(x)$};
+                
+                % X-axis Numerical Indicators
+                \foreach \x in {0,1,2,3,4,5,6,7,8,9,10}
+                    \draw (\x, 0.08) -- (\x, -0.08) node[below] {\small \x};
+                    
+                % Y-axis Numerical Indicators (scaled: 5.0 units on graph = 1.0 density height)
+                \draw (0.08, 0.5) -- (-0.08, 0.5) node[left] {\small 0.1};
+                \draw (0.08, 1.0) -- (-0.08, 1.0) node[left] {\small 0.2};
+                \draw (0.08, 1.5) -- (-0.08, 1.5) node[left] {\small 0.3};
+                \draw (0.08, 2.0) -- (-0.08, 2.0) node[left] {\small 0.4};
+                \draw (0.08, 2.5) -- (-0.08, 2.5) node[left] {\small 0.5};
+                \draw (0.08, 3.0) -- (-0.08, 3.0) node[left] {\small 0.6};
+                \draw (0.08, 3.5) -- (-0.08, 3.5) node[left] {\small 0.7};
+                \draw (0.08, 4.0) -- (-0.08, 4.0) node[left] {\small 0.8};
+                
+                % -- Shifted Piecewise Function Plotting --
+                % Segment 1: Zero baseline from x=0 to x=0.6
+                \draw[black, ultra thick] (0,0) -- (0.6,0);
+                
+                % Segment 2: Left shoulder ramping up onto the plateau (x=0.6 to x=1.0)
+                % Plateau height is 0.15 (0.75 scaled grid units)
+                \draw[black, ultra thick, samples=30, domain=0.6:1.0] 
+                    plot (\x, {0.75 * (sin((\x-0.8)*180/0.4)*0.5 + 0.5)});
+                
+                % Segment 3: The flat wide plateau from x=1.0 to x=5.0
+                \draw[black, ultra thick] (1.0, 0.75) -- (5.0, 0.75);
+                
+                % Segment 4: Right shoulder dropping down from the plateau (x=5.0 to x=5.4)
+                \draw[black, ultra thick, samples=30, domain=5.0:5.4] 
+                    plot (\x, {0.75 * (cos((\x-5.0)*180/0.4)*0.5 + 0.5)});
+                
+                % Segment 5: Zero baseline gap from x=5.4 to x=7.6
+                \draw[black, ultra thick] (5.4,0) -- (7.6,0);
+                
+                % Segment 6: Relocated Sharp Gaussian Spike at x=8.0 (Height ~ 0.76 or 3.82 scaled units)
+                \draw[black, ultra thick, samples=100, domain=7.6:8.4] 
+                    plot (\x, {3.82 * exp(-((\x-8.0)/0.12)^2)});
+                    
+                % Segment 7: Zero baseline tail from x=8.4 to x=10.0
+                \draw[black, ultra thick] (8.4,0) -- (10.0,0);
+                
+                \end{tikzpicture}
+            </latex-image>
+        </image>
+    </p>
+</introduction>
+    
+        <!-- Part A: Exact Point Probabilities -->
+        <task xml:id="task-pdf-point-probability-shifted">
+            <statement>
+                <p>
+                     Compare the  probabilities at the two local features. Which is larger: <m>P(X = 3)</m> or <m>P(X = 8)</m>?
+                </p>
+            </statement>
+            <choices>
+                <choice>
+                    <statement><p> <m>P(X = 3)</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. Remember that for any continuous random variable, the probability of the variable equaling an exact single real-numbered point value is always zero, regardless of the height of the density graph at that coordinate.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement><p> <m>P(X = 8)</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. While the spike around <m>x = 8</m> is much higher vertically, the probability at an exact single infinitely thin point coordinate is still zero.</p>
+                    </feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement><p> They are about the same.</p></statement>
+                    <feedback>
+                        <p>Correct! Because <m>X</m> is a continuous random variable, the probability at any single exact coordinate is defined mathematically by an integral over an interval of width zero. Therefore, <m>P(X = 3) = 0</m> and <m>P(X = 8) = 0</m>, making them exactly equal.</p>
+                    </feedback>
+                </choice>
+            </choices>
+        </task>
+
+        <!-- Part B: Infinitesimal Intervals -->
+        <task xml:id="task-pdf-micro-interval-shifted">
+            <statement>
+                <p>
+                     Consider two tiny intervals of equal narrow width (<m>\Delta x = 0.02</m>). Which probability is larger: <m>P(2.99 \le X \le 3.01)</m> or <m>P(7.99 \le X \le 8.01)</m>?
+                </p>
+            </statement>
+            <choices>
+                <choice>
+                    <statement><p> <m>P(2.99 \le X \le 3.01)</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. The height of the density function determines the concentration of probability per unit width. Since the function is much lower at <m>x=3</m> than at the peak of the spike, a narrow interval here captures less area.</p>
+                    </feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement><p>B. <m>P(7.99 \le X \le 8.01)</m></p></statement>
+                    <feedback>
+                        <p>Correct! For an extremely narrow window centered around a point <m>c</m>, the area under the curve can be approximated by a rectangle whose height is the density function value: <m>P(c - \epsilon \le X \le c + \epsilon) \approx f_X(c) \cdot \Delta x</m>. Reading our new shifted graph, the density height at the sharp peak is <m>f_X(8) \approx 0.76</m>, while the height of the plateau is <m>f_X(3) = 0.15</m>. Because the curve is much higher at <m>x = 8</m>, this tiny window traps significantly more area.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement><p>C. They are about the same.</p></statement>
+                    <feedback>
+                        <p>Incorrect. Since the density heights at <m>x=3</m> and <m>x=8</m> are completely different, equal narrow intervals will contain different area allocations.</p>
+                    </feedback>
+                </choice>
+            </choices>
+        </task>
+
+        <!-- Part C: Macroscopic Intervals (Area Comparison) -->
+        <task xml:id="task-pdf-macro-interval-shifted">
+            <statement>
+                <p>
+                     Now look at wider intervals of equal width. Which probability is larger: <m>P(1 \le X \le 3)</m> or <m>P(7 \le X \le 9)</m>?
+                </p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement><p> <m>P(1 \le X \le 3)</m></p></statement>
+                    <feedback>
+                        <p>Correct! Probability corresponds to the total area under the density curve over the specified interval. Let us evaluate our new layout's regions:
+                            <ul>
+                                <li><p>The interval <m>1 \le X \le 3</m> spans a width of 2 units over the plateau with a constant height of 0.15. This rectangular area evaluates to: <m>2 \times 0.15 = 0.30</m>.</p></li>
+                                <li><p>The interval <m>7 \le X \le 9</m> captures the entire sharp spike centered at <m>x = 8</m>. Because this spike is extremely narrow, the entire feature contains only about <m>0.125</m> of total area.</p></li>
+                            </ul>
+                            Because an area of <m>0.30</m> is significantly larger than <m>0.125</m>, the plateau interval on the left contains far more probability mass than the tall spike on the right.
+                        </p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement><p> <m>P(7 \le X \le 9)</m></p></statement>
+                    <feedback>
+                        <p>Incorrect. Do not let the maximum height of the spike mislead you. The spike at <m>x=8</m> is so narrow that it contains less total area than a 2-unit slice of our low, wide plateau structure.</p>
+                    </feedback>
+                </choice>
+                </choices>
+                </task>
+
+                    <!-- Part D: Evaluating Median Position (Multiple Choice) -->
+    <task xml:id="task-pdf-unique-median-position">
         <statement>
             <p>
-                 Use the probability density function (PDF) to determine the probability that the network operates at a financial loss on a randomly selected day.
+                 What is the approximate location of the median(<m>m</m>) for this random variable, <m>X</m>?
             </p>
         </statement>
         <choices>
-            <choice><statement><p><m>0.8208</m></p></statement>
+            <choice correct="yes">
+                <statement><p> <m>m \approx 3.73</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This is the probability that the network is profitable, <m>P(X \gt 0.40)</m>. The question asks for the probability of operating at a loss, which requires checking the area below or equal to 40% utilization.</p>
-                </feedback></choice>
-            <choice correct="yes"><statement><p><m>0.1792</m></p></statement>
+                    <p>Correct! The median splits the entire area under the PDF into two equal halves of <m>0.50</m>. Because our initial plateau structure is wide (spanning 4 full units from <m>x = 1</m> to <m>x = 5</m>) and holds a constant height of <m>0.15</m>, the entire plateau contains a massive area block of <m>4 \times 0.15 = 0.60</m>. Since <m>0.60 \gt 0.50</m>, we reach the exact halfway area mark well before exiting the plateau. Solving for width <m>w</m> from the left edge: <m>w \times 0.15 = 0.50 \implies w \approx 2.73</m>. Adding this to our start point gives a median of exactly <strong><m>x \approx 3.73</m></strong>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p> <m>m \approx 5.25</m></p></statement>
                 <feedback>
-                    <p>Correct! Set up the definite integral from the lower boundary of 0 to the financial loss threshold of 0.40:</p>
-                    <p><me>P(X \le 0.40) = \int_{0}^{0.40} 12x^2(1-x) \, dx = \int_{0}^{0.40} (12x^2 - 12x^3) \, dx</me></p>
-                    <p><me>= \left[ 4x^3 - 3x^4 \right]_{0}^{0.40} = 4(0.40)^3 - 3(0.40)^4 = 0.256 - 0.0768 = 0.1792</me></p>
-                </feedback></choice>
-            <choice><statement><p><m>0.2560</m></p></statement>
+                    <p>Incorrect. By the time you exit the plateau structure at <m>x = 5.25</m>, you have already accumulated roughly 63% of the total area under the curve, meaning the median point was already crossed further to the left.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p> <m>m \approx 7.50</m></p></statement>
                 <feedback>
-                    <p>Incorrect. It looks like you evaluated the <m>4x^3</m> term but forgot to subtract the <m>3x^4</m> term during the definite integration steps.</p>
-                </feedback></choice>
-            <choice><statement><p><m>0.0768</m></p></statement>
+                    <p>Incorrect. While the graph reaches its absolute highest peak mode at <m>x = 7.50</m>, the spike is too narrow to hold significant area mass. By the time you reach this spike, over 65% of the total probability space already sits behind you to the left.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p> <m>m \approx 2.50</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This matches only the subtracted part of the anti-derivative expansion (<m>3x^4</m>). Review your definite integral evaluation steps.</p>
-                </feedback></choice>
+                    <p>Incorrect. At the flat midpoint of the plateau (<m>x = 2.50</m>), the accumulated area from the left edge is only <m>1.5 \times 0.15 = 0.225</m>, which is far short of the required <m>0.50</m> barrier threshold.</p>
+                </feedback>
+            </choice>
         </choices>
     </task>
 
-    <!-- Part B: Interactive CDF Expression Input -->
-    <task xml:id="task-ev-cdf-input">
-        <statement>
-            <p>
-                  Find the cumulative distribution function (CDF), <m>F_X(x)</m>, over the domain interval <m>0 \le x \le 1</m>.
-            </p>
-            <p>
-            <m>F_X(x) = </m> <fillin mode="math" width="15" answer="4x^3 - 3x^4"/>
-        </p>
-        </statement>
-        <evaluation>
-        <evaluate>
-            <test correct="yes">
-                <mathcmp use-answer="yes"/>
-            </test>
-            <feedback>
-            <p>
-                Correct! To find the general cumulative distribution function, integrate the PDF from the lower limit 0 up to an arbitrary variable boundary <m>x</m>:
-                <me>F_X(x) = \int_{0}^{x} (12t^2 - 12t^3) \, dt = \left[ 4t^3 - 3t^4 \right]_{0}^{x} = 4x^3 - 3x^4, \quad \text{for } 0 \le x \le 1</me>
-            </p>
-            <p>
-                Evaluating your derived CDF directly confirms Part A: <m>F_X(0.40) = 4(0.40)^3 - 3(0.40)^4 = 0.1792</m>.
-            </p>
-        </feedback>
-        </evaluate>
-    </evaluation> 
-        
-    </task>
+                </exercise>
 
-    <!-- Part C: Expected Value (Multiple Choice) -->
-    <task xml:id="task-ev-expected-value">
-        <statement>
-            <p>
-                Find the expected value for the peak capacity utilization across this charging network.
-            </p>
-        </statement>
-        <choices>
-            <choice><statement><p><m>0.50</m></p></statement>
-                <feedback><p>Incorrect. While the parameter bounds span 0 to 1, the distribution is asymmetric, meaning the true center of mass is shifted higher than the basic interval midpoint.</p></feedback></choice>
-            <choice correct="yes"><statement><p><m> 0.60</m></p></statement>
-                <feedback>
-                    <p>Correct! Setting up the continuous expectation integral: </p>
-                    <p><me>E(X) = \int_{0}^{1} x \cdot 12x^2(1-x) \, dx = \int_{0}^{1} (12x^3 - 12x^4) \, dx</me></p>
-                    <p><me>= \left[ 3x^4 - \frac{12}{5}x^5 \right]_{0}^{1} = 3(1)^4 - 2.4(1)^5 = 3 - 2.4 = 0.60</me></p>
-                    <p>This means the network averages 60% capacity utilization during peak hours.</p>
-                </feedback></choice>
-            <choice><statement><p><m>0.40</m></p></statement>
-                <feedback><p>Incorrect. You may have confused the expected value with the maximum allowable threshold for operating at a loss introduced in Part A.</p></feedback></choice>
-            <choice><statement><p><m> 0.75</m></p></statement>
-                <feedback><p>Incorrect. Review your integration anti-derivative powers. Increasing the integrand by a factor of <m>x</m> turns the components into <m>12x^3</m> and <m>-12x^4</m>.</p></feedback></choice>
-        </choices>
-    </task>
 
-    <!-- Part D: Variance (Multiple Choice) -->
-    <task xml:id="task-ev-variance">
-        <statement>
-            <p>
-                Find the variance <m>V(X)</m> for the network's peak capacity utilization.
-            </p>
-        </statement>
-        <choices>
-            <choice correct="yes"><statement><p><m> 0.04</m></p></statement>
-                <feedback>
-                    <p>Correct! First, compute the second moment value <m>E(X^2)</m>:</p>
-                    <p><me>E(X^2) = \int_{0}^{1} x^2 \cdot 12x^2(1-x) \, dx = \int_{0}^{1} (12x^4 - 12x^5) \, dx</me></p>
-                    <p><me>= \left[ \frac{12}{5}x^5 - 2x^6 \right]_{0}^{1} = 2.4(1)^5 - 2(1)^6 = 2.4 - 2 = 0.40</me></p>
-                    <p>Now apply the variance identity formula <m>V(X) = E(X^2) - [E(X)]^2</m>:</p>
-                    <p><me>V(X) = 0.40 - (0.60)^2 = 0.40 - 0.36 = 0.04</me></p>
-                </feedback></choice>
-            <choice><statement><p><m>0.40</m></p></statement>
-                <feedback><p>Incorrect. This is the value of the second moment <m>E(X^2)</m> alone. You still need to subtract the square of your mean (<m>0.60^2 = 0.36</m>).</p></feedback></choice>
-            <choice><statement><p><m> 0.20</m></p></statement>
-                <feedback><p>Incorrect. Ensure you subtract the squared mean (<m>0.36</m>) from <m>E(X^2)</m>, rather than subtracting the raw unsquared mean value.</p></feedback></choice>
-            <choice><statement><p><m> 0.16</m></p></statement>
-                <feedback><p>Incorrect. Double-check your subtraction arithmetic when calculating <m>0.40 - 0.36</m>.</p></feedback></choice>
-        </choices>
-    </task>
-</exercise>
+
+
+
 
 
   <!-- ==================================================================== -->
@@ -529,6 +694,161 @@
     </task>
 </exercise>
 
+<exercise label="ex-gem-purity-pdf-moments" exercise-customization="matching">
+    <title>Continuous Distributions: Differentiating CDFs and Linear Transformations</title>
+    <introduction>
+        <p>
+            An archival geological dataset establishes that the random proportion <m>Y</m> of internal structural impurities per raw gemstone sample collected follows a continuous distribution with Cumulative Distribution Function (CDF) given by: 
+            <me>F(y) = \frac{1}{2}y^3 + \frac{1}{2}y^2,  0 \lt y \lt 1</me>
+        </p>
+        <p>
+            Furthermore, a mineral processing laboratory calculates the net commercial dollar value of each processed gem sample using the linear transformation function:
+            <me>W = 5 - 0.5Y</me>
+        </p>
+       
+    </introduction>
+
+    <!-- Part 1: Multiple Choice - Find PDF given CDF -->
+    <task xml:id="task-gems-find-pdf-mc">
+        <statement>
+
+            <p>
+                Which of the following expressions represents the correct probability density function (PDF), <m>f(y)</m>, on the interval <m>0 \lt y \lt 1</m>?
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>f(y) = \frac{1}{8}y^4 + \frac{1}{6}y^3</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This looks like the result of anti-differentiation (integration) rather than differentiation. To recover a PDF from a known CDF, you must take the first derivative: <m>f(y) = \frac{d}{dy}F(y)</m>.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>f(y) = \frac{3}{2}y^2 + y</m></p></statement>
+                <feedback>
+                    <p>Correct! By the Fundamental Theorem of Calculus, the density function is the first derivative of the cumulative distribution function:</p>
+                    <me>f(y) = \frac{d}{dy}\left(\frac{1}{2}y^3 + \frac{1}{2}y^2\right) = \frac{3}{2}y^2 + 2\left(\frac{1}{2}\right)y = \frac{3}{2}y^2 + y</me>
+                </feedback></choice>
+            <choice><statement><p><m>f(y) = \frac{1}{2}y^2 + \frac{1}{2}y</m></p></statement>
+                <feedback>
+                    <p>Incorrect. Remember to bring down the original polynomial exponents to the front as multipliers when applying the calculus power rule for derivatives.</p>
+                </feedback></choice>
+            <choice><statement><p><m>f(y) = 3y^2 + 2y</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you took the derivative of the polynomial terms but forgot to multiply them by the baseline constant fractions of <m>\frac{1}{2}</m> already sitting in front of the terms.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part 2: Matching - Find Mean and Standard Deviation of W -->
+    <task xml:id="task-gems-moments-matching">
+        <statement>
+            <p>
+                Evaluating Financial Performance Indicators:
+            </p>
+            <p>
+                Connect each target operational metric for the gem sample dollar value (<m>W</m>) to its correct rounded decimal calculation value.
+            </p>
+            
+        </statement>
+        <feedback>
+            <p>Excellent job! You successfully used the derivative to find the PDF and applied linear transformation properties to calculate the gemstone valuation metrics.</p>
+        </feedback>
+        <matching>
+            <!-- Match 1: Mean of W -->
+           
+                <premise xml:id="gem1">The expected long-run mean value of the processed gem sample, <m>E(W)</m></premise>
+                <response ref="gem1"><m>4.65</m> </response>
+            
+            
+            <!-- Match 2: Standard Deviation of W -->
+          
+                <premise xml:id="gem2">The standard deviation of the processed gem sample value, <m>\sigma_W</m></premise>
+                <response ref="gem2"><m>0.11</m> </response>
+            
+
+
+                <response><m>0.71</m> </response>
+
+                <response><m>0.01</m> </response>
+  
+        </matching>
+
+        <solution>
+            <p>
+                <strong>Step-by-Step Derivation of Financial Moments:</strong>
+            </p>
+            <p>
+                <strong>1. Find the Expected Value of Gem Impurities, <m>E(Y)</m>:</strong>
+                Set up the continuous expectation integral using the PDF from Part A:
+                <md>
+                    <mrow>E(Y) \amp = \int_{0}^{1} y \cdot \left(\frac{3}{2}y^2 + y\right) \, dy = \int_{0}^{1} \left(\frac{3}{2}y^3 + y^2\right) \, dy</mrow>
+                    <mrow>\amp = \left[ \frac{3}{8}y^4 + \frac{1}{3}y^3 \right]_{0}^{1} = \frac{3}{8} + \frac{1}{3} = \frac{17}{24} \approx 0.7083</mrow>
+                </md>
+            </p>
+            <p>
+                <strong>2. Apply the Expectation Transformation to find <m>E(W)</m>:</strong>
+                <me>E(W) = E(5 - 0.5Y) = 5 - 0.5 \cdot E(Y) = 5 - 0.5(0.7083) = 5 - 0.3542 = 4.6458 \approx 4.65</me>
+            </p>
+            <p>
+                <strong>3. Find the Second Moment, <m>E(Y^2)</m>, to evaluate spread:</strong>
+                <md>
+                    <mrow>E(Y^2) \amp = \int_{0}^{1} y^2 \cdot \left(\frac{3}{2}y^2 + y\right) \, dy = \int_{0}^{1} \left(\frac{3}{2}y^4 + y^3\right) \, dy</mrow>
+                    <mrow>\amp = \left[ \frac{3}{10}y^5 + \frac{1}{4}y^4 \right]_{0}^{1} = \frac{3}{10} + \frac{1}{4} = \frac{11}{20} = 0.5500</mrow>
+                </md>
+            </p>
+            <p>
+                <strong>4. Compute Variance of Gem Impurities, <m>\text{Var}(Y)</m>:</strong>
+                <me>\text{Var}(Y) = E(Y^2) - [E(Y)]^2 = 0.5500 - (0.7083)^2 = 0.5500 - 0.5017 = 0.0483</me>
+            </p>
+            <p>
+                <strong>5. Scale Variance and find Standard Deviation of Processed Gem Value (<m>W</m>):</strong>
+                Remember that adding a constant has zero impact on variance spread, while the coefficient scales quadratically:
+                <me>\text{Var}(W) = \text{Var}(5 - 0.5Y) = (-0.5)^2 \cdot \text{Var}(Y) = 0.25 \cdot 0.0483 = 0.0121</me>
+                Take the square root to convert the variance parameter back into standard deviation metrics:
+                <me>\sigma_W = \sqrt{\text{Var}(W)} = \sqrt{0.0121} \approx 0.1098 \approx 0.11</me>
+                Rounded to two decimal places, the final tracking metrics yield an expected gemstone sample mean value of <strong>4.65</strong> dollars and a standard deviation of <strong>0.11</strong> dollars.
+            </p>
+        </solution>
+    </task>
+        <!-- Part C: Value Threshold Inversion Probability (Short Answer Entry) -->
+    <task xml:id="task-gems-value-probability-input">
+        <statement>
+            
+            <p>
+                A jewelry manufacturer establishes a quality threshold rule: any processed gemstone sample with a net commercial value strictly below <m>\$4.60</m> is flagged as too highly flawed for premium retail display.
+            </p>
+            <p>
+                Calculate the exact probability that a randomly selected gemstone sample will be flagged by this quality rule.
+            </p>
+
+            <p>
+                Probability = <fillin  answer="0.424" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To evaluate the valuation probability risk parameter, invert the linear pricing function to express the condition in terms of the random impurity variable <m>Y</m>:
+                <me>W \lt 4.60 \implies 5 - 0.5Y \lt 4.60 \implies -0.5Y \lt -0.40 \implies Y \gt 0.80</me>
+            </p>
+            <p>
+                We now calculate <m>P(Y \gt 0.80)</m>. By leveraging the complement rule alongside our baseline Cumulative Distribution Function (CDF) provided in the problem introduction:
+                <me>P(Y \gt 0.80) = 1 - P(Y \le 0.80) = 1 - F(0.80)</me>
+                Substitute <m>y = 0.80</m> into the given polynomial CDF expression:
+                <me>F(0.80) = \frac{1}{2}(0.80)^3 + \frac{1}{2}(0.80)^2 = \frac{1}{2}(0.512) + \frac{1}{2}(0.640) = 0.256 + 0.320 = 0.576</me>
+                Completing the upper-tail probability complement subtraction step:
+                <me>P(W \lt 4.60) = P(Y \gt 0.80) = 1 - 0.576 = 0.424</me>
+                The exact final probability that a gemstone sample falls below the value threshold is exactly <strong>0.424</strong> (or a 42.4% risk rate).
+            </p>
+        </solution>
+    </task>
+
+</exercise>
+
   </exercises>
 
 
@@ -536,11 +856,7 @@
 
   <exercises xml:id="hw-cont-rv-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+
 
 
 

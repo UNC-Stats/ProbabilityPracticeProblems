@@ -3,18 +3,38 @@
 <section xml:id="sec-section-poisson-DRV" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Poisson Random Variable</title>
 
+<introduction>
  <p> 
-    Write intro to homework set.....  Goal, Purpose, Instructions....
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
   </p>
+</introduction>
 
 
  <exercises xml:id="hw-poisson-rv" >
    <title>Interactive Exercises</title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-   </introduction>
+
 
 
 <exercise label="ex-poisson-er-triage">
@@ -177,18 +197,201 @@
     </task>
 </exercise>
 
+<exercise label="ex-poisson-panel-flaws" xmlns:pi="http://pretextbook.org">
+    <title>Poisson Processes: Aerospace Structural Integrity Audits</title>
+    <introduction>
+        <p>
+            An aerospace manufacturing quality control audit shows that microscopic surface material flaws in high-performance carbon-fiber fuselage panels occur completely randomly and independently at a constant average rate of one flaw every 270 square feet. A technician pulls a newly manufactured rectangular section measuring exactly 9 feet by 13 feet for testing.
+        </p>
+        <p>
+            Let <m>X</m> denote the total number of structural flaws contained within this specific panel segment. Because flaws are distributed randomly across a continuous spatial region, <m>X</m> follows a Poisson distribution. 
+        </p>
+    </introduction>
 
+    <!-- Part A: Finding Lambda -->
+    <task xml:id="task-panel-find-lambda">
+        <statement>
+            <p>
+                Determine the appropriate expected rate parameter <m>\lambda</m> (the mean number of flaws) for this specific 9-foot by 13-foot fuselage panel. 
+             </p>
+             <p>
+        <fillin width="8" answer="0.4333"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+             First, calculate the total surface area (<m>A</m>) of the inspected fuselage panel by multiplying its physical length and width dimensions:
+                <me>A = 9 \text{ ft} \times 13 \text{ ft} = 117 \text{ sq ft}</me>
+                Next, scale the baseline spatial material flaw density rate (<m>\alpha = \frac{1}{270}</m> flaws per square foot) by the target panel area to find the segment's expected value parameter <m>\lambda</m>:
+                <me>\lambda = \alpha \cdot A = \frac{1 \text{ flaw}}{270 \text{ sq ft}} \cdot 117 \text{ sq ft} = \frac{117}{270} = \frac{13}{30} \approx 0.433333</me>
+            </p>
+          </feedback>
+        </test>
+       </evaluate>
+        </evaluation>
+
+    </task>
+
+    <!-- Part B: Compute Probability -->
+    <task xml:id="task-panel-compute-prob">
+        <statement>
+            <p>
+                 Using your  rate parameter from Part A, calculate the probability that this specific aerospace panel contains absolutely no flaws.
+                 </p>
+                       <p>
+        <fillin width="8" answer="0.6483"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+         To find the probability of observing exactly zero events in a continuous spatial Poisson process, evaluate the Poisson probability mass function (PMF) at <m>k = 0</m> using your unrounded rate parameter <m>\lambda = \frac{13}{30}</m>:
+                <me>P(X = k) = \frac{\lambda^k \cdot e^{-\lambda}}{k!}</me>
+                <me>P(X = 0) = \frac{\left(\frac{13}{30}\right)^0 \cdot e^{-\frac{13}{30}}}{0!} = \frac{1 \cdot e^{-0.433333}}{1} \approx 0.648344</me> Rounded to four decimal places, the final probability that the high-performance structural panel contains no surface flaws is approximately <strong>0.6483</strong> (or a 64.83% chance).
+            </p>
+          </feedback>
+        </test>
+       </evaluate>
+        </evaluation>
+      
+    </task>
+</exercise>
    </exercises>
 
 
 
 <exercises xml:id="hw-poisson-rv-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+
+  
+
+
+    <exercise label="ex-static-bitcoin-poisson">
+        <title>Analyzing Cryptographic Hashing Probabilities</title>
+<introduction>
+    <p>
+        Bitcoin mining utilizes an algorithmic process called cryptographic hashing, which structurally behaves like a sequence of millions of independent Bernoulli trials. Each time a computing node performs a single hash, it has a tiny probability of <m>p = 1.15 \times 10^{-23}</m> of successfully solving the current network difficulty puzzle. Solving a block rewards the miner with a subsidy of <m>3.125</m> Bitcoins. 
+    </p>
+    <p>
+        These operations are executed by specialized Application-Specific Integrated Circuit (ASIC) computers called miners. A typical enterprise miner performs approximately <m>9.3 \times 10^{13}</m> hashes per second. Suppose a commercial operation deploys a farm array of <m>10</m> identical miners and runs them continuously for exactly one year.
+    </p>
+    </introduction>
+        <!-- Part A: Total Trials Calculation -->
+        <task xml:id="task-bitcoin-total-hashes">
+            <statement>
+                <p>
+                     Determine the total cumulative number of hashes performed by the 10-miner farm array over the course of a full 365-day year.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    To find the total number of independent trials (<m>n</m>), we scale the hashrate per second by the number of seconds in a standard year across the full equipment cluster:
+                    <md>
+                        <mrow>n \amp = (9.3 \times 10^{13} \text{ hashes/sec}) \cdot 60 \text{ sec/min} \cdot 60 \text{ min/hr} \cdot 24 \text{ hr/day} \cdot 365 \text{ days/yr} \cdot 10 \text{ miners}</mrow>
+                        <mrow>\amp = 9.3 \times 10^{13} \cdot 31,536,000 \cdot 10</mrow>
+                        <mrow>\amp = 2.933 \times 10^{22} \text{ total hashes}</mrow>
+                    </md>
+                    The total number of trials executed by the hardware cluster in one year is <m>2.933 \times 10^{22}</m>.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part B: Binomial Distribution Setup -->
+        <task xml:id="task-bitcoin-binomial-parameters">
+            <statement>
+                <p>
+                    Let <m>X</m> represent the exact number of blocks successfully mined by the farm array during the year. Explain why <m>X</m> can be modeled as a Binomial random variable, and define its structural distribution parameters.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The random variable <m>X</m> satisfies all core conditions of a Binomial distribution: there is a fixed number of trials (<m>n</m>), each individual hash has a binary outcome (either the block solution is valid or invalid), the trials are physically independent based on the SHA-256 network protocol design, and the target success probability (<m>p</m>) remains constant across every roll.
+                </p>
+                <p>
+                    The appropriate modeling parameters derived from our baseline system are:
+                    <ul>
+                        <li><p>Total Trials: <m>n = 2.933 \times 10^{22}</m></p></li>
+                        <li><p>Success Probability: <m>p = 1.15 \times 10^{-23}</m></p></li>
+                    </ul>
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part C: Poisson Approximation Parameter -->
+        <task xml:id="task-bitcoin-poisson-lambda">
+            <statement>
+                <p>
+                    Explain why the Binomial model defined in Part B can be well approximated by a Poisson distribution, and calculate the appropriate value for the rate parameter <m>\lambda</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Evaluating exact Binomial formulas using an enormous trial footprint (<m>n \approx 2.9 \times 10^{22}</m>) paired with an extremely small success weight (<m>p \approx 1.1 \times 10^{-23}</m>) causes direct computer arithmetic overflow failures. Because <m>n</m> is infinitely large and <m>p</m> is vanishingly close to zero, the distribution shape converges perfectly to a stable **Poisson approximation** using the expected rate scale parameter <m>\lambda = n \cdot p</m>:
+                    <md>
+                        <mrow>\lambda \amp = n \cdot p</mrow>
+                        <mrow>\amp = (2.933 \times 10^{22}) \cdot (1.15 \times 10^{-23})</mrow>
+                        <mrow>\amp = 0.3373 \text{ expected blocks per year}</mrow>
+                    </md>
+                    The corresponding Poisson rate parameter is exactly <m>\lambda = 0.3373</m>.
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part D: Complement Probability Analysis -->
+        <task xml:id="task-bitcoin-prob-at-least-one">
+            <statement>
+                <p>
+                     Using your Poisson approximation model, determine the mathematical probability that the hardware cluster successfully mines at least one block over the course of the year (<m>P(X \ge 1)</m>).
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    To compute <m>P(X \ge 1)</m> efficiently, we apply the standard **Complement Rule**: <m>P(X \ge 1) = 1 - P(X = 0)</m>. First, isolate the baseline probability of mining absolutely zero blocks using our Poisson PMF:
+                    <me>P(X = 0) = \frac{\lambda^0 \cdot e^{-\lambda}}{0!} = \frac{1 \cdot e^{-0.3373}}{1} \approx 0.7137</me>
+                </p>
+                <p>
+                    Subtracting this empty outcome space from total certainty:
+                    <me>P(X \ge 1) = 1 - P(X = 0) = 1 - 0.7137 = 0.2863</me>
+                    The probability that the farm array secures at least one block reward over the year is approximately <strong>0.2863</strong> (or 28.63%).
+                </p>
+            </solution>
+        </task>
+
+        <!-- Part E: Bounded Interval Evaluation -->
+        <task xml:id="task-bitcoin-prob-interval">
+            <statement>
+                <p>
+                    Find the probability that the mining operation secures between 2 and 4 blocks inclusive over the annual tracking window. In other words, compute <m>P(2 \le X \le 4)</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Because the Poisson distribution models distinct, discrete events, the probability of falling within a closed integer interval is found by summing the point weights of the isolated components:
+                    <me>P(2 \le X \le 4) = P(X = 2) + P(X = 3) + P(X = 4)</me>
+                </p>
+                <p>
+                    Expanding each coordinate element using the Poisson PMF formula where <m>\lambda = 0.3373</m>:
+                    <md>
+                        <mrow>P(2 \le X \le 4) \amp = \frac{\lambda^2 \cdot e^{-\lambda}}{2!} + \frac{\lambda^3 \cdot e^{-\lambda}}{3!} + \frac{\lambda^4 \cdot e^{-\lambda}}{4!}</mrow>
+                        <mrow>\amp = \frac{(0.3373)^2 \cdot e^{-0.3373}}{2} + \frac{(0.3373)^3 \cdot e^{-0.3373}}{6} + \frac{(0.3373)^4 \cdot e^{-0.3373}}{24}</mrow>
+                        <mrow>\amp \approx 0.04065 + 0.00457 + 0.00039</mrow>
+                        <mrow>\amp \approx 0.04561</mrow>
+                    </md>
+                    Rounded to four decimal places, the probability of mining between 2 and 4 blocks is approximately <strong>0.0456</strong>.
+                </p>
+            </solution>
+        </task>
+    </exercise>
+
 
    </exercises>
 

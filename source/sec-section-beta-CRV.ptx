@@ -3,18 +3,399 @@
 <section xml:id="sec-section-beta-CRV" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Beta Random Variable</title>
 
+<introduction>
  <p> 
-    Write intro to homework set.....  Goal, Purpose, Instructions....
+    By completing the problems provided below, you will gain practice with: 
+    <ul>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+         
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ul>
   </p>
+</introduction>
 
 
  <exercises xml:id="hw-beta-rv" >
    <title>Interactive Exercises</title>
-   <introduction>
-     <p>
-       Write intro to interactive homework set.....
-     </p>
-   </introduction>
+   
+
+<exercise label="ex-beta-distribution-kernel" xmlns:pi="http://pretextbook.org">
+    <title>Continuous Distributions: Recognizing Beta Kernels</title>
+    <introduction>
+        <p>
+            The relative humidity <m>Y</m> measured at a specialized weather station has a probability density function (PDF) given by:
+            <me>f(y) = k y^3 (1-y)^5, \quad \text{for } 0 \le y \le 1</me>,
+            where <m>k</m> is a proportionality constant. 
+        </p>
+
+        <p>
+          Hint: Do NOT integrate!
+        </p>
+        
+    </introduction>
+
+    <!-- Part A: Solving for k -->
+    <task xml:id="task-beta-solve-k">
+        <statement>
+            <p>
+                Determine the exact value of <m>k</m> that will make this a valid probability density function.
+                
+            </p>
+            <p>
+                <m>k = </m> <fillin  answer="504" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer ="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                Instead of computing a tedious integration by parts or using a power expansion loop, we can recognize that the polynomial kernel <m>y^3 (1-y)^5</m> over the bounded support interval <m>[0, 1]</m> matches the definition of a standard **Beta Distribution**. 
+            </p>
+            <p>
+                The standard Probability Density Function for a Beta random variable with shape parameters <m>\alpha</m> and <m>\beta</m> is defined as:
+                <me>f(y) = \frac{1}{\text{B}(\alpha, \beta)} y^{\alpha - 1} (1-y)^{\beta - 1}</me>
+                Matching the exponents from our target relative humidity function:
+                <ul>
+                    <li><p><m>\alpha - 1 = 3 \implies \alpha = 4</m></p></li>
+                    <li><p><m>\beta - 1 = 5 \implies \beta = 6</m></p></li>
+                </ul>
+            </p>
+            <p>
+                The constant coefficient <m>k</m> must equal the normalizing reciprocal factor <m>\frac{1}{\text{B}(4, 6)}</m>. Since <m>\alpha</m> and <m>\beta</m> are positive integers, we can compute the Beta function using standard factorials via Gamma identities:
+                <md>
+                    <mrow>\text{B}(4, 6) \amp = \frac{\Gamma(4) \cdot \Gamma(6)}{\Gamma(4 + 6)} = \frac{3! \cdot 5!}{9!}</mrow>
+                    <mrow>\text{B}(4, 6) \amp = \frac{6 \cdot 120}{362,880} = \frac{720}{362,880} = \frac{1}{504}</mrow>
+                </md>
+                Inverting this value to solve for the constant yields:
+                <me>k = \frac{1}{\text{B}(4, 6)} = 504</me>
+                The exact normalizing constant multiplier is **504**.
+            </p>
+        </solution>
+    </task>
+        <!-- Part B: Structural Moments via Distribution Shortcuts (Multiple Choice) -->
+    <task xml:id="task-beta-expected-value-mc">
+        <statement>
+           <p>Compute the expected relative humidity, <m>E(Y)</m>. 
+            </p>
+            
+        </statement>
+        <choices>
+            <choice>
+                <statement><p><m>E(Y) = 0.500</m></p></statement>
+                <feedback>
+                    <p>Incorrect. A mean of 0.500 implies a perfectly symmetric distribution curve. Because the right-hand failure parameter exponent (<m>\beta = 6</m>) is larger than the left-hand success parameter exponent (<m>\alpha = 4</m>), the density mass is skewed downward, pulling the center of gravity below the midpoint.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement><p><m>E(Y) = 0.400</m></p></statement>
+                <feedback>
+                    <p>Correct! For any valid continuous random variable following a standard Beta distribution, we can skip tedious calculus integration by leveraging the algebraic distribution shortcut formulas for its moments:</p>
+                    <me>E(Y) = \frac{\alpha}{\alpha + \beta}</me>
+                    <p>Substituting our verified parameters from Part A (<m>\alpha = 4</m> and <m>\beta = 6</m>) maps directly to the targeted long-run balance point:</p>
+                    <me>E(Y) = \frac{4}{4 + 6} = \frac{4}{10} = 0.400</me>
+                    <p>The expected relative humidity at this location is exactly <strong>0.400</strong> (or 40%).</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>E(Y) = 0.600</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This looks like a parameter calculation inversion where you set the numerator to the wrong parameter (<m>\frac{\beta}{\alpha+\beta}</m>). Because <m>\beta \gt \alpha</m>, the distribution leans left, making the mean smaller than 0.500.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>E(Y) = 0.667</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This distractor evaluates the ratio <m>\frac{\beta}{\alpha}</m> or <m>\frac{4}{6}</m>. The denominator for a Beta distribution mean must capture the total combined weight of both shapes, <m>\alpha + \beta</m>.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+
+</exercise>
+
+
+
+<exercise label="ex-beta-cloud-cache-allocation" xmlns:pi="http://pretextbook.org">
+    <title>Continuous Distributions: Beta Modeling of Cloud Cache Workloads</title>
+    <introduction>
+        <p>
+            An enterprise cloud computing data center manages massive data buffers that are completely cleared and reset every Monday morning. System architecture engineers monitor the proportion, <m>Y</m>, of this high-speed cache storage capacity that is actively utilized during the weekly data sync cycle. Over many months of operational logging, engineers establish that <m>Y</m> behaves as a continuous random variable that can be modeled by a Beta distribution with shape parameters <m>\alpha = 4</m> and <m>\beta = 2</m>.
+        </p>
+        <p>
+            
+            Complete the questions below to evaluate the system's infrastructure storage risks.
+        </p>
+    </introduction>
+
+    <!-- Part A: Solving for k -->
+        <!-- Part A: PDF Functional Mapping (Converted to Multiple Choice) -->
+    <task xml:id="task-beta-cache-solve-pdf-mc">
+        <statement>
+            <p>
+                 Which of the following expressions defines the correct Probability Density Function (PDF), <m>f(y)</m>, over the domain support interval <m>0 \le y \le 1</m>?
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>f(y) = 4y^3(1-y)</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This option uses the shape parameter value <m>\alpha = 4</m> directly as the constant multiplier coefficient. To find the correct scalar constant, you must calculate the reciprocal of the Beta function pool, <m>\frac{1}{\text{B}(\alpha, \beta)}</m>.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>f(y) = 20y^3(1-y)</m></p></statement>
+                <feedback>
+                    <p>Correct! The standard algebraic profile for a Beta distribution PDF is defined as:</p>
+                    <me>f(y) = \frac{1}{\text{B}(\alpha, \beta)} y^{\alpha - 1} (1-y)^{\beta - 1}</me>
+                    <p>Substituting our given parameters (<m>\alpha = 4</m> and <m>\beta = 2</m>) maps to the functional components as follows:</p>
+                    <ul>
+                        <li><p>The variable powers drop by 1: <m>\alpha - 1 = 3</m> and <m>\beta - 1 = 1</m>, giving the polynomial kernel <m>y^3(1-y)</m>.</p></li>
+                        <li><p>The normalizing scalar constant multiplier utilizes Gamma factorial identities for positive integers:</p>
+                        <me>k = \frac{1}{\text{B}(4, 2)} = \frac{\Gamma(4+2)}{\Gamma(4)\cdot\Gamma(2)} = \frac{5!}{3! \cdot 1!} = \frac{120}{6 \cdot 1} = 20</me></li>
+                    </ul>
+                    <p>Multiplying the parts together gives the valid PDF expression: <m>20y^3(1-y)</m>.</p>
+                </feedback></choice>
+            <choice><statement><p><m>f(y) = 5y^4(1-y)</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you forgot to subtract 1 from the exponents when mapping the shape parameters to the polynomial variable components, setting the kernel up as <m>y^{\alpha}(1-y)^{\beta-1}</m> instead of <m>y^{\alpha-1}(1-y)^{\beta-1}</m>.</p>
+                </feedback></choice>
+            <choice><statement><p><m>f(y) = \frac{1}{20}y^3(1-y)</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This options uses the raw Beta integral value <m>\text{B}(4,2) = \frac{1}{20}</m> directly as the multiplier. Remember that the constant outside the kernel must be the <em>reciprocal</em> of that value to ensure the entire area under the curve sums to exactly 1.00.</p>
+                </feedback></choice>
+            <choice><statement><p><m>f(y) = 20y^4(1-y)^2</m></p></statement>
+                <feedback>
+                    <p>Incorrect. While the constant multiplier 20 is correct, the variable exponents were not adjusted downward by 1, which alters the core structural shape of the distribution.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+
+
+    <!-- Part B: Target Integration Probability -->
+    <task xml:id="task-beta-cache-compute-prob">
+        <statement>
+            <p>
+                 Find the probability that the data center will fill at least 90% of its available cache storage capacity in a given week.
+            </p>
+            <p>
+                Enter your answer as a decimal rounded to exactly two decimal places.
+            </p>
+            <p>
+                Probability = <fillin  answer="0.08" width="8"/>
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate>
+                <test correct="yes">
+                    <numcmp use-answer="yes"/>
+                </test>
+            </evaluate>
+        </evaluation>
+        <solution>
+            <p>
+                To calculate the probability that the cache utilization meets or exceeds 90%, set up the definite integral of the complete PDF from the lower threshold limit of <m>0.90</m> up to the maximum continuous domain boundary of <m>1</m>:
+                <md>
+                    <mrow>P(Y \ge 0.90) \amp = \int_{0.90}^{1} 20y^3(1-y) \, dy</mrow>
+                    <mrow>\amp = 20 \int_{0.90}^{1} (y^3 - y^4) \, dy</mrow>
+                    <mrow>\amp = 20 \left[ \frac{y^4}{4} - \frac{y^5}{5} \right]_{0.90}^{1}</mrow>
+                    <mrow>\amp = \left[ 5y^4 - 4y^5 \right]_{0.90}^{1}</mrow>
+                </md>
+                Plugging in the definite boundary constraints:
+                <md>
+                    <mrow>\text{Upper Bound (1):} \amp \quad 5(1)^4 - 4(1)^5 = 5 - 4 = 1</mrow>
+                    <mrow>\text{Lower Bound (0.90):} \amp \quad 5(0.90)^4 - 4(0.90)^5 = 5(0.6561) - 4(0.59049) = 3.2805 - 2.36196 = 0.91854</mrow>
+                </md>
+                Completing the fundamental calculus subtraction step:
+                <me>P(Y \ge 0.90) = 1 - 0.91854 = 0.08146</me>
+                Rounded to two decimal places, the final probability that the node reaches or surpasses a 90% space allocation limit is exactly <strong>0.08</strong> (an 8% chance).
+            </p>
+        </solution>
+    </task>
+        <!-- Part C: CDF Functional Derivation (Multiple Choice) -->
+    <task xml:id="task-beta-cache-cdf-mc">
+        <statement>
+            <p>
+                Find the general expression for the cumulative distribution function (CDF), <m>F(y) = P(Y \le y)</m>, for the active cache capacity interval <m>0 \le y \le 1</m>.
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>F(y) = 20y^3 - 20y^4</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the raw probability density function (PDF) with the terms expanded, <m>20(y^3 - y^4)</m>. To find the cumulative function, you must take the anti-derivative integral of this expression.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>F(y) = 5y^4 - 4y^5</m></p></statement>
+                <feedback>
+                    <p>Correct! To derive the continuous cumulative distribution function, integrate the valid PDF expression from Part A from the absolute lower boundary limit 0 up to an arbitrary variable value point <m>y</m>:</p>
+                    <md>
+                        <mrow>F(y) \amp = \int_{0}^{y} 20t^3(1-t) \, dt = 20 \int_{0}^{y} (t^3 - t^4) \, dt</mrow>
+                        <mrow>\amp = 20 \left[ \frac{t^4}{4} - \frac{t^5}{5} \right]_{0}^{y} = 5y^4 - 4y^5</mrow>
+                    </md>
+                    <p>Evaluating this function at the absolute upper domain limit confirms its validity: <m>F(1) = 5(1)^4 - 4(1)^5 = 1</m>.</p>
+                </feedback></choice>
+            <choice><statement><p><m>F(y) = 4y^5 - 5y^4</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This looks like an algebraic sign direction error made during the polynomial integration step. Review the subtraction balance when taking the anti-derivative of the negative term.</p>
+                </feedback></choice>
+            <choice><statement><p><m>F(y) = \frac{5}{4}y^4 - \frac{4}{5}y^5</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you divided by the integration powers but forgot to distribute the constant multiplier coefficient coefficient of 20 to clear out the fractional denominators.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+
+   
+<exercise label="ex-continuous-ev-charging-capacity">
+    <title>Green Infrastructure: EV Charging Network Utilization</title>
+    <introduction>
+        <p>
+            The proportion of maximum daily grid capacity utilized during peak hours across a city's public electric vehicle (EV) charging network is modeled by a continuous random variable <m>X</m> with the probability density function (PDF) given by:
+            <me>f_X(x) = 12x^2(1-x), \quad \text{for } 0 \le x \le 1</me>
+            and <m>f_X(x) = 0</m> elsewhere. Grid utilization must stay above  40% (<m>x \gt 0.40</m>) on any given day for the network to operate without a financial loss. Otherwise, maintenance overhead outpaces charging revenue. Complete the tasks below to evaluate the network's performance.
+        </p>
+    </introduction>
+
+    <!-- Part A: Probability of Being Profitable / Operating at a Loss (Multiple Choice) -->
+    <task>
+      <statement>
+        <p>
+          Fill in the blanks - You should recognize <m>X</m> to be a beta random variable with parameters:
+        </p>
+        <p><m> \alpha</m> = <fillin  answer="3" width="8" name="a_beta"/> inches</p>
+            <p><m> \beta</m>= <fillin  answer="2" width="8" name="b_beta"/> inches</p>
+        </statement>
+        <evaluation>
+            <evaluate submit = "a_beta"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+            <evaluate submit = "b_beta"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
+        </evaluation>
+        
+    </task>
+    
+    <task xml:id="task-ev-prob-loss">
+        <statement>
+            <p>
+                 Use the probability density function (PDF) to determine the probability that the network operates at a financial loss on a randomly selected day.
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>0.8208</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This is the probability that the network is profitable, <m>P(X \gt 0.40)</m>. The question asks for the probability of operating at a loss, which requires checking the area below or equal to 40% utilization.</p>
+                </feedback></choice>
+            <choice correct="yes"><statement><p><m>0.1792</m></p></statement>
+                <feedback>
+                    <p>Correct! Set up the definite integral from the lower boundary of 0 to the financial loss threshold of 0.40:</p>
+                    <p><me>P(X \le 0.40) = \int_{0}^{0.40} 12x^2(1-x) \, dx = \int_{0}^{0.40} (12x^2 - 12x^3) \, dx</me></p>
+                    <p><me>= \left[ 4x^3 - 3x^4 \right]_{0}^{0.40} = 4(0.40)^3 - 3(0.40)^4 = 0.256 - 0.0768 = 0.1792</me></p>
+                </feedback></choice>
+            <choice><statement><p><m>0.2560</m></p></statement>
+                <feedback>
+                    <p>Incorrect. It looks like you evaluated the <m>4x^3</m> term but forgot to subtract the <m>3x^4</m> term during the definite integration steps.</p>
+                </feedback></choice>
+            <choice><statement><p><m>0.0768</m></p></statement>
+                <feedback>
+                    <p>Incorrect. This matches only the subtracted part of the anti-derivative expansion (<m>3x^4</m>). Review your definite integral evaluation steps.</p>
+                </feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part B: Interactive CDF Expression Input -->
+    <task xml:id="task-ev-cdf-input">
+        <statement>
+            <p>
+                  Find the cumulative distribution function (CDF), <m>F_X(x)</m>, over the domain interval <m>0 \le x \le 1</m>.
+            </p>
+            <p>
+            <m>F_X(x) = </m> <fillin mode="math" width="15" answer="4x^3 - 3x^4"/>
+        </p>
+        </statement>
+        <evaluation>
+        <evaluate>
+            <test correct="yes">
+                <mathcmp use-answer="yes"/>
+            </test>
+            <feedback>
+            <p>
+                Correct! To find the general cumulative distribution function, integrate the PDF from the lower limit 0 up to an arbitrary variable boundary <m>x</m>:
+                <me>F_X(x) = \int_{0}^{x} (12t^2 - 12t^3) \, dt = \left[ 4t^3 - 3t^4 \right]_{0}^{x} = 4x^3 - 3x^4, \quad \text{for } 0 \le x \le 1</me>
+            </p>
+            <p>
+                Evaluating your derived CDF directly confirms Part A: <m>F_X(0.40) = 4(0.40)^3 - 3(0.40)^4 = 0.1792</m>.
+            </p>
+        </feedback>
+        </evaluate>
+    </evaluation> 
+        
+    </task>
+
+    <!-- Part C: Expected Value (Multiple Choice) -->
+    <task xml:id="task-ev-expected-value">
+        <statement>
+            <p>
+                Find the expected value for the peak capacity utilization across this charging network.
+            </p>
+        </statement>
+        <choices>
+            <choice><statement><p><m>0.50</m></p></statement>
+                <feedback><p>Incorrect. While the parameter bounds span 0 to 1, the distribution is asymmetric, meaning the true center of mass is shifted higher than the basic interval midpoint.</p></feedback></choice>
+            <choice correct="yes"><statement><p><m> 0.60</m></p></statement>
+                <feedback>
+                    <p>Correct! Setting up the continuous expectation integral: </p>
+                    <p><me>E(X) = \int_{0}^{1} x \cdot 12x^2(1-x) \, dx = \int_{0}^{1} (12x^3 - 12x^4) \, dx</me></p>
+                    <p><me>= \left[ 3x^4 - \frac{12}{5}x^5 \right]_{0}^{1} = 3(1)^4 - 2.4(1)^5 = 3 - 2.4 = 0.60</me></p>
+                    <p>This means the network averages 60% capacity utilization during peak hours.</p>
+                </feedback></choice>
+            <choice><statement><p><m>0.40</m></p></statement>
+                <feedback><p>Incorrect. You may have confused the expected value with the maximum allowable threshold for operating at a loss introduced in Part A.</p></feedback></choice>
+            <choice><statement><p><m> 0.75</m></p></statement>
+                <feedback><p>Incorrect. Review your integration anti-derivative powers. Increasing the integrand by a factor of <m>x</m> turns the components into <m>12x^3</m> and <m>-12x^4</m>.</p></feedback></choice>
+        </choices>
+    </task>
+
+    <!-- Part D: Variance (Multiple Choice) -->
+    <task xml:id="task-ev-variance">
+        <statement>
+            <p>
+                Find the variance <m>V(X)</m> for the network's peak capacity utilization.
+            </p>
+        </statement>
+        <choices>
+            <choice correct="yes"><statement><p><m> 0.04</m></p></statement>
+                <feedback>
+                    <p>Correct! First, compute the second moment value <m>E(X^2)</m>:</p>
+                    <p><me>E(X^2) = \int_{0}^{1} x^2 \cdot 12x^2(1-x) \, dx = \int_{0}^{1} (12x^4 - 12x^5) \, dx</me></p>
+                    <p><me>= \left[ \frac{12}{5}x^5 - 2x^6 \right]_{0}^{1} = 2.4(1)^5 - 2(1)^6 = 2.4 - 2 = 0.40</me></p>
+                    <p>Now apply the variance identity formula <m>V(X) = E(X^2) - [E(X)]^2</m>:</p>
+                    <p><me>V(X) = 0.40 - (0.60)^2 = 0.40 - 0.36 = 0.04</me></p>
+                </feedback></choice>
+            <choice><statement><p><m>0.40</m></p></statement>
+                <feedback><p>Incorrect. This is the value of the second moment <m>E(X^2)</m> alone. You still need to subtract the square of your mean (<m>0.60^2 = 0.36</m>).</p></feedback></choice>
+            <choice><statement><p><m> 0.20</m></p></statement>
+                <feedback><p>Incorrect. Ensure you subtract the squared mean (<m>0.36</m>) from <m>E(X^2)</m>, rather than subtracting the raw unsquared mean value.</p></feedback></choice>
+            <choice><statement><p><m> 0.16</m></p></statement>
+                <feedback><p>Incorrect. Double-check your subtraction arithmetic when calculating <m>0.40 - 0.36</m>.</p></feedback></choice>
+        </choices>
+    </task>
+</exercise>
+</exercise>
 
    </exercises>
 
@@ -22,11 +403,7 @@
 
 <exercises xml:id="hw-beta-rv-turn-in" >
    <title>Written Exercises</title>
-   <introduction>
-     <p>
-       Write intro to written part of homework set.....
-     </p>
-   </introduction>
+
 
    </exercises>
 
