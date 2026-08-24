@@ -62,7 +62,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+     <!--   <solution>
             <p>
                 First, convert the target time window from seconds to minutes to align with the parameter units: 15 seconds matches <m>\frac{15}{60} = 0.25</m> minutes. The distribution scale parameter is the mean <m>\mu = 0.49</m> (which implies an incoming ticket arrival rate of <m>\lambda = \frac{1}{0.49}</m> tickets per minute).
             </p>
@@ -71,7 +71,7 @@
                 <me>P(X \lt 0.25) = 1 - e^{-\frac{0.25}{0.49}} = 1 - e^{-\frac{25}{49}} \approx 1 - 0.6004 = 0.3996</me>
                 Rounded to two decimal places, the final probability value is <strong>0.40</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part B: Between 10 and 15 seconds -->
@@ -91,7 +91,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 Convert both boundary constraints from seconds to minutes: 10 seconds matches <m>\frac{10}{60} \approx 0.1667</m> minutes, and 15 seconds matches <m>0.25</m> minutes.
             </p>
@@ -102,7 +102,7 @@
                 <me>= e^{-0.3401} - e^{-0.5102} \approx 0.7117 - 0.6004 = 0.1113</me>
                 Rounded to two decimal places, the final probability value is <strong>0.11</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part C: The Memoryless Property (Multiple Choice) -->
@@ -363,7 +363,7 @@
                This is the same as finding the probability that customers are served in under ten minutes!
               </p>
             </hint>
-            <solution>
+           <!-- <solution>
                 <p>
                     An exponential distribution with a mean of <m>\mu = 5.5</m> minutes yields an operational rate parameter of <m>\lambda = \frac{1}{\mu} = \frac{1}{5.5} = \frac{2}{11} \approx 0.1818</m> customers per minute. The formal probability density function is:
                     <me>f_X(x) = \frac{2}{11}e^{-\frac{2}{11}x}, \quad \text{for } x \ge 0</me>
@@ -379,7 +379,7 @@
                     </md>
                     Thus, direct integration shows that exactly <strong>84%</strong> of customers are served within the 10-minute window.
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Task B: Recomputing using the closed-form CDF -->
@@ -389,7 +389,7 @@
                      State the cumulative distribution function (CDF), <m>F_X(x)</m>, for this service model. Use it to  recompute the proportion of customers served in under 10 minutes.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     By evaluating the general indefinite anti-derivative of our PDF, the continuous closed-form cumulative distribution function is defined as:
                     <me>F_X(x) = 1 - e^{-\frac{2}{11}x}, \quad \text{for } x \ge 0</me>
@@ -403,7 +403,7 @@
                     </md>
                     This verifies our finding of <strong>84%</strong>. Mathematically speaking, the bank's marketing department considers "virtually all" to mean roughly 84 out of 100 people. (Leaving a glaring 16% of frustrated customers waiting longer than 10 minutes!)
                 </p>
-            </solution>
+            </solution>-->
         </task>
                 <!-- Task C: Finding the Median Wait Time -->
         <task xml:id="task-bank-median-audit">
@@ -412,7 +412,7 @@
                      While the bank's average (mean) service time is 5.5 minutes, the exponential distribution is heavily skewed toward longer wait times. Find the <em>median</em> service time to determine how fast the middle customer (the 50th percentile) actually gets served.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     By definition, the median is the value <m>m</m> where exactly 50% of the population is served quicker, which means <m>F_X(m) = 0.50</m>. Using our derived cumulative distribution function from Part B:
                     <md>
@@ -434,7 +434,7 @@
                 <p>
                     <strong>Pedagogical Insight:</strong> This shows that the typical "middle customer" waits only <strong>3.81 minutes</strong>—significantly faster than the 5.5-minute average. This occurs because a small percentage of heavily delayed customers stretch the mean upward, while the median remains an accurate representation of the typical daily user experience.
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
     </exercise>
@@ -454,7 +454,7 @@
                     Derive the equation for the moment generating function of the exponential distribution.  State the constraint required for the domain of <m>s</m>.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     By definition, the moment generating function is the expected value of <m>e^{sX}</m>. Setting up the improper integral over the non-negative support of <m>X</m>:
                     <md>
@@ -471,7 +471,7 @@
                         <mrow>\amp = \frac{\lambda}{\lambda - s} = \frac{1}{1 - \frac{s}{\lambda}}, \quad \text{for } s \lt \lambda</mrow>
                     </md>
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Task B: Differentiating the MGF for Variance -->
@@ -481,7 +481,7 @@
                     Differentiate your moment generating function expression from Part A to find the first and second moments about the origin (<m>E(X)</m> and <m>E(X^2)</m>). Use these to show that the theoretical variance for an exponential random variable is <m>V(X) = \frac{1}{\lambda^2}</m>.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     First, rewrite the moment generating function using a negative exponent to simplify chain rule differentiation: <m>M_X(s) = \left(1 - \frac{s}{\lambda}\right)^{-1}</m>.
                 </p>
@@ -516,7 +516,7 @@
                     </md>
                     This completes the analytical proof for the variance of an exponential random variable.
                 </p>
-            </solution>
+            </solution>-->
         </task>
     </exercise>
 

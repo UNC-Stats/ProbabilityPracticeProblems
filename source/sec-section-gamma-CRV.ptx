@@ -62,7 +62,7 @@
             <evaluate submit = "mean_gamma"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
             <evaluate submit = "sd_gamma"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 For a continuous random variable <m>X</m> tracking a Gamma distribution parameterized by a shape parameter <m>\alpha</m> and a rate parameter <m>\lambda</m>:
                 <ul>
@@ -78,7 +78,7 @@
                 </ul>
                 Rounded to two decimal places, the final parameters are a mean of <strong>3.20</strong> inches and a standard deviation of <strong>2.53</strong> inches.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part B: PDF Functional Mapping (Multiple Choice) -->

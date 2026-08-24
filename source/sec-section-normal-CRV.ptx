@@ -68,7 +68,7 @@
             <evaluate><test correct="yes">
             <numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+    <!--    <solution>
             <p>
                 To evaluate the probability within a bounded interval, subtract the lower tail cumulative area from the upper tail cumulative area:
                 <me>P(-1.2 \lt Z \lt 0.15) = P(Z \lt 0.15) - P(Z \lt -1.2)</me>
@@ -80,7 +80,7 @@
                 <me>P(-1.2 \lt Z \lt 0.15) = 0.5596 - 0.1151 = 0.4445</me>
                 The exact probability is <strong>0.4445</strong>.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part B: Greater Than a Negative Z-Score -->
@@ -97,7 +97,7 @@
             <evaluate><test correct="yes">
             <numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 By applying the complement rule for upper tail probabilities:
                 <me>P(Z \gt -1.05) = 1 - P(Z \lt -1.05)</me>
@@ -105,7 +105,7 @@
                 <me>P(Z \gt -1.05) = 1 - 0.1469 = 0.8531</me>
                 Alternatively, by symmetry, this is identical to <m>P(Z \lt 1.05) = 0.8531</m>. The final probability is exactly <strong>0.8531</strong>.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part C: Symmetric Two-Tailed Distance -->
@@ -122,7 +122,7 @@
             <evaluate><test correct="yes">
             <numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 Being <q>more than 1.5 standard deviations away</q> implies falling into either the lower extreme tail or the upper extreme tail. This can be expressed as:
                 <me>P(|Z| \gt 1.5) = P(Z \lt -1.5) + P(Z \gt 1.5)</me>
@@ -131,7 +131,7 @@
                 <me>P(|Z| \gt 1.5) = 2 \times 0.0668 = 0.1336</me>
                 Converting the decimal value to a percentage gives exactly <strong>13.3614%</strong> (using unrounded table lookups of <m>0.066807</m>).
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part D: Extreme Asymmetric Bounds -->
@@ -149,7 +149,7 @@
             <evaluate><test correct="yes">
 <numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+      <!--  <solution>
             <p>
                 Setting up the interval notation using the provided standard deviation limits:
                 <me>P(-1.65 \le Z \le 0.85) = P(Z \le 0.85) - P(Z \le -1.65)</me>
@@ -162,7 +162,7 @@
                 <me>P(-1.65 \le Z \le 0.85) = 0.8023 - 0.0495 = 0.7528</me>
                 Converting to a percentage yields exactly <strong>75.2891%</strong> (calculated from precise unrounded lookups: <m>0.802337 - 0.049471 = 0.752866</m>). This slightly wider window captures about three-quarters of the distribution, remaining safely under your 80% ceiling limit.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
 </exercise>
@@ -486,7 +486,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+      <!--  <solution>
             <p>
                 To find the proportion of students who drop out, we calculate the lower tail probability <m>P(X \lt 230,000)</m>. First, standardize the target heat rating to find its corresponding standard normal Z-score:
                 <me>Z = \frac{230,000 - 200,000}{50,000} = \frac{30,000}{50,000} = 0.60</me>
@@ -496,7 +496,7 @@
                 <me>P(X \lt 230,000) = P(Z \lt 0.60) \approx 0.7257</me>
                 Rounded to two decimal places, this evaluates to a proportion of <strong>0.73</strong>. This means approximately 73% of brave students will give up and reach for the milk.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part B: Inverse Normal 70% threshold -->
@@ -516,7 +516,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+      <!--  <solution>
             <p>
                 For 70% of students to successfully <em>satisfy</em> the challenge, 70% must be able to handle a heat level above the cut-off, leaving the remaining 30% in the bottom tail below it. This corresponds to finding the 30th percentile of our normal curve (<m>P(X \lt x) = 0.30</m>).
             </p>
@@ -529,7 +529,7 @@
                 <me>x = \mu + Z \cdot \sigma = 200,000 + (-0.52) \cdot 50,000 = 200,000 - 26,000 = 174,000 \text{ SHU}</me>
                 Therefore, the new recipe's heat profile should be capped at approximately <strong>174,000</strong> SHU.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <task xml:id="task-wings-habanero-interval">
@@ -605,14 +605,14 @@
             <evaluate submit="z1"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
             <evaluate submit="zprob1"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 The mean is <m>\mu = -0.4</m> and the standard deviation is <m>\sigma = 2.8</m>. Standardizing the target value:
                 <me>Z = \frac{0.38 - (-0.4)}{2.8} = \frac{0.78}{2.8} \approx 0.27857 \approx 0.279</me>
                 Using the complement rule for an upper tail probability:
                 <me>P(Z \gt 0.279) = 1 - \Phi(0.279) \approx 1 - 0.6098 = 0.3902 \approx 0.391</me>
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part B: Linear Transformation Y = aX + b -->
@@ -645,7 +645,7 @@
                 
    
         
-        <solution>
+      <!--  <solution>
             <p>
                 For a linear transformation <m>Y = aX + b</m>:
                 <ul>
@@ -658,7 +658,7 @@
                 Evaluating the bounded area:
                 <me>P(0.713 \lt Z \lt 0.900) = \Phi(0.900) - \Phi(0.713) \approx 0.8159 - 0.7621 = 0.1538 \approx 0.154</me>
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part C: Independent Linear Combination X + Y -->
@@ -691,7 +691,7 @@
 
 
 
-        <solution>
+      <!--  <solution>
             <p>
                 Let <m>W = X + Y</m>. Because <m>X</m> and <m>Y</m> are independent, their means and variances add directly:
                 <ul>
@@ -703,7 +703,7 @@
                 Evaluating the lower tail area:
                 <me>P(Z \le 0.277) = \Phi(0.277) \approx 0.6091 \approx 0.609</me>
             </p>
-        </solution>
+        </solution> -->
     </task>
 </exercise>
 
@@ -736,7 +736,7 @@
             <evaluate submit="exp1_clt"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
             <evaluate submit="var1_clt"><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 We define the discrete probability mass function (PMF) points for the variable <m>X</m> and solve for the first and second moments:
                 <md>
@@ -751,7 +751,7 @@
                 Apply the variance identity formula:
                 <me>\text{Var}(X) = E(X^2) - [E(X)]^2 = 67.309375 - (4.1375)^2 = 50.190469 \approx 50.190</me>
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part B: Choosing the Normal Distribution for Cumulative Sum (Multiple Choice) -->
@@ -798,14 +798,14 @@
         <evaluation>
             <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+      <!--  <solution>
             <p>
                 Standardizing our target value threshold of <m>220</m> into a standard normal Z-score using our parameters from Part B (<m>\mu_Y = 310.3125</m>, <m>\sigma_Y = 61.3539</m>):
                 <me>Z = \frac{220 - 310.3125}{61.3539} = \frac{-90.3125}{61.3539} \approx -1.472</me>
                 Evaluating the upper tail region:
                 <me>P(Y \ge 220) \approx P(Z \ge -1.472) = 1 - \Phi(-1.472) \approx 0.9292</me>
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part D: Choosing the Normal Distribution for Sample Mean (Multiple Choice) -->
@@ -852,14 +852,14 @@
         <evaluation>
             <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 Standardizing our target item mean threshold of <m>4.00</m> KB into a standard normal Z-score using our parameters from Part D (<m>\mu_{\overline{X}} = 4.1375</m>, <m>\sigma_{\overline{X}} = 0.81805</m>):
                 <me>Z = \frac{4.00 - 4.1375}{0.81805} \approx -0.168</me>
                 Evaluating the upper tail region for our sample average:
 <m>P(\overline{X} \ge 4.00) \approx P(Z \ge -0.168) = 1 - \Phi(-0.168) \approx 0.5667 \approx 0.567</m>
 </p>
-</solution>
+</solution>-->
 </task>
 </exercise>
 
@@ -890,7 +890,7 @@
                      What is the probability that a randomly analyzed compound sample possesses an enzyme concentration greater than 74 grams per mL ?
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     First, calculate the corresponding standard normal Z-score for our lower boundary threshold:
                     <me>Z = \frac{74 - 80}{7} = \frac{-6}{7} \approx -0.8571 \approx -0.86</me>
@@ -900,7 +900,7 @@
                     <me>P(X \gt 74) = P(Z \gt -0.86) = 1 - P(Z \le -0.86) = 1 - 0.1949 = 0.8051 \approx 0.80</me>
                     The probability that the enzyme amount exceeds 74 grams per mL is approximately <strong>0.80</strong>.
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part B: Less than 90 -->
@@ -910,7 +910,7 @@
                      What is the probability that the concentration of this target enzyme in a randomly selected extract sample is less than 90 grams per mL (<m>P(X \lt 90)</m>)?
                 </p>
             </statement>
-            <solution>
+         <!--   <solution>
                 <p>
                     Convert our target threshold parameter into its equivalent standard normal Z-score:
                     <me>Z = \frac{90 - 80}{7} = \frac{10}{7} \approx 1.4286 \approx 1.43</me>
@@ -920,7 +920,7 @@
                     <me>P(X \lt 90) = P(Z \lt 1.43) \approx 0.9236 \approx 0.92</me>
                     The probability that the enzyme concentration is less than 90 grams per mL is approximately <strong>0.92</strong>.
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part C: Empirical Rule Application -->
@@ -930,7 +930,7 @@
                      What percentage of isolated chemical compounds formed from this marine bio-extract fall within exactly 2 standard deviations of the mean?
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     According to the foundational <strong>Empirical Rule</strong> (also referred to as the 68-95-99.7 rule) for any perfectly symmetric, bell-shaped normal distribution curve:
                     <ul>
@@ -942,7 +942,7 @@
                 <p>
                     Therefore, without requiring explicit integration or table lookup steps, the theoretical percentage of compounds falling within 2 standard deviations of the mean is approximately <strong>95%</strong> (analytically <m>P(-2 \le Z \le 2) = 0.9545</m>).
                 </p>
-            </solution>
+            </solution> -->
         </task>
     </exercise>
 
@@ -974,7 +974,7 @@
 
                 
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     By the linear properties of expectation and variance for independent random variables, the parameters for the total sum distribution scale directly with the number of trials <m>n = 348</m>:
                     <ul>
@@ -999,7 +999,7 @@
                     </ul>
                     According to the Central Limit Theorem, the total cumulative net profit can be modeled as a continuous normal distribution: <m>W \sim N(-18.316, 14.160^2)</m>.
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part B: CLT Probability Calculation -->
@@ -1012,7 +1012,7 @@
                      Using the normal distribution approximation,  estimate the probability that the player finishes the 348 spins with a total cumulative net profit that is strictly greater than zero (<m>P(W \gt 0)</m>).
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     We want to find <m>P(W \gt 0)</m>. Standardizing our target value of <m>0</m> into a standard normal Z-score using our cumulative parameters from Part A:
                     <me>Z = \frac{\text{Value} - E(W)}{\sigma_W} = \frac{0 - (-18.3158)}{14.1601} = \frac{18.3158}{14.1601} \approx 1.2935</me>
@@ -1027,7 +1027,7 @@
                 <p>
                     <strong>Pedagogical Takeaway:</strong> This result highlights the sobering reality of the house edge. Even with a lower-variance hedging strategy (Red and Odd combo), playing for an extended period of 348 spins makes it highly likely that the mathematical law of averages pulls the player down into a deficit, leaving less than a 10% chance of breaking even or making a profit.
                 </p>
-            </solution>
+            </solution> -->
         </task>
          <task xml:id="task-binomial-norm-approx-rules">
             <statement>
@@ -1094,7 +1094,7 @@
                 </statement>
             
             
-            <solution>
+           <!-- <solution>
 
                 <p>
                     Let us calculate these values using our specific roulette parameter parameters (<m>n = 348</m> and <m>p = \frac{10}{38} \approx 0.2632</m>):
@@ -1106,7 +1106,7 @@
                 <p>
                     Because <m>91.579 \ge 10</m> and <m>256.421 \ge 10</m>, **both conditions are easily satisfied**. The cluster size is large enough to ensure the discrete binomial distribution has smoothed out into a bell curve shape, making the normal approximation highly accurate.
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part D: Continuity Correction (NEW) -->
@@ -1135,7 +1135,7 @@
                     
                 
             </statement>
-            <solution>
+         <!--   <solution>
                 <p>
                     A continuous distribution has a point probability of zero at any exact value, meaning its area is measured strictly over smooth intervals. However, a Binomial distribution is discrete and consists of isolated, individual histogram bars centered at integer endpoints, each with a physical width of 1 unit. 
                 </p>
@@ -1152,7 +1152,7 @@
                     <me>P(Z \gt 0.964) = 1 - \Phi(0.964) \approx 1 - 0.8325 = 0.1675</me>
                     The continuity correction shifts the continuous boundary down to <strong>99.5</strong> to properly include the entire discrete area block of the target integer.
                 </p>
-            </solution>
+            </solution> -->
         </task>
     </exercise>
 
@@ -1189,7 +1189,7 @@
                    
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     <strong>Most Appropriate Method:</strong> Poisson approximation.
                 </p>
@@ -1199,7 +1199,7 @@
                 <p>
                     Evaluating exact Binomial combinations with <m>n = 1050</m> introduces unneeded computational weight. Furthermore, the standard rule of thumb for a normal approximation fails because <m>n \cdot p = 1050 \cdot 0.008 = 8.4 \lt 10</m>. Because <m>n</m> is large and <m>p \lt 0.05</m> with an expected rate of <m>\lambda = 8.4</m>, the <strong>Poisson approximation</strong> is the most elegant and appropriate choice.
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part B: Normal Approximation Case -->
@@ -1213,7 +1213,7 @@
                    
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     <strong>Most Appropriate Method:</strong> Normal approximation.
                 </p>
@@ -1226,7 +1226,7 @@
                     <me>n \cdot (1 - p) = 1050 \cdot 0.27 = 283.5 \ge 10</me>
                     Because both threshold counts are heavily above 10, the distribution converges into a smooth, highly symmetric bell curve. The <strong>Normal approximation to the binomial</strong> is the most appropriate method.
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part C: Direct Binomial Case -->
@@ -1240,7 +1240,7 @@
                    
                 </p>
             </statement>
-            <solution>
+            <!--<solution>
                 <p>
                     <strong>Most Appropriate Method:</strong> Best to use the binomial distribution directly.
                 </p>
@@ -1252,7 +1252,7 @@
                     <me>P(X = 8) = \binom{9}{8} (0.73)^8 (0.27)^1</me>
                     Therefore, it is <strong>best to use the binomial distribution directly</strong>.
                 </p>
-            </solution>
+            </solution> -->
         </task>
     </exercise>
 </section>

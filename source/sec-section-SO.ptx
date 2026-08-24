@@ -98,7 +98,7 @@
         </p>
     </hint>
 
-    <solution>
+   <!-- <solution>
         <p>
             Step-by-step evaluation of each operation:
         </p>
@@ -114,7 +114,7 @@
         <p>
             4. For <m>A^c \cap C^c</m>: We cross-reference <m>A^c = \{4,5,6,7,8,9,10,11,12\}</m> with <m>C^c = \{1,2,3,4,5,7,9,11\}</m>. Their shared elements are <m>\{4,5,7,9,11\}</m>.
         </p>
-    </solution>
+    </solution> -->
 </exercise>
 
 
@@ -156,7 +156,7 @@
         </p>
     </hint>
 
-    <solution>
+   <!-- <solution>
         <p>
             Because <m>A_1</m>, <m>A_2</m>, and <m>A_3</m> form a partition of the sample space <m>S</m>, they are mutually exclusive (disjoint) sets whose union equals <m>S</m>. 
         </p>
@@ -165,7 +165,7 @@
             <me>|B| = |B \cap A_1| + |B \cap A_2| + |B \cap A_3|</me>
             <me>|B| = 10 + 20 + 15 = 45</me>
         </p>
-    </solution>
+    </solution> -->
 </exercise>
 
 
@@ -220,7 +220,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+      <!--  <solution>
             <p>
                 This calculation can be performed efficiently in two different ways using the rules of discrete probability:
                 <ul>
@@ -239,7 +239,7 @@
                 </ul>
                 The probability is exactly <strong>0.36</strong> (or 36% of the student body).
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part B: Bus, Train, or Bicycle -->
@@ -259,14 +259,14 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 Because a student can only select one primary option, these options represent completely disjoint (mutually exclusive) events. Apply the addition rule for discrete sets:
                 <me>P(\text{Bus} \cup \text{Train} \cup \text{Bicycle}) = P(\text{Bus}) + P(\text{Train}) + P(\text{Bicycle})</me>
                 <me>= 0.22 + 0.09 + 0.04 = 0.35</me>
                 The probability is exactly <strong>0.35</strong>.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part C: Alternative but not Bicycle -->
@@ -286,14 +286,14 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+        <!--<solution>
             <p>
                 We are searching for the probability of selecting an alternative transit option while explicitly excluding the bicycle element. To calculate this subset space, sum the remaining non-driving categories:
                 <me>P(\text{Alternative and Not Bicycle}) = P(\text{Bus}) + P(\text{Train}) + P(\text{All Others})</me>
                 <me>= 0.22 + 0.09 + 0.01 = 0.32</me>
                 Alternatively, take your calculation from Part A and subtract the bicycle probability: <m>0.36 - 0.04 = 0.32</m>. The final probability is exactly <strong>0.32</strong>.
             </p>
-        </solution>
+        </solution> -->
     </task>
 </exercise>
 
@@ -329,7 +329,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 By re-arranging the standard general addition rule for the union of two events, <m>P(B \cup C) = P(B) + P(C) - P(B \cap C)</m>, we isolate the intersection:
                 <md>
@@ -339,7 +339,7 @@
                 </md>
                 The probability of experiencing both alerts simultaneously is exactly <strong>0.1</strong>.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     
@@ -363,7 +363,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 Apply the standard addition rule using the parameters provided in the introduction:
                 <md>
@@ -373,7 +373,7 @@
                 </md>
                 The probability of experiencing alert <m>A</m> or alert <m>B</m> is exactly <strong>0.8</strong>.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part E: Complement Rule -->
@@ -393,13 +393,13 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+        <!--<solution>
             <p>
                 The event that "neither alert happens" is the logical complement of "at least one alert happens," which is represented by the union <m>B \cup C</m>. Apply the basic complement rule:
                 <me>P((B \cup C)^c) = 1 - P(B \cup C) = 1 - 0.8 = 0.2</me>
                 The probability is exactly <strong>0.2</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <task xml:id="task-alerts-intersection-complement">
@@ -418,7 +418,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 To isolate the probability of event <m>A</m> occurring while excluding any overlap with event <m>B</m>, we subtract the intersection of the two events from the total probability of event <m>A</m>:
                 <md>
@@ -428,7 +428,7 @@
                 </md>
                 The probability that a Firewall alert occurs on its own is exactly <strong>0.2</strong>.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part C: Mutual Exclusivity -->
@@ -543,7 +543,7 @@
             Think about the complement of the event. It is much easier to compute the probability that <term>neither</term> you nor Brenda are selected out of the 15 winners. If neither of you win, all 15 winners must be chosen from the remaining 48 students.
         </p>
     </hint>
-    <solution>
+    <!--<solution>
         <p>
             To solve this, we find the probability of the complementary event (that neither you nor Brenda win a ticket) and subtract it from 1:
         </p>
@@ -563,7 +563,7 @@
             4. Subtract from 1 to find the probability that at least one of you wins:
             <me>P(\text{You or Brenda}) = 1 - P(\text{Neither}) = 1 - 0.486 = 0.514</me>
         </p>
-    </solution>
+    </solution> -->
 </exercise>
 
 
@@ -616,7 +616,7 @@
         </match>
     </cardsort>
 
-    <solution>
+    <!--<solution>
         <p>
             <strong>Mathematical Justifications:</strong>
             <ul>
@@ -642,7 +642,7 @@
                 </li>
             </ul>
         </p>
-    </solution>
+    </solution> -->
 </exercise>
 
 
@@ -929,7 +929,7 @@
             <numcmp use-answer="yes"/>
            </test> </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 At the upper limit where <m>B \subseteq A</m>, every hero belongs to Marvel. Thus:
                 <ul>
@@ -939,7 +939,7 @@
                     <li><p>The total probability space must sum to 1, leaving <m>P(\{(D,V)\}) = 1 - (0.55 + 0.15 + 0) = 0.30</m> (DC Villains).</p></li>
                 </ul>
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part C: Smallest Intersection Boundary (Multiple Choice) -->
@@ -999,7 +999,7 @@
             <numcmp use-answer="yes"/>
            </test> </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 At the lower limit where the union takes up the entire database space (<m>P(A \cup B) = 1.00</m>), there are no characters left outside the categories. Thus:
                 <ul>
@@ -1009,7 +1009,7 @@
                     <li><p><m>P(\{(D,V)\}) = 0</m>, because the combined elements account for 100% of the active database space (<m>0.25 + 0.45 + 0.30 = 1.00</m>), meaning there are no DC Villains in this configuration.</p></li>
                 </ul>
             </p>
-        </solution>
+        </solution> -->
     </task>
 </exercise>
 
@@ -1049,12 +1049,12 @@
                 Find <m>P(A \cap B)</m>.
             </p>
         </statement>
-        <solution>
+     <!--   <solution>
             <p>
                 Using the inclusion-exclusion identity:
                 <me>P(A \cap B) = P(A) + P(B) - P(A \cup B) = 0.4 + 0.7 - 0.9 = 0.2</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 2 -->
@@ -1064,12 +1064,12 @@
                 Find <m>P(A^c \cap B)</m>.
             </p>
         </statement>
-        <solution>
+   <!--     <solution>
             <p>
                 This represents the region containing elements strictly inside circle <m>B</m> but outside circle <m>A</m>:
                 <me>P(A^c \cap B) = P(B) - P(A \cap B) = 0.7 - 0.2 = 0.5</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 3 -->
@@ -1079,12 +1079,12 @@
                 Find <m>P(A - B)</m>.
             </p>
         </statement>
-        <solution>
+      <!--  <solution>
             <p>
                 This represents the set difference, which isolates the region containing elements strictly inside circle <m>A</m> but completely outside circle <m>B</m>:
                 <me>P(A - B) = P(A) - P(A \cap B) = 0.4 - 0.2 = 0.2</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 4 -->
@@ -1094,12 +1094,12 @@
                 Find <m>P(A^c - B)</m>.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 This isolates elements outside circle <m>A</m>, with any elements belonging to circle <m>B</m> removed. This leaves only the universal region completely outside both circles:
                 <me>P(A^c - B) = 1 - P(A \cup B) = 1 - 0.9 = 0.1</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 5 -->
@@ -1109,12 +1109,12 @@
                 Find <m>P(A^c \cup B)</m>.
             </p>
         </statement>
-        <solution>
+      <!--  <solution>
             <p>
                 This includes everything outside circle <m>A</m>, combined with the entire area of circle <m>B</m>. It can be computed by taking the complement of the region containing elements strictly in <m>A</m>:
                 <me>P(A^c \cup B) = 1 - P(A - B) = 1 - 0.2 = 0.8</me>
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part 6 -->
@@ -1124,12 +1124,12 @@
                 Find <m>P(A \cap (B \cup A^c))</m>.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 Distributing the intersection across the union gives <m>(A \cap B) \cup (A \cap A^c)</m>. Since <m>A \cap A^c = \emptyset</m>, this simplifies down directly to the center intersection region:
                 <me>P(A \cap (B \cup A^c)) = P(A \cap B) = 0.2</me>
             </p>
-        </solution>
+        </solution> -->
     </task>
 </exercise>
 
@@ -1154,7 +1154,7 @@
                 Calculate the probability using standard probability rules, laws, and complement principles. Specify each rule/law/principal as you use it.
             </p>
         </statement>
-        <solution>
+      <!--  <solution>
             <p>
                 Let <m>C</m> be the event that a selected film is a comedy, and let <m>I</m> be the event that it is an independent studio production. We are given:
                 <me>P(C) = 0.62, \quad P(I) = 0.45, \quad P(C \cap I) = 0.24</me>
@@ -1174,7 +1174,7 @@
                 <me>P(C^c \cap I^c) = 1 - P(C \cup I) = 1 - 0.83 = 0.17</me>
                 Thus, there is a <m>17\%</m> chance (or a probability of <m>0.17</m>) that the title is a non-comedy from a major studio.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part 2: Venn Diagram verification -->

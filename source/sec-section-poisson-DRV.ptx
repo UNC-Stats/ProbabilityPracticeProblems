@@ -292,7 +292,7 @@
                      Determine the total cumulative number of hashes performed by the 10-miner farm array over the course of a full 365-day year.
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     To find the total number of independent trials (<m>n</m>), we scale the hashrate per second by the number of seconds in a standard year across the full equipment cluster:
                     <md>
@@ -302,7 +302,7 @@
                     </md>
                     The total number of trials executed by the hardware cluster in one year is <m>2.933 \times 10^{22}</m>.
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part B: Binomial Distribution Setup -->
@@ -312,7 +312,7 @@
                     Let <m>X</m> represent the exact number of blocks successfully mined by the farm array during the year. Explain why <m>X</m> can be modeled as a Binomial random variable, and define its structural distribution parameters.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     The random variable <m>X</m> satisfies all core conditions of a Binomial distribution: there is a fixed number of trials (<m>n</m>), each individual hash has a binary outcome (either the block solution is valid or invalid), the trials are physically independent based on the SHA-256 network protocol design, and the target success probability (<m>p</m>) remains constant across every roll.
                 </p>
@@ -323,7 +323,7 @@
                         <li><p>Success Probability: <m>p = 1.15 \times 10^{-23}</m></p></li>
                     </ul>
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part C: Poisson Approximation Parameter -->
@@ -333,7 +333,7 @@
                     Explain why the Binomial model defined in Part B can be well approximated by a Poisson distribution, and calculate the appropriate value for the rate parameter <m>\lambda</m>.
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     Evaluating exact Binomial formulas using an enormous trial footprint (<m>n \approx 2.9 \times 10^{22}</m>) paired with an extremely small success weight (<m>p \approx 1.1 \times 10^{-23}</m>) causes direct computer arithmetic overflow failures. Because <m>n</m> is infinitely large and <m>p</m> is vanishingly close to zero, the distribution shape converges perfectly to a stable **Poisson approximation** using the expected rate scale parameter <m>\lambda = n \cdot p</m>:
                     <md>
@@ -343,7 +343,7 @@
                     </md>
                     The corresponding Poisson rate parameter is exactly <m>\lambda = 0.3373</m>.
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part D: Complement Probability Analysis -->
@@ -353,7 +353,7 @@
                      Using your Poisson approximation model, determine the mathematical probability that the hardware cluster successfully mines at least one block over the course of the year (<m>P(X \ge 1)</m>).
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     To compute <m>P(X \ge 1)</m> efficiently, we apply the standard **Complement Rule**: <m>P(X \ge 1) = 1 - P(X = 0)</m>. First, isolate the baseline probability of mining absolutely zero blocks using our Poisson PMF:
                     <me>P(X = 0) = \frac{\lambda^0 \cdot e^{-\lambda}}{0!} = \frac{1 \cdot e^{-0.3373}}{1} \approx 0.7137</me>
@@ -363,7 +363,7 @@
                     <me>P(X \ge 1) = 1 - P(X = 0) = 1 - 0.7137 = 0.2863</me>
                     The probability that the farm array secures at least one block reward over the year is approximately <strong>0.2863</strong> (or 28.63%).
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part E: Bounded Interval Evaluation -->
@@ -373,7 +373,7 @@
                     Find the probability that the mining operation secures between 2 and 4 blocks inclusive over the annual tracking window. In other words, compute <m>P(2 \le X \le 4)</m>.
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     Because the Poisson distribution models distinct, discrete events, the probability of falling within a closed integer interval is found by summing the point weights of the isolated components:
                     <me>P(2 \le X \le 4) = P(X = 2) + P(X = 3) + P(X = 4)</me>
@@ -388,7 +388,7 @@
                     </md>
                     Rounded to four decimal places, the probability of mining between 2 and 4 blocks is approximately <strong>0.0456</strong>.
                 </p>
-            </solution>
+            </solution> -->
         </task>
     </exercise>
 

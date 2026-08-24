@@ -282,7 +282,7 @@
         </p>
     </hint>
 
-    <solution>
+   <!-- <solution>
         <p>
             To prove the property, we evaluate the expression directly from the foundational definition of a moment generating function:
         </p>
@@ -307,7 +307,7 @@
             Substituting this back into our equation completes the proof:
             <me>M_{aX+b}(s) = e^{bs} \cdot M_X(as)</me>
         </p>
-    </solution>
+    </solution> -->
 </exercise>
 
 

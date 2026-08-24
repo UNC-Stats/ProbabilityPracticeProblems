@@ -269,7 +269,7 @@
                      Express the moment generating function <m>M_Y(s)</m> as an infinite sum using the definition of expected value, and then simplify the expression, grouping terms and combining exponents where allowed. 
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     By definition, the moment generating function is the expected value of <m>e^{tY}</m>. Setting up the summation over the support of <m>Y</m>:
                     <md>
@@ -282,7 +282,7 @@
                         <mrow>\amp = pe^t \sum_{y=1}^{\infty} \left[ (1-p)e^t \right]^{y-1}</mrow>
                     </md>
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Task 2: Geometric Series Evaluation -->
@@ -292,7 +292,7 @@
                     Evaluate the infinite sum from Part A using a geometric series convergence formula. Explicitly state the mathematical convergence condition required for the domain of <m>s</m>.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     Recall the standard infinite geometric series convergence shortcut:
                     <me>\sum_{n=0}^{\infty} a r^n = \frac{a}{1 - r}, \quad \text{provided } |r| \lt 1</me>
@@ -309,7 +309,7 @@
                         <mrow>t \amp \lt \ln\left(\frac{1}{1-p}\right) \implies t \lt -\ln(1-p)</mrow>
                     </md>
                 </p>
-            </solution>
+            </solution>-->
         </task>
     </exercise>
 

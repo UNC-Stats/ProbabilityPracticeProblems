@@ -637,7 +637,7 @@
                 </cardsort>
          
     
-        <solution>
+      <!--  <solution>
             <p>
                 <strong>Expected Value Derivation:</strong> Evaluate <m>E(Y) = \int_{5}^{7} y \cdot \frac{3}{8}(7-y)^2 \, dy</m>. Substituting <m>u = 7-y</m> gives:
                 <me>\frac{3}{8} \int_{0}^{2} (7u^2 - u^3) \, du = \frac{3}{8} \left[ \frac{7}{3}u^3 - \frac{1}{4}u^4 \right]_{0}^{2} = \frac{3}{8} \left( \frac{56}{3} - 4 \right) = 5.5 \text{ hours}</me>
@@ -646,7 +646,7 @@
                 <strong>Standard Deviation Derivation:</strong> First evaluate the second moment <m>E(Y^2) = \int_{5}^{7} y^2 \cdot \frac{3}{8}(7-y)^2 \, dy = 30.4</m>. 
                 Then find variance: <m>V(Y) = 30.4 - (5.5)^2 = 0.15</m>. Taking the square root yields <m>\sigma = \sqrt{0.15} \approx 0.39 \text{ hours}</m>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part C: Contextual Interpretation (Multiple Choice) -->
@@ -771,7 +771,7 @@
   
         </matching>
 
-        <solution>
+       <!-- <solution>
             <p>
                 <strong>Step-by-Step Derivation of Financial Moments:</strong>
             </p>
@@ -806,7 +806,7 @@
                 <me>\sigma_W = \sqrt{\text{Var}(W)} = \sqrt{0.0121} \approx 0.1098 \approx 0.11</me>
                 Rounded to two decimal places, the final tracking metrics yield an expected gemstone sample mean value of <strong>4.65</strong> dollars and a standard deviation of <strong>0.11</strong> dollars.
             </p>
-        </solution>
+        </solution>-->
     </task>
         <!-- Part C: Value Threshold Inversion Probability (Short Answer Entry) -->
     <task xml:id="task-gems-value-probability-input">
@@ -830,7 +830,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+     <!--   <solution>
             <p>
                 To evaluate the valuation probability risk parameter, invert the linear pricing function to express the condition in terms of the random impurity variable <m>Y</m>:
                 <me>W \lt 4.60 \implies 5 - 0.5Y \lt 4.60 \implies -0.5Y \lt -0.40 \implies Y \gt 0.80</me>
@@ -844,7 +844,7 @@
                 <me>P(W \lt 4.60) = P(Y \gt 0.80) = 1 - 0.576 = 0.424</me>
                 The exact final probability that a gemstone sample falls below the value threshold is exactly <strong>0.424</strong> (or a 42.4% risk rate).
             </p>
-        </solution>
+        </solution>-->
     </task>
 
 </exercise>
@@ -880,7 +880,7 @@
                     <me>f_X(x) = 3kx^{-4}, \quad x \gt 44000</me>
                 </p>
             </statement>
-            <solution>
+         <!--   <solution>
                 <p>
                     To find the probability density function <m>f_X(x)</m> from the cumulative distribution function <m>F_X(x)</m>, we take the first derivative with respect to <m>x</m>:
                     <md>
@@ -890,7 +890,7 @@
                         <mrow>\amp = 3kx^{-4}, \quad \text{for } x \gt 44000</mrow>
                     </md>
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Part B: Solving for Constant k -->
@@ -900,7 +900,7 @@
                     Show that the value of the proportionality constant <m>k</m> must be  <m>44000^3</m>.
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     By definition, the support of the distribution begins at the lower boundary <m>x = 44000</m>. Because no cables can break at a force less than this threshold, the cumulative probability at this boundary must equal zero (<m>F_X(44000) = 0</m>):
                     <md>
@@ -915,7 +915,7 @@
                         <mrow>0 - \left( -k(44000)^{-3} \right) \amp = 1 \implies k = 44000^3</mrow>
                     </md>
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part C: Finding the Mean -->
@@ -925,7 +925,7 @@
                      Show that the mean breaking strength, given by this model, is <m>\mu = E(X) = 66,000</m> Newtons.
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     The expected value is computed by integrating <m>x \cdot f_X(x)</m> over the domain:
                     <md>
@@ -942,7 +942,7 @@
                         <mrow>\amp = 1.5 \cdot 44000 = 66000 \text{ Newtons}</mrow>
                     </md>
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Part D: Evaluating Proportion Under Mean -->
@@ -952,7 +952,7 @@
                      Show that the theoretical proportion of structural cables possessing a breaking strength less than the calculated mean is approximately 70%.
                 </p>
             </statement>
-            <solution>
+            <!--<solution>
                 <p>
                     We need to find the cumulative probability evaluated at the mean value, <m>P(X \lt 66000) = F_X(66000)</m>. Substituting <m>k = 44000^3</m> into the original CDF formula:
                     <md>
@@ -964,7 +964,7 @@
                     </md>
                     Thus, approximately <m>70.37\%</m> (or roughly 70%) of the cables possess a breaking strength below the statistical mean.
                 </p>
-            </solution>
+            </solution>-->
         </task>
     </exercise>
 
@@ -991,7 +991,7 @@
                      What is the probability that a butterfly will die within 6 days of emerging from its chrysalis? 
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     The event that a butterfly dies within 6 days corresponds to the cumulative probability <m>P(T \le 6)</m>. Using the complement of the given survival function:
                     <md>
@@ -1002,7 +1002,7 @@
                     </md>
                     Thus, the model predicts that exactly 75% of the emerged population will die within the first 6 days.
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Task B: Survival Percentile Threshold -->
@@ -1012,7 +1012,7 @@
                     If a large number of butterflies emerges on the same day, after how many days would you expect only <m>6\%</m> to remain alive?
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     We are searching for the specific time target <m>t</m> where the survival probability drops to <m>0.06</m>, meaning <m>P(T \gt t) = 0.06</m>. Reorganizing the algebraic model:
                     <md>
@@ -1027,7 +1027,7 @@
                     </md>
                     Therefore, it takes approximately 18.5 days for the surviving population cohort to dwindle down to 6%.
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Task C: Mean Lifetime Derivation -->
@@ -1037,7 +1037,7 @@
                     Find the mean (expected) lifetime of a butterfly after emerging from its chrysalis.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     Because <m>T</m> is a non-negative continuous random variable (<m>T \ge 0</m>), we can find its expected value by directly integrating its survival function over the interval <m>[0, \infty)</m>:
                     <me>E(T) = \int_{0}^{\infty} P(T \gt t) \, dt = \int_{0}^{\infty} \frac{36}{(6+t)^2} \, dt</me>
@@ -1050,7 +1050,7 @@
                     </md>
                     The expected mean lifetime for an emerged butterfly is exactly 6 days.
                 </p>
-            </solution>
+            </solution>-->
         </task>
     </exercise>
 

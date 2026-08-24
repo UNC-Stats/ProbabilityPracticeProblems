@@ -179,7 +179,7 @@
                 You roll two fair dice. The sample space for this experiment is shown below.
                  
              </p>
-             <image source="Images/Roll-Two-Dice.png" width="60%"/>
+             <image source="Images/Roll-Two-Dice.png" width="60%" decorative="yes"/>
           </introduction>
 
             <task>
@@ -345,12 +345,12 @@
             </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 To find the marginal probability of an iced drink order, sum the joint probabilities down the entire "Iced Drink" column:
                 <me>P(\text{Iced}) = 0.02 \text{ (Reusable Mug)} + 0.18 \text{ (Single-Use Cup)} = 0.20</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part B: Marginal Reusable Mug -->
@@ -368,12 +368,12 @@
             <numcmp use-answer="yes"/>
             </test></evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 To find the marginal probability of a reusable mug container choice, sum the joint probabilities across the entire "Reusable Mug" row:
                 <me>P(\text{Reusable Mug}) = 0.02 \text{ (Iced)} + 0.08 \text{ (Hot)} = 0.10</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part C: Conditional Given Iced Drink -->
@@ -389,11 +389,11 @@
         <evaluation>
             <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+       <!--<solution>
             <p>
                 <m>P(\text{Reusable Mug} \cap \text{Iced})0.02</m>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part D: Conditional Given Hot Drink -->
@@ -411,12 +411,12 @@
             <numcmp use-answer="yes"/>
             </test></evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 Evaluate the conditional probability:
                 <me>P(\text{Reusable Mug} \mid \text{Iced}) = \frac{P(\text{Reusable Mug} \cap \text{Iced})}{P(\text{Iced})} = \frac{0.02}{0.20} = 0.10</me>
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part E: Evaluation of Independence (Multiple Choice) -->
@@ -998,7 +998,7 @@
                 Find <m>P(B \mid A^c)</m>.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 By definition of conditional probability, <m>P(B \mid A^c) = \frac{P(B \cap A^c)}{P(A^c)}</m>.
             </p>
@@ -1006,7 +1006,7 @@
                 The event <m>A^c</m> means no yellow sphere is selected, leaving <m>15 - \binom{5}{2} = 10</m> outcomes. The intersection <m>B \cap A^c</m> means selecting at least one red sphere and <term>no</term> yellow sphere, which covers the <m>RR</m> and <m>RG</m> categories (<m>1 + 6 = 7</m> outcomes). Therefore:
                 <me>P(B \mid A^c) = \frac{7/15}{10/15} = \frac{7}{10} = 0.70</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 2 -->
@@ -1016,7 +1016,7 @@
                 Find <m>P(C \mid D)</m>.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 By definition of conditional probability, <m>P(C \mid D) = \frac{P(C \cap D)}{P(D)}</m>.
             </p>
@@ -1024,7 +1024,7 @@
                 The event <m>D</m> (same color) includes <m>RR</m> (<m>1</m> way) and <m>GG</m> (<m>3</m> ways), yielding <m>4</m> total outcomes. The intersection <m>C \cap D</m> requires both spheres to be green and both to be the same color, which is just event <m>C</m> (<m>3</m> outcomes). Therefore:
                 <me>P(C \mid D) = \frac{3/15}{4/15} = \frac{3}{4} = 0.75</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 3 -->
@@ -1034,12 +1034,12 @@
                 Find <m>P(A \cap D)</m>.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 This intersection requires choosing exactly one yellow sphere, while simultaneously picking two spheres of the exact same color. Because there is only <m>1</m> yellow sphere available in the box, it is physically impossible to draw a matching pair of yellow spheres. Therefore, these two events are mutually exclusive:
                 <me>P(A \cap D) = 0</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 4 -->
@@ -1049,7 +1049,7 @@
                 Are any of the four events independent of each other? Explain your reasoning.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 Two events <m>X</m> and <m>Y</m> are independent if and only if <m>P(X \cap Y) = P(X) \times P(Y)</m>. Let us test the relationships:
                 <ul>
@@ -1060,7 +1060,7 @@
                 </ul>
                 Consequently, <bold>no</bold>, none of the four events are independent of each other. Every pairing exhibits mathematical dependence due to drawing without replacement from a small finite pool.
             </p>
-        </solution>
+        </solution>-->
     </task>
 </exercise>
 
@@ -1132,48 +1132,48 @@
             <statement>
                 <p>i. Independent?</p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     We check the column total for Independents and divide by the grand total:
                     <me>P(I) = \frac{395}{1000} = 0.395</me>
                 </p>
-            </solution>
+            </solution>-->
         </task>
         
         <task xml:id="task-gallup-a-ii">
             <statement>
                 <p>ii. Female and Democrat?</p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     We locate the cell intersection where the Female row meets the Democrat column and divide by the grand total:
                     <me>P(F \cap D) = \frac{183}{1000} = 0.183</me>
                 </p>
-            </solution>
+            </solution>-->
         </task>
         
         <task xml:id="task-gallup-a-iii">
             <statement>
                 <p>iii. Democrat given that the person is male?</p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     This is a conditional probability, <m>P(D \mid M)</m>. We restrict our pool strictly to the Male row total (509) as the denominator, and select the Male Democrats (133) for the numerator:
                     <me>P(D \mid M) = \frac{133}{509} \approx 0.2613</me>
                 </p>
-            </solution>
+            </solution>-->
         </task>
         
         <task xml:id="task-gallup-a-iv">
             <statement>
                 <p>iv. Male given that the person is an Independent?</p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     This is a conditional probability, <m>P(M \mid I)</m>. We restrict our pool strictly to the Independent column total (395) as the denominator, and select the Male Independents (218) for the numerator:
                     <me>P(M \mid I) = \frac{218}{395} \approx 0.5519</me>
                 </p>
-            </solution>
+            </solution>-->
         </task>
     </task>
 
@@ -1184,7 +1184,7 @@
                 Are the events <term>Female</term> and <term>not-Republican</term> independent? Explain your answer based on the data.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 Two events <m>X</m> and <m>Y</m> are independent if and only if <m>P(X \mid Y) = P(X)</m> or <m>P(X \cap Y) = P(X) \times P(Y)</m>. Let us define the events <m>F</m> (Female) and <m>R^c</m> (not-Republican):
                 <ul>
@@ -1203,7 +1203,7 @@
             <p>
                 Because these mathematical values do not balance, the survey attributes are conditionally linked. Consequently, the answer is <bold>No</bold>, the events are not independent.
             </p>
-        </solution>
+        </solution>-->
     </task>
 </exercise>
 
@@ -1232,14 +1232,14 @@
                 Are <m>M</m> and <m>V</m> disjoint? Explain your answer.
             </p>
         </statement>
-        <solution>
+      <!--  <solution>
             <p>
                 Two events are disjoint (mutually exclusive) if they cannot occur at the same time, meaning their intersection is empty: <m>P(M \cap V) = 0</m>. 
             </p>
             <p>
                 According to the given data, <m>37\%</m> of restaurants accept both cards, meaning <m>P(M \cap V) = 0.37</m>. Because this probability is greater than zero, the events overlap. Consequently, the answer is <bold>No</bold>, <m>M</m> and <m>V</m> are not disjoint.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part B -->
@@ -1249,7 +1249,7 @@
                 Are <m>M</m> and <m>V</m> independent? Explain your answer.
             </p>
         </statement>
-        <solution>
+      <!--  <solution>
             <p>
                 Two events are independent if and only if the probability of their intersection equals the product of their individual probabilities:
                 <me>P(M \cap V) = P(M) \times P(V)</me>
@@ -1263,7 +1263,7 @@
             <p>
                 Because these mathematical values are not equal, accepting one type of card dynamically alters the likelihood of accepting the other. Consequently, the answer is <bold>No</bold>, <m>M</m> and <m>V</m> are not independent.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part C -->
@@ -1273,7 +1273,7 @@
                 What is the probability that a given restaurant does not accept Mastercard or Visa credit cards?
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 We want to find the probability that a restaurant accepts neither card, which is represented by the complement of their union, <m>P((M \cup V)^c)</m>.
             </p>
@@ -1287,7 +1287,7 @@
                 <me>P((M \cup V)^c) = 1 - P(M \cup V) = 1 - 0.73 = 0.27</me>
                 Thus, there is a <m>0.27</m> (or <m>27\%</m>) chance that a randomly chosen restaurant accepts neither card.
             </p>
-        </solution>
+        </solution>-->
     </task>
 </exercise>
 
@@ -1316,7 +1316,7 @@
                      What is the conditional probability that the randomly selected attendee is wearing apparel from an Anime series, given that they are wearing merchandise from a Sci-Fi media franchise?
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     First, use the multiplicative multiplication rule to calculate the joint intersection probability of an attendee wearing both items simultaneously (<m>P(\text{Anime} \cap \text{Sci-Fi})</m>):
                     <me>P(\text{Anime} \cap \text{Sci-Fi}) = P(\text{Anime}) \cdot P(\text{Sci-Fi} \mid \text{Anime}) = 0.28 \cdot 0.25 = 0.0700</me>
@@ -1326,7 +1326,7 @@
                     <me>P(\text{Anime} \mid \text{Sci-Fi}) = \frac{P(\text{Anime} \cap \text{Sci-Fi})}{P(\text{Sci-Fi})} = \frac{0.0700}{0.3500} = 0.2000</me>
                     The conditional probability is exactly <strong>0.2000</strong>.
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Part B: Dependence and Correlation -->
@@ -1336,7 +1336,7 @@
                      Determine if the selection of Anime apparel and Sci-Fi media franchise merchandise are independent, positively correlated, or negatively correlated. Mathematically justify your reasoning.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     To establish the statistical relationship, compare the conditional probability found in Part A to the unconditional baseline probability:
                     <ul>
@@ -1347,7 +1347,7 @@
                 <p>
                     Because <m>P(\text{Anime} \mid \text{Sci-Fi}) \neq P(\text{Anime})</m>, the two events are not independent. Furthermore, because <m>P(\text{Anime} \mid \text{Sci-Fi}) \lt P(\text{Anime})</m> (meaning the introduction of the condition reduces the likelihood weight), the events are <strong>negatively correlated</strong>. Alternatively, this is verified because the actual intersection (<m>0.0700</m>) is less than the expected product under independence (<m>0.28 \cdot 0.35 = 0.0980</m>).
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Part C: Probability of Neither Item -->
@@ -1357,7 +1357,7 @@
                      What is the probability that a randomly selected convention attendee is wearing <em>neither</em> Anime apparel nor Sci-Fi media franchise merchandise?
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     To find the probability that an attendee wears neither item, we compute the complement of the union of both events: <m>P((\text{Anime} \cup \text{Sci-Fi})^c) = 1 - P(\text{Anime} \cup \text{Sci-Fi})</m>.
                 </p>
@@ -1373,7 +1373,7 @@
                     <me>P((\text{Anime} \cup \text{Sci-Fi})^c) = 1 - 0.5600 = 0.4400</me>
                     The probability that an attendee is wearing neither type of merchandise is exactly <strong>0.4400</strong>.
                 </p>
-            </solution>
+            </solution>-->
         </task>
     </exercise>
 

@@ -69,7 +69,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+        <!-- <solution>
             <p>
                 Instead of computing a tedious integration by parts or using a power expansion loop, we can recognize that the polynomial kernel <m>y^3 (1-y)^5</m> over the bounded support interval <m>[0, 1]</m> matches the definition of a standard **Beta Distribution**. 
             </p>
@@ -92,7 +92,7 @@
                 <me>k = \frac{1}{\text{B}(4, 6)} = 504</me>
                 The exact normalizing constant multiplier is **504**.
             </p>
-        </solution>
+        </solution>-->
     </task>
         <!-- Part B: Structural Moments via Distribution Shortcuts (Multiple Choice) -->
     <task xml:id="task-beta-expected-value-mc">
@@ -210,7 +210,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+      <!--  <solution>
             <p>
                 To calculate the probability that the cache utilization meets or exceeds 90%, set up the definite integral of the complete PDF from the lower threshold limit of <m>0.90</m> up to the maximum continuous domain boundary of <m>1</m>:
                 <md>
@@ -228,7 +228,7 @@
                 <me>P(Y \ge 0.90) = 1 - 0.91854 = 0.08146</me>
                 Rounded to two decimal places, the final probability that the node reaches or surpasses a 90% space allocation limit is exactly <strong>0.08</strong> (an 8% chance).
             </p>
-        </solution>
+        </solution> -->
     </task>
         <!-- Part C: CDF Functional Derivation (Multiple Choice) -->
     <task xml:id="task-beta-cache-cdf-mc">

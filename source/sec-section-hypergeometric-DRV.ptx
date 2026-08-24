@@ -276,14 +276,14 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+      <!--  <solution>
             <p>
                 To evaluate <m>P(X = 0)</m>, use the standard Hypergeometric probability mass function (PMF). We need to choose exactly 0 defective modules from the 2 available, and exactly 5 flawless modules from the 18 working items, divided by the total combinations of drawing 5 cards from a pool of 20:
                 <me>P(X = k) = \frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{N}{n}}</me>
                 <me>P(X = 0) = \frac{\binom{2}{0}\binom{18}{5}}{\binom{20}{5}} = \frac{1 \cdot 8568}{15504} = \frac{8568}{15504} \approx 0.55263</me>
                 Rounded to three decimal places, the probability that all 5 modules install cleanly with zero re-drilling is exactly <strong>0.553</strong> (a 55.3% chance).
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part B: Mean Time to Install -->
@@ -309,7 +309,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 First, calculate the expected number of defective units <m>E(X)</m> pulled inside a standard Hypergeometric draft:
                 <me>E(X) = n \cdot \left(\frac{M}{N}\right) = 5 \cdot \left(\frac{2}{20}\right) = 5 \cdot 0.10 = 0.50 \text{ expected defective modules}</me>
@@ -341,7 +341,7 @@
                 <me>\sigma_T = \sqrt{81 \cdot \frac{27}{76}} = \sqrt{\frac{2187}{76}} = \sqrt{28.7763} \approx 5.36435</me>
                 Rounded to three decimal places, the standard deviation for the total satellite component assembly operation is exactly <strong>5.364</strong> minutes.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
         <!-- Part D: Time Threshold Inequality Probability (Short Answer Entry) -->
@@ -367,7 +367,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 To evaluate the schedule risk parameter, we translate the timing constraint inequality condition <m>T \gt 10</m> back into an equivalent condition for our underlying discrete counting variable <m>X</m> (the number of improperly drilled modules selected).
             </p>
@@ -383,7 +383,7 @@
                 <me>P(X \ge 1) = 1 - \frac{8568}{15504} = \frac{6936}{15504} \approx 0.44737</me>
                 Rounded to three decimal places, the final probability that the assembly process takes strictly longer than 10 minutes is exactly <strong>0.447</strong> (or a 44.7% chance).
             </p>
-        </solution>
+        </solution>-->
     </task>
 
 </exercise>
@@ -422,7 +422,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 We track a total population of <m>N = 8</m> fridges, containing <m>M = 3</m> defective units and <m>N - M = 5</m> flawless units. A sample size of <m>n = 4</m> is drawn without replacement. To find <m>P(X \ge 1)</m>, it is most efficient to apply the **Complement Rule**:
                 <me>P(X \ge 1) = 1 - P(X = 0)</me>
@@ -436,7 +436,7 @@
                 <me>P(X \ge 1) = 1 - \frac{1}{14} = \frac{13}{14} \approx 0.92857</me>
                 Rounded to four decimal places, the probability is exactly <strong>0.9286</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part B: Probability of exactly two malfunctioning -->
@@ -456,13 +456,13 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+        <!--<solution>
             <p>
                 To evaluate the probability of hitting exactly two malfunctions, we configure the Hypergeometric PMF at <m>k = 2</m>:
                 <me>P(X = 2) = \frac{\binom{3}{2}\binom{5}{2}}{\binom{8}{4}} = \frac{3 \cdot 10}{70} = \frac{30}{70} = \frac{3}{7} \approx 0.42857</me>
                 Rounded to four decimal places, the probability is exactly <strong>0.4286</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part C: Expected Value -->
@@ -482,13 +482,13 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+      <!--  <solution>
             <p>
                 For a Hypergeometric variable, the long-run expectation scales simply as the sample size multiplied by the underlying defective ratio of the population pool:
                 <me>E(X) = n \cdot \left(\frac{M}{N}\right) = 4 \cdot \left(\frac{3}{8}\right) = \frac{12}{8} = 1.50</me>
                 The expected average is exactly <strong>1.50</strong> malfunctioning appliances.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part D: Standard Deviation -->
@@ -508,7 +508,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 To calculate the standard deviation, we evaluate the Hypergeometric variance model, which incorporates the finite population correction adjustment fraction, <m>\frac{N-n}{N-1}</m>:
                 <me>\text{Var}(X) = n \cdot \left(\frac{M}{N}\right) \cdot \left(1 - \frac{M}{N}\right) \cdot \left(\frac{N-n}{N-1}\right)</me>
@@ -519,7 +519,7 @@
                 <me>\sigma_X = \sqrt{\frac{15}{28}} \approx 0.73192</me>
                 Rounded to two decimal places, the standard deviation is exactly <strong>0.73</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 </exercise>
 
@@ -697,11 +697,11 @@
             </p>
         </statement>
          <response/>
-        <solution>
+       <!-- <solution>
             <p>
                 It is not binomial because true binomial distribution requires completely independent trials with a constant probability of success. To make it a true binomial setup, you would have to sample <strong>with replacement</strong>: throw each fish back into the lake immediately after checking it before drawing the next one.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <task>
@@ -755,11 +755,11 @@
                 </p>
               </statement>
             
-        <solution>
+       <!-- <solution>
             <p>
                 The binomial approximation is <strong>not appropriate</strong> here. Testing the population threshold: <m>\frac{n}{N} = \frac{3}{21} \approx 0.143</m>. Because <m>14.3\% \gt 5\%</m>, the sample size is too large relative to the population. Each draw alters the remaining cookie composition too dramatically to ignore.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <task>
@@ -771,11 +771,11 @@
                  Use the binomial distribution to compute the probability of getting exactly one Brussels-Sprout-with-Turnip-Chip cookie in your sample of 3 cookies.
             </p>
         </statement>
-         <solution>
+        <!-- <solution>
             <p>
                Using the Binomial formula:P(X=1) = \binom{3}{1}(0.38)^1(0.62)^2 \approx 0.438
             </p>
-        </solution>
+        </solution>-->
         </task>
         <task>
           <statement>
@@ -783,11 +783,11 @@
               Compare your answers using the hypergeometric and binomial distributions. What do you notice? Why did this occur?
             </p>
           </statement>
-          <solution>
+        <!--  <solution>
             <p>
               The exact hypergeometric result was 0.469. Because the sample size threshold was violated, the approximation is noticeably inaccurate (off by roughly 0.031 or over 3%).
             </p>
-          </solution>
+          </solution>-->
         </task>
        
 </exercise>

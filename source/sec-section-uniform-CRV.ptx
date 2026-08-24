@@ -260,7 +260,7 @@
                     <me>E(X) = \frac{A + B}{2}</me>
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     By definition, the expected value of a continuous random variable is calculated by integrating <m>x \cdot f_X(x)</m> over its support interval:
                     <md>
@@ -279,7 +279,7 @@
                     </md>
                     This analytical result matches our spatial intuition that the center of mass for a completely flat distribution sits at its exact geometric midpoint.
                 </p>
-            </solution>
+            </solution> -->
         </task>
 
         <!-- Task B: Deriving Variance -->
@@ -290,7 +290,7 @@
                     <me>V(X) = \frac{(B - A)^2}{12}</me>
                 </p>
             </statement>
-            <solution>
+          <!--  <solution>
                 <p>
                     To find the variance, we leverage the algebraic identity <m>V(X) = E(X^2) - [E(X)]^2</m>. First, compute the intermediate second moment term, <m>E(X^2)</m>:
                     <md>
@@ -316,7 +316,7 @@
                     Factoring the numerator into its perfect square trinomial form yields our target closed-form identity:
                     <me>V(X) = \frac{(B - A)^2}{12}</me>
                 </p>
-            </solution>
+            </solution> -->
         </task>
     </exercise>
 

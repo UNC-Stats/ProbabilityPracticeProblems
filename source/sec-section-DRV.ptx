@@ -1110,7 +1110,7 @@
                 Find the probability distribution for the random variable <m>Y</m>.
             </p>
         </introduction>
-        <solution>
+       <!-- <solution>
             <p>
                 Let the correct matching order of the three animal words be represented by the sequence <m>1, 2, 3</m>. There are <m>3! = 6</m> equally likely ways a child can randomly assign the three words:
                 <ul>
@@ -1142,7 +1142,7 @@
                     </tabular>
                 </table>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 2: Expected Value -->
@@ -1152,7 +1152,7 @@
                 Find the expected number of matches, <m>E(Y)</m>.
             </p>
         </statement>
-        <solution>
+     <!--   <solution>
             <p>
                 Using the definition of expected value for a discrete random variable, <m>\mu_Y = E(Y) = \sum y \cdot P(Y = y)</m>:
                 <md>
@@ -1161,7 +1161,7 @@
                 </md>
                 The expected number of correct matches is <m>\mu_Y = 1</m>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 3: Variance and Standard Deviation -->
@@ -1171,7 +1171,7 @@
                 Find the variance and standard deviation for the expected number of matches. Use the limit definition of variance rather than the short-cut formula: <m>V(Y) = E[(Y - \mu_Y)^2]</m>, where <m>\mu_Y = E(Y)</m>.
             </p>
         </statement>
-        <solution>
+      <!--  <solution>
             <p>
                 Using the definition-based variance formula with our mean <m>\mu_Y = 1</m>:
                 <md>
@@ -1183,7 +1183,7 @@
                 The variance is <m>V(Y) = 1</m>. To find the standard deviation <m>\sigma_Y</m>, we take the square root of the variance:
                 <me>\sigma_Y = \sqrt{V(Y)} = \sqrt{1} = 1</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 4: Interpretation -->
@@ -1193,11 +1193,11 @@
                 Write a one-sentence interpretation, in the context of the scenario, for the mean (expected value) and standard deviation that you computed.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 If a large number of small children guess the animal matches completely at random, they will correctly identify an average of <m>1</m> animal picture, with a typical deviation of <m>1</m> correct match away from that average.
             </p>
-        </solution>
+        </solution>-->
     </task>
 </exercise>
 
@@ -1227,7 +1227,7 @@
                 Find the probability distribution (Probability Mass Function) for the random variable <m>X</m> and sketch a graph of the resulting distribution.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 Let <m>A</m> be the event a server has Vulnerability A, and <m>B</m> be the event a server has Vulnerability B. We are given <m>P(A) = 0.40</m>, <m>P(B) = 0.50</m>, and the probability of neither is <m>P((A \cup B)^c) = 0.20</m>.
                 <ul>
@@ -1269,31 +1269,31 @@
                 <latex-image>
                     \begin{tikzpicture}[scale=0.8]
                         \fill[white] (-1,-1) rectangle (4,5);
-                        \draw[-&gt;,thick] (-0.5,0) -- (3.5,0) node[right] {$x$};
-                        \draw[-&gt;,thick] (0,-0.2) -- (0,4.5) node[above] {$P(X=x)$};
+                        \draw[-&gt;,thick] (-0.5,0) - - (3.5,0) node[right] {$x$};
+                        \draw[-&gt;,thick] (0,-0.2) - - (0,4.5) node[above] {$P(X=x)$};
                         
                         % Gridlines and ticks
                         \foreach \y/\label in {1/0.2, 2/0.4, 3/0.6, 3.5/0.7, 4/0.8} {
-                            \draw[gray!30,dashed] (-0.2,\y) -- (3.2,\y);
-                            \draw (0.05,\y) -- (-0.05,\y) node[left,scale=0.8] {\label};
+                            \draw[gray!30,dashed] (-0.2,\y) - - (3.2,\y);
+                            \draw (0.05,\y) - - (-0.05,\y) node[left,scale=0.8] {\label};
                         }
                         \foreach \x in {0,1,2,3} {
-                            \draw (\x,0.05) -- (\x,-0.05) node[below,scale=0.8] {\x};
+                            \draw (\x,0.05) - - (\x,-0.05) node[below,scale=0.8] {\x};
                         }
                         
                         % PMF Lines
-                        \draw[draw=blue,line width=2pt] (0,0) -- (0,1);
+                        \draw[draw=blue,line width=2pt] (0,0) - - (0,1);
                         \fill[blue] (0,1) circle (2.5pt);
                         
-                        \draw[draw=blue,line width=2pt] (1,0) -- (1,3.5);
+                        \draw[draw=blue,line width=2pt] (1,0) - - (1,3.5);
                         \fill[blue] (1,3.5) circle (2.5pt);
                         
-                        \draw[draw=blue,line width=2pt] (2,0) -- (2,0.5);
+                        \draw[draw=blue,line width=2pt] (2,0) - - (2,0.5);
                         \fill[blue] (2,0.5) circle (2.5pt);
                     \end{tikzpicture}
                 </latex-image>
             </image>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 2: Cumulative Distribution Function CDF and Graph -->
@@ -1303,7 +1303,7 @@
                 Find the cumulative distribution function (CDF) for the random variable <m>X</m>, defined as <m>F_X(x) = P(X \le x)</m>, and sketch a graph of the resulting distribution.
             </p>
         </statement>
-        <solution>
+      <!--  <solution>
             <p>
                 The cumulative distribution function is a step function that accumulates probabilities at each discrete integer step:
                 <me>
@@ -1323,36 +1323,36 @@
                 <latex-image>
                     \begin{tikzpicture}[scale=0.8]
                         \fill[white] (-1.5,-1) rectangle (4.5,5.5);
-                        \draw[-&gt;,thick] (-1,0) -- (4,0) node[right] {$x$};
-                        \draw[-&gt;,thick] (0,-0.2) -- (0,5.2) node[above] {$F_X(x)$};
+                        \draw[-&gt;,thick] (-1,0) - - (4,0) node[right] {$x$};
+                        \draw[-&gt;,thick] (0,-0.2) - - (0,5.2) node[above] {$F_X(x)$};
                         
                         % Ticks and labels
-                        \draw (0.05,1) -- (-0.05,1) node[left,scale=0.8] {0.2};
-                        \draw (0.05,4.5) -- (-0.05,4.5) node[left,scale=0.8] {0.9};
-                        \draw (0.05,5) -- (-0.05,5) node[left,scale=0.8] {1.0};
+                        \draw (0.05,1) - - (-0.05,1) node[left,scale=0.8] {0.2};
+                        \draw (0.05,4.5) - - (-0.05,4.5) node[left,scale=0.8] {0.9};
+                        \draw (0.05,5) - - (-0.05,5) node[left,scale=0.8] {1.0};
                         
                         \foreach \x in {-1,1,2,3} {
-                            \draw (\x,0.05) -- (\x,-0.05) node[below,scale=0.8] {\x};
+                            \draw (\x,0.05) - - (\x,-0.05) node[below,scale=0.8] {\x};
                         }
                         
                         % Step lines
-                        \draw[blue,very thick] (-1,0) -- (0,0);
+                        \draw[blue,very thick] (-1,0) - - (0,0);
                         \fill[white] (0,0) circle (2pt); \draw[blue] (0,0) circle (2pt);
                         
-                        \draw[blue,very thick] (0,1) -- (1,1);
+                        \draw[blue,very thick] (0,1) - - (1,1);
                         \fill[blue] (0,1) circle (2pt);
                         \fill[white] (1,1) circle (2pt); \draw[blue] (1,1) circle (2pt);
                         
-                        \draw[blue,very thick] (1,4.5) -- (2,4.5);
+                        \draw[blue,very thick] (1,4.5) - - (2,4.5);
                         \fill[blue] (1,4.5) circle (2pt);
                         \fill[white] (2,4.5) circle (2pt); \draw[blue] (2,4.5) circle (2pt);
                         
-                        \draw[blue,very thick] (2,5) -- (3.8,5);
+                        \draw[blue,very thick] (2,5) - - (3.8,5);
                         \fill[blue] (2,5) circle (2pt);
                     \end{tikzpicture}
                 </latex-image>
             </image>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part 3: Expected Value -->

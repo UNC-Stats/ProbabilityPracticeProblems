@@ -132,7 +132,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+      <!--  <solution>
             <p>
                 Because random variables <m>X</m> and <m>Y</m> are defined as statistically independent, their joint probabilities are found by multiplying their corresponding marginal probabilities together for every coordinate intersection cell:
                 <me>P(X = x \cap Y = y) = P(X = x) \cdot P(Y = y)</me>
@@ -161,7 +161,7 @@
                 </ul>
                 Summing all elements across the table confirms that the entire joint distribution sums to exactly <m>0.12 + 0.28 + 0.15 + 0.35 + 0.03 + 0.07 = 1.00</m>.
             </p>
-        </solution>
+        </solution> -->
 
 </exercise>
 
@@ -289,7 +289,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 To evaluate any conditional probability from a joint mass function, use the formula:
                 <me>P(Y = y \mid X = x) = \frac{p(x, y)}{P(X = x)}</me>
@@ -305,7 +305,7 @@
                 </ul>
                 Notice that the conditional distribution sums perfectly to certainty within its restricted universe: <m>0.10 + 0.70 + 0.20 = 1.00</m>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part B: Check for Independence (Short Answer Entry) -->
@@ -453,7 +453,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 To evaluate <m>P(X + Y \gt 6)</m>, we parse the grid to identify every cell coordinate <m>(x, y)</m> where the sum of the column index and row index is strictly greater than 6:
                 <ul>
@@ -466,7 +466,7 @@
                 <me>P(X + Y \gt 6) = p(3, 4) + p(4, 3) + p(4, 4) = 0.02 + 0.03 + 0.05 = 0.10</me>
                 The probability is exactly <strong>0.10</strong>.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part B: P(XY = 4) -->
@@ -489,7 +489,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 To find <m>P(XY = 4)</m>, trace all coordinate intersection points <m>(x, y)</m> within our domain <m>\{1, 2, 3, 4\}</m> where the mathematical product is exactly 4:
                 <ul>
@@ -501,7 +501,7 @@
                 <me>P(XY = 4) = p(1, 4) + p(2, 2) + p(4, 1) = 0.01 + 0.15 + 0.03 = 0.19</me>
                 The probability is exactly <strong>0.19</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part C: P(X / Y >= 3) -->
@@ -524,7 +524,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+      <!--  <solution>
             <p>
                 To evaluate <m>P\left(\frac{X}{Y} \ge 3\right)</m>, check the division ratio for entries where the column value is at least three times the row value:
                 <ul>
@@ -536,7 +536,7 @@
                 <me>P\left(\frac{X}{Y} \ge 2\right) = p(3, 1) + p(2, 1) = 0.04 + 0.08 = 0.12</me>
                 
             </p>
-        </solution>
+        </solution>-->
     </task>
 </exercise>
 
@@ -604,7 +604,7 @@
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
+        <!--<solution>
             <p>
                 To calculate the marginal expected value <m>E(X)</m>, we first find the marginal probability distribution of <m>X</m> by summing the joint probabilities down each individual column:
                 <ul>
@@ -619,7 +619,7 @@
                 </md>
                 The expected tactical ping frequency count is exactly <strong>2.05</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part B: Joint Expectation E(XY) -->
@@ -727,7 +727,7 @@
 
         </statement>
         
-        <solution>
+        <!--<solution>
             <p>
                 To calculate the covariance between the two variables, use the shortcut identity formula:
                 <me>\text{Cov}(X, Y) = E(XY) - E(X)E(Y)</me>
@@ -752,7 +752,7 @@
             <p>
                 <strong>Interpretation for Students:</strong> Because the calculated covariance is strictly <strong>positive</strong>, it provides concrete statistical proof that the two variables move together. Ramping up tactical communication pings does, on average, correlate with the support player deploying a higher volume of protective utility coverage during a round.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <task xml:id="task-static-esports-correlation">
@@ -761,7 +761,7 @@
                     Now, calculate the covariance, <m>\rho</m>. Make sure to show your calculations  of each required standard deviation!
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     To calculate the correlation coefficient, we use the formula:
                     <me>\rho = \frac{\text{Cov}(X, Y)}{\sigma_X \cdot \sigma_Y}</me>
@@ -789,7 +789,7 @@
                     <me>\rho = \frac{0.155}{0.6690 \cdot 0.7071} = \frac{0.155}{0.4731} \approx 0.3276</me>
                     The Pearson correlation coefficient is approximately <strong>0.328</strong>.
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Part E: Logistical Strategic Interpretation (Non-Interactive) -->
@@ -799,7 +799,7 @@
                     Provide a comprehensive data-analytics interpretation of what the resulting correlation coefficient fundamentally implies about this professional esports team's live gameplay synergy.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     A correlation coefficient of <m>\rho \approx 0.328</m> indicates a <strong>moderate positive linear relationship</strong> between the attacker's communication pings and the support player's defensive wall placements. 
                 </p>
@@ -823,7 +823,7 @@
                         </li>
                     </ul>
                 </p>
-            </solution>
+            </solution>-->
         </task>
 </exercise>
 

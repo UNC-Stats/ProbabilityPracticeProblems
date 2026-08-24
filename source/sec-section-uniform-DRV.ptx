@@ -62,12 +62,12 @@
                 <strong>Part A:</strong> Suppose you roll a single fair 6-sided die. Let the random variable <m>X</m> represent the exact number that is rolled. Find the probability distribution function <m>p(x)</m> for <m>X</m>.
             </p>
         </statement>
-        <solution>
+     <!--   <solution>
             <p>
                 Since each of the 6 faces is equally likely to land face up, the probability distribution function is:
                 <me>p(x) = \frac{1}{6}, \text{ for } x = 1, 2, 3, 4, 5, 6</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Task B: Dice Mean and Variance -->
@@ -77,7 +77,7 @@
                 <strong>Part B:</strong> For the single 6-sided die roll described in Part A, compute the expected value <m>E(X)</m> and the variance <m>V(X)</m>.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 The expected value is calculated as:
                 <me>E(X) = \sum_{x=1}^{6} x \cdot p(x) = \frac{1+2+3+4+5+6}{6} = \frac{21}{6} = 3.5</me>
@@ -88,7 +88,7 @@
                 Now, applying the identity formula <m>V(X) = E(X^2) - [E(X)]^2</m>:
                 <me>V(X) = \frac{91}{6} - (3.5)^2 = 15.1667 - 12.25 = 2.9167</me>
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Task C: Dice Uniform Justification -->
@@ -98,11 +98,11 @@
                 <strong>Part C:</strong> The discrete uniform random variable is used to model experiments where there are a finite number, <m>n</m>, of equally likely outcomes. Based on this definition, explain why the random variable <m>X</m> from Part A is uniform.
             </p>
         </statement>
-        <solution>
+      <!--  <solution>
             <p>
                 The die roll qualifies because it features a finite number of possible outcomes (<m>n = 6</m>) and each outcome has an identical, symmetric chance of occurring (<m>1/6</m>).
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Task D: Student Created Scenario -->
@@ -112,14 +112,14 @@
                 <strong>Part D:</strong> Provide another real-world scenario where the variable of interest would be a discrete uniform random variable. Fully describe it here: make sure to explicitly define your random variable, state its probability distribution, and explain why your random variable is uniform.
             </p>
         </statement>
-        <solution>
+     <!--   <solution>
             <p>
                 <strong>Sample Student Response:</strong> Let <m>Y</m> be the winning number drawn from a raffle drum containing exactly 100 physical tickets numbered sequentially from 1 to 100. 
             </p>
             <p>
                 The probability distribution is <m>p(y) = \frac{1}{100}</m> for <m>y = 1, 2, \dots, 100</m>. This is uniform because every individual ticket has the exact same dimensions, weight, and shape, meaning each ticket has an identical <m>1\%</m> chance of being drawn out of the drum.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Task E: General Formula PMF -->
@@ -129,13 +129,13 @@
                 <strong>Part E:</strong> Write a general formula that can be used for the probability distribution function of <em>any</em> discrete uniform random variable. Assume the random variable takes on values 1 through <m>n</m>. Explain the reasoning behind your answer.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 The general probability mass function is:
                 <me>p(x) = \frac{1}{n}, \text{ for } x = 1, 2, \dots, n</me>
                 <strong>Reasoning:</strong> The total probability across an entire sample space must equal exactly 1. If there are <m>n</m> distinct, mutually exclusive outcomes and all outcomes are equally likely, you must divide that total probability of 1 evenly among the <m>n</m> items.
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Task F: Theoretical Derivations -->
@@ -152,7 +152,7 @@
                 <me>\text{Sum of Squares Shortcut: } \sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}</me>
             </p>
         </hint>
-        <solution>
+       <!-- <solution>
             <p>
                 <strong>Derivation of Expected Value <m>E(X)</m>:</strong>
                 <md>
@@ -178,7 +178,7 @@
                     <mrow>\amp = \frac{n+1}{2} \left[ \frac{n-1}{6} \right] = \frac{(n+1)(n-1)}{12} = \frac{n^2 - 1}{12}</mrow>
                 </md>
             </p>
-        </solution>
+        </solution> -->
     </task>
 </exercise>
 
@@ -210,7 +210,7 @@
                 Determine the finite support space (the set of all possible integer values) for the random variable <m>D</m>. What are the minimum and maximum possible spawn distances between two consecutive <m>I</m>-pieces?
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 Using our distance equation <m>D = 7 + X_2 - X_1</m>:
                 <ul>
@@ -230,7 +230,7 @@
                 Because <m>X_1</m> and <m>X_2</m> take any integer values between 1 and 7, the support space for <m>D</m> is the set of all integers from 1 to 13:
                 <me>\text{Support}(D) = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13\}</me>
             </p>
-        </solution>
+        </solution> -->
     </task>
 
 <task xml:id="task-tetris-distance-var-type">
@@ -239,12 +239,12 @@
                 Independent discrete uniform random variables on the integer interval <m>[1, 7]</m>. Is <m>D</m> also uniform? Explain your answer. 
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                
                </p>
  
-        </solution>
+        </solution> -->
     </task>
 
     <!-- Part 2: Boundary Probabilities -->
@@ -254,7 +254,7 @@
                 Calculate the probability of experiencing the absolute minimum distance gap (<m>P(D = 1)</m>) and the absolute maximum distance gap (<m>P(D = 13)</m>).
             </p>
         </statement>
-        <solution>
+        <!--<solution>
             <p>
                 Since Bag 1 and Bag 2 are shuffled completely independently, the positions <m>X_1</m> and <m>X_2</m> each have a uniform distribution where <m>P(X_1 = x_1) = \frac{1}{7}</m> and <m>P(X_2 = x_2) = \frac{1}{7}</m>. The total number of equally likely position configurations is <m>7 \times 7 = 49</m> coordinate pairs.
                 <ul>
@@ -272,7 +272,7 @@
                     </li>
                 </ul>
             </p>
-        </solution>
+        </solution> -->
     </task>
 
     <task xml:id="task-tetris-distance-expected-gap">
@@ -281,12 +281,12 @@
                 How far apart would you expect the I pieces to be? In other words, what is the expected spawn gap? 
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                Find <m>E(D)=7</m>.
                </p>
  
-        </solution>
+        </solution> -->
     </task>
 
 
@@ -299,7 +299,7 @@
                 Calculate the probability of experiencing a spawn distance gap of exactly seven pieces (<m>P(D = 7)</m>). 
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 We want to find how many coordinate pairs <m>(X_1, X_2)</m> satisfy our distance equation for <m>D = 7</m>:
                 <me>7 = 7 + X_2 - X_1 \implies X_2 - X_1 = 0 \implies X_1 = X_2</me>
@@ -311,7 +311,7 @@
                     <em>Note for further study:</em> Because the distribution counts matching differences between two independent uniform variables, the resulting probability mass function forms a symmetric triangular distribution that peaks at <m>D = 7</m> with a probability of <m>\frac{7}{49}</m> and tapers down linearly to <m>\frac{1}{49}</m> at the outer edges (<m>D=1</m> and <m>D=13</m>).
                 </p>
             </p>
-        </solution>
+        </solution> -->
     </task>
 </exercise>
    </exercises>

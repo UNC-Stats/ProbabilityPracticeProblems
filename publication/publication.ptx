@@ -146,7 +146,8 @@
     <!-- override defaults.  Ex:<css theme="denver"/>          -->
     <!-- See also                                              -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
-      <css theme="salem"      />
+      <css theme="salem"    
+      palette="bold"  />
      <!--  color-do="#380962"   
      color-main="#d94d3d" --> 
 

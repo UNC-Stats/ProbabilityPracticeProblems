@@ -85,7 +85,7 @@
     </cardsort>
     
     <!-- Solutions reveal for instructors or post-submission view -->
-    <solution>
+  <!--  <solution>
         <p>
             <strong>Mathematical Derivations:</strong>
             <ul>
@@ -109,7 +109,7 @@
                 </li>
             </ul>
         </p>
-    </solution>
+    </solution> -->
 </task>
 
 
@@ -138,7 +138,7 @@
       </test>
       </evaluate>
     </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 Let <m>Y</m> be the total number of tests needed to find <m>r = 3</m> positives. The cost function is a linear transformation: <m>\text{Cost} = 20Y</m>.
             </p>
@@ -152,7 +152,7 @@
                 <me>E(\text{Cost}) = E(20Y) = 20 \cdot E(Y) = 20 \cdot 7.5 = \$150</me>
                 <me>V(\text{Cost}) = V(20Y) = 20^2 \cdot V(Y) = 400 \cdot 11.25 = 4500</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part E: Shift to Binomial setup -->
@@ -215,7 +215,7 @@
             </feedback>
         </choice>
     </choices>
-        <solution>
+       <!-- <solution>
             <p>
                 Because the sample size is fixed at <m>n = 10</m>, this shifts to a Binomial distribution setup with parameters <m>n = 10</m> and <m>p = 0.40</m>. We need to calculate <m>P(X \ge 3)</m>.
                 <me>P(X \ge 3) = 1 - P(X \le 2) = 1 - [P(X=0) + P(X=1) + P(X=2)]</me>
@@ -228,7 +228,7 @@
                 Combine terms inside the complement bracket:
                 <me>P(X \ge 3) = 1 - (0.006 + 0.040 + 0.121) = 1 - 0.167 = 0.833</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 </exercise>
 
@@ -452,7 +452,7 @@
                 The probability of *not* selecting server <c>Alpha</c> on any single given turn is <m>1 - \frac{1}{7} = \frac{6}{7}</m>. Since the trials are independent, evaluate <m>\left(\frac{6}{7}\right)^3</m> to find the probability that this failure occurs three times in a row.
             </p>
         </hint>
-        <solution>
+       <!-- <solution>
             <p>
                 To evaluate the probability of getting zero allocations to server <c>Alpha</c> across <m>5</m> trials, we apply the binomial probability mass function:
                 <me>P(Y = y) = \binom{n}{y} p^y (1-p)^{n-y}</me>
@@ -464,7 +464,7 @@
                 </md>
                 Rounding to four decimal places yields <m>0.4627</m>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
    </exercise>
@@ -816,7 +816,7 @@ If this rate has not changed and if 100,000 cases from Colorado are reviewed for
                 To find the probability of at least 9, calculate the sum of the two mutually exclusive target cases: <m>P(Y \ge 9) = P(Y = 9) + P(Y = 10)</m>. Apply the binomial formula <m>\binom{n}{y}p^y(1-p)^{n-y}</m> using <m>n = 10</m> and <m>p = 0.55</m> for both values.
             </p>
         </hint>
-        <solution>
+      <!--  <solution>
             <p>
                 We evaluate the cumulative tail probability using the binomial mass function:
                 <me>P(Y = y) = \binom{10}{y} (0.55)^y (0.45)^{10-y}</me>
@@ -839,7 +839,7 @@ If this rate has not changed and if 100,000 cases from Colorado are reviewed for
                 Let's double-check the arithmetic via formula: <m>10 \cdot (0.55)^9 \cdot 0.45 + (0.55)^{10} = 0.020722 + 0.002533 = 0.023255 \approx 0.0233</m>.
             </p>
             
-        </solution>
+        </solution>-->
 </task>
 
     <!-- Part 3: Expected Value (Fill-in) -->

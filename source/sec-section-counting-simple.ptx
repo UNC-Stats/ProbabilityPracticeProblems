@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-section-counting-simple" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Counting Techniques</title>
+  <title>Fundamental Counting Techniques</title>
 <introduction>
  <p> 
-    By completing the problems provided below, you will gain practice with: 
+    The problems provided below you give you practice applying counting techniques to determine the number of outcomes in events and sample spaces. Counting techniques you will use here are: 
     <ul>
       <li>
         <p>
-          
+          Multiplication Rule
         </p>
       </li>
       <li>
         <p>
-         
+         Permutations
         </p>
       </li>
       <li>
         <p>
-          
-        </p>
-      </li>
-      <li>
-        <p>
-          
+          Combinations
         </p>
       </li>
     </ul>
@@ -36,10 +31,10 @@
 
 
     <exercise label="ex-combinatorics-different-die-rolls" xmlns:pi="http://pretextbook.org">
-    <title>Combinatorics and Probability: Distinct Die Sequences</title>
+    <title>Distinct Die Rolls</title>
     <introduction>
         <p>
-            A standard, fair 6-sided die is rolled 5 times in a row.   Find the probability that all 5 numbers rolled are completely different from one another.
+            A standard 6-sided die is rolled 5 times in a row.   Find the probability that all 5 numbers rolled are completely different from one another.
         </p>
     </introduction>
 
@@ -47,40 +42,44 @@
     <task xml:id="task-die-numerator-mc">
         <statement>
             <p>
-                To find the total number of outcomes where all 5 rolls yield different values, which counting principle should be used? 
+                First determine the appropriate counting technique that should be used, and then compute the total number of outcomes where all 5 rolls yield different values. 
             </p>
             
         </statement>
-        <choices>
-                <choice><statement><p><m>6^5 = 7776</m></p></statement>
+        <choices randomize="yes">
+                <choice><statement><p><m>6^5 = 7,776</m></p></statement>
                     <feedback>
-                        <p>Incorrect. This calculates the size of the total universal sample space (<m>n(S)</m>) because each of the 5 rolls has 6 unrestricted options. For the numerator, the options must shrink with each roll to remain distinct.</p>
+                        <p>Incorrect. Using the Multiplication Principle like this  calculates the size of the sample space of all possible die roll sequences.</p>
                     </feedback></choice>
-                <choice correct="yes"><statement><p><m>_6P_5 = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 = 720</m></p></statement>
+                <choice correct="yes"><statement><p><m>_6P_5  = 720</m></p></statement>
                     <feedback>
-                        <p>Correct! Because the 5 rolled numbers must all be different, order matters and repetition is not allowed. The first roll can be any of the 6 numbers, the second roll has 5 options left, the third has 4, and so on. This maps perfectly to a permutation of choosing and arranging 5 unique items from a pool of 6: <m>_6P_5 = 720</m>.</p>
+                        <p>Correct! Since the 5 rolled numbers must all be distinct, the order matters and repetition is not allowed. Therefore, we can a permutation. Specifically, we want to know how many 5-permutations of the six numbers on the die  are possible. 
+                        </p>
                     </feedback></choice>
-                <choice><statement><p><m>\binom{6}{5} = \frac{6!}{5!1!} = 6</m></p></statement>
+                <choice><statement><p><m>\binom{6}{5}  = 6</m></p></statement>
                     <feedback>
-                        <p>Incorrect. This is a combination formula, which ignores the rolling sequence order. Because rolling <c>1, 2, 3, 4, 5</c> is a completely different sequential outcome than rolling <c>5, 4, 3, 2, 1</c>, you must track the spatial arrangements using a permutation instead.</p>
+                        <p>Incorrect. This is a combination, which ignores the rolling sequence order. Order matters here, because rolling <c>1, 2, 3, 4, 5</c> is a completely different sequential outcome than rolling <c>5, 4, 3, 2, 1</c>.</p>
                     </feedback></choice>
-                <choice><statement><p><m>5^6 = 15625</m></p></statement>
+                <choice><statement><p><m>5^6 = 15,625</m></p></statement>
                     <feedback>
-                        <p>Incorrect. This is a common formula inversion distractor. The total number of generic sequential outcomes for independent trials with <m>n</m> sides rolled <m>k</m> times is <m>n^k</m>, which would be <m>6^5</m> for the baseline sample space, not <m>5^6</m>.</p>
+                        <p>Incorrect. Here the Multiplication Principle is being used to try to compute the size of the sample space  of all possible die roll sequences, but the numbers have been plugged in wrong!</p>
                     </feedback></choice>
                 <choice><statement><p><m>5! = 120</m></p></statement>
                     <feedback>
-                        <p>Incorrect. This only accounts for rearranging a fixed set of 5 pre-selected items. It forgets that there are 6 possible target faces to choose from to build that set.</p>
+                        <p>Incorrect. This only counts how many ways 5 numbers can be arranged. It does not take into account that there are 6 possible numbers that can be rolled each time. </p>
                     </feedback></choice>
             </choices>
 
     </task>
+    
+<!-- ########################################################################################## -->
 
+   
     <!-- Part B: Exact Probability Calculation (Short Answer Entry) -->
     <task xml:id="task-die-probability-input">
         <statement>
             <p>
-                 Using your answer to part A, determine the probability of rolling 5  different numbers.
+                 Using your answer to part A, determine the probability of rolling 5  different numbers. Write your answer as a decimal rounded to 4 decimal places.
             </p>
             <p>
                 Probability = <fillin  answer="0.0926" width="10"/>
@@ -91,25 +90,27 @@
                 <test correct="yes">
                     <!-- Accept 0.0926 via native string matching engine -->
                     <numcmp use-answer="yes"/>
+                <feedback>
+            <p>
+                Correct! To compute the probability, divide the number of distinct permutations found in Part A by the total number of outcomes in the sample space:
+               <m>\mid S \mid = 6^5 = 6 \cdot 6 \cdot 6 \cdot 6 \cdot 6 = 7776</m>
+               </p>
+                <p>Therefore,
+                
+                <me>P(\text{All Different}) =  \frac{720}{7776} = \frac{5}{54} \approx 0.092592</me>
+            </p>
+                </feedback>
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
-            <p>
-                To evaluate the probability of the event, divide the number of successful distinct permutations found in Part A by the total number of items inside the universal unrestricted sample space:
-                <ul>
-                    <li><p>Successful outcomes (all distinct): <m>n(E) = _6P_5 = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 = 720</m></p></li>
-                    <li><p>Total unrestricted outcomes: <m>n(S) = 6^5 = 6 \cdot 6 \cdot 6 \cdot 6 \cdot 6 = 7776</m></p></li>
-                </ul>
-                Setting up the probability fraction:
-                <me>P(\text{All Different}) = \frac{n(E)}{n(S)} = \frac{720}{7776} = \frac{5}{54} \approx 0.092592</me>
-                Rounded to four decimal places, the final evaluation yields <strong>0.0926</strong>.
-            </p>
-        </solution>
+  
     </task>
 </exercise>
 
    
+
+    <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
    <exercise label="Count-simple-Korean-BBQ">
       <title>Korean BBQ</title>
 
@@ -127,17 +128,17 @@
         </statement>
 
 
-      <choices randomize="yes" multiple-correct="yes">
+      <choices randomize="yes" >
          <choice correct="yes">
             <statement>
               <p>
-                <m> 31752 </m>
+                <m> 31,752 </m>
               </p>
             </statement>
 
             <feedback>
               <p>
-                Correct! 
+                Correct! One appetizer, two entrees, one dessert, and two drinks gives us <me> 6\cdot 14 \cdot 14\cdot3 \cdot3 \cdot3 =31752 \text{ dinner options.}</me> 
               </p>
             </feedback>
           </choice>
@@ -151,7 +152,7 @@
 
            <feedback>
              <p>
-                Close! Make sure each person gets a drink and entree while counting. 
+                Incorrect. Likely mistake - Make sure each person gets a drink and entree while counting. 
              </p>
            </feedback>
          </choice>
@@ -159,13 +160,13 @@
          <choice>
            <statement>
               <p>
-                <m> 19656 </m>
+                <m> 19,656 </m>
               </p>
            </statement>
 
            <feedback>
              <p>
-               Are there any rules saying the couple has to order different items from each other?
+               Incorrect. Likely mistake - Are there any rules saying the couple has to order different items from each other?
              </p>
            </feedback>
          </choice>
@@ -173,31 +174,31 @@
          <choice>
            <statement>
              <p>
-               <m> 571536 </m>
+               <m> 571,536 </m>
              </p>
            </statement>
 
            <feedback>
              <p>
-               This answer includes ordering too many items. Check the special again.
+               Incorrect. Likely mistake - This answer includes ordering too many items. Check the special again.
             </p>
            </feedback>
          </choice>
       </choices>
    </task>
 
- <!-- Visual Divider ############################################################################################### -->
+ 
    <!-- ############################################################################################################## -->
 
    <task>
 
       <statement>
          <p> 
-            For the entrees, a couple can choose between BBQ meals and there are five choices for meats (galbi, beef bulgogi, beef brisket, pork belly, pork bulgogi) and specialty sushi rolls (there are 9 rolls: rainbow, dragon, french kiss, rose, unagi bomb, golden tiger, diablo, tropical, veggie kimbap). How many shared dinners are possible if a couple specifically wants to order one BBQ meal and one specialty roll?
+            For the entrees, a couple can choose between BBQ meals and specialty sushi rolls. There are five choices for BBQ meats (galbi, beef bulgogi, beef brisket, pork belly, pork bulgogi) and nine types of specialty sushi rolls (rainbow, dragon, french kiss, rose, unagi bomb, golden tiger, diablo, tropical, veggie kimbap). How many shared dinners are possible if a couple specifically wants to order one BBQ meal and one specialty roll?
          </p>
              
           <p>
-            <fillin width="8" answer="2430"/>
+            Number of Dinner Options = <fillin width="8" answer="7290"/>
           </p>
       </statement>
   
@@ -207,7 +208,7 @@
              <numcmp use-answer="yes"/>
              <feedback>
                <p>
-                Correct! 
+                Correct! Since there are 5 BBQ meals and 9 sushi rolls and the couple wants to order one of each type of entree, then they have <me> 6\cdot 14 \cdot 14\cdot3 \cdot3 \cdot3 =31752 \text{ dinner options.}</me> 
                </p>
              </feedback>
            </test>
@@ -231,17 +232,17 @@
  
 <exercise label="counting-simple-committee-seating">
     <title>Committee Seating Arrangements</title>
-    <statement>
+    <introduction>
         <p>
             Eight committee members are meeting in a room that has twelve chairs.
         </p>
-    </statement>
+    </introduction>
 
     <!-- Part 1: Combinations (Choosing the chairs) -->
     <task>
         <statement>
             <p>
-                In how many distinct ways can the group choose which <m>8</m> chairs will be occupied, if we do not care yet who sits in which chair?
+                In how many ways can the group choose which <m>8</m> chairs will be occupied, if we do not care yet who sits in which chair?
             </p>
         </statement>
         <choices randomize="yes">
@@ -249,15 +250,15 @@
                 <statement><m>\binom{12}{8} = 495</m> ways</statement>
                 <feedback>
                     <p>
-                        Correct! Since we are only choosing a subset of chairs to be occupied and the order does not matter, we use the combination formula <m>C(12,8)</m>.
+                        Correct! Since the arrangement or order in which people sit does not matter, we use a combination.
                     </p>
                 </feedback>
             </choice>
             <choice>
-                <statement><m>P(12,8) = 19,958,400</m> ways</statement>
+                <statement><m>_{12}P_8 = 19,958,400</m> ways</statement>
                 <feedback>
                     <p>
-                        Incorrect. This counts the number of ways to assign specific people to specific chairs, which factors in order.
+                        Incorrect. This counts the number of ways to assign specific people to specific chairs, but order does not matter here.
                     </p>
                 </feedback>
             </choice>
@@ -265,7 +266,7 @@
                 <statement><m>12 \times 8 = 96</m> ways</statement>
                 <feedback>
                     <p>
-                        Incorrect. This applies the multiplication rule incorrectly instead of choosing a subset.
+                        Incorrect. This answer applies the multiplication rule incorrectly.
                     </p>
                 </feedback>
             </choice>
@@ -273,31 +274,27 @@
                 <statement><m>8! = 40,320</m> ways</statement>
                 <feedback>
                     <p>
-                        Incorrect. This is the number of ways to arrange the 8 members linearly, but it doesn't account for choosing from the 12 chairs.
+                        Incorrect. This is the number of ways to arrange the 8 people in 8 chairs, but order does not matter here. Also, this answer does not account for the fact that we have to choose 8 chairs from the available 12.
                     </p>
                 </feedback>
             </choice>
         </choices>
-        <hint>
-            <p>
-                Does the order in which the empty chairs are left over matter, or are we just selecting a subset?
-            </p>
-        </hint>
     </task>
 
+   <!-- ############################################################################################################## -->
     <!-- Part 2: Permutations (Assigning people to chairs) -->
     <task>
         <statement>
             <p>
-                In how many distinct ways can the <m>8</m> individual committee members actually sit down in the <m>12</m> available chairs?
+                In how many ways distinct ways can the <m>8</m> committee members actually sit down in the <m>12</m> available chairs?
             </p>
         </statement>
         <choices randomize="yes">
             <choice correct="yes">
-                <statement><m>P(12,8) = 19,958,400</m> ways</statement>
+                <statement><m>_{12}P_8 = 19,958,400</m> ways</statement>
                 <feedback>
                     <p>
-                        Correct! Since each committee member is distinct, the order in which they occupy the chairs matters. We use permutations, or calculate <m>495 \times 8!</m>.
+                        Correct! Order matters here, so we use a permutation.
                     </p>
                 </feedback>
             </choice>
@@ -305,7 +302,7 @@
                 <statement><m>\binom{12}{8} = 495</m> ways</statement>
                 <feedback>
                     <p>
-                        Incorrect. This only selects which chairs are used, treating all committee members as if they were identical.
+                        Incorrect. This only selects which chairs are used, it does not take seating order into account.
                     </p>
                 </feedback>
             </choice>
@@ -313,16 +310,19 @@
                 <statement><m>12^8 = 429,981,696</m> ways</statement>
                 <feedback>
                     <p>
-                        Incorrect. This would allow multiple committee members to sit in the same chair, which is not physically possible.
+                        Incorrect. This would allow multiple committee members to sit in the same chair! 
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><m>8! = 40,320</m> ways</statement>
+                <feedback>
+                    <p>
+                        Incorrect. This is the number of ways to arrange the 8 people in 8 chairs, but it does not account for the fact that we have to choose 8 chairs from the available 12.
                     </p>
                 </feedback>
             </choice>
         </choices>
-        <hint>
-            <p>
-                Think about the options available for the first person, then the second person, and so on, until all 8 are seated.
-            </p>
-        </hint>
     </task>
 </exercise>
 
@@ -331,84 +331,8 @@
    <!-- ############################################################################################################## -->
 
 
-<exercise label="counting-simple-exam-probability">
-    <title>Exam Problem Probability</title>
-    <statement>
-        <p>
-            A student prepares for an exam by studying a list of ten problems. She can solve six of them. For the exam, the instructor selects five problems at random from the ten on the list given to the students.
-        </p>
-        <p>
-            What is the probability that the student can solve all five problems on the exam?
-        </p>
-    </statement>
-    <choices randomize="yes">
-        <choice correct="yes">
-            <statement>
-                <m>\frac{1}{42}</m> (or approximately <m>0.0238</m>)
-            </statement>
-            <feedback>
-                <p>
-                    Correct! The total number of ways to choose 5 problems out of 10 is <m>\binom{10}{5} = 252</m>. The number of favorable ways to choose 5 problems from the 6 she knows is <m>\binom{6}{5} = 6</m>. Therefore, the probability is <m>\frac{6}{252} = \frac{1}{42}</m>.
-                </p>
-            </feedback>
-        </choice>
-        <choice>
-            <statement>
-                <m>\frac{1}{2}</m> (or <m>0.5000</m>)
-            </statement>
-            <feedback>
-                <p>
-                    Incorrect. This assumes a simple linear probability ratio (<m>5/10</m>) instead of evaluating the combinations of choosing groups of questions without replacement.
-                </p>
-            </feedback>
-        </choice>
-        <choice>
-            <statement>
-                <m>\frac{5}{6}</m> (or approximately <m>0.8333</m>)
-            </statement>
-            <feedback>
-                <p>
-                    Incorrect. This is the ratio of exam problems to known problems, but it doesn't represent the likelihood of drawing all five from her known pool.
-                </p>
-            </feedback>
-        </choice>
-        <choice>
-            <statement>
-                <m>\frac{1}{252}</m> (or approximately <m>0.0040</m>)
-            </statement>
-            <feedback>
-                <p>
-                    Incorrect. You correctly calculated the total sample space size (<m>\binom{10}{5} = 252</m>), but there is more than just <m>1</m> way to choose <m>5</m> questions out of the <m>6</m> she prepared.
-                </p>
-            </feedback>
-        </choice>
-    </choices>
-    <hint>
-        <p>
-            Use the hypergeometric approach or combination formulas. Find the total number of ways to choose <m>5</m> questions from <m>10</m> (the denominator) and the number of ways to choose <m>5</m> questions entirely out of the <m>6</m> she knows how to solve (the numerator).
-        </p>
-    </hint>
-    <solution>
-        <p>
-            To find the probability, we divide the number of successful combinations by the total possible combinations:
-        </p>
-        <p>
-            1. Total ways the instructor can choose 5 problems out of 10: 
-            <me>\binom{10}{5} = \frac{10 \times 9 \times 8 \times 7 \times 6}{5 \times 4 \times 3 \times 2 \times 1} = 252</me>
-        </p>
-        <p>
-            2. Favorable ways the instructor can select 5 problems that the student knows (from her pool of 6):
-            <me>\binom{6}{5} = 6</me>
-        </p>
-        <p>
-            3. Calculating the probability:
-            <me>P(\text{all 5 solved}) = \frac{\binom{6}{5}}{\binom{10}{5}} = \frac{6}{252} = \frac{1}{42} \approx 0.0238</me>
-        </p>
-    </solution>
-</exercise>
 
- <!-- Visual Divider ############################################################################################### -->
-   <!-- ############################################################################################################## -->
+
 
  
  <exercise label="count-simple-5x6-array" >
@@ -416,23 +340,32 @@
     
       <statement>
         <p>
-          Thirty items are arranged in a 5-by-6 array as shown below. Calculate the number of ways to form a set of three distinct items such that no two of the selected items are in the same row or same column.
+          Thirty items are arranged in a 5-by-6 array as shown below. Calculate the number of ways to form a set of three distinct items such that no two of the selected items come from the same row or column.
        </p>
 
-       <image source="Images/5x6-array.png" width="60%"/>
-      </statement>
+       <image source="Images/5x6-array.png" width="60%">
+       <description>Grid with 5 rows and 6 columns. Each grid cell contains an item, labeled A1 through A30.</description> 
+      </image>
 
-      <choices randomize="yes" multiple-correct="yes">
+
+      
+      </statement>
+<hint>
+  <p>
+    Does order matter here?
+  </p>
+</hint>
+      <choices randomize="yes" >
          <choice correct="yes">
             <statement>
               <p>
-                <m> 1200 </m>
+                <m> 1,200 </m>
               </p>
             </statement>
 
             <feedback>
               <p>
-                Correct! 
+                Correct! For the first item, we have 30 options to select from. For the second item we have only 20 options, since we have to remove all items that were in the same row and column as the first item. Similarly, there are only 12 options for item 3. However, the calculation <m> 30\cdot 20\cdot 12</m> takes into account the order of the items. So, we need to divide by <m>3!</m> to get the number of unique sets of three items.
               </p>
             </feedback>
           </choice>
@@ -440,13 +373,13 @@
           <choice>
            <statement>
              <p>
-               <m> 2000 </m>
+               <m> 1,575 </m>
              </p>
            </statement>
 
            <feedback>
              <p>
-                
+                Incorrect. Likely mistake - Did you remove enough options after the first and second item selection? No two items can come from the same row or column.
              </p>
            </feedback>
          </choice>
@@ -454,13 +387,13 @@
          <choice>
            <statement>
               <p>
-                <m> 4060 </m>
+                <m> 4,060 </m>
               </p>
            </statement>
 
            <feedback>
              <p>
-               
+               Incorrect. Likely mistake - No two of the selected items can come from the same row or  column.
              </p>
            </feedback>
          </choice>
@@ -468,13 +401,13 @@
          <choice>
            <statement>
              <p>
-               <m> 6000 </m>
+               <m> 2,000 </m>
              </p>
            </statement>
 
            <feedback>
              <p>
-               
+               Incorrect. Likely mistake - Make sure all items come from different rows and  columns.
             </p>
            </feedback>
          </choice>
@@ -482,13 +415,13 @@
          <choice>
            <statement>
              <p>
-               <m> 7200 </m>
+               <m> 7,200 </m>
              </p>
            </statement>
 
            <feedback>
              <p>
-               
+               Incorrect. Likely mistake - This answer treats a selection such as <c>A1 A15 A29</c> as different from <c>A29 A15 A1</c>, when they are actually the same set of chosen items.
             </p>
            </feedback>
          </choice>
@@ -499,10 +432,105 @@
    <!-- ############################################################################################################## -->
 
 
+<exercise label="counting-scaffolded-exam-probability">
+    <title>Exam Preparation</title>
+    <introduction>
+        <p>
+            A student prepares for an upcoming probability exam by studying a master list of 10 complex problems. She successfully learns how to solve 6 of the problems. For the actual exam, the instructor selects 5 problems at random from the master list of 10 problems. 
+        </p>
+    </introduction>
+
+    <!-- Part A: Total Sample Space -->
+    <task xml:id="task-exam-scaffold-total-space">
+        <statement>
+            
+            <p>
+                Calculate the total number of possible exams. Or in other words, calculate the number of ways that the instructor can select 5   of the 10 problems on the master list. Enter your answer as a whole number.
+            </p>
+            <p>
+                Total Exams = <fillin answer="252" width="8"/> 
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes"><numcmp use-answer="yes"/>
+                    <feedback>
+            <p>
+                Because the order in which the instructor selects the questions on the exam paper does not matter, we use a combination:
+                <me>\binom{10}{5} = \frac{10 \cdot 9 \cdot 8 \cdot 7 \cdot 6}{5 \cdot 4 \cdot 3 \cdot 2 \cdot 1} = 252</me>
+            </p>
+        </feedback>
+        </test></evaluate>
+        </evaluation>
+
+    </task>
+   <!-- ############################################################################################################## -->
+    <!-- Part B: Favorable Outcome Space -->
+    <task xml:id="task-exam-scaffold-favorable-space">
+        <statement>
+            <p>
+                Calculate the total number of ways the instructor can choose 5 problems such that they all come from the pool of 6 problems that the student knows how to solve. Enter your answer as a whole number.
+            </p>
+            <p>
+                Total Favorable Exams = <fillin answer="6" width="8"/> 
+            </p>
+        </statement>
+        <evaluation>
+            <evaluate><test correct="yes"><numcmp use-answer="yes"/>
+                 <feedback>
+            <p>
+                We restrict our selection to the 6 problems the student can answer and count the ways to select 5 of them:
+                <me>\binom{6}{5} = 6</me>
+            </p>
+        </feedback>
+            </test></evaluate>
+        </evaluation>
+   
+    </task>
+   <!-- ############################################################################################################## -->
+    <!-- Part C: Final Probability Mapping -->
+    <task xml:id="task-exam-scaffold-probability-mc">
+        <statement>
+
+            <p>
+                Using your answers from parts (a) and (b), determine the probability that the student can solve all five of the problems on her probability exam.
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="yes">
+                <statement><p><m>\frac{1}{42} \approx 0.0238</m> </p></statement>
+                <feedback>
+                    <p>Correct! Divide the number of favorable exams by the total number of possible exams: <me>P(X = 5) = \frac{\binom{6}{5}}{\binom{10}{5}} = \frac{6}{252} = \frac{1}{42} \approx 0.0238</me>.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>\frac{1}{252} \approx 0.0040</m> </p></statement>
+                <feedback>
+                    <p>Incorrect. Check the numerator! There is more than one favorable exam. The denominator is correct. </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>\frac{6}{10} \approx 0.6000</m> </p></statement>
+                <feedback>
+                    <p>Incorrect. This would be the probability that, for the first and only problem on the exam, the instructor selects one of the six problems that the student can answer. </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement><p><m>\frac{5}{6} \approx 0.8333</m> </p></statement>
+                <feedback>
+                    <p>Incorrect. This answer is just the ratio of exam questions to the number of questions the student can answer, which is not what we want.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </task>
+  
+</exercise>
+
  </exercises>
 
 
 
+ <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
 
 
 <exercises xml:id="hw-counting-simple-turn-in" >
@@ -525,24 +553,29 @@
       How many different ten-digit phone numbers are possible? 
       </p>
       <p>
-Note: Creating a mathematical model that accurately reflects the real world is extremely important and frequently difficult. Rules that govern the problem should be understood and listed. In this case, we assume that the first digit cannot be 0 or 1, and the fourth digit cannot be zero. 
+Note: Creating a mathematical model that accurately reflects the real world is important but often  difficult. Model assumptions should always be stated. In this case, we assume that the first digit cannot be zero or one, and the fourth digit cannot be zero. 
 
     </p>
   </statement>
   </task>
-
+  
+   <!-- ############################################################################################################## -->
   <task>
   <statement>
     <p>
-      Toll free numbers are telephone numbers that can be called at no charge to the person placing the call. Such numbers allow callers to reach businesses out of the area without being charged a long-distance fee. Toll free numbers start with a distinct three-digit code, such as 800. How many ten-digit phone numbers are possible if we exclude toll free numbers starting with 800?
+      Toll free numbers are telephone numbers that can be called at no charge to the person placing the call. For example, calling a toll free number would allow a caller to reach a businesses out of the area without being charged a long-distance fee. Toll free numbers start with a distinct three-digit code, such as 800. </p>
+      <p>How many ten-digit phone numbers are possible if we exclude toll free numbers starting with 800?
     </p>
   </statement>
   </task>
 </exercise>
 
 
+    <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
+
 <exercise label="counting-simple-bday-problem">
-<title>Birthdays</title>
+<title>Birthday Problem</title>
 
 <introduction>
   <p>
@@ -550,11 +583,12 @@ Note: Creating a mathematical model that accurately reflects the real world is e
   </p>
 
 </introduction>
-
+    
+   <!-- ############################################################################################################## -->
   <task>
   <statement>
     <p>
-      	Find the number of outcomes in the sample space S for this experiment. 
+      	Find the number of outcomes in the sample space, <m>S</m> for this experiment. 
       </p>
 
   </statement>

@@ -221,7 +221,7 @@
         <evaluation>
             <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+      <!--  <solution>
             <p>
                 Let the discrete random variable <m>X</m> denote the number of attempts required to secure the first successful connection. Because we are counting trials until a single binary success occurs, <m>X</m> follows a standard Geometric distribution: <m>X \sim \text{Geometric}(p = 0.40)</m>.
             </p>
@@ -230,7 +230,7 @@
                 <me>P(X = 4) = (0.60)^{4-1} \cdot 0.40 = (0.60)^3 \cdot 0.40 = 0.216 \cdot 0.40 = 0.0864</me>
                 The probability that your first connection occurs on exactly the 4th attempt is precisely <strong>0.0864</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part B: Negative Binomial (Total Trials) -->
@@ -246,7 +246,7 @@
         <evaluation>
             <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+       <!-- <solution>
             <p>
                 Let the random variable <m>Y</m> denote the total number of combined attempts required to secure exactly <m>r = 2</m> successful connections. Because we are tracking total trials until a specific number of successes is reached, <m>Y</m> follows a Negative Binomial distribution parameterized by trials: <m>Y \sim \text{NegBinomial}(r = 2, p = 0.40)</m>.
             </p>
@@ -256,7 +256,7 @@
                 <me>P(Y = 4) = \binom{4-1}{2-1} (0.40)^2 (0.60)^{4-2} = \binom{3}{1} (0.16) (0.36) = 3 \cdot 0.0576 = 0.1728</me>
                 The probability that a total of 4 tries is required to complete both calls is precisely <strong>0.1728</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part C: Alternative Negative Binomial (Worded as Failures) -->
@@ -273,7 +273,7 @@
         <evaluation>
             <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+        <!--<solution>
             <p>
                 Let the random variable <m>F</m> denote the number of busy signals (failures) encountered before securing <m>r = 2</m> active connections. Under this shifted phrasing model, if we want exactly 3 failures, the total number of trials scales directly to: <m>\text{Trials} = \text{Successes} + \text{Failures} = 2 + 3 = 5 \text{ total tries}</m>.
             </p>
@@ -283,7 +283,7 @@
                 <me>P(F = 3) = \binom{3 + 2 - 1}{3} (0.40)^2 (0.60)^3 = \binom{4}{3} (0.16) (0.216) = 4 \cdot 0.03456 = 0.13824</me>
                 Rounded to four decimal places, the probability of enduring exactly 3 failures before completing both calls is exactly <strong>0.1382</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Part D: Long-Run Expected Moments -->
@@ -298,7 +298,7 @@
         <evaluation>
             <evaluate><test correct="yes"><numcmp use-answer="yes"/></test></evaluate>
         </evaluation>
-        <solution>
+        <!--<solution>
             <p>
                 For a Negative Binomial process tracking total trials until <m>r = 2</m> successes are met with an individual success probability of <m>p = 0.40</m>, we apply the shortcut moment formulas:
                 <ul>
@@ -317,7 +317,7 @@
                 </ul>
                 Rounded to two decimal places, the expected total attempts required is <strong>5.00</strong> with an underlying variance of <strong>3.75</strong>.
             </p>
-        </solution>
+        </solution>-->
     </task>
 </exercise>
 
@@ -350,7 +350,7 @@
                    Explain why the random variable <m>Y</m> is NOT a binomial random variable and NOT a geometric random variable. Describe how <m>Y</m> is structurally related to these other types of random variables.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     <strong>Why it is not Binomial:</strong> A binomial random variable counts the number of successes in a <em>fixed number of total trials</em> (<m>n</m>). In this experiment, the number of successes is fixed at 3, and the total number of trials is the random variable.
                 </p>
@@ -360,7 +360,7 @@
                 <p>
                     <strong>Structural Relationship:</strong> <m>Y</m> is a <strong>Negative Binomial</strong> random variable. It can be viewed as the sum of three independent, identical geometric random variables (<m>Y = G_1 + G_2 + G_3</m>), where each <m>G_i</m> tracks the waiting time for the next single tail. Furthermore, any individual step calculation uses a binomial framework to position the first 2 successes among the initial trials.
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Part B: Exact Calculations -->
@@ -375,7 +375,7 @@
                     </ol>
                 </p>
             </statement>
-            <solution>
+            <!--<solution>
                 <p>
                     <ol marker="I">
                         <li>
@@ -398,7 +398,7 @@
                         </li>
                     </ol>
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Part C: General PMF -->
@@ -408,14 +408,14 @@
                     Write a general formula for the probability distribution function <m>p(y)</m> of <m>Y</m>. Explicitly define the valid domain support for <m>y</m>.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     The general probability mass function for this negative binomial variable is:
                     <me>p(y) = \binom{y-1}{3-1}(0.7)^3 (0.3)^{y-3}, \quad \text{for } y = 3, 4, 5, \dots</me>
                     Simplifying the combination term yields:
                     <me>p(y) = \binom{y-1}{2}(0.7)^3 (0.3)^{y-3}, \quad \text{for } y = 3, 4, 5, \dots</me>
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Part D: Intuitive Expected Value -->
@@ -425,7 +425,7 @@
                     How many times do you think you would need to flip the weighted coin in order to get the coin to land on tails three times? No mathematical computations are necessary; provide an intuitive guess and explain the baseline logic behind your estimation.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     <strong>Sample Student Reasoning:</strong> If a coin hits tails 70% of the time, we expect roughly 7 out of 10 flips to be tails. Since we only need 3 successes (which is slightly less than half of 7), it makes logical sense that it should take between 4 and 5 total flips on average to accumulate 3 tails.
                 </p>
@@ -433,7 +433,7 @@
                     <em>Note to Instructor:</em> This question prompts students to estimate the true mathematical expected value, which is formally defined as:
                     <me>E(Y) = \frac{r}{p} = \frac{3}{0.70} \approx 4.29 \text{ flips}</me>
                 </p>
-            </solution>
+            </solution>-->
         </task>
     </exercise>
 
@@ -460,13 +460,13 @@
                  Using the parameters provided (<m>p = </m> probability of success, <m>r = </m> target number of successes), write a generalized formula for the probability distribution function <m>p(y)</m> of <m>Y</m>. Explicitly state its mathematical domain constraints.
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 The general probability mass function (PMF) for a Negative Binomial random variable counting total trials is:
                 <me>p(y) = \binom{y-1}{r-1} p^r (1-p)^{y-r}, \quad \text{for } y = r, r+1, r+2, \dots</me>
                 <strong>Reasoning:</strong> For the experiment to terminate exactly on trial <m>y</m>, that final trial must result in a success. This implies that exactly <m>r-1</m> successes must have occurred in any order within the preceding <m>y-1</m> trials. We use the binomial coefficient <m>\binom{y-1}{r-1}</m> to count those spatial configurations, then multiply by the cumulative independent probabilities: <m>p^r</m> for the <m>r</m> successes and <m>(1-p)^{y-r}</m> for the remaining failures.
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Task B: New Original Scenario Creation -->
@@ -476,7 +476,7 @@
                  Describe a new real-world scenario, outside of coin flipping, where the variable of interest behaves as a Negative Binomial random variable. Explain your reasoning, outline its underlying assumptions, and write out the explicit probability distribution function for your scenario with its localized parameters plugged in.
             </p>
         </statement>
-        <solution>
+      <!--  <solution>
             <p>
                 <strong>Example Scenario (Aviation Component Quality Control):</strong> A quality assurance inspector at an aerospace plant examines manufactured landing gear hydraulic seals. Suppose 5% of the produced batch contains microscopic imperfections (<m>p = 0.05</m> is our success metric if we define locating a defect as a "success"). The inspector is tasked with sampling units until they find exactly <m>r = 2</m> defective seals to send to engineering for structural failure analysis. Let <m>Y</m> be the total number of seals inspected.
             </p>
@@ -488,7 +488,7 @@
                 <me>p(y) = \binom{y-1}{2-1}(0.05)^2 (0.95)^{y-2} = \binom{y-1}{1}(0.0025)(0.95)^{y-2}</me>
                 <me>p(y) = (y-1)(0.0025)(0.95)^{y-2}, \quad \text{for } y = 2, 3, 4, \dots</me>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Task C: Formula Statement for EV, VAR, MGF -->
@@ -508,7 +508,7 @@
             Hint: We can write a binomial random variable as a sum of Bernoulli’s. This made finding the expected value and other formulas for a binomial very easy! Can we take a similar approach here? 
           </p>
         </hint>
-        <solution>
+       <!-- <solution>
             <p>
                 <ol marker="1">
                     <li>
@@ -531,7 +531,7 @@
                     </li>
                 </ol>
             </p>
-        </solution>
+        </solution>-->
     </task>
 
     <!-- Task D: Application to Weighted Coin Problems -->
@@ -546,7 +546,7 @@
                 </ol>
             </p>
         </statement>
-        <solution>
+       <!-- <solution>
             <p>
                 <ol marker="1">
                     <li>
@@ -573,7 +573,7 @@
                     </li>
                 </ol>
             </p>
-        </solution>
+        </solution>-->
     </task>
 </exercise>
 
@@ -626,13 +626,13 @@
                      Write an algebraic equation relating the random variables <m>X_G</m> and <m>Y_G</m>, and another equation relating <m>X_{NB}</m> and <m>Y_{NB}</m>.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     Because total trials always equal the sum of all failures plus all successes, and the number of target successes is a fixed constant in each experiment, the linear equations are:
                     <me>X_G + 1 = Y_G \quad (\text{or } Y_G - 1 = X_G)</me>
                     <me>X_{NB} + r = Y_{NB} \quad (\text{or } Y_{NB} - r = X_{NB})</me>
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Task B: Alternative Geometric PMF -->
@@ -642,13 +642,13 @@
                     Determine the probability distribution function of <m>X_G</m>  (failures-only geometric variable). Explain the reasoning behind your answer and state its domain support.
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     The probability mass function is:
                     <me>p(x_g) = (1-p)^{x_g}p, \quad \text{for } x_g = 0, 1, 2, \dots</me>
                     <strong>Reasoning:</strong> To observe exactly <m>x_g</m> failures before the very first success occurs, the experiment must yield <m>x_g</m> consecutive failures (each with independent probability <m>1-p</m>) followed immediately by a single success (with probability <m>p</m>). Because the experiment can result in zero failures if the first flip is a success, the domain begins at <m>0</m>.
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Task C: Alternative Geometric Properties -->
@@ -663,7 +663,7 @@
                     </ol>
                 </p>
             </statement>
-            <solution>
+         <!--   <solution>
                 <p>
                     Recall the baseline properties of the total-trials geometric variable <m>Y_G</m>: <m>E(Y_G) = \frac{1}{p}</m>, <m>V(Y_G) = \frac{1-p}{p^2}</m>, and <m>M_{Y_G}(t) = \frac{pe^t}{1-(1-p)e^t}</m>. Applying linear substitution properties where <m>X_G = Y_G - 1</m>:
                     <ol marker="1">
@@ -687,7 +687,7 @@
                         </li>
                     </ol>
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Task D: Alternative Negative Binomial PMF -->
@@ -697,13 +697,13 @@
                      Determine the probability distribution function for <m>X_{NB}</m> (failures-only negative binomial variable). Explain the reasoning behind your answer and state its domain support.
                 </p>
             </statement>
-            <solution>
+            <!--<solution>
                 <p>
                     The probability mass function is:
                     <me>p(x_{nb}) = \binom{x_{nb} + r - 1}{r - 1} p^r (1-p)^{x_{nb}}, \quad \text{for } x_{nb} = 0, 1, 2, \dots</me>
                     <strong>Reasoning:</strong> We map the total-trials PMF by replacing every instance of <m>y</m> with <m>x_{nb} + r</m>. The total trials required is <m>x_{nb} + r</m>, and the final trial must be a success. Thus, we choose the remaining <m>r-1</m> successes out of the preceding <m>(x_{nb} + r) - 1 = x_{nb} + r - 1</m> spots. The cumulative success terms evaluate to <m>p^r</m> and failure terms evaluate to <m>(1-p)^{x_{nb}}</m>.
                 </p>
-            </solution>
+            </solution>-->
         </task>
 
         <!-- Task E: Alternative Negative Binomial Properties -->
@@ -718,7 +718,7 @@
                     </ol>
                 </p>
             </statement>
-            <solution>
+           <!-- <solution>
                 <p>
                     Recall the baseline properties of the total-trials negative binomial variable <m>Y_{NB}</m>: <m>E(Y_{NB}) = \frac{r}{p}</m>, <m>V(Y_{NB}) = \frac{r(1-p)}{p^2}</m>, and <m>M_{Y_{NB}}(t) = \left[\frac{pe^t}{1-(1-p)e^t}\right]^r</m>. Applying linear properties where <m>X_{NB} = Y_{NB} - r</m>:
                     <ol marker="1">
@@ -742,7 +742,7 @@
                         </li>
                     </ol>
                 </p>
-            </solution>
+            </solution>-->
         </task>
     </exercise>
 

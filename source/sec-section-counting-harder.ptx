@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-section-counting-harder" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>More Counting Problems</title>
+  <title>More Counting Practice</title>
 
- <introduction>
+<introduction>
  <p> 
-    By completing the problems provided below, you will gain practice with: 
+    The problems below will provide more practice with the basic counting techniques (multiplication principle, permutation, combination), and you will also practice:   
     <ul>
       <li>
         <p>
-          
+          Using the multinomial coefficient.
         </p>
       </li>
       <li>
         <p>
-         
+         Combining counting techniques.
         </p>
       </li>
       <li>
         <p>
-          
+          Thinking about more complex scenarios and events.
         </p>
       </li>
-      <li>
+        <li>
         <p>
-          
+          Using counting techniques to help compute probabilities.
         </p>
       </li>
     </ul>
   </p>
 </introduction>
+
+
 
 
  <exercises xml:id="hw-counting-harder" >
@@ -41,54 +43,56 @@
     <title>Technical Interview</title>
     <statement>
         <p>
-            A computer science student prepares for a technical interview by studying a custom deck of fourteen coding challenges on an app. They have mastered eight of these problems (meaning six remain unmastered). During the live interview, the automated platform randomly selects six problems from this deck of fourteen.
+            A computer science student prepares for a technical interview by studying fourteen provided coding challenges. The student was able to complete eight of the challenges. During the interview, six of the coding challenges are selected to test the student's knowledge.
             
         </p>
         <p>
-            Match each mathematical step on the left with its correct structural meaning on the right for finding the probability that the student gets an interview set with exactly <m>4</m> mastered and <m>2</m> unmastered problems.
+            Match each block on the left with its correct contextual meaning on the right. Ultimately, you are trying to find the probability that the student can complete four of the six coding challenges selected during their interview.
         </p>
     </statement>
+    <hint>
+        <p>
+            Think of the 14 problems as being split into two sets - those the student could complete and those that they had not mastered yet.
+        </p>
+    </hint>
     
     <cardsort>
         <!-- Pair 1 -->
         <match>
             <premise><m>\binom{14}{6} = 3,003</m></premise>
-            <response>The total size of the sample space (all possible combinations of interview problem sets).</response>
+            <response>The total number of ways that six questions can be selected for the student's interview.</response>
         </match>
         
         <!-- Pair 2 -->
         <match>
             <premise><m>\binom{8}{4} = 70</m></premise>
-            <response>The number of ways to select the mastered coding challenges from the known pool.</response>
+            <response>The number of ways that 4 of the coding challenges that the student completed can be selected for the student's interview. </response>
         </match>
         
         <!-- Pair 3 -->
         <match>
             <premise><m>\binom{6}{2} = 15</m></premise>
-            <response>The number of ways to select the unmastered coding challenges from the remaining pool.</response>
+            <response>The number of ways that 2 of the coding challenges that the student had not completed can be selected for the student's interview.</response>
         </match>
         
         <!-- Pair 4 -->
         <match>
             <premise><m>70 \times 15 = 1,050</m></premise>
-            <response>The total number of favorable outcomes for this specific mixed-success interview set.</response>
+            <response>The total number of ways that six problems can be selected for the interview where the student can complete four of them.</response>
         </match>
         
         <!-- Pair 5 -->
         <match>
             <premise><m>\frac{1050}{3003} = \frac{50}{143}</m></premise>
-            <response>The total probability of drawing exactly 4 mastered and 2 unmastered problems.</response>
+            <response>The probability that the student can complete four of the six coding challenges selected during their interview.</response>
         </match>
     </cardsort>
 
-    <hint>
-        <p>
-            Identify your three individual combination elements first: choosing 4 from the 8 mastered, choosing 2 from the 6 unmastered, and choosing a total of 6 from the 14 available.
-        </p>
-    </hint>
+   
 </exercise>
 
-
+    <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
 
 <exercise xml:id="counting-harder-housing-multinomial">
     <title>Campus Housing Room Assignments</title>
@@ -97,14 +101,14 @@
             A group of <m>12</m> college students are selected to live on a specialized floor in a residence hall. The floor has exactly <m>6</m> rooms available that must be filled: one triple room (<m>3</m> students), three double rooms (<m>2</m> students each), and three single rooms (<m>1</m> student each). 
         </p>
         <p>
-            If the housing department assigns the <m>12</m> students completely at random to fill these specific spots, how many distinct ways can the students be distributed among the rooms?
+            If the housing department assigns the <m>12</m> students completely at random to fill these rooms, how many distinct ways can the students be assigned to rooms?
         </p>
     </statement>
 
-    <choices randomize="yes">
+    <choices randomize="yes" >
         <choice correct="yes">
             <statement>
-                <m>\frac{12!}{3! \times 2! \times 2! \times 2! \times 1! \times 1! \times 1!} = 1,663,200</m> ways
+                <m>\frac{12!}{3!\cdot  2!\cdot   2!\cdot   2!\cdot   1!\cdot   1!\cdot   1!} </m> ways
             </statement>
             <feedback>
                 <p>
@@ -112,33 +116,63 @@
                 </p>
             </feedback>
         </choice>
-        <choice>
+        <choice correct="yes">
             <statement>
-                <m>12! = 479,001,600</m> ways
+                <m>\binom{12}{3\  2\  2\  2\  1\  1\  1} </m> 
             </statement>
             <feedback>
                 <p>
-                    Incorrect. This counts every single linear permutation of the 12 students, which overcounts because rearranging students *within* the exact same room does not create a new room assignment configuration.
+                    Correct! Because the rooms themselves are distinct entities, we use the multinomial coefficient to partition the 12 individuals into groups of sizes 3, 2, 2, 2, 1, 1, and 1.
+                </p>
+            </feedback>
+        </choice>
+         <choice correct="yes">
+            <statement>
+                <m>\binom{12}{3}\times \binom{9}{2}\times \binom{7}{2} \times \binom{5}{2} \times \binom{3}{1}  \times \binom{2}{1}  \times 1</m> 
+            </statement>
+            <feedback>
+                <p>
+                    Correct! Because the rooms themselves are distinct entities, but order does not matter within rooms, we can use combinations to partition the 12 individuals into groups of sizes 3, 2, 2, 2, 1, 1, and 1. This calculation is equivalent to using the multinomial coefficient.
                 </p>
             </feedback>
         </choice>
         <choice>
             <statement>
-                <m>\binom{12}{3} \times \binom{9}{2} \times \binom{7}{1} = 55,440</m> ways
+                <m>12! </m> 
             </statement>
             <feedback>
                 <p>
-                    Incorrect. This calculation treats the three double rooms as a single giant group and the three single rooms as a single group, rather than distributing students into separate, distinct rooms.
+                    Incorrect. This answer over counts, because rearranging students <em>within</em> the same room does not create a new room assignment configuration.
                 </p>
             </feedback>
         </choice>
         <choice>
             <statement>
-                <m>\frac{12!}{3! \times 3! \times 3!} = 369,600</m> ways
+                <m>\binom{12}{3} \times \binom{9}{6} \times \binom{3}{3} </m>
             </statement>
             <feedback>
                 <p>
-                    Incorrect. This uses the wrong numbers in the denominator partition pool, misrepresenting the physical configuration of the rooms.
+                    Incorrect. This calculation treats the three double rooms as a single giant group and the three single rooms as a single giant group, rather than distributing students into separate rooms.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>\binom{12}{3} \times \binom{9}{2} \times \binom{7}{1} </m> 
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This calculation only assigns students to the triple room, one double room, and one single room. The other rooms are not accounted for.
+                </p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <m>\frac{12!}{3!\cdot   3!\cdot   3!} </m> 
+            </statement>
+            <feedback>
+                <p>
+                    Incorrect. This answer attempts to use the multinomial coefficient, but the  numbers in the denominator have been chosen incorrectly.
                 </p>
             </feedback>
         </choice>
@@ -146,11 +180,11 @@
 
     <hint>
         <p>
-            Think about partitioning a single pool of <m>12</m> distinct people into multiple specific bucket sizes. The sizes of your buckets are defined by the capacity of each distinct room on the floor.
+            Think about partitioning a single pool of <m>12</m> distinct people into multiple specific groups. The group sizes are defined by the room capacities.
         </p>
     </hint>
 
-    <solution>
+   <!-- <solution>
         <p>
             This problem requires partitioning a set of distinct elements into multiple groups where the order within each group does not matter, but the groups themselves are distinct. This is calculated using the multinomial coefficient formula:
             <me>\binom{n}{n_1, n_2, n_3, \dots, n_k} = \frac{n!}{n_1! \times n_2! \times n_3! \dots n_k!}</me>
@@ -175,57 +209,70 @@
             4. Evaluate the factorials to find the final total:
             <me>\frac{479,001,600}{6 \times 2 \times 2 \times 2 \times 1 \times 1 \times 1} = \frac{479,001,600}{48} = 1,663,200</me>
         </p>
-    </solution>
+    </solution> -->
 </exercise>
 
-
+    <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
 
 <exercise label="ex-interactive-poker-prob" xmlns:pi="http://pretextbook.org">
-    <title>Combinatorics in Action: Card Game Distributions</title>
+    <title>Poker Hands</title>
     <introduction>
         <p>
-            A standard deck of 52 cards features 13 distinct numerical ranks (Ace through King) distributed across 4 distinct suits (Hearts, Diamonds, Clubs, and Spades). In a standard 5-card poker match, a player is dealt a hand of 5 cards completely at random. 
+            A standard deck of 52 cards features 13 distinct numerical ranks (Ace, 2, 3,...,10, Jack, Queen, King) in each of 4 distinct suits (Hearts, Diamonds, Clubs, and Spades).  
+            </p>
+            <p>In a standard 5-card poker match, a player is dealt a hand of 5 cards completely at random from the deck of 52. 
         </p>
+
+        <image source="Images/Deck-of-Cards.png" width="60%" decorative="yes"/>
+
+            
+    
     </introduction>
 
     <!-- Part A: Three of a Kind Calculation -->
     <task xml:id="task-poker-three-kind">
         <statement>
             <p>
-                A "Three of a Kind" hand contains exactly 3 cards of one identical rank, and 2 remaining cards that each possess different, non-matching ranks (for example: three Jacks, one 4, and one 7). 
+                The poker hand "Three of a Kind" contains exactly 3 cards of the same rank, and 2 cards that each possess different, non-matching ranks (for example: three 10's, one 4, and one 7). 
             </p>
             <p>
-                Compute the  probability of being dealt a Three of a Kind.
+                Compute the  probability of being dealt a Three of a Kind. Write your answer as a decimal rounded to four places.
             </p>
             <p>
-                Probability (rounded to four decimal places) = <fillin  answer="0.0211" width="10"/>
+                Probability = <fillin  answer="0.0211" width="10"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback>
+                    <p>
+                        Correct! 
+                To find the number of possible Three of a Kind hands, we complete a sequence of independent selection steps:
+                </p>
+                <ol marker="i">
+                    <li><p>Choose 1 rank out of the 13 available to serve as the triple: <m>\binom{13}{1}</m></p></li>
+                    <li><p>Choose 3 of the 4 cards of that rank that are available (to complete the selection of the triple): <m>\binom{4}{3}</m></p></li>
+                    <li><p>Choose 2 distinct ranks out of the remaining 12 options for the two remaining cards: <m>\binom{12}{2}</m></p></li>
+                    <li><p>Choose 1 specific card out of the 4 available suits for each of those 2 separate ranks: <m>\binom{4}{1} \cdot \binom{4}{1}</m></p></li>
+                </ol>
+                <p>
+                Multiplying these combinations together gives us the total number of Three of a Kind hands.
+                </p>
+                <p>
+                We then divide this by the total number of possible 5 cards hands: <m>\binom{52}{5}</m>
+                        </p>
+                    </feedback>
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
-            <p>
-                To find the number of successful hand arrangements, we complete a sequence of independent selection stages:
-                <ol marker="1">
-                    <li><p>Choose 1 rank out of the 13 available options to serve as the triple: <m>\binom{13}{1}</m></p></li>
-                    <li><p>Choose 3 specific cards out of the 4 available matching suits for that triple: <m>\binom{4}{3}</m></p></li>
-                    <li><p>Choose 2 distinct ranks out of the remaining 12 options for the remaining cards: <m>\binom{12}{2}</m></p></li>
-                    <li><p>Choose 1 specific card out of the 4 available suits for each of those 2 separate ranks: <m>\binom{4}{1} \cdot \binom{4}{1} = 4^2</m></p></li>
-                </ol>
-                Multiplying these combinatorial choices together yields the total number of successful hands:
-                <me>n(E) = \binom{13}{1}\binom{4}{3}\binom{12}{2}4^2 = 13 \cdot 4 \cdot 66 \cdot 16 = 54,912 \text{ hands}</me>
-                Dividing by the total size of the unrestricted poker sample space:
-                <me>P(\text{Three of a Kind}) = \frac{54,912}{2,598,960} = \frac{88}{4165} \approx 0.021128</me>
-                Rounded to four decimal places, the final probability value is <strong>0.0211</strong>.
-            </p>
-        </solution>
+
     </task>
 
+  
+   <!-- ############################################################################################################## -->
     <!-- Part B: High Card Strategy -->
     <!-- Part B: High Card Strategy (Converted to Multiple Choice) -->
     <task xml:id="task-poker-high-card-mc">
@@ -237,13 +284,18 @@
                 Select the equation that correctly represents the strategic approach for computing the number of possible High Card hands?
             </p>
         </statement>
-        <choices>
+        <hint>
+            <p>
+                Think about what is or is not being selected with each step of the answers. Could you get one of the Poker hands with the selection?
+            </p>
+        </hint>
+        <choices randomize="yes">
             <choice>
                 <statement>
                     <p><m> \binom{13}{5} \cdot 4^5</m></p>
                 </statement>
                 <feedback>
-                    <p>Incorrect. This expression simply counts the number of ways to pick 5 completely different numerical ranks (<m>\binom{13}{5}</m>) and assign a suit to each card (<m>4^5</m>). However, this broad pool accidentally includes hands that form Straights (5 consecutive ranks) and Flushes (all 5 cards sharing the same suit), which cannot be part of a pure High Card hand.</p>
+                    <p>Incorrect. This expression counts the number of ways to get a hand containing cards of 5 completely different ranks, each assigned a random suit. This method would count "Straights" (5 consecutive ranks) and "Flushes" (all 5 cards sharing the same suit), which cannot be part of a High Card hand.</p>
                 </feedback>
             </choice>
             <choice correct="yes">
@@ -251,16 +303,17 @@
                     <p><m> \left[ \binom{13}{5} - 10 \right] \cdot (4^5 - 4)</m></p>
                 </statement>
                 <feedback>
-                    <p>Correct! To build a High Card hand, you must pick 5 distinct numerical ranks out of 13, but you must subtract the 10 possible rank sequences that form a Straight: <m>\left[\binom{13}{5} - 10\right]</m>. Then, you assign suits to those cards, but you must subtract the 4 suit configurations where all cards share the same suit (which would make it a Flush): <m>(4^5 - 4)</m>. Multiplying these filtered pools isolates the pure High Card combinations exactly.</p>
+                    <p>Correct! One way to build a High Card hand is to pick 5 distinct ranks out of 13, but you must subtract off the 10 possible rank sequences that form a Straight. Then, you assign suits to those cards, but you must subtract the 4 suit configurations that would result in a flush (all cards share the same suit).</p>
                 </feedback>
             </choice>
             
             <choice>
                 <statement>
-                    <p><m> \binom{13}{5} \cdot \binom{4}{1}^5 - 40</m></p>
+                    <p><m> \binom{13}{5} \cdot4^5 - 40</m></p>
                 </statement>
                 <feedback>
-                    <p>Incorrect. This attempt tries to handle the overlap adjustments by simply subtracting a flat constant of 40 (the total number of Straight Flushes) at the very end. This misapplies the fundamental intersection properties of the separate rank and suit multiplier pools.</p>
+                    <p>Incorrect. This expression counts the number of ways to get a hand containing cards of 5 completely different ranks, each assigned a random suit. Then this method tries to handle the overlap with Straights and Flushes by subtracting a constant of 40. However, this only removes the Straight Flushes, rather than all Straights and all Flushes.
+                    </p>
                 </feedback>
             </choice>
             <choice>
@@ -268,24 +321,27 @@
                     <p><m>\binom{13}{1}\binom{4}{1} \cdot \binom{12}{1}\binom{4}{1} \cdot \binom{11}{1}\binom{4}{1} \cdot \binom{10}{1}\binom{4}{1} \cdot \binom{9}{1}\binom{4}{1}</m></p>
                 </statement>
                 <feedback>
-                    <p>Incorrect. This expression models a dependent permutation selection sequence, which tracks the internal dealt order of the cards. Because poker hands are unordered subsets, this counts identical hands multiple times and fails to filter out Straights and Flushes.</p>
+                    <p>Incorrect. This expression tracks the dealt order of the cards. Because poker hands are unordered, this counts identical hands multiple times and fails to filter out Straights and Flushes.</p>
                 </feedback>
             </choice>
         </choices>
     </task>
 </exercise>
 
+    <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
 
 <exercise label="ex-interactive-poker-joker-prob" xmlns:pi="http://pretextbook.org">
-    <title>Poker with Jokers</title>
+    <title>Poker Hands with Jokers</title>
     <introduction>
-        <p>
-            Two jokers are added to the deck, bringing the total to 54 cards. These are wild cards and can count as any rank or suit. Compute the probability of being dealt a "Three of a Kind" in this new scenario, where your hand could include 0, 1, or 2 joker cards. 
+        <p> Refer to the previous problem: Poker Hands. </p>
+<p>
+    
+ Suppose that two Jokers are added to the deck, bringing the total deck size to 54 cards. These are wild cards and can count as any rank or suit.</p>
+            
+            <p> Answer the questions below to find the probability of being dealt a "Three of a Kind" in this new scenario, where your hand could include 0, 1, or 2 Jokers. 
         </p>
 
-        <p>
-            Recall: A standard deck of 52 cards features 13 distinct numerical ranks (Ace through King) distributed across 4 distinct suits (Hearts, Diamonds, Clubs, and Spades). In a standard 5-card poker match, a player is dealt a hand of 5 cards completely at random. 
-        </p>
     </introduction>
 
     <!-- Part C: 1 Joker Counting (Short Answer Entry) -->
@@ -296,133 +352,146 @@
                 </p>
 
                 <p>
-                    Recall: A "Three of a Kind" hand contains exactly 3 cards of one identical rank, and 2 remaining cards that each possess different, non-matching ranks (for example: three Jacks, one 4, and one 7).
-                </p>
-
-                <p>
                  Note: If a Joker can optimize a hand into a higher category (like a Full House or Four of a Kind), it must. 
             </p>
                     </statement>
     
 <hint>
     <p>
-                Hint: To avoid completing a better hand, the remaining 4 natural cards must consist of one natural pair and two separate singletons of unique ranks.
+                To avoid completing a better hand, the 4 non-Joker cards must consist of one natural pair and two cards that each possess different, non-matching ranks.
             </p>
             </hint>
             
 
-        <choices>
+        <choices randomize="yes">
             <choice><statement><p><m>\binom{13}{1}\binom{4}{3}\binom{12}{2}4^2\binom{2}{1} = 109,824</m> hands</p></statement>
                 <feedback>
-                    <p>Incorrect. This configuration assumes the other four cards contain a natural triple (<m>\binom{4}{3}</m>). If a hand has a natural triple and you add a wild Joker, that card will optimize to match the triple, forcing a Four of a Kind instead of exactly a Three of a Kind.</p>
+                    <p>Incorrect. This expression gives us a triple in the four non-Joker cards. If you add a wild Joker, you end up with a "Four of a Kind." </p>
                 </feedback></choice>
             <choice correct="yes"><statement><p><m>\binom{13}{1}\binom{4}{2}\binom{12}{2}4^2\binom{2}{1} = 164,736</m> hands</p></statement>
                 <feedback>
-                    <p>Correct! To form exactly a Three of a Kind with 1 Joker, the other 4 cards must consist of a natural pair and two separate singletons of unique ranks (e.g., J-J-4-7 + Joker). The calculation evaluates as follows:</p>
+                    <p>Correct! To form  a Three of a Kind with 1 Joker, the other 4 cards must consist of a natural pair and two separate singletons of unique ranks (e.g., 10-10-4-7 + Joker). The calculation evaluates as follows:</p>
                     <ul>
-                        <li><p>Choose 1 rank out of 13 for the natural pair: <m>\binom{13}{1} = 13</m></p></li>
-                        <li><p>Choose 2 suits out of 4 for that pair: <m>\binom{4}{2} = 6</m></p></li>
-                        <li><p>Choose 2 unique ranks out of the remaining 12 for singletons: <m>\binom{12}{2} = 66</m></p></li>
-                        <li><p>Choose 1 suit out of 4 for each singleton: <m>4^2 = 16</m></p></li>
+                        <li><p>Choose 1 rank out of 13 for the pair: <m>\binom{13}{1} </m></p></li>
+                        <li><p>Choose 2 of 4 cards available of that rank (to complete the selection of the pair): <m>\binom{4}{2} </m></p></li>
+                        <li><p>Choose 2 unique ranks out of the remaining 12 for reamining non-Joker cards: <m>\binom{12}{2} </m></p></li>
+                        <li><p>Choose 1 suit out of 4 for each singleton: <m>4^2 </m></p></li>
                         <li><p>Choose 1 Joker out of the 2 available in the deck: <m>\binom{2}{1} = 2</m></p></li>
                     </ul>
-                    <p>Multiplying these independent stages together yields: <m>13 \cdot 6 \cdot 66 \cdot 16 \cdot 2 = 164,736</m> hands.</p>
-                </feedback></choice>
+                    
+                </feedback>
+                </choice>
             <choice><statement><p><m>\binom{13}{1}\binom{4}{2}\binom{12}{1}\binom{4}{2}\binom{2}{1} = 5,616</m> hands</p></statement>
                 <feedback>
-                    <p>Incorrect. This counts a hand consisting of two natural pairs and 1 Joker (e.g., J-J-7-7 + Joker). In this scenario, the wild Joker will optimize to match either pair, completing a Full House instead of a Three of a Kind.</p>
+                    <p>Incorrect. This expression counts the number of hands  consisting of two  pairs and 1 Joker (e.g., 8-8-3-3 + Joker). The Joker turns this hand into a "Full House" instead of a Three of a Kind.</p>
                 </feedback></choice>
             <choice><statement><p><m>\binom{13}{4}4^4\binom{2}{1} = 366,080</m> hands</p></statement>
                 <feedback>
-                    <p>Incorrect. This counts a hand where the 4 natural cards are all completely unique ranks (e.g., A-K-Q-J + Joker). Adding a Joker to 4 unique cards will only pair up with one of them, resulting in exactly One Pair rather than a Three of a Kind.</p>
+                    <p>Incorrect. This expression counts the number of hands where the 4 non-Joker cards all have a  unique rank (e.g., A-K-Q-5 + Joker). The Joker turns this hand into a "One Pair" rather than a Three of a Kind.</p>
                 </feedback></choice>
             <choice><statement><p><m>\binom{52}{4}\binom{2}{1} = 541,450</m> hands</p></statement>
                 <feedback>
-                    <p>Incorrect. This broadly counts every single 5-card hand that contains exactly 1 Joker by selecting any 4 cards from the standard deck. It completely ignores what poker hand combination those cards actually form.</p>
+                    <p>Incorrect. This broadly counts every 5-card hand that contains exactly 1 Joker. It  ignores what poker hand combination those cards actually form.</p>
                 </feedback></choice>
         </choices>
     </task>
 
+
+   <!-- ############################################################################################################## -->
     <!-- Part D: 2 Joker Counting (Short Answer Entry) -->
     <task xml:id="task-poker-two-joker-count">
         <statement>
             <p>
-                Calculate the  number of 5-card hands that contain exactly 2 Jokers and form a Three of a Kind. 
+                Calculate the  number of 5-card hands that contain exactly 2 Jokers and form a Three of a Kind. Enter your answer as a whole number.
             </p>
 
             <p>
-                Number of hands = <fillin  answer="54912" width="10"/> hands
+                Number of hands = <fillin  answer="54912" width="8"/> hands
             </p>
         </statement>
 <hint>
                     <p>
-                <em>Hint: The remaining 3 natural cards must all possess completely different ranks. The two Jokers will then match one of those three available ranks to force the triple.</em>
+                Hint 1: Think about the  3 non-Joker cards. What must they be for the two Jokers to force the hand into a "Three of a Kind"? </p>
+<p>                Hint 2: Think about whether more than one Three-of-Kind can be created within the 5-card hand. If this is possible, should you include each possibility in your count? 
             </p>
             </hint>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                    <numcmp use-answer="yes"/> 
+                   <feedback>
+                    <p>
+Correct!
+                To form a Three of a Kind with exactly 2 Jokers, the remaining 3 non-Joker cards must all have different ranks (e.g., K-7-5 + 2 Jokers). The breakdown of the calculation is as follows:
+                <ol marker="1">
+                    <li><p>Choose 3 unique ranks out of 13 for the non-Joker cards: <m>\binom{13}{3} </m></p></li>
+                    <li><p>Choose 1 suit out of 4 for each of those 3 distinct cards: <m>4^3 </m></p></li>
+                    <li><p>Select both wild Jokers out of the deck: <m>\binom{2}{2} </m></p></li>
+                    <li><p>Choose which of the 3 non-Joker cards the Jokers will replicate to build the Three of a Kind: <m>\binom{3}{1} </m> options.</p></li>
+                </ol>
+
+                    </p>
+                   </feedback>
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
-            <p>
-                To form a Three of a Kind with exactly 2 Jokers, the remaining 3 natural cards must all have different ranks (e.g., K-7-5 + 2 Jokers). If there were a natural pair, the 2 Jokers would promote the hand into a Four of a Kind.
-                <ol marker="1">
-                    <li><p>Choose 3 unique ranks out of 13 for the natural cards: <m>\binom{13}{3} = 286</m></p></li>
-                    <li><p>Choose 1 suit out of 4 for each of those 3 distinct cards: <m>4^3 = 64</m></p></li>
-                    <li><p>Select both wild Jokers out of the deck: <m>\binom{2}{2} = 1</m></p></li>
-                    <li><p>Choose which of the 3 natural ranks the Jokers will replicate to build the Three of a Kind: <m>\binom{3}{1} = 3</m> options.</p></li>
-                </ol>
-                Multiplying these stages together yields:
-                <me>n(\text{2 Joker Case}) = 286 \cdot 64 \cdot 1 \cdot 3 = 54,912 \text{ hands}</me>
-            </p>
-        </solution>
+        
     </task>
 
+  
+   <!-- ############################################################################################################## -->
     <!-- Part E: Final Probability with Wild Jokers (Short Answer Entry) -->
     <task xml:id="task-poker-jokers-prob-final">
         <statement>
             <p>
-                Combine counts from the separate sub-cases (0, 1, or 2 Jokers) to determine the final  probability of being dealt a Three of a Kind hand from the 54-card deck.
+                 Use your answers to parts (a) and (b) to help you determine the probability of being dealt a Three of a Kind hand from the 54-card deck that contains two Jokers. Enter your answer as a decimal rounded to four decimal places.
             </p>
             <p>
-                Probability (rounded to four decimal places) = <fillin  answer="0.0868" width="10"/>
+                Probability  = <fillin  answer="0.0868" width="8"/>
             </p>
         </statement>
+        <hint>
+            <p>
+                Make sure to combine counts from the three separate sub-cases: 0, 1, or 2 Jokers.
+            </p>
+        </hint>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback>
+                        <p> Correct!
+                Sum the number of Three of a Kind hands across our three separate sub-cases:
+                </p>
+                <ul>
+                    <li><p><strong>0 Jokers:</strong> <m>54,912</m> hands (calculated in the previous problem)</p></li>
+                    <li><p><strong>1 Joker:</strong> <m>164,736</m> hands (calculated in part a)</p></li>
+                    <li><p><strong>2 Jokers:</strong> <m>54,912</m> hands (calculated in Part b)</p></li>
+                </ul>
+                <p>
+                Total Three of a Kinds <m>= 54,912 + 164,736 + 54,912 = 274,560</m>  hands.
+                </p>
+<p>                Divide this  by the total number of possible 5-card hands:  expanded 54-card sample space:
+                <m>\binom{54}{5}=3,162,510</m>
+
+                        </p>
+                    </feedback>
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
-            <p>
-                Summing the successful hand configurations evaluated across our three mutually exclusive sub-case scenarios:
-                <ul>
-                    <li><p><strong>0 Jokers:</strong> <m>54,912</m> hands (calculated in Part A)</p></li>
-                    <li><p><strong>1 Joker:</strong> <m>164,736</m> hands (calculated in Part C)</p></li>
-                    <li><p><strong>2 Jokers:</strong> <m>54,912</m> hands (calculated in Part D)</p></li>
-                </ul>
-                <me>n(\text{Total Successful w/ Jokers}) = 54,912 + 164,736 + 54,912 = 274,560 \text{ hands}</me>
-                Dividing this cumulative successful count by the full expanded 54-card sample space:
-                <me>P(\text{Three of a Kind w/ Jokers}) = \frac{274,560}{\binom{54}{5}} = \frac{274,560}{3,162,510} \approx 0.086817</me>
-                Rounded to four decimal places, the final evaluation is <strong>0.0868</strong>.
-            </p>
-        </solution>
+ 
     </task>
 </exercise>
 
 
-
+    <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
 
 <exercise xml:id="counting-harder-student-org-grant-assignments">
     <title>Campus Grant Distribution</title>
     <introduction>
         <p>
-            Five student organizations (<m>O_1, O_2, \dots, O_5</m>) submit applications for three distinct campus funding awards: the Sustainability Grant, the Diversity Grant, and the Innovation Grant. Each grant must be awarded to a single organization, and no organization can receive more than one grant.
+            Five student organizations  submit applications for three distinct campus funding awards: the Sustainability Grant, the Diversity Grant, and the Innovation Grant. Each grant must be awarded to a single organization, and no organization can receive more than one grant.
         </p>
     </introduction>
 
@@ -442,8 +511,8 @@
         <numcmp use-answer="yes"/>
         <feedback>
           <p>
-
-                Because the grants are different and an organization can win at most one, this is a permutation problem where we arrange 3 organizations out of a pool of 5:
+Correct! 
+                Because the grants are different and an organization can win at most one, this is a permutation problem where we select 3 organizations out of a pool of 5:
                 <me>P(5,3) = \frac{5!}{(5-3)!} = 5 \times 4 \times 3 = 60 \text{ outcomes}</me>
 
           </p>
@@ -454,7 +523,7 @@
 
         <hint>
             <p>
-                Since the three grants are completely distinct from each other, the order in which we assign the organizations matters. Think about choosing an ordered sequence of 3 distinct organizations from a pool of 5.
+                Does order matter?
             </p>
         </hint>
         <solution>
@@ -465,11 +534,12 @@
         </solution>
     </task>
 
+   <!-- ############################################################################################################## -->
     <!-- Part 2: Multiple Choice Input -->
     <task>
         <statement>
             <p>
-                Under the assumption that all assignment outcomes are equally likely, what is the probability that Organization 1 (<m>O_1</m>) is awarded one of the grants?
+                Under the assumption that all  outcomes are equally likely, what is the probability that Organization 1  is awarded one of the grants?
             </p>
         </statement>
         <choices randomize="yes">
@@ -479,7 +549,7 @@
                 </statement>
                 <feedback>
                     <p>
-                        Correct! If <m>O_1</m> wins a specific grant, there are <m>P(4,2) = 12</m> ways to assign the remaining grants. Multiplying by the 3 possible grants <m>O_1</m> could win gives 36 favorable outcomes. Dividing by the total pool yields <m>\frac{36}{60} = 0.6</m>.
+                        Correct! If Organization 1 wins a specific grant, then there are <m>_4P_2 = 12</m> ways to assign the remaining two grants to the other four organizations. Multiplying by 3, because there are 3 possible grants Organization 1 could win, gives us 36 favorable outcomes. Divide this by the total number of outcomes to get the specified probability.
                     </p>
                 </feedback>
             </choice>
@@ -489,7 +559,7 @@
                 </statement>
                 <feedback>
                     <p>
-                        Incorrect. This is the probability that <m>O_1</m> wins a single, specific grant (like <m>12/60</m>). Remember that <m>O_1</m> could win any one of the 3 available grants.
+                        Incorrect. This is the probability that Organization 1 wins a single, specific grant. Remember that there are 3 different grants available.
                     </p>
                 </feedback>
             </choice>
@@ -499,7 +569,17 @@
                 </statement>
                 <feedback>
                     <p>
-                        Incorrect. This looks like a guess based on splitting the odds. You must count the distinct successful combinations where <m>O_1</m> occupies one of the three grant slots.
+                        Incorrect.  You must count the distinct successful combinations where Organization 1 occupies one of the three grant slots.
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>0.3</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect.  You must count the distinct successful combinations where Organization 1 occupies one of the three grant slots.
                     </p>
                 </feedback>
             </choice>
@@ -509,17 +589,13 @@
                 </statement>
                 <feedback>
                     <p>
-                        Incorrect. This is the probability that <m>O_1</m> does *not* win any grant (<m>P(4,3)/60 = 24/60 = 0.4</m>). Subtract this from 1 to find the probability that they do win!
+                        Incorrect. This is the probability that Organization 1 does not win any of the grant.
                     </p>
                 </feedback>
             </choice>
         </choices>
-        <hint>
-            <p>
-                Calculate how many ways <m>O_1</m> can win a specific grant while the other two grants are distributed among the remaining 4 organizations. Multiply by the 3 possible grants <m>O_1</m> could win, and divide by the total sample space of 60.
-            </p>
-        </hint>
-        <solution>
+
+        <!--<solution>
             <p>
                 To find the probability that <m>O_1</m> receives a grant, we determine the number of favorable outcomes and divide by the total sample space:
             </p>
@@ -535,9 +611,14 @@
                 3. Divide by the total sample space found in Part 1 to compute the final probability:
                 <me>P(O_1 \text{ wins a grant}) = \frac{36}{60} = 0.6</me>
             </p>
-        </solution>
+        </solution> -->
+
     </task>
 </exercise>
+
+
+    <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
 
 <exercise label="counting-harder-hackathon-partition">
     <title>Hackathon Team Formations</title>
@@ -546,7 +627,7 @@
             A class of <m>15</m> computer science students is collaborating on a major weekend hackathon project. They decide to split up into two development teams of exactly <m>7</m> students each to work on separate microservices, leaving <m>1</m> remaining student to act as the overall Project Manager. 
         </p>
         <p>
-            The two development teams are completely identical in function and do not have specific names or distinct track assignments. How many truly distinct ways can the students be partitioned?Enter your answer as a whole number.
+            The two development teams are completely identical in function and do not have specific names or distinct track assignments. How many  ways can the students be divided up? Enter your answer as a whole number.
             </p>
     <p>
       <fillin width="8" answer="25740"/>
@@ -558,15 +639,13 @@
         <numcmp use-answer="yes"/>
         <feedback>
           <p>
-            This problem requires finding the number of ways to partition a set into unlabeled, identical groups alongside one distinct element.
+            Correct! This problem requires finding the number of ways to partition the 15 students into groups of sizes 7, 7, and 1. We can use the multinomial coefficient for this:
         </p>
         <p>
-            1. Calculate the intermediate count using the multinomial coefficient as if the teams were distinct (e.g., Team A and Team B):
-            <me>\binom{15}{7, 7, 1} = \frac{15!}{7! \times 7! \times 1!} = 51,480 \text{ ways}</me>
+            <me>\binom{15}{7\  7\  1} = \frac{15!}{7! \cdot 7! \cdot 1!} = 51,480 \text{ ways}</me>
         </p>
         <p>
-            2. Account for the identical team structures. Because the two development teams are completely indistinguishable, swapping the entire roster of one team with the other does not create a new assignment. We must divide by <m>2! = 2</m> to eliminate overcounting from group order:
-            <me>\text{Total Distinct Partitions} = \frac{51,480}{2!} = 25,740</me>
+            Then you have to account for the identical team structures. Because the two  teams are completely indistinguishable, swapping the entire roster of one team with the other does not create a new assignment. So, we must divide by <m>2! = 2</m> to eliminate over counting.
         </p>
 
         </feedback>
@@ -577,16 +656,18 @@
 
     <hint>
         <p>
-            Start by calculating the standard multinomial coefficient for groups of sizes <m>7</m>, <m>7</m>, and <m>1</m>: <m>\binom{15}{7, 7, 1} = \frac{15!}{7! \times 7! \times 1!}</m>. Then, because the two teams of <m>7</m> are completely indistinguishable (unlabeled), divide that intermediate result by <m>2!</m> to remove the duplicate ordered configurations.
+            Don't forget to account for the identical team structures.
         </p>
     </hint>
 
 </exercise>
 
 
+    <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
 
 <exercise label="ex-multinomial-die-rolls" xmlns:pi="http://pretextbook.org">
-    <title>Combinatorics and Probability: Joint Dice Frequencies</title>
+    <title>Dice Frequencies</title>
     <introduction>
         <p>
             We have two dice, a fair 6-sided die and a fair 10-sided die. The six sided die is rolled 14 times in a row. The 10-sided die is rolled 8 times in a row. Each individual roll is completely independent of the others. 
@@ -597,87 +678,89 @@
     <task xml:id="task-die-setup-mc">
         <statement>
             <p>
-                Consider the 6-sided die only. Which of the following expressions correctly counts the number of successful 14-roll sequence configurations containing exactly 4 ones and 4 twos?
+                Consider the 6-sided die only. Which of the following expressions correctly counts the number of  14-roll sequences  containing exactly 4 ones and 4 twos?
             </p>
             
         </statement>
-        <choices>
+        <choices randomize ="yes">
                 <choice correct="yes"><statement><p><m>\binom{14}{4}\binom{10}{4}4^6</m></p></statement>
                     <feedback>
-                        <p>Correct! First, choose 4 positions out of the 14 available slots for the ones: <m>\binom{14}{4}</m>. Next, choose 4 positions out of the remaining 10 vacant slots for the twos: <m>\binom{10}{4}</m>. Finally, fill the remaining 6 slots with any of the 4 other numbers (3, 4, 5, or 6), which gives <m>4^6</m> possibilities. Multiplying these together gives the total number of successful arrangements.</p>
+                        <p>Correct! First, choose 4 positions out of the 14 available slots for the ones: <m>\binom{14}{4}</m>. Next, choose 4 positions out of the remaining 10 vacant slots for the twos: <m>\binom{10}{4}</m>. Then fill the remaining 6 slots with any of the 4 other die numbers (3, 4, 5, or 6), which gives <m>4^6</m> possibilities. Multiplying these together gives the total number of sequences.</p>
                     </feedback></choice>
                 <choice><statement><p><m>\binom{14}{4}\binom{14}{4}4^6</m></p></statement>
                     <feedback>
-                        <p>Incorrect. After placing the 4 ones, there are only 10 available slots left in the sequence, not 14. The second combination term must select from the remaining unassigned positions.</p>
+                        <p>Incorrect. After placing the 4 ones (or twos), there are only 10 available slots left in the sequence, not 14.</p>
                     </feedback></choice>
                 <choice><statement><p><m>\binom{14}{4}\binom{10}{4}6^6</m></p></statement>
                     <feedback>
-                        <p>Incorrect. The remaining 6 positions can only be filled by numbers <em>other than</em> 1 and 2. This leaves exactly 4 options (3, 4, 5, and 6) for each remaining slot, which means there are <m>4^6</m> options, not <m>6^6</m>.</p>
+                        <p>Incorrect. The remaining 6 positions can only be filled by numbers <em>other than</em> 1 and 2. This leaves exactly 4 options (3, 4, 5, and 6) for each remaining slot.</p>
                     </feedback></choice>
                 <choice><statement><p><m>\binom{14}{4} + \binom{10}{4} + 4^6</m></p></statement>
                     <feedback>
-                        <p>Incorrect. By the Fundamental Counting Principle, since these choices are made sequentially to construct a single outcome configuration, the step values must be multiplied together rather than added.</p>
+                        <p>Incorrect. By the Multiplication Principle,  the components of the answer  must be multiplied together rather than added.</p>
                     </feedback></choice>
                 <choice><statement><p><m>6^{14}</m></p></statement>
                     <feedback>
-                        <p>Incorrect. This counts the size of the total universal sample space (<m>|\Omega|</m>) because each of the 14 independent rolls can yield any of the 6 sides. It does not isolate the targeted successful frequency states.</p>
+                        <p>Incorrect. This counts the size of the sample space.</p>
                     </feedback></choice>
             </choices>
     </task>
 
+
+   <!-- ############################################################################################################## -->
     <!-- Part B: Numerical Probability (Short Answer Entry) -->
     <task xml:id="task-die-prob-input">
         <statement>
             <p>
-                Considering just the 6-sided die again. Compute the probability that the 14 rolls result in exactly 4 ones and exactly 4 twos. 
+                Considering just the 6-sided die again. Compute the probability that the 14 rolls result in exactly 4 ones and exactly 4 twos. Write your answer as a decimal rounded to 4 decimal places.
             </p>
             <p>
-                Probability (rounded to four decimal places) = <fillin  answer="0.0110" width="10"/>
+                Probability = <fillin  answer="0.0110" width="8"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback>
+                        <p>
+                             Correct! To compute the probability, divide the number of successful sequence arrangements from part (a) by the total size of the  sample space:
+<m> 6^{14} </m>.
+
+                        </p>
+                    </feedback>
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
-            <p>
-                To evaluate the probability of event <m>A</m>, divide the number of successful sequence arrangements from Part A by the total size of the unrestricted sample space:
-                <ul>
-                    <li><p>Successful outcomes: <m>n(E) = \binom{14}{4}\binom{10}{4}4^6 = 1001 \cdot 210 \cdot 4096 = 861,024,240</m></p></li>
-                    <li><p>Total sample space outcomes: <m>n(\Omega) = 6^{14} = 78,364,164,096</m></p></li>
-                </ul>
-                Setting up the probability fraction:
-                <me>P(A) = \frac{\binom{14}{4}\binom{10}{4}4^6}{6^{14}} = \frac{861,024,240}{78,364,164,096} \approx 0.010987</me>
-                Rounded to four decimal places, the final evaluation yields <strong>0.0110</strong>.
-            </p>
-        </solution>
+
     </task>
 
+
+
+   <!-- ############################################################################################################## -->
      <task xml:id="task-die-prob-input2">
         <statement>
             <p>
-                Now considering just the 10-sided die. Compute the probability that its 8 rolls result in 2 nines being rolled, while the rest are numbers less than or equal to seven. 
+                Now consider just the 10-sided die. Compute the probability that its 8 rolls result in 2 nines being rolled, while the rest are numbers less than or equal to seven. Write your answer as a decimal rounded to 4 decimal places.
             </p>
             <p>
-                Probability (rounded to four decimal places) = <fillin  answer="0.0329" width="10"/>
+                Probability  = <fillin  answer="0.0329" width="8"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback>
+                        <p> Correct! First, choose 2 positions out of the 8 available slots for the nines.  Then fill the remaining 6 slots with numbers less than or equal to seven, which gives us <m>7^6</m> possibilities. Thus, the probability is:
+                                            <me>\frac{\binom{8}{2}7^6}{10^{8}} </me>
+
+                        </p>
+                    </feedback>
                 </test>
             </evaluate>
         </evaluation>
-        <solution>
-            <p>
-                <me>\frac{\binom{8}{2}7^6}{10^{8}} </me>
-                Rounded to four decimal places, the final evaluation yields 0.0329.
-            </p>
-        </solution>
+
     </task>
 </exercise>
 
@@ -685,6 +768,10 @@
 
    </exercises>
 
+
+
+    <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
 
 
 <exercises xml:id="hw-counting-harder-turn-in" >
@@ -702,30 +789,25 @@
 
 </exercise>
 
-
+    <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
 <exercise label="counting-harder-housing-multinomial-prob">
 
 <title>Campus Housing Room Assignments</title>
     <statement>
         <p>
-            Refer to the problem above with the same name. A group of <m>12</m> college students are selected to live on a specialized floor in a residence hall. The floor has exactly <m>6</m> rooms available that must be filled: one triple room (<m>3</m> students), three double rooms (<m>2</m> students each), and three single rooms (<m>1</m> student each). 
+            Refer to the problem above with the same name. </p>
+            
+            <p>A group of <m>12</m> college students are selected to live on a specialized floor in a residence hall. The floor has exactly <m>6</m> rooms available that must be filled: one triple room (<m>3</m> students), three double rooms (<m>2</m> students each), and three single rooms (<m>1</m> student each). 
         </p>
         <p>
             
-                Suppose two of the students, Alex and Jordan, are best friends. What is the probability that they are assigned to room together in the same room? Recall: The housing department assigns the <m>12</m> students completely at random to fill these specific spots.
+                Suppose two of the students, Alex and Jordan, are best friends. What is the probability that they are assigned to room together in the same room? Recall: The housing department assigns the <m>12</m> students completely at random to fill the rooms.
             </p>
         </statement>
-        <answers>
-            <answer>
-                <string>6/11</string>
-            </answer>
-        </answers>
-        <hint>
-            <p>
-                Alex and Jordan cannot room together in any of the single rooms. Calculate the number of favorable assignments if they are placed together in the triple room, and add that to the configurations where they are placed together in one of the three double rooms. Then, divide by the total possible ways (<m>1,663,200</m>).
-            </p>
-        </hint>
-        <solution>
+       
+       
+      <!--  <solution>
             <p>
                 To find the probability, we look at the two distinct scenarios where Alex and Jordan share a room:
             </p>
@@ -742,11 +824,16 @@
                 3. <term>Combine and Calculate Probability:</term> Adding the favorable layouts gives <m>453,600 + 453,600 = 907,200</m> successful configurations. Dividing by our total from Part 1:
                 <me>P(\text{Rooming Together}) = \frac{907,200}{1,663,200} = \frac{6}{11} \approx 0.5455</me>
             </p>
-        </solution>
+        </solution> -->
 
        
 </exercise>
 
+
+
+
+    <!-- Visual Divider ############################################################################################### -->
+   <!-- ############################################################################################################## -->
  <exercise label="counting-harder-powerball-lose">
 
 <introduction>
@@ -764,7 +851,8 @@
     </p>
   </statement>
 </task>
-
+   
+   <!-- ############################################################################################################## -->
 <task>
   <statement>
     <p>
@@ -773,6 +861,8 @@
   </statement>
 </task>
 
+
+   <!-- ############################################################################################################## -->
 <task>
   <statement>
     <p>

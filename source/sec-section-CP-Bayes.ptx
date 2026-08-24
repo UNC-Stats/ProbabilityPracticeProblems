@@ -137,7 +137,7 @@
                 Apply Bayes' Theorem: <me>P(A_2 \mid E) = \frac{P(E \mid A_2)P(A_2)}{P(E)}</me> Substitute your individual target segment count into the numerator and utilize the total probability value calculated in Part 1 as your denominator.
             </p>
         </hint>
-        <solution>
+      <!--  <solution>
             <p>
                 To solve for the conditional inverse probability, we employ <term>Bayes' Theorem</term>:
                 <me>P(A_2 \mid E) = \frac{P(E \mid A_2)P(A_2)}{P(E)}</me>
@@ -150,7 +150,7 @@
                 2. Divide by the total probability space <m>P(E) = 0.56</m> evaluated in the previous task:
                 <me>P(A_2 \mid E) = \frac{0.05}{0.56} = \frac{5}{56} \approx 0.0893</me>
             </p>
-        </solution>
+        </solution> -->
     </task>
 </exercise>
 
@@ -206,7 +206,7 @@
         </p>
     </hint>
     
-    <solution>
+    <!--<solution>
         <p>
             Let <m>H</m> denote the event that a person has a heart attack, and let <m>G</m> denote the event that a person has periodontal gum disease. From the problem setup, we can pull out our given components directly:
             <ul>
@@ -234,7 +234,7 @@
             <me>P(H \mid G) = \frac{P(G \mid H)P(H)}{P(G)} = \frac{0.1245}{0.4135} \approx 0.301088</me>
             Rounding to four decimal places yields <m>0.3011</m> (which matches option c from your original list).
         </p>
-    </solution>
+    </solution> -->
 </exercise>
 
 
@@ -298,7 +298,7 @@
         </p>
     </hint>
     
-    <solution>
+    <!--<solution>
         <p>
             Let <m>D</m> denote the event that the employee has consumed the substance, and let <m>T</m> denote a positive test reading. We are given the following information:
             <me>P(D) = 0.17 \implies P(D^c) = 0.83</me>
@@ -326,7 +326,7 @@
             Now, apply Bayes' Theorem to find the probability of being drug-free given a negative screen:
             <me>P(D^c \mid T^c) = \frac{P(T^c \mid D^c)P(D^c)}{P(T^c)} = \frac{(0.95)(0.83)}{0.8055} = \frac{0.7885}{0.8055} \approx 0.97889</me>
         </p>
-    </solution>
+    </solution> -->
 </exercise>
 
 
@@ -401,7 +401,7 @@
             You are looking for the conditional probability <m>P(\text{Win World Cup} \mid \text{Lost First Match})</m>. First, calculate the probability of a team losing their first match given they win the tournament (<m>1 - 0.71 = 0.29</m>) and given they lose the tournament (<m>1 - 0.20 = 0.80</m>). Use these to calculate the total probability of a first-match loss before evaluating Bayes' Theorem.
         </p>
     </hint>
-    <solution>
+    <!--<solution>
         <p>
             We define our events as follows: Let <m>W</m> be the event that the team wins the World Cup championship, and let <m>L</m> be the event that the team loses their first group stage match. We are given:
             <me>P(W) = 0.64 \implies P(W^c) = 1 - 0.64 = 0.36</me>
@@ -425,7 +425,7 @@
             <me>P(W \mid L) = \frac{P(L \mid W)P(W)}{P(L)} = \frac{0.1856}{0.4736} \approx 0.39189</me>
             Rounding to three decimal places matches option (a): <m>0.392</m>.
         </p>
-    </solution>
+    </solution>-->
 </exercise>
 
 
@@ -495,7 +495,7 @@
             You need to set up Bayes' Theorem: <m>P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}</m>. Before calculating, look closely at your given values: you are given <m>P(B^c \mid A^c) = 0.06</m>, which means its conditional complement is <m>P(B \mid A^c) = 1 - 0.06 = 0.94</m>. Use that to find <m>P(B)</m> first.
         </p>
     </hint>
-    <solution>
+   <!-- <solution>
         <p>
             To evaluate the conditional probability <m>P(A \mid B)</m>, we utilize the conditional base rules and apply Bayes' Theorem:
         </p>
@@ -520,7 +520,7 @@
             <me>P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)} = \frac{0.0132}{0.5396} \approx 0.02446</me>
             Rounding to four decimal places yields <m>0.0245</m>.
         </p>
-    </solution>
+    </solution>-->
 </exercise>
 
    </exercises>
