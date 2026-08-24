@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Exponential Random Variable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-section-uniform-CRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Common-Continuous-RVs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-normal-CRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-exponential-CRV">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exponential Random Variable</span>
+</h2>
+<section class="introduction" id="sec-section-exponential-CRV-2">
+<div class="para logical" id="sec-section-exponential-CRV-2-1">
+<div class="para">By completing the problems provided below, you will gain practice with:</div>
+<ul class="disc" id="sec-section-exponential-CRV-2-1-1">
+<li id="sec-section-exponential-CRV-2-1-1-1">
+<div class="para" id="sec-section-exponential-CRV-2-1-1-1-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-exponential-CRV-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-exponential-CRV-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-exponential-CRV-2-1-1-2">
+<div class="para" id="sec-section-exponential-CRV-2-1-1-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-exponential-CRV-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-exponential-CRV-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-exponential-CRV-2-1-1-3">
+<div class="para" id="sec-section-exponential-CRV-2-1-1-3-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-exponential-CRV-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-exponential-CRV-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-exponential-CRV-2-1-1-4">
+<div class="para" id="sec-section-exponential-CRV-2-1-1-4-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-exponential-CRV-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-exponential-CRV-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-exponential-CRV-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="exercises" id="hw-exponential-rv">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-exponential-tech-support-memoryless"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Systems Engineering: Tech Support Ticket Arrival.</span>
+</h4>
+<div class="introduction" id="ex-exponential-tech-support-memoryless-2">
+<div class="para" id="ex-exponential-tech-support-memoryless-2-1">The idle time (in minutes) separating consecutive inbound service tickets at an IT help desk is modeled by a continuous exponential distribution with a mean of <span class="process-math">\(\mu = 0.49\)</span> minutes.<div class="autopermalink" data-description="Paragraph"><a href="#ex-exponential-tech-support-memoryless-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-it-less-than-15"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-it-less-than-15"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-it-less-than-15-1-1\">What is the probability that the idle time between consecutive incoming service tickets is at least 15 seconds?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-it-less-than-15-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-it-less-than-15-1-2\">Probability = <input type=\"text\" id=\"ex-exponential-tech-support-memoryless-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-it-less-than-15-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.6,0.6], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.2.1.a"><a href="#task-it-less-than-15" title="Copy heading and permalink for Task 7.2.1.a" aria-label="Copy heading and permalink for Task 7.2.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-it-between-10-15"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-it-between-10-15"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-it-between-10-15-1-1\">Find the probability that the idle time passing between consecutive incoming service tickets is between ten and fifteen seconds.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-it-between-10-15-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-it-between-10-15-1-2\">Probability = <input type=\"text\" id=\"ex-exponential-tech-support-memoryless-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-it-between-10-15-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.11,0.11], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.2.1.b"><a href="#task-it-between-10-15" title="Copy heading and permalink for Task 7.2.1.b" aria-label="Copy heading and permalink for Task 7.2.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-it-memoryless-mc"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-it-memoryless-mc"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-it-memoryless-mc-1-1\">Suppose that exactly 2.0 minutes have passed since the last support ticket arrived, and the system is currently completely idle. What is the conditional probability that the dashboard will have to wait <em class=\"emphasis\">at least an additional 15 seconds<\/em> before the next ticket hits the firewall?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-it-memoryless-mc-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-it-memoryless-mc-1-2\"><span class=\"process-math\">\\(P(X\\gt 2.25| X \\gt2)\\)<\/span> = <input type=\"text\" id=\"ex-exponential-tech-support-memoryless-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-it-memoryless-mc-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.6,0.6], "feedback": "\n<div class=\"para\" id=\"task-it-memoryless-mc-2-1-1-2-1\">Correct! Also, notice that this is the same answer as in part A. The exponential distributions possess the memoryless property, written formally as <span class=\"process-math\">\\(P(X \\gt s + t \\mid X \\gt s) = P(X \\gt t)\\text{.}\\)<\/span><\/div> \n<div class=\"para\" id=\"task-it-memoryless-mc-2-1-1-2-2\">Knowing that the system has already waited for <span class=\"process-math\">\\(s = 2.0\\)<\/span> minutes has absolutely no bearing on future waiting times. The clock effectively \"resets,\" making the probability of waiting an additional <span class=\"process-math\">\\(0.25\\)<\/span> minutes (15 seconds) identical to the specified conditional probability:<\/div><div class=\"displaymath process-math\" id=\"task-it-memoryless-mc-2-1-1-2-3\">\n\\begin{equation*}\nP(X \\gt 2.0 + 0.25 \\mid X \\gt 2.0) = P(X \\gt 0.25) = e^{-\\frac{0.25}{0.49}} \\approx 0.600\n\\end{equation*}\n<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.2.1.c"><a href="#task-it-memoryless-mc" title="Copy heading and permalink for Task 7.2.1.c" aria-label="Copy heading and permalink for Task 7.2.1.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.1: Systems Engineering: Tech Support Ticket Arrival"><a href="#ex-exponential-tech-support-memoryless" title="Copy heading and permalink for Exercise 7.2.1: Systems Engineering: Tech Support Ticket Arrival" aria-label="Copy heading and permalink for Exercise 7.2.1: Systems Engineering: Tech Support Ticket Arrival">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-exponential-machine-repair"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reliability Engineering: Industrial Machine Repair Timelines.</span>
+</h4>
+<div class="introduction" id="ex-exponential-machine-repair-2">
+<div class="para logical" id="ex-exponential-machine-repair-2-1">
+<div class="para">The continuous time <span class="process-math">\(T\)</span> (measured in hours) required for an automation engineer to repair a critical assembly line machine is modeled by an exponential distribution with probability density function (PDF) given by:</div>
+<div class="displaymath process-math" id="ex-exponential-machine-repair-2-1-2">
+\begin{equation*}
+f_T(t) = \frac{1}{7}e^{-\frac{1}{7}t}, \quad \text{for } t \ge 0
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(f_T(t) = 0\)</span> elsewhere.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-exponential-machine-repair-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-repair-mean"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-repair-mean"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-repair-mean-1-1\">Identify the expected value (mean repair duration), <span class=\"process-math\">\\(E(T)\\text{,}\\)<\/span> directly from the structure of the provided probability density function.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-repair-mean-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-repair-mean-1-2\"><input type=\"text\" id=\"ex-exponential-machine-repair-blank1\" size=\"8\"\/> hours.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-repair-mean-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [7,7], "feedback": "\n<div class=\"para\" id=\"task-repair-mean-2-1-1-2-1\">Correct! For any standard continuous exponential density function written in the form <span class=\"process-math\">\\(f(t) = \\lambda e^{-\\lambda t}\\text{,}\\)<\/span> the expected value is <span class=\"process-math\">\\(E(T) = \\frac{1}{\\lambda}\\text{.}\\)<\/span> Since <span class=\"process-math\">\\(\\lambda = \\frac{1}{7}\\text{,}\\)<\/span> the mean is exactly 7 hours.<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.2.2.a"><a href="#task-repair-mean" title="Copy heading and permalink for Task 7.2.2.a" aria-label="Copy heading and permalink for Task 7.2.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-repair-sd"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-repair-sd"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-repair-sd-1-1\">Compute the standard deviation (<span class=\"process-math\">\\(\\sigma\\)<\/span>) for the machine repair duration random variable <span class=\"process-math\">\\(T\\text{.}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-repair-sd-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-repair-sd-1-2\"><input type=\"text\" id=\"ex-exponential-machine-repair-blank1\" size=\"8\"\/> hours.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-repair-sd-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [7,7], "feedback": "\n<div class=\"para\" id=\"task-repair-sd-2-1-1-2-1\">Correct! One of the unique defining structural properties of any continuous exponential distribution is that its expected value and standard deviation are mathematically identical (<span class=\"process-math\">\\(\\mu = \\sigma = \\frac{1}{\\lambda} = 7\\)<\/span>).<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.2.2.b"><a href="#task-repair-sd" title="Copy heading and permalink for Task 7.2.2.b" aria-label="Copy heading and permalink for Task 7.2.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-repair-prob-baseline"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-repair-prob-baseline"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-repair-prob-baseline-1-1\">Calculate the probability that a randomly scheduled machine repair will require at least 12.5 hours to finish. Write your answer as a decimal rounded to four decimal places<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-repair-prob-baseline-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-repair-prob-baseline-1-2\"><input type=\"text\" id=\"ex-exponential-machine-repair-blank1\" size=\"8\"\/> hours.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-repair-prob-baseline-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.1676,0.1676], "feedback": "\n<div class=\"para logical\" id=\"task-repair-prob-baseline-2-1-1-2-1\"><div class=\"para\">Correct!  To calculate the probability that the variable exceeds a threshold, we evaluate the upper tail survival function, <span class=\"process-math\">\\(P(T \\ge t) = \\int_{t}^{\\infty} \\lambda e^{-\\lambda x} \\, dx = e^{-\\lambda t}\\text{.}\\)<\/span> Plugging in our parameters:<\/div><div class=\"displaymath process-math\" id=\"task-repair-prob-baseline-2-1-1-2-1-2\">\n\\begin{equation*}\nP(T \\ge 12.5) = e^{-\\frac{1}{7}(12.5)} = e^{-\\frac{25}{14}} \\approx e^{-1.7857} \\approx 0.1676\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.2.2.c"><a href="#task-repair-prob-baseline" title="Copy heading and permalink for Task 7.2.2.c" aria-label="Copy heading and permalink for Task 7.2.2.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-exponential-machine-repair-6"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"ex-exponential-machine-repair-6-1-1\">Calculate the probability that a randomly scheduled machine repair will require at least half an hour to finish. Write your answer as a decimal rounded to four decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-exponential-machine-repair-6-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-exponential-machine-repair-6-1-2\"><input type=\"text\" id=\"ex-exponential-machine-repair-blank1\" size=\"8\"\/> hours.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-exponential-machine-repair-6-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.9311,0.9311], "feedback": "\n<div class=\"para logical\" id=\"ex-exponential-machine-repair-6-2-1-1-2-1\"><div class=\"para\">Correct!<\/div><div class=\"displaymath process-math\" id=\"ex-exponential-machine-repair-6-2-1-1-2-1-1\">\n\\begin{equation*}\nP(T \\ge 0.5) = e^{-\\frac{0.5}{7}} \\approx e^{-0.0714} \\approx 0.9311\\text{.}\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.2.2.d"><a href="#ex-exponential-machine-repair-6" title="Copy heading and permalink for Task 7.2.2.d" aria-label="Copy heading and permalink for Task 7.2.2.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-repair-prob-conditional"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-repair-prob-conditional"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-repair-prob-conditional-1-1\">Suppose that a repair job has already been going on for exactly 12 hours and is still incomplete. What is the conditional probability that the final duration will end up taking at least 12.5 hours in total? Write your answer as a decimal rounded to four decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-repair-prob-conditional-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-repair-prob-conditional-1-2\"><input type=\"text\" id=\"ex-exponential-machine-repair-blank1\" size=\"8\"\/> hours.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-repair-prob-conditional-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.9311,0.9311], "feedback": "\n<div class=\"para logical\" id=\"task-repair-prob-conditional-2-1-1-2-1\"><div class=\"para\">Correct! <span class=\"process-math\">\\(P(T \\ge 12.5 \\mid T \\gt 12)=\\frac{P(T \\ge 12.5)}{P(T \\gt 12)} = \\frac{0.1676}{0.1800} \\approx 0.9311\\text{.}\\)<\/span> OR we can use the <em class=\"emphasis\">memoryless property<\/em> of the exponential distribution to simplify this computation.  Here, the system has already survived for <span class=\"process-math\">\\(s = 12\\)<\/span> hours, and we want to know if it will survive for at least an additional <span class=\"process-math\">\\(t = 0.5\\)<\/span> hours to hit 12.5 total hours:<\/div><div class=\"displaymath process-math\" id=\"task-repair-prob-conditional-2-1-1-2-1-5\">\n\\begin{equation*}\nP(T \\ge 12 + 0.5 \\mid T \\gt 12) = P(T \\ge 0.5) = e^{-\\frac{0.5}{7}} \\approx e^{-0.0714} \\approx 0.9311\n\\end{equation*}\n<\/div><div class=\"para\">This is the probability that we computed in part d.<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.2.2.e"><a href="#task-repair-prob-conditional" title="Copy heading and permalink for Task 7.2.2.e" aria-label="Copy heading and permalink for Task 7.2.2.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.2: Reliability Engineering: Industrial Machine Repair Timelines"><a href="#ex-exponential-machine-repair" title="Copy heading and permalink for Exercise 7.2.2: Reliability Engineering: Industrial Machine Repair Timelines" aria-label="Copy heading and permalink for Exercise 7.2.2: Reliability Engineering: Industrial Machine Repair Timelines">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="proof-exponential-expected-value"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Proof Derivation: Expected Value of an Exponential Distribution.</span>
+</h4>
+<div class="ptx-runestone-container"><div class="runestone parsons_section" style="max-width: none;"><div data-component="parsons" class="parsons" id="rs-proof-exponential-expected-value">
+<div class="parsons_question parsons-text">
+<div class="para" id="proof-exponential-expected-value-2-1">Let <span class="process-math">\(X\)</span> be a continuous random variable following an exponential distribution with rate parameter <span class="process-math">\(\lambda\text{,}\)</span> where its probability density function (PDF) is defined as <span class="process-math">\(f_X(x) = \lambda e^{-\lambda x}\)</span> for <span class="process-math">\(x \ge 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proof-exponential-expected-value-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="proof-exponential-expected-value-2-2">Arrange the blocks below in the correct logical sequence to derive the expected value. Recall: <span class="process-math">\(E(X) = \frac{1}{\lambda}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proof-exponential-expected-value-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<pre class="parsonsblocks" data-question_label="" style="visibility: hidden;" data-language="natural" data-noindent="true">
+<div class="para" id="proof-exponential-expected-value-3-1-1">Set up the integral definition for the expected value:</div><div class="displaymath process-math" id="proof-exponential-expected-value-3-1-2">
+\begin{equation*}
+E(X) = \int_{0}^{\infty} x \cdot \left(\lambda e^{-\lambda x}\right) \, dx
+\end{equation*}
+</div>
+---
+
+<div class="para" id="proof-exponential-expected-value-3-2-1">Get ready to apply integration by parts! Assign your terms:</div><div class="displaymath process-math" id="proof-exponential-expected-value-3-2-2">
+\begin{align*}
+u = x \amp \implies du = dx\\
+dv = \lambda e^{-\lambda x} \, dx \amp \implies v = -e^{-\lambda x}
+\end{align*}
+</div>
+---
+
+<div class="para" id="proof-exponential-expected-value-3-3-1">Substitute these terms into the integration by parts formula <span class="process-math">\(\int u \, dv = uv - \int v \, du\text{:}\)</span>
+</div><div class="displaymath process-math" id="proof-exponential-expected-value-3-3-2">
+\begin{equation*}
+E(X) = \left[ -x e^{-\lambda x} \right]_{0}^{\infty} - \int_{0}^{\infty} \left(-e^{-\lambda x}\right) \, dx
+\end{equation*}
+</div>
+---
+
+<div class="para" id="proof-exponential-expected-value-3-4-1">Evaluate the limits for the first term <span class="process-math">\(uv\text{,}\)</span> noticing that the upper limit goes to 0 by L’Hôpital’s Rule:</div><div class="displaymath process-math" id="proof-exponential-expected-value-3-4-2">
+\begin{equation*}
+E(X) = 0 + \int_{0}^{\infty} e^{-\lambda x} \, dx
+\end{equation*}
+</div>
+---
+
+<div class="para" id="proof-exponential-expected-value-3-5-1">Compute the remaining integral. First find the anti-derivative:</div><div class="displaymath process-math" id="proof-exponential-expected-value-3-5-2">
+\begin{equation*}
+E(X) = \left[ -\frac{1}{\lambda} e^{-\lambda x} \right]_{0}^{\infty} 
+\end{equation*}
+</div>
+---
+
+<div class="para" id="proof-exponential-expected-value-3-6-1">Evaluate the anti-derivative from 0 to <span class="process-math">\(\infty\text{:}\)</span>
+</div><div class="displaymath process-math" id="proof-exponential-expected-value-3-6-2">
+\begin{equation*}
+E(X) =  0 - \left( -\frac{1}{\lambda} \cdot 1 \right) = \frac{1}{\lambda}
+\end{equation*}
+</div></pre>
+</div></div></div>
+<div class="autopermalink" data-description="Exercise 7.2.3: Proof Derivation: Expected Value of an Exponential Distribution"><a href="#proof-exponential-expected-value" title="Copy heading and permalink for Exercise 7.2.3: Proof Derivation: Expected Value of an Exponential Distribution" aria-label="Copy heading and permalink for Exercise 7.2.3: Proof Derivation: Expected Value of an Exponential Distribution">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 7.2: Interactive Exercises"><a href="#hw-exponential-rv" title="Copy heading and permalink for Exercises 7.2: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 7.2: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-exponential-rv-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-banking-marketing-myth"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Auditing the Apex Bank Billboard Campaign.</span>
+</h4>
+<div class="introduction" id="ex-banking-marketing-myth-2">
+<div class="para" id="ex-banking-marketing-myth-2-1">A regional mega-bank, desperate to steal customers from its competitors, launches a flashy billboard campaign asserting they have the absolute fastest tellers in the tri-state area. Their main marketing slogan claims that <em class="emphasis">"virtually all of our customers are served in less than 10 minutes!"</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-banking-marketing-myth-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-banking-marketing-myth-2-2">An amused data scientist opens an account, sits in the lobby with a hidden stopwatch, and collects a large sample of service times. They conclude that the customer service times are actually exponentially distributed with a long-run mean of <span class="process-math">\(\mu = 5.5\)</span> minutes. Let us investigate what the bank’s marketing department mathematically means by "virtually all."<div class="autopermalink" data-description="Paragraph"><a href="#ex-banking-marketing-myth-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-bank-pdf-audit"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-bank-pdf-audit-1-1">State the  probability density function (PDF), <span class="process-math">\(f_X(x)\text{,}\)</span> for this service model. Then use this PDF to compute the proportion of customers who are actually served in under 10 minutes.<div class="autopermalink" data-description="Paragraph"><a href="#task-bank-pdf-audit-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="task-bank-pdf-audit-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-bank-pdf-audit-2-1">This is the same as finding the probability that customers are served in under ten minutes!<div class="autopermalink" data-description="Paragraph"><a href="#task-bank-pdf-audit-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 7.2.1.a.1"><a href="#task-bank-pdf-audit-2" title="Copy heading and permalink for Hint 7.2.1.a.1" aria-label="Copy heading and permalink for Hint 7.2.1.a.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.1.a"><a href="#task-bank-pdf-audit" title="Copy heading and permalink for Task 7.2.1.a" aria-label="Copy heading and permalink for Task 7.2.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-bank-cdf-audit"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-bank-cdf-audit-1-1">State the cumulative distribution function (CDF), <span class="process-math">\(F_X(x)\text{,}\)</span> for this service model. Use it to  recompute the proportion of customers served in under 10 minutes.<div class="autopermalink" data-description="Paragraph"><a href="#task-bank-cdf-audit-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.2.1.b"><a href="#task-bank-cdf-audit" title="Copy heading and permalink for Task 7.2.1.b" aria-label="Copy heading and permalink for Task 7.2.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-bank-median-audit"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="task-bank-median-audit-1-1">While the bank’s average (mean) service time is 5.5 minutes, the exponential distribution is heavily skewed toward longer wait times. Find the <em class="emphasis">median</em> service time to determine how fast the middle customer (the 50th percentile) actually gets served.<div class="autopermalink" data-description="Paragraph"><a href="#task-bank-median-audit-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.2.1.c"><a href="#task-bank-median-audit" title="Copy heading and permalink for Task 7.2.1.c" aria-label="Copy heading and permalink for Task 7.2.1.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.1: Auditing the Apex Bank Billboard Campaign"><a href="#ex-banking-marketing-myth" title="Copy heading and permalink for Exercise 7.2.1: Auditing the Apex Bank Billboard Campaign" aria-label="Copy heading and permalink for Exercise 7.2.1: Auditing the Apex Bank Billboard Campaign">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-exponential-mgf-variance"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Analytical Derivations using the MGF.</span>
+</h4>
+<div class="introduction" id="ex-exponential-mgf-variance-2">
+<div class="para" id="ex-exponential-mgf-variance-2-1">Let <span class="process-math">\(X\)</span> be a continuous random variable following an exponential distribution with rate parameter <span class="process-math">\(\lambda \gt 0\text{,}\)</span> defined by the probability density function (PDF) <span class="process-math">\(f_X(x) = \lambda e^{-\lambda x}\)</span> for <span class="process-math">\(x \ge 0\text{.}\)</span> Complete the analytical derivations below to determine its moment generating function and theoretical variance.<div class="autopermalink" data-description="Paragraph"><a href="#ex-exponential-mgf-variance-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-exponential-mgf"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-exponential-mgf-1-1">Derive the equation for the moment generating function of the exponential distribution.  State the constraint required for the domain of <span class="process-math">\(s\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-exponential-mgf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.2.2.a"><a href="#task-exponential-mgf" title="Copy heading and permalink for Task 7.2.2.a" aria-label="Copy heading and permalink for Task 7.2.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-exponential-variance-proof"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-exponential-variance-proof-1-1">Differentiate your moment generating function expression from Part A to find the first and second moments about the origin (<span class="process-math">\(E(X)\)</span> and <span class="process-math">\(E(X^2)\)</span>). Use these to show that the theoretical variance for an exponential random variable is <span class="process-math">\(V(X) = \frac{1}{\lambda^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-exponential-variance-proof-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.2.2.b"><a href="#task-exponential-variance-proof" title="Copy heading and permalink for Task 7.2.2.b" aria-label="Copy heading and permalink for Task 7.2.2.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.2: Analytical Derivations using the MGF"><a href="#ex-exponential-mgf-variance" title="Copy heading and permalink for Exercise 7.2.2: Analytical Derivations using the MGF" aria-label="Copy heading and permalink for Exercise 7.2.2: Analytical Derivations using the MGF">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 7.2: Written Exercises"><a href="#hw-exponential-rv-turn-in" title="Copy heading and permalink for Exercises 7.2: Written Exercises" aria-label="Copy heading and permalink for Exercises 7.2: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 7.2: Exponential Random Variable"><a href="#sec-section-exponential-CRV" title="Copy heading and permalink for Section 7.2: Exponential Random Variable" aria-label="Copy heading and permalink for Section 7.2: Exponential Random Variable">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-section-uniform-CRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-normal-CRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

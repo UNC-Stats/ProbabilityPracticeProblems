@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fundamental Counting Techniques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-section-BP.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Basic-Probability.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-counting-harder.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-counting-simple">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fundamental Counting Techniques</span>
+</h2>
+<section class="introduction" id="sec-section-counting-simple-2">
+<div class="para logical" id="sec-section-counting-simple-2-1">
+<div class="para">The problems provided below you give you practice applying counting techniques to determine the number of outcomes in events and sample spaces. Counting techniques you will use here are:</div>
+<ul class="disc" id="sec-section-counting-simple-2-1-1">
+<li id="sec-section-counting-simple-2-1-1-1">
+<div class="para" id="sec-section-counting-simple-2-1-1-1-1">Multiplication Rule<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-counting-simple-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-counting-simple-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-counting-simple-2-1-1-2">
+<div class="para" id="sec-section-counting-simple-2-1-1-2-1">Permutations<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-counting-simple-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-counting-simple-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-counting-simple-2-1-1-3">
+<div class="para" id="sec-section-counting-simple-2-1-1-3-1">Combinations<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-counting-simple-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-counting-simple-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-counting-simple-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="exercises" id="hw-counting-simple">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-combinatorics-different-die-rolls"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Distinct Die Rolls.</span>
+</h4>
+<div class="introduction" id="ex-combinatorics-different-die-rolls-2">
+<div class="para" id="ex-combinatorics-different-die-rolls-2-1">A standard 6-sided die is rolled 5 times in a row.   Find the probability that all 5 numbers rolled are completely different from one another.<div class="autopermalink" data-description="Paragraph"><a href="#ex-combinatorics-different-die-rolls-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-die-numerator-mc"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-die-numerator-mc-1-1">First determine the appropriate counting technique that should be used, and then compute the total number of outcomes where all 5 rolls yield different values.<div class="autopermalink" data-description="Paragraph"><a href="#task-die-numerator-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-die-numerator-mc" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-die-numerator-mc_opt_a">
+<div class="para" id="task-die-numerator-mc-2-1-1-1"><span class="process-math">\(6^5 = 7,776\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-die-numerator-mc_opt_a">
+<div class="para" id="task-die-numerator-mc-2-1-2-1">Incorrect. Using the Multiplication Principle like this  calculates the size of the sample space of all possible die roll sequences.</div>
+</li>
+<li data-component="answer" id="rs-task-die-numerator-mc_opt_b" data-correct="">
+<div class="para" id="task-die-numerator-mc-2-2-1-1"><span class="process-math">\(_6P_5  = 720\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-die-numerator-mc_opt_b">
+<div class="para" id="task-die-numerator-mc-2-2-2-1">Correct! Since the 5 rolled numbers must all be distinct, the order matters and repetition is not allowed. Therefore, we can a permutation. Specifically, we want to know how many 5-permutations of the six numbers on the die  are possible.</div>
+</li>
+<li data-component="answer" id="rs-task-die-numerator-mc_opt_c">
+<div class="para" id="task-die-numerator-mc-2-3-1-1"><span class="process-math">\(\binom{6}{5}  = 6\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-die-numerator-mc_opt_c">
+<div class="para" id="task-die-numerator-mc-2-3-2-1">Incorrect. This is a combination, which ignores the rolling sequence order. Order matters here, because rolling <code class="code-inline tex2jax_ignore">1, 2, 3, 4, 5</code> is a completely different sequential outcome than rolling <code class="code-inline tex2jax_ignore">5, 4, 3, 2, 1</code>.</div>
+</li>
+<li data-component="answer" id="rs-task-die-numerator-mc_opt_d">
+<div class="para" id="task-die-numerator-mc-2-4-1-1"><span class="process-math">\(5^6 = 15,625\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-die-numerator-mc_opt_d">
+<div class="para" id="task-die-numerator-mc-2-4-2-1">Incorrect. Here the Multiplication Principle is being used to try to compute the size of the sample space  of all possible die roll sequences, but the numbers have been plugged in wrong!</div>
+</li>
+<li data-component="answer" id="rs-task-die-numerator-mc_opt_e">
+<div class="para" id="task-die-numerator-mc-2-5-1-1"><span class="process-math">\(5! = 120\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-die-numerator-mc_opt_e">
+<div class="para" id="task-die-numerator-mc-2-5-2-1">Incorrect. This only counts how many ways 5 numbers can be arranged. It does not take into account that there are 6 possible numbers that can be rolled each time.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 1.2.1.a"><a href="#task-die-numerator-mc" title="Copy heading and permalink for Task 1.2.1.a" aria-label="Copy heading and permalink for Task 1.2.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-die-probability-input"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-die-probability-input"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-die-probability-input-1-1\">Using your answer to part A, determine the probability of rolling 5  different numbers. Write your answer as a decimal rounded to 4 decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-die-probability-input-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-die-probability-input-1-2\">Probability = <input type=\"text\" id=\"ex-combinatorics-different-die-rolls-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-die-probability-input-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0926,0.0926], "feedback": "\n<div class=\"para\" id=\"task-die-probability-input-2-1-1-2-1\">Correct! To compute the probability, divide the number of distinct permutations found in Part A by the total number of outcomes in the sample space: <span class=\"process-math\">\\(\\mid S \\mid = 6^5 = 6 \\cdot 6 \\cdot 6 \\cdot 6 \\cdot 6 = 7776\\)<\/span><\/div> \n<div class=\"para logical\" id=\"task-die-probability-input-2-1-1-2-2\"><div class=\"para\">Therefore,<\/div><div class=\"displaymath process-math\" id=\"task-die-probability-input-2-1-1-2-2-1\">\n\\begin{equation*}\nP(\\text{All Different}) =  \\frac{720}{7776} = \\frac{5}{54} \\approx 0.092592\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 1.2.1.b"><a href="#task-die-probability-input" title="Copy heading and permalink for Task 1.2.1.b" aria-label="Copy heading and permalink for Task 1.2.1.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.2.1: Distinct Die Rolls"><a href="#ex-combinatorics-different-die-rolls" title="Copy heading and permalink for Exercise 1.2.1: Distinct Die Rolls" aria-label="Copy heading and permalink for Exercise 1.2.1: Distinct Die Rolls">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="Count-simple-Korean-BBQ"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Korean BBQ.</span>
+</h4>
+<div class="introduction" id="Count-simple-Korean-BBQ-2">
+<div class="para" id="Count-simple-Korean-BBQ-2-1">Your professor went to Suh Sushi Korean BBQ in Fort Collins, CO for Valentine’s Day. The restaurant offered a special where a couple could choose one appetizer, two entrees, one dessert, and two drinks.<div class="autopermalink" data-description="Paragraph"><a href="#Count-simple-Korean-BBQ-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="Count-simple-Korean-BBQ-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="Count-simple-Korean-BBQ-3-1-1">How many different shared dinners were available if a couple could choose between six appetizers, fourteen entrees, three desserts, and three drinks.<div class="autopermalink" data-description="Paragraph"><a href="#Count-simple-Korean-BBQ-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="_opt_a" data-correct="">
+<div class="para" id="Count-simple-Korean-BBQ-3-2-1-1-1"><span class="process-math">\(31,752 \)</span></div>
+</li>
+<li data-component="feedback" id="_opt_a">
+<div class="para logical" id="Count-simple-Korean-BBQ-3-2-1-2-1">
+<div class="para">Correct! One appetizer, two entrees, one dessert, and two drinks gives us</div>
+<div class="displaymath process-math" id="Count-simple-Korean-BBQ-3-2-1-2-1-1">
+\begin{equation*}
+6\cdot 14 \cdot 14\cdot3 \cdot3 \cdot3 =31752 \text{ dinner options.}
+\end{equation*}
+</div>
+</div>
+</li>
+<li data-component="answer" id="_opt_b">
+<div class="para" id="Count-simple-Korean-BBQ-3-2-2-1-1"><span class="process-math">\(756 \)</span></div>
+</li>
+<li data-component="feedback" id="_opt_b">
+<div class="para" id="Count-simple-Korean-BBQ-3-2-2-2-1">Incorrect. Likely mistake - Make sure each person gets a drink and entree while counting.</div>
+</li>
+<li data-component="answer" id="_opt_c">
+<div class="para" id="Count-simple-Korean-BBQ-3-2-3-1-1"><span class="process-math">\(19,656 \)</span></div>
+</li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="Count-simple-Korean-BBQ-3-2-3-2-1">Incorrect. Likely mistake - Are there any rules saying the couple has to order different items from each other?</div>
+</li>
+<li data-component="answer" id="_opt_d">
+<div class="para" id="Count-simple-Korean-BBQ-3-2-4-1-1"><span class="process-math">\(571,536 \)</span></div>
+</li>
+<li data-component="feedback" id="_opt_d">
+<div class="para" id="Count-simple-Korean-BBQ-3-2-4-2-1">Incorrect. Likely mistake - This answer includes ordering too many items. Check the special again.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 1.2.2.a"><a href="#Count-simple-Korean-BBQ-3" title="Copy heading and permalink for Task 1.2.2.a" aria-label="Copy heading and permalink for Task 1.2.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="Count-simple-Korean-BBQ-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"Count-simple-Korean-BBQ-4-1-1\">For the entrees, a couple can choose between BBQ meals and specialty sushi rolls. There are five choices for BBQ meats (galbi, beef bulgogi, beef brisket, pork belly, pork bulgogi) and nine types of specialty sushi rolls (rainbow, dragon, french kiss, rose, unagi bomb, golden tiger, diablo, tropical, veggie kimbap). How many shared dinners are possible if a couple specifically wants to order one BBQ meal and one specialty roll?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#Count-simple-Korean-BBQ-4-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"Count-simple-Korean-BBQ-4-1-2\">Number of Dinner Options = <input type=\"text\" id=\"Count-simple-Korean-BBQ-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#Count-simple-Korean-BBQ-4-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [7290,7290], "feedback": "\n<div class=\"para logical\" id=\"Count-simple-Korean-BBQ-4-2-1-1-2-1\"><div class=\"para\">Correct! Since there are 5 BBQ meals and 9 sushi rolls and the couple wants to order one of each type of entree, then they have<\/div><div class=\"displaymath process-math\" id=\"Count-simple-Korean-BBQ-4-2-1-1-2-1-1\">\n\\begin{equation*}\n6\\cdot 14 \\cdot 14\\cdot3 \\cdot3 \\cdot3 =31752 \\text{ dinner options.}\n\\end{equation*}\n<\/div><\/div>"}, {"number": [45,45], "feedback": "\n<div class=\"para\" id=\"Count-simple-Korean-BBQ-4-2-1-2-2-1\">This answer only counts entrees, rather than the entire shared meal.<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 1.2.2.b"><a href="#Count-simple-Korean-BBQ-4" title="Copy heading and permalink for Task 1.2.2.b" aria-label="Copy heading and permalink for Task 1.2.2.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.2.2: Korean BBQ"><a href="#Count-simple-Korean-BBQ" title="Copy heading and permalink for Exercise 1.2.2: Korean BBQ" aria-label="Copy heading and permalink for Exercise 1.2.2: Korean BBQ">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="counting-simple-committee-seating"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Committee Seating Arrangements.</span>
+</h4>
+<div class="introduction" id="counting-simple-committee-seating-2">
+<div class="para" id="counting-simple-committee-seating-2-1">Eight committee members are meeting in a room that has twelve chairs.<div class="autopermalink" data-description="Paragraph"><a href="#counting-simple-committee-seating-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="counting-simple-committee-seating-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="counting-simple-committee-seating-3-1-1">In how many ways can the group choose which <span class="process-math">\(8\)</span> chairs will be occupied, if we do not care yet who sits in which chair?<div class="autopermalink" data-description="Paragraph"><a href="#counting-simple-committee-seating-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="_opt_a" data-correct="">
+<span class="process-math">\(\binom{12}{8} = 495\)</span> ways</li>
+<li data-component="feedback" id="_opt_a">
+<div class="para" id="counting-simple-committee-seating-3-2-1-2-1">Correct! Since the arrangement or order in which people sit does not matter, we use a combination.</div>
+</li>
+<li data-component="answer" id="_opt_b">
+<span class="process-math">\(_{12}P_8 = 19,958,400\)</span> ways</li>
+<li data-component="feedback" id="_opt_b">
+<div class="para" id="counting-simple-committee-seating-3-2-2-2-1">Incorrect. This counts the number of ways to assign specific people to specific chairs, but order does not matter here.</div>
+</li>
+<li data-component="answer" id="_opt_c">
+<span class="process-math">\(12 \times 8 = 96\)</span> ways</li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="counting-simple-committee-seating-3-2-3-2-1">Incorrect. This answer applies the multiplication rule incorrectly.</div>
+</li>
+<li data-component="answer" id="_opt_d">
+<span class="process-math">\(8! = 40,320\)</span> ways</li>
+<li data-component="feedback" id="_opt_d">
+<div class="para" id="counting-simple-committee-seating-3-2-4-2-1">Incorrect. This is the number of ways to arrange the 8 people in 8 chairs, but order does not matter here. Also, this answer does not account for the fact that we have to choose 8 chairs from the available 12.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 1.2.3.a"><a href="#counting-simple-committee-seating-3" title="Copy heading and permalink for Task 1.2.3.a" aria-label="Copy heading and permalink for Task 1.2.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="counting-simple-committee-seating-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="counting-simple-committee-seating-4-1-1">In how many ways distinct ways can the <span class="process-math">\(8\)</span> committee members actually sit down in the <span class="process-math">\(12\)</span> available chairs?<div class="autopermalink" data-description="Paragraph"><a href="#counting-simple-committee-seating-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="_opt_a" data-correct="">
+<span class="process-math">\(_{12}P_8 = 19,958,400\)</span> ways</li>
+<li data-component="feedback" id="_opt_a">
+<div class="para" id="counting-simple-committee-seating-4-2-1-2-1">Correct! Order matters here, so we use a permutation.</div>
+</li>
+<li data-component="answer" id="_opt_b">
+<span class="process-math">\(\binom{12}{8} = 495\)</span> ways</li>
+<li data-component="feedback" id="_opt_b">
+<div class="para" id="counting-simple-committee-seating-4-2-2-2-1">Incorrect. This only selects which chairs are used, it does not take seating order into account.</div>
+</li>
+<li data-component="answer" id="_opt_c">
+<span class="process-math">\(12^8 = 429,981,696\)</span> ways</li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="counting-simple-committee-seating-4-2-3-2-1">Incorrect. This would allow multiple committee members to sit in the same chair!</div>
+</li>
+<li data-component="answer" id="_opt_d">
+<span class="process-math">\(8! = 40,320\)</span> ways</li>
+<li data-component="feedback" id="_opt_d">
+<div class="para" id="counting-simple-committee-seating-4-2-4-2-1">Incorrect. This is the number of ways to arrange the 8 people in 8 chairs, but it does not account for the fact that we have to choose 8 chairs from the available 12.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 1.2.3.b"><a href="#counting-simple-committee-seating-4" title="Copy heading and permalink for Task 1.2.3.b" aria-label="Copy heading and permalink for Task 1.2.3.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.2.3: Committee Seating Arrangements"><a href="#counting-simple-committee-seating" title="Copy heading and permalink for Exercise 1.2.3: Committee Seating Arrangements" aria-label="Copy heading and permalink for Exercise 1.2.3: Committee Seating Arrangements">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="count-simple-5x6-array"><h4 class="heading">
+<span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">5-by-6 Array.</span>
+</h4>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="count-simple-5x6-array-2-1">Thirty items are arranged in a 5-by-6 array as shown below. Calculate the number of ways to form a set of three distinct items such that no two of the selected items come from the same row or column.<div class="autopermalink" data-description="Paragraph"><a href="#count-simple-5x6-array-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/Images/5x6-array.png" class="contained" alt="Grid with 5 rows and 6 columns. Each grid cell contains an item, labeled A1 through A30."></div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-count-simple-5x6-array" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-count-simple-5x6-array_opt_a" data-correct="">
+<div class="para" id="count-simple-5x6-array-4-1-1-1"><span class="process-math">\(1,200 \)</span></div>
+</li>
+<li data-component="feedback" id="rs-count-simple-5x6-array_opt_a">
+<div class="para" id="count-simple-5x6-array-4-1-2-1">Correct! For the first item, we have 30 options to select from. For the second item we have only 20 options, since we have to remove all items that were in the same row and column as the first item. Similarly, there are only 12 options for item 3. However, the calculation <span class="process-math">\(30\cdot 20\cdot 12\)</span> takes into account the order of the items. So, we need to divide by <span class="process-math">\(3!\)</span> to get the number of unique sets of three items.</div>
+</li>
+<li data-component="answer" id="rs-count-simple-5x6-array_opt_b">
+<div class="para" id="count-simple-5x6-array-4-2-1-1"><span class="process-math">\(1,575 \)</span></div>
+</li>
+<li data-component="feedback" id="rs-count-simple-5x6-array_opt_b">
+<div class="para" id="count-simple-5x6-array-4-2-2-1">Incorrect. Likely mistake - Did you remove enough options after the first and second item selection? No two items can come from the same row or column.</div>
+</li>
+<li data-component="answer" id="rs-count-simple-5x6-array_opt_c">
+<div class="para" id="count-simple-5x6-array-4-3-1-1"><span class="process-math">\(4,060 \)</span></div>
+</li>
+<li data-component="feedback" id="rs-count-simple-5x6-array_opt_c">
+<div class="para" id="count-simple-5x6-array-4-3-2-1">Incorrect. Likely mistake - No two of the selected items can come from the same row or  column.</div>
+</li>
+<li data-component="answer" id="rs-count-simple-5x6-array_opt_d">
+<div class="para" id="count-simple-5x6-array-4-4-1-1"><span class="process-math">\(2,000 \)</span></div>
+</li>
+<li data-component="feedback" id="rs-count-simple-5x6-array_opt_d">
+<div class="para" id="count-simple-5x6-array-4-4-2-1">Incorrect. Likely mistake - Make sure all items come from different rows and  columns.</div>
+</li>
+<li data-component="answer" id="rs-count-simple-5x6-array_opt_e">
+<div class="para" id="count-simple-5x6-array-4-5-1-1"><span class="process-math">\(7,200 \)</span></div>
+</li>
+<li data-component="feedback" id="rs-count-simple-5x6-array_opt_e">
+<div class="para" id="count-simple-5x6-array-4-5-2-1">Incorrect. Likely mistake - This answer treats a selection such as <code class="code-inline tex2jax_ignore">A1 A15 A29</code> as different from <code class="code-inline tex2jax_ignore">A29 A15 A1</code>, when they are actually the same set of chosen items.</div>
+</li>
+</ul>
+</div></div>
+<div class="solutions">
+<details id="count-simple-5x6-array-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="count-simple-5x6-array-3-1">Does order matter here?<div class="autopermalink" data-description="Paragraph"><a href="#count-simple-5x6-array-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.2.4.1"><a href="#count-simple-5x6-array-3" title="Copy heading and permalink for Hint 1.2.4.1" aria-label="Copy heading and permalink for Hint 1.2.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.2.4: 5-by-6 Array"><a href="#count-simple-5x6-array" title="Copy heading and permalink for Exercise 1.2.4: 5-by-6 Array" aria-label="Copy heading and permalink for Exercise 1.2.4: 5-by-6 Array">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="counting-scaffolded-exam-probability"><h4 class="heading">
+<span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exam Preparation.</span>
+</h4>
+<div class="introduction" id="counting-scaffolded-exam-probability-2">
+<div class="para" id="counting-scaffolded-exam-probability-2-1">A student prepares for an upcoming probability exam by studying a master list of 10 complex problems. She successfully learns how to solve 6 of the problems. For the actual exam, the instructor selects 5 problems at random from the master list of 10 problems.<div class="autopermalink" data-description="Paragraph"><a href="#counting-scaffolded-exam-probability-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-exam-scaffold-total-space"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-exam-scaffold-total-space"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-exam-scaffold-total-space-1-1\">Calculate the total number of possible exams. Or in other words, calculate the number of ways that the instructor can select 5   of the 10 problems on the master list. Enter your answer as a whole number.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-exam-scaffold-total-space-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-exam-scaffold-total-space-1-2\">Total Exams = <input type=\"text\" id=\"counting-scaffolded-exam-probability-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-exam-scaffold-total-space-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [252,252], "feedback": "\n<div class=\"para logical\" id=\"task-exam-scaffold-total-space-2-1-1-2-1\"><div class=\"para\">Because the order in which the instructor selects the questions on the exam paper does not matter, we use a combination:<\/div><div class=\"displaymath process-math\" id=\"task-exam-scaffold-total-space-2-1-1-2-1-1\">\n\\begin{equation*}\n\\binom{10}{5} = \\frac{10 \\cdot 9 \\cdot 8 \\cdot 7 \\cdot 6}{5 \\cdot 4 \\cdot 3 \\cdot 2 \\cdot 1} = 252\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 1.2.5.a"><a href="#task-exam-scaffold-total-space" title="Copy heading and permalink for Task 1.2.5.a" aria-label="Copy heading and permalink for Task 1.2.5.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-exam-scaffold-favorable-space"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-exam-scaffold-favorable-space"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-exam-scaffold-favorable-space-1-1\">Calculate the total number of ways the instructor can choose 5 problems such that they all come from the pool of 6 problems that the student knows how to solve. Enter your answer as a whole number.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-exam-scaffold-favorable-space-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-exam-scaffold-favorable-space-1-2\">Total Favorable Exams = <input type=\"text\" id=\"counting-scaffolded-exam-probability-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-exam-scaffold-favorable-space-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [6,6], "feedback": "\n<div class=\"para logical\" id=\"task-exam-scaffold-favorable-space-2-1-1-2-1\"><div class=\"para\">We restrict our selection to the 6 problems the student can answer and count the ways to select 5 of them:<\/div><div class=\"displaymath process-math\" id=\"task-exam-scaffold-favorable-space-2-1-1-2-1-1\">\n\\begin{equation*}\n\\binom{6}{5} = 6\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 1.2.5.b"><a href="#task-exam-scaffold-favorable-space" title="Copy heading and permalink for Task 1.2.5.b" aria-label="Copy heading and permalink for Task 1.2.5.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-exam-scaffold-probability-mc"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-exam-scaffold-probability-mc-1-1">Using your answers from parts (a) and (b), determine the probability that the student can solve all five of the problems on her probability exam.<div class="autopermalink" data-description="Paragraph"><a href="#task-exam-scaffold-probability-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-exam-scaffold-probability-mc" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-exam-scaffold-probability-mc_opt_a" data-correct="">
+<div class="para" id="task-exam-scaffold-probability-mc-2-1-1-1"><span class="process-math">\(\frac{1}{42} \approx 0.0238\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-exam-scaffold-probability-mc_opt_a">
+<div class="para logical" id="task-exam-scaffold-probability-mc-2-1-2-1">
+<div class="para">Correct! Divide the number of favorable exams by the total number of possible exams:</div>
+<div class="displaymath process-math" id="task-exam-scaffold-probability-mc-2-1-2-1-1">
+\begin{equation*}
+P(X = 5) = \frac{\binom{6}{5}}{\binom{10}{5}} = \frac{6}{252} = \frac{1}{42} \approx 0.0238\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+<li data-component="answer" id="rs-task-exam-scaffold-probability-mc_opt_b">
+<div class="para" id="task-exam-scaffold-probability-mc-2-2-1-1"><span class="process-math">\(\frac{1}{252} \approx 0.0040\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-exam-scaffold-probability-mc_opt_b">
+<div class="para" id="task-exam-scaffold-probability-mc-2-2-2-1">Incorrect. Check the numerator! There is more than one favorable exam. The denominator is correct.</div>
+</li>
+<li data-component="answer" id="rs-task-exam-scaffold-probability-mc_opt_c">
+<div class="para" id="task-exam-scaffold-probability-mc-2-3-1-1"><span class="process-math">\(\frac{6}{10} \approx 0.6000\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-exam-scaffold-probability-mc_opt_c">
+<div class="para" id="task-exam-scaffold-probability-mc-2-3-2-1">Incorrect. This would be the probability that, for the first and only problem on the exam, the instructor selects one of the six problems that the student can answer.</div>
+</li>
+<li data-component="answer" id="rs-task-exam-scaffold-probability-mc_opt_d">
+<div class="para" id="task-exam-scaffold-probability-mc-2-4-1-1"><span class="process-math">\(\frac{5}{6} \approx 0.8333\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-exam-scaffold-probability-mc_opt_d">
+<div class="para" id="task-exam-scaffold-probability-mc-2-4-2-1">Incorrect. This answer is just the ratio of exam questions to the number of questions the student can answer, which is not what we want.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 1.2.5.c"><a href="#task-exam-scaffold-probability-mc" title="Copy heading and permalink for Task 1.2.5.c" aria-label="Copy heading and permalink for Task 1.2.5.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.2.5: Exam Preparation"><a href="#counting-scaffolded-exam-probability" title="Copy heading and permalink for Exercise 1.2.5: Exam Preparation" aria-label="Copy heading and permalink for Exercise 1.2.5: Exam Preparation">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 1.2: Interactive Exercises"><a href="#hw-counting-simple" title="Copy heading and permalink for Exercises 1.2: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 1.2: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-counting-simple-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="counting-simple-10digit-phone-num"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Unique Phone Numbers.</span>
+</h4>
+<div class="introduction" id="counting-simple-10digit-phone-num-2">
+<div class="para" id="counting-simple-10digit-phone-num-2-1">Consider ten-digit phone numbers in the United States.<div class="autopermalink" data-description="Paragraph"><a href="#counting-simple-10digit-phone-num-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="counting-simple-10digit-phone-num-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="counting-simple-10digit-phone-num-3-1-1">How many different ten-digit phone numbers are possible?<div class="autopermalink" data-description="Paragraph"><a href="#counting-simple-10digit-phone-num-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="counting-simple-10digit-phone-num-3-1-2">Note: Creating a mathematical model that accurately reflects the real world is important but often  difficult. Model assumptions should always be stated. In this case, we assume that the first digit cannot be zero or one, and the fourth digit cannot be zero.<div class="autopermalink" data-description="Paragraph"><a href="#counting-simple-10digit-phone-num-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.2.1.a"><a href="#counting-simple-10digit-phone-num-3" title="Copy heading and permalink for Task 1.2.1.a" aria-label="Copy heading and permalink for Task 1.2.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="counting-simple-10digit-phone-num-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="counting-simple-10digit-phone-num-4-1-1">Toll free numbers are telephone numbers that can be called at no charge to the person placing the call. For example, calling a toll free number would allow a caller to reach a businesses out of the area without being charged a long-distance fee. Toll free numbers start with a distinct three-digit code, such as 800.<div class="autopermalink" data-description="Paragraph"><a href="#counting-simple-10digit-phone-num-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="counting-simple-10digit-phone-num-4-1-2">How many ten-digit phone numbers are possible if we exclude toll free numbers starting with 800?<div class="autopermalink" data-description="Paragraph"><a href="#counting-simple-10digit-phone-num-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.2.1.b"><a href="#counting-simple-10digit-phone-num-4" title="Copy heading and permalink for Task 1.2.1.b" aria-label="Copy heading and permalink for Task 1.2.1.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.2.1: Unique Phone Numbers"><a href="#counting-simple-10digit-phone-num" title="Copy heading and permalink for Exercise 1.2.1: Unique Phone Numbers" aria-label="Copy heading and permalink for Exercise 1.2.1: Unique Phone Numbers">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="counting-simple-bday-problem"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Birthday Problem.</span>
+</h4>
+<div class="introduction" id="counting-simple-bday-problem-2">
+<div class="para" id="counting-simple-bday-problem-2-1">Consider an experiment that consists of recording the birth month for each of 7 randomly selected persons.<div class="autopermalink" data-description="Paragraph"><a href="#counting-simple-bday-problem-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="counting-simple-bday-problem-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="counting-simple-bday-problem-3-1-1">Find the number of outcomes in the sample space, <span class="process-math">\(S\)</span> for this experiment.<div class="autopermalink" data-description="Paragraph"><a href="#counting-simple-bday-problem-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.2.2.a"><a href="#counting-simple-bday-problem-3" title="Copy heading and permalink for Task 1.2.2.a" aria-label="Copy heading and permalink for Task 1.2.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="counting-simple-bday-problem-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="counting-simple-bday-problem-4-1-1">If we assume that months are equally likely, what is the probability that each person had a different birth month?<div class="autopermalink" data-description="Paragraph"><a href="#counting-simple-bday-problem-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.2.2.b"><a href="#counting-simple-bday-problem-4" title="Copy heading and permalink for Task 1.2.2.b" aria-label="Copy heading and permalink for Task 1.2.2.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.2.2: Birthday Problem"><a href="#counting-simple-bday-problem" title="Copy heading and permalink for Exercise 1.2.2: Birthday Problem" aria-label="Copy heading and permalink for Exercise 1.2.2: Birthday Problem">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 1.2: Written Exercises"><a href="#hw-counting-simple-turn-in" title="Copy heading and permalink for Exercises 1.2: Written Exercises" aria-label="Copy heading and permalink for Exercises 1.2: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 1.2: Fundamental Counting Techniques"><a href="#sec-section-counting-simple" title="Copy heading and permalink for Section 1.2: Fundamental Counting Techniques" aria-label="Copy heading and permalink for Section 1.2: Fundamental Counting Techniques">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-section-BP.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-counting-harder.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

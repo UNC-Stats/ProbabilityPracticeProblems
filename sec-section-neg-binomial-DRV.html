@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Negative Binomial Random Variable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-section-geometric-DRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Common-Discrete-RVs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-poisson-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-neg-binomial-DRV">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Negative Binomial Random Variable</span>
+</h2>
+<section class="introduction" id="sec-section-neg-binomial-DRV-2">
+<div class="para logical" id="sec-section-neg-binomial-DRV-2-1">
+<div class="para">By completing the problems provided below, you will gain practice with:</div>
+<ul class="disc" id="sec-section-neg-binomial-DRV-2-1-1">
+<li id="sec-section-neg-binomial-DRV-2-1-1-1">
+<div class="para" id="sec-section-neg-binomial-DRV-2-1-1-1-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-neg-binomial-DRV-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-neg-binomial-DRV-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-neg-binomial-DRV-2-1-1-2">
+<div class="para" id="sec-section-neg-binomial-DRV-2-1-1-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-neg-binomial-DRV-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-neg-binomial-DRV-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-neg-binomial-DRV-2-1-1-3">
+<div class="para" id="sec-section-neg-binomial-DRV-2-1-1-3-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-neg-binomial-DRV-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-neg-binomial-DRV-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-neg-binomial-DRV-2-1-1-4">
+<div class="para" id="sec-section-neg-binomial-DRV-2-1-1-4-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-neg-binomial-DRV-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-neg-binomial-DRV-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-neg-binomial-DRV-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="exercises" id="hw-neg-binom-rv">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-negbin-curb-painting-interactive"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Direct Sales Optimization: Curb Painting Metrics.</span>
+</h4>
+<div class="introduction" id="ex-negbin-curb-painting-interactive-2">
+<div class="para" id="ex-negbin-curb-painting-interactive-2-1">Your professor is annoyed by pushy door-to-door salespeople who walk through neighborhoods offering house painting  services. Let’s say that the probability of a salesperson securing a customer agreement at any individual home is a constant <span class="process-math">\(p = 0.10\)</span> (or 10%). Assume that all individual household interactions behave as completely independent trials.<div class="autopermalink" data-description="Paragraph"><a href="#ex-negbin-curb-painting-interactive-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-curb-first-sale"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-curb-first-sale"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-curb-first-sale-1-1\">Compute the probability that the salesperson secures their first customer agreement exactly at the 10th house they visit. Write your answer as a decimal rounded to three decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-first-sale-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-curb-first-sale-1-2\">Try this two ways - using the geometric distribution and the negative binomial distribution. You should  notice that the geometric distribution is just a special case of the negative binomial where <span class=\"process-math\">\\(r=1\\text{!}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-first-sale-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-curb-first-sale-1-3\"><input type=\"text\" id=\"ex-negbin-curb-painting-interactive-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-first-sale-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.039,0.039], "feedback": "\n<div class=\"para logical\" id=\"task-curb-first-sale-2-1-1-2-1\"><div class=\"para\">Correct!  This calculation can be viewed in two identical ways:<\/div>\n<ul class=\"disc\" id=\"task-curb-first-sale-2-1-1-2-1-1\">\n<li id=\"task-curb-first-sale-2-1-1-2-1-1-1\">\n<div class=\"para logical\" id=\"task-curb-first-sale-2-1-1-2-1-1-1-1\"><div class=\"para\">Geometric Model: Looking for the 1st success on trial 10, which implies 9 consecutive rejections followed by 1 success:<\/div><div class=\"displaymath process-math\" id=\"task-curb-first-sale-2-1-1-2-1-1-1-1-2\">\n\\begin{equation*}\nP(Y_G = 10) = (0.90)^9 \\cdot (0.10) \\approx 0.0387 \\approx 0.039\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-first-sale-2-1-1-2-1-1-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-curb-first-sale-2-1-1-2-1-1-1\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li>\n<li id=\"task-curb-first-sale-2-1-1-2-1-1-2\">\n<div class=\"para logical\" id=\"task-curb-first-sale-2-1-1-2-1-1-2-1\"><div class=\"para\">Negative Binomial Model: Setting the success parameter quota to <span class=\"process-math\">\\(r = 1\\text{:}\\)<\/span><\/div><div class=\"displaymath process-math\" id=\"task-curb-first-sale-2-1-1-2-1-1-2-1-3\">\n\\begin{equation*}\nP(Y_{NB} = 10) = \\binom{10-1}{1-1}(0.10)^1(0.90)^{10-1} = 1 \\cdot (0.10) \\cdot (0.90)^9 \\approx 0.039\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-first-sale-2-1-1-2-1-1-2-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-curb-first-sale-2-1-1-2-1-1-2\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li><\/ul><div class=\"para\">This demonstrates that the geometric distribution is simply a specialized sub-case of the negative binomial where <span class=\"process-math\">\\(r = 1\\text{.}\\)<\/span><\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.5.1.a"><a href="#task-curb-first-sale" title="Copy heading and permalink for Task 5.5.1.a" aria-label="Copy heading and permalink for Task 5.5.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-curb-seven-sales"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-curb-seven-sales"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-curb-seven-sales-1-1\">Compute the probability that it requires visiting exactly 60  houses in order to successfully close 7 painting agreements. Write your answer as a decimal rounded to three decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-seven-sales-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-curb-seven-sales-1-2\"><input type=\"text\" id=\"ex-negbin-curb-painting-interactive-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-seven-sales-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.017,0.017], "feedback": "\n<div class=\"para logical\" id=\"task-curb-seven-sales-2-1-1-2-1\"><div class=\"para\">Correct!  This follows a total-trials Negative Binomial model where the <span class=\"process-math\">\\(r = 7\\)<\/span>th success occurs precisely on trial <span class=\"process-math\">\\(y = 60\\text{:}\\)<\/span><\/div><div class=\"displaymath process-math\" id=\"task-curb-seven-sales-2-1-1-2-1-3\">\n\\begin{equation*}\nP(Y = 60) = \\binom{60-1}{7-1}(0.10)^7(0.90)^{60-7} = \\binom{59}{6}(0.10)^7(0.90)^{53}\n\\end{equation*}\n<\/div><div class=\"displaymath process-math\" id=\"task-curb-seven-sales-2-1-1-2-1-4\">\n\\begin{equation*}\nP(Y = 60) = 45,057,474 \\cdot (10^{-7}) \\cdot (0.003759) \\approx 0.0169 \\approx 0.017\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.5.1.b"><a href="#task-curb-seven-sales" title="Copy heading and permalink for Task 5.5.1.b" aria-label="Copy heading and permalink for Task 5.5.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-curb-conceptual-shift"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-curb-conceptual-shift"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-curb-conceptual-shift-1-1\">Compute the probability that the salesperson receives exactly 53 rejections  <em class=\"emphasis\">before<\/em> the 7th painting agreement is completed.  Write your answer as a decimal rounded to three decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-conceptual-shift-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-curb-conceptual-shift-1-2\">Before you begin, think about how this question differs from part (b).<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-conceptual-shift-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-curb-conceptual-shift-1-3\"><input type=\"text\" id=\"ex-negbin-curb-painting-interactive-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-conceptual-shift-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.017,0.017], "feedback": "\n<div class=\"para\" id=\"task-curb-conceptual-shift-2-1-1-2-1\">Correct! This is identical to Part B, because 53 rejections plus 7 successful agreements equals exactly 60 total household visits.<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.5.1.c"><a href="#task-curb-conceptual-shift" title="Copy heading and permalink for Task 5.5.1.c" aria-label="Copy heading and permalink for Task 5.5.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-curb-expected-quota"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-curb-expected-quota"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-curb-expected-quota-1-1\">How many total houses do you expect the salesperson will have to visit in order to successfully accumulate a quota of exactly 25  painting agreements? Write your answer as a whole number.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-expected-quota-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-curb-expected-quota-1-2\"><input type=\"text\" id=\"ex-negbin-curb-painting-interactive-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-curb-expected-quota-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [250,250], "feedback": "\n<div class=\"para logical\" id=\"task-curb-expected-quota-2-1-1-2-1\"><div class=\"para\">Correct! Using the expected value formula for a total-trials Negative Binomial random variable:<\/div><div class=\"displaymath process-math\" id=\"task-curb-expected-quota-2-1-1-2-1-1\">\n\\begin{equation*}\nE(Y) = \\frac{r}{p} = \\frac{25}{0.10} = 250 \\text{ houses}\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.5.1.d"><a href="#task-curb-expected-quota" title="Copy heading and permalink for Task 5.5.1.d" aria-label="Copy heading and permalink for Task 5.5.1.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-curb-revenue-mc"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-curb-revenue-mc-1-1">If the salesperson gets a $250 bonus for each painting agreement secured, what is the mean number of household visits required to hit a bonus target of $3,000?<div class="autopermalink" data-description="Paragraph"><a href="#task-curb-revenue-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-curb-revenue-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-curb-revenue-mc_opt_a">
+<div class="para" id="task-curb-revenue-mc-2-1-1-1">
+<span class="process-math">\(12\)</span> houses</div>
+</li>
+<li data-component="feedback" id="rs-task-curb-revenue-mc_opt_a">
+<div class="para" id="task-curb-revenue-mc-2-1-2-1">Incorrect. This is the value of <span class="process-math">\(r\text{,}\)</span> the number of successful painting agreements required to hit $3,000 (<span class="process-math">\(\frac{3000}{250} = 12\)</span>). You still need to calculate the expected number of total household visits required to land that many sales.</div>
+</li>
+<li data-component="answer" id="rs-task-curb-revenue-mc_opt_b">
+<div class="para" id="task-curb-revenue-mc-2-2-1-1">
+<span class="process-math">\(30,000\)</span> houses</div>
+</li>
+<li data-component="feedback" id="rs-task-curb-revenue-mc_opt_b">
+<div class="para" id="task-curb-revenue-mc-2-2-2-1">Incorrect. It looks like you divided the entire $3,000 revenue target by the probability parameter <span class="process-math">\(p = 0.10\text{.}\)</span> Make sure to convert your revenue target to a target number of successful sales (<span class="process-math">\(r\)</span>) first.</div>
+</li>
+<li data-component="answer" id="rs-task-curb-revenue-mc_opt_c" data-correct="">
+<div class="para" id="task-curb-revenue-mc-2-3-1-1">
+<span class="process-math">\(120\)</span> houses</div>
+</li>
+<li data-component="feedback" id="rs-task-curb-revenue-mc_opt_c">
+<div class="para logical" id="task-curb-revenue-mc-2-3-2-1">
+<div class="para">Correct! First, determine the number of target successes (<span class="process-math">\(r\)</span>) needed to reach the financial goal:</div>
+<div class="displaymath process-math" id="task-curb-revenue-mc-2-3-2-1-2">
+\begin{equation*}
+r = \frac{\$3000 \text{ target}}{\$250 \text{ per job}} = 12 \text{ agreements}
+\end{equation*}
+</div>
+<div class="para">Next, apply the expected value function using our parameter count of <span class="process-math">\(r = 12\)</span> and success probability <span class="process-math">\(p = 0.10\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="task-curb-revenue-mc-2-3-2-1-5">
+\begin{equation*}
+E(Y) = \frac{r}{p} = \frac{12}{0.10} = 120 \text{ houses}
+\end{equation*}
+</div>
+</div>
+</li>
+<li data-component="answer" id="rs-task-curb-revenue-mc_opt_d">
+<div class="para" id="task-curb-revenue-mc-2-4-1-1">
+<span class="process-math">\(1.2\)</span> houses</div>
+</li>
+<li data-component="feedback" id="rs-task-curb-revenue-mc_opt_d">
+<div class="para" id="task-curb-revenue-mc-2-4-2-1">Incorrect. It looks like you multiplied the target sales number of 12 by the probability parameter <span class="process-math">\(p = 0.10\)</span> instead of dividing by it. The expected number of trials will always be larger than the target number of successes when <span class="process-math">\(p \lt 1\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.5.1.e"><a href="#task-curb-revenue-mc" title="Copy heading and permalink for Task 5.5.1.e" aria-label="Copy heading and permalink for Task 5.5.1.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.5.1: Direct Sales Optimization: Curb Painting Metrics"><a href="#ex-negbin-curb-painting-interactive" title="Copy heading and permalink for Exercise 5.5.1: Direct Sales Optimization: Curb Painting Metrics" aria-label="Copy heading and permalink for Exercise 5.5.1: Direct Sales Optimization: Curb Painting Metrics">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-negative-binomial-airline-calls"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete Distributions: Geometric and Negative Binomial Processes.</span>
+</h4>
+<div class="introduction" id="ex-negative-binomial-airline-calls-2">
+<div class="para" id="ex-negative-binomial-airline-calls-2-1">An automated audit of an airline reservation office establishes that during peak travel windows, the telephone lines are completely busy 60% of the time.<div class="autopermalink" data-description="Paragraph"><a href="#ex-negative-binomial-airline-calls-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-negative-binomial-airline-calls-2-2">Enter all parameters and final probabilities as decimals rounded to exactly four decimal places.<div class="autopermalink" data-description="Paragraph"><a href="#ex-negative-binomial-airline-calls-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-airline-geometric-input"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-airline-geometric-input"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-airline-geometric-input-1-1\">Suppose you are calling the office during the peak travel window. Find the probability that it takes you exactly 4 total attempts to get through to an agent for the first time.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-airline-geometric-input-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-airline-geometric-input-1-2\">Probability = <input type=\"text\" id=\"ex-negative-binomial-airline-calls-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-airline-geometric-input-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0864,0.0864], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.5.2.a"><a href="#task-airline-geometric-input" title="Copy heading and permalink for Task 5.5.2.a" aria-label="Copy heading and permalink for Task 5.5.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-airline-negbin-trials-input"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-airline-negbin-trials-input"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-airline-negbin-trials-input-1-1\">Now suppose that both you and a friend must each complete a separate reservation call to this office. If you take turns calling, find the probability that it takes a total of 4 tries for both of you to get through and reach agents.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-airline-negbin-trials-input-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-airline-negbin-trials-input-1-2\">Probability = <input type=\"text\" id=\"ex-negative-binomial-airline-calls-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-airline-negbin-trials-input-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.1728,0.1728], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.5.2.b"><a href="#task-airline-negbin-trials-input" title="Copy heading and permalink for Task 5.5.2.b" aria-label="Copy heading and permalink for Task 5.5.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-airline-negbin-failures-input"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-airline-negbin-failures-input"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-airline-negbin-failures-input-1-1\">Again, suppose that both you and a friend must each complete a separate reservation call to this office. Calculate the probability that you all encounter a busy line exactly 3 times before both of you eventually get through to an agent.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-airline-negbin-failures-input-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-airline-negbin-failures-input-1-2\">Probability = <input type=\"text\" id=\"ex-negative-binomial-airline-calls-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-airline-negbin-failures-input-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.1382,0.1382], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.5.2.c"><a href="#task-airline-negbin-failures-input" title="Copy heading and permalink for Task 5.5.2.c" aria-label="Copy heading and permalink for Task 5.5.2.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-airline-moments-input"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-airline-moments-input"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-airline-moments-input-1-1\">Find the expected number of total combined calling attempts required for you and your friend to both get through.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-airline-moments-input-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-airline-moments-input-1-2\">Expected Total Tries = <input type=\"text\" id=\"ex-negative-binomial-airline-calls-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-airline-moments-input-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [5,5], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.5.2.d"><a href="#task-airline-moments-input" title="Copy heading and permalink for Task 5.5.2.d" aria-label="Copy heading and permalink for Task 5.5.2.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.5.2: Discrete Distributions: Geometric and Negative Binomial Processes"><a href="#ex-negative-binomial-airline-calls" title="Copy heading and permalink for Exercise 5.5.2: Discrete Distributions: Geometric and Negative Binomial Processes" aria-label="Copy heading and permalink for Exercise 5.5.2: Discrete Distributions: Geometric and Negative Binomial Processes">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 5.5: Interactive Exercises"><a href="#hw-neg-binom-rv" title="Copy heading and permalink for Exercises 5.5: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 5.5: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-neg-binom-rv-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-negative-binomial-coin-flips"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Weighted Coin Experiment.</span>
+</h4>
+<div class="introduction" id="ex-negative-binomial-coin-flips-2">
+<div class="para" id="ex-negative-binomial-coin-flips-2-1">Recall our previous work with a weighted coin, where the probability of landing on tails is <span class="process-math">\(p = 0.70\text{.}\)</span> This time, let’s flip the weighted coin until it has landed on tails exactly three times. Define <span class="process-math">\(Y\)</span> to be the random variable representing the total number of coin flips required to complete the experiment (the total flips to reach 3 tails).<div class="autopermalink" data-description="Paragraph"><a href="#ex-negative-binomial-coin-flips-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-coin-classification"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-coin-classification-1-1">Explain why the random variable <span class="process-math">\(Y\)</span> is NOT a binomial random variable and NOT a geometric random variable. Describe how <span class="process-math">\(Y\)</span> is structurally related to these other types of random variables.<div class="autopermalink" data-description="Paragraph"><a href="#task-coin-classification-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.1.a"><a href="#task-coin-classification" title="Copy heading and permalink for Task 5.5.1.a" aria-label="Copy heading and permalink for Task 5.5.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-coin-probabilities"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="task-coin-probabilities-1-1">
+<div class="para">Compute the specified probabilities:</div>
+<ol class="upper-roman ol-marker-3" id="task-coin-probabilities-1-1-1">
+<li id="task-coin-probabilities-1-1-1-1">
+<div class="para" id="task-coin-probabilities-1-1-1-1-1">
+<span class="process-math">\(\displaystyle P(Y=3)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-coin-probabilities-1-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.1.I"><a href="#task-coin-probabilities-1-1-1-1" title="Copy heading and permalink for Item 5.5.1.I" aria-label="Copy heading and permalink for Item 5.5.1.I">🔗</a></div>
+</li>
+<li id="task-coin-probabilities-1-1-1-2">
+<div class="para" id="task-coin-probabilities-1-1-1-2-1">
+<span class="process-math">\(\displaystyle P(Y=4)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-coin-probabilities-1-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.1.II"><a href="#task-coin-probabilities-1-1-1-2" title="Copy heading and permalink for Item 5.5.1.II" aria-label="Copy heading and permalink for Item 5.5.1.II">🔗</a></div>
+</li>
+<li id="task-coin-probabilities-1-1-1-3">
+<div class="para" id="task-coin-probabilities-1-1-1-3-1">
+<span class="process-math">\(\displaystyle P(Y=5)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-coin-probabilities-1-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.1.III"><a href="#task-coin-probabilities-1-1-1-3" title="Copy heading and permalink for Item 5.5.1.III" aria-label="Copy heading and permalink for Item 5.5.1.III">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-coin-probabilities-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.1.b"><a href="#task-coin-probabilities" title="Copy heading and permalink for Task 5.5.1.b" aria-label="Copy heading and permalink for Task 5.5.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-coin-general-pmf"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="task-coin-general-pmf-1-1">Write a general formula for the probability distribution function <span class="process-math">\(p(y)\)</span> of <span class="process-math">\(Y\text{.}\)</span> Explicitly define the valid domain support for <span class="process-math">\(y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-coin-general-pmf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.1.c"><a href="#task-coin-general-pmf" title="Copy heading and permalink for Task 5.5.1.c" aria-label="Copy heading and permalink for Task 5.5.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-coin-intuition"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="task-coin-intuition-1-1">How many times do you think you would need to flip the weighted coin in order to get the coin to land on tails three times? No mathematical computations are necessary; provide an intuitive guess and explain the baseline logic behind your estimation.<div class="autopermalink" data-description="Paragraph"><a href="#task-coin-intuition-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.1.d"><a href="#task-coin-intuition" title="Copy heading and permalink for Task 5.5.1.d" aria-label="Copy heading and permalink for Task 5.5.1.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.5.1: Weighted Coin Experiment"><a href="#ex-negative-binomial-coin-flips" title="Copy heading and permalink for Exercise 5.5.1: Weighted Coin Experiment" aria-label="Copy heading and permalink for Exercise 5.5.1: Weighted Coin Experiment">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-negative-binomial-theory"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Theoretical Foundations of the Negative Binomial Distribution.</span>
+</h4>
+<div class="introduction" id="ex-negative-binomial-theory-2">
+<div class="para" id="ex-negative-binomial-theory-2-1">The discrete random variable explored in the previous problem is formally known as a Negative Binomial (or Pascal) random variable. Here is one general definition:<div class="autopermalink" data-description="Paragraph"><a href="#ex-negative-binomial-theory-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-negative-binomial-theory-2-2">
+<em class="emphasis">Consider a sequence of independent Bernoulli trials, each possessing an identical probability of success <span class="process-math">\(p\text{.}\)</span> Let the random variable <span class="process-math">\(Y\)</span> represent the total number of  trials required to reach  the <span class="process-math">\(r\)</span>-th success.</em><div class="autopermalink" data-description="Paragraph"><a href="#ex-negative-binomial-theory-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-negative-binomial-theory-2-3">Through this problem you will learn more about the negative binomial random variable, and you will ultimately derive its probability distribution function and other properties.<div class="autopermalink" data-description="Paragraph"><a href="#ex-negative-binomial-theory-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-negbin-general-pmf"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-negbin-general-pmf-1-1">Using the parameters provided (<span class="process-math">\(p = \)</span> probability of success, <span class="process-math">\(r = \)</span> target number of successes), write a generalized formula for the probability distribution function <span class="process-math">\(p(y)\)</span> of <span class="process-math">\(Y\text{.}\)</span> Explicitly state its mathematical domain constraints.<div class="autopermalink" data-description="Paragraph"><a href="#task-negbin-general-pmf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.2.a"><a href="#task-negbin-general-pmf" title="Copy heading and permalink for Task 5.5.2.a" aria-label="Copy heading and permalink for Task 5.5.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-negbin-new-scenario"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-negbin-new-scenario-1-1">Describe a new real-world scenario, outside of coin flipping, where the variable of interest behaves as a Negative Binomial random variable. Explain your reasoning, outline its underlying assumptions, and write out the explicit probability distribution function for your scenario with its localized parameters plugged in.<div class="autopermalink" data-description="Paragraph"><a href="#task-negbin-new-scenario-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.2.b"><a href="#task-negbin-new-scenario" title="Copy heading and permalink for Task 5.5.2.b" aria-label="Copy heading and permalink for Task 5.5.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-negbin-formulas"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="task-negbin-formulas-1-1">
+<div class="para">State the closed-form theoretical formulas for the following properties of a general Negative Binomial variable <span class="process-math">\(Y\text{:}\)</span>
+</div>
+<ol class="upper-roman ol-marker-3" id="task-negbin-formulas-1-1-2">
+<li id="task-negbin-formulas-1-1-2-1">
+<div class="para" id="task-negbin-formulas-1-1-2-1-1">Expected Value, <span class="process-math">\(E(Y)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-negbin-formulas-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.2.I"><a href="#task-negbin-formulas-1-1-2-1" title="Copy heading and permalink for Item 5.5.2.I" aria-label="Copy heading and permalink for Item 5.5.2.I">🔗</a></div>
+</li>
+<li id="task-negbin-formulas-1-1-2-2">
+<div class="para" id="task-negbin-formulas-1-1-2-2-1">Variance, <span class="process-math">\(V(Y)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-negbin-formulas-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.2.II"><a href="#task-negbin-formulas-1-1-2-2" title="Copy heading and permalink for Item 5.5.2.II" aria-label="Copy heading and permalink for Item 5.5.2.II">🔗</a></div>
+</li>
+<li id="task-negbin-formulas-1-1-2-3">
+<div class="para" id="task-negbin-formulas-1-1-2-3-1">Moment Generating Function, <span class="process-math">\(M_Y(s)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-negbin-formulas-1-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.2.III"><a href="#task-negbin-formulas-1-1-2-3" title="Copy heading and permalink for Item 5.5.2.III" aria-label="Copy heading and permalink for Item 5.5.2.III">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-negbin-formulas-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="task-negbin-formulas-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-negbin-formulas-2-1">Hint: We can write a binomial random variable as a sum of Bernoulli’s. This made finding the expected value and other formulas for a binomial very easy! Can we take a similar approach here?<div class="autopermalink" data-description="Paragraph"><a href="#task-negbin-formulas-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 5.5.2.c.1"><a href="#task-negbin-formulas-2" title="Copy heading and permalink for Hint 5.5.2.c.1" aria-label="Copy heading and permalink for Hint 5.5.2.c.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 5.5.2.c"><a href="#task-negbin-formulas" title="Copy heading and permalink for Task 5.5.2.c" aria-label="Copy heading and permalink for Task 5.5.2.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-negbin-coin-application"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para logical" id="task-negbin-coin-application-1-1">
+<div class="para">Use your generalized mathematical formulas established in Part C to compute the following for the weighted coin-flipping experiment (<span class="process-math">\(r = 3\)</span> tails, success probability <span class="process-math">\(p = 0.70\)</span>):</div>
+<ol class="decimal ol-marker-2" id="task-negbin-coin-application-1-1-3">
+<li id="task-negbin-coin-application-1-1-3-1">
+<div class="para" id="task-negbin-coin-application-1-1-3-1-1">Determine the  expected total number of coin flips required. Comment on how well this theoretical mean matches your intuitive guess from the previous worksheet problem.<div class="autopermalink" data-description="Paragraph"><a href="#task-negbin-coin-application-1-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.2.1"><a href="#task-negbin-coin-application-1-1-3-1" title="Copy heading and permalink for Item 5.5.2.1" aria-label="Copy heading and permalink for Item 5.5.2.1">🔗</a></div>
+</li>
+<li id="task-negbin-coin-application-1-1-3-2">
+<div class="para" id="task-negbin-coin-application-1-1-3-2-1">Compute the standard deviation (<span class="process-math">\(\sigma\)</span>) of the total number of flips required.<div class="autopermalink" data-description="Paragraph"><a href="#task-negbin-coin-application-1-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.2.2"><a href="#task-negbin-coin-application-1-1-3-2" title="Copy heading and permalink for Item 5.5.2.2" aria-label="Copy heading and permalink for Item 5.5.2.2">🔗</a></div>
+</li>
+<li id="task-negbin-coin-application-1-1-3-3">
+<div class="para" id="task-negbin-coin-application-1-1-3-3-1">Write a brief, one-sentence contextual interpretation that explains what this calculated mean and standard deviation represent regarding the behavior of the coin experiment.<div class="autopermalink" data-description="Paragraph"><a href="#task-negbin-coin-application-1-1-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.2.3"><a href="#task-negbin-coin-application-1-1-3-3" title="Copy heading and permalink for Item 5.5.2.3" aria-label="Copy heading and permalink for Item 5.5.2.3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-negbin-coin-application-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.2.d"><a href="#task-negbin-coin-application" title="Copy heading and permalink for Task 5.5.2.d" aria-label="Copy heading and permalink for Task 5.5.2.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.5.2: Theoretical Foundations of the Negative Binomial Distribution"><a href="#ex-negative-binomial-theory" title="Copy heading and permalink for Exercise 5.5.2: Theoretical Foundations of the Negative Binomial Distribution" aria-label="Copy heading and permalink for Exercise 5.5.2: Theoretical Foundations of the Negative Binomial Distribution">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-alternative-rv-transformations"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Alternative Definitions for Waiting-Time Distributions.</span>
+</h4>
+<div class="introduction" id="ex-alternative-rv-transformations-2">
+<div class="para logical" id="ex-alternative-rv-transformations-2-1">
+<div class="para">Both the geometric and negative binomial random variables can be defined ed by tracking either the <em class="emphasis">total number of trials</em> or the <em class="emphasis">total number of failures</em>. Let us define the alternative frameworks:</div>
+<ul class="disc" id="ex-alternative-rv-transformations-2-1-3">
+<li id="ex-alternative-rv-transformations-2-1-3-1">
+<div class="para" id="ex-alternative-rv-transformations-2-1-3-1-1">Failures-Only Framework:<div class="autopermalink" data-description="Paragraph"><a href="#ex-alternative-rv-transformations-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="circle" id="ex-alternative-rv-transformations-2-1-3-1-2">
+<li id="ex-alternative-rv-transformations-2-1-3-1-2-1">
+<div class="para" id="ex-alternative-rv-transformations-2-1-3-1-2-1-1">Geometric: Let <span class="process-math">\(X_G\)</span> be the number of failures before the first success occurs.<div class="autopermalink" data-description="Paragraph"><a href="#ex-alternative-rv-transformations-2-1-3-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-alternative-rv-transformations-2-1-3-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-alternative-rv-transformations-2-1-3-1-2-2">
+<div class="para" id="ex-alternative-rv-transformations-2-1-3-1-2-2-1">Negative Binomial: Let <span class="process-math">\(X_{NB}\)</span> be the number of failures before the <span class="process-math">\(r\)</span>-th success occurs.<div class="autopermalink" data-description="Paragraph"><a href="#ex-alternative-rv-transformations-2-1-3-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-alternative-rv-transformations-2-1-3-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Item"><a href="#ex-alternative-rv-transformations-2-1-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-alternative-rv-transformations-2-1-3-2">
+<div class="para" id="ex-alternative-rv-transformations-2-1-3-2-1">Total-Trials Framework:<div class="autopermalink" data-description="Paragraph"><a href="#ex-alternative-rv-transformations-2-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="circle" id="ex-alternative-rv-transformations-2-1-3-2-2">
+<li id="ex-alternative-rv-transformations-2-1-3-2-2-1">
+<div class="para" id="ex-alternative-rv-transformations-2-1-3-2-2-1-1">Geometric: Let <span class="process-math">\(Y_G\)</span> be the total number of trials required to reach the first success.<div class="autopermalink" data-description="Paragraph"><a href="#ex-alternative-rv-transformations-2-1-3-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-alternative-rv-transformations-2-1-3-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-alternative-rv-transformations-2-1-3-2-2-2">
+<div class="para" id="ex-alternative-rv-transformations-2-1-3-2-2-2-1">Negative Binomial: Let <span class="process-math">\(Y_{NB}\)</span> be the total number of trials required to reach the <span class="process-math">\(r\)</span>-th success.<div class="autopermalink" data-description="Paragraph"><a href="#ex-alternative-rv-transformations-2-1-3-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-alternative-rv-transformations-2-1-3-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Item"><a href="#ex-alternative-rv-transformations-2-1-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-alternative-rv-transformations-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-linear-relations"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-linear-relations-1-1">Write an algebraic equation relating the random variables <span class="process-math">\(X_G\)</span> and <span class="process-math">\(Y_G\text{,}\)</span> and another equation relating <span class="process-math">\(X_{NB}\)</span> and <span class="process-math">\(Y_{NB}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-linear-relations-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.3.a"><a href="#task-linear-relations" title="Copy heading and permalink for Task 5.5.3.a" aria-label="Copy heading and permalink for Task 5.5.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-alt-geometric-pmf"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-alt-geometric-pmf-1-1">Determine the probability distribution function of <span class="process-math">\(X_G\)</span>  (failures-only geometric variable). Explain the reasoning behind your answer and state its domain support.<div class="autopermalink" data-description="Paragraph"><a href="#task-alt-geometric-pmf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.3.b"><a href="#task-alt-geometric-pmf" title="Copy heading and permalink for Task 5.5.3.b" aria-label="Copy heading and permalink for Task 5.5.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-alt-geometric-properties"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="task-alt-geometric-properties-1-1">
+<div class="para">Find the following properties for the failures-only geometric variable <span class="process-math">\(X_G\)</span> using your linear transformation rules from Part A:</div>
+<ol class="decimal ol-marker-2" id="task-alt-geometric-properties-1-1-2">
+<li id="task-alt-geometric-properties-1-1-2-1">
+<div class="para" id="task-alt-geometric-properties-1-1-2-1-1">Expected Value, <span class="process-math">\(E(X_G)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-alt-geometric-properties-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.3.1"><a href="#task-alt-geometric-properties-1-1-2-1" title="Copy heading and permalink for Item 5.5.3.1" aria-label="Copy heading and permalink for Item 5.5.3.1">🔗</a></div>
+</li>
+<li id="task-alt-geometric-properties-1-1-2-2">
+<div class="para" id="task-alt-geometric-properties-1-1-2-2-1">Variance, <span class="process-math">\(V(X_G)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-alt-geometric-properties-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.3.2"><a href="#task-alt-geometric-properties-1-1-2-2" title="Copy heading and permalink for Item 5.5.3.2" aria-label="Copy heading and permalink for Item 5.5.3.2">🔗</a></div>
+</li>
+<li id="task-alt-geometric-properties-1-1-2-3">
+<div class="para" id="task-alt-geometric-properties-1-1-2-3-1">Moment Generating Function, <span class="process-math">\(M_{X_G}(t)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-alt-geometric-properties-1-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.3.3"><a href="#task-alt-geometric-properties-1-1-2-3" title="Copy heading and permalink for Item 5.5.3.3" aria-label="Copy heading and permalink for Item 5.5.3.3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-alt-geometric-properties-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.3.c"><a href="#task-alt-geometric-properties" title="Copy heading and permalink for Task 5.5.3.c" aria-label="Copy heading and permalink for Task 5.5.3.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-alt-negbin-pmf"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="task-alt-negbin-pmf-1-1">Determine the probability distribution function for <span class="process-math">\(X_{NB}\)</span> (failures-only negative binomial variable). Explain the reasoning behind your answer and state its domain support.<div class="autopermalink" data-description="Paragraph"><a href="#task-alt-negbin-pmf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.3.d"><a href="#task-alt-negbin-pmf" title="Copy heading and permalink for Task 5.5.3.d" aria-label="Copy heading and permalink for Task 5.5.3.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-alt-negbin-properties"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para logical" id="task-alt-negbin-properties-1-1">
+<div class="para">Find the following properties for the failures-only negative binomial variable <span class="process-math">\(X_{NB}\)</span> using your linear transformation rules from Part A:</div>
+<ol class="decimal ol-marker-2" id="task-alt-negbin-properties-1-1-2">
+<li id="task-alt-negbin-properties-1-1-2-1">
+<div class="para" id="task-alt-negbin-properties-1-1-2-1-1">Expected Value, <span class="process-math">\(E(X_{NB})\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-alt-negbin-properties-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.3.1"><a href="#task-alt-negbin-properties-1-1-2-1" title="Copy heading and permalink for Item 5.5.3.1" aria-label="Copy heading and permalink for Item 5.5.3.1">🔗</a></div>
+</li>
+<li id="task-alt-negbin-properties-1-1-2-2">
+<div class="para" id="task-alt-negbin-properties-1-1-2-2-1">Variance, <span class="process-math">\(V(X_{NB})\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-alt-negbin-properties-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.3.2"><a href="#task-alt-negbin-properties-1-1-2-2" title="Copy heading and permalink for Item 5.5.3.2" aria-label="Copy heading and permalink for Item 5.5.3.2">🔗</a></div>
+</li>
+<li id="task-alt-negbin-properties-1-1-2-3">
+<div class="para" id="task-alt-negbin-properties-1-1-2-3-1">Moment Generating Function, <span class="process-math">\(M_{X_{NB}}(t)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-alt-negbin-properties-1-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5.5.3.3"><a href="#task-alt-negbin-properties-1-1-2-3" title="Copy heading and permalink for Item 5.5.3.3" aria-label="Copy heading and permalink for Item 5.5.3.3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-alt-negbin-properties-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.5.3.e"><a href="#task-alt-negbin-properties" title="Copy heading and permalink for Task 5.5.3.e" aria-label="Copy heading and permalink for Task 5.5.3.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.5.3: Alternative Definitions for Waiting-Time Distributions"><a href="#ex-alternative-rv-transformations" title="Copy heading and permalink for Exercise 5.5.3: Alternative Definitions for Waiting-Time Distributions" aria-label="Copy heading and permalink for Exercise 5.5.3: Alternative Definitions for Waiting-Time Distributions">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 5.5: Written Exercises"><a href="#hw-neg-binom-rv-turn-in" title="Copy heading and permalink for Exercises 5.5: Written Exercises" aria-label="Copy heading and permalink for Exercises 5.5: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 5.5: Negative Binomial Random Variable"><a href="#sec-section-neg-binomial-DRV" title="Copy heading and permalink for Section 5.5: Negative Binomial Random Variable" aria-label="Copy heading and permalink for Section 5.5: Negative Binomial Random Variable">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-section-geometric-DRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-poisson-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

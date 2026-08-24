@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>More Counting Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-section-counting-simple.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Basic-Probability.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-chapter-Set-Operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-counting-harder">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">More Counting Practice</span>
+</h2>
+<section class="introduction" id="sec-section-counting-harder-2">
+<div class="para logical" id="sec-section-counting-harder-2-1">
+<div class="para">The problems below will provide more practice with the basic counting techniques (multiplication principle, permutation, combination), and you will also practice:</div>
+<ul class="disc" id="sec-section-counting-harder-2-1-1">
+<li id="sec-section-counting-harder-2-1-1-1">
+<div class="para" id="sec-section-counting-harder-2-1-1-1-1">Using the multinomial coefficient.<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-counting-harder-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-counting-harder-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-counting-harder-2-1-1-2">
+<div class="para" id="sec-section-counting-harder-2-1-1-2-1">Combining counting techniques.<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-counting-harder-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-counting-harder-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-counting-harder-2-1-1-3">
+<div class="para" id="sec-section-counting-harder-2-1-1-3-1">Thinking about more complex scenarios and events.<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-counting-harder-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-counting-harder-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-counting-harder-2-1-1-4">
+<div class="para" id="sec-section-counting-harder-2-1-1-4-1">Using counting techniques to help compute probabilities.<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-counting-harder-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-counting-harder-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-counting-harder-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="exercises" id="hw-counting-harder">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="counting-harder-interview-coding-challenge"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Technical Interview.</span>
+</h4>
+<div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-counting-harder-interview-coding-challenge">
+<span data-subcomponent="question">
+<div class="para" id="counting-harder-interview-coding-challenge-2-1">A computer science student prepares for a technical interview by studying fourteen provided coding challenges. The student was able to complete eight of the challenges. During the interview, six of the coding challenges are selected to test the student’s knowledge.<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-interview-coding-challenge-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="counting-harder-interview-coding-challenge-2-2">Match each block on the left with its correct contextual meaning on the right. Ultimately, you are trying to find the probability that the student can complete four of the six coding challenges selected during their interview.<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-interview-coding-challenge-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><li data-subcomponent="draggable" id="rs-counting-harder-interview-coding-challenge_drag1" data-category="1"><span class="process-math">\(\binom{14}{6} = 3,003\)</span></li>
+<li data-subcomponent="dropzone" for="rs-counting-harder-interview-coding-challenge_drag1" data-category="1">The total number of ways that six questions can be selected for the student’s interview.</li>
+<li data-subcomponent="draggable" id="rs-counting-harder-interview-coding-challenge_drag2" data-category="2"><span class="process-math">\(\binom{8}{4} = 70\)</span></li>
+<li data-subcomponent="dropzone" for="rs-counting-harder-interview-coding-challenge_drag2" data-category="2">The number of ways that 4 of the coding challenges that the student completed can be selected for the student’s interview.</li>
+<li data-subcomponent="draggable" id="rs-counting-harder-interview-coding-challenge_drag3" data-category="3"><span class="process-math">\(\binom{6}{2} = 15\)</span></li>
+<li data-subcomponent="dropzone" for="rs-counting-harder-interview-coding-challenge_drag3" data-category="3">The number of ways that 2 of the coding challenges that the student had not completed can be selected for the student’s interview.</li>
+<li data-subcomponent="draggable" id="rs-counting-harder-interview-coding-challenge_drag4" data-category="4"><span class="process-math">\(70 \times 15 = 1,050\)</span></li>
+<li data-subcomponent="dropzone" for="rs-counting-harder-interview-coding-challenge_drag4" data-category="4">The total number of ways that six problems can be selected for the interview where the student can complete four of them.</li>
+<li data-subcomponent="draggable" id="rs-counting-harder-interview-coding-challenge_drag5" data-category="5"><span class="process-math">\(\frac{1050}{3003} = \frac{50}{143}\)</span></li>
+<li data-subcomponent="dropzone" for="rs-counting-harder-interview-coding-challenge_drag5" data-category="5">The probability that the student can complete four of the six coding challenges selected during their interview.</li>
+</ul></div></div>
+<div class="solutions">
+<details id="counting-harder-interview-coding-challenge-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="counting-harder-interview-coding-challenge-3-1">Think of the 14 problems as being split into two sets - those the student could complete and those that they had not mastered yet.<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-interview-coding-challenge-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.3.1.1"><a href="#counting-harder-interview-coding-challenge-3" title="Copy heading and permalink for Hint 1.3.1.1" aria-label="Copy heading and permalink for Hint 1.3.1.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.1: Technical Interview"><a href="#counting-harder-interview-coding-challenge" title="Copy heading and permalink for Exercise 1.3.1: Technical Interview" aria-label="Copy heading and permalink for Exercise 1.3.1: Technical Interview">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="counting-harder-housing-multinomial"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Campus Housing Room Assignments.</span>
+</h4>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="counting-harder-housing-multinomial-2-1">A group of <span class="process-math">\(12\)</span> college students are selected to live on a specialized floor in a residence hall. The floor has exactly <span class="process-math">\(6\)</span> rooms available that must be filled: one triple room (<span class="process-math">\(3\)</span> students), three double rooms (<span class="process-math">\(2\)</span> students each), and three single rooms (<span class="process-math">\(1\)</span> student each).<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-housing-multinomial-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="counting-harder-housing-multinomial-2-2">If the housing department assigns the <span class="process-math">\(12\)</span> students completely at random to fill these rooms, how many distinct ways can the students be assigned to rooms?<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-housing-multinomial-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-counting-harder-housing-multinomial" data-multipleanswers="true" data-random="">
+<li data-component="answer" id="rs-counting-harder-housing-multinomial_opt_a" data-correct="">
+<span class="process-math">\(\frac{12!}{3!\cdot  2!\cdot   2!\cdot   2!\cdot   1!\cdot   1!\cdot   1!} \)</span> ways</li>
+<li data-component="feedback" id="rs-counting-harder-housing-multinomial_opt_a">
+<div class="para" id="counting-harder-housing-multinomial-3-1-2-1">Correct! Because the rooms themselves are distinct entities, we use the multinomial coefficient to partition the 12 individuals into groups of sizes 3, 2, 2, 2, 1, 1, and 1.</div>
+</li>
+<li data-component="answer" id="rs-counting-harder-housing-multinomial_opt_b" data-correct=""><span class="process-math">\(\binom{12}{3\  2\  2\  2\  1\  1\  1} \)</span></li>
+<li data-component="feedback" id="rs-counting-harder-housing-multinomial_opt_b">
+<div class="para" id="counting-harder-housing-multinomial-3-2-2-1">Correct! Because the rooms themselves are distinct entities, we use the multinomial coefficient to partition the 12 individuals into groups of sizes 3, 2, 2, 2, 1, 1, and 1.</div>
+</li>
+<li data-component="answer" id="rs-counting-harder-housing-multinomial_opt_c" data-correct=""><span class="process-math">\(\binom{12}{3}\times \binom{9}{2}\times \binom{7}{2} \times \binom{5}{2} \times \binom{3}{1}  \times \binom{2}{1}  \times 1\)</span></li>
+<li data-component="feedback" id="rs-counting-harder-housing-multinomial_opt_c">
+<div class="para" id="counting-harder-housing-multinomial-3-3-2-1">Correct! Because the rooms themselves are distinct entities, but order does not matter within rooms, we can use combinations to partition the 12 individuals into groups of sizes 3, 2, 2, 2, 1, 1, and 1. This calculation is equivalent to using the multinomial coefficient.</div>
+</li>
+<li data-component="answer" id="rs-counting-harder-housing-multinomial_opt_d"><span class="process-math">\(12! \)</span></li>
+<li data-component="feedback" id="rs-counting-harder-housing-multinomial_opt_d">
+<div class="para" id="counting-harder-housing-multinomial-3-4-2-1">Incorrect. This answer over counts, because rearranging students <em class="emphasis">within</em> the same room does not create a new room assignment configuration.</div>
+</li>
+<li data-component="answer" id="rs-counting-harder-housing-multinomial_opt_e"><span class="process-math">\(\binom{12}{3} \times \binom{9}{6} \times \binom{3}{3} \)</span></li>
+<li data-component="feedback" id="rs-counting-harder-housing-multinomial_opt_e">
+<div class="para" id="counting-harder-housing-multinomial-3-5-2-1">Incorrect. This calculation treats the three double rooms as a single giant group and the three single rooms as a single giant group, rather than distributing students into separate rooms.</div>
+</li>
+<li data-component="answer" id="rs-counting-harder-housing-multinomial_opt_f"><span class="process-math">\(\binom{12}{3} \times \binom{9}{2} \times \binom{7}{1} \)</span></li>
+<li data-component="feedback" id="rs-counting-harder-housing-multinomial_opt_f">
+<div class="para" id="counting-harder-housing-multinomial-3-6-2-1">Incorrect. This calculation only assigns students to the triple room, one double room, and one single room. The other rooms are not accounted for.</div>
+</li>
+<li data-component="answer" id="rs-counting-harder-housing-multinomial_opt_g"><span class="process-math">\(\frac{12!}{3!\cdot   3!\cdot   3!} \)</span></li>
+<li data-component="feedback" id="rs-counting-harder-housing-multinomial_opt_g">
+<div class="para" id="counting-harder-housing-multinomial-3-7-2-1">Incorrect. This answer attempts to use the multinomial coefficient, but the  numbers in the denominator have been chosen incorrectly.</div>
+</li>
+</ul>
+</div></div>
+<div class="solutions">
+<details id="counting-harder-housing-multinomial-4" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="counting-harder-housing-multinomial-4-1">Think about partitioning a single pool of <span class="process-math">\(12\)</span> distinct people into multiple specific groups. The group sizes are defined by the room capacities.<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-housing-multinomial-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.3.2.1"><a href="#counting-harder-housing-multinomial-4" title="Copy heading and permalink for Hint 1.3.2.1" aria-label="Copy heading and permalink for Hint 1.3.2.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.2: Campus Housing Room Assignments"><a href="#counting-harder-housing-multinomial" title="Copy heading and permalink for Exercise 1.3.2: Campus Housing Room Assignments" aria-label="Copy heading and permalink for Exercise 1.3.2: Campus Housing Room Assignments">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-interactive-poker-prob"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Poker Hands.</span>
+</h4>
+<div class="introduction" id="ex-interactive-poker-prob-2">
+<div class="para" id="ex-interactive-poker-prob-2-1">A standard deck of 52 cards features 13 distinct numerical ranks (Ace, 2, 3,...,10, Jack, Queen, King) in each of 4 distinct suits (Hearts, Diamonds, Clubs, and Spades).<div class="autopermalink" data-description="Paragraph"><a href="#ex-interactive-poker-prob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-interactive-poker-prob-2-2">In a standard 5-card poker match, a player is dealt a hand of 5 cards completely at random from the deck of 52.<div class="autopermalink" data-description="Paragraph"><a href="#ex-interactive-poker-prob-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/Images/Deck-of-Cards.png" class="contained" alt=""></div>
+</div>
+<article class="task exercise-like" id="task-poker-three-kind"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-poker-three-kind"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-poker-three-kind-1-1\">The poker hand \"Three of a Kind\" contains exactly 3 cards of the same rank, and 2 cards that each possess different, non-matching ranks (for example: three 10’s, one 4, and one 7).<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-three-kind-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-poker-three-kind-1-2\">Compute the  probability of being dealt a Three of a Kind. Write your answer as a decimal rounded to four places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-three-kind-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-poker-three-kind-1-3\">Probability = <input type=\"text\" id=\"ex-interactive-poker-prob-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-three-kind-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0211,0.0211], "feedback": "\n<div class=\"para\" id=\"task-poker-three-kind-2-1-1-2-1\">Correct! To find the number of possible Three of a Kind hands, we complete a sequence of independent selection steps:<\/div> \n<ol class=\"lower-roman ol-marker-1\" id=\"task-poker-three-kind-2-1-1-2-2\">\n<li id=\"task-poker-three-kind-2-1-1-2-2-1\">\n<div class=\"para\" id=\"task-poker-three-kind-2-1-1-2-2-1-1\">Choose 1 rank out of the 13 available to serve as the triple: <span class=\"process-math\">\\(\\binom{13}{1}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-three-kind-2-1-1-2-2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item 1.3.3.i\"><a href=\"#task-poker-three-kind-2-1-1-2-2-1\" title=\"Copy heading and permalink for Item 1.3.3.i\" aria-label=\"Copy heading and permalink for Item 1.3.3.i\">🔗<\/a><\/div><\/li>\n<li id=\"task-poker-three-kind-2-1-1-2-2-2\">\n<div class=\"para\" id=\"task-poker-three-kind-2-1-1-2-2-2-1\">Choose 3 of the 4 cards of that rank that are available (to complete the selection of the triple): <span class=\"process-math\">\\(\\binom{4}{3}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-three-kind-2-1-1-2-2-2-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item 1.3.3.ii\"><a href=\"#task-poker-three-kind-2-1-1-2-2-2\" title=\"Copy heading and permalink for Item 1.3.3.ii\" aria-label=\"Copy heading and permalink for Item 1.3.3.ii\">🔗<\/a><\/div><\/li>\n<li id=\"task-poker-three-kind-2-1-1-2-2-3\">\n<div class=\"para\" id=\"task-poker-three-kind-2-1-1-2-2-3-1\">Choose 2 distinct ranks out of the remaining 12 options for the two remaining cards: <span class=\"process-math\">\\(\\binom{12}{2}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-three-kind-2-1-1-2-2-3-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item 1.3.3.iii\"><a href=\"#task-poker-three-kind-2-1-1-2-2-3\" title=\"Copy heading and permalink for Item 1.3.3.iii\" aria-label=\"Copy heading and permalink for Item 1.3.3.iii\">🔗<\/a><\/div><\/li>\n<li id=\"task-poker-three-kind-2-1-1-2-2-4\">\n<div class=\"para\" id=\"task-poker-three-kind-2-1-1-2-2-4-1\">Choose 1 specific card out of the 4 available suits for each of those 2 separate ranks: <span class=\"process-math\">\\(\\binom{4}{1} \\cdot \\binom{4}{1}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-three-kind-2-1-1-2-2-4-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item 1.3.3.iv\"><a href=\"#task-poker-three-kind-2-1-1-2-2-4\" title=\"Copy heading and permalink for Item 1.3.3.iv\" aria-label=\"Copy heading and permalink for Item 1.3.3.iv\">🔗<\/a><\/div><\/li><\/ol> \n<div class=\"para\" id=\"task-poker-three-kind-2-1-1-2-3\">Multiplying these combinations together gives us the total number of Three of a Kind hands.<\/div> \n<div class=\"para\" id=\"task-poker-three-kind-2-1-1-2-4\">We then divide this by the total number of possible 5 cards hands: <span class=\"process-math\">\\(\\binom{52}{5}\\)<\/span><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 1.3.3.a"><a href="#task-poker-three-kind" title="Copy heading and permalink for Task 1.3.3.a" aria-label="Copy heading and permalink for Task 1.3.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-poker-high-card-mc"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-poker-high-card-mc-1-1">What would be your strategy for computing the probability of not being dealt any of the poker hands? This is also referred to as a “High Card” hand.<div class="autopermalink" data-description="Paragraph"><a href="#task-poker-high-card-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="task-poker-high-card-mc-1-2">Select the equation that correctly represents the strategic approach for computing the number of possible High Card hands?<div class="autopermalink" data-description="Paragraph"><a href="#task-poker-high-card-mc-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-poker-high-card-mc" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-poker-high-card-mc_opt_a">
+<div class="para" id="task-poker-high-card-mc-3-1-1-1"><span class="process-math">\(\binom{13}{5} \cdot 4^5\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-poker-high-card-mc_opt_a">
+<div class="para" id="task-poker-high-card-mc-3-1-2-1">Incorrect. This expression counts the number of ways to get a hand containing cards of 5 completely different ranks, each assigned a random suit. This method would count "Straights" (5 consecutive ranks) and "Flushes" (all 5 cards sharing the same suit), which cannot be part of a High Card hand.</div>
+</li>
+<li data-component="answer" id="rs-task-poker-high-card-mc_opt_b" data-correct="">
+<div class="para" id="task-poker-high-card-mc-3-2-1-1"><span class="process-math">\(\left[ \binom{13}{5} - 10 \right] \cdot (4^5 - 4)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-poker-high-card-mc_opt_b">
+<div class="para" id="task-poker-high-card-mc-3-2-2-1">Correct! One way to build a High Card hand is to pick 5 distinct ranks out of 13, but you must subtract off the 10 possible rank sequences that form a Straight. Then, you assign suits to those cards, but you must subtract the 4 suit configurations that would result in a flush (all cards share the same suit).</div>
+</li>
+<li data-component="answer" id="rs-task-poker-high-card-mc_opt_c">
+<div class="para" id="task-poker-high-card-mc-3-3-1-1"><span class="process-math">\(\binom{13}{5} \cdot4^5 - 40\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-poker-high-card-mc_opt_c">
+<div class="para" id="task-poker-high-card-mc-3-3-2-1">Incorrect. This expression counts the number of ways to get a hand containing cards of 5 completely different ranks, each assigned a random suit. Then this method tries to handle the overlap with Straights and Flushes by subtracting a constant of 40. However, this only removes the Straight Flushes, rather than all Straights and all Flushes.</div>
+</li>
+<li data-component="answer" id="rs-task-poker-high-card-mc_opt_d">
+<div class="para" id="task-poker-high-card-mc-3-4-1-1"><span class="process-math">\(\binom{13}{1}\binom{4}{1} \cdot \binom{12}{1}\binom{4}{1} \cdot \binom{11}{1}\binom{4}{1} \cdot \binom{10}{1}\binom{4}{1} \cdot \binom{9}{1}\binom{4}{1}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-poker-high-card-mc_opt_d">
+<div class="para" id="task-poker-high-card-mc-3-4-2-1">Incorrect. This expression tracks the dealt order of the cards. Because poker hands are unordered, this counts identical hands multiple times and fails to filter out Straights and Flushes.</div>
+</li>
+</ul>
+</div></div>
+<div class="solutions">
+<details id="task-poker-high-card-mc-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-poker-high-card-mc-2-1">Think about what is or is not being selected with each step of the answers. Could you get one of the Poker hands with the selection?<div class="autopermalink" data-description="Paragraph"><a href="#task-poker-high-card-mc-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.3.3.b.1"><a href="#task-poker-high-card-mc-2" title="Copy heading and permalink for Hint 1.3.3.b.1" aria-label="Copy heading and permalink for Hint 1.3.3.b.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.3.b"><a href="#task-poker-high-card-mc" title="Copy heading and permalink for Task 1.3.3.b" aria-label="Copy heading and permalink for Task 1.3.3.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.3: Poker Hands"><a href="#ex-interactive-poker-prob" title="Copy heading and permalink for Exercise 1.3.3: Poker Hands" aria-label="Copy heading and permalink for Exercise 1.3.3: Poker Hands">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-interactive-poker-joker-prob"><h4 class="heading">
+<span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Poker Hands with Jokers.</span>
+</h4>
+<div class="introduction" id="ex-interactive-poker-joker-prob-2">
+<div class="para" id="ex-interactive-poker-joker-prob-2-1">Refer to the previous problem: Poker Hands.<div class="autopermalink" data-description="Paragraph"><a href="#ex-interactive-poker-joker-prob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-interactive-poker-joker-prob-2-2">Suppose that two Jokers are added to the deck, bringing the total deck size to 54 cards. These are wild cards and can count as any rank or suit.<div class="autopermalink" data-description="Paragraph"><a href="#ex-interactive-poker-joker-prob-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-interactive-poker-joker-prob-2-3">Answer the questions below to find the probability of being dealt a "Three of a Kind" in this new scenario, where your hand could include 0, 1, or 2 Jokers.<div class="autopermalink" data-description="Paragraph"><a href="#ex-interactive-poker-joker-prob-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-poker-one-joker-count"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-poker-one-joker-count-1-1">Calculate the  number of 5-card hands that contain exactly 1 Joker and form a Three of a Kind.<div class="autopermalink" data-description="Paragraph"><a href="#task-poker-one-joker-count-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="task-poker-one-joker-count-1-2">Note: If a Joker can optimize a hand into a higher category (like a Full House or Four of a Kind), it must.<div class="autopermalink" data-description="Paragraph"><a href="#task-poker-one-joker-count-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-poker-one-joker-count" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-poker-one-joker-count_opt_a">
+<div class="para" id="task-poker-one-joker-count-3-1-1-1">
+<span class="process-math">\(\binom{13}{1}\binom{4}{3}\binom{12}{2}4^2\binom{2}{1} = 109,824\)</span> hands</div>
+</li>
+<li data-component="feedback" id="rs-task-poker-one-joker-count_opt_a">
+<div class="para" id="task-poker-one-joker-count-3-1-2-1">Incorrect. This expression gives us a triple in the four non-Joker cards. If you add a wild Joker, you end up with a "Four of a Kind."</div>
+</li>
+<li data-component="answer" id="rs-task-poker-one-joker-count_opt_b" data-correct="">
+<div class="para" id="task-poker-one-joker-count-3-2-1-1">
+<span class="process-math">\(\binom{13}{1}\binom{4}{2}\binom{12}{2}4^2\binom{2}{1} = 164,736\)</span> hands</div>
+</li>
+<li data-component="feedback" id="rs-task-poker-one-joker-count_opt_b">
+<div class="para" id="task-poker-one-joker-count-3-2-2-1">Correct! To form  a Three of a Kind with 1 Joker, the other 4 cards must consist of a natural pair and two separate singletons of unique ranks (e.g., 10-10-4-7 + Joker). The calculation evaluates as follows:</div> 
+<ul class="disc" id="task-poker-one-joker-count-3-2-2-2">
+<li id="task-poker-one-joker-count-3-2-2-2-1">
+<div class="para" id="task-poker-one-joker-count-3-2-2-2-1-1">Choose 1 rank out of 13 for the pair: <span class="process-math">\(\binom{13}{1} \)</span>
+</div>
+</li>
+<li id="task-poker-one-joker-count-3-2-2-2-2">
+<div class="para" id="task-poker-one-joker-count-3-2-2-2-2-1">Choose 2 of 4 cards available of that rank (to complete the selection of the pair): <span class="process-math">\(\binom{4}{2} \)</span>
+</div>
+</li>
+<li id="task-poker-one-joker-count-3-2-2-2-3">
+<div class="para" id="task-poker-one-joker-count-3-2-2-2-3-1">Choose 2 unique ranks out of the remaining 12 for reamining non-Joker cards: <span class="process-math">\(\binom{12}{2} \)</span>
+</div>
+</li>
+<li id="task-poker-one-joker-count-3-2-2-2-4">
+<div class="para" id="task-poker-one-joker-count-3-2-2-2-4-1">Choose 1 suit out of 4 for each singleton: <span class="process-math">\(4^2 \)</span>
+</div>
+</li>
+<li id="task-poker-one-joker-count-3-2-2-2-5">
+<div class="para" id="task-poker-one-joker-count-3-2-2-2-5-1">Choose 1 Joker out of the 2 available in the deck: <span class="process-math">\(\binom{2}{1} = 2\)</span>
+</div>
+</li>
+</ul>
+</li>
+<li data-component="answer" id="rs-task-poker-one-joker-count_opt_c">
+<div class="para" id="task-poker-one-joker-count-3-3-1-1">
+<span class="process-math">\(\binom{13}{1}\binom{4}{2}\binom{12}{1}\binom{4}{2}\binom{2}{1} = 5,616\)</span> hands</div>
+</li>
+<li data-component="feedback" id="rs-task-poker-one-joker-count_opt_c">
+<div class="para" id="task-poker-one-joker-count-3-3-2-1">Incorrect. This expression counts the number of hands  consisting of two  pairs and 1 Joker (e.g., 8-8-3-3 + Joker). The Joker turns this hand into a "Full House" instead of a Three of a Kind.</div>
+</li>
+<li data-component="answer" id="rs-task-poker-one-joker-count_opt_d">
+<div class="para" id="task-poker-one-joker-count-3-4-1-1">
+<span class="process-math">\(\binom{13}{4}4^4\binom{2}{1} = 366,080\)</span> hands</div>
+</li>
+<li data-component="feedback" id="rs-task-poker-one-joker-count_opt_d">
+<div class="para" id="task-poker-one-joker-count-3-4-2-1">Incorrect. This expression counts the number of hands where the 4 non-Joker cards all have a  unique rank (e.g., A-K-Q-5 + Joker). The Joker turns this hand into a "One Pair" rather than a Three of a Kind.</div>
+</li>
+<li data-component="answer" id="rs-task-poker-one-joker-count_opt_e">
+<div class="para" id="task-poker-one-joker-count-3-5-1-1">
+<span class="process-math">\(\binom{52}{4}\binom{2}{1} = 541,450\)</span> hands</div>
+</li>
+<li data-component="feedback" id="rs-task-poker-one-joker-count_opt_e">
+<div class="para" id="task-poker-one-joker-count-3-5-2-1">Incorrect. This broadly counts every 5-card hand that contains exactly 1 Joker. It  ignores what poker hand combination those cards actually form.</div>
+</li>
+</ul>
+</div></div>
+<div class="solutions">
+<details id="task-poker-one-joker-count-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-poker-one-joker-count-2-1">To avoid completing a better hand, the 4 non-Joker cards must consist of one natural pair and two cards that each possess different, non-matching ranks.<div class="autopermalink" data-description="Paragraph"><a href="#task-poker-one-joker-count-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.3.4.a.1"><a href="#task-poker-one-joker-count-2" title="Copy heading and permalink for Hint 1.3.4.a.1" aria-label="Copy heading and permalink for Hint 1.3.4.a.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.4.a"><a href="#task-poker-one-joker-count" title="Copy heading and permalink for Task 1.3.4.a" aria-label="Copy heading and permalink for Task 1.3.4.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-poker-two-joker-count"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-poker-two-joker-count"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-poker-two-joker-count-1-1\">Calculate the  number of 5-card hands that contain exactly 2 Jokers and form a Three of a Kind. Enter your answer as a whole number.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-two-joker-count-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-poker-two-joker-count-1-2\">Number of hands = <input type=\"text\" id=\"ex-interactive-poker-joker-prob-blank1\" size=\"8\"\/> hands<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-two-joker-count-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [54912,54912], "feedback": "\n<div class=\"para logical\" id=\"task-poker-two-joker-count-3-1-1-2-1\"><div class=\"para\">Correct! To form a Three of a Kind with exactly 2 Jokers, the remaining 3 non-Joker cards must all have different ranks (e.g., K-7-5 + 2 Jokers). The breakdown of the calculation is as follows:<\/div>\n<ol class=\"decimal ol-marker-2\" id=\"task-poker-two-joker-count-3-1-1-2-1-1\">\n<li id=\"task-poker-two-joker-count-3-1-1-2-1-1-1\">\n<div class=\"para\" id=\"task-poker-two-joker-count-3-1-1-2-1-1-1-1\">Choose 3 unique ranks out of 13 for the non-Joker cards: <span class=\"process-math\">\\(\\binom{13}{3} \\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-two-joker-count-3-1-1-2-1-1-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item 1.3.4.1\"><a href=\"#task-poker-two-joker-count-3-1-1-2-1-1-1\" title=\"Copy heading and permalink for Item 1.3.4.1\" aria-label=\"Copy heading and permalink for Item 1.3.4.1\">🔗<\/a><\/div><\/li>\n<li id=\"task-poker-two-joker-count-3-1-1-2-1-1-2\">\n<div class=\"para\" id=\"task-poker-two-joker-count-3-1-1-2-1-1-2-1\">Choose 1 suit out of 4 for each of those 3 distinct cards: <span class=\"process-math\">\\(4^3 \\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-two-joker-count-3-1-1-2-1-1-2-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item 1.3.4.2\"><a href=\"#task-poker-two-joker-count-3-1-1-2-1-1-2\" title=\"Copy heading and permalink for Item 1.3.4.2\" aria-label=\"Copy heading and permalink for Item 1.3.4.2\">🔗<\/a><\/div><\/li>\n<li id=\"task-poker-two-joker-count-3-1-1-2-1-1-3\">\n<div class=\"para\" id=\"task-poker-two-joker-count-3-1-1-2-1-1-3-1\">Select both wild Jokers out of the deck: <span class=\"process-math\">\\(\\binom{2}{2} \\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-two-joker-count-3-1-1-2-1-1-3-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item 1.3.4.3\"><a href=\"#task-poker-two-joker-count-3-1-1-2-1-1-3\" title=\"Copy heading and permalink for Item 1.3.4.3\" aria-label=\"Copy heading and permalink for Item 1.3.4.3\">🔗<\/a><\/div><\/li>\n<li id=\"task-poker-two-joker-count-3-1-1-2-1-1-4\">\n<div class=\"para\" id=\"task-poker-two-joker-count-3-1-1-2-1-1-4-1\">Choose which of the 3 non-Joker cards the Jokers will replicate to build the Three of a Kind: <span class=\"process-math\">\\(\\binom{3}{1} \\)<\/span> options.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-two-joker-count-3-1-1-2-1-1-4-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item 1.3.4.4\"><a href=\"#task-poker-two-joker-count-3-1-1-2-1-1-4\" title=\"Copy heading and permalink for Item 1.3.4.4\" aria-label=\"Copy heading and permalink for Item 1.3.4.4\">🔗<\/a><\/div><\/li><\/ol><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-poker-two-joker-count-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-poker-two-joker-count-2-1">Hint 1: Think about the  3 non-Joker cards. What must they be for the two Jokers to force the hand into a "Three of a Kind"?<div class="autopermalink" data-description="Paragraph"><a href="#task-poker-two-joker-count-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="task-poker-two-joker-count-2-2">Hint 2: Think about whether more than one Three-of-Kind can be created within the 5-card hand. If this is possible, should you include each possibility in your count?<div class="autopermalink" data-description="Paragraph"><a href="#task-poker-two-joker-count-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.3.4.b.1"><a href="#task-poker-two-joker-count-2" title="Copy heading and permalink for Hint 1.3.4.b.1" aria-label="Copy heading and permalink for Hint 1.3.4.b.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.4.b"><a href="#task-poker-two-joker-count" title="Copy heading and permalink for Task 1.3.4.b" aria-label="Copy heading and permalink for Task 1.3.4.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-poker-jokers-prob-final"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-poker-jokers-prob-final"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-poker-jokers-prob-final-1-1\">Use your answers to parts (a) and (b) to help you determine the probability of being dealt a Three of a Kind hand from the 54-card deck that contains two Jokers. Enter your answer as a decimal rounded to four decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-jokers-prob-final-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-poker-jokers-prob-final-1-2\">Probability  = <input type=\"text\" id=\"ex-interactive-poker-joker-prob-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-jokers-prob-final-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0868,0.0868], "feedback": "\n<div class=\"para\" id=\"task-poker-jokers-prob-final-3-1-1-2-1\">Correct! Sum the number of Three of a Kind hands across our three separate sub-cases:<\/div> \n<ul class=\"disc\" id=\"task-poker-jokers-prob-final-3-1-1-2-2\">\n<li id=\"task-poker-jokers-prob-final-3-1-1-2-2-1\">\n<div class=\"para\" id=\"task-poker-jokers-prob-final-3-1-1-2-2-1-1\">0 Jokers: <span class=\"process-math\">\\(54,912\\)<\/span> hands (calculated in the previous problem)<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-jokers-prob-final-3-1-1-2-2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-poker-jokers-prob-final-3-1-1-2-2-1\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li>\n<li id=\"task-poker-jokers-prob-final-3-1-1-2-2-2\">\n<div class=\"para\" id=\"task-poker-jokers-prob-final-3-1-1-2-2-2-1\">1 Joker: <span class=\"process-math\">\\(164,736\\)<\/span> hands (calculated in part a)<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-jokers-prob-final-3-1-1-2-2-2-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-poker-jokers-prob-final-3-1-1-2-2-2\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li>\n<li id=\"task-poker-jokers-prob-final-3-1-1-2-2-3\">\n<div class=\"para\" id=\"task-poker-jokers-prob-final-3-1-1-2-2-3-1\">2 Jokers: <span class=\"process-math\">\\(54,912\\)<\/span> hands (calculated in Part b)<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-poker-jokers-prob-final-3-1-1-2-2-3-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-poker-jokers-prob-final-3-1-1-2-2-3\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li><\/ul> \n<div class=\"para\" id=\"task-poker-jokers-prob-final-3-1-1-2-3\">Total Three of a Kinds <span class=\"process-math\">\\(= 54,912 + 164,736 + 54,912 = 274,560\\)<\/span>  hands.<\/div> \n<div class=\"para\" id=\"task-poker-jokers-prob-final-3-1-1-2-4\">Divide this  by the total number of possible 5-card hands:  expanded 54-card sample space: <span class=\"process-math\">\\(\\binom{54}{5}=3,162,510\\)<\/span><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-poker-jokers-prob-final-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-poker-jokers-prob-final-2-1">Make sure to combine counts from the three separate sub-cases: 0, 1, or 2 Jokers.<div class="autopermalink" data-description="Paragraph"><a href="#task-poker-jokers-prob-final-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.3.4.c.1"><a href="#task-poker-jokers-prob-final-2" title="Copy heading and permalink for Hint 1.3.4.c.1" aria-label="Copy heading and permalink for Hint 1.3.4.c.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.4.c"><a href="#task-poker-jokers-prob-final" title="Copy heading and permalink for Task 1.3.4.c" aria-label="Copy heading and permalink for Task 1.3.4.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.4: Poker Hands with Jokers"><a href="#ex-interactive-poker-joker-prob" title="Copy heading and permalink for Exercise 1.3.4: Poker Hands with Jokers" aria-label="Copy heading and permalink for Exercise 1.3.4: Poker Hands with Jokers">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="counting-harder-student-org-grant-assignments"><h4 class="heading">
+<span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Campus Grant Distribution.</span>
+</h4>
+<div class="introduction" id="counting-harder-student-org-grant-assignments-2">
+<div class="para" id="counting-harder-student-org-grant-assignments-2-1">Five student organizations  submit applications for three distinct campus funding awards: the Sustainability Grant, the Diversity Grant, and the Innovation Grant. Each grant must be awarded to a single organization, and no organization can receive more than one grant.<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-student-org-grant-assignments-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="counting-harder-student-org-grant-assignments-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"counting-harder-student-org-grant-assignments-3-1-1\">How many distinct outcomes are possible for assigning these three unique grants to the five student organizations? Enter your answer as a whole number.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#counting-harder-student-org-grant-assignments-3-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"counting-harder-student-org-grant-assignments-3-1-2\"><input type=\"text\" id=\"counting-harder-student-org-grant-assignments-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#counting-harder-student-org-grant-assignments-3-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "\n<div class=\"para logical\" id=\"counting-harder-student-org-grant-assignments-3-4-1\"><div class=\"para\">Because the grants are different and an organization can win at most one, this is a permutation problem where we arrange 3 organizations out of a pool of 5:<\/div><div class=\"displaymath process-math\" id=\"counting-harder-student-org-grant-assignments-3-4-1-1\">\n\\begin{equation*}\nP(5,3) = \\frac{5!}{(5-3)!} = 5 \\times 4 \\times 3 = 60 \\text{ outcomes}\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#counting-harder-student-org-grant-assignments-3-4-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [60,60], "feedback": "\n<div class=\"para logical\" id=\"counting-harder-student-org-grant-assignments-3-2-1-1-2-1\"><div class=\"para\">Correct! Because the grants are different and an organization can win at most one, this is a permutation problem where we select 3 organizations out of a pool of 5:<\/div><div class=\"displaymath process-math\" id=\"counting-harder-student-org-grant-assignments-3-2-1-1-2-1-1\">\n\\begin{equation*}\nP(5,3) = \\frac{5!}{(5-3)!} = 5 \\times 4 \\times 3 = 60 \\text{ outcomes}\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="counting-harder-student-org-grant-assignments-3-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="counting-harder-student-org-grant-assignments-3-3-1">Does order matter?<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-student-org-grant-assignments-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.3.5.a.1"><a href="#counting-harder-student-org-grant-assignments-3-3" title="Copy heading and permalink for Hint 1.3.5.a.1" aria-label="Copy heading and permalink for Hint 1.3.5.a.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.5.a"><a href="#counting-harder-student-org-grant-assignments-3" title="Copy heading and permalink for Task 1.3.5.a" aria-label="Copy heading and permalink for Task 1.3.5.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="counting-harder-student-org-grant-assignments-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="counting-harder-student-org-grant-assignments-4-1-1">Under the assumption that all  outcomes are equally likely, what is the probability that Organization 1  is awarded one of the grants?<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-student-org-grant-assignments-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="_opt_a" data-correct=""><span class="process-math">\(0.6\)</span></li>
+<li data-component="feedback" id="_opt_a">
+<div class="para" id="counting-harder-student-org-grant-assignments-4-2-1-2-1">Correct! If Organization 1 wins a specific grant, then there are <span class="process-math">\(_4P_2 = 12\)</span> ways to assign the remaining two grants to the other four organizations. Multiplying by 3, because there are 3 possible grants Organization 1 could win, gives us 36 favorable outcomes. Divide this by the total number of outcomes to get the specified probability.</div>
+</li>
+<li data-component="answer" id="_opt_b"><span class="process-math">\(0.2\)</span></li>
+<li data-component="feedback" id="_opt_b">
+<div class="para" id="counting-harder-student-org-grant-assignments-4-2-2-2-1">Incorrect. This is the probability that Organization 1 wins a single, specific grant. Remember that there are 3 different grants available.</div>
+</li>
+<li data-component="answer" id="_opt_c"><span class="process-math">\(0.5\)</span></li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="counting-harder-student-org-grant-assignments-4-2-3-2-1">Incorrect.  You must count the distinct successful combinations where Organization 1 occupies one of the three grant slots.</div>
+</li>
+<li data-component="answer" id="_opt_d"><span class="process-math">\(0.3\)</span></li>
+<li data-component="feedback" id="_opt_d">
+<div class="para" id="counting-harder-student-org-grant-assignments-4-2-4-2-1">Incorrect.  You must count the distinct successful combinations where Organization 1 occupies one of the three grant slots.</div>
+</li>
+<li data-component="answer" id="_opt_e"><span class="process-math">\(0.4\)</span></li>
+<li data-component="feedback" id="_opt_e">
+<div class="para" id="counting-harder-student-org-grant-assignments-4-2-5-2-1">Incorrect. This is the probability that Organization 1 does not win any of the grant.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 1.3.5.b"><a href="#counting-harder-student-org-grant-assignments-4" title="Copy heading and permalink for Task 1.3.5.b" aria-label="Copy heading and permalink for Task 1.3.5.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.5: Campus Grant Distribution"><a href="#counting-harder-student-org-grant-assignments" title="Copy heading and permalink for Exercise 1.3.5: Campus Grant Distribution" aria-label="Copy heading and permalink for Exercise 1.3.5: Campus Grant Distribution">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="counting-harder-hackathon-partition"><h4 class="heading">
+<span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hackathon Team Formations.</span>
+</h4>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-counting-harder-hackathon-partition"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"counting-harder-hackathon-partition-2-1\">A class of <span class=\"process-math\">\\(15\\)<\/span> computer science students is collaborating on a major weekend hackathon project. They decide to split up into two development teams of exactly <span class=\"process-math\">\\(7\\)<\/span> students each to work on separate microservices, leaving <span class=\"process-math\">\\(1\\)<\/span> remaining student to act as the overall Project Manager.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#counting-harder-hackathon-partition-2-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"counting-harder-hackathon-partition-2-2\">The two development teams are completely identical in function and do not have specific names or distinct track assignments. How many  ways can the students be divided up? Enter your answer as a whole number.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#counting-harder-hackathon-partition-2-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"counting-harder-hackathon-partition-2-3\"><input type=\"text\" id=\"counting-harder-hackathon-partition-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#counting-harder-hackathon-partition-2-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [25740,25740], "feedback": "\n<div class=\"para\" id=\"counting-harder-hackathon-partition-3-1-1-2-1\">Correct! This problem requires finding the number of ways to partition the 15 students into groups of sizes 7, 7, and 1. We can use the multinomial coefficient for this:<\/div> \n<div class=\"para logical\" id=\"counting-harder-hackathon-partition-3-1-1-2-2\"><div class=\"displaymath process-math\" id=\"counting-harder-hackathon-partition-3-1-1-2-2-1\">\n\\begin{equation*}\n\\binom{15}{7\\  7\\  1} = \\frac{15!}{7! \\cdot 7! \\cdot 1!} = 51,480 \\text{ ways}\n\\end{equation*}\n<\/div><\/div> \n<div class=\"para\" id=\"counting-harder-hackathon-partition-3-1-1-2-3\">Then you have to account for the identical team structures. Because the two  teams are completely indistinguishable, swapping the entire roster of one team with the other does not create a new assignment. So, we must divide by <span class=\"process-math\">\\(2! = 2\\)<\/span> to eliminate over counting.<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="counting-harder-hackathon-partition-4" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="counting-harder-hackathon-partition-4-1">Don’t forget to account for the identical team structures.<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-hackathon-partition-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 1.3.6.1"><a href="#counting-harder-hackathon-partition-4" title="Copy heading and permalink for Hint 1.3.6.1" aria-label="Copy heading and permalink for Hint 1.3.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.6: Hackathon Team Formations"><a href="#counting-harder-hackathon-partition" title="Copy heading and permalink for Exercise 1.3.6: Hackathon Team Formations" aria-label="Copy heading and permalink for Exercise 1.3.6: Hackathon Team Formations">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-multinomial-die-rolls"><h4 class="heading">
+<span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dice Frequencies.</span>
+</h4>
+<div class="introduction" id="ex-multinomial-die-rolls-2">
+<div class="para" id="ex-multinomial-die-rolls-2-1">We have two dice, a fair 6-sided die and a fair 10-sided die. The six sided die is rolled 14 times in a row. The 10-sided die is rolled 8 times in a row. Each individual roll is completely independent of the others.<div class="autopermalink" data-description="Paragraph"><a href="#ex-multinomial-die-rolls-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-die-setup-mc"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-die-setup-mc-1-1">Consider the 6-sided die only. Which of the following expressions correctly counts the number of  14-roll sequences  containing exactly 4 ones and 4 twos?<div class="autopermalink" data-description="Paragraph"><a href="#task-die-setup-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-die-setup-mc" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-die-setup-mc_opt_a" data-correct="">
+<div class="para" id="task-die-setup-mc-2-1-1-1"><span class="process-math">\(\binom{14}{4}\binom{10}{4}4^6\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-die-setup-mc_opt_a">
+<div class="para" id="task-die-setup-mc-2-1-2-1">Correct! First, choose 4 positions out of the 14 available slots for the ones: <span class="process-math">\(\binom{14}{4}\text{.}\)</span> Next, choose 4 positions out of the remaining 10 vacant slots for the twos: <span class="process-math">\(\binom{10}{4}\text{.}\)</span> Then fill the remaining 6 slots with any of the 4 other die numbers (3, 4, 5, or 6), which gives <span class="process-math">\(4^6\)</span> possibilities. Multiplying these together gives the total number of sequences.</div>
+</li>
+<li data-component="answer" id="rs-task-die-setup-mc_opt_b">
+<div class="para" id="task-die-setup-mc-2-2-1-1"><span class="process-math">\(\binom{14}{4}\binom{14}{4}4^6\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-die-setup-mc_opt_b">
+<div class="para" id="task-die-setup-mc-2-2-2-1">Incorrect. After placing the 4 ones (or twos), there are only 10 available slots left in the sequence, not 14.</div>
+</li>
+<li data-component="answer" id="rs-task-die-setup-mc_opt_c">
+<div class="para" id="task-die-setup-mc-2-3-1-1"><span class="process-math">\(\binom{14}{4}\binom{10}{4}6^6\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-die-setup-mc_opt_c">
+<div class="para" id="task-die-setup-mc-2-3-2-1">Incorrect. The remaining 6 positions can only be filled by numbers <em class="emphasis">other than</em> 1 and 2. This leaves exactly 4 options (3, 4, 5, and 6) for each remaining slot.</div>
+</li>
+<li data-component="answer" id="rs-task-die-setup-mc_opt_d">
+<div class="para" id="task-die-setup-mc-2-4-1-1"><span class="process-math">\(\binom{14}{4} + \binom{10}{4} + 4^6\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-die-setup-mc_opt_d">
+<div class="para" id="task-die-setup-mc-2-4-2-1">Incorrect. By the Multiplication Principle,  the components of the answer  must be multiplied together rather than added.</div>
+</li>
+<li data-component="answer" id="rs-task-die-setup-mc_opt_e">
+<div class="para" id="task-die-setup-mc-2-5-1-1"><span class="process-math">\(6^{14}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-die-setup-mc_opt_e">
+<div class="para" id="task-die-setup-mc-2-5-2-1">Incorrect. This counts the size of the sample space.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 1.3.7.a"><a href="#task-die-setup-mc" title="Copy heading and permalink for Task 1.3.7.a" aria-label="Copy heading and permalink for Task 1.3.7.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-die-prob-input"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-die-prob-input"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-die-prob-input-1-1\">Considering just the 6-sided die again. Compute the probability that the 14 rolls result in exactly 4 ones and exactly 4 twos. Write your answer as a decimal rounded to 4 decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-die-prob-input-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-die-prob-input-1-2\">Probability = <input type=\"text\" id=\"ex-multinomial-die-rolls-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-die-prob-input-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.011,0.011], "feedback": "\n<div class=\"para\" id=\"task-die-prob-input-2-1-1-2-1\">Correct! To compute the probability, divide the number of successful sequence arrangements from part (a) by the total size of the  sample space: <span class=\"process-math\">\\(6^{14} \\text{.}\\)<\/span><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 1.3.7.b"><a href="#task-die-prob-input" title="Copy heading and permalink for Task 1.3.7.b" aria-label="Copy heading and permalink for Task 1.3.7.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-die-prob-input2"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-die-prob-input2"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-die-prob-input2-1-1\">Now consider just the 10-sided die. Compute the probability that its 8 rolls result in 2 nines being rolled, while the rest are numbers less than or equal to seven. Write your answer as a decimal rounded to 4 decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-die-prob-input2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-die-prob-input2-1-2\">Probability  = <input type=\"text\" id=\"ex-multinomial-die-rolls-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-die-prob-input2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0329,0.0329], "feedback": "\n<div class=\"para logical\" id=\"task-die-prob-input2-2-1-1-2-1\"><div class=\"para\">Correct! First, choose 2 positions out of the 8 available slots for the nines.  Then fill the remaining 6 slots with numbers less than or equal to seven, which gives us <span class=\"process-math\">\\(7^6\\)<\/span> possibilities. Thus, the probability is:<\/div><div class=\"displaymath process-math\" id=\"task-die-prob-input2-2-1-1-2-1-2\">\n\\begin{equation*}\n\\frac{\\binom{8}{2}7^6}{10^{8}} \n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 1.3.7.c"><a href="#task-die-prob-input2" title="Copy heading and permalink for Task 1.3.7.c" aria-label="Copy heading and permalink for Task 1.3.7.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.7: Dice Frequencies"><a href="#ex-multinomial-die-rolls" title="Copy heading and permalink for Exercise 1.3.7: Dice Frequencies" aria-label="Copy heading and permalink for Exercise 1.3.7: Dice Frequencies">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 1.3: Interactive Exercises"><a href="#hw-counting-harder" title="Copy heading and permalink for Exercises 1.3: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 1.3: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-counting-harder-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="counting-harder-coffee-order"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Coffee Order.</span>
+</h4>
+<div class="para" id="counting-harder-coffee-order-2-1">A coffee shop has 4 different types of coffee. You can order your coffee in a small, medium, or large cup. You can also choose whether you want to add cream, sugar, or milk (any combination is possible, for example, you can choose to add all three). In how many ways can you order your coffee?<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-coffee-order-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.1: Coffee Order"><a href="#counting-harder-coffee-order" title="Copy heading and permalink for Exercise 1.3.1: Coffee Order" aria-label="Copy heading and permalink for Exercise 1.3.1: Coffee Order">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="counting-harder-housing-multinomial-prob"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Campus Housing Room Assignments.</span>
+</h4>
+<div class="para" id="counting-harder-housing-multinomial-prob-2-1">Refer to the problem above with the same name.<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-housing-multinomial-prob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="counting-harder-housing-multinomial-prob-2-2">A group of <span class="process-math">\(12\)</span> college students are selected to live on a specialized floor in a residence hall. The floor has exactly <span class="process-math">\(6\)</span> rooms available that must be filled: one triple room (<span class="process-math">\(3\)</span> students), three double rooms (<span class="process-math">\(2\)</span> students each), and three single rooms (<span class="process-math">\(1\)</span> student each).<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-housing-multinomial-prob-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="counting-harder-housing-multinomial-prob-2-3">Suppose two of the students, Alex and Jordan, are best friends. What is the probability that they are assigned to room together in the same room? Recall: The housing department assigns the <span class="process-math">\(12\)</span> students completely at random to fill the rooms.<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-housing-multinomial-prob-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.2: Campus Housing Room Assignments"><a href="#counting-harder-housing-multinomial-prob" title="Copy heading and permalink for Exercise 1.3.2: Campus Housing Room Assignments" aria-label="Copy heading and permalink for Exercise 1.3.2: Campus Housing Room Assignments">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="counting-harder-powerball-lose"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="counting-harder-powerball-lose-1">
+<div class="para" id="counting-harder-powerball-lose-1-1">See the Powerball in-class activity.<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-powerball-lose-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="counting-harder-powerball-lose-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="counting-harder-powerball-lose-2-1-1">What outcomes result in someone not winning a prize?<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-powerball-lose-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.3.3.a"><a href="#counting-harder-powerball-lose-2" title="Copy heading and permalink for Task 1.3.3.a" aria-label="Copy heading and permalink for Task 1.3.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="counting-harder-powerball-lose-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="counting-harder-powerball-lose-3-1-1">Compute the probability for each of these outcomes.<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-powerball-lose-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.3.3.b"><a href="#counting-harder-powerball-lose-3" title="Copy heading and permalink for Task 1.3.3.b" aria-label="Copy heading and permalink for Task 1.3.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="counting-harder-powerball-lose-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="counting-harder-powerball-lose-4-1-1">What is the overall probability of not winning a prize when playing Powerball?<div class="autopermalink" data-description="Paragraph"><a href="#counting-harder-powerball-lose-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.3.3.c"><a href="#counting-harder-powerball-lose-4" title="Copy heading and permalink for Task 1.3.3.c" aria-label="Copy heading and permalink for Task 1.3.3.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.3"><a href="#counting-harder-powerball-lose" title="Copy heading and permalink for Exercise 1.3.3" aria-label="Copy heading and permalink for Exercise 1.3.3">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 1.3: Written Exercises"><a href="#hw-counting-harder-turn-in" title="Copy heading and permalink for Exercises 1.3: Written Exercises" aria-label="Copy heading and permalink for Exercises 1.3: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 1.3: More Counting Practice"><a href="#sec-section-counting-harder" title="Copy heading and permalink for Section 1.3: More Counting Practice" aria-label="Copy heading and permalink for Section 1.3: More Counting Practice">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-section-counting-simple.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-chapter-Set-Operations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

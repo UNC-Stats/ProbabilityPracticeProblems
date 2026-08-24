@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Common Discrete Random Variables</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-chapter-neg-binomial-DRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Discrete-RVs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-chapter-binom-approx-hyper-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Basic Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Basic Probability Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Practice Each Counting Technique</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Problems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-chapter-uniform-DRV.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Discrete Uniform Random Variable</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-chapter-neg-binomial-DRV.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Negative Binomial</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-common-DRV.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-common-DRV.html#hw-common-discrete-rv-bb" class="internal"><span class="codenumber">4.3</span> <span class="title">Interactive Exercises - Bernoulli and Binomial</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-common-DRV.html#hw-common-discrete-rv-hg" class="internal"><span class="codenumber">4.3</span> <span class="title">Interactive Exercises - Hypergeometric</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-common-DRV.html#hw-common-discrete-rv-geo" class="internal"><span class="codenumber">4.3</span> <span class="title">Interactive Exercises - Geometric</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-common-DRV.html#hw-common-discrete-rv-nb" class="internal"><span class="codenumber">4.3</span> <span class="title">Interactive Exercises - Negative Binomial</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-common-DRV.html#hw-common-discrete-rv-poi" class="internal"><span class="codenumber">4.3</span> <span class="title">Interactive Exercises - Poisson</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">4.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-chapter-binom-approx-hyper-DRV.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Discrete RVs</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-common-CRV.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-common-CRV.html#hw-common-cont-rv" class="internal"><span class="codenumber">8.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-common-CRV.html#hw-common-cont-rv-turn-in" class="internal"><span class="codenumber">8.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">9</span> <span class="title">Jointly Distributed Random Variables</span></a></div></li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-common-DRV">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Common Discrete Random Variables</span>
+</h2>
+<div class="para" id="sec-section-common-DRV-2">Write intro to homework set.....  Goal, Purpose, Instructions....<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-common-DRV-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="exercises" id="hw-common-discrete-rv-bb">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises - Bernoulli and Binomial</span>
+</h3>
+<section class="introduction" id="hw-common-discrete-rv-bb-2">
+<div class="para" id="hw-common-discrete-rv-bb-2-1">Write intro to interactive homework set.....<div class="autopermalink" data-description="Paragraph"><a href="#hw-common-discrete-rv-bb-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<article class="exercise exercise-like" id="ex-cloud-load-balancer-refined"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete Distributions: Server Load Balancing Architecture.</span>
+</h4>
+<div class="introduction" id="ex-cloud-load-balancer-refined-2">
+<div class="para" id="ex-cloud-load-balancer-refined-2-1">An enterprise cloud-computing load balancer dynamically distributes incoming requests across seven distinct backup processing servers, labeled with the unique identifiers: <code class="code-inline tex2jax_ignore">Alpha</code>, <code class="code-inline tex2jax_ignore">Beta</code>, <code class="code-inline tex2jax_ignore">Gamma</code>, <code class="code-inline tex2jax_ignore">Delta</code>, <code class="code-inline tex2jax_ignore">Epsilon</code>, <code class="code-inline tex2jax_ignore">Zeta</code>, and <code class="code-inline tex2jax_ignore">Eta</code>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-cloud-load-balancer-refined-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-cloud-load-balancer-refined-2-2">Assume that at any given moment, the routing algorithm ensures all seven server nodes are equally likely to be selected, completely independent of which servers have processed previous request payloads. Let the random variable <span class="process-math">\(X\)</span> represent the specific identifier node chosen for the next single incoming transaction task.<div class="autopermalink" data-description="Paragraph"><a href="#ex-cloud-load-balancer-refined-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-cloud-prob-single-numeric"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-cloud-prob-single-numeric"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-cloud-prob-single-numeric-1-1\">What is the probability that the server labeled <code class=\"code-inline tex2jax_ignore\">Zeta<\/code> is chosen for the next incoming transaction? Enter your answer as decimal rounded to three decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cloud-prob-single-numeric-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-cloud-prob-single-numeric-1-2\"><input type=\"text\" id=\"ex-cloud-load-balancer-refined-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cloud-prob-single-numeric-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.143,0.143], "feedback": "\n<div class=\"para\" id=\"task-cloud-prob-single-numeric-2-1-1-2-1\">Correct!  Because there are exactly seven unique server outcomes in the sample space and all choices are completely symmetric and equally likely, the probability of selecting any single specific node is <span class=\"process-math\">\\(\\frac{1}{7}\\text{.}\\)<\/span><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.1.a"><a href="#task-cloud-prob-single-numeric" title="Copy heading and permalink for Task 4.3.1.a" aria-label="Copy heading and permalink for Task 4.3.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cloud-is-uniform-refined"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" data-multipleanswers="false" id="rs-task-cloud-is-uniform-refined">
+<div class="para" id="task-cloud-is-uniform-refined-1-1">The random variable <span class="process-math">\(X\)</span> can be considered a discrete uniform random variable.<div class="autopermalink" data-description="Paragraph"><a href="#task-cloud-is-uniform-refined-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<li data-component="answer" id="rs-task-cloud-is-uniform-refined_opt_t" data-correct=""><p>True.</p></li>
+<li data-component="feedback" id="rs-task-cloud-is-uniform-refined_opt_t">
+<div class="para" id="task-cloud-is-uniform-refined-2-1">By definition, a random variable is discrete uniform if its distribution maps an identical, constant probability mass to every single distinct outcome in its finite set pool. Here, each of the seven options has a probability of exactly <span class="process-math">\(\frac{1}{7}\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-uniform-refined_opt_f"><p>False.</p></li>
+<li data-component="feedback" id="rs-task-cloud-is-uniform-refined_opt_f">
+<div class="para" id="task-cloud-is-uniform-refined-2-1">By definition, a random variable is discrete uniform if its distribution maps an identical, constant probability mass to every single distinct outcome in its finite set pool. Here, each of the seven options has a probability of exactly <span class="process-math">\(\frac{1}{7}\text{.}\)</span>
+</div>
+</li>
+</ul></div></div>
+<div class="autopermalink" data-description="Task 4.3.1.b"><a href="#task-cloud-is-uniform-refined" title="Copy heading and permalink for Task 4.3.1.b" aria-label="Copy heading and permalink for Task 4.3.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cloud-is-bernoulli-refined"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-cloud-is-bernoulli-refined-1-1">Why would the random variable <span class="process-math">\(X\)</span> not be considered a Bernoulli random variable?<div class="autopermalink" data-description="Paragraph"><a href="#task-cloud-is-bernoulli-refined-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-cloud-is-bernoulli-refined" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_a" data-correct="">A Bernoulli random variable is strictly limited to an outcome space containing exactly two binary values (usually coded as <span class="process-math">\(0\)</span> and <span class="process-math">\(1\)</span>), whereas <span class="process-math">\(X\)</span> has seven distinct outcomes.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_a">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-1-2-1">Correct! A Bernoulli distribution is defined exclusively over a binary outcome trial (success or failure). Because <span class="process-math">\(X\)</span> can track seven separate target locations, it does not fit a single Bernoulli structure.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_b">Each transaction trial behaves independently and can be run over and over again without replacement limits.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_b">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-2-2-1">Incorrect. While independence matches the baseline criteria for compound trials, it does not turn a multi-outcome variable into a primary binary Bernoulli variable.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_c">The sum of all probabilities in the uniform support pool adds up to 1.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_c">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-3-2-1">Incorrect. Every valid probability distribution must have probabilities that sum to 1; this property is not unique to Bernoulli trials.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_d">No, because a Bernoulli variable requires drawing items without replacement, which forces probabilities to shift dynamically.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_d">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-4-2-1">Incorrect. You are confusing a Bernoulli trial with a hypergeometric draw. Bernoulli trials must have independent setups with a constant probability of success across binary options.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_e">Yes, because any multi-categorical model can be classified as a Bernoulli variable as long as the sample space is finite.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_e">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-5-2-1">Incorrect. A finite sample space is required for any discrete variable, but a Bernoulli distribution specifically restricts the number of categories to exactly two.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_f">No, because the expected value of a Bernoulli variable must always be greater than 1, which is impossible given a uniform sample size of seven.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_f">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-6-2-1">Incorrect. The expected value of a Bernoulli random variable is simply its success probability <span class="process-math">\(p\text{,}\)</span> which must always fall strictly between 0 and 1.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.1.c"><a href="#task-cloud-is-bernoulli-refined" title="Copy heading and permalink for Task 4.3.1.c" aria-label="Copy heading and permalink for Task 4.3.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cloud-define-distribution"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-cloud-define-distribution-1-1">Consider a sequence of <span class="process-math">\(5\)</span> consecutive transactions observed running through the load balancer. Let a new random variable <span class="process-math">\(Y\)</span> represent the total number of times the server node <code class="code-inline tex2jax_ignore">Alpha</code> is chosen across these five trials. What kind of random variable is <span class="process-math">\(Y\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-cloud-define-distribution-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-cloud-define-distribution" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-cloud-define-distribution_opt_a" data-correct="">
+<dfn class="terminology">Binomial</dfn> with parameters <span class="process-math">\(n = 5\)</span> and <span class="process-math">\(p = \frac{1}{7}\text{.}\)</span>
+</li>
+<li data-component="feedback" id="rs-task-cloud-define-distribution_opt_a">
+<div class="para" id="task-cloud-define-distribution-2-1-2-1">Correct! We are counting the total number of successes (routing to <code class="code-inline tex2jax_ignore">Alpha</code>) across a fixed sequence of <span class="process-math">\(n = 5\)</span> independent trials, where each trial has a constant binary success probability of <span class="process-math">\(p = \frac{1}{7}\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-define-distribution_opt_b">
+<dfn class="terminology">Geometric distribution</dfn> with parameter <span class="process-math">\(p = \frac{1}{7}\text{.}\)</span>
+</li>
+<li data-component="feedback" id="rs-task-cloud-define-distribution_opt_b">
+<div class="para" id="task-cloud-define-distribution-2-2-2-1">Incorrect. A geometric model tracks the number of attempts needed to reach the *very first* success. Here, we are observing a fixed window of exactly 5 trials and counting the total accumulation of successes.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-define-distribution_opt_c">
+<dfn class="terminology">Hypergeometric distribution</dfn> with parameters <span class="process-math">\(N = 7\text{,}\)</span> <span class="process-math">\(n = 5\text{,}\)</span> and <span class="process-math">\(k = 1\text{.}\)</span>
+</li>
+<li data-component="feedback" id="rs-task-cloud-define-distribution_opt_c">
+<div class="para" id="task-cloud-define-distribution-2-3-2-1">Incorrect. Hypergeometric distributions apply when sampling occurs *without replacement*, causing the odds to shift. Because the routing algorithm treats each choice independently, the parameters do not alter between runs.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-define-distribution_opt_d">
+<dfn class="terminology">Negative Binomial distribution</dfn> with parameters <span class="process-math">\(r = 5\)</span> and <span class="process-math">\(p = \frac{1}{7}\text{.}\)</span>
+</li>
+<li data-component="feedback" id="rs-task-cloud-define-distribution_opt_d">
+<div class="para" id="task-cloud-define-distribution-2-4-2-1">Incorrect. A negative binomial distribution counts the number of failures or total trials encountered before accumulating a fixed number of target successes r, which is not the case here.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-define-distribution_opt_e">
+<div class="para" id="task-cloud-define-distribution-2-5-1-1">Discrete Uniform distribution with parameter k = 5.</div>
+</li>
+<li data-component="feedback" id="rs-task-cloud-define-distribution_opt_e">
+<div class="para" id="task-cloud-define-distribution-2-5-2-1">Incorrect. While the underlying single selection X is uniform, the aggregated count of occurrences Y across multiple independent trials is not equally likely across its values (e.g., getting zero successes is far more likely than getting three).</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.1.d"><a href="#task-cloud-define-distribution" title="Copy heading and permalink for Task 4.3.1.d" aria-label="Copy heading and permalink for Task 4.3.1.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cloud-compute-probability-numeric"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-cloud-compute-probability-numeric"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-cloud-compute-probability-numeric-1-1\">Using the distribution model defined in the previous part, compute the exact probability that the sequence of <span class=\"process-math\">\\(5\\)<\/span> consecutive transactions does not contain a single transaction routed to the <code class=\"code-inline tex2jax_ignore\">Alpha<\/code> server Enter your answer as a decimal rounded to four decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cloud-compute-probability-numeric-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-cloud-compute-probability-numeric-1-2\"><input type=\"text\" id=\"ex-cloud-load-balancer-refined-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cloud-compute-probability-numeric-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "\n<div class=\"para logical\" id=\"task-cloud-compute-probability-numeric-4-1\"><div class=\"para\">To evaluate the probability of getting zero allocations to server <code class=\"code-inline tex2jax_ignore\">Alpha<\/code> across <span class=\"process-math\">\\(5\\)<\/span> trials, we apply the binomial probability mass function:<\/div><div class=\"displaymath process-math\" id=\"task-cloud-compute-probability-numeric-4-1-3\">\n\\begin{equation*}\nP(Y = y) = \\binom{n}{y} p^y (1-p)^{n-y}\n\\end{equation*}\n<\/div><div class=\"para\">where the number of trials is <span class=\"process-math\">\\(n = 5\\text{,}\\)<\/span> the success parameter is <span class=\"process-math\">\\(p = \\frac{1}{7}\\text{,}\\)<\/span> and the target number of successes is <span class=\"process-math\">\\(y = 0\\text{:}\\)<\/span><\/div><div class=\"displaymath process-math\" id=\"task-cloud-compute-probability-numeric-4-1-7\">\n\\begin{align*}\nP(Y = 0) \\amp = \\binom{5}{0} \\left(\\frac{1}{7}\\right)^0 \\left(\\frac{6}{7}\\right)^{5-0}\\\\\n\\amp = 1 \\times 1 \\times \\left(\\frac{6}{7}\\right)^5\\\\\n\\amp  \\approx 0.462664366\n\\end{align*}\n<\/div><div class=\"para\">Rounding to four decimal places yields <span class=\"process-math\">\\(0.4627\\text{.}\\)<\/span><\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cloud-compute-probability-numeric-4-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.4627,0.4627], "feedback": "\n<div class=\"para\" id=\"task-cloud-compute-probability-numeric-2-1-1-2-1\">Correct! Four out of 8 outcomes in the sample space involve the second child being female.<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-cloud-compute-probability-numeric-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-cloud-compute-probability-numeric-3-1">The probability of *not* selecting server <code class="code-inline tex2jax_ignore">Alpha</code> on any single given turn is <span class="process-math">\(1 - \frac{1}{7} = \frac{6}{7}\text{.}\)</span> Since the trials are independent, evaluate <span class="process-math">\(\left(\frac{6}{7}\right)^3\)</span> to find the probability that this failure occurs three times in a row.<div class="autopermalink" data-description="Paragraph"><a href="#task-cloud-compute-probability-numeric-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 4.3.1.e.1"><a href="#task-cloud-compute-probability-numeric-3" title="Copy heading and permalink for Hint 4.3.1.e.1" aria-label="Copy heading and permalink for Hint 4.3.1.e.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.1.e"><a href="#task-cloud-compute-probability-numeric" title="Copy heading and permalink for Task 4.3.1.e" aria-label="Copy heading and permalink for Task 4.3.1.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 4.3.1: Discrete Distributions: Server Load Balancing Architecture"><a href="#ex-cloud-load-balancer-refined" title="Copy heading and permalink for Exercise 4.3.1: Discrete Distributions: Server Load Balancing Architecture" aria-label="Copy heading and permalink for Exercise 4.3.1: Discrete Distributions: Server Load Balancing Architecture">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-medical-treatment-binomial-updated-p"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete Distributions: Clinical Trial Therapeutic Efficacy.</span>
+</h4>
+<div class="introduction" id="ex-medical-treatment-binomial-updated-p-2">
+<div class="para" id="ex-medical-treatment-binomial-updated-p-2-1">Historical epidemiological data demonstrates that <span class="process-math">\(55\%\)</span> of all patients afflicted by a specific chronic inflammatory illness can successfully achieve temporary remission and recover naturally without any clinical intervention.<div class="autopermalink" data-description="Paragraph"><a href="#ex-medical-treatment-binomial-updated-p-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-medical-treatment-binomial-updated-p-2-2">A biomedical research group develops an innovative targeted therapeutic treatment. They randomly select <span class="process-math">\(10\)</span> diagnosed patients and administer the new treatment; <span class="process-math">\(9\)</span> of these patients achieve full clinical remission shortly thereafter. To analyze whether the new therapy provides a statistically significant benefit, assume the baseline hypothesis that the treatment is completely ineffective and worthless.<div class="autopermalink" data-description="Paragraph"><a href="#ex-medical-treatment-binomial-updated-p-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-trial-rv-type-v2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-trial-rv-type-v2-1-1">Let the random variable <span class="process-math">\(Y\)</span> represent the total number of patients who successfully achieve remission out of the 10 selected. Under the assumption that the new treatment is completely ineffective, what type of random variable is <span class="process-math">\(Y\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-trial-rv-type-v2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-trial-rv-type-v2" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-trial-rv-type-v2_opt_a" data-correct="">
+<dfn class="terminology">Binomial distribution</dfn>, because there is a fixed number of independent patient observations (<span class="process-math">\(n = 10\)</span>), each trial results in a binary outcome (recovers or fails to recover), and the baseline recovery probability remains constant at <span class="process-math">\(p = 0.55\text{.}\)</span>
+</li>
+<li data-component="feedback" id="rs-task-trial-rv-type-v2_opt_a">
+<div class="para" id="task-trial-rv-type-v2-2-1-2-1">Correct! Because we assume the treatment is worthless, the probability of recovery on each trial stays locked at the natural background rate of <span class="process-math">\(0.55\text{.}\)</span> Since the patient responses behave independently and the total sample size is fixed at <span class="process-math">\(10\text{,}\)</span> this satisfies all criteria for a binomial model.</div>
+</li>
+<li data-component="answer" id="rs-task-trial-rv-type-v2_opt_b">
+<dfn class="terminology">Geometric distribution</dfn>, because we are measuring a sequence of binary recovery outcomes across a group of clinical subjects.</li>
+<li data-component="feedback" id="rs-task-trial-rv-type-v2_opt_b">
+<div class="para" id="task-trial-rv-type-v2-2-2-2-1">Incorrect. A geometric model counts the number of separate trials required to reach the very first success. Here, the number of total trials is pre-fixed at 10, and we are counting the total accumulated successes.</div>
+</li>
+<li data-component="answer" id="rs-task-trial-rv-type-v2_opt_c">
+<dfn class="terminology">Hypergeometric distribution</dfn>, because we are selecting a subset of clinical subjects out of a specific regional medical facility pool.</li>
+<li data-component="feedback" id="rs-task-trial-rv-type-v2_opt_c">
+<div class="para" id="task-trial-rv-type-v2-2-3-2-1">Incorrect. Hypergeometric distributions apply when sampling is conducted <dfn class="terminology">without replacement</dfn> from a small, finite total population, causing probabilities to shift on each draw. The problem specifies a random selection from an overall large background patient environment.</div>
+</li>
+<li data-component="answer" id="rs-task-trial-rv-type-v2_opt_d">
+<dfn class="terminology">Poisson distribution</dfn>, because we are counting patient recoveries that occur over a fixed window of clinical observation time.</li>
+<li data-component="feedback" id="rs-task-trial-rv-type-v2_opt_d">
+<div class="para" id="task-trial-rv-type-v2-2-4-2-1">Incorrect. While time is mentioned conceptually, the mathematical support is explicitly a count of successes across a finite, bounded pool of 10 individual patient subjects.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.2.a"><a href="#task-trial-rv-type-v2" title="Copy heading and permalink for Task 4.3.2.a" aria-label="Copy heading and permalink for Task 4.3.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-trial-prob-at-least-nine-v2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-trial-prob-at-least-nine-v2"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-trial-prob-at-least-nine-v2-1-1\">Under the assumption that the new treatment is completely ineffective, compute the exact probability that at least <span class=\"process-math\">\\(9\\)<\/span> of the ten patients successfully achieve remission. Enter your answer as a decimal rounded to four decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-trial-prob-at-least-nine-v2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-trial-prob-at-least-nine-v2-1-2\"><input type=\"text\" id=\"ex-medical-treatment-binomial-updated-p-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-trial-prob-at-least-nine-v2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "\n<div class=\"para logical\" id=\"task-trial-prob-at-least-nine-v2-4-1\"><div class=\"para\">We evaluate the cumulative tail probability using the binomial mass function:<\/div><div class=\"displaymath process-math\" id=\"task-trial-prob-at-least-nine-v2-4-1-1\">\n\\begin{equation*}\nP(Y = y) = \\binom{10}{y} (0.55)^y (0.45)^{10-y}\n\\end{equation*}\n<\/div>\n<ul class=\"disc\" id=\"task-trial-prob-at-least-nine-v2-4-1-2\">\n<li id=\"task-trial-prob-at-least-nine-v2-4-1-2-1\">\n<div class=\"para logical\" id=\"task-trial-prob-at-least-nine-v2-4-1-2-1-1\"><div class=\"para\">For exactly 9 recoveries (<span class=\"process-math\">\\(y = 9\\)<\/span>):<\/div><div class=\"displaymath process-math\" id=\"task-trial-prob-at-least-nine-v2-4-1-2-1-1-2\">\n\\begin{equation*}\nP(Y = 9) = \\binom{10}{9} (0.55)^9 (0.45)^1 = 10 \\times 0.0046049 \\times 0.45 \\approx 0.02072\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-trial-prob-at-least-nine-v2-4-1-2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-trial-prob-at-least-nine-v2-4-1-2-1\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li>\n<li id=\"task-trial-prob-at-least-nine-v2-4-1-2-2\">\n<div class=\"para logical\" id=\"task-trial-prob-at-least-nine-v2-4-1-2-2-1\"><div class=\"para\">For exactly 10 recoveries (<span class=\"process-math\">\\(y = 10\\)<\/span>):<\/div><div class=\"displaymath process-math\" id=\"task-trial-prob-at-least-nine-v2-4-1-2-2-1-2\">\n\\begin{equation*}\nP(Y = 10) = \\binom{10}{10} (0.55)^{10} (0.45)^0 = 1 \\times 0.0025327 \\times 1 \\approx 0.00253\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-trial-prob-at-least-nine-v2-4-1-2-2-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-trial-prob-at-least-nine-v2-4-1-2-2\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li><\/ul><div class=\"para\">Summing these individual probabilities together yields:<\/div><div class=\"displaymath process-math\" id=\"task-trial-prob-at-least-nine-v2-4-1-3\">\n\\begin{equation*}\nP(Y \\ge 9) = 0.02072 + 0.00253 = 0.02325 \\implies \\text{Recalculating precise values: } 0.0233 \\text{ for exact match}\n\\end{equation*}\n<\/div><div class=\"para\">Let’s double-check the arithmetic via formula: <span class=\"process-math\">\\(10 \\cdot (0.55)^9 \\cdot 0.45 + (0.55)^{10} = 0.020722 + 0.002533 = 0.023255 \\approx 0.0233\\text{.}\\)<\/span><\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-trial-prob-at-least-nine-v2-4-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0233,0.0233], "feedback": "\n<div class=\"para\" id=\"task-trial-prob-at-least-nine-v2-2-1-1-2-1\">Correct! Four out of 8 outcomes in the sample space involve the second child being female.<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-trial-prob-at-least-nine-v2-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-trial-prob-at-least-nine-v2-3-1">To find the probability of at least 9, calculate the sum of the two mutually exclusive target cases: <span class="process-math">\(P(Y \ge 9) = P(Y = 9) + P(Y = 10)\text{.}\)</span> Apply the binomial formula <span class="process-math">\(\binom{n}{y}p^y(1-p)^{n-y}\)</span> using <span class="process-math">\(n = 10\)</span> and <span class="process-math">\(p = 0.55\)</span> for both values.<div class="autopermalink" data-description="Paragraph"><a href="#task-trial-prob-at-least-nine-v2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 4.3.2.b.1"><a href="#task-trial-prob-at-least-nine-v2-3" title="Copy heading and permalink for Hint 4.3.2.b.1" aria-label="Copy heading and permalink for Hint 4.3.2.b.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.2.b"><a href="#task-trial-prob-at-least-nine-v2" title="Copy heading and permalink for Task 4.3.2.b" aria-label="Copy heading and permalink for Task 4.3.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-trial-expectation-v2"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-trial-expectation-v2"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-trial-expectation-v2-1-1\">If the therapeutic treatment is absolutely ineffective, how many of the 10 selected patients would you expect to achieve remission naturally? Enter your answer as a decimal value.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-trial-expectation-v2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-trial-expectation-v2-1-2\"><input type=\"text\" id=\"ex-medical-treatment-binomial-updated-p-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-trial-expectation-v2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [5.5,5.5], "feedback": "\n<div class=\"para logical\" id=\"task-trial-expectation-v2-2-1-1-2-1\"><div class=\"para\">Yes! Using the mean formula for a binomial random variable where <span class=\"process-math\">\\(n = 10\\)<\/span> and <span class=\"process-math\">\\(p = 0.55\\text{:}\\)<\/span><\/div><div class=\"displaymath process-math\" id=\"task-trial-expectation-v2-2-1-1-2-1-3\">\n\\begin{equation*}\nE(Y) = n \\cdot p = 10 \\times 0.55 = 5.5\n\\end{equation*}\n<\/div><div class=\"para\">We would expect an average of <span class=\"process-math\">\\(5.5\\)<\/span> patients to achieve remission on their own.<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-trial-expectation-v2-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-trial-expectation-v2-3-1">The expected value (mean) of a binomial distribution simplifies down directly to the product formula: <span class="process-math">\(E(Y) = n \cdot p\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-trial-expectation-v2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 4.3.2.c.1"><a href="#task-trial-expectation-v2-3" title="Copy heading and permalink for Hint 4.3.2.c.1" aria-label="Copy heading and permalink for Hint 4.3.2.c.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.2.c"><a href="#task-trial-expectation-v2" title="Copy heading and permalink for Task 4.3.2.c" aria-label="Copy heading and permalink for Task 4.3.2.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-trial-statistical-conclusion-v2"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-trial-statistical-conclusion-v2-1-1">Based on your calculations for the expectation and tail probability, do you think it is reasonable to conclude that the new medical treatment is actually ineffective, or is that baseline assumption likely incorrect?<div class="autopermalink" data-description="Paragraph"><a href="#task-trial-statistical-conclusion-v2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-trial-statistical-conclusion-v2" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-trial-statistical-conclusion-v2_opt_a" data-correct="">The baseline assumption that the treatment is ineffective is likely incorrect. Observing 9 patient recoveries is higher than the natural expected average of 5.5, and the probability of getting 9 or more recoveries completely by chance is low (<span class="process-math">\(P \approx 0.0233\)</span>), indicating the therapy is highly likely to be genuinely effective.</li>
+<li data-component="feedback" id="rs-task-trial-statistical-conclusion-v2_opt_a">
+<div class="para" id="task-trial-statistical-conclusion-v2-2-1-2-1">Correct! This aligns with standard alpha significance testing thresholds (typically <span class="process-math">\(\alpha = 0.05\)</span>). Because a tail probability of <span class="process-math">\(2.33\%\)</span> falls below the <span class="process-math">\(5\%\)</span> significance benchmark, researchers would reject the baseline hypothesis and determine that the new treatment provides a statistically significant improvement over natural background recovery rates.</div>
+</li>
+<li data-component="answer" id="rs-task-trial-statistical-conclusion-v2_opt_b">The baseline assumption that the treatment is ineffective is correct. Since the tail probability of <span class="process-math">\(0.0233\)</span> is greater than zero, it remains entirely possible that this surge in patient recoveries was an ordinary random fluctuation.</li>
+<li data-component="feedback" id="rs-task-trial-statistical-conclusion-v2_opt_b">
+<div class="para" id="task-trial-statistical-conclusion-v2-2-2-2-1">Incorrect. While it is not physically impossible to get 9 or 10 recoveries by pure luck, landing below the conventional <span class="process-math">\(5\%\)</span> threshold gives enough mathematical confidence to support efficacy in medical research.</div>
+</li>
+<li data-component="answer" id="rs-task-trial-statistical-conclusion-v2_opt_c">The baseline assumption is correct, because an expected value of 5.5 naturally rounds up to 6, and an observation of 9 is close enough to 6 to be ignored as background variance.</li>
+<li data-component="feedback" id="rs-task-trial-statistical-conclusion-v2_opt_c">
+<li data-component="answer" id="rs-task-trial-statistical-conclusion-v2_opt_d">
+<div class="para" id="task-trial-statistical-conclusion-v2-2-4-1-1">Incorrect. A difference of several patients out of a small group of 10 creates an entirely distinct distribution profile, moving far beyond ordinary background variance limits.</div>
+</li>
+<li data-component="feedback" id="rs-task-trial-statistical-conclusion-v2_opt_d">
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.2.d"><a href="#task-trial-statistical-conclusion-v2" title="Copy heading and permalink for Task 4.3.2.d" aria-label="Copy heading and permalink for Task 4.3.2.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 4.3.2: Discrete Distributions: Clinical Trial Therapeutic Efficacy"><a href="#ex-medical-treatment-binomial-updated-p" title="Copy heading and permalink for Exercise 4.3.2: Discrete Distributions: Clinical Trial Therapeutic Efficacy" aria-label="Copy heading and permalink for Exercise 4.3.2: Discrete Distributions: Clinical Trial Therapeutic Efficacy">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 4.3: Interactive Exercises - Bernoulli and Binomial"><a href="#hw-common-discrete-rv-bb" title="Copy heading and permalink for Exercises 4.3: Interactive Exercises - Bernoulli and Binomial" aria-label="Copy heading and permalink for Exercises 4.3: Interactive Exercises - Bernoulli and Binomial">🔗</a></div>
+</section>
+<section class="exercises" id="hw-common-discrete-rv-hg">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises - Hypergeometric</span>
+</h3>
+<section class="introduction" id="hw-common-discrete-rv-hg-2">
+<div class="para" id="hw-common-discrete-rv-hg-2-1">Write intro to interactive homework set.....<div class="autopermalink" data-description="Paragraph"><a href="#hw-common-discrete-rv-hg-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<article class="exercise exercise-like" id="ex-cookie-jar-hypergeometric-expanded"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete Distributions: The Cookie Jar Selection.</span>
+</h4>
+<div class="introduction" id="ex-cookie-jar-hypergeometric-expanded-2">
+<div class="para" id="ex-cookie-jar-hypergeometric-expanded-2-1">A cookie jar currently holds <span class="process-math">\(21\)</span> total cookies: <span class="process-math">\(13\)</span> are chocolate-chip cookies, and <span class="process-math">\(8\)</span> are brussels-sprout-with-turnip-chip cookies. You pick <span class="process-math">\(3\)</span> cookies at random from the jar without looking.<div class="autopermalink" data-description="Paragraph"><a href="#ex-cookie-jar-hypergeometric-expanded-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-cookie-rv-why-hypergeometric-v2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-cookie-rv-why-hypergeometric-v2-1-1">Let the random variable <span class="process-math">\(X\)</span> represent the number of brussels-sprout-with-turnip-chip cookies found in your sample. This scenario is modeled using a <dfn class="terminology">Hypergeometric distribution</dfn>. Which of the following best explains why the Hypergeometric model applies here?<div class="autopermalink" data-description="Paragraph"><a href="#task-cookie-rv-why-hypergeometric-v2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-cookie-rv-why-hypergeometric-v2" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_a" data-correct="">Because we are sampling a fixed number of items from a finite population containing two distinct categories without replacement, meaning individual trial outcomes are dependent.</li>
+<li data-component="feedback" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_a">
+<div class="para" id="task-cookie-rv-why-hypergeometric-v2-2-1-2-1">Correct! A hypergeometric random variable tracks a fixed sample size drawn from a small finite population divided into two groups. Because cookies are eaten or set aside (sampling <dfn class="terminology">without replacement</dfn>), the probability of drawing a specific cookie type shifts dynamically with each draw, making the choices dependent.</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_b">Because each draw is independent, and the probability of picking a brussels-sprout-with-turnip-chip cookie remains perfectly constant at <span class="process-math">\(\frac{8}{21}\)</span> for all three selections.</li>
+<li data-component="feedback" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_b">
+<div class="para" id="task-cookie-rv-why-hypergeometric-v2-2-2-2-1">Incorrect. Constant probabilities and trial independence only hold true if you put each cookie back into the jar before selecting the next one (sampling with replacement), which fits a Binomial distribution.</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_c">Because we are tracking the infinite number of attempts required to pull our very first edible chocolate-chip cookie.</li>
+<li data-component="feedback" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_c">
+<div class="para" id="task-cookie-rv-why-hypergeometric-v2-2-3-2-1">Incorrect. Counting the number of independent trials required until a success occurs describes a Geometric distribution, not a Hypergeometric distribution.</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_d">Because the cookies are randomly distributed over a continuous geometric interval of volume or surface area.</li>
+<li data-component="feedback" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_d">
+<div class="para" id="task-cookie-rv-why-hypergeometric-v2-2-4-2-1">Incorrect. Continuous intervals track Poisson patterns or geometric density functions, not discrete group partitions.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.1.a"><a href="#task-cookie-rv-why-hypergeometric-v2" title="Copy heading and permalink for Task 4.3.1.a" aria-label="Copy heading and permalink for Task 4.3.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cookie-prob-none-v2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-cookie-prob-none-v2"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-cookie-prob-none-v2-1-1\">Find the probability that you get none of the brussels-sprout-with-turnip-chip cookies. Enter your answer as a decimal rounded to three decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-none-v2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-cookie-prob-none-v2-1-2\"><input type=\"text\" id=\"ex-cookie-jar-hypergeometric-expanded-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-none-v2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.215,0.215], "feedback": "\n<div class=\"para logical\" id=\"task-cookie-prob-none-v2-2-1-1-2-1\"><div class=\"para\">Correct! We compute the combination footprints for the total sample space and successful subset partitions:<\/div>\n<ul class=\"disc\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-1\">\n<li id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-1\">\n<div class=\"para logical\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-1-1\"><div class=\"para\">Total ways to pick any 3 cookies out of 21:<\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-1-1-1\">\n\\begin{equation*}\n\\binom{21}{3} = \\frac{21 \\times 20 \\times 19}{3 \\times 2 \\times 1} = 1330\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-none-v2-2-1-1-2-1-1-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-cookie-prob-none-v2-2-1-1-2-1-1-1\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li>\n<li id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-2\">\n<div class=\"para logical\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-2-1\"><div class=\"para\">Ways to choose 0 brussels-sprout cookies (meaning all 3 are chocolate-chip):<\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-2-1-1\">\n\\begin{equation*}\n\\binom{8}{0} \\times \\binom{13}{3} = 1 \\times \\frac{13 \\times 12 \\times 11}{3 \\times 2 \\times 1} = 286\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-none-v2-2-1-1-2-1-1-2-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-cookie-prob-none-v2-2-1-1-2-1-1-2\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li><\/ul><div class=\"para\">Dividing the favorable outcomes by the sample space yields:<\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-2\">\n\\begin{equation*}\nP(X = 0) = \\frac{286}{1330} = \\frac{143}{665} \\approx 0.215\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-cookie-prob-none-v2-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para logical" id="task-cookie-prob-none-v2-3-1">
+<div class="para">Use combinations to find the ratio:</div>
+<div class="displaymath process-math" id="task-cookie-prob-none-v2-3-1-1">
+\begin{equation*}
+P(X = 0) = \frac{\binom{8}{0} \times \binom{13}{3}}{\binom{21}{3}}
+\end{equation*}
+</div>
+<div class="para">Find how many ways to pick 3 cookies exclusively from the 13 chocolate-chip options, and divide by the total ways to draw any 3 cookies from the jar.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-cookie-prob-none-v2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 4.3.1.b.1"><a href="#task-cookie-prob-none-v2-3" title="Copy heading and permalink for Hint 4.3.1.b.1" aria-label="Copy heading and permalink for Hint 4.3.1.b.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.1.b"><a href="#task-cookie-prob-none-v2" title="Copy heading and permalink for Task 4.3.1.b" aria-label="Copy heading and permalink for Task 4.3.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cookie-prob-at-most-one-v2"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-cookie-prob-at-most-one-v2"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-cookie-prob-at-most-one-v2-1-1\">Compute the probability that your sample contains at most one (<span class=\"process-math\">\\(X \\le 1\\)<\/span>) brussels-sprout-with-turnip-chip cookie. Enter your answer as a decimal rounded to three decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-at-most-one-v2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-cookie-prob-at-most-one-v2-1-2\"><input type=\"text\" id=\"ex-cookie-jar-hypergeometric-expanded-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-at-most-one-v2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.684,0.684], "feedback": "\n<div class=\"para\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1\">Correct! \n<div class=\"para logical\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-1\"><div class=\"para\">\"At most one\" means we calculate the combined probabilities for <span class=\"process-math\">\\(X = 0\\)<\/span> and <span class=\"process-math\">\\(X = 1\\text{:}\\)<\/span><\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-1-3\">\n\\begin{equation*}\nP(X \\le 1) = P(X = 0) + P(X = 1)\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-at-most-one-v2-2-1-1-2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div> \n<div class=\"para logical\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-2\"><div class=\"para\">1. Calculate the probability of choosing exactly 1 brussels-sprout cookie and 2 chocolate-chip cookies:<\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-2-1\">\n\\begin{equation*}\nP(X = 1) = \\frac{\\binom{8}{1} \\times \\binom{13}{2}}{\\binom{21}{3}} = \\frac{8 \\times 78}{1330} = \\frac{624}{1330} \\approx 0.469\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-at-most-one-v2-2-1-1-2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div> \n<div class=\"para logical\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-3\"><div class=\"para\">2. Sum the two discrete probabilities together:<\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-3-1\">\n\\begin{equation*}\nP(X \\le 1) = \\frac{286}{1330} + \\frac{624}{1330} = \\frac{910}{1330} = \\frac{455}{665} = \\frac{13}{19} \\approx 0.684\n\\end{equation*}\n<\/div><div class=\"para\">Thus, the cumulative probability of drawing at most one brussels-sprout cookie is <span class=\"process-math\">\\(0.684\\text{.}\\)<\/span><\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-at-most-one-v2-2-1-1-2-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-cookie-prob-at-most-one-v2-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-cookie-prob-at-most-one-v2-3-1">To find <span class="process-math">\(P(X \le 1)\text{,}\)</span> calculate the sum of the two disjoint cases: <span class="process-math">\(P(X = 0) + P(X = 1)\text{.}\)</span> You found <span class="process-math">\(P(X = 0) = \frac{286}{1330}\)</span> in the previous part. Now evaluate <span class="process-math">\(P(X = 1) = \frac{\binom{8}{1} \times \binom{13}{2}}{\binom{21}{3}}\)</span> and combine them.<div class="autopermalink" data-description="Paragraph"><a href="#task-cookie-prob-at-most-one-v2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 4.3.1.c.1"><a href="#task-cookie-prob-at-most-one-v2-3" title="Copy heading and permalink for Hint 4.3.1.c.1" aria-label="Copy heading and permalink for Hint 4.3.1.c.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.1.c"><a href="#task-cookie-prob-at-most-one-v2" title="Copy heading and permalink for Task 4.3.1.c" aria-label="Copy heading and permalink for Task 4.3.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cookie-expected-value"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-cookie-expected-value-1-1">Compute the expected number of brussels-sprout-with-turnip-chip cookies in your sample, <span class="process-math">\(E(X)\text{,}\)</span> and select its correct long-term interpretation.<div class="autopermalink" data-description="Paragraph"><a href="#task-cookie-expected-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-cookie-expected-value" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-cookie-expected-value_opt_a" data-correct="">
+<span class="process-math">\(E(X) \approx 1.143\text{.}\)</span> If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 1.143 brussels-sprout cookies per sample.</li>
+<li data-component="feedback" id="rs-task-cookie-expected-value_opt_a">
+<div class="para" id="task-cookie-expected-value-2-1-2-1">Correct! For a hypergeometric distribution, the expected value formula is <span class="process-math">\(E(X) = n \left(\frac{r}{N}\right)\text{,}\)</span> where <span class="process-math">\(n=3\)</span> is the sample size, <span class="process-math">\(r=8\)</span> is the number of target items (brussels-sprout cookies), and <span class="process-math">\(N=21\)</span> is the total population. This yields <span class="process-math">\(3 \times \left(\frac{8}{21}\right) = \frac{24}{21} = \frac{8}{7} \approx 1.143\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-expected-value_opt_b">
+<span class="process-math">\(E(X) \approx 1.857\text{.}\)</span> If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 1.857 brussels-sprout cookies per sample.</li>
+<li data-component="feedback" id="rs-task-cookie-expected-value_opt_b">
+<div class="para" id="task-cookie-expected-value-2-2-2-1">Incorrect. This calculation uses the wrong category pool in the numerator, solving for the expected number of <dfn class="terminology">chocolate-chip</dfn> cookies instead: <span class="process-math">\(3 \times \left(\frac{13}{21}\right) \approx 1.857\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-expected-value_opt_c">
+<span class="process-math">\(E(X) = 1.143\text{.}\)</span> In any given single sample of 3 cookies, you are guaranteed to get exactly 1 full brussels-sprout cookie and a fraction of another.</li>
+<li data-component="feedback" id="rs-task-cookie-expected-value_opt_c">
+<div class="para" id="task-cookie-expected-value-2-3-2-1">Incorrect. The value is mathematically right, but the interpretation is wrong. Expected values represent long-run averages over repeated trials; a single discrete draw can only yield integer values (0, 1, 2, or 3 cookies), never a fractional decimal amount.</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-expected-value_opt_d">
+<span class="process-math">\(E(X) = 0.381\text{.}\)</span> If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 0.381 brussels-sprout cookies per sample.</li>
+<li data-component="feedback" id="rs-task-cookie-expected-value_opt_d">
+<div class="para" id="task-cookie-expected-value-2-4-2-1">Incorrect. This is the simple ratio of brussels-sprout cookies in the jar (\frac{8}{21} \approx 0.381). You forgot to multiply by the sample size multiplier (n = 3).</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-expected-value_opt_e">
+<div class="para" id="task-cookie-expected-value-2-5-1-1">E(X) = 1.500. If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of exactly 1.500 brussels-sprout cookies per sample.</div>
+</li>
+<li data-component="feedback" id="rs-task-cookie-expected-value_opt_e">
+<div class="para" id="task-cookie-expected-value-2-5-2-1">Incorrect. This is a blind guess assuming the two cookie types split the sample capacity perfectly in half (3/2 = 1.5), which ignores the actual proportions of cookies in the jar.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.1.d"><a href="#task-cookie-expected-value" title="Copy heading and permalink for Task 4.3.1.d" aria-label="Copy heading and permalink for Task 4.3.1.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 4.3.1: Discrete Distributions: The Cookie Jar Selection"><a href="#ex-cookie-jar-hypergeometric-expanded" title="Copy heading and permalink for Exercise 4.3.1: Discrete Distributions: The Cookie Jar Selection" aria-label="Copy heading and permalink for Exercise 4.3.1: Discrete Distributions: The Cookie Jar Selection">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="hypergeometric-wildlife-context"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="hypergeometric-wildlife-context-1">
+<div class="para" id="hypergeometric-wildlife-context-1-1">In a remote wildlife sanctuary, conservation biologists are auditing a small batch of animal tracking collars before deployment. An inventory box contains a total of <span class="process-math">\(10\)</span> tracking collars: <span class="process-math">\(6\)</span> are advanced GPS-enabled collars and <span class="process-math">\(4\)</span> are traditional VHF radio collars. A researcher randomly selects <span class="process-math">\(4\)</span> collars from the box to take into the field. Let <span class="process-math">\(Y\)</span> be the number of GPS-enabled collars selected.<div class="autopermalink" data-description="Paragraph"><a href="#hypergeometric-wildlife-context-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="hypergeometric-wildlife-context-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="hypergeometric-wildlife-context-2-1-1">Part A: What type of random variable is <span class="process-math">\(Y\text{?}\)</span> Explain your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#hypergeometric-wildlife-context-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false">
+<li data-component="answer" id="_opt_a" data-correct="">
+<div class="para" id="hypergeometric-wildlife-context-2-2-1-1-1">Hypergeometric</div>
+</li>
+<li data-component="feedback" id="_opt_a">
+<div class="para" id="hypergeometric-wildlife-context-2-2-1-2-1">Correct! The selection is done without replacement from a finite population (<span class="process-math">\(N=10\)</span>) containing a specific number of successes (<span class="process-math">\(K=6\)</span> GPS collars). The trials are dependent.</div>
+</li>
+<li data-component="answer" id="_opt_b">
+<div class="para" id="hypergeometric-wildlife-context-2-2-2-1-1">Binomial</div>
+</li>
+<li data-component="feedback" id="_opt_b">
+<div class="para" id="hypergeometric-wildlife-context-2-2-2-2-1">Incorrect. Because the selection is made without replacement from a very small finite population, the probability of choosing a GPS collar changes with each pick.</div>
+</li>
+<li data-component="answer" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-2-2-3-1-1">Geometric</div>
+</li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-2-2-3-2-1">Incorrect. A geometric variable counts the number of trials until the first success occurs, whereas we have a fixed sample size of <span class="process-math">\(n=4\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.2.a"><a href="#hypergeometric-wildlife-context-2" title="Copy heading and permalink for Task 4.3.2.a" aria-label="Copy heading and permalink for Task 4.3.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="hypergeometric-wildlife-context-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="hypergeometric-wildlife-context-3-1-1">Part B: Find the probability that three or more GPS-enabled collars are selected.<div class="autopermalink" data-description="Paragraph"><a href="#hypergeometric-wildlife-context-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false">
+<li data-component="answer" id="_opt_a">
+<div class="para" id="hypergeometric-wildlife-context-3-2-1-1-1"><span class="process-math">\(0.3810\)</span></div>
+</li>
+<li data-component="feedback" id="_opt_a">
+<div class="para" id="hypergeometric-wildlife-context-3-2-1-2-1">Incorrect. This is only the probability of getting exactly 3 GPS collars: <span class="process-math">\(P(Y = 3)\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="_opt_b" data-correct="">
+<div class="para" id="hypergeometric-wildlife-context-3-2-2-1-1"><span class="process-math">\(0.4524\)</span></div>
+</li>
+<li data-component="feedback" id="_opt_b">
+<div class="para logical" id="hypergeometric-wildlife-context-3-2-2-2-1">
+<div class="para">Correct! We sum the individual probabilities for <span class="process-math">\(Y=3\)</span> and <span class="process-math">\(Y=4\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="hypergeometric-wildlife-context-3-2-2-2-1-3">
+\begin{equation*}
+P(Y \ge 3) = \frac{\binom{6}{3}\binom{4}{1}}{\binom{10}{4}} + \frac{\binom{6}{4}\binom{4}{0}}{\binom{10}{4}} = \frac{80}{210} + \frac{15}{210} = \frac{95}{210} \approx 0.4524
+\end{equation*}
+</div>
+</div>
+</li>
+<li data-component="answer" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-3-2-3-1-1"><span class="process-math">\(0.0714\)</span></div>
+</li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-3-2-3-2-1">Incorrect. This is only the probability of getting exactly 4 GPS collars: <span class="process-math">\(P(Y = 4)\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.2.b"><a href="#hypergeometric-wildlife-context-3" title="Copy heading and permalink for Task 4.3.2.b" aria-label="Copy heading and permalink for Task 4.3.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="hypergeometric-wildlife-context-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="hypergeometric-wildlife-context-4-1-1">Part C: What are the mean (<span class="process-math">\(\mu\)</span>) and standard deviation (<span class="process-math">\(\sigma\)</span>) for <span class="process-math">\(Y\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#hypergeometric-wildlife-context-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false">
+<li data-component="answer" id="_opt_a" data-correct="">
+<div class="para" id="hypergeometric-wildlife-context-4-2-1-1-1">
+<span class="process-math">\(\mu = 2.4\text{,}\)</span> <span class="process-math">\(\sigma = 0.8000\)</span>
+</div>
+</li>
+<li data-component="feedback" id="_opt_a">
+<div class="para" id="hypergeometric-wildlife-context-4-2-1-2-1">Correct! The mean is calculated as: <span class="process-math">\(\mu = n \left(\frac{K}{N}\right) = 4 \left(\frac{6}{10}\right) = 2.4\text{.}\)</span> The variance is: <span class="process-math">\(\sigma^2 = n \left(\frac{K}{N}\right)\left(\frac{N-K}{N}\right)\left(\frac{N-n}{N-1}\right) = 4(0.6)(0.4)\left(\frac{6}{9}\right) = 0.64\text{.}\)</span> The standard deviation is: <span class="process-math">\(\sigma = \sqrt{0.64} = 0.8000\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="_opt_b">
+<div class="para" id="hypergeometric-wildlife-context-4-2-2-1-1">
+<span class="process-math">\(\mu = 2.4\text{,}\)</span> <span class="process-math">\(\sigma = 0.6400\)</span>
+</div>
+</li>
+<li data-component="feedback" id="_opt_b">
+<div class="para" id="hypergeometric-wildlife-context-4-2-2-2-1">Incorrect. You found the variance (<span class="process-math">\(\sigma^2\)</span>) instead of taking its square root for the standard deviation.</div>
+</li>
+<li data-component="answer" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-4-2-3-1-1">
+<span class="process-math">\(\mu = 2.0\text{,}\)</span> <span class="process-math">\(\sigma = 1.0000\)</span>
+</div>
+</li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-4-2-3-2-1">Incorrect. Please recheck the formulas using parameters <span class="process-math">\(N=10\text{,}\)</span> <span class="process-math">\(K=6\text{,}\)</span> and <span class="process-math">\(n=4\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.2.c"><a href="#hypergeometric-wildlife-context-4" title="Copy heading and permalink for Task 4.3.2.c" aria-label="Copy heading and permalink for Task 4.3.2.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 4.3.2"><a href="#hypergeometric-wildlife-context" title="Copy heading and permalink for Exercise 4.3.2" aria-label="Copy heading and permalink for Exercise 4.3.2">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 4.3: Interactive Exercises - Hypergeometric"><a href="#hw-common-discrete-rv-hg" title="Copy heading and permalink for Exercises 4.3: Interactive Exercises - Hypergeometric" aria-label="Copy heading and permalink for Exercises 4.3: Interactive Exercises - Hypergeometric">🔗</a></div>
+</section>
+<section class="exercises" id="hw-common-discrete-rv-geo">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises - Geometric</span>
+</h3>
+<section class="introduction" id="hw-common-discrete-rv-geo-2">
+<div class="para" id="hw-common-discrete-rv-geo-2-1">Write intro to interactive homework set.....<div class="autopermalink" data-description="Paragraph"><a href="#hw-common-discrete-rv-geo-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<article class="exercise exercise-like" id="ex-password-guess-geometric-refined"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete Distributions: Password Guessing Logistics.</span>
+</h4>
+<div class="introduction" id="ex-password-guess-geometric-refined-2">
+<div class="para" id="ex-password-guess-geometric-refined-2-1">A new secretary has been given <span class="process-math">\(27\)</span> computer passwords, only one of which will permit access to a secure computer file. Because the secretary has no idea which password is correct, he chooses one of the passwords at random and tries it. If it does not work, he puts it back in with the other passwords before randomly selecting the next password to try (not a very clever secretary!).<div class="autopermalink" data-description="Paragraph"><a href="#ex-password-guess-geometric-refined-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-pass-rv-why-geometric"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-pass-rv-why-geometric-1-1">Let the random variable <span class="process-math">\(Y\)</span> represent the total number of tries required to successfully access the file. This scenario is modeled using a geometric random variable. Which of the following best explains why the geometric model is appropriate here?<div class="autopermalink" data-description="Paragraph"><a href="#task-pass-rv-why-geometric-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-pass-rv-why-geometric" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-pass-rv-why-geometric_opt_a" data-correct="">Because we are counting the number of independent, identical trials required to achieve the very first success, and the probability of success remains constant on each attempt due to replacement.</li>
+<li data-component="feedback" id="rs-task-pass-rv-why-geometric_opt_a">
+<div class="para" id="task-pass-rv-why-geometric-2-1-2-1">Correct! A geometric random variable specifically tracks the number of independent trials up to and including the first success. Because the secretary replaces the incorrect passwords back into the pool, the trials are independent and the probability of success remains a constant <span class="process-math">\(p = \frac{1}{27}\)</span> each time.</div>
+</li>
+<li data-component="answer" id="rs-task-pass-rv-why-geometric_opt_b">Because there are exactly two outcomes (success or failure) per guess, and the process is restricted to a fixed, predetermined maximum ceiling of 27 total attempts.</li>
+<li data-component="feedback" id="rs-task-pass-rv-why-geometric_opt_b">
+<div class="para" id="task-pass-rv-why-geometric-2-2-2-1">Incorrect. A fixed number of trials <span class="process-math">\(n\)</span> describes a Binomial distribution. In this geometric scenario, the secretary has no set limit and will keep guessing indefinitely until they finally hit the correct password.</div>
+</li>
+<li data-component="answer" id="rs-task-pass-rv-why-geometric_opt_c">Because we are sampling from a small, finite pool of passwords, which causes the probability of success to change dynamically after each incorrect attempt.</li>
+<li data-component="feedback" id="rs-task-pass-rv-why-geometric_opt_c">
+<div class="para" id="task-pass-rv-why-geometric-2-3-2-1">Incorrect. If the secretary threw away incorrect passwords (sampling <dfn class="terminology">without replacement</dfn>), the probability would change, requiring a Hypergeometric distribution. Because he puts them back, the probability does not change.</div>
+</li>
+<li data-component="answer" id="rs-task-pass-rv-why-geometric_opt_d">Because we are calculating the continuous average rate of server logins across a fixed interval of time.</li>
+<li data-component="feedback" id="rs-task-pass-rv-why-geometric_opt_d">
+<div class="para" id="task-pass-rv-why-geometric-2-4-2-1">Incorrect. Tracking arrivals over a continuous interval describes a Poisson or Exponential process, not a series of distinct, separate button-press trials.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.1.a"><a href="#task-pass-rv-why-geometric" title="Copy heading and permalink for Task 4.3.1.a" aria-label="Copy heading and permalink for Task 4.3.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-pass-pmf-equation-refined"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-pass-pmf-equation-refined-1-1">Specify the probability distribution function (or probability mass function) for your random variable <span class="process-math">\(Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-pass-pmf-equation-refined-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-pass-pmf-equation-refined" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-pass-pmf-equation-refined_opt_a" data-correct=""><span class="process-math">\(P(Y = y) = \left(\frac{1}{27}\right)\left(\frac{26}{27}\right)^{y-1}\)</span></li>
+<li data-component="feedback" id="rs-task-pass-pmf-equation-refined_opt_a">
+<div class="para logical" id="task-pass-pmf-equation-refined-2-1-2-1">
+<div class="para">Correct! Since there is only <span class="process-math">\(1\)</span> correct password out of <span class="process-math">\(27\text{,}\)</span> the constant probability of success on each independent trial is <span class="process-math">\(p = \frac{1}{27}\text{.}\)</span> The probability of a failed attempt is <span class="process-math">\(1 - p = \frac{26}{27}\text{.}\)</span> Substituting these into the formula for a geometric random variable, we get the probability it takes <span class="process-math">\(y\)</span> total tries is:</div>
+<div class="displaymath process-math" id="task-pass-pmf-equation-refined-2-1-2-1-6">
+\begin{equation*}
+P(Y = y) = \left(\frac{1}{27}\right)\left(\frac{26}{27}\right)^{y-1} 
+\end{equation*}
+</div>
+</div>
+</li>
+<li data-component="answer" id="rs-task-pass-pmf-equation-refined_opt_b"><span class="process-math">\(P(Y = y) = \left(\frac{1}{27}\right)\left(\frac{26}{27}\right)^{y}\)</span></li>
+<li data-component="feedback" id="rs-task-pass-pmf-equation-refined_opt_b">
+<div class="para" id="task-pass-pmf-equation-refined-2-2-2-1"></div>
+</li>
+<li data-component="answer" id="rs-task-pass-pmf-equation-refined_opt_c"><span class="process-math">\(P(Y=y)=\choose{27,y} \left(\frac{1}{27}\right)^y\left(\frac{26}{27}\right)^{27-y}\)</span></li>
+<li data-component="feedback" id="rs-task-pass-pmf-equation-refined_opt_c">
+<div class="para" id="task-pass-pmf-equation-refined-2-3-2-1"></div>
+</li>
+<li data-component="answer" id="rs-task-pass-pmf-equation-refined_opt_d"><span class="process-math">\(P(Y=y)=\choose{27,y} \left(\frac{1}{27}\right)^y\left(\frac{26}{27}\right)^{27-y}\)</span></li>
+<li data-component="feedback" id="rs-task-pass-pmf-equation-refined_opt_d">
+<div class="para" id="task-pass-pmf-equation-refined-2-4-2-1"></div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.1.b"><a href="#task-pass-pmf-equation-refined" title="Copy heading and permalink for Task 4.3.1.b" aria-label="Copy heading and permalink for Task 4.3.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-pass-probability-value-refined"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-pass-probability-value-refined"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-pass-probability-value-refined-1-1\">Compute the probability that the correct password is found on the sixth try. Enter your answer as a decimal rounded to four decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pass-probability-value-refined-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-pass-probability-value-refined-1-2\"><input type=\"text\" id=\"ex-password-guess-geometric-refined-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pass-probability-value-refined-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0307,0.0307], "feedback": "\n<div class=\"para\" id=\"task-pass-probability-value-refined-2-1-1-2-1\">Correct!<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 4.3.1.c"><a href="#task-pass-probability-value-refined" title="Copy heading and permalink for Task 4.3.1.c" aria-label="Copy heading and permalink for Task 4.3.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-pass-mean-sd-only"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-pass-mean-sd-only-1-1">Calculate the mean <span class="process-math">\(E(Y)\)</span> and standard deviation <span class="process-math">\(\sigma_Y\)</span> for the trial number on which the correct password is first identified.<div class="autopermalink" data-description="Paragraph"><a href="#task-pass-mean-sd-only-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-pass-mean-sd-only" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-pass-mean-sd-only_opt_a" data-correct="">
+<span class="process-math">\(E(Y) = 27\)</span> and <span class="process-math">\(\sigma_Y \approx 26.5\)</span>
+</li>
+<li data-component="feedback" id="rs-task-pass-mean-sd-only_opt_a">
+<div class="para" id="task-pass-mean-sd-only-2-1-2-1">Correct! For a geometric distribution, the expected value is <span class="process-math">\(E(Y) = \frac{1}{p} = \frac{1}{1/27} = 27\text{.}\)</span> The variance is <span class="process-math">\(V(Y) = \frac{1-p}{p^2} = \frac{26/27}{(1/27)^2} = 26 \times 27 = 702\text{.}\)</span> Taking the square root gives the standard deviation: <span class="process-math">\(\sigma_Y = \sqrt{702} \approx 26.495\text{,}\)</span> which rounds to <span class="process-math">\(26.5\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-pass-mean-sd-only_opt_b">
+<span class="process-math">\(E(Y) = 26\)</span> and <span class="process-math">\(\sigma_Y \approx 26.5\)</span>
+</li>
+<li data-component="feedback" id="rs-task-pass-mean-sd-only_opt_b">
+<div class="para" id="task-pass-mean-sd-only-2-2-2-1">Incorrect!  This gives the expected number of failures, instead of the expected number of trials.</div>
+</li>
+<li data-component="answer" id="rs-task-pass-mean-sd-only_opt_c">
+<span class="process-math">\(E(Y) = 13.5\)</span> and <span class="process-math">\(\sigma_Y \approx 3.7\)</span>
+</li>
+<li data-component="feedback" id="rs-task-pass-mean-sd-only_opt_c">
+<div class="para" id="task-pass-mean-sd-only-2-3-2-1">Incorrect. This treats the process as if it were sampling <dfn class="terminology">without replacement</dfn>, splitting the mid-point of the stack. Because of duplicate guesses, the true mean wait time is longer.</div>
+</li>
+<li data-component="answer" id="rs-task-pass-mean-sd-only_opt_d">
+<span class="process-math">\(E(Y) = 27\)</span> and <span class="process-math">\(\sigma_Y = 702.0\)</span>
+</li>
+<li data-component="feedback" id="rs-task-pass-mean-sd-only_opt_d">
+<div class="para" id="task-pass-mean-sd-only-2-4-2-1">Incorrect. The value <span class="process-math">\(702\)</span> is the population variance <span class="process-math">\(V(Y)\text{.}\)</span> You must take the square root of the variance to find the standard deviation metric.</div>
+</li>
+<li data-component="answer" id="rs-task-pass-mean-sd-only_opt_e">
+<span class="process-math">\(E(Y) = 1.0\)</span> and <span class="process-math">\(\sigma_Y \approx 0.98\)</span>
+</li>
+<li data-component="feedback" id="rs-task-pass-mean-sd-only_opt_e">
+<div class="para" id="task-pass-mean-sd-only-2-5-2-1">Incorrect. This uses the success probability parameters directly rather than inverting the fractions into tracking averages.</div>
+</li>
+</ul>
+</div></div>
+<div class="solutions">
+<details id="task-pass-mean-sd-only-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-pass-mean-sd-only-3-1">Use the geometric formulas: <span class="process-math">\(E(Y) = \frac{1}{p}+1\)</span> and <span class="process-math">\(V(Y) = \frac{1-p}{p^2}\text{.}\)</span> Once you calculate the variance value, take its square root to isolate the standard deviation <span class="process-math">\(\sigma_Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-pass-mean-sd-only-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 4.3.1.d.1"><a href="#task-pass-mean-sd-only-3" title="Copy heading and permalink for Hint 4.3.1.d.1" aria-label="Copy heading and permalink for Hint 4.3.1.d.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.1.d"><a href="#task-pass-mean-sd-only" title="Copy heading and permalink for Task 4.3.1.d" aria-label="Copy heading and permalink for Task 4.3.1.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 4.3.1: Discrete Distributions: Password Guessing Logistics"><a href="#ex-password-guess-geometric-refined" title="Copy heading and permalink for Exercise 4.3.1: Discrete Distributions: Password Guessing Logistics" aria-label="Copy heading and permalink for Exercise 4.3.1: Discrete Distributions: Password Guessing Logistics">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 4.3: Interactive Exercises - Geometric"><a href="#hw-common-discrete-rv-geo" title="Copy heading and permalink for Exercises 4.3: Interactive Exercises - Geometric" aria-label="Copy heading and permalink for Exercises 4.3: Interactive Exercises - Geometric">🔗</a></div>
+</section>
+<section class="exercises" id="hw-common-discrete-rv-nb">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises - Negative Binomial</span>
+</h3>
+<section class="introduction" id="hw-common-discrete-rv-nb-2">
+<div class="para" id="hw-common-discrete-rv-nb-2-1">Write intro to interactive homework set.....<div class="autopermalink" data-description="Paragraph"><a href="#hw-common-discrete-rv-nb-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><div class="autopermalink" data-description="Exercises 4.3: Interactive Exercises - Negative Binomial"><a href="#hw-common-discrete-rv-nb" title="Copy heading and permalink for Exercises 4.3: Interactive Exercises - Negative Binomial" aria-label="Copy heading and permalink for Exercises 4.3: Interactive Exercises - Negative Binomial">🔗</a></div>
+</section>
+<section class="exercises" id="hw-common-discrete-rv-poi">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises - Poisson</span>
+</h3>
+<section class="introduction" id="hw-common-discrete-rv-poi-2">
+<div class="para" id="hw-common-discrete-rv-poi-2-1">Write intro to interactive homework set.....<div class="autopermalink" data-description="Paragraph"><a href="#hw-common-discrete-rv-poi-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><div class="autopermalink" data-description="Exercises 4.3: Interactive Exercises - Poisson"><a href="#hw-common-discrete-rv-poi" title="Copy heading and permalink for Exercises 4.3: Interactive Exercises - Poisson" aria-label="Copy heading and permalink for Exercises 4.3: Interactive Exercises - Poisson">🔗</a></div>
+</section>
+<section class="exercises" id="hw-common-discrete-rv-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<section class="introduction" id="hw-common-discrete-rv-turn-in-2">
+<div class="para" id="hw-common-discrete-rv-turn-in-2-1">Write intro to written part of homework set.....<div class="autopermalink" data-description="Paragraph"><a href="#hw-common-discrete-rv-turn-in-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<article class="exercise exercise-like" id="ex-antenna-network-binomial"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete Distributions: Smart Antenna Connectivity.</span>
+</h4>
+<div class="introduction" id="ex-antenna-network-binomial-2">
+<div class="para" id="ex-antenna-network-binomial-2-1">A high-performance mobile streaming device utilizes three redundant cellular data antennas acting independently of each other. The device succeeds in sending a data packet if any one or more of the antennas successfully establish a connection with the local network hub.<div class="autopermalink" data-description="Paragraph"><a href="#ex-antenna-network-binomial-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-antenna-network-binomial-2-2">During peak hours, each individual antenna possesses a baseline probability of <span class="process-math">\(p = 0.8\)</span> of successfully establishing a network connection. Suppose the device attempts to send a packet during peak hours. Let the random variable <span class="process-math">\(X_i\)</span> indicate whether antenna <span class="process-math">\(i\)</span> successfully connects (for <span class="process-math">\(i=1,2,3\)</span>), and let <span class="process-math">\(Y = \sum_{i=1}^3 X_i\)</span> represent the total number of operational antennas.<div class="autopermalink" data-description="Paragraph"><a href="#ex-antenna-network-binomial-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-network-rv-classification"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-network-rv-classification-1-1">What type of random variables are <span class="process-math">\(X_i\)</span> (for <span class="process-math">\(i=1,2,3\)</span>) and <span class="process-math">\(Y\text{?}\)</span> Explain your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#task-network-rv-classification-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="task-network-rv-classification-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="task-network-rv-classification-2-1">
+<ul class="disc" id="task-network-rv-classification-2-1-1">
+<li id="task-network-rv-classification-2-1-1-1">
+<div class="para" id="task-network-rv-classification-2-1-1-1-1">Each individual variable <span class="process-math">\(X_i\)</span> is a <dfn class="terminology">Bernoulli random variable</dfn>. This is because each antenna represents a single isolated trial with exactly two outcomes: success (connecting with probability <span class="process-math">\(0.8\)</span>) or failure (not connecting with probability <span class="process-math">\(0.2\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#task-network-rv-classification-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#task-network-rv-classification-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="task-network-rv-classification-2-1-1-2">
+<div class="para" id="task-network-rv-classification-2-1-1-2-1">The total sum variable <span class="process-math">\(Y\)</span> is a <dfn class="terminology">Binomial random variable</dfn>. This is because it represents the total number of successes compiled across a fixed number (<span class="process-math">\(n = 3\)</span>) of independent and identically distributed (i.i.d.) Bernoulli trials.<div class="autopermalink" data-description="Paragraph"><a href="#task-network-rv-classification-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#task-network-rv-classification-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-network-rv-classification-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.1.a.1"><a href="#task-network-rv-classification-2" title="Copy heading and permalink for Solution 4.3.1.a.1" aria-label="Copy heading and permalink for Solution 4.3.1.a.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.1.a"><a href="#task-network-rv-classification" title="Copy heading and permalink for Task 4.3.1.a" aria-label="Copy heading and permalink for Task 4.3.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-network-pmfs-and-graphs"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-network-pmfs-and-graphs-1-1">Specify the probability distribution functions (PMFs) for the random variables <span class="process-math">\(X_i\)</span> and <span class="process-math">\(Y\text{,}\)</span> plugging in the correct values for the parameter(s). Also sketch graphs (bar charts) of the resulting distributions.<div class="autopermalink" data-description="Paragraph"><a href="#task-network-pmfs-and-graphs-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="task-network-pmfs-and-graphs-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="task-network-pmfs-and-graphs-2-1">
+<div class="para">The PMF for each individual Bernoulli variable <span class="process-math">\(X_i\)</span> with parameter <span class="process-math">\(p = 0.8\)</span> is defined as:</div>
+<div class="displaymath process-math" id="task-network-pmfs-and-graphs-2-1-3">
+\begin{equation*}
+P(X_i = x) = 0.8^x(0.2)^{1-x} \quad \text{for } x \in \{0, 1\}
+\end{equation*}
+</div>
+<div class="para">The PMF for the aggregate Binomial variable <span class="process-math">\(Y\)</span> with parameters <span class="process-math">\(n = 3\)</span> and <span class="process-math">\(p = 0.8\)</span> uses the formula <span class="process-math">\(P(Y = y) = \binom{3}{y}(0.8)^y(0.2)^{3-y}\text{,}\)</span> which yields:</div>
+<ul class="disc" id="task-network-pmfs-and-graphs-2-1-8">
+<li id="task-network-pmfs-and-graphs-2-1-8-1">
+<div class="para" id="task-network-pmfs-and-graphs-2-1-8-1-1">
+<span class="process-math">\(\displaystyle P(Y = 0) = \binom{3}{0}(0.8)^0(0.2)^3 = 1 \times 1 \times 0.008 = 0.008\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-network-pmfs-and-graphs-2-1-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#task-network-pmfs-and-graphs-2-1-8-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="task-network-pmfs-and-graphs-2-1-8-2">
+<div class="para" id="task-network-pmfs-and-graphs-2-1-8-2-1">
+<span class="process-math">\(\displaystyle P(Y = 1) = \binom{3}{1}(0.8)^1(0.2)^2 = 3 \times 0.8 \times 0.04 = 0.096\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-network-pmfs-and-graphs-2-1-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#task-network-pmfs-and-graphs-2-1-8-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="task-network-pmfs-and-graphs-2-1-8-3">
+<div class="para" id="task-network-pmfs-and-graphs-2-1-8-3-1">
+<span class="process-math">\(\displaystyle P(Y = 2) = \binom{3}{2}(0.8)^2(0.2)^1 = 3 \times 0.64 \times 0.2 = 0.384\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-network-pmfs-and-graphs-2-1-8-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#task-network-pmfs-and-graphs-2-1-8-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="task-network-pmfs-and-graphs-2-1-8-4">
+<div class="para" id="task-network-pmfs-and-graphs-2-1-8-4-1">
+<span class="process-math">\(\displaystyle P(Y = 3) = \binom{3}{3}(0.8)^3(0.2)^0 = 1 \times 0.512 \times 1 = 0.512\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-network-pmfs-and-graphs-2-1-8-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#task-network-pmfs-and-graphs-2-1-8-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-network-pmfs-and-graphs-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="task-network-pmfs-and-graphs-2-2">Below are the rendered bar charts for both probability distributions:<div class="autopermalink" data-description="Paragraph"><a href="#task-network-pmfs-and-graphs-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;grid-template-columns:47.3684210526316% 47.3684210526316%;column-gap:5%;">
+<div class="sbspanel sbspanel--top top" style=""><div class="image-box"><img src="generated/latex-image/tikz-network-xi-pmf.svg" role="img" class="contained" alt="Bar chart of the Bernoulli PMF for Xi showing heights of 0.2 at x=0 and 0.8 at x=1."></div></div>
+<div class="sbspanel sbspanel--top top" style=""><div class="image-box"><img src="generated/latex-image/tikz-network-y-pmf.svg" role="img" class="contained" alt="Bar chart of the Binomial PMF for Y showing columns at y=0,1,2,3 with matching evaluated probability weights."></div></div>
+</div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.1.b.1"><a href="#task-network-pmfs-and-graphs-2" title="Copy heading and permalink for Solution 4.3.1.b.1" aria-label="Copy heading and permalink for Solution 4.3.1.b.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.1.b"><a href="#task-network-pmfs-and-graphs" title="Copy heading and permalink for Task 4.3.1.b" aria-label="Copy heading and permalink for Task 4.3.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-network-cdf-graph"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="task-network-cdf-graph-1-1">Find the cumulative distribution function (CDF) for the random variable <span class="process-math">\(Y\)</span> and sketch its resulting graph (step function).<div class="autopermalink" data-description="Paragraph"><a href="#task-network-cdf-graph-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="task-network-cdf-graph-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="task-network-cdf-graph-2-1">
+<div class="para">The cumulative distribution function <span class="process-math">\(F_Y(y) = P(Y \le y)\)</span> accumulates the discrete probability steps step-by-step:</div>
+<div class="displaymath process-math" id="task-network-cdf-graph-2-1-2">
+\begin{equation*}
+F_Y(y) = \begin{cases} 
+0 \amp \text{for } y \lt 0 \\ 
+0.008 \amp \text{for } 0 \le y \lt 1 \\ 
+0.104 \amp \text{for } 1 \le y \lt 2 \\ 
+0.488 \amp \text{for } 2 \le y \lt 3 \\ 
+1.000 \amp \text{for } y \ge 3 
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-network-cdf-graph-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="task-network-cdf-graph-2-2">Below is the plotted step-graph representing the cumulative distribution function:<div class="autopermalink" data-description="Paragraph"><a href="#task-network-cdf-graph-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/tikz-network-y-cdf.svg" role="img" class="contained" alt="A step function plot showing flat lines with solid starting circles and open ending circles at each discrete threshold point."></div>
+<div class="autopermalink" data-description="Solution 4.3.1.c.1"><a href="#task-network-cdf-graph-2" title="Copy heading and permalink for Solution 4.3.1.c.1" aria-label="Copy heading and permalink for Solution 4.3.1.c.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.1.c"><a href="#task-network-cdf-graph" title="Copy heading and permalink for Task 4.3.1.c" aria-label="Copy heading and permalink for Task 4.3.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-network-prob-sent"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="task-network-prob-sent-1-1">Copmute the probability that the device succeeds in sending a data packet during peak usage hours.<div class="autopermalink" data-description="Paragraph"><a href="#task-network-prob-sent-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 4.3.1.d"><a href="#task-network-prob-sent" title="Copy heading and permalink for Task 4.3.1.d" aria-label="Copy heading and permalink for Task 4.3.1.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 4.3.1: Discrete Distributions: Smart Antenna Connectivity"><a href="#ex-antenna-network-binomial" title="Copy heading and permalink for Exercise 4.3.1: Discrete Distributions: Smart Antenna Connectivity" aria-label="Copy heading and permalink for Exercise 4.3.1: Discrete Distributions: Smart Antenna Connectivity">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-tetris-bag-distance-rv"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Advanced Discrete Variables: Block Game Spawn Gaps.</span>
+</h4>
+<div class="introduction" id="ex-tetris-bag-distance-rv-2">
+<div class="para" id="ex-tetris-bag-distance-rv-2-1">Recall the block-matching game, Tetris, that utilizes a <dfn class="terminology">7-Bag Random Generator</dfn>. The engine places exactly one copy of each of the seven unique shapes (<span class="process-math">\(I, J, L, O, S, T, Z\)</span>) into a bag, shuffles them completely, dispenses all seven, and then immediately repeats the process with a fresh bag.<div class="autopermalink" data-description="Paragraph"><a href="#ex-tetris-bag-distance-rv-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-tetris-bag-distance-rv-2-2">A player tracks the game queue across two consecutive bags (Bag 1 followed by Bag 2). Let the discrete random variable <span class="process-math">\(D\)</span> represent the <dfn class="terminology">spawn distance gap</dfn> between the first bag’s <span class="process-math">\(I\)</span>-piece and the second bag’s <span class="process-math">\(I\)</span>-piece.<div class="autopermalink" data-description="Paragraph"><a href="#ex-tetris-bag-distance-rv-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-tetris-bag-distance-rv-2-3">We define this distance by counting the steps from one piece to the next. For example, if the first <span class="process-math">\(I\)</span>-piece is the last card in Bag 1 (position 7) and the next <span class="process-math">\(I\)</span>-piece is the first card in Bag 2 (position 8), the distance is <span class="process-math">\(D = 8 - 7 = 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-tetris-bag-distance-rv-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-tetris-distance-support"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-tetris-distance-support-1-1">Determine the finite support space (the set of all possible integer values) for the random variable <span class="process-math">\(D\text{.}\)</span> What are the minimum and maximum possible spawn distances between two consecutive <span class="process-math">\(I\)</span>-pieces?<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-support-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="task-tetris-distance-support-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="task-tetris-distance-support-2-1">
+<div class="para">Using our distance equation <span class="process-math">\(D = 7 + X_2 - X_1\text{:}\)</span>
+</div>
+<ul class="disc" id="task-tetris-distance-support-2-1-2">
+<li id="task-tetris-distance-support-2-1-2-1">
+<div class="para logical" id="task-tetris-distance-support-2-1-2-1-1">
+<div class="para">
+<dfn class="terminology">Minimum Distance:</dfn> This occurs when the first <span class="process-math">\(I\)</span>-piece is as late as possible in Bag 1 (<span class="process-math">\(X_1 = 7\)</span>) and the second <span class="process-math">\(I\)</span>-piece arrives as early as possible in Bag 2 (<span class="process-math">\(X_2 = 1\)</span>):</div>
+<div class="displaymath process-math" id="task-tetris-distance-support-2-1-2-1-1-6">
+\begin{equation*}
+D_{\min} = 7 + 1 - 7 = 1 \text{ piece apart}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-support-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#task-tetris-distance-support-2-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="task-tetris-distance-support-2-1-2-2">
+<div class="para logical" id="task-tetris-distance-support-2-1-2-2-1">
+<div class="para">
+<dfn class="terminology">Maximum Distance:</dfn> This occurs when the first <span class="process-math">\(I\)</span>-piece arrives as early as possible in Bag 1 (<span class="process-math">\(X_1 = 1\)</span>) and the second <span class="process-math">\(I\)</span>-piece is buried at the very end of Bag 2 (<span class="process-math">\(X_2 = 7\)</span>):</div>
+<div class="displaymath process-math" id="task-tetris-distance-support-2-1-2-2-1-6">
+\begin{equation*}
+D_{\max} = 7 + 7 - 1 = 13 \text{ pieces apart}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-support-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#task-tetris-distance-support-2-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Because <span class="process-math">\(X_1\)</span> and <span class="process-math">\(X_2\)</span> take any integer values between 1 and 7, the support space for <span class="process-math">\(D\)</span> is the set of all integers from 1 to 13:</div>
+<div class="displaymath process-math" id="task-tetris-distance-support-2-1-6">
+\begin{equation*}
+\text{Support}(D) = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13\}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-support-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.2.a.1"><a href="#task-tetris-distance-support-2" title="Copy heading and permalink for Solution 4.3.2.a.1" aria-label="Copy heading and permalink for Solution 4.3.2.a.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.2.a"><a href="#task-tetris-distance-support" title="Copy heading and permalink for Task 4.3.2.a" aria-label="Copy heading and permalink for Task 4.3.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-tetris-distance-var-type"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-tetris-distance-var-type-1-1">Independent discrete uniform random variables on the integer interval <span class="process-math">\([1, 7]\text{.}\)</span> Is <span class="process-math">\(D\)</span> also uniform? Explain your answer.<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-var-type-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="task-tetris-distance-var-type-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="task-tetris-distance-var-type-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-var-type-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Solution 4.3.2.b.1"><a href="#task-tetris-distance-var-type-2" title="Copy heading and permalink for Solution 4.3.2.b.1" aria-label="Copy heading and permalink for Solution 4.3.2.b.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.2.b"><a href="#task-tetris-distance-var-type" title="Copy heading and permalink for Task 4.3.2.b" aria-label="Copy heading and permalink for Task 4.3.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-tetris-distance-extreme-prob"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="task-tetris-distance-extreme-prob-1-1">Calculate the probability of experiencing the absolute minimum distance gap (<span class="process-math">\(P(D = 1)\)</span>) and the absolute maximum distance gap (<span class="process-math">\(P(D = 13)\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-extreme-prob-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="task-tetris-distance-extreme-prob-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="task-tetris-distance-extreme-prob-2-1">
+<div class="para">Since Bag 1 and Bag 2 are shuffled completely independently, the positions <span class="process-math">\(X_1\)</span> and <span class="process-math">\(X_2\)</span> each have a uniform distribution where <span class="process-math">\(P(X_1 = x_1) = \frac{1}{7}\)</span> and <span class="process-math">\(P(X_2 = x_2) = \frac{1}{7}\text{.}\)</span> The total number of equally likely position configurations is <span class="process-math">\(7 \times 7 = 49\)</span> coordinate pairs.</div>
+<ul class="disc" id="task-tetris-distance-extreme-prob-2-1-6">
+<li id="task-tetris-distance-extreme-prob-2-1-6-1">
+<div class="para logical" id="task-tetris-distance-extreme-prob-2-1-6-1-1">
+<div class="para">To get a distance of <span class="process-math">\(D = 1\text{,}\)</span> we must uniquely have <span class="process-math">\(X_1 = 7\)</span> and <span class="process-math">\(X_2 = 1\text{.}\)</span> This is exactly <span class="process-math">\(1\)</span> out of the <span class="process-math">\(49\)</span> possible outcomes:</div>
+<div class="displaymath process-math" id="task-tetris-distance-extreme-prob-2-1-6-1-1-6">
+\begin{equation*}
+P(D = 1) = P(X_1 = 7 \cap X_2 = 1) = \frac{1}{7} \times \frac{1}{7} = \frac{1}{49} \approx 0.0204
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-extreme-prob-2-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#task-tetris-distance-extreme-prob-2-1-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="task-tetris-distance-extreme-prob-2-1-6-2">
+<div class="para logical" id="task-tetris-distance-extreme-prob-2-1-6-2-1">
+<div class="para">To get a distance of <span class="process-math">\(D = 13\text{,}\)</span> we must uniquely have <span class="process-math">\(X_1 = 1\)</span> and <span class="process-math">\(X_2 = 7\text{.}\)</span> This is also exactly <span class="process-math">\(1\)</span> out of the <span class="process-math">\(49\)</span> outcomes:</div>
+<div class="displaymath process-math" id="task-tetris-distance-extreme-prob-2-1-6-2-1-6">
+\begin{equation*}
+P(D = 13) = P(X_1 = 1 \cap X_2 = 7) = \frac{1}{7} \times \frac{1}{7} = \frac{1}{49} \approx 0.0204
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-extreme-prob-2-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#task-tetris-distance-extreme-prob-2-1-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-extreme-prob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.2.c.1"><a href="#task-tetris-distance-extreme-prob-2" title="Copy heading and permalink for Solution 4.3.2.c.1" aria-label="Copy heading and permalink for Solution 4.3.2.c.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.2.c"><a href="#task-tetris-distance-extreme-prob" title="Copy heading and permalink for Task 4.3.2.c" aria-label="Copy heading and permalink for Task 4.3.2.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-tetris-distance-expected-gap"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="task-tetris-distance-expected-gap-1-1">How far apart would you expect the I pieces to be? In other words, what is the expected spawn gap?<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-expected-gap-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="task-tetris-distance-expected-gap-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="task-tetris-distance-expected-gap-2-1">Find <span class="process-math">\(E(D)=7\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-expected-gap-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.2.d.1"><a href="#task-tetris-distance-expected-gap-2" title="Copy heading and permalink for Solution 4.3.2.d.1" aria-label="Copy heading and permalink for Solution 4.3.2.d.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.2.d"><a href="#task-tetris-distance-expected-gap" title="Copy heading and permalink for Task 4.3.2.d" aria-label="Copy heading and permalink for Task 4.3.2.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-tetris-distance-peak-prob"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="task-tetris-distance-peak-prob-1-1">Calculate the probability of experiencing a spawn distance gap of exactly seven pieces (<span class="process-math">\(P(D = 7)\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-peak-prob-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="task-tetris-distance-peak-prob-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="task-tetris-distance-peak-prob-2-1">
+<div class="para">We want to find how many coordinate pairs <span class="process-math">\((X_1, X_2)\)</span> satisfy our distance equation for <span class="process-math">\(D = 7\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="task-tetris-distance-peak-prob-2-1-3">
+\begin{equation*}
+7 = 7 + X_2 - X_1 \implies X_2 - X_1 = 0 \implies X_1 = X_2
+\end{equation*}
+</div>
+<div class="para">This condition is satisfied whenever the <span class="process-math">\(I\)</span>-piece lands in the exact same relative position in both bags. We count the matching configurations:</div>
+<div class="displaymath process-math" id="task-tetris-distance-peak-prob-2-1-5">
+\begin{equation*}
+(1,1), (2,2), (3,3), (4,4), (5,5), (6,6), (7,7)
+\end{equation*}
+</div>
+<div class="para">There are exactly <span class="process-math">\(7\)</span> favorable outcomes out of the <span class="process-math">\(49\)</span> total sample space configurations. Therefore:</div>
+<div class="displaymath process-math" id="task-tetris-distance-peak-prob-2-1-8">
+\begin{equation*}
+P(D = 7) = \frac{7}{49} = \frac{1}{7} \approx 0.1429
+\end{equation*}
+</div>
+<div class="para">
+<div class="para" id="task-tetris-distance-peak-prob-2-1-9">
+<em class="emphasis">Note for further study:</em> Because the distribution counts matching differences between two independent uniform variables, the resulting probability mass function forms a symmetric triangular distribution that peaks at <span class="process-math">\(D = 7\)</span> with a probability of <span class="process-math">\(\frac{7}{49}\)</span> and tapers down linearly to <span class="process-math">\(\frac{1}{49}\)</span> at the outer edges (<span class="process-math">\(D=1\)</span> and <span class="process-math">\(D=13\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-peak-prob-2-1-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-tetris-distance-peak-prob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.3.2.e.1"><a href="#task-tetris-distance-peak-prob-2" title="Copy heading and permalink for Solution 4.3.2.e.1" aria-label="Copy heading and permalink for Solution 4.3.2.e.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.2.e"><a href="#task-tetris-distance-peak-prob" title="Copy heading and permalink for Task 4.3.2.e" aria-label="Copy heading and permalink for Task 4.3.2.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 4.3.2: Advanced Discrete Variables: Block Game Spawn Gaps"><a href="#ex-tetris-bag-distance-rv" title="Copy heading and permalink for Exercise 4.3.2: Advanced Discrete Variables: Block Game Spawn Gaps" aria-label="Copy heading and permalink for Exercise 4.3.2: Advanced Discrete Variables: Block Game Spawn Gaps">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 4.3: Written Exercises"><a href="#hw-common-discrete-rv-turn-in" title="Copy heading and permalink for Exercises 4.3: Written Exercises" aria-label="Copy heading and permalink for Exercises 4.3: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 4.3: Common Discrete Random Variables"><a href="#sec-section-common-DRV" title="Copy heading and permalink for Section 4.3: Common Discrete Random Variables" aria-label="Copy heading and permalink for Section 4.3: Common Discrete Random Variables">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-chapter-neg-binomial-DRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-chapter-binom-approx-hyper-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bernoulli and Binomial Random Variables</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-section-uniform-DRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Common-Discrete-RVs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-hypergeometric-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-binomial-DRV">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bernoulli and Binomial Random Variables</span>
+</h2>
+<section class="introduction" id="sec-section-binomial-DRV-2">
+<div class="para logical" id="sec-section-binomial-DRV-2-1">
+<div class="para">By completing the problems provided below, you will gain practice with:</div>
+<ul class="disc" id="sec-section-binomial-DRV-2-1-1">
+<li id="sec-section-binomial-DRV-2-1-1-1">
+<div class="para" id="sec-section-binomial-DRV-2-1-1-1-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-binomial-DRV-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-binomial-DRV-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-binomial-DRV-2-1-1-2">
+<div class="para" id="sec-section-binomial-DRV-2-1-1-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-binomial-DRV-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-binomial-DRV-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-binomial-DRV-2-1-1-3">
+<div class="para" id="sec-section-binomial-DRV-2-1-1-3-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-binomial-DRV-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-binomial-DRV-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-binomial-DRV-2-1-1-4">
+<div class="para" id="sec-section-binomial-DRV-2-1-1-4-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-binomial-DRV-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-binomial-DRV-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-binomial-DRV-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="exercises" id="hw-binom-rv">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-binomial-colorado-energy-realistic"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Binomial Distributions: Colorado Energy Conservation Audits.</span>
+</h4>
+<div class="introduction" id="ex-binomial-colorado-energy-realistic-2">
+<div class="para" id="ex-binomial-colorado-energy-realistic-2-1">Many utility companies promote environmental sustainability and energy conservation by offering discount rates to consumers who keep their monthly energy usage below certain established subsidy standards. A recent state environmental report notes that 35% of residential energy consumers in Colorado have reduced their home electricity usage sufficiently to qualify for these discounted rates.<div class="autopermalink" data-description="Paragraph"><a href="#ex-binomial-colorado-energy-realistic-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-binomial-colorado-energy-realistic-2-2">Suppose an energy inspector randomly selects a sample of 5 residential subscribers from Denver, Colorado. Let <span class="process-math">\(X\)</span> denote the number of chosen subscribers who qualify for the favorable discounted rates.<div class="autopermalink" data-description="Paragraph"><a href="#ex-binomial-colorado-energy-realistic-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-colorado-energy-prob-at-least-4"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-colorado-energy-prob-at-least-4"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-colorado-energy-prob-at-least-4-1-1\">Find the probability that at least four of the five randomly selected residential subscribers qualify for the favorable discounted energy rates.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-colorado-energy-prob-at-least-4-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-colorado-energy-prob-at-least-4-1-2\">Probability = <input type=\"text\" id=\"ex-binomial-colorado-energy-realistic-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-colorado-energy-prob-at-least-4-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.054,0.054], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.2.1.a"><a href="#task-colorado-energy-prob-at-least-4" title="Copy heading and permalink for Task 5.2.1.a" aria-label="Copy heading and permalink for Task 5.2.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-colorado-energy-prob-fewer-than-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-colorado-energy-prob-fewer-than-2"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-colorado-energy-prob-fewer-than-2-1-1\">Find the probability that fewer than two of the five randomly selected residential subscribers qualify for the favorable discounted energy rates.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-colorado-energy-prob-fewer-than-2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-colorado-energy-prob-fewer-than-2-1-2\">Probability = <input type=\"text\" id=\"ex-binomial-colorado-energy-realistic-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-colorado-energy-prob-fewer-than-2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.4284,0.4284], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.2.1.b"><a href="#task-colorado-energy-prob-fewer-than-2" title="Copy heading and permalink for Task 5.2.1.b" aria-label="Copy heading and permalink for Task 5.2.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-colorado-energy-moments-mc"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-colorado-energy-moments-mc-1-1">Calculate the expected number and the variance of qualifying households within a random sample of  <span class="process-math">\(5\)</span> subscribers. Which option correctly identifies these values and delivers the most accurate  interpretation of their meaning?<div class="autopermalink" data-description="Paragraph"><a href="#task-colorado-energy-moments-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-colorado-energy-moments-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-colorado-energy-moments-mc_opt_a">
+<div class="para" id="task-colorado-energy-moments-mc-2-1-1-1">
+<span class="process-math">\(E(X) = 3.50\)</span> households, <span class="process-math">\(\text{Var}(X) = 1.05\text{.}\)</span> This indicates that a clear majority of the sampled households will reliably qualify for the subsidy standard during most audit cycles.</div>
+</li>
+<li data-component="feedback" id="rs-task-colorado-energy-moments-mc_opt_a">
+<div class="para" id="task-colorado-energy-moments-mc-2-1-2-1">Incorrect. This configuration uses a success probability of <span class="process-math">\(p = 0.70\)</span> from the old scenario. With Colorado’s realistic baseline rate of 35%, the mean must shift lower, indicating that qualifying is the minority outcome state rather than the majority default.</div>
+</li>
+<li data-component="answer" id="rs-task-colorado-energy-moments-mc_opt_b" data-correct="">
+<div class="para" id="task-colorado-energy-moments-mc-2-2-1-1">
+<span class="process-math">\(E(X) = 1.75\)</span> households, <span class="process-math">\(\text{Var}(X) = 1.14\text{.}\)</span> This indicates that while you expect nearly 2 households to qualify on average, a variance close to the mean reveals high relative sample-to-sample volatility.</div>
+</li>
+<li data-component="feedback" id="rs-task-colorado-energy-moments-mc_opt_b">
+<div class="para" id="task-colorado-energy-moments-mc-2-2-2-1">Correct! For any valid discrete random variable following a standard Binomial distribution, we evaluate the summary moments using algebraic parameter shortcuts:</div> 
+<ul class="disc" id="task-colorado-energy-moments-mc-2-2-2-2">
+<li id="task-colorado-energy-moments-mc-2-2-2-2-1">
+<div class="para" id="task-colorado-energy-moments-mc-2-2-2-2-1-1">Expected Value (Mean): <span class="process-math">\(E(X) = n \cdot p = 5 \cdot 0.35 = 1.75\)</span> households.</div>
+</li>
+<li id="task-colorado-energy-moments-mc-2-2-2-2-2">
+<div class="para" id="task-colorado-energy-moments-mc-2-2-2-2-2-1">Variance: <span class="process-math">\(\text{Var}(X) = n \cdot p \cdot (1 - p) = 5 \cdot 0.35 \cdot 0.65 = 1.1375 \approx 1.14\text{.}\)</span>
+</div>
+</li>
+</ul> 
+<div class="para" id="task-colorado-energy-moments-mc-2-2-2-3">Strategic Interpretation: In a small sample of 5, an expected value of 1.75 paired with a variance of 1.14 tells auditors to expect massive cluster fluctuations. Because the variance is high relative to the mean, drawing a sample with absolutely 0 qualifiers or a sample where 4 out of 5 qualify are both standard operational occurrences, rather than highly unusual anomalies.</div>
+</li>
+<li data-component="answer" id="rs-task-colorado-energy-moments-mc_opt_c">
+<div class="para" id="task-colorado-energy-moments-mc-2-3-1-1">
+<span class="process-math">\(E(X) = 1.75\)</span> households, <span class="process-math">\(\text{Var}(X) = 1.75\text{.}\)</span> This indicates that the system behaves as a standard Poisson stream where the arrival count and dispersion are perfectly locked.</div>
+</li>
+<li data-component="feedback" id="rs-task-colorado-energy-moments-mc_opt_c">
+<div class="para" id="task-colorado-energy-moments-mc-2-3-2-1">Incorrect. While a Poisson distribution features an identical mean and variance (<span class="process-math">\(\mu = \sigma^2\)</span>), a Binomial distribution’s variance formula incorporates a regular dampening multiplier for failures, <span class="process-math">\((1 - p)\text{.}\)</span> Because <span class="process-math">\(1 - 0.35 = 0.65 \lt 1\text{,}\)</span> the variance must be strictly smaller than the mean: <span class="process-math">\(1.14 \lt 1.75\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-colorado-energy-moments-mc_opt_d">
+<div class="para" id="task-colorado-energy-moments-mc-2-4-1-1">
+<span class="process-math">\(E(X) = 2.50\)</span> households, <span class="process-math">\(\text{Var}(X) = 1.25\text{.}\)</span> This indicates a perfectly symmetric, unskewed coin-tossing model where succeeding or failing to qualify are completely equally likely.</div>
+</li>
+<li data-component="feedback" id="rs-task-colorado-energy-moments-mc_opt_d">
+<div class="para" id="task-colorado-energy-moments-mc-2-4-2-1">Incorrect. This matches a uniform or fair-coin system where <span class="process-math">\(p = 0.50\text{.}\)</span> Because Colorado’s actual conservation rate is lower (<span class="process-math">\(p = 0.35\)</span>), the center of gravity shifts left and the distribution is right-skewed.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.2.1.c"><a href="#task-colorado-energy-moments-mc" title="Copy heading and permalink for Task 5.2.1.c" aria-label="Copy heading and permalink for Task 5.2.1.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.2.1: Binomial Distributions: Colorado Energy Conservation Audits"><a href="#ex-binomial-colorado-energy-realistic" title="Copy heading and permalink for Exercise 5.2.1: Binomial Distributions: Colorado Energy Conservation Audits" aria-label="Copy heading and permalink for Exercise 5.2.1: Binomial Distributions: Colorado Energy Conservation Audits">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-binomial-drone-thrusters"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Binomial Distributions: Redundant Engineering Systems in Gaming Tech.</span>
+</h4>
+<div class="introduction" id="ex-binomial-drone-thrusters-2">
+<div class="para" id="ex-binomial-drone-thrusters-2-1">During a championship sci-fi esports tournament, a media production company deploys an automated broadcast drone array to hover over the arena. To ensure stability, the drone’s primary stabilization subsystem features a redundant bank of four identical hover-thrusters. Each individual thruster operates completely independently of the others.<div class="autopermalink" data-description="Paragraph"><a href="#ex-binomial-drone-thrusters-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-binomial-drone-thrusters-2-2">Due to the extreme heat during the live event match, each individual thruster has a probability of <span class="process-math">\(p = 0.20\)</span> of overheating and failing before the 1,000-second match countdown timer finishes. Crucially, the stabilization subsystem is designed with fail-safes: it will keep the drone airborne if any two of the  four thrusters  remain operational.<div class="autopermalink" data-description="Paragraph"><a href="#ex-binomial-drone-thrusters-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-drone-exact-failures-input"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-drone-exact-failures-input"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-drone-exact-failures-input-1-1\">Calculate the  probability that  3 of the 4 thrusters will fail during the match.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-drone-exact-failures-input-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-drone-exact-failures-input-1-2\">Probability (rounded to four decimal places) = <input type=\"text\" id=\"ex-binomial-drone-thrusters-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-drone-exact-failures-input-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0256,0.0256], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.2.2.a"><a href="#task-drone-exact-failures-input" title="Copy heading and permalink for Task 5.2.2.a" aria-label="Copy heading and permalink for Task 5.2.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-drone-survival-probability"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-drone-survival-probability-1-1">Calculate the  probability that the drone stabilization subsystem successfully operates longer than the 1,000-second tournament window.<div class="autopermalink" data-description="Paragraph"><a href="#task-drone-survival-probability-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-drone-survival-probability" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-drone-survival-probability_opt_a">
+<div class="para" id="task-drone-survival-probability-2-1-1-1">A. <span class="process-math">\(0.1536\)</span>
+</div>
+</li>
+<li data-component="feedback" id="rs-task-drone-survival-probability_opt_a">
+<div class="para" id="task-drone-survival-probability-2-1-2-1">Incorrect. This is the isolated point probability that exactly two components survive (<span class="process-math">\(P(X = 2)\)</span>). The drone subsystem remains operational if <span class="process-math">\(two, three, \text{ or } four\)</span> components function cleanly, so you must find the cumulative area for the entire interval.</div>
+</li>
+<li data-component="answer" id="rs-task-drone-survival-probability_opt_b">
+<div class="para" id="task-drone-survival-probability-2-2-1-1">B. <span class="process-math">\(0.0272\)</span>
+</div>
+</li>
+<li data-component="feedback" id="rs-task-drone-survival-probability_opt_b">
+<div class="para" id="task-drone-survival-probability-2-2-2-1">Incorrect. This is the catastrophic failure rate (<span class="process-math">\(P(X \lt 2)\)</span>), which counts the scenarios where either 0 or only 1 thruster stays online. Subtract this value from total certainty (1.00) to isolate the successful operating space.</div>
+</li>
+<li data-component="answer" id="rs-task-drone-survival-probability_opt_c" data-correct="">
+<div class="para" id="task-drone-survival-probability-2-3-1-1">C. <span class="process-math">\(0.9728\)</span>
+</div>
+</li>
+<li data-component="feedback" id="rs-task-drone-survival-probability_opt_c">
+<div class="para" id="task-drone-survival-probability-2-3-2-1">Correct! Because we have a fixed set of independent components (<span class="process-math">\(n = 4\)</span>) where each has a constant binary success rate of remaining online (<span class="process-math">\(p_{\text{success}} = 1 - 0.20 = 0.80\)</span>), the random count <span class="process-math">\(X\)</span> follows a standard Binomial profile: <span class="process-math">\(X \sim \text{Binomial}(n = 4, p = 0.80)\text{.}\)</span>
+</div> 
+<div class="para" id="task-drone-survival-probability-2-3-2-2">The system successfully operates if <span class="process-math">\(X \ge 2\text{.}\)</span> Applying the Complement Rule makes this check highly efficient:</div>
+<div class="displaymath process-math" id="task-drone-survival-probability-2-3-2-3">
+\begin{equation*}
+P(X \ge 2) = 1 - P(X \lt 2) = 1 - \left[ P(X = 0) + P(X = 1) \right]
+\end{equation*}
+</div>
+<div class="para" id="task-drone-survival-probability-2-3-2-4">Evaluating the individual failure states using the Binomial PMF:</div> 
+<ul class="disc" id="task-drone-survival-probability-2-3-2-5">
+<li id="task-drone-survival-probability-2-3-2-5-1">
+<div class="para" id="task-drone-survival-probability-2-3-2-5-1-1">Exactly 0 components survive: <span class="process-math">\(\binom{4}{0} (0.80)^0 (0.20)^4 = 1 \cdot 1 \cdot 0.0016 = 0.0016\)</span>
+</div>
+</li>
+<li id="task-drone-survival-probability-2-3-2-5-2">
+<div class="para" id="task-drone-survival-probability-2-3-2-5-2-1">Exactly 1 component survives: <span class="process-math">\(\binom{4}{1} (0.80)^1 (0.20)^3 = 4 \cdot 0.80 \cdot 0.0080 = 0.0256\)</span>
+</div>
+</li>
+</ul> 
+<div class="para" id="task-drone-survival-probability-2-3-2-6">Summing these lower tail blocks and subtracting from 1 yields: <span class="process-math">\(1 - (0.0016 + 0.0256) = 1 - 0.0272 = 0.9728\text{.}\)</span> The cluster completes its run with a 97.28% reliability rate.</div>
+</li>
+<li data-component="answer" id="rs-task-drone-survival-probability_opt_d">
+<div class="para" id="task-drone-survival-probability-2-4-1-1">D. <span class="process-math">\(0.8192\)</span>
+</div>
+</li>
+<li data-component="feedback" id="rs-task-drone-survival-probability_opt_d">
+<div class="para" id="task-drone-survival-probability-2-4-2-1">Incorrect. This represents the probability that the system encounters at most one failure, but the calculation step forgot to include the perfect scenario where absolutely zero thrusters overheat (<span class="process-math">\(P(X = 4)\)</span>).</div>
+</li>
+<li data-component="answer" id="rs-task-drone-survival-probability_opt_e">
+<div class="para" id="task-drone-survival-probability-2-5-1-1">E. <span class="process-math">\(0.4096\)</span>
+</div>
+</li>
+<li data-component="feedback" id="rs-task-drone-survival-probability_opt_e">
+<div class="para" id="task-drone-survival-probability-2-5-2-1">Incorrect. This looks like the isolated point probability that exactly three components survive (<span class="process-math">\(P(X = 3)\)</span>). Make sure to gather the full structural interval area across all operating states.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.2.2.b"><a href="#task-drone-survival-probability" title="Copy heading and permalink for Task 5.2.2.b" aria-label="Copy heading and permalink for Task 5.2.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-drone-moments-mc"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-drone-moments-mc-1-1">Calculate the  expected number and the variance of surviving thrusters in this 4-element array block. Which option correctly identifies these values and maps out the true risk behavior of the tech array?<div class="autopermalink" data-description="Paragraph"><a href="#task-drone-moments-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-drone-moments-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-drone-moments-mc_opt_a">
+<div class="para" id="task-drone-moments-mc-2-1-1-1">
+<span class="process-math">\(E(X) = 0.80\)</span> thrusters, <span class="process-math">\(\text{Var}(X) = 0.64\text{.}\)</span> This indicates that under normal conditions, almost all thrusters are expected to burn out immediately during the countdown launch sequence.</div>
+</li>
+<li data-component="feedback" id="rs-task-drone-moments-mc_opt_a">
+<div class="para" id="task-drone-moments-mc-2-1-2-1">Incorrect. This option swaps the probability parameters, using the failure rate of 0.20 as the target success probability. Because each thruster has a dominant 80% chance of staying online, the expected survival count must be high.</div>
+</li>
+<li data-component="answer" id="rs-task-drone-moments-mc_opt_b" data-correct="">
+<div class="para" id="task-drone-moments-mc-2-2-1-1">
+<span class="process-math">\(E(X) = 3.20\)</span> thrusters, <span class="process-math">\(\text{Var}(X) = 0.64\text{.}\)</span> This confirms that while the vast majority of parts stay operational on average, a low variance keeps the cluster highly clustered around safe operating levels.</div>
+</li>
+<li data-component="feedback" id="rs-task-drone-moments-mc_opt_b">
+<div class="para" id="task-drone-moments-mc-2-2-2-1">Correct! For any valid discrete random variable following a standard Binomial distribution, we evaluate the summary moments using algebraic parameter shortcuts based on our success parameters (<span class="process-math">\(n = 4\text{,}\)</span> <span class="process-math">\(p = 0.80\)</span>):</div> 
+<ul class="disc" id="task-drone-moments-mc-2-2-2-2">
+<li id="task-drone-moments-mc-2-2-2-2-1">
+<div class="para" id="task-drone-moments-mc-2-2-2-2-1-1">Expected Value (Mean): <span class="process-math">\(E(X) = n \cdot p = 4 \cdot 0.80 = 3.20\)</span> operational thrusters.</div>
+</li>
+<li id="task-drone-moments-mc-2-2-2-2-2">
+<div class="para" id="task-drone-moments-mc-2-2-2-2-2-1">Variance: <span class="process-math">\(\text{Var}(X) = n \cdot p \cdot (1 - p) = 4 \cdot 0.80 \cdot 0.20 = 0.64\text{.}\)</span>
+</div>
+</li>
+</ul> 
+<div class="para" id="task-drone-moments-mc-2-2-2-3">Operational Interpretation: An expected value of 3.20 proves that the system is engineered defensively. Since you only need 2 thrusters to survive, a mean of 3.20 paired with a very tight variance of 0.64 ensures that the random outcome is strongly squashed against the upper boundary, making a catastrophic drop down to 0 or 1 active thrusters an exceedingly rare edge case anomaly.</div>
+</li>
+<li data-component="answer" id="rs-task-drone-moments-mc_opt_c">
+<div class="para" id="task-drone-moments-mc-2-3-1-1">
+<span class="process-math">\(E(X) = 3.20\)</span> thrusters, <span class="process-math">\(\text{Var}(X) = 3.20\text{.}\)</span> This implies the system’s failure patterns behave like a standard continuous Poisson decay field.</div>
+</li>
+<li data-component="feedback" id="rs-task-drone-moments-mc_opt_c">
+<div class="para" id="task-drone-moments-mc-2-3-2-1">Incorrect. While a Poisson system features a locked mean and variance, a Binomial distribution dampens its variance by multiplying by the failure weight, <span class="process-math">\((1-p)\text{.}\)</span> Since <span class="process-math">\(0.20 \lt 1\text{,}\)</span> the variance must be strictly smaller than the mean: <span class="process-math">\(0.64 \lt 3.20\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-drone-moments-mc_opt_d">
+<div class="para" id="task-drone-moments-mc-2-4-1-1">
+<span class="process-math">\(E(X) = 2.00\)</span> thrusters, <span class="process-math">\(\text{Var}(X) = 1.00\text{.}\)</span> This models a perfectly balanced system where turning on or burning out are entirely equally likely.</div>
+</li>
+<li data-component="feedback" id="rs-task-drone-moments-mc_opt_d">
+<div class="para" id="task-drone-moments-mc-2-4-2-1">Incorrect. This matches a fair coin model where <span class="process-math">\(p = 0.50\text{.}\)</span> Because the components are high-grade and heavily biased toward survival (<span class="process-math">\(p = 0.80\)</span>), the center of mass sits much further right.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.2.2.c"><a href="#task-drone-moments-mc" title="Copy heading and permalink for Task 5.2.2.c" aria-label="Copy heading and permalink for Task 5.2.2.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.2.2: Binomial Distributions: Redundant Engineering Systems in Gaming Tech"><a href="#ex-binomial-drone-thrusters" title="Copy heading and permalink for Exercise 5.2.2: Binomial Distributions: Redundant Engineering Systems in Gaming Tech" aria-label="Copy heading and permalink for Exercise 5.2.2: Binomial Distributions: Redundant Engineering Systems in Gaming Tech">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 5.2: Interactive Exercises"><a href="#hw-binom-rv" title="Copy heading and permalink for Exercises 5.2: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 5.2: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-binom-rv-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-antenna-network-binomial"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete Distributions: Smart Antenna Connectivity.</span>
+</h4>
+<div class="introduction" id="ex-antenna-network-binomial-2">
+<div class="para" id="ex-antenna-network-binomial-2-1">A high-performance mobile streaming device utilizes three redundant cellular data antennas acting independently of each other. The device succeeds in sending a data packet if any one or more of the antennas successfully establish a connection with the local network hub.<div class="autopermalink" data-description="Paragraph"><a href="#ex-antenna-network-binomial-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-antenna-network-binomial-2-2">During peak hours, each individual antenna possesses a baseline probability of <span class="process-math">\(p = 0.8\)</span> of successfully establishing a network connection. Suppose the device attempts to send a packet during peak hours. Let the random variable <span class="process-math">\(X_i\)</span> indicate whether antenna <span class="process-math">\(i\)</span> successfully connects (for <span class="process-math">\(i=1,2,3\)</span>), and let <span class="process-math">\(Y = \sum_{i=1}^3 X_i\)</span> represent the total number of operational antennas.<div class="autopermalink" data-description="Paragraph"><a href="#ex-antenna-network-binomial-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-network-rv-classification"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-network-rv-classification-1-1">What type of random variables are <span class="process-math">\(X_i\)</span> (for <span class="process-math">\(i=1,2,3\)</span>) and <span class="process-math">\(Y\text{?}\)</span> Explain your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#task-network-rv-classification-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.2.1.a"><a href="#task-network-rv-classification" title="Copy heading and permalink for Task 5.2.1.a" aria-label="Copy heading and permalink for Task 5.2.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-network-pmfs-and-graphs"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-network-pmfs-and-graphs-1-1">Specify the probability distribution functions (PMFs) for the random variables <span class="process-math">\(X_i\)</span> and <span class="process-math">\(Y\text{,}\)</span> plugging in the correct values for the parameter(s). Also sketch graphs (bar charts) of the resulting distributions.<div class="autopermalink" data-description="Paragraph"><a href="#task-network-pmfs-and-graphs-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.2.1.b"><a href="#task-network-pmfs-and-graphs" title="Copy heading and permalink for Task 5.2.1.b" aria-label="Copy heading and permalink for Task 5.2.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-network-cdf-graph"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="task-network-cdf-graph-1-1">Find the cumulative distribution function (CDF) for the random variable <span class="process-math">\(Y\)</span> and sketch its resulting graph (step function).<div class="autopermalink" data-description="Paragraph"><a href="#task-network-cdf-graph-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.2.1.c"><a href="#task-network-cdf-graph" title="Copy heading and permalink for Task 5.2.1.c" aria-label="Copy heading and permalink for Task 5.2.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-network-prob-sent"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="task-network-prob-sent-1-1">Copmute the probability that the device succeeds in sending a data packet during peak usage hours.<div class="autopermalink" data-description="Paragraph"><a href="#task-network-prob-sent-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.2.1.d"><a href="#task-network-prob-sent" title="Copy heading and permalink for Task 5.2.1.d" aria-label="Copy heading and permalink for Task 5.2.1.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.2.1: Discrete Distributions: Smart Antenna Connectivity"><a href="#ex-antenna-network-binomial" title="Copy heading and permalink for Exercise 5.2.1: Discrete Distributions: Smart Antenna Connectivity" aria-label="Copy heading and permalink for Exercise 5.2.1: Discrete Distributions: Smart Antenna Connectivity">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 5.2: Written Exercises"><a href="#hw-binom-rv-turn-in" title="Copy heading and permalink for Exercises 5.2: Written Exercises" aria-label="Copy heading and permalink for Exercises 5.2: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 5.2: Bernoulli and Binomial Random Variables"><a href="#sec-section-binomial-DRV" title="Copy heading and permalink for Section 5.2: Bernoulli and Binomial Random Variables" aria-label="Copy heading and permalink for Section 5.2: Bernoulli and Binomial Random Variables">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-section-uniform-DRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-hypergeometric-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

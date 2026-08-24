@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Beta Random Variable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-section-gamma-CRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Common-Continuous-RVs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-chapter-Joint-RVs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-beta-CRV">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Beta Random Variable</span>
+</h2>
+<section class="introduction" id="sec-section-beta-CRV-2">
+<div class="para logical" id="sec-section-beta-CRV-2-1">
+<div class="para">By completing the problems provided below, you will gain practice with:</div>
+<ul class="disc" id="sec-section-beta-CRV-2-1-1">
+<li id="sec-section-beta-CRV-2-1-1-1">
+<div class="para" id="sec-section-beta-CRV-2-1-1-1-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-beta-CRV-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-beta-CRV-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-beta-CRV-2-1-1-2">
+<div class="para" id="sec-section-beta-CRV-2-1-1-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-beta-CRV-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-beta-CRV-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-beta-CRV-2-1-1-3">
+<div class="para" id="sec-section-beta-CRV-2-1-1-3-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-beta-CRV-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-beta-CRV-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-beta-CRV-2-1-1-4">
+<div class="para" id="sec-section-beta-CRV-2-1-1-4-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-beta-CRV-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-beta-CRV-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-beta-CRV-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="exercises" id="hw-beta-rv">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-beta-distribution-kernel"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuous Distributions: Recognizing Beta Kernels.</span>
+</h4>
+<div class="introduction" id="ex-beta-distribution-kernel-2">
+<div class="para logical" id="ex-beta-distribution-kernel-2-1">
+<div class="para">The relative humidity <span class="process-math">\(Y\)</span> measured at a specialized weather station has a probability density function (PDF) given by:</div>
+<div class="displaymath process-math" id="ex-beta-distribution-kernel-2-1-2">
+\begin{equation*}
+f(y) = k y^3 (1-y)^5, \quad \text{for } 0 \le y \le 1\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(k\)</span> is a proportionality constant.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-beta-distribution-kernel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-beta-distribution-kernel-2-2">Hint: Do NOT integrate!<div class="autopermalink" data-description="Paragraph"><a href="#ex-beta-distribution-kernel-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-beta-solve-k"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-beta-solve-k"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-beta-solve-k-1-1\">Determine the exact value of <span class=\"process-math\">\\(k\\)<\/span> that will make this a valid probability density function.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-beta-solve-k-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-beta-solve-k-1-2\"><span class=\"process-math\">\\(k = \\)<\/span> <input type=\"text\" id=\"ex-beta-distribution-kernel-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-beta-solve-k-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [504,504], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.5.1.a"><a href="#task-beta-solve-k" title="Copy heading and permalink for Task 7.5.1.a" aria-label="Copy heading and permalink for Task 7.5.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-beta-expected-value-mc"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-beta-expected-value-mc-1-1">Compute the expected relative humidity, <span class="process-math">\(E(Y)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-beta-expected-value-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-beta-expected-value-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-beta-expected-value-mc_opt_a">
+<div class="para" id="task-beta-expected-value-mc-2-1-1-1"><span class="process-math">\(E(Y) = 0.500\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-expected-value-mc_opt_a">
+<div class="para" id="task-beta-expected-value-mc-2-1-2-1">Incorrect. A mean of 0.500 implies a perfectly symmetric distribution curve. Because the right-hand failure parameter exponent (<span class="process-math">\(\beta = 6\)</span>) is larger than the left-hand success parameter exponent (<span class="process-math">\(\alpha = 4\)</span>), the density mass is skewed downward, pulling the center of gravity below the midpoint.</div>
+</li>
+<li data-component="answer" id="rs-task-beta-expected-value-mc_opt_b" data-correct="">
+<div class="para" id="task-beta-expected-value-mc-2-2-1-1"><span class="process-math">\(E(Y) = 0.400\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-expected-value-mc_opt_b">
+<div class="para" id="task-beta-expected-value-mc-2-2-2-1">Correct! For any valid continuous random variable following a standard Beta distribution, we can skip tedious calculus integration by leveraging the algebraic distribution shortcut formulas for its moments:</div>
+<div class="displaymath process-math" id="task-beta-expected-value-mc-2-2-2-2">
+\begin{equation*}
+E(Y) = \frac{\alpha}{\alpha + \beta}
+\end{equation*}
+</div>
+<div class="para" id="task-beta-expected-value-mc-2-2-2-3">Substituting our verified parameters from Part A (<span class="process-math">\(\alpha = 4\)</span> and <span class="process-math">\(\beta = 6\)</span>) maps directly to the targeted long-run balance point:</div>
+<div class="displaymath process-math" id="task-beta-expected-value-mc-2-2-2-4">
+\begin{equation*}
+E(Y) = \frac{4}{4 + 6} = \frac{4}{10} = 0.400
+\end{equation*}
+</div>
+<div class="para" id="task-beta-expected-value-mc-2-2-2-5">The expected relative humidity at this location is exactly 0.400 (or 40%).</div>
+</li>
+<li data-component="answer" id="rs-task-beta-expected-value-mc_opt_c">
+<div class="para" id="task-beta-expected-value-mc-2-3-1-1"><span class="process-math">\(E(Y) = 0.600\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-expected-value-mc_opt_c">
+<div class="para" id="task-beta-expected-value-mc-2-3-2-1">Incorrect. This looks like a parameter calculation inversion where you set the numerator to the wrong parameter (<span class="process-math">\(\frac{\beta}{\alpha+\beta}\)</span>). Because <span class="process-math">\(\beta \gt \alpha\text{,}\)</span> the distribution leans left, making the mean smaller than 0.500.</div>
+</li>
+<li data-component="answer" id="rs-task-beta-expected-value-mc_opt_d">
+<div class="para" id="task-beta-expected-value-mc-2-4-1-1"><span class="process-math">\(E(Y) = 0.667\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-expected-value-mc_opt_d">
+<div class="para" id="task-beta-expected-value-mc-2-4-2-1">Incorrect. This distractor evaluates the ratio <span class="process-math">\(\frac{\beta}{\alpha}\)</span> or <span class="process-math">\(\frac{4}{6}\text{.}\)</span> The denominator for a Beta distribution mean must capture the total combined weight of both shapes, <span class="process-math">\(\alpha + \beta\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.5.1.b"><a href="#task-beta-expected-value-mc" title="Copy heading and permalink for Task 7.5.1.b" aria-label="Copy heading and permalink for Task 7.5.1.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.5.1: Continuous Distributions: Recognizing Beta Kernels"><a href="#ex-beta-distribution-kernel" title="Copy heading and permalink for Exercise 7.5.1: Continuous Distributions: Recognizing Beta Kernels" aria-label="Copy heading and permalink for Exercise 7.5.1: Continuous Distributions: Recognizing Beta Kernels">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-beta-cloud-cache-allocation"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuous Distributions: Beta Modeling of Cloud Cache Workloads.</span>
+</h4>
+<div class="introduction" id="ex-beta-cloud-cache-allocation-2">
+<div class="para" id="ex-beta-cloud-cache-allocation-2-1">An enterprise cloud computing data center manages massive data buffers that are completely cleared and reset every Monday morning. System architecture engineers monitor the proportion, <span class="process-math">\(Y\text{,}\)</span> of this high-speed cache storage capacity that is actively utilized during the weekly data sync cycle. Over many months of operational logging, engineers establish that <span class="process-math">\(Y\)</span> behaves as a continuous random variable that can be modeled by a Beta distribution with shape parameters <span class="process-math">\(\alpha = 4\)</span> and <span class="process-math">\(\beta = 2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-beta-cloud-cache-allocation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-beta-cloud-cache-allocation-2-2">Complete the questions below to evaluate the system’s infrastructure storage risks.<div class="autopermalink" data-description="Paragraph"><a href="#ex-beta-cloud-cache-allocation-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-beta-cache-solve-pdf-mc"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-beta-cache-solve-pdf-mc-1-1">Which of the following expressions defines the correct Probability Density Function (PDF), <span class="process-math">\(f(y)\text{,}\)</span> over the domain support interval <span class="process-math">\(0 \le y \le 1\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-beta-cache-solve-pdf-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-beta-cache-solve-pdf-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-beta-cache-solve-pdf-mc_opt_a">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-1-1-1"><span class="process-math">\(f(y) = 4y^3(1-y)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-cache-solve-pdf-mc_opt_a">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-1-2-1">Incorrect. This option uses the shape parameter value <span class="process-math">\(\alpha = 4\)</span> directly as the constant multiplier coefficient. To find the correct scalar constant, you must calculate the reciprocal of the Beta function pool, <span class="process-math">\(\frac{1}{\text{B}(\alpha, \beta)}\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-beta-cache-solve-pdf-mc_opt_b" data-correct="">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-2-1-1"><span class="process-math">\(f(y) = 20y^3(1-y)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-cache-solve-pdf-mc_opt_b">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-2-2-1">Correct! The standard algebraic profile for a Beta distribution PDF is defined as:</div>
+<div class="displaymath process-math" id="task-beta-cache-solve-pdf-mc-2-2-2-2">
+\begin{equation*}
+f(y) = \frac{1}{\text{B}(\alpha, \beta)} y^{\alpha - 1} (1-y)^{\beta - 1}
+\end{equation*}
+</div>
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-2-2-3">Substituting our given parameters (<span class="process-math">\(\alpha = 4\)</span> and <span class="process-math">\(\beta = 2\)</span>) maps to the functional components as follows:</div> 
+<ul class="disc" id="task-beta-cache-solve-pdf-mc-2-2-2-4">
+<li id="task-beta-cache-solve-pdf-mc-2-2-2-4-1">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-2-2-4-1-1">The variable powers drop by 1: <span class="process-math">\(\alpha - 1 = 3\)</span> and <span class="process-math">\(\beta - 1 = 1\text{,}\)</span> giving the polynomial kernel <span class="process-math">\(y^3(1-y)\text{.}\)</span>
+</div>
+</li>
+<li id="task-beta-cache-solve-pdf-mc-2-2-2-4-2">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-2-2-4-2-1">The normalizing scalar constant multiplier utilizes Gamma factorial identities for positive integers:</div>
+<div class="displaymath process-math" id="task-beta-cache-solve-pdf-mc-2-2-2-4-2-2">
+\begin{equation*}
+k = \frac{1}{\text{B}(4, 2)} = \frac{\Gamma(4+2)}{\Gamma(4)\cdot\Gamma(2)} = \frac{5!}{3! \cdot 1!} = \frac{120}{6 \cdot 1} = 20
+\end{equation*}
+</div>
+</li>
+</ul> 
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-2-2-5">Multiplying the parts together gives the valid PDF expression: <span class="process-math">\(20y^3(1-y)\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-beta-cache-solve-pdf-mc_opt_c">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-3-1-1"><span class="process-math">\(f(y) = 5y^4(1-y)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-cache-solve-pdf-mc_opt_c">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-3-2-1">Incorrect. It looks like you forgot to subtract 1 from the exponents when mapping the shape parameters to the polynomial variable components, setting the kernel up as <span class="process-math">\(y^{\alpha}(1-y)^{\beta-1}\)</span> instead of <span class="process-math">\(y^{\alpha-1}(1-y)^{\beta-1}\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-beta-cache-solve-pdf-mc_opt_d">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-4-1-1"><span class="process-math">\(f(y) = \frac{1}{20}y^3(1-y)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-cache-solve-pdf-mc_opt_d">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-4-2-1">Incorrect. This options uses the raw Beta integral value <span class="process-math">\(\text{B}(4,2) = \frac{1}{20}\)</span> directly as the multiplier. Remember that the constant outside the kernel must be the <em class="emphasis">reciprocal</em> of that value to ensure the entire area under the curve sums to exactly 1.00.</div>
+</li>
+<li data-component="answer" id="rs-task-beta-cache-solve-pdf-mc_opt_e">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-5-1-1"><span class="process-math">\(f(y) = 20y^4(1-y)^2\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-cache-solve-pdf-mc_opt_e">
+<div class="para" id="task-beta-cache-solve-pdf-mc-2-5-2-1">Incorrect. While the constant multiplier 20 is correct, the variable exponents were not adjusted downward by 1, which alters the core structural shape of the distribution.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.5.2.a"><a href="#task-beta-cache-solve-pdf-mc" title="Copy heading and permalink for Task 7.5.2.a" aria-label="Copy heading and permalink for Task 7.5.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-beta-cache-compute-prob"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-beta-cache-compute-prob"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-beta-cache-compute-prob-1-1\">Find the probability that the data center will fill at least 90% of its available cache storage capacity in a given week.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-beta-cache-compute-prob-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-beta-cache-compute-prob-1-2\">Enter your answer as a decimal rounded to exactly two decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-beta-cache-compute-prob-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-beta-cache-compute-prob-1-3\">Probability = <input type=\"text\" id=\"ex-beta-cloud-cache-allocation-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-beta-cache-compute-prob-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.08,0.08], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.5.2.b"><a href="#task-beta-cache-compute-prob" title="Copy heading and permalink for Task 7.5.2.b" aria-label="Copy heading and permalink for Task 7.5.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-beta-cache-cdf-mc"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-beta-cache-cdf-mc-1-1">Find the general expression for the cumulative distribution function (CDF), <span class="process-math">\(F(y) = P(Y \le y)\text{,}\)</span> for the active cache capacity interval <span class="process-math">\(0 \le y \le 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-beta-cache-cdf-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-beta-cache-cdf-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-beta-cache-cdf-mc_opt_a">
+<div class="para" id="task-beta-cache-cdf-mc-2-1-1-1"><span class="process-math">\(F(y) = 20y^3 - 20y^4\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-cache-cdf-mc_opt_a">
+<div class="para" id="task-beta-cache-cdf-mc-2-1-2-1">Incorrect. This is the raw probability density function (PDF) with the terms expanded, <span class="process-math">\(20(y^3 - y^4)\text{.}\)</span> To find the cumulative function, you must take the anti-derivative integral of this expression.</div>
+</li>
+<li data-component="answer" id="rs-task-beta-cache-cdf-mc_opt_b" data-correct="">
+<div class="para" id="task-beta-cache-cdf-mc-2-2-1-1"><span class="process-math">\(F(y) = 5y^4 - 4y^5\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-cache-cdf-mc_opt_b">
+<div class="para" id="task-beta-cache-cdf-mc-2-2-2-1">Correct! To derive the continuous cumulative distribution function, integrate the valid PDF expression from Part A from the absolute lower boundary limit 0 up to an arbitrary variable value point <span class="process-math">\(y\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="task-beta-cache-cdf-mc-2-2-2-2">
+\begin{align*}
+F(y) \amp = \int_{0}^{y} 20t^3(1-t) \, dt = 20 \int_{0}^{y} (t^3 - t^4) \, dt\\
+\amp = 20 \left[ \frac{t^4}{4} - \frac{t^5}{5} \right]_{0}^{y} = 5y^4 - 4y^5
+\end{align*}
+</div>
+<div class="para" id="task-beta-cache-cdf-mc-2-2-2-3">Evaluating this function at the absolute upper domain limit confirms its validity: <span class="process-math">\(F(1) = 5(1)^4 - 4(1)^5 = 1\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-beta-cache-cdf-mc_opt_c">
+<div class="para" id="task-beta-cache-cdf-mc-2-3-1-1"><span class="process-math">\(F(y) = 4y^5 - 5y^4\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-cache-cdf-mc_opt_c">
+<div class="para" id="task-beta-cache-cdf-mc-2-3-2-1">Incorrect. This looks like an algebraic sign direction error made during the polynomial integration step. Review the subtraction balance when taking the anti-derivative of the negative term.</div>
+</li>
+<li data-component="answer" id="rs-task-beta-cache-cdf-mc_opt_d">
+<div class="para" id="task-beta-cache-cdf-mc-2-4-1-1"><span class="process-math">\(F(y) = \frac{5}{4}y^4 - \frac{4}{5}y^5\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-beta-cache-cdf-mc_opt_d">
+<div class="para" id="task-beta-cache-cdf-mc-2-4-2-1">Incorrect. It looks like you divided by the integration powers but forgot to distribute the constant multiplier coefficient coefficient of 20 to clear out the fractional denominators.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.5.2.c"><a href="#task-beta-cache-cdf-mc" title="Copy heading and permalink for Task 7.5.2.c" aria-label="Copy heading and permalink for Task 7.5.2.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.5.2: Continuous Distributions: Beta Modeling of Cloud Cache Workloads"><a href="#ex-beta-cloud-cache-allocation" title="Copy heading and permalink for Exercise 7.5.2: Continuous Distributions: Beta Modeling of Cloud Cache Workloads" aria-label="Copy heading and permalink for Exercise 7.5.2: Continuous Distributions: Beta Modeling of Cloud Cache Workloads">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 7.5: Interactive Exercises"><a href="#hw-beta-rv" title="Copy heading and permalink for Exercises 7.5: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 7.5: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-beta-rv-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<div class="autopermalink" data-description="Exercises 7.5: Written Exercises"><a href="#hw-beta-rv-turn-in" title="Copy heading and permalink for Exercises 7.5: Written Exercises" aria-label="Copy heading and permalink for Exercises 7.5: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 7.5: Beta Random Variable"><a href="#sec-section-beta-CRV" title="Copy heading and permalink for Section 7.5: Beta Random Variable" aria-label="Copy heading and permalink for Section 7.5: Beta Random Variable">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-section-gamma-CRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-chapter-Joint-RVs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Practice with Set Operations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-chapter-Set-Operations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Set-Operations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-SO-proofs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-SO">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Practice with Set Operations</span>
+</h2>
+<section class="introduction" id="sec-section-SO-2">
+<div class="para logical" id="sec-section-SO-2-1">
+<div class="para">By completing the problems provided below, you will gain practice with:</div>
+<ul class="disc" id="sec-section-SO-2-1-1">
+<li id="sec-section-SO-2-1-1-1">
+<div class="para" id="sec-section-SO-2-1-1-1-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-SO-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-SO-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-SO-2-1-1-2">
+<div class="para" id="sec-section-SO-2-1-1-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-SO-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-SO-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-SO-2-1-1-3">
+<div class="para" id="sec-section-SO-2-1-1-3-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-SO-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-SO-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-SO-2-1-1-4">
+<div class="para" id="sec-section-SO-2-1-1-4-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-SO-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-SO-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-SO-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="exercises" id="hw-set-operations">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="SO-generic-A"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Set Operations and Cardinality.</span>
+</h4>
+<div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-SO-generic-A">
+<span data-subcomponent="question">
+<div class="para logical" id="SO-generic-A-2-1">
+<div class="para">Suppose that the universal set <span class="process-math">\(U\)</span> is defined as <span class="process-math">\(U = \{1,2,3,4,5,6,7,8,9,10,11,12\}\text{,}\)</span> and sets <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\)</span> are defined as:</div>
+<div class="displaymath process-math" id="SO-generic-A-2-1-6">
+\begin{equation*}
+A = \{1,2,3\}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="SO-generic-A-2-1-7">
+\begin{equation*}
+B = \{2,3,4,5,6,7,8\}
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="SO-generic-A-2-1-8">
+\begin{equation*}
+C = \{6,8,10,12\}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#SO-generic-A-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="SO-generic-A-2-2">Match each set operation on the left with its correct resulting set on the right. Note that there are extra sets on the right that do not match any operation!<div class="autopermalink" data-description="Paragraph"><a href="#SO-generic-A-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><li data-subcomponent="draggable" id="rs-SO-generic-A_drag1" data-category="1"><span class="process-math">\(A \cup B\)</span></li>
+<li data-subcomponent="dropzone" for="rs-SO-generic-A_drag1" data-category="1"><span class="process-math">\(\{1,2,3,4,5,6,7,8\}\)</span></li>
+<li data-subcomponent="draggable" id="rs-SO-generic-A_drag2" data-category="2"><span class="process-math">\((A \cup C) - B\)</span></li>
+<li data-subcomponent="dropzone" for="rs-SO-generic-A_drag2" data-category="2"><span class="process-math">\(\{1,10,12\}\)</span></li>
+<li data-subcomponent="draggable" id="rs-SO-generic-A_drag3" data-category="3"><span class="process-math">\(A^c \cup (B - C)\)</span></li>
+<li data-subcomponent="dropzone" for="rs-SO-generic-A_drag3" data-category="3"><span class="process-math">\(\{2,3,4,5,6,7,8,9,10,11,12\}\)</span></li>
+<li data-subcomponent="draggable" id="rs-SO-generic-A_drag4" data-category="4"><span class="process-math">\(A^c \cap C^c\)</span></li>
+<li data-subcomponent="dropzone" for="rs-SO-generic-A_drag4" data-category="4"><span class="process-math">\(\{4,5,7,9,11\}\)</span></li>
+<li data-subcomponent="dropzone" for="rs-SO-generic-A_drag5" data-category="5"><span class="process-math">\(\{2,3\}\)</span></li>
+<li data-subcomponent="dropzone" for="rs-SO-generic-A_drag6" data-category="6"><span class="process-math">\(\{6,8\}\)</span></li>
+<li data-subcomponent="dropzone" for="rs-SO-generic-A_drag7" data-category="7"><span class="process-math">\(\{1,10,11,12\}\)</span></li>
+</ul></div></div>
+<div class="solutions">
+<details id="SO-generic-A-4" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="SO-generic-A-4-1">Remember that <span class="process-math">\(\cup\)</span> represents the union (combining all unique elements), <span class="process-math">\(\cap\)</span> represents the intersection (only elements present in both sets), <span class="process-math">\(-\)</span> represents the relative complement (subtracting elements), and <span class="process-math">\(A^c\)</span> represents all items in <span class="process-math">\(U\)</span> that are not in <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#SO-generic-A-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 2.1.1.1"><a href="#SO-generic-A-4" title="Copy heading and permalink for Hint 2.1.1.1" aria-label="Copy heading and permalink for Hint 2.1.1.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 2.1.1: Set Operations and Cardinality"><a href="#SO-generic-A" title="Copy heading and permalink for Exercise 2.1.1: Set Operations and Cardinality" aria-label="Copy heading and permalink for Exercise 2.1.1: Set Operations and Cardinality">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="SO-cardinality"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cardinality of a Partitioned Set.</span>
+</h4>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-SO-cardinality"><script type="application/json">{
+"problemHtml": "\n<div class=\"para logical\" id=\"SO-cardinality-2-1\"><div class=\"para\">Suppose that <span class=\"process-math\">\\(A_1\\text{,}\\)<\/span> <span class=\"process-math\">\\(A_2\\text{,}\\)<\/span> and <span class=\"process-math\">\\(A_3\\)<\/span> form a partition of the sample space <span class=\"process-math\">\\(S\\text{.}\\)<\/span> Let <span class=\"process-math\">\\(B\\)<\/span> be an arbitrary set within <span class=\"process-math\">\\(S\\text{,}\\)<\/span> and assume that we know the sizes of its intersections with each partition piece:<\/div><div class=\"displaymath process-math\" id=\"SO-cardinality-2-1-7\">\n\\begin{equation*}\n|B \\cap A_1| = 10\n\\end{equation*}\n<\/div><div class=\"displaymath process-math\" id=\"SO-cardinality-2-1-8\">\n\\begin{equation*}\n|B \\cap A_2| = 20\n\\end{equation*}\n<\/div><div class=\"displaymath process-math\" id=\"SO-cardinality-2-1-9\">\n\\begin{equation*}\n|B \\cap A_3| = 15\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#SO-cardinality-2-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"SO-cardinality-2-2\">Find the total number of elements in set <span class=\"process-math\">\\(B\\)<\/span> (i.e., find <span class=\"process-math\">\\(|B|\\)<\/span>). Enter your answer as a whole number.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#SO-cardinality-2-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"SO-cardinality-2-3\"><input type=\"text\" id=\"SO-cardinality-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#SO-cardinality-2-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [45,45], "feedback": "\n<div class=\"para\" id=\"SO-cardinality-3-1-1-2-1\">Correct! Four out of 8 outcomes in the sample space involve the second child being female.<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="SO-cardinality-4" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="SO-cardinality-4-1">Recall that a partition divides a set into disjoint subsets that do not overlap. This means that the pieces <span class="process-math">\(B \cap A_1\text{,}\)</span> <span class="process-math">\(B \cap A_2\text{,}\)</span> and <span class="process-math">\(B \cap A_3\)</span> share no elements in common and completely cover the set <span class="process-math">\(B\text{.}\)</span> Apply the Addition Rule.<div class="autopermalink" data-description="Paragraph"><a href="#SO-cardinality-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 2.1.2.1"><a href="#SO-cardinality-4" title="Copy heading and permalink for Hint 2.1.2.1" aria-label="Copy heading and permalink for Hint 2.1.2.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 2.1.2: Cardinality of a Partitioned Set"><a href="#SO-cardinality" title="Copy heading and permalink for Exercise 2.1.2: Cardinality of a Partitioned Set" aria-label="Copy heading and permalink for Exercise 2.1.2: Cardinality of a Partitioned Set">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-probability-transit-distribution"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Probability Theory: Discrete Transit Distributions.</span>
+</h4>
+<div class="introduction" id="ex-probability-transit-distribution-2">
+<div class="para" id="ex-probability-transit-distribution-2-1">A university sustainability committee selects a student at random from the campus directory and asks about their primary mode of transportation to campus during the week. Based on comprehensive parking and registration datasets, here are the probabilities for each:<div class="autopermalink" data-description="Paragraph"><a href="#ex-probability-transit-distribution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-probability-transit-distribution-2-2">
+<figure class="table table-like" id="ex-probability-transit-distribution-2-2-1"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Primary Commuter Transit Distribution<div class="autopermalink" data-description="Table 2.1.1: Primary Commuter Transit Distribution"><a href="#ex-probability-transit-distribution-2-2-1" title="Copy heading and permalink for Table 2.1.1: Primary Commuter Transit Distribution" aria-label="Copy heading and permalink for Table 2.1.1: Primary Commuter Transit Distribution">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r1 l1 t1 lines">Transit Mode</th>
+<th scope="col" class="c m b1 r1 l0 t1 lines">Bus</th>
+<th scope="col" class="c m b1 r1 l0 t1 lines">Train</th>
+<th scope="col" class="c m b1 r1 l0 t1 lines">Bicycle</th>
+<th scope="col" class="c m b1 r1 l0 t1 lines">All Others</th>
+<th scope="col" class="c m b1 r1 l0 t1 lines">Drive Alone</th>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">Probability</td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0.22\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0.09\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0.04\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0.01\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0.64\)</span></td>
+</tr>
+</table></div>
+</figure><div class="autopermalink" data-description="Paragraph"><a href="#ex-probability-transit-distribution-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-transit-alternative"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-transit-alternative"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-transit-alternative-1-1\">What is the probability that a randomly chosen student utilizes a sustainable alternative mode of transit to get to campus (meaning their primary option is any mode <em class=\"emphasis\">other than<\/em> driving alone)?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-transit-alternative-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-transit-alternative-1-2\">Probability = <input type=\"text\" id=\"ex-probability-transit-distribution-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-transit-alternative-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.36,0.36], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.3.a"><a href="#task-transit-alternative" title="Copy heading and permalink for Task 2.1.3.a" aria-label="Copy heading and permalink for Task 2.1.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-transit-specific-modes"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-transit-specific-modes"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-transit-specific-modes-1-1\">What is the probability that a randomly chosen student commutes to campus specifically via the Bus, Train, or Bicycle?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-transit-specific-modes-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-transit-specific-modes-1-2\">Probability = <input type=\"text\" id=\"ex-probability-transit-distribution-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-transit-specific-modes-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.35,0.35], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.3.b"><a href="#task-transit-specific-modes" title="Copy heading and permalink for Task 2.1.3.b" aria-label="Copy heading and permalink for Task 2.1.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-transit-sub-exclusion"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-transit-sub-exclusion"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-transit-sub-exclusion-1-1\">Part C: What is the probability that a randomly chosen student utilizes an alternative mode of transit to get to campus, <em class=\"emphasis\">but does not use a bicycle<\/em>?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-transit-sub-exclusion-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-transit-sub-exclusion-1-2\">Probability = <input type=\"text\" id=\"ex-probability-transit-distribution-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-transit-sub-exclusion-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.32,0.32], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.3.c"><a href="#task-transit-sub-exclusion" title="Copy heading and permalink for Task 2.1.3.c" aria-label="Copy heading and permalink for Task 2.1.3.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 2.1.3: Probability Theory: Discrete Transit Distributions"><a href="#ex-probability-transit-distribution" title="Copy heading and permalink for Exercise 2.1.3: Probability Theory: Discrete Transit Distributions" aria-label="Copy heading and permalink for Exercise 2.1.3: Probability Theory: Discrete Transit Distributions">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-probability-network-alerts"><h4 class="heading">
+<span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Probability Theory: Analyzing Network System Alerts.</span>
+</h4>
+<div class="introduction" id="ex-probability-network-alerts-2">
+<div class="para" id="ex-probability-network-alerts-2-1">An automated DevOps monitoring dashboard tracks system alerts across an enterprise cloud network. During peak load windows, let <span class="process-math">\(A\)</span> denote a Security Firewall Alert, let <span class="process-math">\(B\)</span> denote a Server Overload Alert, and let <span class="process-math">\(C\)</span> denote a Database Timeout Alert.<div class="autopermalink" data-description="Paragraph"><a href="#ex-probability-network-alerts-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-probability-network-alerts-2-2">
+<div class="para">Systems data reveals the following baseline probabilities for these events:</div>
+<div class="displaymath process-math" id="ex-probability-network-alerts-2-2-1">
+\begin{equation*}
+P(A) = 0.5, \quad P(B) = 0.6, \quad P(C) = 0.3, \quad \text{and} \quad P(B \cup C) = 0.8
+\end{equation*}
+</div>
+<div class="para">Additionally, network engineers note that the probability of experiencing both a Firewall alert and a Server Overload simultaneously is <span class="process-math">\(P(A \cap B) = 0.3\text{.}\)</span> Complete the parts below to audit this warning system.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-probability-network-alerts-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-alerts-intersection"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-alerts-intersection"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-alerts-intersection-1-1\">Find the probability that both a Server Overload alert and a Database Timeout alert occur simultaneously, <span class=\"process-math\">\\(P(B \\cap C)\\text{.}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-alerts-intersection-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-alerts-intersection-1-2\">Probability = <input type=\"text\" id=\"ex-probability-network-alerts-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-alerts-intersection-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.1,0.1], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.4.a"><a href="#task-alerts-intersection" title="Copy heading and permalink for Task 2.1.4.a" aria-label="Copy heading and permalink for Task 2.1.4.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-alerts-union-ab"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-alerts-union-ab"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-alerts-union-ab-1-1\">Find the probability that the system experiences a Security Firewall alert, a Server Overload alert, or both, <span class=\"process-math\">\\(P(A \\cup B)\\text{.}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-alerts-union-ab-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-alerts-union-ab-1-2\">Probability = <input type=\"text\" id=\"ex-probability-network-alerts-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-alerts-union-ab-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.8,0.8], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.4.b"><a href="#task-alerts-union-ab" title="Copy heading and permalink for Task 2.1.4.b" aria-label="Copy heading and permalink for Task 2.1.4.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-alerts-complement"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-alerts-complement"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-alerts-complement-1-1\">Find the probability that the network remains completely stable regarding alerts <span class=\"process-math\">\\(B\\)<\/span> and <span class=\"process-math\">\\(C\\)<\/span> (meaning <em class=\"emphasis\">neither<\/em> a Server Overload nor a Database Timeout occurs), <span class=\"process-math\">\\(P((B \\cup C)^c)\\text{.}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-alerts-complement-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-alerts-complement-1-2\">Probability = <input type=\"text\" id=\"ex-probability-network-alerts-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-alerts-complement-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.2,0.2], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.4.c"><a href="#task-alerts-complement" title="Copy heading and permalink for Task 2.1.4.c" aria-label="Copy heading and permalink for Task 2.1.4.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-alerts-intersection-complement"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-alerts-intersection-complement"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-alerts-intersection-complement-1-1\">Find the probability that a Security Firewall alert occurs without a concurrent Server Overload alert triggering, <span class=\"process-math\">\\(P(A \\cap B^c)\\text{.}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-alerts-intersection-complement-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-alerts-intersection-complement-1-2\">Probability = <input type=\"text\" id=\"ex-probability-network-alerts-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-alerts-intersection-complement-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.2,0.2], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.4.d"><a href="#task-alerts-intersection-complement" title="Copy heading and permalink for Task 2.1.4.d" aria-label="Copy heading and permalink for Task 2.1.4.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-alerts-mutually-exclusive"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-alerts-mutually-exclusive-1-1">Are events <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> mutually exclusive?<div class="autopermalink" data-description="Paragraph"><a href="#task-alerts-mutually-exclusive-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-alerts-mutually-exclusive" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-alerts-mutually-exclusive_opt_a" data-correct="">
+<div class="para" id="task-alerts-mutually-exclusive-2-1-1-1">No, because <span class="process-math">\(P(B \cap C) = 0.1 \neq 0\text{.}\)</span>
+</div>
+</li>
+<li data-component="feedback" id="rs-task-alerts-mutually-exclusive_opt_a">
+<div class="para" id="task-alerts-mutually-exclusive-2-1-2-1">Correct! Two events are mutually exclusive (disjoint) if and only if they cannot occur at the same time, which means their intersection probability must be exactly zero. Because our calculation yielded <span class="process-math">\(0.1\text{,}\)</span> it is entirely possible for both alerts to hit at once.</div>
+</li>
+<li data-component="answer" id="rs-task-alerts-mutually-exclusive_opt_b">
+<div class="para" id="task-alerts-mutually-exclusive-2-2-1-1">Yes, because <span class="process-math">\(P(B) + P(C) = 0.9\text{,}\)</span> which does not equal 1.</div>
+</li>
+<li data-component="feedback" id="rs-task-alerts-mutually-exclusive_opt_b">
+<div class="para" id="task-alerts-mutually-exclusive-2-2-2-1">Incorrect. The sum of the individual probabilities being different from 1 does not determine mutual exclusivity.</div>
+</li>
+<li data-component="answer" id="rs-task-alerts-mutually-exclusive_opt_c">
+<div class="para" id="task-alerts-mutually-exclusive-2-3-1-1">No, because <span class="process-math">\(P(B \cup C) = 0.8\text{,}\)</span> which means they cover most of the sample space.</div>
+</li>
+<li data-component="feedback" id="rs-task-alerts-mutually-exclusive_opt_c">
+<div class="para" id="task-alerts-mutually-exclusive-2-3-2-1">Incorrect. Mutual exclusivity depends strictly on the intersection value being zero, not on the size of the union space.</div>
+</li>
+<li data-component="answer" id="rs-task-alerts-mutually-exclusive_opt_d">
+<div class="para" id="task-alerts-mutually-exclusive-2-4-1-1">Yes, because <span class="process-math">\(P(B \cap C) \neq P(B) \cdot P(C)\text{.}\)</span>
+</div>
+</li>
+<li data-component="feedback" id="rs-task-alerts-mutually-exclusive_opt_d">
+<div class="para" id="task-alerts-mutually-exclusive-2-4-2-1">Incorrect. You are confusing mutual exclusivity with mathematical independence. Independence checks multiplication parity, while mutual exclusivity checks for an absolute zero intersection.</div>
+</li>
+<li data-component="answer" id="rs-task-alerts-mutually-exclusive_opt_e">
+<div class="para" id="task-alerts-mutually-exclusive-2-5-1-1">Yes, because a database timeout physically slows down server operations.</div>
+</li>
+<li data-component="feedback" id="rs-task-alerts-mutually-exclusive_opt_e">
+<div class="para" id="task-alerts-mutually-exclusive-2-5-2-1">Incorrect. Physical or logical causation would suggest the events occur together frequently, which contradicts the definition of being mutually exclusive.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.4.e"><a href="#task-alerts-mutually-exclusive" title="Copy heading and permalink for Task 2.1.4.e" aria-label="Copy heading and permalink for Task 2.1.4.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 2.1.4: Probability Theory: Analyzing Network System Alerts"><a href="#ex-probability-network-alerts" title="Copy heading and permalink for Exercise 2.1.4: Probability Theory: Analyzing Network System Alerts" aria-label="Copy heading and permalink for Exercise 2.1.4: Probability Theory: Analyzing Network System Alerts">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="SO-ticket-raffle-prob"><h4 class="heading">
+<span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Campus Ticket Raffle Probability.</span>
+</h4>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="SO-ticket-raffle-prob-2-1">A high-demand campus music festival has a limited ticket lottery. There are <span class="process-math">\(50\)</span> students who enter the raffle, and the event organizers choose <span class="process-math">\(15\)</span> winners at random.<div class="autopermalink" data-description="Paragraph"><a href="#SO-ticket-raffle-prob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="SO-ticket-raffle-prob-2-2">What is the probability that either you or your friend Brenda (or both of you) are among the chosen winners?<div class="autopermalink" data-description="Paragraph"><a href="#SO-ticket-raffle-prob-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-SO-ticket-raffle-prob" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-SO-ticket-raffle-prob_opt_a" data-correct=""><span class="process-math">\(0.514\)</span></li>
+<li data-component="feedback" id="rs-SO-ticket-raffle-prob_opt_a">
+<div class="para" id="SO-ticket-raffle-prob-3-1-2-1">Correct! The easiest way to calculate this is by taking the complement of neither you nor Brenda being selected. The number of ways to pick 15 winners entirely from the other 48 students is <span class="process-math">\(\binom{48}{15}\text{.}\)</span> Subtracting this ratio from 1 yields: <span class="process-math">\(1 - \frac{\binom{48}{15}}{\binom{50}{15}} = 1 - 0.486 = 0.514\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-SO-ticket-raffle-prob_opt_b"><span class="process-math">\(0.486\)</span></li>
+<li data-component="feedback" id="rs-SO-ticket-raffle-prob_opt_b">
+<div class="para" id="SO-ticket-raffle-prob-3-2-2-1">Incorrect. This is the probability that <dfn class="terminology">neither</dfn> you nor Brenda get selected (<span class="process-math">\(\frac{\binom{48}{15}}{\binom{50}{15}} = 0.486\)</span>). You must subtract this value from 1 to find the probability that at least one of you is chosen.</div>
+</li>
+<li data-component="answer" id="rs-SO-ticket-raffle-prob_opt_c"><span class="process-math">\(0.600\)</span></li>
+<li data-component="feedback" id="rs-SO-ticket-raffle-prob_opt_c">
+<div class="para" id="SO-ticket-raffle-prob-3-3-2-1">Incorrect. This is the simple linear ratio of winners to total entrants (<span class="process-math">\(2 \times \frac{15}{50} = 0.60\)</span>). This ignores the fact that selections are made without replacement, which overcounts the scenario where both of you win.</div>
+</li>
+<li data-component="answer" id="rs-SO-ticket-raffle-prob_opt_d"><span class="process-math">\(0.114\)</span></li>
+<li data-component="feedback" id="rs-SO-ticket-raffle-prob_opt_d">
+<div class="para" id="SO-ticket-raffle-prob-3-4-2-1">Incorrect. This result occurs if you accidentally subtract the complement from <span class="process-math">\(0.600\)</span> instead of <span class="process-math">\(1\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-SO-ticket-raffle-prob_opt_e"><span class="process-math">\(0.914\)</span></li>
+<li data-component="feedback" id="rs-SO-ticket-raffle-prob_opt_e">
+<div class="para" id="SO-ticket-raffle-prob-3-5-2-1">Incorrect. This value represents an arithmetic error in evaluating the combinations pool. Make sure to compute the full combinations <span class="process-math">\(\binom{48}{15}\)</span> and <span class="process-math">\(\binom{50}{15}\)</span> precisely.</div>
+</li>
+</ul>
+</div></div>
+<div class="solutions">
+<details id="SO-ticket-raffle-prob-4" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="SO-ticket-raffle-prob-4-1">Think about the complement of the event. It is much easier to compute the probability that <dfn class="terminology">neither</dfn> you nor Brenda are selected out of the 15 winners. If neither of you win, all 15 winners must be chosen from the remaining 48 students.<div class="autopermalink" data-description="Paragraph"><a href="#SO-ticket-raffle-prob-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 2.1.5.1"><a href="#SO-ticket-raffle-prob-4" title="Copy heading and permalink for Hint 2.1.5.1" aria-label="Copy heading and permalink for Hint 2.1.5.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 2.1.5: Campus Ticket Raffle Probability"><a href="#SO-ticket-raffle-prob" title="Copy heading and permalink for Exercise 2.1.5: Campus Ticket Raffle Probability" aria-label="Copy heading and permalink for Exercise 2.1.5: Campus Ticket Raffle Probability">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-probability-demorgans-matching"><h4 class="heading">
+<span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Probability Theory: Set Operations and De Morgan’s Laws.</span>
+</h4>
+<div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-ex-probability-demorgans-matching">
+<span data-subcomponent="question">
+<div class="para" id="ex-probability-demorgans-matching-2-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two events defined within a universal sample space. Match each of the compound event expressions on the left with an equivalent symbolic expression on the right.<div class="autopermalink" data-description="Paragraph"><a href="#ex-probability-demorgans-matching-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><span data-subcomponent="feedback">
+<div class="para" id="ex-probability-demorgans-matching-3-1">Excellent job! You have mastered the rules of set complements, intersections, unions, and De Morgan’s Laws.</div></span><li data-subcomponent="draggable" id="rs-ex-probability-demorgans-matching_drag1" data-category="1"><span class="process-math">\((A \cup B)^c\)</span></li>
+<li data-subcomponent="dropzone" for="rs-ex-probability-demorgans-matching_drag1" data-category="1"><span class="process-math">\(A^c \cap B^c\)</span></li>
+<li data-subcomponent="draggable" id="rs-ex-probability-demorgans-matching_drag2" data-category="2"><span class="process-math">\((A \cup B^c)^c\)</span></li>
+<li data-subcomponent="dropzone" for="rs-ex-probability-demorgans-matching_drag2" data-category="2"><span class="process-math">\(A^c \cap B\)</span></li>
+<li data-subcomponent="draggable" id="rs-ex-probability-demorgans-matching_drag3" data-category="3"><span class="process-math">\((A^c \cap B)^c\)</span></li>
+<li data-subcomponent="dropzone" for="rs-ex-probability-demorgans-matching_drag3" data-category="3"><span class="process-math">\(A \cup B^c\)</span></li>
+<li data-subcomponent="draggable" id="rs-ex-probability-demorgans-matching_drag4" data-category="4"><span class="process-math">\(A \cap B^c\)</span></li>
+<li data-subcomponent="dropzone" for="rs-ex-probability-demorgans-matching_drag4" data-category="4"><span class="process-math">\((A^c \cup B)^c\)</span></li>
+<li data-subcomponent="dropzone" for="rs-ex-probability-demorgans-matching_drag5" data-category="5"><span class="process-math">\(A^c \cup B^c\)</span></li>
+<li data-subcomponent="dropzone" for="rs-ex-probability-demorgans-matching_drag6" data-category="6"><span class="process-math">\(A \cap B\)</span></li>
+</ul></div></div>
+<div class="autopermalink" data-description="Exercise 2.1.6: Probability Theory: Set Operations and De Morgan’s Laws"><a href="#ex-probability-demorgans-matching" title="Copy heading and permalink for Exercise 2.1.6: Probability Theory: Set Operations and De Morgan’s Laws" aria-label="Copy heading and permalink for Exercise 2.1.6: Probability Theory: Set Operations and De Morgan’s Laws">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-venn-diagram-matching-expanded"><h4 class="heading">
+<span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matching Venn Diagrams to Set Expressions.</span>
+</h4>
+<div class="ptx-runestone-container"><div data-component="matching" class="runestone" id="rs-ex-venn-diagram-matching-expanded"><script type="text/xml"><matching><statement>
+<div class="para" id="ex-venn-diagram-matching-expanded-2-1">Four different Venn diagrams are rendered below with specific regions shaded. Match each visual diagram on the left with its correct mathematical set description on the right.<div class="autopermalink" data-description="Paragraph"><a href="#ex-venn-diagram-matching-expanded-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></statement><feedback></feedback><premise><id>ex-venn-diagram-matching-expanded-p1</id><label>
+<div class="para" id="ex-venn-diagram-matching-expanded-3-1-1"><dfn class="terminology">Diagram 1:</dfn></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/tikz-vennD-symmetric-diff.svg" role="img" class="contained" alt="Symmetric difference of A and C"></div></label></premise><premise><id>ex-venn-diagram-matching-expanded-p2</id><label>
+<div class="para" id="ex-venn-diagram-matching-expanded-3-4-1"><dfn class="terminology">Diagram 2:</dfn></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/tikz-vennD-distributive.svg" role="img" class="contained" alt="Intersection of A with the union of B and C"></div></label></premise><premise><id>ex-venn-diagram-matching-expanded-p3</id><label>
+<div class="para" id="ex-venn-diagram-matching-expanded-3-8-1"><dfn class="terminology">Diagram 3:</dfn></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/tikz-vennD-relative-diff.svg" role="img" class="contained" alt="C or (B minus A)"></div></label></premise><premise><id>ex-venn-diagram-matching-expanded-p4</id><label>
+<div class="para" id="ex-venn-diagram-matching-expanded-3-12-1"><dfn class="terminology">Diagram 4:</dfn></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/tikz-vennD-complex.svg" role="img" class="contained" alt="Complex region shading"></div></label></premise><response><id>ex-venn-diagram-matching-expanded-r1</id><label><span class="process-math">\((A \cup C) - (A \cap C)\)</span></label></response><response><id>ex-venn-diagram-matching-expanded-r2</id><label><span class="process-math">\((A - C) \cup (C - A)\)</span></label></response><response><id>ex-venn-diagram-matching-expanded-r3</id><label><span class="process-math">\((A \cap B) \cup (A \cap C)\)</span></label></response><response><id>ex-venn-diagram-matching-expanded-r4</id><label><span class="process-math">\(A  \cap (B \cup C)\)</span></label></response><response><id>ex-venn-diagram-matching-expanded-r5</id><label><span class="process-math">\(A \cup C\)</span></label></response><response><id>ex-venn-diagram-matching-expanded-r6</id><label><span class="process-math">\(C \cup (B \cap A^c)\)</span></label></response><response><id>ex-venn-diagram-matching-expanded-r7</id><label><span class="process-math">\((C \cup B) \cap (C \cup A^c)\)</span></label></response><response><id>ex-venn-diagram-matching-expanded-r8</id><label><span class="process-math">\(A^c  \cup C \)</span></label></response><response><id>ex-venn-diagram-matching-expanded-r9</id><label><span class="process-math">\([C - (A \cup B)] \cup [(A \cap B) - C]\)</span></label></response><response><id>ex-venn-diagram-matching-expanded-r10</id><label><span class="process-math">\((A\cup B)^c \cup (A \cap B)\)</span></label></response><response><id>ex-venn-diagram-matching-expanded-r11</id><label><span class="process-math">\(C \cup (A - B)\)</span></label></response><edge><label>ex-venn-diagram-matching-expanded-p1</label><label>ex-venn-diagram-matching-expanded-r1</label></edge><edge><label>ex-venn-diagram-matching-expanded-p1</label><label>ex-venn-diagram-matching-expanded-r2</label></edge><edge><label>ex-venn-diagram-matching-expanded-p2</label><label>ex-venn-diagram-matching-expanded-r3</label></edge><edge><label>ex-venn-diagram-matching-expanded-p2</label><label>ex-venn-diagram-matching-expanded-r4</label></edge><edge><label>ex-venn-diagram-matching-expanded-p3</label><label>ex-venn-diagram-matching-expanded-r6</label></edge><edge><label>ex-venn-diagram-matching-expanded-p3</label><label>ex-venn-diagram-matching-expanded-r7</label></edge><edge><label>ex-venn-diagram-matching-expanded-p3</label><label>ex-venn-diagram-matching-expanded-r8</label></edge><edge><label>ex-venn-diagram-matching-expanded-p4</label><label>ex-venn-diagram-matching-expanded-r10</label></edge></matching></script></div></div>
+<div class="autopermalink" data-description="Exercise 2.1.7: Matching Venn Diagrams to Set Expressions"><a href="#ex-venn-diagram-matching-expanded" title="Copy heading and permalink for Exercise 2.1.7: Matching Venn Diagrams to Set Expressions" aria-label="Copy heading and permalink for Exercise 2.1.7: Matching Venn Diagrams to Set Expressions">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-probability-bounds-popculture-all-mc"><h4 class="heading">
+<span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Probability Theory: Roster Analytics in a Superhero Franchise.</span>
+</h4>
+<div class="introduction" id="ex-probability-bounds-popculture-all-mc-2">
+<div class="para" id="ex-probability-bounds-popculture-all-mc-2-1">A pop culture media analyst is studying the character roster of a massive superhero comic book publishing franchise. A character is pulled completely at random from the active roster database and evaluated based on two specific traits: they are either a Marvel character (<span class="process-math">\(M\)</span>) or a DC character (<span class="process-math">\(D\)</span>), and they are either a Hero (<span class="process-math">\(H\)</span>) or a Villain (<span class="process-math">\(V\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#ex-probability-bounds-popculture-all-mc-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-probability-bounds-popculture-all-mc-2-2">
+<div class="para">The universal character sample space contains four distinct, mutually exclusive outcomes:</div>
+<div class="displaymath process-math" id="ex-probability-bounds-popculture-all-mc-2-2-1">
+\begin{equation*}
+\Omega = \{(M,H), (M,V), (D,H), (D,V)\}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(A\)</span> denote the event that a Marvel character is selected, and let <span class="process-math">\(B\)</span> denote the event that a Hero is selected. Franchise metrics show that <span class="process-math">\(P(A) = 0.70\)</span> (70% of the roster are Marvel properties) and <span class="process-math">\(P(B) = 0.55\)</span> (55% of the roster are classified as Heroes). Complete the tasks below to explore the boundary states of this universe’s character alignment.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-probability-bounds-popculture-all-mc-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-pop-bounds-largest-mc"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-pop-bounds-largest-mc-1-1">Given the provided percentages for <span class="process-math">\(P(A)\)</span> and <span class="process-math">\(P(B)\text{,}\)</span> what is the absolute largest that the intersection probability <span class="process-math">\(P(A \cap B)\)</span> could possibly be? (i.e., What is the maximum possible proportion of Marvel Heroes?)<div class="autopermalink" data-description="Paragraph"><a href="#task-pop-bounds-largest-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-pop-bounds-largest-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-pop-bounds-largest-mc_opt_a">
+<div class="para" id="task-pop-bounds-largest-mc-2-1-1-1"><span class="process-math">\(1.00\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pop-bounds-largest-mc_opt_a">
+<div class="para" id="task-pop-bounds-largest-mc-2-1-2-1">Incorrect. The intersection cannot exceed the probability of either individual event since <span class="process-math">\((A \cap B) \subseteq A\)</span> and <span class="process-math">\((A \cap B) \subseteq B\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-pop-bounds-largest-mc_opt_b">
+<div class="para" id="task-pop-bounds-largest-mc-2-2-1-1"><span class="process-math">\(0.70\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pop-bounds-largest-mc_opt_b">
+<div class="para" id="task-pop-bounds-largest-mc-2-2-2-1">Incorrect. If the intersection were 0.70, it would mean there are more Marvel Heroes than there are total Heroes in the entire database (<span class="process-math">\(P(B) = 0.55\)</span>), which is mathematically impossible.</div>
+</li>
+<li data-component="answer" id="rs-task-pop-bounds-largest-mc_opt_c" data-correct="">
+<div class="para" id="task-pop-bounds-largest-mc-2-3-1-1"><span class="process-math">\(0.55\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pop-bounds-largest-mc_opt_c">
+<div class="para" id="task-pop-bounds-largest-mc-2-3-2-1">Correct! The maximum possible value for an intersection is capped by the smaller of the two individual event probabilities, <span class="process-math">\(\min(P(A), P(B))\text{.}\)</span> This boundary state is reached if <span class="process-math">\(B \subseteq A\text{,}\)</span> meaning every single Hero in the database happens to belong to the Marvel universe.</div>
+</li>
+<li data-component="answer" id="rs-task-pop-bounds-largest-mc_opt_d">
+<div class="para" id="task-pop-bounds-largest-mc-2-4-1-1"><span class="process-math">\(0.25\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pop-bounds-largest-mc_opt_d">
+<div class="para" id="task-pop-bounds-largest-mc-2-4-2-1">Incorrect. This matches the lower extreme boundary rather than the upper extreme allocation target.</div>
+</li>
+<li data-component="answer" id="rs-task-pop-bounds-largest-mc_opt_e">
+<div class="para" id="task-pop-bounds-largest-mc-2-5-1-1"><span class="process-math">\(0.385\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pop-bounds-largest-mc_opt_e">
+<div class="para" id="task-pop-bounds-largest-mc-2-5-2-1">Incorrect. This is the intersection value if the two events were completely independent (<span class="process-math">\(0.70 \cdot 0.55 = 0.385\)</span>). However, the question asks for the absolute maximum boundary possible under any extreme structural arrangement.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.8.a"><a href="#task-pop-bounds-largest-mc" title="Copy heading and permalink for Task 2.1.8.a" aria-label="Copy heading and permalink for Task 2.1.8.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-pop-bounds-largest-elements"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-pop-bounds-largest-elements"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-pop-bounds-largest-elements-1-1\">If the intersection <span class=\"process-math\">\\(P(A \\cap B)\\)<\/span> assumes the maximum value you identified in Part A (where all Heroes are Marvel characters), determine the resulting individual probabilities for each item in the sample space:<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pop-bounds-largest-elements-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-pop-bounds-largest-elements-1-2\">1. <span class=\"process-math\">\\(P(\\{(M,H)\\}) = \\)<\/span> <input type=\"text\" id=\"ex-probability-bounds-popculture-all-mc-ans1\" name=\"ans1\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pop-bounds-largest-elements-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-pop-bounds-largest-elements-1-3\">2. <span class=\"process-math\">\\(P(\\{(M,V)\\}) = \\)<\/span> <input type=\"text\" id=\"ex-probability-bounds-popculture-all-mc-ans2\" name=\"ans2\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pop-bounds-largest-elements-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-pop-bounds-largest-elements-1-4\">3. <span class=\"process-math\">\\(P(\\{(D,H)\\}) = \\)<\/span> <input type=\"text\" id=\"ex-probability-bounds-popculture-all-mc-ans3\" name=\"ans3\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pop-bounds-largest-elements-1-4\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-pop-bounds-largest-elements-1-5\">4. <span class=\"process-math\">\\(P(\\{(D,V)\\}) = \\)<\/span> <input type=\"text\" id=\"ex-probability-bounds-popculture-all-mc-ans4\" name=\"ans4\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pop-bounds-largest-elements-1-5\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"ans1": 0, "ans2": 1, "ans3": 2, "ans4": 3},
+"feedbackArray": [[{"number": [0.55,0.55], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.15,0.15], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0,0], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.3,0.3], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.8.b"><a href="#task-pop-bounds-largest-elements" title="Copy heading and permalink for Task 2.1.8.b" aria-label="Copy heading and permalink for Task 2.1.8.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-pop-bounds-smallest-mc"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-pop-bounds-smallest-mc-1-1">Given the provided probabilities for <span class="process-math">\(P(A)\)</span> and <span class="process-math">\(P(B)\text{,}\)</span> what is the absolute smallest that the intersection probability <span class="process-math">\(P(A \cap B)\)</span> could possibly be? (i.e., What is the minimum possible proportion of Marvel Heroes?)<div class="autopermalink" data-description="Paragraph"><a href="#task-pop-bounds-smallest-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-pop-bounds-smallest-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-pop-bounds-smallest-mc_opt_a">
+<div class="para" id="task-pop-bounds-smallest-mc-2-1-1-1"><span class="process-math">\(0.00\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pop-bounds-smallest-mc_opt_a">
+<div class="para" id="task-pop-bounds-smallest-mc-2-1-2-1">Incorrect. If the intersection were 0, the union probability would be <span class="process-math">\(P(A \cup B) = 0.70 + 0.55 = 1.25\text{.}\)</span> This directly violates the absolute Axiom of Probability that states a probability cannot exceed 1.00.</div>
+</li>
+<li data-component="answer" id="rs-task-pop-bounds-smallest-mc_opt_b" data-correct="">
+<div class="para" id="task-pop-bounds-smallest-mc-2-2-1-1"><span class="process-math">\(0.25\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pop-bounds-smallest-mc_opt_b">
+<div class="para" id="task-pop-bounds-smallest-mc-2-2-2-1">Correct! By rearranging the addition rule, we know <span class="process-math">\(P(A \cup B) = P(A) + P(B) - P(A \cap B) = 1.25 - P(A \cap B)\text{.}\)</span> Because the union space can be at most 1.00 (the total database capacity), the intersection must step up to at least <span class="process-math">\(1.25 - 1.00 = 0.25\)</span> to prevent a probability violation.</div>
+</li>
+<li data-component="answer" id="rs-task-pop-bounds-smallest-mc_opt_c">
+<div class="para" id="task-pop-bounds-smallest-mc-2-3-1-1"><span class="process-math">\(0.15\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pop-bounds-smallest-mc_opt_c">
+<div class="para" id="task-pop-bounds-smallest-mc-2-3-2-1">Incorrect. Re-evaluate the addition rule parameters using a maximum upper ceiling limit of 1.00 for the total database union.</div>
+</li>
+<li data-component="answer" id="rs-task-pop-bounds-smallest-mc_opt_d">
+<div class="para" id="task-pop-bounds-smallest-mc-2-4-1-1"><span class="process-math">\(0.55\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pop-bounds-smallest-mc_opt_d">
+<div class="para" id="task-pop-bounds-smallest-mc-2-4-2-1">Incorrect. This matches the upper extreme maximum boundary calculated in Part A rather than the minimum required overlap constraint.</div>
+</li>
+<li data-component="answer" id="rs-task-pop-bounds-smallest-mc_opt_e">
+<div class="para" id="task-pop-bounds-smallest-mc-2-5-1-1"><span class="process-math">\(0.30\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pop-bounds-smallest-mc_opt_e">
+<div class="para" id="task-pop-bounds-smallest-mc-2-5-2-1">Incorrect. Double-check your arithmetic subtraction when computing the absolute net difference between 1.25 and 1.00.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.8.c"><a href="#task-pop-bounds-smallest-mc" title="Copy heading and permalink for Task 2.1.8.c" aria-label="Copy heading and permalink for Task 2.1.8.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-pop-bounds-smallest-elements"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-pop-bounds-smallest-elements"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-pop-bounds-smallest-elements-1-1\">If the intersection <span class=\"process-math\">\\(P(A \\cap B)\\)<\/span> assumes the absolute minimum value you identified in Part C , determine the resulting individual probabilities for each item in the sample space:<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pop-bounds-smallest-elements-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-pop-bounds-smallest-elements-1-2\">1. <span class=\"process-math\">\\(P(\\{(M,H)\\}) = \\)<\/span> <input type=\"text\" id=\"ex-probability-bounds-popculture-all-mc-ans5\" name=\"ans5\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pop-bounds-smallest-elements-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-pop-bounds-smallest-elements-1-3\">2. <span class=\"process-math\">\\(P(\\{(M,V)\\}) = \\)<\/span> <input type=\"text\" id=\"ex-probability-bounds-popculture-all-mc-ans6\" name=\"ans6\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pop-bounds-smallest-elements-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-pop-bounds-smallest-elements-1-4\">3. <span class=\"process-math\">\\(P(\\{(D,H)\\}) = \\)<\/span> <input type=\"text\" id=\"ex-probability-bounds-popculture-all-mc-ans7\" name=\"ans7\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pop-bounds-smallest-elements-1-4\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-pop-bounds-smallest-elements-1-5\">4. <span class=\"process-math\">\\(P(\\{(D,V)\\}) = \\)<\/span> <input type=\"text\" id=\"ex-probability-bounds-popculture-all-mc-ans8\" name=\"ans8\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-pop-bounds-smallest-elements-1-5\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"ans5": 0, "ans6": 1, "ans7": 2, "ans8": 3},
+"feedbackArray": [[{"number": [0.25,0.25], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.45,0.45], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.3,0.3], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0,0], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 2.1.8.d"><a href="#task-pop-bounds-smallest-elements" title="Copy heading and permalink for Task 2.1.8.d" aria-label="Copy heading and permalink for Task 2.1.8.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 2.1.8: Probability Theory: Roster Analytics in a Superhero Franchise"><a href="#ex-probability-bounds-popculture-all-mc" title="Copy heading and permalink for Exercise 2.1.8: Probability Theory: Roster Analytics in a Superhero Franchise" aria-label="Copy heading and permalink for Exercise 2.1.8: Probability Theory: Roster Analytics in a Superhero Franchise">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 2.1: Interactive Exercises"><a href="#hw-set-operations" title="Copy heading and permalink for Exercises 2.1: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 2.1: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-set-operations-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-venn-diagram-probabilities-tasks"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Probability and Set Operations.</span>
+</h4>
+<div class="introduction" id="ex-venn-diagram-probabilities-tasks-2">
+<div class="para" id="ex-venn-diagram-probabilities-tasks-2-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be two events such that <span class="process-math">\(P(A) = 0.4\text{,}\)</span> <span class="process-math">\(P(B) = 0.7\text{,}\)</span> and <span class="process-math">\(P(A \cup B) = 0.9\text{.}\)</span> Use a Venn diagram to help you find the following probabilities.<div class="autopermalink" data-description="Paragraph"><a href="#ex-venn-diagram-probabilities-tasks-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="ex-venn-diagram-probabilities-tasks-4"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="ex-venn-diagram-probabilities-tasks-4-1-1">Find <span class="process-math">\(P(A \cap B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-venn-diagram-probabilities-tasks-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 2.1.1.a"><a href="#ex-venn-diagram-probabilities-tasks-4" title="Copy heading and permalink for Task 2.1.1.a" aria-label="Copy heading and permalink for Task 2.1.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-venn-diagram-probabilities-tasks-5"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="ex-venn-diagram-probabilities-tasks-5-1-1">Find <span class="process-math">\(P(A^c \cap B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-venn-diagram-probabilities-tasks-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 2.1.1.b"><a href="#ex-venn-diagram-probabilities-tasks-5" title="Copy heading and permalink for Task 2.1.1.b" aria-label="Copy heading and permalink for Task 2.1.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-venn-diagram-probabilities-tasks-6"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="ex-venn-diagram-probabilities-tasks-6-1-1">Find <span class="process-math">\(P(A - B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-venn-diagram-probabilities-tasks-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 2.1.1.c"><a href="#ex-venn-diagram-probabilities-tasks-6" title="Copy heading and permalink for Task 2.1.1.c" aria-label="Copy heading and permalink for Task 2.1.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-venn-diagram-probabilities-tasks-7"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="ex-venn-diagram-probabilities-tasks-7-1-1">Find <span class="process-math">\(P(A^c - B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-venn-diagram-probabilities-tasks-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 2.1.1.d"><a href="#ex-venn-diagram-probabilities-tasks-7" title="Copy heading and permalink for Task 2.1.1.d" aria-label="Copy heading and permalink for Task 2.1.1.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-venn-diagram-probabilities-tasks-8"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="ex-venn-diagram-probabilities-tasks-8-1-1">Find <span class="process-math">\(P(A^c \cup B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-venn-diagram-probabilities-tasks-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 2.1.1.e"><a href="#ex-venn-diagram-probabilities-tasks-8" title="Copy heading and permalink for Task 2.1.1.e" aria-label="Copy heading and permalink for Task 2.1.1.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-venn-diagram-probabilities-tasks-9"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para" id="ex-venn-diagram-probabilities-tasks-9-1-1">Find <span class="process-math">\(P(A \cap (B \cup A^c))\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-venn-diagram-probabilities-tasks-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 2.1.1.f"><a href="#ex-venn-diagram-probabilities-tasks-9" title="Copy heading and permalink for Task 2.1.1.f" aria-label="Copy heading and permalink for Task 2.1.1.f">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 2.1.1: Probability and Set Operations"><a href="#ex-venn-diagram-probabilities-tasks" title="Copy heading and permalink for Exercise 2.1.1: Probability and Set Operations" aria-label="Copy heading and permalink for Exercise 2.1.1: Probability and Set Operations">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-streaming-watchlist-probabilities-updated"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Streaming Platform Media Logistics.</span>
+</h4>
+<div class="introduction" id="ex-streaming-watchlist-probabilities-updated-2">
+<div class="para logical" id="ex-streaming-watchlist-probabilities-updated-2-1">
+<div class="para">An analysis of a college student’s saved media watchlist on a streaming app reveals the following platform statistics:</div>
+<ul class="disc" id="ex-streaming-watchlist-probabilities-updated-2-1-1">
+<li id="ex-streaming-watchlist-probabilities-updated-2-1-1-1">
+<div class="para" id="ex-streaming-watchlist-probabilities-updated-2-1-1-1-1">
+<span class="process-math">\(62\%\)</span> of the saved titles are comedy films.<div class="autopermalink" data-description="Paragraph"><a href="#ex-streaming-watchlist-probabilities-updated-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-streaming-watchlist-probabilities-updated-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-streaming-watchlist-probabilities-updated-2-1-1-2">
+<div class="para" id="ex-streaming-watchlist-probabilities-updated-2-1-1-2-1">
+<span class="process-math">\(45\%\)</span> of the saved titles are produced by independent studios.<div class="autopermalink" data-description="Paragraph"><a href="#ex-streaming-watchlist-probabilities-updated-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-streaming-watchlist-probabilities-updated-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-streaming-watchlist-probabilities-updated-2-1-1-3">
+<div class="para" id="ex-streaming-watchlist-probabilities-updated-2-1-1-3-1">
+<span class="process-math">\(24\%\)</span> of the saved titles are comedies produced by independent studios.<div class="autopermalink" data-description="Paragraph"><a href="#ex-streaming-watchlist-probabilities-updated-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-streaming-watchlist-probabilities-updated-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">If the student selects a title completely at random from this watchlist, what is the probability that it is a non-comedy film produced by a major (non-independent) studio?</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-streaming-watchlist-probabilities-updated-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="ex-streaming-watchlist-probabilities-updated-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="ex-streaming-watchlist-probabilities-updated-3-1-1">Calculate the probability using standard probability rules, laws, and complement principles. Specify each rule/law/principal as you use it.<div class="autopermalink" data-description="Paragraph"><a href="#ex-streaming-watchlist-probabilities-updated-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 2.1.2.a"><a href="#ex-streaming-watchlist-probabilities-updated-3" title="Copy heading and permalink for Task 2.1.2.a" aria-label="Copy heading and permalink for Task 2.1.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-streaming-watchlist-probabilities-updated-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="ex-streaming-watchlist-probabilities-updated-4-1-1">Verify your calculation by mapping out the regions of a Venn diagram.<div class="autopermalink" data-description="Paragraph"><a href="#ex-streaming-watchlist-probabilities-updated-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 2.1.2.b"><a href="#ex-streaming-watchlist-probabilities-updated-4" title="Copy heading and permalink for Task 2.1.2.b" aria-label="Copy heading and permalink for Task 2.1.2.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 2.1.2: Streaming Platform Media Logistics"><a href="#ex-streaming-watchlist-probabilities-updated" title="Copy heading and permalink for Exercise 2.1.2: Streaming Platform Media Logistics" aria-label="Copy heading and permalink for Exercise 2.1.2: Streaming Platform Media Logistics">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="SO-dice-complement"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Untititled.</span>
+</h4>
+<div class="introduction" id="SO-dice-complement-2">
+<div class="para" id="SO-dice-complement-2-1">I roll a six-sided die 15 times.<div class="autopermalink" data-description="Paragraph"><a href="#SO-dice-complement-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="SO-dice-complement-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="SO-dice-complement-3-1-1">Find the probability that the number 2 is never observed.<div class="autopermalink" data-description="Paragraph"><a href="#SO-dice-complement-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 2.1.3.a"><a href="#SO-dice-complement-3" title="Copy heading and permalink for Task 2.1.3.a" aria-label="Copy heading and permalink for Task 2.1.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="SO-dice-complement-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="SO-dice-complement-4-1-1">Find the probability that numbers 3 and 4 are both observed at least once.<div class="autopermalink" data-description="Paragraph"><a href="#SO-dice-complement-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 2.1.3.b"><a href="#SO-dice-complement-4" title="Copy heading and permalink for Task 2.1.3.b" aria-label="Copy heading and permalink for Task 2.1.3.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 2.1.3: Untititled"><a href="#SO-dice-complement" title="Copy heading and permalink for Exercise 2.1.3: Untititled" aria-label="Copy heading and permalink for Exercise 2.1.3: Untititled">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 2.1: Written Exercises"><a href="#hw-set-operations-turn-in" title="Copy heading and permalink for Exercises 2.1: Written Exercises" aria-label="Copy heading and permalink for Exercises 2.1: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 2.1: Practice with Set Operations"><a href="#sec-section-SO" title="Copy heading and permalink for Section 2.1: Practice with Set Operations" aria-label="Copy heading and permalink for Section 2.1: Practice with Set Operations">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-chapter-Set-Operations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-SO-proofs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

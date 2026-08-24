@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mixed Bag Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-section-poisson-DRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Common-Discrete-RVs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-chapter-Continuous-RVs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-mixed-common-DRV">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mixed Bag Practice</span>
+</h2>
+<section class="introduction" id="sec-section-mixed-common-DRV-2">
+<div class="para logical" id="sec-section-mixed-common-DRV-2-1">
+<div class="para">By completing the problems provided below, you will gain practice with:</div>
+<ul class="disc" id="sec-section-mixed-common-DRV-2-1-1">
+<li id="sec-section-mixed-common-DRV-2-1-1-1">
+<div class="para" id="sec-section-mixed-common-DRV-2-1-1-1-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-mixed-common-DRV-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-mixed-common-DRV-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-mixed-common-DRV-2-1-1-2">
+<div class="para" id="sec-section-mixed-common-DRV-2-1-1-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-mixed-common-DRV-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-mixed-common-DRV-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-mixed-common-DRV-2-1-1-3">
+<div class="para" id="sec-section-mixed-common-DRV-2-1-1-3-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-mixed-common-DRV-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-mixed-common-DRV-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-mixed-common-DRV-2-1-1-4">
+<div class="para" id="sec-section-mixed-common-DRV-2-1-1-4-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-mixed-common-DRV-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-mixed-common-DRV-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-mixed-common-DRV-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="exercises" id="hw-common-discrete-rv-mixed">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-negative-binomial-prediabetes"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Wellness Program Prediabetes Screening.</span>
+</h4>
+<div class="introduction" id="ex-negative-binomial-prediabetes-2">
+<div class="para" id="ex-negative-binomial-prediabetes-2-1">As part of a corporate wellness program, employees at a large firm are being screened for indicators of prediabetes using an HbA1c blood test. Human Resources has been requested to identify and refer exactly three employees who show positive indicators of prediabetes to an onsite health coach for preventative tracking. According to national health statistics, approximately 40% of the adult employee population possesses positive indicators for prediabetes.<div class="autopermalink" data-description="Paragraph"><a href="#ex-negative-binomial-prediabetes-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="ex-negative-binomial-prediabetes-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;">
+<span data-subcomponent="question">
+<div class="para" id="ex-negative-binomial-prediabetes-3-1-1">Match each question with its correct numeric answer.<div class="autopermalink" data-description="Paragraph"><a href="#ex-negative-binomial-prediabetes-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><li data-subcomponent="draggable" id="_drag1" data-category="1">
+<div class="para" id="ex-negative-binomial-prediabetes-3-2-1-1-1">What is the probability that exactly 6 employees must be tested in order to identify the 3 required positive individuals?</div>
+</li>
+<li data-subcomponent="dropzone" for="_drag1" data-category="1">
+<div class="para" id="ex-negative-binomial-prediabetes-3-2-1-2-1"><span class="process-math">\(0.138\)</span></div>
+</li>
+<li data-subcomponent="draggable" id="_drag2" data-category="2">
+<div class="para" id="ex-negative-binomial-prediabetes-3-2-2-1-1">What is the probability that at most 6 employees must be tested in order to identify the 3 required positive individuals?</div>
+</li>
+<li data-subcomponent="dropzone" for="_drag2" data-category="2">
+<div class="para" id="ex-negative-binomial-prediabetes-3-2-2-2-1"><span class="process-math">\(0.455\)</span></div>
+</li>
+<li data-subcomponent="draggable" id="_drag3" data-category="3">
+<div class="para" id="ex-negative-binomial-prediabetes-3-2-3-1-1">What is the probability that the team tests exactly 2 negative employees before successfully locating the first positive individual.</div>
+</li>
+<li data-subcomponent="dropzone" for="_drag3" data-category="3">
+<div class="para" id="ex-negative-binomial-prediabetes-3-2-3-2-1"><span class="process-math">\(0.144\)</span></div>
+</li>
+</ul></div></div>
+<div class="autopermalink" data-description="Task 5.7.1.a"><a href="#ex-negative-binomial-prediabetes-3" title="Copy heading and permalink for Task 5.7.1.a" aria-label="Copy heading and permalink for Task 5.7.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-prediabetes-cost"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-prediabetes-cost"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-prediabetes-cost-1-1\">If each HbA1c blood test costs $20 to process, find the expected value and standard deviation for the total cost of conducting the tests necessary to successfully locate the three positive employees. Write your answers rounded to the nearest dollar.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-prediabetes-cost-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-prediabetes-cost-1-2\">Expected Cost = <input type=\"text\" id=\"ex-negative-binomial-prediabetes-firstD\" name=\"firstD\" size=\"8\"\/> and Standard Deviation = <input type=\"text\" id=\"ex-negative-binomial-prediabetes-secondD\" name=\"secondD\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-prediabetes-cost-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"firstD": 0, "secondD": 1},
+"feedbackArray": [[{"solution_code": "function() {\n    var testResults = new Array();\n    testResults[0] = _mobjs.compareExpressions(UNDEFINED, ans);\n    return (testResults[0]);\n}()", "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"solution_code": "function() {\n    var testResults = new Array();\n    testResults[0] = _mobjs.compareExpressions(UNDEFINED, ans);\n    return (testResults[0]);\n}()", "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.1.b"><a href="#task-prediabetes-cost" title="Copy heading and permalink for Task 5.7.1.b" aria-label="Copy heading and permalink for Task 5.7.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-prediabetes-binomial"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-prediabetes-binomial-1-1">Suppose that instead of testing sequentially, the team decides to just randomly select a group of ten employees from the company database and test them all simultaneously. What is the probability that they find at least three positive results?<div class="autopermalink" data-description="Paragraph"><a href="#task-prediabetes-binomial-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-prediabetes-binomial" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-prediabetes-binomial_opt_a">
+<div class="para" id="task-prediabetes-binomial-2-1-1-1"><span class="process-math">\(0.121\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-prediabetes-binomial_opt_a">
+<div class="para" id="task-prediabetes-binomial-2-1-2-1">Incorrect. This is only the probability of finding <em class="emphasis">exactly</em> two positive results, <span class="process-math">\(P(X = 2)\text{.}\)</span> The question asks for <em class="emphasis">at least</em> three positives.</div>
+</li>
+<li data-component="answer" id="rs-task-prediabetes-binomial_opt_b">
+<div class="para" id="task-prediabetes-binomial-2-2-1-1"><span class="process-math">\(0.167\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-prediabetes-binomial_opt_b">
+<div class="para" id="task-prediabetes-binomial-2-2-2-1">Incorrect. This is the cumulative probability of finding two or fewer positives, <span class="process-math">\(P(X \le 2)\text{.}\)</span> You need to subtract this value from 1 to find the complement.</div>
+</li>
+<li data-component="answer" id="rs-task-prediabetes-binomial_opt_c" data-correct="">
+<div class="para" id="task-prediabetes-binomial-2-3-1-1"><span class="process-math">\(0.833\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-prediabetes-binomial_opt_c">
+<div class="para logical" id="task-prediabetes-binomial-2-3-2-1">
+<div class="para">Correct! Because the sample size is fixed at <span class="process-math">\(n = 10\text{,}\)</span> this follows a Binomial distribution. To find <span class="process-math">\(P(X \ge 3)\text{,}\)</span> use the complement rule:</div>
+<div class="displaymath process-math" id="task-prediabetes-binomial-2-3-2-1-3">
+\begin{equation*}
+P(X \ge 3) = 1 - P(X \le 2) = 1 - [P(X=0) + P(X=1) + P(X=2)]
+\end{equation*}
+</div>
+</div> 
+<div class="para logical" id="task-prediabetes-binomial-2-3-2-2">
+<div class="para">Calculating individual baseline probabilities:</div>
+<div class="displaymath process-math" id="task-prediabetes-binomial-2-3-2-2-1">
+\begin{align*}
+P(X=0) \amp = \binom{10}{0}(0.40)^0(0.60)^{10} \approx 0.006\\
+P(X=1) \amp = \binom{10}{1}(0.40)^1(0.60)^9 \approx 0.040\\
+P(X=2) \amp = \binom{10}{2}(0.40)^2(0.60)^8 \approx 0.121
+\end{align*}
+</div>
+<div class="para">Subtract the sum of these probabilities from 1:</div>
+<div class="displaymath process-math" id="task-prediabetes-binomial-2-3-2-2-2">
+\begin{equation*}
+P(X \ge 3) = 1 - (0.006 + 0.040 + 0.121) = 1 - 0.167 = 0.833
+\end{equation*}
+</div>
+</div>
+</li>
+<li data-component="answer" id="rs-task-prediabetes-binomial_opt_d">
+<div class="para" id="task-prediabetes-binomial-2-4-1-1"><span class="process-math">\(0.215\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-prediabetes-binomial_opt_d">
+<div class="para" id="task-prediabetes-binomial-2-4-2-1">Incorrect. This is the probability of finding <em class="emphasis">exactly</em> three positive results, <span class="process-math">\(P(X = 3)\text{.}\)</span> Remember that "at least three" means you must include the probabilities for 3, 4, 5, ..., up to 10 successes.</div>
+</li>
+<li data-component="answer" id="rs-task-prediabetes-binomial_opt_e">
+<div class="para" id="task-prediabetes-binomial-2-5-1-1"><span class="process-math">\(0.785\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-prediabetes-binomial_opt_e">
+<div class="para" id="task-prediabetes-binomial-2-5-2-1">Incorrect. This is the complement of finding <em class="emphasis">exactly</em> three positive results, <span class="process-math">\(1-P(X = 3)\text{.}\)</span> Remember that "at least three" means you must include the probabilities for 3, 4, 5, ..., up to 10 successes. Your computation removes 3 and adds 0,1,2.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.1.c"><a href="#task-prediabetes-binomial" title="Copy heading and permalink for Task 5.7.1.c" aria-label="Copy heading and permalink for Task 5.7.1.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.7.1: Wellness Program Prediabetes Screening"><a href="#ex-negative-binomial-prediabetes" title="Copy heading and permalink for Exercise 5.7.1: Wellness Program Prediabetes Screening" aria-label="Copy heading and permalink for Exercise 5.7.1: Wellness Program Prediabetes Screening">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-cloud-load-balancer-refined"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete Distributions: Server Load Balancing Architecture.</span>
+</h4>
+<div class="introduction" id="ex-cloud-load-balancer-refined-2">
+<div class="para" id="ex-cloud-load-balancer-refined-2-1">An enterprise cloud-computing load balancer dynamically distributes incoming requests across seven distinct backup processing servers, labeled with the unique identifiers: <code class="code-inline tex2jax_ignore">Alpha</code>, <code class="code-inline tex2jax_ignore">Beta</code>, <code class="code-inline tex2jax_ignore">Gamma</code>, <code class="code-inline tex2jax_ignore">Delta</code>, <code class="code-inline tex2jax_ignore">Epsilon</code>, <code class="code-inline tex2jax_ignore">Zeta</code>, and <code class="code-inline tex2jax_ignore">Eta</code>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-cloud-load-balancer-refined-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-cloud-load-balancer-refined-2-2">Assume that at any given moment, the routing algorithm ensures all seven server nodes are equally likely to be selected, completely independent of which servers have processed previous request payloads. Let the random variable <span class="process-math">\(X\)</span> represent the specific identifier node chosen for the next single incoming transaction task.<div class="autopermalink" data-description="Paragraph"><a href="#ex-cloud-load-balancer-refined-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-cloud-prob-single-numeric"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-cloud-prob-single-numeric"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-cloud-prob-single-numeric-1-1\">What is the probability that the server labeled <code class=\"code-inline tex2jax_ignore\">Zeta<\/code> is chosen for the next incoming transaction? Enter your answer as decimal rounded to three decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cloud-prob-single-numeric-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-cloud-prob-single-numeric-1-2\"><input type=\"text\" id=\"ex-cloud-load-balancer-refined-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cloud-prob-single-numeric-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.143,0.143], "feedback": "\n<div class=\"para\" id=\"task-cloud-prob-single-numeric-2-1-1-2-1\">Correct!  Because there are exactly seven unique server outcomes in the sample space and all choices are completely symmetric and equally likely, the probability of selecting any single specific node is <span class=\"process-math\">\\(\\frac{1}{7}\\text{.}\\)<\/span><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.2.a"><a href="#task-cloud-prob-single-numeric" title="Copy heading and permalink for Task 5.7.2.a" aria-label="Copy heading and permalink for Task 5.7.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cloud-is-uniform-refined"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" data-multipleanswers="false" id="rs-task-cloud-is-uniform-refined">
+<div class="para" id="task-cloud-is-uniform-refined-1-1">The random variable <span class="process-math">\(X\)</span> can be considered a discrete uniform random variable.<div class="autopermalink" data-description="Paragraph"><a href="#task-cloud-is-uniform-refined-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<li data-component="answer" id="rs-task-cloud-is-uniform-refined_opt_t" data-correct=""><p>True.</p></li>
+<li data-component="feedback" id="rs-task-cloud-is-uniform-refined_opt_t">
+<div class="para" id="task-cloud-is-uniform-refined-2-1">By definition, a random variable is discrete uniform if its distribution maps an identical, constant probability mass to every single distinct outcome in its finite set pool. Here, each of the seven options has a probability of exactly <span class="process-math">\(\frac{1}{7}\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-uniform-refined_opt_f"><p>False.</p></li>
+<li data-component="feedback" id="rs-task-cloud-is-uniform-refined_opt_f">
+<div class="para" id="task-cloud-is-uniform-refined-2-1">By definition, a random variable is discrete uniform if its distribution maps an identical, constant probability mass to every single distinct outcome in its finite set pool. Here, each of the seven options has a probability of exactly <span class="process-math">\(\frac{1}{7}\text{.}\)</span>
+</div>
+</li>
+</ul></div></div>
+<div class="autopermalink" data-description="Task 5.7.2.b"><a href="#task-cloud-is-uniform-refined" title="Copy heading and permalink for Task 5.7.2.b" aria-label="Copy heading and permalink for Task 5.7.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cloud-is-bernoulli-refined"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-cloud-is-bernoulli-refined-1-1">Why would the random variable <span class="process-math">\(X\)</span> not be considered a Bernoulli random variable?<div class="autopermalink" data-description="Paragraph"><a href="#task-cloud-is-bernoulli-refined-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-cloud-is-bernoulli-refined" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_a" data-correct="">A Bernoulli random variable is strictly limited to an outcome space containing exactly two binary values (usually coded as <span class="process-math">\(0\)</span> and <span class="process-math">\(1\)</span>), whereas <span class="process-math">\(X\)</span> has seven distinct outcomes.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_a">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-1-2-1">Correct! A Bernoulli distribution is defined exclusively over a binary outcome trial (success or failure). Because <span class="process-math">\(X\)</span> can track seven separate target locations, it does not fit a single Bernoulli structure.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_b">Each transaction trial behaves independently and can be run over and over again without replacement limits.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_b">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-2-2-1">Incorrect. While independence matches the baseline criteria for compound trials, it does not turn a multi-outcome variable into a primary binary Bernoulli variable.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_c">The sum of all probabilities in the uniform support pool adds up to 1.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_c">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-3-2-1">Incorrect. Every valid probability distribution must have probabilities that sum to 1; this property is not unique to Bernoulli trials.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_d">No, because a Bernoulli variable requires drawing items without replacement, which forces probabilities to shift dynamically.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_d">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-4-2-1">Incorrect. You are confusing a Bernoulli trial with a hypergeometric draw. Bernoulli trials must have independent setups with a constant probability of success across binary options.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_e">Yes, because any multi-categorical model can be classified as a Bernoulli variable as long as the sample space is finite.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_e">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-5-2-1">Incorrect. A finite sample space is required for any discrete variable, but a Bernoulli distribution specifically restricts the number of categories to exactly two.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-is-bernoulli-refined_opt_f">No, because the expected value of a Bernoulli variable must always be greater than 1, which is impossible given a uniform sample size of seven.</li>
+<li data-component="feedback" id="rs-task-cloud-is-bernoulli-refined_opt_f">
+<div class="para" id="task-cloud-is-bernoulli-refined-2-6-2-1">Incorrect. The expected value of a Bernoulli random variable is simply its success probability <span class="process-math">\(p\text{,}\)</span> which must always fall strictly between 0 and 1.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.2.c"><a href="#task-cloud-is-bernoulli-refined" title="Copy heading and permalink for Task 5.7.2.c" aria-label="Copy heading and permalink for Task 5.7.2.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cloud-define-distribution"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-cloud-define-distribution-1-1">Consider a sequence of <span class="process-math">\(5\)</span> consecutive transactions observed running through the load balancer. Let a new random variable <span class="process-math">\(Y\)</span> represent the total number of times the server node <code class="code-inline tex2jax_ignore">Alpha</code> is chosen across these five trials. What kind of random variable is <span class="process-math">\(Y\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-cloud-define-distribution-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-cloud-define-distribution" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-cloud-define-distribution_opt_a" data-correct="">
+<dfn class="terminology">Binomial</dfn> with parameters <span class="process-math">\(n = 5\)</span> and <span class="process-math">\(p = \frac{1}{7}\text{.}\)</span>
+</li>
+<li data-component="feedback" id="rs-task-cloud-define-distribution_opt_a">
+<div class="para" id="task-cloud-define-distribution-2-1-2-1">Correct! We are counting the total number of successes (routing to <code class="code-inline tex2jax_ignore">Alpha</code>) across a fixed sequence of <span class="process-math">\(n = 5\)</span> independent trials, where each trial has a constant binary success probability of <span class="process-math">\(p = \frac{1}{7}\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-define-distribution_opt_b">
+<dfn class="terminology">Geometric distribution</dfn> with parameter <span class="process-math">\(p = \frac{1}{7}\text{.}\)</span>
+</li>
+<li data-component="feedback" id="rs-task-cloud-define-distribution_opt_b">
+<div class="para" id="task-cloud-define-distribution-2-2-2-1">Incorrect. A geometric model tracks the number of attempts needed to reach the *very first* success. Here, we are observing a fixed window of exactly 5 trials and counting the total accumulation of successes.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-define-distribution_opt_c">
+<dfn class="terminology">Hypergeometric distribution</dfn> with parameters <span class="process-math">\(N = 7\text{,}\)</span> <span class="process-math">\(n = 5\text{,}\)</span> and <span class="process-math">\(k = 1\text{.}\)</span>
+</li>
+<li data-component="feedback" id="rs-task-cloud-define-distribution_opt_c">
+<div class="para" id="task-cloud-define-distribution-2-3-2-1">Incorrect. Hypergeometric distributions apply when sampling occurs *without replacement*, causing the odds to shift. Because the routing algorithm treats each choice independently, the parameters do not alter between runs.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-define-distribution_opt_d">
+<dfn class="terminology">Negative Binomial distribution</dfn> with parameters <span class="process-math">\(r = 5\)</span> and <span class="process-math">\(p = \frac{1}{7}\text{.}\)</span>
+</li>
+<li data-component="feedback" id="rs-task-cloud-define-distribution_opt_d">
+<div class="para" id="task-cloud-define-distribution-2-4-2-1">Incorrect. A negative binomial distribution counts the number of failures or total trials encountered before accumulating a fixed number of target successes r, which is not the case here.</div>
+</li>
+<li data-component="answer" id="rs-task-cloud-define-distribution_opt_e">
+<div class="para" id="task-cloud-define-distribution-2-5-1-1">Discrete Uniform distribution with parameter k = 5.</div>
+</li>
+<li data-component="feedback" id="rs-task-cloud-define-distribution_opt_e">
+<div class="para" id="task-cloud-define-distribution-2-5-2-1">Incorrect. While the underlying single selection X is uniform, the aggregated count of occurrences Y across multiple independent trials is not equally likely across its values (e.g., getting zero successes is far more likely than getting three).</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.2.d"><a href="#task-cloud-define-distribution" title="Copy heading and permalink for Task 5.7.2.d" aria-label="Copy heading and permalink for Task 5.7.2.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cloud-compute-probability-numeric"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-cloud-compute-probability-numeric"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-cloud-compute-probability-numeric-1-1\">Using the distribution model defined in the previous part, compute the exact probability that the sequence of <span class=\"process-math\">\\(5\\)<\/span> consecutive transactions does not contain a single transaction routed to the <code class=\"code-inline tex2jax_ignore\">Alpha<\/code> server Enter your answer as a decimal rounded to four decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cloud-compute-probability-numeric-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-cloud-compute-probability-numeric-1-2\"><input type=\"text\" id=\"ex-cloud-load-balancer-refined-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cloud-compute-probability-numeric-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.4627,0.4627], "feedback": "\n<div class=\"para\" id=\"task-cloud-compute-probability-numeric-2-1-1-2-1\">Correct! Four out of 8 outcomes in the sample space involve the second child being female.<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-cloud-compute-probability-numeric-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-cloud-compute-probability-numeric-3-1">The probability of *not* selecting server <code class="code-inline tex2jax_ignore">Alpha</code> on any single given turn is <span class="process-math">\(1 - \frac{1}{7} = \frac{6}{7}\text{.}\)</span> Since the trials are independent, evaluate <span class="process-math">\(\left(\frac{6}{7}\right)^3\)</span> to find the probability that this failure occurs three times in a row.<div class="autopermalink" data-description="Paragraph"><a href="#task-cloud-compute-probability-numeric-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 5.7.2.e.1"><a href="#task-cloud-compute-probability-numeric-3" title="Copy heading and permalink for Hint 5.7.2.e.1" aria-label="Copy heading and permalink for Hint 5.7.2.e.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 5.7.2.e"><a href="#task-cloud-compute-probability-numeric" title="Copy heading and permalink for Task 5.7.2.e" aria-label="Copy heading and permalink for Task 5.7.2.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.7.2: Discrete Distributions: Server Load Balancing Architecture"><a href="#ex-cloud-load-balancer-refined" title="Copy heading and permalink for Exercise 5.7.2: Discrete Distributions: Server Load Balancing Architecture" aria-label="Copy heading and permalink for Exercise 5.7.2: Discrete Distributions: Server Load Balancing Architecture">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="hypergeometric-wildlife-context"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="hypergeometric-wildlife-context-1">
+<div class="para" id="hypergeometric-wildlife-context-1-1">In a remote wildlife sanctuary, conservation biologists are auditing a small batch of animal tracking collars before deployment. An inventory box contains a total of <span class="process-math">\(10\)</span> tracking collars: <span class="process-math">\(6\)</span> are advanced GPS-enabled collars and <span class="process-math">\(4\)</span> are traditional VHF radio collars. A researcher randomly selects <span class="process-math">\(4\)</span> collars from the box to take into the field. Let <span class="process-math">\(Y\)</span> be the number of GPS-enabled collars selected.<div class="autopermalink" data-description="Paragraph"><a href="#hypergeometric-wildlife-context-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="hypergeometric-wildlife-context-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="hypergeometric-wildlife-context-2-1-1">Part A: What type of random variable is <span class="process-math">\(Y\text{?}\)</span> Explain your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#hypergeometric-wildlife-context-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false">
+<li data-component="answer" id="_opt_a" data-correct="">
+<div class="para" id="hypergeometric-wildlife-context-2-2-1-1-1">Hypergeometric</div>
+</li>
+<li data-component="feedback" id="_opt_a">
+<div class="para" id="hypergeometric-wildlife-context-2-2-1-2-1">Correct! The selection is done without replacement from a finite population (<span class="process-math">\(N=10\)</span>) containing a specific number of successes (<span class="process-math">\(K=6\)</span> GPS collars). The trials are dependent.</div>
+</li>
+<li data-component="answer" id="_opt_b">
+<div class="para" id="hypergeometric-wildlife-context-2-2-2-1-1">Binomial</div>
+</li>
+<li data-component="feedback" id="_opt_b">
+<div class="para" id="hypergeometric-wildlife-context-2-2-2-2-1">Incorrect. Because the selection is made without replacement from a very small finite population, the probability of choosing a GPS collar changes with each pick.</div>
+</li>
+<li data-component="answer" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-2-2-3-1-1">Geometric</div>
+</li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-2-2-3-2-1">Incorrect. A geometric variable counts the number of trials until the first success occurs, whereas we have a fixed sample size of <span class="process-math">\(n=4\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.3.a"><a href="#hypergeometric-wildlife-context-2" title="Copy heading and permalink for Task 5.7.3.a" aria-label="Copy heading and permalink for Task 5.7.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="hypergeometric-wildlife-context-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="hypergeometric-wildlife-context-3-1-1">Part B: Find the probability that three or more GPS-enabled collars are selected.<div class="autopermalink" data-description="Paragraph"><a href="#hypergeometric-wildlife-context-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false">
+<li data-component="answer" id="_opt_a">
+<div class="para" id="hypergeometric-wildlife-context-3-2-1-1-1"><span class="process-math">\(0.3810\)</span></div>
+</li>
+<li data-component="feedback" id="_opt_a">
+<div class="para" id="hypergeometric-wildlife-context-3-2-1-2-1">Incorrect. This is only the probability of getting exactly 3 GPS collars: <span class="process-math">\(P(Y = 3)\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="_opt_b" data-correct="">
+<div class="para" id="hypergeometric-wildlife-context-3-2-2-1-1"><span class="process-math">\(0.4524\)</span></div>
+</li>
+<li data-component="feedback" id="_opt_b">
+<div class="para logical" id="hypergeometric-wildlife-context-3-2-2-2-1">
+<div class="para">Correct! We sum the individual probabilities for <span class="process-math">\(Y=3\)</span> and <span class="process-math">\(Y=4\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="hypergeometric-wildlife-context-3-2-2-2-1-3">
+\begin{equation*}
+P(Y \ge 3) = \frac{\binom{6}{3}\binom{4}{1}}{\binom{10}{4}} + \frac{\binom{6}{4}\binom{4}{0}}{\binom{10}{4}} = \frac{80}{210} + \frac{15}{210} = \frac{95}{210} \approx 0.4524
+\end{equation*}
+</div>
+</div>
+</li>
+<li data-component="answer" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-3-2-3-1-1"><span class="process-math">\(0.0714\)</span></div>
+</li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-3-2-3-2-1">Incorrect. This is only the probability of getting exactly 4 GPS collars: <span class="process-math">\(P(Y = 4)\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.3.b"><a href="#hypergeometric-wildlife-context-3" title="Copy heading and permalink for Task 5.7.3.b" aria-label="Copy heading and permalink for Task 5.7.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="hypergeometric-wildlife-context-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="hypergeometric-wildlife-context-4-1-1">Part C: What are the mean (<span class="process-math">\(\mu\)</span>) and standard deviation (<span class="process-math">\(\sigma\)</span>) for <span class="process-math">\(Y\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#hypergeometric-wildlife-context-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false">
+<li data-component="answer" id="_opt_a" data-correct="">
+<div class="para" id="hypergeometric-wildlife-context-4-2-1-1-1">
+<span class="process-math">\(\mu = 2.4\text{,}\)</span> <span class="process-math">\(\sigma = 0.8000\)</span>
+</div>
+</li>
+<li data-component="feedback" id="_opt_a">
+<div class="para" id="hypergeometric-wildlife-context-4-2-1-2-1">Correct! The mean is calculated as: <span class="process-math">\(\mu = n \left(\frac{K}{N}\right) = 4 \left(\frac{6}{10}\right) = 2.4\text{.}\)</span> The variance is: <span class="process-math">\(\sigma^2 = n \left(\frac{K}{N}\right)\left(\frac{N-K}{N}\right)\left(\frac{N-n}{N-1}\right) = 4(0.6)(0.4)\left(\frac{6}{9}\right) = 0.64\text{.}\)</span> The standard deviation is: <span class="process-math">\(\sigma = \sqrt{0.64} = 0.8000\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="_opt_b">
+<div class="para" id="hypergeometric-wildlife-context-4-2-2-1-1">
+<span class="process-math">\(\mu = 2.4\text{,}\)</span> <span class="process-math">\(\sigma = 0.6400\)</span>
+</div>
+</li>
+<li data-component="feedback" id="_opt_b">
+<div class="para" id="hypergeometric-wildlife-context-4-2-2-2-1">Incorrect. You found the variance (<span class="process-math">\(\sigma^2\)</span>) instead of taking its square root for the standard deviation.</div>
+</li>
+<li data-component="answer" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-4-2-3-1-1">
+<span class="process-math">\(\mu = 2.0\text{,}\)</span> <span class="process-math">\(\sigma = 1.0000\)</span>
+</div>
+</li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="hypergeometric-wildlife-context-4-2-3-2-1">Incorrect. Please recheck the formulas using parameters <span class="process-math">\(N=10\text{,}\)</span> <span class="process-math">\(K=6\text{,}\)</span> and <span class="process-math">\(n=4\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.3.c"><a href="#hypergeometric-wildlife-context-4" title="Copy heading and permalink for Task 5.7.3.c" aria-label="Copy heading and permalink for Task 5.7.3.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.7.3"><a href="#hypergeometric-wildlife-context" title="Copy heading and permalink for Exercise 5.7.3" aria-label="Copy heading and permalink for Exercise 5.7.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-poisson-ecoli-outbreaks"><h4 class="heading">
+<span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Epidemiology Study: E. Coli Dynamics.</span>
+</h4>
+<div class="introduction" id="ex-poisson-ecoli-outbreaks-2">
+<div class="para" id="ex-poisson-ecoli-outbreaks-2-1">Increased medical research has focused on tracking severe illnesses caused by the organism <em class="emphasis">Escherichia coli</em> (O157:H7), a bacterium that can trigger intestinal hemorrhages and a critical breakdown of red blood cells. Historical epidemiology data shows that sporadic outbreaks of E.coli have occurred in Colorado at a rate of approximately 2.4 per 100,000 per year.<div class="autopermalink" data-description="Paragraph"><a href="#ex-poisson-ecoli-outbreaks-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-poisson-ecoli-outbreaks-2-2">If this rate has not changed and if 100,000 cases from Colorado are reviewed for this year, what is the probability that 5 cases of E.coli will be observed? Complete the following questions to find the answer:<div class="autopermalink" data-description="Paragraph"><a href="#ex-poisson-ecoli-outbreaks-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-ecoli-rv-definition"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-ecoli-rv-definition-1-1">Define a random variable <span class="process-math">\(X\)</span> for this scenario and specify what type of random variable it is.<div class="autopermalink" data-description="Paragraph"><a href="#task-ecoli-rv-definition-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-ecoli-rv-definition" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-ecoli-rv-definition_opt_a">
+<div class="para" id="task-ecoli-rv-definition-2-1-1-1">
+<span class="process-math">\(X\)</span> represents the number of reviews required until the first E. coli case is found; it is a Geometric random variable.</div>
+</li>
+<li data-component="feedback" id="rs-task-ecoli-rv-definition_opt_a">
+<div class="para" id="task-ecoli-rv-definition-2-1-2-1">Incorrect. A geometric model would look at the number of sequential patients screened until a positive case is encountered, rather than counting total instances in a fixed population sample.</div>
+</li>
+<li data-component="answer" id="rs-task-ecoli-rv-definition_opt_b">
+<div class="para" id="task-ecoli-rv-definition-2-2-1-1">
+<span class="process-math">\(X\)</span> represents the proportion of infected individuals out of the 100,000 screened; it is a Uniform random variable.</div>
+</li>
+<li data-component="feedback" id="rs-task-ecoli-rv-definition_opt_b">
+<div class="para" id="task-ecoli-rv-definition-2-2-2-1">Incorrect. Uniform random variables model experiments where every discrete outcome has an identical probability weight, or areas where probabilities are flat across an interval.</div>
+</li>
+<li data-component="answer" id="rs-task-ecoli-rv-definition_opt_c" data-correct="">
+<div class="para" id="task-ecoli-rv-definition-2-3-1-1">
+<span class="process-math">\(X\)</span> represents the exact count of E. coli cases observed in the sample of 100,000 people over the year; it is a Poisson random variable.</div>
+</li>
+<li data-component="feedback" id="rs-task-ecoli-rv-definition_opt_c">
+<div class="para" id="task-ecoli-rv-definition-2-3-2-1">Correct! Because we are tracking the number of occurrences of a rare event within a specified, fixed continuum of space and time (100,000 people over one year) with a known constant average rate, it is a Poisson process.</div>
+</li>
+<li data-component="answer" id="rs-task-ecoli-rv-definition_opt_d">
+<div class="para" id="task-ecoli-rv-definition-2-4-1-1">
+<span class="process-math">\(X\)</span> represents whether a single randomly chosen case has an E. coli infection or not; it is a Binomial random variable with <span class="process-math">\(n=1\text{.}\)</span>
+</div>
+</li>
+<li data-component="feedback" id="rs-task-ecoli-rv-definition_opt_d">
+<div class="para" id="task-ecoli-rv-definition-2-4-2-1">Incorrect. A single binary trial would be a Bernoulli trial, but we are aggregating counts across a vast population group.</div>
+</li>
+<li data-component="answer" id="rs-task-ecoli-rv-definition_opt_e">
+<div class="para" id="task-ecoli-rv-definition-2-5-1-1">
+<span class="process-math">\(X\)</span> represents the number of positive E. coli cases out of exactly 5 selected files; it is a Hypergeometric random variable.</div>
+</li>
+<li data-component="feedback" id="rs-task-ecoli-rv-definition_opt_e">
+<div class="para" id="task-ecoli-rv-definition-2-5-2-1">Incorrect. While we are looking for 5 cases in the final step, <span class="process-math">\(Z\)</span> itself must be capable of tracking any count of outbreaks across the entire 100,000-person continuum.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.4.a"><a href="#task-ecoli-rv-definition" title="Copy heading and permalink for Task 5.7.4.a" aria-label="Copy heading and permalink for Task 5.7.4.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-ecoli-pmf-selection"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-ecoli-pmf-selection-1-1">Which of the following functions correctly specifies the probability mass function (PMF) for your random variable <span class="process-math">\(X\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-ecoli-pmf-selection-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-ecoli-pmf-selection" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-ecoli-pmf-selection_opt_a" data-correct="">
+<div class="para" id="task-ecoli-pmf-selection-2-1-1-1"><span class="process-math">\(p(x) = \frac{e^{-2.4} \cdot (2.4)^x}{x!}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-ecoli-pmf-selection_opt_a">
+<div class="para" id="task-ecoli-pmf-selection-2-1-2-1">Correct! The baseline rate is 2.4 per 100,000, and our sample group matches that unit size exactly (100,000 people). Therefore, the expected value parameter is <span class="process-math">\(\lambda = 2.4\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-ecoli-pmf-selection_opt_b">
+<div class="para" id="task-ecoli-pmf-selection-2-2-1-1"><span class="process-math">\(p(x) = \binom{100000}{x}(0.000024)^x(0.999976)^{100000-x}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-ecoli-pmf-selection_opt_b">
+<div class="para" id="task-ecoli-pmf-selection-2-2-2-1">Incorrect. While a Binomial distribution can model vast population sets, evaluating a binomial expansion with an <span class="process-math">\(n\)</span> of 100,000 is mathematically inefficient and outside the scope of utilizing standard Poisson interval parameters directly.</div>
+</li>
+<li data-component="answer" id="rs-task-ecoli-pmf-selection_opt_c">
+<div class="para" id="task-ecoli-pmf-selection-2-3-1-1"><span class="process-math">\(p(x) = \frac{e^{-100000} \cdot (100000)^x}{x!}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-ecoli-pmf-selection_opt_c">
+<div class="para" id="task-ecoli-pmf-selection-2-3-2-1">Incorrect. You used the size of the population sample (<span class="process-math">\(100,000\)</span>) as the expected arrival rate <span class="process-math">\(\lambda\text{,}\)</span> instead of the actual average number of cases (<span class="process-math">\(2.4\)</span>).</div>
+</li>
+<li data-component="answer" id="rs-task-ecoli-pmf-selection_opt_d">
+<div class="para" id="task-ecoli-pmf-selection-2-4-1-1"><span class="process-math">\(p(X) = (0.000024)(0.999976)^{x-1}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-ecoli-pmf-selection_opt_d">
+<div class="para" id="task-ecoli-pmf-selection-2-4-2-1">Incorrect. This matches a geometric waiting distribution style rather than a Poisson count distribution function.</div>
+</li>
+<li data-component="answer" id="rs-task-ecoli-pmf-selection_opt_e">
+<div class="para" id="task-ecoli-pmf-selection-2-5-1-1"><span class="process-math">\(p(x) = \frac{e^{-5} \cdot (5)^x}{x!}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-ecoli-pmf-selection_opt_e">
+<div class="para" id="task-ecoli-pmf-selection-2-5-2-1">Incorrect. You used the target value of interest (<span class="process-math">\(x=5\)</span> cases) as the expected mean parameter <span class="process-math">\(\lambda\text{.}\)</span> The average rate remains <span class="process-math">\(2.4\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.4.b"><a href="#task-ecoli-pmf-selection" title="Copy heading and permalink for Task 5.7.4.b" aria-label="Copy heading and permalink for Task 5.7.4.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-ecoli-calculation"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-ecoli-calculation"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-ecoli-calculation-1-1\">Now, calculate the probability that precisely 5 cases of E. coli will be observed. Write your answer as a decimal rounded to 4 decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ecoli-calculation-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-ecoli-calculation-1-2\"><input type=\"text\" id=\"ex-poisson-ecoli-outbreaks-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ecoli-calculation-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0602,0.0602], "feedback": "\n<div class=\"para logical\" id=\"task-ecoli-calculation-2-1-1-2-1\"><div class=\"para\">Yes!  Using the Poisson probability mass function established in Part B with a target of <span class=\"process-math\">\\(z = 5\\)<\/span> and a mean rate of <span class=\"process-math\">\\(\\lambda = 2.4\\text{:}\\)<\/span><\/div><div class=\"displaymath process-math\" id=\"task-ecoli-calculation-2-1-1-2-1-3\">\n\\begin{equation*}\nP(Z = 5) = \\frac{e^{-2.4} \\cdot (2.4)^5}{5!}\n\\end{equation*}\n<\/div><div class=\"para\">Evaluating individual components:<\/div><div class=\"displaymath process-math\" id=\"task-ecoli-calculation-2-1-1-2-1-4\">\n\\begin{align*}\ne^{-2.4} \\amp \\approx 0.090718\\\\\n(2.4)^5 \\amp = 79.62624\\\\\n5! \\amp = 120\n\\end{align*}\n<\/div><div class=\"para\">Combine terms to find the final metric:<\/div><div class=\"displaymath process-math\" id=\"task-ecoli-calculation-2-1-1-2-1-5\">\n\\begin{equation*}\nP(Z = 5) = \\frac{0.090718 \\cdot 79.62624}{120} = \\frac{7.2235}{120} \\approx 0.0602\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.4.c"><a href="#task-ecoli-calculation" title="Copy heading and permalink for Task 5.7.4.c" aria-label="Copy heading and permalink for Task 5.7.4.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.7.4: Epidemiology Study: E. Coli Dynamics"><a href="#ex-poisson-ecoli-outbreaks" title="Copy heading and permalink for Exercise 5.7.4: Epidemiology Study: E. Coli Dynamics" aria-label="Copy heading and permalink for Exercise 5.7.4: Epidemiology Study: E. Coli Dynamics">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-medical-treatment-binomial-updated-p"><h4 class="heading">
+<span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete Distributions: Clinical Trial Therapeutic Efficacy.</span>
+</h4>
+<div class="introduction" id="ex-medical-treatment-binomial-updated-p-2">
+<div class="para" id="ex-medical-treatment-binomial-updated-p-2-1">Historical epidemiological data demonstrates that <span class="process-math">\(55\%\)</span> of all patients afflicted by a specific chronic inflammatory illness can successfully achieve temporary remission and recover naturally without any clinical intervention.<div class="autopermalink" data-description="Paragraph"><a href="#ex-medical-treatment-binomial-updated-p-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-medical-treatment-binomial-updated-p-2-2">A biomedical research group develops an innovative targeted therapeutic treatment. They randomly select <span class="process-math">\(10\)</span> diagnosed patients and administer the new treatment; <span class="process-math">\(9\)</span> of these patients achieve full clinical remission shortly thereafter. To analyze whether the new therapy provides a statistically significant benefit, assume the baseline hypothesis that the treatment is completely ineffective and worthless.<div class="autopermalink" data-description="Paragraph"><a href="#ex-medical-treatment-binomial-updated-p-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-trial-rv-type-v2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-trial-rv-type-v2-1-1">Let the random variable <span class="process-math">\(Y\)</span> represent the total number of patients who successfully achieve remission out of the 10 selected. Under the assumption that the new treatment is completely ineffective, what type of random variable is <span class="process-math">\(Y\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-trial-rv-type-v2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-trial-rv-type-v2" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-trial-rv-type-v2_opt_a" data-correct="">
+<dfn class="terminology">Binomial distribution</dfn>, because there is a fixed number of independent patient observations (<span class="process-math">\(n = 10\)</span>), each trial results in a binary outcome (recovers or fails to recover), and the baseline recovery probability remains constant at <span class="process-math">\(p = 0.55\text{.}\)</span>
+</li>
+<li data-component="feedback" id="rs-task-trial-rv-type-v2_opt_a">
+<div class="para" id="task-trial-rv-type-v2-2-1-2-1">Correct! Because we assume the treatment is worthless, the probability of recovery on each trial stays locked at the natural background rate of <span class="process-math">\(0.55\text{.}\)</span> Since the patient responses behave independently and the total sample size is fixed at <span class="process-math">\(10\text{,}\)</span> this satisfies all criteria for a binomial model.</div>
+</li>
+<li data-component="answer" id="rs-task-trial-rv-type-v2_opt_b">
+<dfn class="terminology">Geometric distribution</dfn>, because we are measuring a sequence of binary recovery outcomes across a group of clinical subjects.</li>
+<li data-component="feedback" id="rs-task-trial-rv-type-v2_opt_b">
+<div class="para" id="task-trial-rv-type-v2-2-2-2-1">Incorrect. A geometric model counts the number of separate trials required to reach the very first success. Here, the number of total trials is pre-fixed at 10, and we are counting the total accumulated successes.</div>
+</li>
+<li data-component="answer" id="rs-task-trial-rv-type-v2_opt_c">
+<dfn class="terminology">Hypergeometric distribution</dfn>, because we are selecting a subset of clinical subjects out of a specific regional medical facility pool.</li>
+<li data-component="feedback" id="rs-task-trial-rv-type-v2_opt_c">
+<div class="para" id="task-trial-rv-type-v2-2-3-2-1">Incorrect. Hypergeometric distributions apply when sampling is conducted <dfn class="terminology">without replacement</dfn> from a small, finite total population, causing probabilities to shift on each draw. The problem specifies a random selection from an overall large background patient environment.</div>
+</li>
+<li data-component="answer" id="rs-task-trial-rv-type-v2_opt_d">
+<dfn class="terminology">Poisson distribution</dfn>, because we are counting patient recoveries that occur over a fixed window of clinical observation time.</li>
+<li data-component="feedback" id="rs-task-trial-rv-type-v2_opt_d">
+<div class="para" id="task-trial-rv-type-v2-2-4-2-1">Incorrect. While time is mentioned conceptually, the mathematical support is explicitly a count of successes across a finite, bounded pool of 10 individual patient subjects.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.5.a"><a href="#task-trial-rv-type-v2" title="Copy heading and permalink for Task 5.7.5.a" aria-label="Copy heading and permalink for Task 5.7.5.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-trial-prob-at-least-nine-v2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-trial-prob-at-least-nine-v2"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-trial-prob-at-least-nine-v2-1-1\">Under the assumption that the new treatment is completely ineffective, compute the exact probability that at least <span class=\"process-math\">\\(9\\)<\/span> of the ten patients successfully achieve remission. Enter your answer as a decimal rounded to four decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-trial-prob-at-least-nine-v2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-trial-prob-at-least-nine-v2-1-2\"><input type=\"text\" id=\"ex-medical-treatment-binomial-updated-p-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-trial-prob-at-least-nine-v2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0233,0.0233], "feedback": "\n<div class=\"para\" id=\"task-trial-prob-at-least-nine-v2-2-1-1-2-1\">Correct! Four out of 8 outcomes in the sample space involve the second child being female.<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-trial-prob-at-least-nine-v2-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-trial-prob-at-least-nine-v2-3-1">To find the probability of at least 9, calculate the sum of the two mutually exclusive target cases: <span class="process-math">\(P(Y \ge 9) = P(Y = 9) + P(Y = 10)\text{.}\)</span> Apply the binomial formula <span class="process-math">\(\binom{n}{y}p^y(1-p)^{n-y}\)</span> using <span class="process-math">\(n = 10\)</span> and <span class="process-math">\(p = 0.55\)</span> for both values.<div class="autopermalink" data-description="Paragraph"><a href="#task-trial-prob-at-least-nine-v2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 5.7.5.b.1"><a href="#task-trial-prob-at-least-nine-v2-3" title="Copy heading and permalink for Hint 5.7.5.b.1" aria-label="Copy heading and permalink for Hint 5.7.5.b.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 5.7.5.b"><a href="#task-trial-prob-at-least-nine-v2" title="Copy heading and permalink for Task 5.7.5.b" aria-label="Copy heading and permalink for Task 5.7.5.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-trial-expectation-v2"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-trial-expectation-v2"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-trial-expectation-v2-1-1\">If the therapeutic treatment is absolutely ineffective, how many of the 10 selected patients would you expect to achieve remission naturally? Enter your answer as a decimal value.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-trial-expectation-v2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-trial-expectation-v2-1-2\"><input type=\"text\" id=\"ex-medical-treatment-binomial-updated-p-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-trial-expectation-v2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [5.5,5.5], "feedback": "\n<div class=\"para logical\" id=\"task-trial-expectation-v2-2-1-1-2-1\"><div class=\"para\">Yes! Using the mean formula for a binomial random variable where <span class=\"process-math\">\\(n = 10\\)<\/span> and <span class=\"process-math\">\\(p = 0.55\\text{:}\\)<\/span><\/div><div class=\"displaymath process-math\" id=\"task-trial-expectation-v2-2-1-1-2-1-3\">\n\\begin{equation*}\nE(Y) = n \\cdot p = 10 \\times 0.55 = 5.5\n\\end{equation*}\n<\/div><div class=\"para\">We would expect an average of <span class=\"process-math\">\\(5.5\\)<\/span> patients to achieve remission on their own.<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-trial-expectation-v2-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-trial-expectation-v2-3-1">The expected value (mean) of a binomial distribution simplifies down directly to the product formula: <span class="process-math">\(E(Y) = n \cdot p\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-trial-expectation-v2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 5.7.5.c.1"><a href="#task-trial-expectation-v2-3" title="Copy heading and permalink for Hint 5.7.5.c.1" aria-label="Copy heading and permalink for Hint 5.7.5.c.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 5.7.5.c"><a href="#task-trial-expectation-v2" title="Copy heading and permalink for Task 5.7.5.c" aria-label="Copy heading and permalink for Task 5.7.5.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-trial-statistical-conclusion-v2"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-trial-statistical-conclusion-v2-1-1">Based on your calculations for the expectation and tail probability, do you think it is reasonable to conclude that the new medical treatment is actually ineffective, or is that baseline assumption likely incorrect?<div class="autopermalink" data-description="Paragraph"><a href="#task-trial-statistical-conclusion-v2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-trial-statistical-conclusion-v2" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-trial-statistical-conclusion-v2_opt_a" data-correct="">The baseline assumption that the treatment is ineffective is likely incorrect. Observing 9 patient recoveries is higher than the natural expected average of 5.5, and the probability of getting 9 or more recoveries completely by chance is low (<span class="process-math">\(P \approx 0.0233\)</span>), indicating the therapy is highly likely to be genuinely effective.</li>
+<li data-component="feedback" id="rs-task-trial-statistical-conclusion-v2_opt_a">
+<div class="para" id="task-trial-statistical-conclusion-v2-2-1-2-1">Correct! This aligns with standard alpha significance testing thresholds (typically <span class="process-math">\(\alpha = 0.05\)</span>). Because a tail probability of <span class="process-math">\(2.33\%\)</span> falls below the <span class="process-math">\(5\%\)</span> significance benchmark, researchers would reject the baseline hypothesis and determine that the new treatment provides a statistically significant improvement over natural background recovery rates.</div>
+</li>
+<li data-component="answer" id="rs-task-trial-statistical-conclusion-v2_opt_b">The baseline assumption that the treatment is ineffective is correct. Since the tail probability of <span class="process-math">\(0.0233\)</span> is greater than zero, it remains entirely possible that this surge in patient recoveries was an ordinary random fluctuation.</li>
+<li data-component="feedback" id="rs-task-trial-statistical-conclusion-v2_opt_b">
+<div class="para" id="task-trial-statistical-conclusion-v2-2-2-2-1">Incorrect. While it is not physically impossible to get 9 or 10 recoveries by pure luck, landing below the conventional <span class="process-math">\(5\%\)</span> threshold gives enough mathematical confidence to support efficacy in medical research.</div>
+</li>
+<li data-component="answer" id="rs-task-trial-statistical-conclusion-v2_opt_c">The baseline assumption is correct, because an expected value of 5.5 naturally rounds up to 6, and an observation of 9 is close enough to 6 to be ignored as background variance.</li>
+<li data-component="feedback" id="rs-task-trial-statistical-conclusion-v2_opt_c">
+<li data-component="answer" id="rs-task-trial-statistical-conclusion-v2_opt_d">
+<div class="para" id="task-trial-statistical-conclusion-v2-2-4-1-1">Incorrect. A difference of several patients out of a small group of 10 creates an entirely distinct distribution profile, moving far beyond ordinary background variance limits.</div>
+</li>
+<li data-component="feedback" id="rs-task-trial-statistical-conclusion-v2_opt_d">
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.7.5.d"><a href="#task-trial-statistical-conclusion-v2" title="Copy heading and permalink for Task 5.7.5.d" aria-label="Copy heading and permalink for Task 5.7.5.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.7.5: Discrete Distributions: Clinical Trial Therapeutic Efficacy"><a href="#ex-medical-treatment-binomial-updated-p" title="Copy heading and permalink for Exercise 5.7.5: Discrete Distributions: Clinical Trial Therapeutic Efficacy" aria-label="Copy heading and permalink for Exercise 5.7.5: Discrete Distributions: Clinical Trial Therapeutic Efficacy">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 5.7: Interactive Exercises"><a href="#hw-common-discrete-rv-mixed" title="Copy heading and permalink for Exercises 5.7: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 5.7: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-common-discrete-rv-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<div class="autopermalink" data-description="Exercises 5.7: Written Exercises"><a href="#hw-common-discrete-rv-turn-in" title="Copy heading and permalink for Exercises 5.7: Written Exercises" aria-label="Copy heading and permalink for Exercises 5.7: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 5.7: Mixed Bag Practice"><a href="#sec-section-mixed-common-DRV" title="Copy heading and permalink for Section 5.7: Mixed Bag Practice" aria-label="Copy heading and permalink for Section 5.7: Mixed Bag Practice">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-section-poisson-DRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-chapter-Continuous-RVs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

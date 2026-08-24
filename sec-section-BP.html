@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Introductory Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-chapter-Basic-Probability.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Basic-Probability.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-counting-simple.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-BP">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Introductory Concepts</span>
+</h2>
+<section class="introduction" id="sec-section-BP-2">
+<div class="para logical" id="sec-section-BP-2-1">
+<div class="para">By completing the problems provided below, you will gain practice with:</div>
+<ul class="disc" id="sec-section-BP-2-1-1">
+<li id="sec-section-BP-2-1-1-1">
+<div class="para" id="sec-section-BP-2-1-1-1-1">Identifying sample spaces.<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-BP-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-BP-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-BP-2-1-1-2">
+<div class="para" id="sec-section-BP-2-1-1-2-1">Determining whether outcomes in a sample space are equally likely.<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-BP-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-BP-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-BP-2-1-1-3">
+<div class="para" id="sec-section-BP-2-1-1-3-1">Defining events in terms of the outcomes in a sample space.<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-BP-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-BP-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-BP-2-1-1-4">
+<div class="para" id="sec-section-BP-2-1-1-4-1">Using sample spaces to help you compute probabilities for events.<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-BP-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-BP-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-BP-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="exercises" id="hw-basic-probability-concepts">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="BP-3children"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Three Children.</span>
+</h4>
+<div class="introduction" id="BP-3children-2">
+<div class="para" id="BP-3children-2-1">Suppose that a couple has three children. We are concerned with the sex of the children at birth.<div class="autopermalink" data-description="Paragraph"><a href="#BP-3children-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="BP-3children-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="BP-3children-3-1-1">Which option best describes the sample space here?<div class="autopermalink" data-description="Paragraph"><a href="#BP-3children-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="_opt_a" data-correct="">
+<div class="para" id="BP-3children-3-2-1-1-1"><span class="process-math">\(\{BBB, GBB, BGB, BBG, GGB, GBG, BGG, GGG\} \)</span></div>
+</li>
+<li data-component="feedback" id="_opt_a">
+<div class="para" id="BP-3children-3-2-1-2-1">Correct! This set provides a list of all possible outcomes.</div>
+</li>
+<li data-component="answer" id="_opt_b">
+<div class="para" id="BP-3children-3-2-2-1-1"><span class="process-math">\(\{BBB, GGG, BBG, GGB\} \)</span></div>
+</li>
+<li data-component="feedback" id="_opt_b">
+<div class="para" id="BP-3children-3-2-2-2-1">This option does not take the order of the births into account.</div>
+</li>
+<li data-component="answer" id="_opt_c">
+<div class="para" id="BP-3children-3-2-3-1-1"><span class="process-math">\(\{B, G\} \)</span></div>
+</li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="BP-3children-3-2-3-2-1">This would be the sample space for the birth of a SINGLE child, not three children.</div>
+</li>
+<li data-component="answer" id="_opt_d">
+<div class="para" id="BP-3children-3-2-4-1-1"><span class="process-math">\(\{B, G, BG, GB, BBB, GBB, BGB, BBG, GGB, GBG, BGG, GGG\} \)</span></div>
+</li>
+<li data-component="feedback" id="_opt_d">
+<div class="para" id="BP-3children-3-2-4-2-1">This would be the sample space if the couple were to have up to three children, not exactly three children.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 1.1.1.a"><a href="#BP-3children-3" title="Copy heading and permalink for Task 1.1.1.a" aria-label="Copy heading and permalink for Task 1.1.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="BP-3children-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"BP-3children-4-1-1\">Determine the probability that the second child born will be female. Write your answer as a decimal, accurate to two decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#BP-3children-4-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"BP-3children-4-1-2\"><input type=\"text\" id=\"BP-3children-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#BP-3children-4-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.5,0.5], "feedback": "\n<div class=\"para\" id=\"BP-3children-4-2-1-1-2-1\">Correct! Four out of eight outcomes in the sample space involve the second child being female.<\/div>"}, {"number": [1.001,100], "feedback": "\n<div class=\"para\" id=\"BP-3children-4-2-1-2-2-1\">Probabilities can not be larger than 1.<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 1.1.1.b"><a href="#BP-3children-4" title="Copy heading and permalink for Task 1.1.1.b" aria-label="Copy heading and permalink for Task 1.1.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="BP-3children-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"BP-3children-5-1-1\">Determine the probability that <em class=\"emphasis\">at least<\/em> the second child will be female. Write your answer as a decimal, accurate to two decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#BP-3children-5-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"BP-3children-5-1-2\"><input type=\"text\" id=\"BP-3children-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#BP-3children-5-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.5,0.5], "feedback": "\n<div class=\"para\" id=\"BP-3children-5-2-1-1-2-1\">Correct! Four out of eight outcomes in the sample space involve the second child and possibly another child being female.<\/div>"}, {"number": [0.375,0.375], "feedback": "\n<div class=\"para\" id=\"BP-3children-5-2-1-2-2-1\">Close! Reread the prompt to make sure you are computing the desired probability.<\/div>"}, {"number": [1.001,100], "feedback": "\n<div class=\"para\" id=\"BP-3children-5-2-1-3-2-1\">Probabilities can not be larger than 1.<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 1.1.1.c"><a href="#BP-3children-5" title="Copy heading and permalink for Task 1.1.1.c" aria-label="Copy heading and permalink for Task 1.1.1.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.1.1: Three Children"><a href="#BP-3children" title="Copy heading and permalink for Exercise 1.1.1: Three Children" aria-label="Copy heading and permalink for Exercise 1.1.1: Three Children">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="BP-blood-type"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Blood Type.</span>
+</h4>
+<div class="introduction" id="BP-blood-type-2">
+<div class="para" id="BP-blood-type-2-1">An experiment consists of randomly selecting a person and recording their blood type, which could be A, B, AB, or O, and the status of their Rhesus (Rh) factor, which is either present (+) or not (-).<div class="autopermalink" data-description="Paragraph"><a href="#BP-blood-type-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="BP-blood-type-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;">
+<span data-subcomponent="question">
+<div class="para" id="BP-blood-type-3-1-1">Define the sample space for this experiment by dragging relevant outcomes to the right.<div class="autopermalink" data-description="Paragraph"><a href="#BP-blood-type-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><span data-subcomponent="feedback">
+<div class="para" id="BP-blood-type-3-2-1"></div></span><li data-subcomponent="draggable" id="_drag1" data-category="1">A+</li>
+<li data-subcomponent="draggable" id="_drag2" data-category="1">A-</li>
+<li data-subcomponent="draggable" id="_drag3" data-category="1">B-</li>
+<li data-subcomponent="draggable" id="_drag4" data-category="1">B+</li>
+<li data-subcomponent="draggable" id="_drag5" data-category="1">AB-</li>
+<li data-subcomponent="draggable" id="_drag6" data-category="1">AB+</li>
+<li data-subcomponent="draggable" id="_drag7" data-category="1">0-</li>
+<li data-subcomponent="draggable" id="_drag8" data-category="1">0+</li>
+<li data-subcomponent="dropzone" for="_drag1" data-category="1">Sample Space <span class="process-math">\(S=\{  \quad \quad   \}\)</span>
+</li>
+<li data-subcomponent="draggable" id="_drag9" data-category="2">(+)</li>
+<li data-subcomponent="draggable" id="_drag10" data-category="2">(-)</li>
+<li data-subcomponent="draggable" id="_drag11" data-category="2">A</li>
+<li data-subcomponent="draggable" id="_drag12" data-category="2">B</li>
+<li data-subcomponent="draggable" id="_drag13" data-category="2">AB</li>
+<li data-subcomponent="draggable" id="_drag14" data-category="2">O</li>
+</ul></div></div>
+<div class="autopermalink" data-description="Task 1.1.2.a"><a href="#BP-blood-type-3" title="Copy heading and permalink for Task 1.1.2.a" aria-label="Copy heading and permalink for Task 1.1.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="BP-blood-type-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" data-multipleanswers="false">
+<div class="para" id="BP-blood-type-4-1-1">All outcomes in the sample space are equally likely.<div class="autopermalink" data-description="Paragraph"><a href="#BP-blood-type-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<li data-component="answer" id="_opt_t"><p>True.</p></li>
+<li data-component="feedback" id="_opt_t">
+<div class="para" id="BP-blood-type-4-2-1">Are some blood types less common than others? Yes! For example, Rh-present (+) blood types are much more common than Rh-negative (-) blood types.</div>
+</li>
+<li data-component="answer" id="_opt_f" data-correct=""><p>False.</p></li>
+<li data-component="feedback" id="_opt_f">
+<div class="para" id="BP-blood-type-4-2-1">Are some blood types less common than others? Yes! For example, Rh-present (+) blood types are much more common than Rh-negative (-) blood types.</div>
+</li>
+</ul></div></div>
+<div class="autopermalink" data-description="Task 1.1.2.b"><a href="#BP-blood-type-4" title="Copy heading and permalink for Task 1.1.2.b" aria-label="Copy heading and permalink for Task 1.1.2.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.1.2: Blood Type"><a href="#BP-blood-type" title="Copy heading and permalink for Exercise 1.1.2: Blood Type" aria-label="Copy heading and permalink for Exercise 1.1.2: Blood Type">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-probability-streaming-experiment"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Streaming Movies and TV.</span>
+</h4>
+<div class="introduction" id="ex-probability-streaming-experiment-2">
+<div class="para" id="ex-probability-streaming-experiment-2-1">Your professor wants to watch something but cannot decide on what. So, she first tosses a fair coin to choose a streaming platform. If the coin lands heads, she will log into Netflix (<span class="process-math">\(N\)</span>); if it lands tails, she will log into Hulu (<span class="process-math">\(H\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#ex-probability-streaming-experiment-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-probability-streaming-experiment-2-2">
+<div class="para">Once logged in, she randomly selects content (e.g., tv show, movie, etc):</div>
+<ul class="disc" id="ex-probability-streaming-experiment-2-2-1">
+<li id="ex-probability-streaming-experiment-2-2-1-1">
+<div class="para" id="ex-probability-streaming-experiment-2-2-1-1-1">If she is on Netflix, she will choose randomly between a movie (<span class="process-math">\(M\)</span>) or a documentary (<span class="process-math">\(D\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#ex-probability-streaming-experiment-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-probability-streaming-experiment-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-probability-streaming-experiment-2-2-1-2">
+<div class="para" id="ex-probability-streaming-experiment-2-2-1-2-1">If she is on Hulu, she will choose randomly between a comedy show (<span class="process-math">\(C\)</span>), an anime series (<span class="process-math">\(A\)</span>), or a reality TV episode (<span class="process-math">\(R\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#ex-probability-streaming-experiment-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-probability-streaming-experiment-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">The "experiment" is to observe the combination of the streaming platform and specific content type chosen.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-probability-streaming-experiment-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-streaming-space-id"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-streaming-space-id-1-1">Which of the following sets correctly describes the full sample space <span class="process-math">\(S\)</span> for this experiment?<div class="autopermalink" data-description="Paragraph"><a href="#task-streaming-space-id-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-streaming-space-id" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-streaming-space-id_opt_a">
+<div class="para" id="task-streaming-space-id-2-1-1-1"><span class="process-math">\(\{(N, M), (N, D), (H, C), (H, A)\}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-streaming-space-id_opt_a">
+<div class="para" id="task-streaming-space-id-2-1-2-1">Incorrect. This subset leaves out the outcome <span class="process-math">\((H, R)\)</span> for watching a reality TV episode on Hulu. A complete sample space must list every possible outcome.</div>
+</li>
+<li data-component="answer" id="rs-task-streaming-space-id_opt_b">
+<div class="para" id="task-streaming-space-id-2-2-1-1"><span class="process-math">\(\{(N, M), (N, D), (N, C), (N, A), (N, R), (H, M), (H, D), (H, C), (H, A), (H, R)\}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-streaming-space-id_opt_b">
+<div class="para" id="task-streaming-space-id-2-2-2-1">Incorrect. This list includes outcomes that are not possible! For example, she will not select a comedy show on Netflix.</div>
+</li>
+<li data-component="answer" id="rs-task-streaming-space-id_opt_c" data-correct="">
+<div class="para" id="task-streaming-space-id-2-3-1-1"><span class="process-math">\(\{(N, M), (N, D), (H, C), (H, A), (H, R)\}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-streaming-space-id_opt_c">
+<div class="para" id="task-streaming-space-id-2-3-2-1">Correct!  This set contains all 5 possible outcomes.</div>
+</li>
+<li data-component="answer" id="rs-task-streaming-space-id_opt_d">
+<div class="para" id="task-streaming-space-id-2-4-1-1"><span class="process-math">\(\{N, H, M, D, C, A, R\}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-streaming-space-id_opt_d">
+<div class="para" id="task-streaming-space-id-2-4-2-1">Incorrect. This is a list of individual choices rather than combinations. The "experiment" is to observe the combination of the streaming platform AND specific content type chosen.</div>
+</li>
+<li data-component="answer" id="rs-task-streaming-space-id_opt_e">
+<div class="para" id="task-streaming-space-id-2-5-1-1"><span class="process-math">\(\{(N, H), (M, D), (C, A, R)\}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-streaming-space-id_opt_e">
+<div class="para" id="task-streaming-space-id-2-5-2-1">Incorrect. This lists groupings of the possible individual choices, rather than the possible combinations of streaming platform AND content.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 1.1.3.a"><a href="#task-streaming-space-id" title="Copy heading and permalink for Task 1.1.3.a" aria-label="Copy heading and permalink for Task 1.1.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-streaming-event-subset"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-streaming-event-subset-1-1">Let <span class="process-math">\(E\)</span> be the event that the professor chooses to watch a fictional scripted story (defined here as a movie, a comedy show, or an anime series). Which subset correctly defines the event  <span class="process-math">\(E\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-streaming-event-subset-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-streaming-event-subset" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-streaming-event-subset_opt_a">
+<div class="para" id="task-streaming-event-subset-2-1-1-1"><span class="process-math">\(\{M, C, A\}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-streaming-event-subset_opt_a">
+<div class="para" id="task-streaming-event-subset-2-1-2-1">Incorrect. This list contains only the individual content options. <span class="process-math">\(E\)</span> should be a subset of outcomes from the sample space.</div>
+</li>
+<li data-component="answer" id="rs-task-streaming-event-subset_opt_b" data-correct="">
+<div class="para" id="task-streaming-event-subset-2-2-1-1"><span class="process-math">\(\{(N, M), (H, C), (H, A)\}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-streaming-event-subset_opt_b">
+<div class="para" id="task-streaming-event-subset-2-2-2-1">Correct! The subset <span class="process-math">\(E\)</span> filters the total sample space <span class="process-math">\(S\)</span> to capture only the outcomes matching our event definition.</div>
+</li>
+<li data-component="answer" id="rs-task-streaming-event-subset_opt_c">
+<div class="para" id="task-streaming-event-subset-2-3-1-1"><span class="process-math">\(\{(N, M), (N, D), (H, C), (H, A), (H, R)\}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-streaming-event-subset_opt_c">
+<div class="para" id="task-streaming-event-subset-2-3-2-1">Incorrect. This is the entire sample space <span class="process-math">\(S\text{,}\)</span> but not all outcomes in the sample space belong to event <span class="process-math">\(E\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-streaming-event-subset_opt_d">
+<div class="para" id="task-streaming-event-subset-2-4-1-1"><span class="process-math">\(\{(H, C), (H, A)\}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-streaming-event-subset_opt_d">
+<div class="para" id="task-streaming-event-subset-2-4-2-1">Incorrect. This subset is missing an outcome: the movie on Netflix.</div>
+</li>
+<li data-component="answer" id="rs-task-streaming-event-subset_opt_e">
+<div class="para" id="task-streaming-event-subset-2-5-1-1"><span class="process-math">\(\{N, D), (H, R)\}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-streaming-event-subset_opt_e">
+<div class="para" id="task-streaming-event-subset-2-5-2-1">Incorrect. This subset captures the exact opposite of event <span class="process-math">\(E\text{!}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 1.1.3.b"><a href="#task-streaming-event-subset" title="Copy heading and permalink for Task 1.1.3.b" aria-label="Copy heading and permalink for Task 1.1.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-streaming-likelihood-mc"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" data-multipleanswers="false" id="rs-task-streaming-likelihood-mc">
+<div class="para" id="task-streaming-likelihood-mc-1-1">All outcomes in the sample space are equally likely.<div class="autopermalink" data-description="Paragraph"><a href="#task-streaming-likelihood-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<li data-component="answer" id="rs-task-streaming-likelihood-mc_opt_t"><p>True.</p></li>
+<li data-component="feedback" id="rs-task-streaming-likelihood-mc_opt_t">
+<div class="para" id="task-streaming-likelihood-mc-2-1">The multi-stage structure of the experiment affects the probabilities of the sample space outcomes. After the initial coin flip, there are different numbers of subsequent choices.</div>
+</li>
+<li data-component="answer" id="rs-task-streaming-likelihood-mc_opt_f" data-correct=""><p>False.</p></li>
+<li data-component="feedback" id="rs-task-streaming-likelihood-mc_opt_f">
+<div class="para" id="task-streaming-likelihood-mc-2-1">The multi-stage structure of the experiment affects the probabilities of the sample space outcomes. After the initial coin flip, there are different numbers of subsequent choices.</div>
+</li>
+</ul></div></div>
+<div class="autopermalink" data-description="Task 1.1.3.c"><a href="#task-streaming-likelihood-mc" title="Copy heading and permalink for Task 1.1.3.c" aria-label="Copy heading and permalink for Task 1.1.3.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.1.3: Streaming Movies and TV"><a href="#ex-probability-streaming-experiment" title="Copy heading and permalink for Exercise 1.1.3: Streaming Movies and TV" aria-label="Copy heading and permalink for Exercise 1.1.3: Streaming Movies and TV">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 1.1: Interactive Exercises"><a href="#hw-basic-probability-concepts" title="Copy heading and permalink for Exercises 1.1: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 1.1: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-basic-probability-concepts-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-library-books"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Library Books.</span>
+</h4>
+<div class="introduction" id="ex-library-books-2">
+<div class="para" id="ex-library-books-2-1">The university library has five copies of a popular textbook. Two of the copies have missing pages, while the remaining three are in good condition. A student requests two copies of the textbook, and the librarian on duty randomly selects two of the five available to check-out to the student.<div class="autopermalink" data-description="Paragraph"><a href="#ex-library-books-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-library-books-2-2">Let <span class="process-math">\(D_1\)</span> and <span class="process-math">\(D_2\)</span> represent the damaged textbooks, and let <span class="process-math">\(G_1\text{,}\)</span> <span class="process-math">\(G_2\text{,}\)</span> and <span class="process-math">\(G_3\)</span> represent the textbooks that are in good condition.<div class="autopermalink" data-description="Paragraph"><a href="#ex-library-books-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="ex-library-books-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="ex-library-books-3-1-1">List the sample space for this experiment.<div class="autopermalink" data-description="Paragraph"><a href="#ex-library-books-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.1.a"><a href="#ex-library-books-3" title="Copy heading and permalink for Task 1.1.1.a" aria-label="Copy heading and permalink for Task 1.1.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-library-books-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="ex-library-books-4-1-1">Determine the probability that the student receives two books that are in good condition.<div class="autopermalink" data-description="Paragraph"><a href="#ex-library-books-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 1.1.1.b"><a href="#ex-library-books-4" title="Copy heading and permalink for Task 1.1.1.b" aria-label="Copy heading and permalink for Task 1.1.1.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.1.1: Library Books"><a href="#ex-library-books" title="Copy heading and permalink for Exercise 1.1.1: Library Books" aria-label="Copy heading and permalink for Exercise 1.1.1: Library Books">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 1.1: Written Exercises"><a href="#hw-basic-probability-concepts-turn-in" title="Copy heading and permalink for Exercises 1.1: Written Exercises" aria-label="Copy heading and permalink for Exercises 1.1: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 1.1: Introductory Concepts"><a href="#sec-section-BP" title="Copy heading and permalink for Section 1.1: Introductory Concepts" aria-label="Copy heading and permalink for Section 1.1: Introductory Concepts">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-chapter-Basic-Probability.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-counting-simple.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

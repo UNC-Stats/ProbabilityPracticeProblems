@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Normal Random Variable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-section-exponential-CRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Common-Continuous-RVs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-gamma-CRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-normal-CRV">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Normal Random Variable</span>
+</h2>
+<section class="introduction" id="sec-section-normal-CRV-2">
+<div class="para logical" id="sec-section-normal-CRV-2-1">
+<div class="para">By completing the problems provided below, you will gain practice with:</div>
+<ul class="disc" id="sec-section-normal-CRV-2-1-1">
+<li id="sec-section-normal-CRV-2-1-1-1">
+<div class="para" id="sec-section-normal-CRV-2-1-1-1-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-normal-CRV-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-normal-CRV-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-normal-CRV-2-1-1-2">
+<div class="para" id="sec-section-normal-CRV-2-1-1-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-normal-CRV-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-normal-CRV-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-normal-CRV-2-1-1-3">
+<div class="para" id="sec-section-normal-CRV-2-1-1-3-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-normal-CRV-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-normal-CRV-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-normal-CRV-2-1-1-4">
+<div class="para" id="sec-section-normal-CRV-2-1-1-4-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-normal-CRV-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-normal-CRV-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-normal-CRV-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<figure class="figure figure-like" id="sec-section-normal-CRV-3"><div class="interactive-iframe-container"><iframe src="https://lock5stat.com/StatKey/theoretical_distribution/theoretical_distribution.html#normal" id="statkey-nromal-applet" style="width:690px; height:690px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="statkey-nromal-applet.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.3.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>StatKey Normal Distribution Applet<div class="autopermalink" data-description="Figure 7.3.1"><a href="#sec-section-normal-CRV-3" title="Copy heading and permalink for Figure 7.3.1" aria-label="Copy heading and permalink for Figure 7.3.1">🔗</a></div></figcaption>
+</figure>
+<section class="exercises" id="hw-normal-rv">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-z-distribution-calculations"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Standard Normal Distribution: Z-Score Probabilities.</span>
+</h4>
+<div class="introduction" id="ex-z-distribution-calculations-2">
+<div class="para" id="ex-z-distribution-calculations-2-1">Let <span class="process-math">\(Z\)</span> represent a continuous random variable following a standard normal distribution.<div class="autopermalink" data-description="Paragraph"><a href="#ex-z-distribution-calculations-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-z-distribution-calculations-2-2">Enter all answers as decimals or percentages rounded to exactly four decimal places.<div class="autopermalink" data-description="Paragraph"><a href="#ex-z-distribution-calculations-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-z-bounded-interval"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-z-bounded-interval"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-z-bounded-interval-1-1\">Find  <span class=\"process-math\">\\(P(-1.2 \\lt Z \\lt 0.15)\\text{.}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-z-bounded-interval-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-z-bounded-interval-1-2\">Probability = <input type=\"text\" id=\"ex-z-distribution-calculations-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-z-bounded-interval-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.4446,0.4446], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.1.a"><a href="#task-z-bounded-interval" title="Copy heading and permalink for Task 7.3.1.a" aria-label="Copy heading and permalink for Task 7.3.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-z-greater-than-negative"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-z-greater-than-negative"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-z-greater-than-negative-1-1\">Find the probability  <span class=\"process-math\">\\(P(Z \\gt -1.05)\\text{.}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-z-greater-than-negative-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-z-greater-than-negative-1-2\">Probability = <input type=\"text\" id=\"ex-z-distribution-calculations-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-z-greater-than-negative-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.8531,0.8531], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.1.b"><a href="#task-z-greater-than-negative" title="Copy heading and permalink for Task 7.3.1.b" aria-label="Copy heading and permalink for Task 7.3.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-z-outliers-distance"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-z-outliers-distance"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-z-outliers-distance-1-1\">Find the percentage of data that lies more than 1.5 standard deviations away from the distribution mean<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-z-outliers-distance-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-z-outliers-distance-1-2\">Percentage = <input type=\"text\" id=\"ex-z-distribution-calculations-blank1\" size=\"10\"\/> %<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-z-outliers-distance-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [13.3614,13.3614], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.1.c"><a href="#task-z-outliers-distance" title="Copy heading and permalink for Task 7.3.1.c" aria-label="Copy heading and permalink for Task 7.3.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-z-asymmetric-deviations-wider"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-z-asymmetric-deviations-wider"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-z-asymmetric-deviations-wider-1-1\">Find the percentage of data contained between 1.65 standard deviations below the mean and 0.85 standard deviations above the mean.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-z-asymmetric-deviations-wider-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-z-asymmetric-deviations-wider-1-2\">Percentage = <input type=\"text\" id=\"ex-z-distribution-calculations-blank1\" size=\"10\"\/> %<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-z-asymmetric-deviations-wider-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [75.2891,75.2891], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.1.d"><a href="#task-z-asymmetric-deviations-wider" title="Copy heading and permalink for Task 7.3.1.d" aria-label="Copy heading and permalink for Task 7.3.1.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.3.1: The Standard Normal Distribution: Z-Score Probabilities"><a href="#ex-z-distribution-calculations" title="Copy heading and permalink for Exercise 7.3.1: The Standard Normal Distribution: Z-Score Probabilities" aria-label="Copy heading and permalink for Exercise 7.3.1: The Standard Normal Distribution: Z-Score Probabilities">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-normal-quiz-times-5options"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuous Distributions: Normal Distribution Exam Times.</span>
+</h4>
+<div class="introduction" id="ex-normal-quiz-times-5options-2">
+<div class="para" id="ex-normal-quiz-times-5options-2-1">We previously modeled the amount of time that it takes a MATH 350 student to complete a probability exam as a continuous uniform random variable. A more realistic and accurate model would be the normal distribution.<div class="autopermalink" data-description="Paragraph"><a href="#ex-normal-quiz-times-5options-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-normal-quiz-times-5options-2-2">Assuming exam completion times follow a normal distirbution with a mean of 40 minutes and a standard deviation of 5 minutes,  compute the following probabilities.<div class="autopermalink" data-description="Paragraph"><a href="#ex-normal-quiz-times-5options-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-quiz-normal-more-51"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-quiz-normal-more-51-1-1">Find the probability that a randomly selected student requires more than 51 minutes to complete the exam (<span class="process-math">\(P(X \gt 51)\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#task-quiz-normal-more-51-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-quiz-normal-more-51" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-quiz-normal-more-51_opt_a">
+<div class="para" id="task-quiz-normal-more-51-2-1-1-1"><span class="process-math">\(0.9861\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-quiz-normal-more-51_opt_a">
+<div class="para" id="task-quiz-normal-more-51-2-1-2-1">Incorrect. This is the probability that the student takes <em class="emphasis">less</em> than 51 minutes (<span class="process-math">\(P(X \le 51)\)</span>). Remember to use the complement rule to find the area of the upper tail for "more than."</div>
+</li>
+<li data-component="answer" id="rs-task-quiz-normal-more-51_opt_b" data-correct="">
+<div class="para" id="task-quiz-normal-more-51-2-2-1-1"><span class="process-math">\(0.0139\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-quiz-normal-more-51_opt_b">
+<div class="para" id="task-quiz-normal-more-51-2-2-2-1">Correct! First, standardize the target value to find the Z-score:</div>
+<div class="displaymath process-math" id="task-quiz-normal-more-51-2-2-2-2">
+\begin{equation*}
+Z = \frac{51 - 40}{5} = \frac{11}{5} = 2.2
+\end{equation*}
+</div>
+<div class="para" id="task-quiz-normal-more-51-2-2-2-3">Using a standard normal table or technology, the area to the left of <span class="process-math">\(Z = 2.2\)</span> is <span class="process-math">\(0.9861\text{.}\)</span> Finding the upper tail gives:</div>
+<div class="displaymath process-math" id="task-quiz-normal-more-51-2-2-2-4">
+\begin{equation*}
+P(X \gt 51) = P(Z \gt 2.2) = 1 - 0.9861 = 0.0139
+\end{equation*}
+</div>
+</li>
+<li data-component="answer" id="rs-task-quiz-normal-more-51_opt_c">
+<div class="para" id="task-quiz-normal-more-51-2-3-1-1"><span class="process-math">\(0.0179\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-quiz-normal-more-51_opt_c">
+<div class="para" id="task-quiz-normal-more-51-2-3-2-1">Incorrect. It looks like you might have used the variance (<span class="process-math">\(\sigma^2 = 25\)</span>) in the denominator instead of the standard deviation (<span class="process-math">\(\sigma = 5\)</span>) when calculating your Z-score.</div>
+</li>
+<li data-component="answer" id="rs-task-quiz-normal-more-51_opt_d">
+<div class="para" id="task-quiz-normal-more-51-2-4-1-1"><span class="process-math">\(0.1333\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-quiz-normal-more-51_opt_d">
+<div class="para" id="task-quiz-normal-more-51-2-4-2-1">Incorrect. This was the answer from the uniform distribution version of this problem. Under a normal curve, the probability density drops significantly as you move out into the tails.</div>
+</li>
+<li data-component="answer" id="rs-task-quiz-normal-more-51_opt_e">
+<div class="para" id="task-quiz-normal-more-51-2-5-1-1"><span class="process-math">\(0.0228\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-quiz-normal-more-51_opt_e">
+<div class="para" id="task-quiz-normal-more-51-2-5-2-1">Incorrect. This is the probability of a value falling more than 2 standard deviations away (<span class="process-math">\(Z \gt 2.0\)</span>). Recheck your subtraction arithmetic for the Z-score numerator.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.2.a"><a href="#task-quiz-normal-more-51" title="Copy heading and permalink for Task 7.3.2.a" aria-label="Copy heading and permalink for Task 7.3.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-quiz-normal-between-31-35"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-quiz-normal-between-31-35-1-1">Find the probability that a randomly selected student completes the exam in a time frame between 31 and 35 minutes (<span class="process-math">\(P(31 \le X \le 35)\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#task-quiz-normal-between-31-35-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-quiz-normal-between-31-35" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-quiz-normal-between-31-35_opt_a" data-correct="">
+<div class="para" id="task-quiz-normal-between-31-35-2-1-1-1"><span class="process-math">\(0.1227\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-quiz-normal-between-31-35_opt_a">
+<div class="para" id="task-quiz-normal-between-31-35-2-1-2-1">Correct! First, convert both boundary thresholds into their respective standard normal Z-scores:</div>
+<div class="displaymath process-math" id="task-quiz-normal-between-31-35-2-1-2-2">
+\begin{equation*}
+Z_1 = \frac{31 - 40}{5} = -1.8 \quad \text{and} \quad Z_2 = \frac{35 - 40}{5} = -1.0
+\end{equation*}
+</div>
+<div class="para" id="task-quiz-normal-between-31-35-2-1-2-3">Find the cumulative area to the left for both scores from your standard normal distribution curve tables:</div>
+<div class="displaymath process-math" id="task-quiz-normal-between-31-35-2-1-2-4">
+\begin{equation*}
+P(Z \le -1.0) = 0.1587 \quad \text{and} \quad P(Z \le -1.8) = 0.0360
+\end{equation*}
+</div>
+<div class="para" id="task-quiz-normal-between-31-35-2-1-2-5">Subtracting the lower boundary area from the upper boundary area yields the interval probability:</div>
+<div class="displaymath process-math" id="task-quiz-normal-between-31-35-2-1-2-6">
+\begin{equation*}
+P(-1.8 \le Z \le -1.0) = 0.1587 - 0.0360 = 0.1227
+\end{equation*}
+</div>
+</li>
+<li data-component="answer" id="rs-task-quiz-normal-between-31-35_opt_b">
+<div class="para" id="task-quiz-normal-between-31-35-2-2-1-1"><span class="process-math">\(0.1587\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-quiz-normal-between-31-35_opt_b">
+<div class="para" id="task-quiz-normal-between-31-35-2-2-2-1">Incorrect. This is only the cumulative area to the left of 35 minutes (<span class="process-math">\(P(X \le 35)\)</span>). You still need to subtract the lower tail area corresponding to times under 31 minutes.</div>
+</li>
+<li data-component="answer" id="rs-task-quiz-normal-between-31-35_opt_c">
+<div class="para" id="task-quiz-normal-between-31-35-2-3-1-1"><span class="process-math">\(0.1947\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-quiz-normal-between-31-35_opt_c">
+<div class="para" id="task-quiz-normal-between-31-35-2-3-2-1">Incorrect. It looks like you added the two boundary probabilities together instead of subtracting them to find the area contained between them.</div>
+</li>
+<li data-component="answer" id="rs-task-quiz-normal-between-31-35_opt_d">
+<div class="para" id="task-quiz-normal-between-31-35-2-4-1-1"><span class="process-math">\(0.1333\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-quiz-normal-between-31-35_opt_d">
+<div class="para" id="task-quiz-normal-between-31-35-2-4-2-1">Incorrect. Remember that unlike the uniform distribution, intervals of equal width do not have equal probabilities in a normal distribution because the curve is non-linear and changes height.</div>
+</li>
+<li data-component="answer" id="rs-task-quiz-normal-between-31-35_opt_e">
+<div class="para" id="task-quiz-normal-between-31-35-2-5-1-1"><span class="process-math">\(0.0360\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-quiz-normal-between-31-35_opt_e">
+<div class="para" id="task-quiz-normal-between-31-35-2-5-2-1">Incorrect. This is the lower tail probability of a student completing the exam in fewer than 31 minutes (<span class="process-math">\(P(X \lt 31)\)</span>).</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.2.b"><a href="#task-quiz-normal-between-31-35" title="Copy heading and permalink for Task 7.3.2.b" aria-label="Copy heading and permalink for Task 7.3.2.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.3.2: Continuous Distributions: Normal Distribution Exam Times"><a href="#ex-normal-quiz-times-5options" title="Copy heading and permalink for Exercise 7.3.2: Continuous Distributions: Normal Distribution Exam Times" aria-label="Copy heading and permalink for Exercise 7.3.2: Continuous Distributions: Normal Distribution Exam Times">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-normal-hybrid-mpg"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuous Distributions: Hybrid Fuel Efficiency.</span>
+</h4>
+<div class="introduction" id="ex-normal-hybrid-mpg-2">
+<div class="para" id="ex-normal-hybrid-mpg-2-1">A new gas- and electric-powered hybrid car has recently hit the consumer automotive market. The distance traveled on one gallon of fuel is modeled by a normal distribution with a mean of 65 miles and a standard deviation of 8 miles. If one car is tested at random, compute the following probabilities.<div class="autopermalink" data-description="Paragraph"><a href="#ex-normal-hybrid-mpg-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-hybrid-more-71"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-hybrid-more-71-1-1">Find the probability that the car travels more than 71 miles per gallon.<div class="autopermalink" data-description="Paragraph"><a href="#task-hybrid-more-71-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-hybrid-more-71" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-hybrid-more-71_opt_a">
+<div class="para" id="task-hybrid-more-71-2-1-1-1"><span class="process-math">\(0.7734\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-more-71_opt_a">
+<div class="para" id="task-hybrid-more-71-2-1-2-1">Incorrect. This is the probability that the car travels <em class="emphasis">less</em> than 71 miles per gallon (<span class="process-math">\(P(X \le 71)\)</span>). Remember to find the upper tail area for "more than."</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-more-71_opt_b" data-correct="">
+<div class="para" id="task-hybrid-more-71-2-2-1-1"><span class="process-math">\(0.2266\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-more-71_opt_b">
+<div class="para" id="task-hybrid-more-71-2-2-2-1">Correct! First, find the standard normal Z-score:</div>
+<div class="displaymath process-math" id="task-hybrid-more-71-2-2-2-2">
+\begin{equation*}
+Z = \frac{71 - 65}{8} = \frac{6}{8} = 0.75
+\end{equation*}
+</div>
+<div class="para" id="task-hybrid-more-71-2-2-2-3">The cumulative area to the left of <span class="process-math">\(Z = 0.75\)</span> is <span class="process-math">\(0.7734\text{.}\)</span> Subtracting from 1 to find the upper tail gives:</div>
+<div class="displaymath process-math" id="task-hybrid-more-71-2-2-2-4">
+\begin{equation*}
+P(X \gt 71) = P(Z \gt 0.75) = 1 - 0.7734 = 0.2266
+\end{equation*}
+</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-more-71_opt_c">
+<div class="para" id="task-hybrid-more-71-2-3-1-1"><span class="process-math">\(0.2734\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-more-71_opt_c">
+<div class="para" id="task-hybrid-more-71-2-3-2-1">Incorrect. Double-check your numerator subtraction and division when standardizing your raw score into a Z-score.</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-more-71_opt_d">
+<div class="para" id="task-hybrid-more-71-2-4-1-1"><span class="process-math">\(0.1587\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-more-71_opt_d">
+<div class="para" id="task-hybrid-more-71-2-4-2-1">Incorrect. This matches a Z-score of exactly <span class="process-math">\(1.0\text{.}\)</span> Make sure to divide by the standard deviation parameter <span class="process-math">\(\sigma = 8\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-more-71_opt_e">
+<div class="para" id="task-hybrid-more-71-2-5-1-1"><span class="process-math">\(0.4701\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-more-71_opt_e">
+<div class="para" id="task-hybrid-more-71-2-5-2-1">Incorrect. This looks like the raw area between the mean and the target score instead of the remaining tail probability.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.3.a"><a href="#task-hybrid-more-71" title="Copy heading and permalink for Task 7.3.3.a" aria-label="Copy heading and permalink for Task 7.3.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-hybrid-less-58"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-hybrid-less-58-1-1">Find the probability that the car travels less than 58 miles per gallon.<div class="autopermalink" data-description="Paragraph"><a href="#task-hybrid-less-58-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-hybrid-less-58" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-hybrid-less-58_opt_a" data-correct="">
+<div class="para" id="task-hybrid-less-58-2-1-1-1"><span class="process-math">\(0.1908\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-less-58_opt_a">
+<div class="para" id="task-hybrid-less-58-2-1-2-1">Correct! Convert the threshold parameter into a standard normal Z-score:</div>
+<div class="displaymath process-math" id="task-hybrid-less-58-2-1-2-2">
+\begin{equation*}
+Z = \frac{58 - 65}{8} = \frac{-7}{8} = -0.875 \approx -0.88
+\end{equation*}
+</div>
+<div class="para" id="task-hybrid-less-58-2-1-2-3">Looking up the lower tail area directly to the left of <span class="process-math">\(Z = -0.88\)</span> yields:</div>
+<div class="displaymath process-math" id="task-hybrid-less-58-2-1-2-4">
+\begin{equation*}
+P(X \lt 58) = P(Z \lt -0.88) \approx 0.1894 \quad \text{(or } 0.1908 \text{ unrounded)}
+\end{equation*}
+</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-less-58_opt_b">
+<div class="para" id="task-hybrid-less-58-2-2-1-1"><span class="process-math">\(0.8092\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-less-58_opt_b">
+<div class="para" id="task-hybrid-less-58-2-2-2-1">Incorrect. This is the probability that the vehicle gets <em class="emphasis">more</em> than 58 miles per gallon (<span class="process-math">\(P(X \ge 58)\)</span>).</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-less-58_opt_c">
+<div class="para" id="task-hybrid-less-58-2-3-1-1"><span class="process-math">\(0.2119\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-less-58_opt_c">
+<div class="para" id="task-hybrid-less-58-2-3-2-1">Incorrect. It looks like you rounded your Z-score aggressively to <span class="process-math">\(-0.80\)</span> or <span class="process-math">\(-0.85\)</span> instead of evaluating <span class="process-math">\(-0.88\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-less-58_opt_d">
+<div class="para" id="task-hybrid-less-58-2-4-1-1"><span class="process-math">\(0.3106\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-less-58_opt_d">
+<div class="para" id="task-hybrid-less-58-2-4-2-1">Incorrect. This matches a Z-score calculation slip where the denominator was misidentified. Double-check your parameter targets.</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-less-58_opt_e">
+<div class="para" id="task-hybrid-less-58-2-5-1-1"><span class="process-math">\(0.0548\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-less-58_opt_e">
+<div class="para" id="task-hybrid-less-58-2-5-2-1">Incorrect. This represents a value significantly further out in the distribution tail than 58 miles per gallon.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.3.b"><a href="#task-hybrid-less-58" title="Copy heading and permalink for Task 7.3.3.b" aria-label="Copy heading and permalink for Task 7.3.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-hybrid-between-57-73"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-hybrid-between-57-73-1-1">Find the probability that the car travels between 57 and 73 miles per gallon.<div class="autopermalink" data-description="Paragraph"><a href="#task-hybrid-between-57-73-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-hybrid-between-57-73" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-hybrid-between-57-73_opt_a">
+<div class="para" id="task-hybrid-between-57-73-2-1-1-1"><span class="process-math">\(0.3413\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-between-57-73_opt_a">
+<div class="para" id="task-hybrid-between-57-73-2-1-2-1">Incorrect. This is only the probability area between the mean and one standard deviation above the mean.</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-between-57-73_opt_b">
+<div class="para" id="task-hybrid-between-57-73-2-2-1-1"><span class="process-math">\(0.8413\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-between-57-73_opt_b">
+<div class="para" id="task-hybrid-between-57-73-2-2-2-1">Incorrect. This is only the cumulative area to the left of the upper bound (<span class="process-math">\(P(X \le 73)\)</span>). Remember to subtract the lower tail area below 57 mpg.</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-between-57-73_opt_c" data-correct="">
+<div class="para" id="task-hybrid-between-57-73-2-3-1-1"><span class="process-math">\(0.6826\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-between-57-73_opt_c">
+<div class="para" id="task-hybrid-between-57-73-2-3-2-1">Correct! Convert both boundary limits into standard normal Z-scores:</div>
+<div class="displaymath process-math" id="task-hybrid-between-57-73-2-3-2-2">
+\begin{equation*}
+Z_1 = \frac{57 - 65}{8} = \frac{-8}{8} = -1.0 \quad \text{and} \quad Z_2 = \frac{73 - 65}{8} = \frac{8}{8} = 1.0
+\end{equation*}
+</div>
+<div class="para" id="task-hybrid-between-57-73-2-3-2-3">Notice that these bounds map precisely to exactly <span class="process-math">\(\pm 1\)</span> standard deviation away from the distribution mean. Applying the Empirical Rule (the 68-95-99.7 rule), any symmetric normal interval within one standard deviation of the center encompasses approximately 68% of total data entries:</div>
+<div class="displaymath process-math" id="task-hybrid-between-57-73-2-3-2-4">
+\begin{equation*}
+P(-1.0 \le Z \le 1.0) = 0.8413 - 0.1587 = 0.6826
+\end{equation*}
+</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-between-57-73_opt_d">
+<div class="para" id="task-hybrid-between-57-73-2-4-1-1"><span class="process-math">\(0.9544\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-between-57-73_opt_d">
+<div class="para" id="task-hybrid-between-57-73-2-4-2-1">Incorrect. This is the empirical probability contained within <em class="emphasis">two</em> standard deviations of the mean (<span class="process-math">\(\pm 2\sigma\)</span>).</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-between-57-73_opt_e">
+<div class="para" id="task-hybrid-between-57-73-2-5-1-1"><span class="process-math">\(0.4972\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-between-57-73_opt_e">
+<div class="para" id="task-hybrid-between-57-73-2-5-2-1">Incorrect. This matches an asymmetric interval evaluation error. Review your standard lookup tables for <span class="process-math">\(Z = 1.0\)</span> and <span class="process-math">\(Z = -1.0\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.3.c"><a href="#task-hybrid-between-57-73" title="Copy heading and permalink for Task 7.3.3.c" aria-label="Copy heading and permalink for Task 7.3.3.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-hybrid-top-5-percent"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-hybrid-top-5-percent-1-1">A group of eco-conscious drivers are competing in a "hypermiling" distance challenge using this hybrid model to see who can get the most out of a single gallon of gas under various driving conditions. To earn an elite efficiency certificate, a driver’s trip must rank in the top 5% of all recorded fuel economy outcomes for this vehicle. Find the minimum miles per gallon a participant must achieve to qualify for the certificate.<div class="autopermalink" data-description="Paragraph"><a href="#task-hybrid-top-5-percent-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-hybrid-top-5-percent" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-hybrid-top-5-percent_opt_a">
+<div class="para" id="task-hybrid-top-5-percent-2-1-1-1"><span class="process-math">\(51.84 \text{ mpg}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-top-5-percent_opt_a">
+<div class="para" id="task-hybrid-top-5-percent-2-1-2-1">Incorrect. It looks like you subtracted the value from the mean (<span class="process-math">\(65 - 1.645 \cdot 8\)</span>). This gives the threshold for the <em class="emphasis">bottom</em> 5% of fuel efficiency rather than the top 5%.</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-top-5-percent_opt_b">
+<div class="para" id="task-hybrid-top-5-percent-2-2-1-1"><span class="process-math">\(75.20 \text{ mpg}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-top-5-percent_opt_b">
+<div class="para" id="task-hybrid-top-5-percent-2-2-2-1">Incorrect. This calculation uses a Z-score of <span class="process-math">\(Z = 1.28\text{,}\)</span> which corresponds to the top 10% (the 90th percentile) instead of the top 5% (the 95th percentile).</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-top-5-percent_opt_c" data-correct="">
+<div class="para" id="task-hybrid-top-5-percent-2-3-1-1"><span class="process-math">\(78.16 \text{ mpg}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-top-5-percent_opt_c">
+<div class="para" id="task-hybrid-top-5-percent-2-3-2-1">Correct! Being in the top 5% means that 95% of all cars have a lower fuel efficiency (the 95th percentile). Looking up a cumulative area of <span class="process-math">\(0.9500\)</span> in a standard normal distribution table gives a critical Z-score of approximately <span class="process-math">\(Z = 1.645\text{.}\)</span>
+</div> 
+<div class="para" id="task-hybrid-top-5-percent-2-3-2-2">Now, use the inverse transformation formula to solve for the raw value <span class="process-math">\(x\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="task-hybrid-top-5-percent-2-3-2-3">
+\begin{equation*}
+x = \mu + Z \cdot \sigma = 65 + 1.645 \cdot 8 = 65 + 13.16 = 78.16 \text{ mpg}
+\end{equation*}
+</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-top-5-percent_opt_d">
+<div class="para" id="task-hybrid-top-5-percent-2-4-1-1"><span class="process-math">\(81.44 \text{ mpg}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-top-5-percent_opt_d">
+<div class="para" id="task-hybrid-top-5-percent-2-4-2-1">Incorrect. This calculation uses a Z-score of <span class="process-math">\(Z = 2.056\text{,}\)</span> which maps to the top 2% of the data distribution instead of the targeted top 5% tier.</div>
+</li>
+<li data-component="answer" id="rs-task-hybrid-top-5-percent_opt_e">
+<div class="para" id="task-hybrid-top-5-percent-2-5-1-1"><span class="process-math">\(65.05 \text{ mpg}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-hybrid-top-5-percent_opt_e">
+<div class="para" id="task-hybrid-top-5-percent-2-5-2-1">Incorrect. This value is barely above the distribution mean of 65. Remember that achieving a top 5% metric requires a value significantly further out in the positive direction of the distribution curve.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.3.d"><a href="#task-hybrid-top-5-percent" title="Copy heading and permalink for Task 7.3.3.d" aria-label="Copy heading and permalink for Task 7.3.3.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.3.3: Continuous Distributions: Hybrid Fuel Efficiency"><a href="#ex-normal-hybrid-mpg" title="Copy heading and permalink for Exercise 7.3.3: Continuous Distributions: Hybrid Fuel Efficiency" aria-label="Copy heading and permalink for Exercise 7.3.3: Continuous Distributions: Hybrid Fuel Efficiency">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-normal-habanero-wings"><h4 class="heading">
+<span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Campus Life: The Habanero Hot Sauce Challenge.</span>
+</h4>
+<div class="introduction" id="ex-normal-habanero-wings-2">
+<div class="para" id="ex-normal-habanero-wings-2-1">A popular diner near campus offers an infamous "Habanero Wings Challenge." The maximum Scoville heat units (SHU) of spice that contestants can handle before chugging a glass of milk and disqualifying themselves is normally distributed with a mean of <span class="process-math">\(\mu = 200,000\)</span> SHU and a standard deviation of <span class="process-math">\(\sigma = 50,000\)</span> SHU.<div class="autopermalink" data-description="Paragraph"><a href="#ex-normal-habanero-wings-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-wings-habanero-fail"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-wings-habanero-fail"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-wings-habanero-fail-1-1\">The diner’s signature \"Level 4\" hot sauce hits a blistering heat intensity rating of <span class=\"process-math\">\\(230,000\\)<\/span> SHU. What percentage of students fail to satisfy this spice requirement (meaning they break down and reach for the milk strictly before finishing the plate)?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-wings-habanero-fail-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-wings-habanero-fail-1-2\">Proportion = <input type=\"text\" id=\"ex-normal-habanero-wings-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-wings-habanero-fail-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"solution_code": "function() {\n    var testResults = new Array();\n    testResults[0] = _mobjs.compareExpressions(, ans);\n    return (testResults[0]);\n}()", "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.4.a"><a href="#task-wings-habanero-fail" title="Copy heading and permalink for Task 7.3.4.a" aria-label="Copy heading and permalink for Task 7.3.4.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-wings-habanero-inverse"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-wings-habanero-inverse"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-wings-habanero-inverse-1-1\">The diner wants to introduce an entry-level \"Freshman Flame\" sauce. They want to dial down the spice level so that at least 70% of students can successfully finish the plate without quitting. What should the maximum Scoville heat units (SHU) be set at for this new sauce?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-wings-habanero-inverse-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-wings-habanero-inverse-1-2\">Target Spice Level = <input type=\"text\" id=\"ex-normal-habanero-wings-blank1\" size=\"10\"\/> SHU<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-wings-habanero-inverse-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"solution_code": "function() {\n    var testResults = new Array();\n    testResults[0] = _mobjs.compareExpressions(, ans);\n    return (testResults[0]);\n}()", "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.4.b"><a href="#task-wings-habanero-inverse" title="Copy heading and permalink for Task 7.3.4.b" aria-label="Copy heading and permalink for Task 7.3.4.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-wings-habanero-interval"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-wings-habanero-interval-1-1">A group of friends wants to order a mild custom blend. What is the probability that a randomly chosen student has a maximum spice tolerance between <span class="process-math">\(150,000\)</span> and <span class="process-math">\(250,000\)</span> SHU?<div class="autopermalink" data-description="Paragraph"><a href="#task-wings-habanero-interval-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-wings-habanero-interval" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-wings-habanero-interval_opt_a">
+<div class="para" id="task-wings-habanero-interval-2-1-1-1"><span class="process-math">\(0.3413\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-wings-habanero-interval_opt_a">
+<div class="para" id="task-wings-habanero-interval-2-1-2-1">Incorrect. This is only the area from the mean to one standard deviation above the mean (<span class="process-math">\(P(0 \le Z \le 1.0)\)</span>). Remember to find the total area spanning across both symmetric sides of the mean.</div>
+</li>
+<li data-component="answer" id="rs-task-wings-habanero-interval_opt_b" data-correct="">
+<div class="para" id="task-wings-habanero-interval-2-2-1-1"><span class="process-math">\(0.6826\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-wings-habanero-interval_opt_b">
+<div class="para" id="task-wings-habanero-interval-2-2-2-1">Correct! Standardize both boundaries to find their respective Z-scores:</div>
+<div class="displaymath process-math" id="task-wings-habanero-interval-2-2-2-2">
+\begin{equation*}
+Z_1 = \frac{150,000 - 200,000}{50,000} = -1.0 \quad \text{and} \quad Z_2 = \frac{250,000 - 200,000}{50,000} = 1.0
+\end{equation*}
+</div>
+<div class="para" id="task-wings-habanero-interval-2-2-2-3">These boundaries map exactly to <span class="process-math">\(\pm 1\)</span> standard deviation away from the distribution mean. Applying the Empirical Rule (the 68-95-99.7 rule), any symmetric normal interval within one standard deviation of the center encompasses approximately 68% of total outcomes:</div>
+<div class="displaymath process-math" id="task-wings-habanero-interval-2-2-2-4">
+\begin{equation*}
+P(-1.0 \le Z \le 1.0) = 0.8413 - 0.1587 = 0.6826
+\end{equation*}
+</div>
+</li>
+<li data-component="answer" id="rs-task-wings-habanero-interval_opt_c">
+<div class="para" id="task-wings-habanero-interval-2-3-1-1"><span class="process-math">\(0.8413\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-wings-habanero-interval_opt_c">
+<div class="para" id="task-wings-habanero-interval-2-3-2-1">Incorrect. This is only the cumulative area to the left of the upper bound (<span class="process-math">\(P(X \le 250,000)\)</span>). You still need to subtract the lower tail area corresponding to tolerances under 150,000 SHU.</div>
+</li>
+<li data-component="answer" id="rs-task-wings-habanero-interval_opt_d">
+<div class="para" id="task-wings-habanero-interval-2-4-1-1"><span class="process-math">\(0.9544\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-wings-habanero-interval_opt_d">
+<div class="para" id="task-wings-habanero-interval-2-4-2-1">Incorrect. This is the empirical probability contained within <em class="emphasis">two</em> standard deviations of the mean (<span class="process-math">\(\pm 2\sigma\)</span>), which would correspond to a range of 100,000 to 300,000 SHU.</div>
+</li>
+<li data-component="answer" id="rs-task-wings-habanero-interval_opt_e">
+<div class="para" id="task-wings-habanero-interval-2-5-1-1"><span class="process-math">\(0.5000\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-wings-habanero-interval_opt_e">
+<div class="para" id="task-wings-habanero-interval-2-5-2-1">Incorrect. Review your standard lookup tables for <span class="process-math">\(Z = 1.0\)</span> and <span class="process-math">\(Z = -1.0\)</span> to calculate the exact net area contained between the two boundaries.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.4.c"><a href="#task-wings-habanero-interval" title="Copy heading and permalink for Task 7.3.4.c" aria-label="Copy heading and permalink for Task 7.3.4.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.3.4: Campus Life: The Habanero Hot Sauce Challenge"><a href="#ex-normal-habanero-wings" title="Copy heading and permalink for Exercise 7.3.4: Campus Life: The Habanero Hot Sauce Challenge" aria-label="Copy heading and permalink for Exercise 7.3.4: Campus Life: The Habanero Hot Sauce Challenge">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-z-transformations"><h4 class="heading">
+<span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Normal Distributions: Z-Transformations and Linear Combinations.</span>
+</h4>
+<div class="introduction" id="ex-z-transformations-2">
+<div class="para" id="ex-z-transformations-2-1">Standardizing a general normal random variable transforms it into a standard normal random variable <span class="process-math">\(Z \sim N(0,1)\text{.}\)</span> Complete the questions below to practice standardizing single variables, linear transformations, and independent linear combinations.<div class="autopermalink" data-description="Paragraph"><a href="#ex-z-transformations-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-z-transformations-2-2">Enter all parameters, Z-scores, and final probabilities as decimals rounded to exactly three decimal places.<div class="autopermalink" data-description="Paragraph"><a href="#ex-z-transformations-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-ztrans-single"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-ztrans-single"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-ztrans-single-1-1\">Suppose <span class=\"process-math\">\\(X \\sim N(-0.4, 2.8^2)\\text{.}\\)<\/span> Find <span class=\"process-math\">\\(P(X \\gt 0.38)\\text{.}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-single-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-ztrans-single-1-2\">Transforming this probability into a standard normal random variable gives: <span class=\"process-math\">\\(P(X \\gt 0.38) = P(Z \\gt \\)<\/span> <input type=\"text\" id=\"ex-z-transformations-z1\" name=\"z1\" size=\"6\"\/>), and this probability is equal to <input type=\"text\" id=\"ex-z-transformations-zprob1\" name=\"zprob1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-single-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"z1": 0, "zprob1": 1},
+"feedbackArray": [[{"number": [0.278,0.278], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.391,0.391], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.5.a"><a href="#task-ztrans-single" title="Copy heading and permalink for Task 7.3.5.a" aria-label="Copy heading and permalink for Task 7.3.5.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-ztrans-linear"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-ztrans-linear"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-ztrans-linear-1-1\">Suppose <span class=\"process-math\">\\(X \\sim N(2, 4)\\)<\/span> (where the second parameter is the variance, so <span class=\"process-math\">\\(\\sigma_X = 2\\)<\/span>) and let <span class=\"process-math\">\\(Y = -4X + 2\\text{.}\\)<\/span> Find <span class=\"process-math\">\\(P(-0.3 \\lt Y \\lt 1.2)\\text{.}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-linear-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para logical\" id=\"task-ztrans-linear-1-2\"><div class=\"para\">First, we can determine that <span class=\"process-math\">\\(Y\\)<\/span> is normally distributed with:<\/div>\n<ul class=\"disc\" id=\"task-ztrans-linear-1-2-2\">\n<li id=\"task-ztrans-linear-1-2-2-1\">\n<div class=\"para\" id=\"task-ztrans-linear-1-2-2-1-1\">Mean = <input type=\"text\" id=\"ex-z-transformations-Ymean2\" name=\"Ymean2\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-linear-1-2-2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-ztrans-linear-1-2-2-1\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li>\n<li id=\"task-ztrans-linear-1-2-2-2\">\n<div class=\"para\" id=\"task-ztrans-linear-1-2-2-2-1\">Variance = <input type=\"text\" id=\"ex-z-transformations-Yvar2\" name=\"Yvar2\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-linear-1-2-2-2-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-ztrans-linear-1-2-2-2\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li><\/ul><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-linear-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-ztrans-linear-1-3\">Transforming this probability into a standard normal random variable gives: <span class=\"process-math\">\\(P(-0.3 \\lt Y \\lt 1.2) = P(\\)<\/span> <input type=\"text\" id=\"ex-z-transformations-z2l\" name=\"z2l\" size=\"6\"\/>) <span class=\"process-math\">\\(\\lt Z \\lt \\)<\/span> <input type=\"text\" id=\"ex-z-transformations-z2u\" name=\"z2u\" size=\"6\"\/>), and this probability is equal to <input type=\"text\" id=\"ex-z-transformations-zprob2\" name=\"zprob2\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-linear-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"Ymean2": 0, "Yvar2": 1, "z2l": 2, "z2u": 3, "zprob2": 4},
+"feedbackArray": [[{"number": [-6,-6], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [64,64], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.713,0.713], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.9,0.9], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.154,0.154], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.5.b"><a href="#task-ztrans-linear" title="Copy heading and permalink for Task 7.3.5.b" aria-label="Copy heading and permalink for Task 7.3.5.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-ztrans-sum"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-ztrans-sum"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-ztrans-sum-1-1\">Suppose <span class=\"process-math\">\\(X\\)<\/span> and <span class=\"process-math\">\\(Y\\)<\/span> are independent random variables, with <span class=\"process-math\">\\(X \\sim N(2, 3)\\)<\/span> and <span class=\"process-math\">\\(Y \\sim N(9, 10)\\text{.}\\)<\/span> Find <span class=\"process-math\">\\(P(X + Y \\le 12)\\text{.}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-sum-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para logical\" id=\"task-ztrans-sum-1-2\"><div class=\"para\">First, we can determine that <span class=\"process-math\">\\(X+Y\\)<\/span> is normally distributed with:<\/div>\n<ul class=\"disc\" id=\"task-ztrans-sum-1-2-2\">\n<li id=\"task-ztrans-sum-1-2-2-1\">\n<div class=\"para\" id=\"task-ztrans-sum-1-2-2-1-1\">Mean = <input type=\"text\" id=\"ex-z-transformations-XplusYmean\" name=\"XplusYmean\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-sum-1-2-2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-ztrans-sum-1-2-2-1\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li>\n<li id=\"task-ztrans-sum-1-2-2-2\">\n<div class=\"para\" id=\"task-ztrans-sum-1-2-2-2-1\">Variance = <input type=\"text\" id=\"ex-z-transformations-XplusYvar\" name=\"XplusYvar\" size=\"6\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-sum-1-2-2-2-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-ztrans-sum-1-2-2-2\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li><\/ul><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-sum-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-ztrans-sum-1-3\">Transforming this probability into a standard normal random variable gives: <span class=\"process-math\">\\(P(X + Y \\le 12) = P(Z \\le \\)<\/span> <input type=\"text\" id=\"ex-z-transformations-z3\" name=\"z3\" size=\"6\"\/>), and this probability is equal to <input type=\"text\" id=\"ex-z-transformations-zprob3\" name=\"zprob3\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-ztrans-sum-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"XplusYmean": 0, "XplusYvar": 1, "z3": 2, "zprob3": 3},
+"feedbackArray": [[{"number": [11,11], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [13,13], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.277,0.277], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.609,0.609], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.5.c"><a href="#task-ztrans-sum" title="Copy heading and permalink for Task 7.3.5.c" aria-label="Copy heading and permalink for Task 7.3.5.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.3.5: Normal Distributions: Z-Transformations and Linear Combinations"><a href="#ex-z-transformations" title="Copy heading and permalink for Exercise 7.3.5: Normal Distributions: Z-Transformations and Linear Combinations" aria-label="Copy heading and permalink for Exercise 7.3.5: Normal Distributions: Z-Transformations and Linear Combinations">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-interactive-clt-math-majors"><h4 class="heading">
+<span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Central Limit Theorem: Stochastic Matrix Arrays and Memory Allocation.</span>
+</h4>
+<div class="introduction" id="ex-interactive-clt-math-majors-2">
+<div class="para logical" id="ex-interactive-clt-math-majors-2-1">
+<div class="para">A computer scientist runs a simulation tracking memory space allocation across a randomized hashing algorithm. The data packets processed by the routine fall into three discrete, mutually exclusive payload classes with the following distribution:</div>
+<ul class="disc" id="ex-interactive-clt-math-majors-2-1-1">
+<li id="ex-interactive-clt-math-majors-2-1-1-1">
+<div class="para" id="ex-interactive-clt-math-majors-2-1-1-1-1">50% of the inputs are small scalar pointers requiring <span class="process-math">\(2.75\)</span> kilobytes (KB) of memory space.<div class="autopermalink" data-description="Paragraph"><a href="#ex-interactive-clt-math-majors-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-interactive-clt-math-majors-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-interactive-clt-math-majors-2-1-1-2">
+<div class="para" id="ex-interactive-clt-math-majors-2-1-1-2-1">45% are standard memory addresses requiring <span class="process-math">\(2.25\)</span> KB of memory space.<div class="autopermalink" data-description="Paragraph"><a href="#ex-interactive-clt-math-majors-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-interactive-clt-math-majors-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-interactive-clt-math-majors-2-1-1-3">
+<div class="para" id="ex-interactive-clt-math-majors-2-1-1-3-1">5% are large nested matrix arrays requiring <span class="process-math">\(35.00\)</span> KB of memory space.<div class="autopermalink" data-description="Paragraph"><a href="#ex-interactive-clt-math-majors-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-interactive-clt-math-majors-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Suppose the routine executes a batch script that draws a random sample (with replacement) of <span class="process-math">\(n = 75\)</span> independent inputs from this distribution pool. Complete the  parts below to apply the Central Limit Theorem to the memory footprint.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-interactive-clt-math-majors-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-clt-math-single-input"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-clt-math-single-input"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-clt-math-single-input-1-1\">Let the random variable <span class=\"process-math\">\\(X\\)<\/span> denote the memory requirements of a single input drawn at random. Compute the expectation <span class=\"process-math\">\\(E(X)\\)<\/span> and variance <span class=\"process-math\">\\(\\text{Var}(X)\\text{.}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-clt-math-single-input-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-clt-math-single-input-1-2\"><span class=\"process-math\">\\(E(X) = \\)<\/span> <input type=\"text\" id=\"ex-interactive-clt-math-majors-exp1_clt\" name=\"exp1_clt\" size=\"8\"\/> KB<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-clt-math-single-input-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-clt-math-single-input-1-3\"><span class=\"process-math\">\\(\\text{Var}(X) = \\)<\/span> <input type=\"text\" id=\"ex-interactive-clt-math-majors-var1_clt\" name=\"var1_clt\" size=\"8\"\/> KB<span class=\"process-math\">\\(^2\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-clt-math-single-input-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"exp1_clt": 0, "var1_clt": 1},
+"feedbackArray": [[{"number": [4.138,4.138], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [50.19,50.19], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.6.a"><a href="#task-clt-math-single-input" title="Copy heading and permalink for Task 7.3.6.a" aria-label="Copy heading and permalink for Task 7.3.6.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-clt-math-sum-distribution-mc"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-clt-math-sum-distribution-mc-1-1">Let the random variable <span class="process-math">\(Y= \sum X_i\)</span> represent the total cumulative memory footprint of the entire <span class="process-math">\(n = 75\)</span> element sample packet combined. According to the Central Limit Theorem, which normal distribution model should be used to approximate the continuous shape of <span class="process-math">\(Y\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-clt-math-sum-distribution-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-clt-math-sum-distribution-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-clt-math-sum-distribution-mc_opt_a">
+<div class="para" id="task-clt-math-sum-distribution-mc-2-1-1-1"><span class="process-math">\(Y \sim N(4.138, 50.190)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-clt-math-sum-distribution-mc_opt_a">
+<div class="para" id="task-clt-math-sum-distribution-mc-2-1-2-1">Incorrect. This is the distribution configuration for a single isolated pull from Part A.</div>
+</li>
+<li data-component="answer" id="rs-task-clt-math-sum-distribution-mc_opt_b">
+<div class="para" id="task-clt-math-sum-distribution-mc-2-2-1-1"><span class="process-math">\(Y \sim N(310.313, 50.190)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-clt-math-sum-distribution-mc_opt_b">
+<div class="para" id="task-clt-math-sum-distribution-mc-2-2-2-1">Incorrect. You scaled the expected total mean correctly but forgot that variance also scales up with independent additions.</div>
+</li>
+<li data-component="answer" id="rs-task-clt-math-sum-distribution-mc_opt_c" data-correct="">
+<div class="para" id="task-clt-math-sum-distribution-mc-2-3-1-1"><span class="process-math">\(Y \sim N(310.313, 3764.285)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-clt-math-sum-distribution-mc_opt_c">
+<div class="para" id="task-clt-math-sum-distribution-mc-2-3-2-1">Correct! For a cumulative sum variable <span class="process-math">\(Y\)</span> built from <span class="process-math">\(n = 75\)</span> independent trials, both parameters scale up linearly by a factor of <span class="process-math">\(n\text{:}\)</span>
+</div> 
+<ul class="disc" id="task-clt-math-sum-distribution-mc-2-3-2-2">
+<li id="task-clt-math-sum-distribution-mc-2-3-2-2-1">
+<div class="para" id="task-clt-math-sum-distribution-mc-2-3-2-2-1-1"><span class="process-math">\(\displaystyle \mu_Y = n \cdot E(X) = 75 \cdot 4.1375 = 310.3125 \approx 310.313 \text{ KB}\)</span></div>
+</li>
+<li id="task-clt-math-sum-distribution-mc-2-3-2-2-2">
+<div class="para" id="task-clt-math-sum-distribution-mc-2-3-2-2-2-1"><span class="process-math">\(\displaystyle \sigma_Y^2 = n \cdot \text{Var}(X) = 75 \cdot 50.190469 = 3764.285175 \approx 3764.285 \text{ KB}^2\)</span></div>
+</li>
+</ul>
+</li>
+<li data-component="answer" id="rs-task-clt-math-sum-distribution-mc_opt_d">
+<div class="para" id="task-clt-math-sum-distribution-mc-2-4-1-1"><span class="process-math">\(Y \sim N(310.313, 282321.388)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-clt-math-sum-distribution-mc_opt_d">
+<div class="para" id="task-clt-math-sum-distribution-mc-2-4-2-1">Incorrect. This option assumes that the total variance scales by <span class="process-math">\(n^2 \cdot \text{Var}(X)\text{.}\)</span> Remember that <span class="process-math">\(n^2\)</span> scaling only occurs if you take a single random variable and multiply it by a constant scalar coefficient.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.6.b"><a href="#task-clt-math-sum-distribution-mc" title="Copy heading and permalink for Task 7.3.6.b" aria-label="Copy heading and permalink for Task 7.3.6.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-clt-math-sum-probability-input"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-clt-math-sum-probability-input"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-clt-math-sum-probability-input-1-1\">Using the normal approximation, estimate the probability that the total cumulative memory size of the 75 items equals or exceeds <span class=\"process-math\">\\(220\\)<\/span> KB.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-clt-math-sum-probability-input-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-clt-math-sum-probability-input-1-2\"><span class=\"process-math\">\\(P(Y \\ge 220)\\)<\/span> = <input type=\"text\" id=\"ex-interactive-clt-math-majors-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-clt-math-sum-probability-input-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.9292,0.9292], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.6.c"><a href="#task-clt-math-sum-probability-input" title="Copy heading and permalink for Task 7.3.6.c" aria-label="Copy heading and permalink for Task 7.3.6.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-clt-math-mean-distribution-mc"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-clt-math-mean-distribution-mc-1-1">Now let us shift our analytical lens to track averages. Let the random variable <span class="process-math">\(\overline{X}\)</span> represent the sample mean memory cost per element across the 75 entries, i.e. (<span class="process-math">\(\overline{X} = \frac{1}{75}\sum X_i\)</span>). According to the Central Limit Theorem, which normal distribution model should be used to approximate the continuous shape of <span class="process-math">\(\overline{X}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-clt-math-mean-distribution-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-clt-math-mean-distribution-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-clt-math-mean-distribution-mc_opt_a">
+<div class="para" id="task-clt-math-mean-distribution-mc-2-1-1-1"><span class="process-math">\(\overline{X} \sim N(310.313, 3764.285)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-clt-math-mean-distribution-mc_opt_a">
+<div class="para" id="task-clt-math-mean-distribution-mc-2-1-2-1">Incorrect. This matches the cumulative sum allocation model <span class="process-math">\(Y\)</span> from Part B.</div>
+</li>
+<li data-component="answer" id="rs-task-clt-math-mean-distribution-mc_opt_b">
+<div class="para" id="task-clt-math-mean-distribution-mc-2-2-1-1"><span class="process-math">\(\overline{X} \sim N(4.138, 50.190)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-clt-math-mean-distribution-mc_opt_b">
+<div class="para" id="task-clt-math-mean-distribution-mc-2-2-2-1">Incorrect. While the expected sample mean remains centered at 4.1375 KB, taking a large average of 75 independent elements reduces random noise. The variance cannot remain at the raw un-averaged baseline value.</div>
+</li>
+<li data-component="answer" id="rs-task-clt-math-mean-distribution-mc_opt_c" data-correct="">
+<div class="para" id="task-clt-math-mean-distribution-mc-2-3-1-1"><span class="process-math">\(\overline{X} \sim N(4.138, 0.669)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-clt-math-mean-distribution-mc_opt_c">
+<div class="para" id="task-clt-math-mean-distribution-mc-2-3-2-1">Correct! For a sample average random variable <span class="process-math">\(\overline{X}\)</span> built from <span class="process-math">\(n = 75\)</span> independent trials, the expected value matches the baseline population mean, but the variance shrinks by a factor of <span class="process-math">\(n\text{:}\)</span>
+</div> 
+<ul class="disc" id="task-clt-math-mean-distribution-mc-2-3-2-2">
+<li id="task-clt-math-mean-distribution-mc-2-3-2-2-1">
+<div class="para" id="task-clt-math-mean-distribution-mc-2-3-2-2-1-1"><span class="process-math">\(\displaystyle \mu_{\overline{X}} = E(X) = 4.1375 \approx 4.138 \text{ KB}\)</span></div>
+</li>
+<li id="task-clt-math-mean-distribution-mc-2-3-2-2-2">
+<div class="para" id="task-clt-math-mean-distribution-mc-2-3-2-2-2-1"><span class="process-math">\(\displaystyle \sigma_{\overline{X}}^2 = \frac{\text{Var}(X)}{n} = \frac{50.190469}{75} \approx 0.6692 \approx 0.669 \text{ KB}^2\)</span></div>
+</li>
+</ul>
+</li>
+<li data-component="answer" id="rs-task-clt-math-mean-distribution-mc_opt_d">
+<div class="para" id="task-clt-math-mean-distribution-mc-2-4-1-1"><span class="process-math">\(\overline{X} \sim N(4.138, 5.796)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-clt-math-mean-distribution-mc_opt_d">
+<div class="para" id="task-clt-math-mean-distribution-mc-2-4-2-1">Incorrect. It looks like you divided the baseline variance by <span class="process-math">\(\sqrt{75}\)</span> instead of dividing by the full sample size integer <span class="process-math">\(n = 75\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.6.d"><a href="#task-clt-math-mean-distribution-mc" title="Copy heading and permalink for Task 7.3.6.d" aria-label="Copy heading and permalink for Task 7.3.6.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-clt-math-mean-probability-input"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-clt-math-mean-probability-input"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-clt-math-mean-probability-input-1-1\">Using the normal approximation, estimate the probability that the average memory cost per item inside this 75-element patch is at least <span class=\"process-math\">\\(4.00\\)<\/span> KB.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-clt-math-mean-probability-input-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-clt-math-mean-probability-input-1-2\"><span class=\"process-math\">\\(P(\\overline{X} \\ge 4.00)\\)<\/span> = <input type=\"text\" id=\"ex-interactive-clt-math-majors-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-clt-math-mean-probability-input-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.567,0.567], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 7.3.6.e"><a href="#task-clt-math-mean-probability-input" title="Copy heading and permalink for Task 7.3.6.e" aria-label="Copy heading and permalink for Task 7.3.6.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.3.6: Central Limit Theorem: Stochastic Matrix Arrays and Memory Allocation"><a href="#ex-interactive-clt-math-majors" title="Copy heading and permalink for Exercise 7.3.6: Central Limit Theorem: Stochastic Matrix Arrays and Memory Allocation" aria-label="Copy heading and permalink for Exercise 7.3.6: Central Limit Theorem: Stochastic Matrix Arrays and Memory Allocation">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 7.3: Interactive Exercises"><a href="#hw-normal-rv" title="Copy heading and permalink for Exercises 7.3: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 7.3: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-normal-rv-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-normal-enzyme-concentration"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Normal Distribution Models in Deep-Sea Biochemistry - Enzyme Concentration Metrics.</span>
+</h4>
+<div class="introduction" id="ex-normal-enzyme-concentration-2">
+<div class="para" id="ex-normal-enzyme-concentration-2-1">The bio-extract of a specialized bacterium native to deep-sea hydrothermal vents has been tested as a baseline agent for cancer cell lifecycle inhibition. One of the primary organic chemical compounds isolated from this marine extract was monitored for a specific enzyme profile. The baseline enzyme concentration amount was found to be normally distributed with a mean of <span class="process-math">\(\mu = 80\)</span> grams per mL and a standard deviation of <span class="process-math">\(\sigma = 7\)</span> grams per mL. Complete the non-interactive analytical questions below to evaluate this dataset.<div class="autopermalink" data-description="Paragraph"><a href="#ex-normal-enzyme-concentration-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-enzyme-greater-74"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-enzyme-greater-74-1-1">What is the probability that a randomly analyzed compound sample possesses an enzyme concentration greater than 74 grams per mL ?<div class="autopermalink" data-description="Paragraph"><a href="#task-enzyme-greater-74-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.3.1.a"><a href="#task-enzyme-greater-74" title="Copy heading and permalink for Task 7.3.1.a" aria-label="Copy heading and permalink for Task 7.3.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-enzyme-less-90"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-enzyme-less-90-1-1">What is the probability that the concentration of this target enzyme in a randomly selected extract sample is less than 90 grams per mL (<span class="process-math">\(P(X \lt 90)\)</span>)?<div class="autopermalink" data-description="Paragraph"><a href="#task-enzyme-less-90-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.3.1.b"><a href="#task-enzyme-less-90" title="Copy heading and permalink for Task 7.3.1.b" aria-label="Copy heading and permalink for Task 7.3.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-enzyme-empirical-rule"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="task-enzyme-empirical-rule-1-1">What percentage of isolated chemical compounds formed from this marine bio-extract fall within exactly 2 standard deviations of the mean?<div class="autopermalink" data-description="Paragraph"><a href="#task-enzyme-empirical-rule-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.3.1.c"><a href="#task-enzyme-empirical-rule" title="Copy heading and permalink for Task 7.3.1.c" aria-label="Copy heading and permalink for Task 7.3.1.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.3.1: Normal Distribution Models in Deep-Sea Biochemistry - Enzyme Concentration Metrics"><a href="#ex-normal-enzyme-concentration" title="Copy heading and permalink for Exercise 7.3.1: Normal Distribution Models in Deep-Sea Biochemistry - Enzyme Concentration Metrics" aria-label="Copy heading and permalink for Exercise 7.3.1: Normal Distribution Models in Deep-Sea Biochemistry - Enzyme Concentration Metrics">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-static-clt-roulette"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Central Limit Theorem - Normal Approximation to the Binomial.</span>
+</h4>
+<div class="introduction" id="ex-static-clt-roulette-2">
+<div class="para" id="ex-static-clt-roulette-2-1">The Central Limit Theorem (CLT) states that the sum of a large number of independent, identically distributed (i.i.d.) random variables will converge toward a normal distribution, regardless of the underlying shape of the original single-trial probability desnsity or mass function.<div class="autopermalink" data-description="Paragraph"><a href="#ex-static-clt-roulette-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-static-clt-roulette-2-2">Recall our previous roulette strategy where a player simultaneously bets 50 cents on Red and 50 cents on Odd. A single spin results in a discrete net profit random variable with an expected value of <span class="process-math">\(\mu = -\frac{2}{38} \approx -0.0526\)</span> dollars and a variance of <span class="process-math">\(\sigma^2 = \frac{832}{1444} \approx 0.5762\)</span> dollars<span class="process-math">\(^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-static-clt-roulette-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-static-clt-roulette-2-3">Suppose a player executes this exact strategy consecutively for a total of <span class="process-math">\(n = 348\)</span> independent spins of the wheel.<div class="autopermalink" data-description="Paragraph"><a href="#ex-static-clt-roulette-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-clt-total-parameters"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-clt-total-parameters-1-1">Determine the expected value and variance for the player’s total cumulative net profit distribution, <span class="process-math">\(W = \sum_{i=1}^{348} Z_i\text{,}\)</span> over the full 348-spin run.<div class="autopermalink" data-description="Paragraph"><a href="#task-clt-total-parameters-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.3.2.a"><a href="#task-clt-total-parameters" title="Copy heading and permalink for Task 7.3.2.a" aria-label="Copy heading and permalink for Task 7.3.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-clt-probability-estimation"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-clt-probability-estimation-1-1">
+<span class="process-math">\(W \)</span> is the sum of a large number of independent, identically distributed random variables. So, according to the Central Limit Theorem, <span class="process-math">\(W\)</span> is approximately normally distributed. We just need to figure out what mean and variance to use, but we found those in part A!<div class="autopermalink" data-description="Paragraph"><a href="#task-clt-probability-estimation-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="task-clt-probability-estimation-1-2">Using the normal distribution approximation,  estimate the probability that the player finishes the 348 spins with a total cumulative net profit that is strictly greater than zero (<span class="process-math">\(P(W \gt 0)\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#task-clt-probability-estimation-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.3.2.b"><a href="#task-clt-probability-estimation" title="Copy heading and permalink for Task 7.3.2.b" aria-label="Copy heading and permalink for Task 7.3.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-binomial-norm-approx-rules"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="task-binomial-norm-approx-rules-1-1">Now let us consider a different random variable from this same experiment. Let <span class="process-math">\(X\)</span> denote the number of spins where the player wins both bets simultaneously (landing on Red and Odd).<div class="autopermalink" data-description="Paragraph"><a href="#task-binomial-norm-approx-rules-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="task-binomial-norm-approx-rules-1-2">Do the following:<div class="autopermalink" data-description="Paragraph"><a href="#task-binomial-norm-approx-rules-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="lower-alpha lower-alpha-level-1" id="task-binomial-norm-approx-rules-1-3">
+<li id="task-binomial-norm-approx-rules-1-3-1">
+<div class="para" id="task-binomial-norm-approx-rules-1-3-1-1">Explain why <span class="process-math">\(X\)</span> can be considered a binomial random variable and state its parameters.<div class="autopermalink" data-description="Paragraph"><a href="#task-binomial-norm-approx-rules-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.3.2.a"><a href="#task-binomial-norm-approx-rules-1-3-1" title="Copy heading and permalink for Item 7.3.2.a" aria-label="Copy heading and permalink for Item 7.3.2.a">🔗</a></div>
+</li>
+<li id="task-binomial-norm-approx-rules-1-3-2">
+<div class="para" id="task-binomial-norm-approx-rules-1-3-2-1">Compute the probability that the player wins both bets simultaneously less than 100 times, <span class="process-math">\(P(X \lt 100)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-binomial-norm-approx-rules-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.3.2.b"><a href="#task-binomial-norm-approx-rules-1-3-2" title="Copy heading and permalink for Item 7.3.2.b" aria-label="Copy heading and permalink for Item 7.3.2.b">🔗</a></div>
+</li>
+<li id="task-binomial-norm-approx-rules-1-3-3">
+<div class="para" id="task-binomial-norm-approx-rules-1-3-3-1">Find the mean and variance for <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-binomial-norm-approx-rules-1-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.3.2.c"><a href="#task-binomial-norm-approx-rules-1-3-3" title="Copy heading and permalink for Item 7.3.2.c" aria-label="Copy heading and permalink for Item 7.3.2.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Task 7.3.2.c"><a href="#task-binomial-norm-approx-rules" title="Copy heading and permalink for Task 7.3.2.c" aria-label="Copy heading and permalink for Task 7.3.2.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-static-clt-roulette-6"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="ex-static-clt-roulette-6-1-1">We can also say that <span class="process-math">\(X\)</span> is approximately normal.<div class="autopermalink" data-description="Paragraph"><a href="#ex-static-clt-roulette-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ex-static-clt-roulette-6-1-2">Do the following:<div class="autopermalink" data-description="Paragraph"><a href="#ex-static-clt-roulette-6-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="lower-alpha lower-alpha-level-1" id="ex-static-clt-roulette-6-1-3">
+<li id="ex-static-clt-roulette-6-1-3-1">
+<div class="para" id="ex-static-clt-roulette-6-1-3-1-1">Explain why <span class="process-math">\(X\)</span> is approximately normal and state its parameters (mean and variance).<div class="autopermalink" data-description="Paragraph"><a href="#ex-static-clt-roulette-6-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.3.2.a"><a href="#ex-static-clt-roulette-6-1-3-1" title="Copy heading and permalink for Item 7.3.2.a" aria-label="Copy heading and permalink for Item 7.3.2.a">🔗</a></div>
+</li>
+<li id="ex-static-clt-roulette-6-1-3-2">
+<div class="para logical" id="ex-static-clt-roulette-6-1-3-2-1">
+<div class="para">To use a normal distribution to approximate a Binomial distribution, the sample size must be large enough to ensure that the distribution is reasonably symmetric (this is especially important  when <span class="process-math">\(p\)</span> is close to 0 or 1). The widely accepted statistical thresholds are:</div>
+<div class="displaymath process-math" id="ex-static-clt-roulette-6-1-3-2-1-2">
+\begin{equation*}
+n \cdot p \ge 10 \quad \text{and} \quad n \cdot (1 - p) \ge 10\text{.}
+\end{equation*}
+</div>
+<div class="para">Verify whether this roulette tracking scenario meets those thresholds.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-static-clt-roulette-6-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.3.2.b"><a href="#ex-static-clt-roulette-6-1-3-2" title="Copy heading and permalink for Item 7.3.2.b" aria-label="Copy heading and permalink for Item 7.3.2.b">🔗</a></div>
+</li>
+<li id="ex-static-clt-roulette-6-1-3-3">
+<div class="para" id="ex-static-clt-roulette-6-1-3-3-1">Use the normal distribution to compute the probability that the player wins both bets simultaneously less than 100 times, <span class="process-math">\(P(X \lt 100)\text{.}\)</span> Comment on how this answer compares to your answer from part C.<div class="autopermalink" data-description="Paragraph"><a href="#ex-static-clt-roulette-6-1-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.3.2.c"><a href="#ex-static-clt-roulette-6-1-3-3" title="Copy heading and permalink for Item 7.3.2.c" aria-label="Copy heading and permalink for Item 7.3.2.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Task 7.3.2.d"><a href="#ex-static-clt-roulette-6" title="Copy heading and permalink for Task 7.3.2.d" aria-label="Copy heading and permalink for Task 7.3.2.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-binomial-continuity-correction"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="task-binomial-continuity-correction-1-1">We typically add a continuity correction when approximating a discrete distribution with a continuous one. In this case, we should increase the size of the interval that we are taking the probability of, extending it by 0.5 on each side (where possible).<div class="autopermalink" data-description="Paragraph"><a href="#task-binomial-continuity-correction-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="task-binomial-continuity-correction-1-2">Do the following:<div class="autopermalink" data-description="Paragraph"><a href="#task-binomial-continuity-correction-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="lower-alpha lower-alpha-level-1" id="task-binomial-continuity-correction-1-3">
+<li id="task-binomial-continuity-correction-1-3-1">
+<div class="para" id="task-binomial-continuity-correction-1-3-1-1">Explain why we should add a continuity correction to our probability computation.<div class="autopermalink" data-description="Paragraph"><a href="#task-binomial-continuity-correction-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.3.2.a"><a href="#task-binomial-continuity-correction-1-3-1" title="Copy heading and permalink for Item 7.3.2.a" aria-label="Copy heading and permalink for Item 7.3.2.a">🔗</a></div>
+</li>
+<li id="task-binomial-continuity-correction-1-3-2">
+<div class="para" id="task-binomial-continuity-correction-1-3-2-1">Recompute the probability that the player wins both bets simultaneously less than 100 times, this time adding a continuity correct. In other words, compute: <span class="process-math">\(P(X \lt 100.5)\text{.}\)</span> Comment on how this answer compares to your answers from parts C and D.<div class="autopermalink" data-description="Paragraph"><a href="#task-binomial-continuity-correction-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.3.2.b"><a href="#task-binomial-continuity-correction-1-3-2" title="Copy heading and permalink for Item 7.3.2.b" aria-label="Copy heading and permalink for Item 7.3.2.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Task 7.3.2.e"><a href="#task-binomial-continuity-correction" title="Copy heading and permalink for Task 7.3.2.e" aria-label="Copy heading and permalink for Task 7.3.2.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.3.2: Central Limit Theorem - Normal Approximation to the Binomial"><a href="#ex-static-clt-roulette" title="Copy heading and permalink for Exercise 7.3.2: Central Limit Theorem - Normal Approximation to the Binomial" aria-label="Copy heading and permalink for Exercise 7.3.2: Central Limit Theorem - Normal Approximation to the Binomial">🔗</a></div>
+</article>
+<section class="section" id="sec-distribution-selection">
+<h4 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Identifying and Selecting Probability Models</span>
+</h4>
+<div class="para" id="sec-distribution-selection-2">When analyzing a sequence of independent binary outcomes (Bernoulli trials), statisticians must determine whether to use the exact Binomial distribution or apply a simplifying approximation. This choice depends entirely on the size of the trial pool (<span class="process-math">\(n\)</span>) and the success probability probability (<span class="process-math">\(p\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#sec-distribution-selection-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-distribution-selection-3">
+<div class="para">Review the three unique counting scenarios below tracking quality control and profile distribution metrics across massive industrial material batches. For each case, identify which distribution structure or approximation is most appropriate.               Your options are:</div>
+<ul class="disc" id="sec-distribution-selection-3-1">
+<li id="sec-distribution-selection-3-1-1">
+<div class="para" id="sec-distribution-selection-3-1-1-1">Normal approximation<div class="autopermalink" data-description="Paragraph"><a href="#sec-distribution-selection-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-distribution-selection-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-distribution-selection-3-1-2">
+<div class="para" id="sec-distribution-selection-3-1-2-1">Poisson approximation<div class="autopermalink" data-description="Paragraph"><a href="#sec-distribution-selection-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-distribution-selection-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-distribution-selection-3-1-3">
+<div class="para" id="sec-distribution-selection-3-1-3-1">Best to use the binomial distribution directly<div class="autopermalink" data-description="Paragraph"><a href="#sec-distribution-selection-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-distribution-selection-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-distribution-selection-3-1-4">
+<div class="para" id="sec-distribution-selection-3-1-4-1">None of the above<div class="autopermalink" data-description="Paragraph"><a href="#sec-distribution-selection-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-distribution-selection-3-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-distribution-selection-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="ex-static-distribution-selection-framework"><h5 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Distribution Classification and Model Auditing.</span>
+</h5>
+<article class="task exercise-like" id="task-static-select-poisson"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para" id="task-static-select-poisson-1-1">Quality assurance data maps an industrial manufacturing stream where exactly <span class="process-math">\(0.8\%\)</span> of all produced items contain microscopic structural fractures. A shipping container holds a batch sample of <span class="process-math">\(n = 1050\)</span> items. We want to find the probability that this container contains exactly 2 fractured items.<div class="autopermalink" data-description="Paragraph"><a href="#task-static-select-poisson-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="task-static-select-poisson-1-2">Identify the most appropriate mathematical method for solving this problem. Justify your choice.<div class="autopermalink" data-description="Paragraph"><a href="#task-static-select-poisson-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.3.3.a"><a href="#task-static-select-poisson" title="Copy heading and permalink for Task 7.3.3.a" aria-label="Copy heading and permalink for Task 7.3.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-static-select-normal"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para" id="task-static-select-normal-1-1">An inventory allocation profile shows that exactly <span class="process-math">\(73\%\)</span> of all components stored in a centralized depot meet the optimal specifications for standard high-speed server boards. An engineering shipment draws a batch sample of <span class="process-math">\(n = 1050\)</span> items. We want to find the probability that this shipment contains between 747 and 804 optimal components.<div class="autopermalink" data-description="Paragraph"><a href="#task-static-select-normal-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="task-static-select-normal-1-2">Identify the most appropriate mathematical method for solving this problem. Justify your choice.<div class="autopermalink" data-description="Paragraph"><a href="#task-static-select-normal-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.3.3.b"><a href="#task-static-select-normal" title="Copy heading and permalink for Task 7.3.3.b" aria-label="Copy heading and permalink for Task 7.3.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-static-select-binomial"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="para" id="task-static-select-binomial-1-1">A field service technician randomly selects a small toolkit snack size allocation of exactly <span class="process-math">\(n = 9\)</span> components from the same warehouse pool where <span class="process-math">\(73\%\)</span> match optimal specifications. We want to find the probability that exactly 8 of these 9 chosen components are optimal.<div class="autopermalink" data-description="Paragraph"><a href="#task-static-select-binomial-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="task-static-select-binomial-1-2">Identify the most appropriate mathematical method for solving this problem. Justify your choice.<div class="autopermalink" data-description="Paragraph"><a href="#task-static-select-binomial-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 7.3.3.c"><a href="#task-static-select-binomial" title="Copy heading and permalink for Task 7.3.3.c" aria-label="Copy heading and permalink for Task 7.3.3.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.3.3: Distribution Classification and Model Auditing"><a href="#ex-static-distribution-selection-framework" title="Copy heading and permalink for Exercise 7.3.3: Distribution Classification and Model Auditing" aria-label="Copy heading and permalink for Exercise 7.3.3: Distribution Classification and Model Auditing">🔗</a></div>
+</article><div class="autopermalink" data-description="Section 7.3.1: Identifying and Selecting Probability Models"><a href="#sec-distribution-selection" title="Copy heading and permalink for Section 7.3.1: Identifying and Selecting Probability Models" aria-label="Copy heading and permalink for Section 7.3.1: Identifying and Selecting Probability Models">🔗</a></div>
+</section><div class="autopermalink" data-description="Exercises 7.3: Written Exercises"><a href="#hw-normal-rv-turn-in" title="Copy heading and permalink for Exercises 7.3: Written Exercises" aria-label="Copy heading and permalink for Exercises 7.3: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 7.3: Normal Random Variable"><a href="#sec-section-normal-CRV" title="Copy heading and permalink for Section 7.3: Normal Random Variable" aria-label="Copy heading and permalink for Section 7.3: Normal Random Variable">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-section-exponential-CRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-gamma-CRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

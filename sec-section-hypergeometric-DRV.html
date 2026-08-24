@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hypergeometric Random Variable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-section-binomial-DRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Common-Discrete-RVs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-geometric-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-hypergeometric-DRV">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hypergeometric Random Variable</span>
+</h2>
+<section class="introduction" id="sec-section-hypergeometric-DRV-2">
+<div class="para logical" id="sec-section-hypergeometric-DRV-2-1">
+<div class="para">By completing the problems provided below, you will gain practice with:</div>
+<ul class="disc" id="sec-section-hypergeometric-DRV-2-1-1">
+<li id="sec-section-hypergeometric-DRV-2-1-1-1">
+<div class="para" id="sec-section-hypergeometric-DRV-2-1-1-1-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-hypergeometric-DRV-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-hypergeometric-DRV-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-hypergeometric-DRV-2-1-1-2">
+<div class="para" id="sec-section-hypergeometric-DRV-2-1-1-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-hypergeometric-DRV-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-hypergeometric-DRV-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-hypergeometric-DRV-2-1-1-3">
+<div class="para" id="sec-section-hypergeometric-DRV-2-1-1-3-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-hypergeometric-DRV-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-hypergeometric-DRV-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-hypergeometric-DRV-2-1-1-4">
+<div class="para" id="sec-section-hypergeometric-DRV-2-1-1-4-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-hypergeometric-DRV-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-hypergeometric-DRV-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-hypergeometric-DRV-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="exercises" id="hw-hyper-rv">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-cookie-jar-hypergeometric-expanded"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete Distributions: The Cookie Jar Selection.</span>
+</h4>
+<div class="introduction" id="ex-cookie-jar-hypergeometric-expanded-2">
+<div class="para" id="ex-cookie-jar-hypergeometric-expanded-2-1">A cookie jar currently holds <span class="process-math">\(21\)</span> total cookies: <span class="process-math">\(13\)</span> are chocolate-chip cookies, and <span class="process-math">\(8\)</span> are brussels-sprout-with-turnip-chip cookies. You pick <span class="process-math">\(3\)</span> cookies at random from the jar without looking.<div class="autopermalink" data-description="Paragraph"><a href="#ex-cookie-jar-hypergeometric-expanded-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-cookie-rv-why-hypergeometric-v2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-cookie-rv-why-hypergeometric-v2-1-1">Let the random variable <span class="process-math">\(X\)</span> represent the number of brussels-sprout-with-turnip-chip cookies found in your sample. This scenario is modeled using a <dfn class="terminology">Hypergeometric distribution</dfn>. Which of the following best explains why the Hypergeometric model applies here?<div class="autopermalink" data-description="Paragraph"><a href="#task-cookie-rv-why-hypergeometric-v2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-cookie-rv-why-hypergeometric-v2" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_a" data-correct="">Because we are sampling a fixed number of items from a finite population containing two distinct categories without replacement, meaning individual trial outcomes are dependent.</li>
+<li data-component="feedback" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_a">
+<div class="para" id="task-cookie-rv-why-hypergeometric-v2-2-1-2-1">Correct! A hypergeometric random variable tracks a fixed sample size drawn from a small finite population divided into two groups. Because cookies are eaten or set aside (sampling <dfn class="terminology">without replacement</dfn>), the probability of drawing a specific cookie type shifts dynamically with each draw, making the choices dependent.</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_b">Because each draw is independent, and the probability of picking a brussels-sprout-with-turnip-chip cookie remains perfectly constant at <span class="process-math">\(\frac{8}{21}\)</span> for all three selections.</li>
+<li data-component="feedback" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_b">
+<div class="para" id="task-cookie-rv-why-hypergeometric-v2-2-2-2-1">Incorrect. Constant probabilities and trial independence only hold true if you put each cookie back into the jar before selecting the next one (sampling with replacement), which fits a Binomial distribution.</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_c">Because we are tracking the infinite number of attempts required to pull our very first edible chocolate-chip cookie.</li>
+<li data-component="feedback" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_c">
+<div class="para" id="task-cookie-rv-why-hypergeometric-v2-2-3-2-1">Incorrect. Counting the number of independent trials required until a success occurs describes a Geometric distribution, not a Hypergeometric distribution.</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_d">Because the cookies are randomly distributed over a continuous geometric interval of volume or surface area.</li>
+<li data-component="feedback" id="rs-task-cookie-rv-why-hypergeometric-v2_opt_d">
+<div class="para" id="task-cookie-rv-why-hypergeometric-v2-2-4-2-1">Incorrect. Continuous intervals track Poisson patterns or geometric density functions, not discrete group partitions.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.1.a"><a href="#task-cookie-rv-why-hypergeometric-v2" title="Copy heading and permalink for Task 5.3.1.a" aria-label="Copy heading and permalink for Task 5.3.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cookie-prob-none-v2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-cookie-prob-none-v2"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-cookie-prob-none-v2-1-1\">Find the probability that you get none of the brussels-sprout-with-turnip-chip cookies. Enter your answer as a decimal rounded to three decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-none-v2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-cookie-prob-none-v2-1-2\"><input type=\"text\" id=\"ex-cookie-jar-hypergeometric-expanded-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-none-v2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.215,0.215], "feedback": "\n<div class=\"para logical\" id=\"task-cookie-prob-none-v2-2-1-1-2-1\"><div class=\"para\">Correct! We compute the combination footprints for the total sample space and successful subset partitions:<\/div>\n<ul class=\"disc\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-1\">\n<li id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-1\">\n<div class=\"para logical\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-1-1\"><div class=\"para\">Total ways to pick any 3 cookies out of 21:<\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-1-1-1\">\n\\begin{equation*}\n\\binom{21}{3} = \\frac{21 \\times 20 \\times 19}{3 \\times 2 \\times 1} = 1330\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-none-v2-2-1-1-2-1-1-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-cookie-prob-none-v2-2-1-1-2-1-1-1\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li>\n<li id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-2\">\n<div class=\"para logical\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-2-1\"><div class=\"para\">Ways to choose 0 brussels-sprout cookies (meaning all 3 are chocolate-chip):<\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-1-2-1-1\">\n\\begin{equation*}\n\\binom{8}{0} \\times \\binom{13}{3} = 1 \\times \\frac{13 \\times 12 \\times 11}{3 \\times 2 \\times 1} = 286\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-none-v2-2-1-1-2-1-1-2-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><div class=\"autopermalink\" data-description=\"Item\"><a href=\"#task-cookie-prob-none-v2-2-1-1-2-1-1-2\" title=\"Copy heading and permalink for Item\" aria-label=\"Copy heading and permalink for Item\">🔗<\/a><\/div><\/li><\/ul><div class=\"para\">Dividing the favorable outcomes by the sample space yields:<\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-none-v2-2-1-1-2-1-2\">\n\\begin{equation*}\nP(X = 0) = \\frac{286}{1330} = \\frac{143}{665} \\approx 0.215\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-cookie-prob-none-v2-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para logical" id="task-cookie-prob-none-v2-3-1">
+<div class="para">Use combinations to find the ratio:</div>
+<div class="displaymath process-math" id="task-cookie-prob-none-v2-3-1-1">
+\begin{equation*}
+P(X = 0) = \frac{\binom{8}{0} \times \binom{13}{3}}{\binom{21}{3}}
+\end{equation*}
+</div>
+<div class="para">Find how many ways to pick 3 cookies exclusively from the 13 chocolate-chip options, and divide by the total ways to draw any 3 cookies from the jar.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-cookie-prob-none-v2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 5.3.1.b.1"><a href="#task-cookie-prob-none-v2-3" title="Copy heading and permalink for Hint 5.3.1.b.1" aria-label="Copy heading and permalink for Hint 5.3.1.b.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 5.3.1.b"><a href="#task-cookie-prob-none-v2" title="Copy heading and permalink for Task 5.3.1.b" aria-label="Copy heading and permalink for Task 5.3.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cookie-prob-at-most-one-v2"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-cookie-prob-at-most-one-v2"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-cookie-prob-at-most-one-v2-1-1\">Compute the probability that your sample contains at most one (<span class=\"process-math\">\\(X \\le 1\\)<\/span>) brussels-sprout-with-turnip-chip cookie. Enter your answer as a decimal rounded to three decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-at-most-one-v2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-cookie-prob-at-most-one-v2-1-2\"><input type=\"text\" id=\"ex-cookie-jar-hypergeometric-expanded-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-at-most-one-v2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.684,0.684], "feedback": "\n<div class=\"para\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1\">Correct! \n<div class=\"para logical\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-1\"><div class=\"para\">\"At most one\" means we calculate the combined probabilities for <span class=\"process-math\">\\(X = 0\\)<\/span> and <span class=\"process-math\">\\(X = 1\\text{:}\\)<\/span><\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-1-3\">\n\\begin{equation*}\nP(X \\le 1) = P(X = 0) + P(X = 1)\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-at-most-one-v2-2-1-1-2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div> \n<div class=\"para logical\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-2\"><div class=\"para\">1. Calculate the probability of choosing exactly 1 brussels-sprout cookie and 2 chocolate-chip cookies:<\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-2-1\">\n\\begin{equation*}\nP(X = 1) = \\frac{\\binom{8}{1} \\times \\binom{13}{2}}{\\binom{21}{3}} = \\frac{8 \\times 78}{1330} = \\frac{624}{1330} \\approx 0.469\n\\end{equation*}\n<\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-at-most-one-v2-2-1-1-2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div> \n<div class=\"para logical\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-3\"><div class=\"para\">2. Sum the two discrete probabilities together:<\/div><div class=\"displaymath process-math\" id=\"task-cookie-prob-at-most-one-v2-2-1-1-2-1-3-1\">\n\\begin{equation*}\nP(X \\le 1) = \\frac{286}{1330} + \\frac{624}{1330} = \\frac{910}{1330} = \\frac{455}{665} = \\frac{13}{19} \\approx 0.684\n\\end{equation*}\n<\/div><div class=\"para\">Thus, the cumulative probability of drawing at most one brussels-sprout cookie is <span class=\"process-math\">\\(0.684\\text{.}\\)<\/span><\/div><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-cookie-prob-at-most-one-v2-2-1-1-2-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="solutions">
+<details id="task-cookie-prob-at-most-one-v2-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="task-cookie-prob-at-most-one-v2-3-1">To find <span class="process-math">\(P(X \le 1)\text{,}\)</span> calculate the sum of the two disjoint cases: <span class="process-math">\(P(X = 0) + P(X = 1)\text{.}\)</span> You found <span class="process-math">\(P(X = 0) = \frac{286}{1330}\)</span> in the previous part. Now evaluate <span class="process-math">\(P(X = 1) = \frac{\binom{8}{1} \times \binom{13}{2}}{\binom{21}{3}}\)</span> and combine them.<div class="autopermalink" data-description="Paragraph"><a href="#task-cookie-prob-at-most-one-v2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 5.3.1.c.1"><a href="#task-cookie-prob-at-most-one-v2-3" title="Copy heading and permalink for Hint 5.3.1.c.1" aria-label="Copy heading and permalink for Hint 5.3.1.c.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 5.3.1.c"><a href="#task-cookie-prob-at-most-one-v2" title="Copy heading and permalink for Task 5.3.1.c" aria-label="Copy heading and permalink for Task 5.3.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-cookie-expected-value"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-cookie-expected-value-1-1">Compute the expected number of brussels-sprout-with-turnip-chip cookies in your sample, <span class="process-math">\(E(X)\text{,}\)</span> and select its correct long-term interpretation.<div class="autopermalink" data-description="Paragraph"><a href="#task-cookie-expected-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-cookie-expected-value" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-task-cookie-expected-value_opt_a" data-correct="">
+<span class="process-math">\(E(X) \approx 1.143\text{.}\)</span> If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 1.143 brussels-sprout cookies per sample.</li>
+<li data-component="feedback" id="rs-task-cookie-expected-value_opt_a">
+<div class="para" id="task-cookie-expected-value-2-1-2-1">Correct! For a hypergeometric distribution, the expected value formula is <span class="process-math">\(E(X) = n \left(\frac{r}{N}\right)\text{,}\)</span> where <span class="process-math">\(n=3\)</span> is the sample size, <span class="process-math">\(r=8\)</span> is the number of target items (brussels-sprout cookies), and <span class="process-math">\(N=21\)</span> is the total population. This yields <span class="process-math">\(3 \times \left(\frac{8}{21}\right) = \frac{24}{21} = \frac{8}{7} \approx 1.143\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-expected-value_opt_b">
+<span class="process-math">\(E(X) \approx 1.857\text{.}\)</span> If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 1.857 brussels-sprout cookies per sample.</li>
+<li data-component="feedback" id="rs-task-cookie-expected-value_opt_b">
+<div class="para" id="task-cookie-expected-value-2-2-2-1">Incorrect. This calculation uses the wrong category pool in the numerator, solving for the expected number of <dfn class="terminology">chocolate-chip</dfn> cookies instead: <span class="process-math">\(3 \times \left(\frac{13}{21}\right) \approx 1.857\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-expected-value_opt_c">
+<span class="process-math">\(E(X) = 1.143\text{.}\)</span> In any given single sample of 3 cookies, you are guaranteed to get exactly 1 full brussels-sprout cookie and a fraction of another.</li>
+<li data-component="feedback" id="rs-task-cookie-expected-value_opt_c">
+<div class="para" id="task-cookie-expected-value-2-3-2-1">Incorrect. The value is mathematically right, but the interpretation is wrong. Expected values represent long-run averages over repeated trials; a single discrete draw can only yield integer values (0, 1, 2, or 3 cookies), never a fractional decimal amount.</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-expected-value_opt_d">
+<span class="process-math">\(E(X) = 0.381\text{.}\)</span> If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 0.381 brussels-sprout cookies per sample.</li>
+<li data-component="feedback" id="rs-task-cookie-expected-value_opt_d">
+<div class="para" id="task-cookie-expected-value-2-4-2-1">Incorrect. This is the simple ratio of brussels-sprout cookies in the jar (\frac{8}{21} \approx 0.381). You forgot to multiply by the sample size multiplier (n = 3).</div>
+</li>
+<li data-component="answer" id="rs-task-cookie-expected-value_opt_e">
+<div class="para" id="task-cookie-expected-value-2-5-1-1">E(X) = 1.500. If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of exactly 1.500 brussels-sprout cookies per sample.</div>
+</li>
+<li data-component="feedback" id="rs-task-cookie-expected-value_opt_e">
+<div class="para" id="task-cookie-expected-value-2-5-2-1">Incorrect. This is a blind guess assuming the two cookie types split the sample capacity perfectly in half (3/2 = 1.5), which ignores the actual proportions of cookies in the jar.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.1.d"><a href="#task-cookie-expected-value" title="Copy heading and permalink for Task 5.3.1.d" aria-label="Copy heading and permalink for Task 5.3.1.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.3.1: Discrete Distributions: The Cookie Jar Selection"><a href="#ex-cookie-jar-hypergeometric-expanded" title="Copy heading and permalink for Exercise 5.3.1: Discrete Distributions: The Cookie Jar Selection" aria-label="Copy heading and permalink for Exercise 5.3.1: Discrete Distributions: The Cookie Jar Selection">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-hypergeometric-aerospace-assembly"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hypergeometric Distributions: Sampling Without Replacement in Precision Assembly.</span>
+</h4>
+<div class="introduction" id="ex-hypergeometric-aerospace-assembly-2">
+<div class="para" id="ex-hypergeometric-aerospace-assembly-2-1">An aerospace cleanroom facility assembles tracking  modules onto satellite chassis blocks. A plug-and-play module with properly drilled alignment holes takes exactly 1 minute to secure. However, if the mounting holes were improperly drilled at the supplier facility, the technicians must manually re-drill the bracket, stretching the installation time out to 10 minutes.<div class="autopermalink" data-description="Paragraph"><a href="#ex-hypergeometric-aerospace-assembly-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-hypergeometric-aerospace-assembly-2-2">The staging inventory area holds a total batch of 20 modules in stock, of which exactly 2 contain improperly drilled alignment holes. A technician randomly selects a subset of 5 tracking modules from the 20 available items to install on the next 5 satellites on the floor.<div class="autopermalink" data-description="Paragraph"><a href="#ex-hypergeometric-aerospace-assembly-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-hypergeometric-aerospace-assembly-2-3">Note: Enter all final probability and timing answers as decimals rounded to exactly three decimal places.<div class="autopermalink" data-description="Paragraph"><a href="#ex-hypergeometric-aerospace-assembly-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-hyper-perfect-fit-probability"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-hyper-perfect-fit-probability"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-hyper-perfect-fit-probability-1-1\">Find the probability that all 5 randomly selected tracking modules fit properly on the first attempt, requiring zero re-drilling work.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-hyper-perfect-fit-probability-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-hyper-perfect-fit-probability-1-2\"><span class=\"process-math\">\\(P(X = 0)\\)<\/span> = <input type=\"text\" id=\"ex-hypergeometric-aerospace-assembly-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-hyper-perfect-fit-probability-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.553,0.553], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.2.a"><a href="#task-hyper-perfect-fit-probability" title="Copy heading and permalink for Task 5.3.2.a" aria-label="Copy heading and permalink for Task 5.3.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-hyper-mean-time"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-hyper-mean-time"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-hyper-mean-time-1-1\">Let the  random variable <span class=\"process-math\">\\(T\\)<\/span> represent the total combined time (in minutes) required to complete the installation of all 5 selected tracking modules. Find the expected mean and standard deviation for the installation time.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-hyper-mean-time-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-hyper-mean-time-1-2\">Expected Mean Time = <input type=\"text\" id=\"ex-hypergeometric-aerospace-assembly-mean_install\" name=\"mean_install\" size=\"8\"\/> minutes Standard Deviation = <input type=\"text\" id=\"ex-hypergeometric-aerospace-assembly-sd_install\" name=\"sd_install\" size=\"8\"\/> minutes<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-hyper-mean-time-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"mean_install": 0, "sd_install": 1},
+"feedbackArray": [[{"number": [9.5,9.5], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [5.394,5.394], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.2.b"><a href="#task-hyper-mean-time" title="Copy heading and permalink for Task 5.3.2.b" aria-label="Copy heading and permalink for Task 5.3.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-hyper-time-threshold-probability"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-hyper-time-threshold-probability"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-hyper-time-threshold-probability-1-1\">Part D: Downside Schedule Risk Assessment<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-hyper-time-threshold-probability-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-hyper-time-threshold-probability-1-2\">A project manager flags any assembly block sequence that takes strictly longer than 10 minutes to complete, as it threatens to bottleneck the downstream cleanroom satellite alignment schedule.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-hyper-time-threshold-probability-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-hyper-time-threshold-probability-1-3\">Calculate the  probability that the installation of the 5 chosen modules takes longer than 10 minutes.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-hyper-time-threshold-probability-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-hyper-time-threshold-probability-1-4\"><span class=\"process-math\">\\(P(T \\gt 10)\\)<\/span> = <input type=\"text\" id=\"ex-hypergeometric-aerospace-assembly-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-hyper-time-threshold-probability-1-4\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.447,0.447], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.2.c"><a href="#task-hyper-time-threshold-probability" title="Copy heading and permalink for Task 5.3.2.c" aria-label="Copy heading and permalink for Task 5.3.2.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.3.2: Hypergeometric Distributions: Sampling Without Replacement in Precision Assembly"><a href="#ex-hypergeometric-aerospace-assembly" title="Copy heading and permalink for Exercise 5.3.2: Hypergeometric Distributions: Sampling Without Replacement in Precision Assembly" aria-label="Copy heading and permalink for Exercise 5.3.2: Hypergeometric Distributions: Sampling Without Replacement in Precision Assembly">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-hypergeometric-student-rentals"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hypergeometric Distributions: Student Equipment Rentals.</span>
+</h4>
+<div class="introduction" id="ex-hypergeometric-student-rentals-2">
+<div class="para" id="ex-hypergeometric-student-rentals-2-1">At the beginning of the semester, a campus student housing agency prepares a batch of used dorm mini-fridges that were returned by departing students, cleaned, and processed to go back out on lease agreements. Because major mechanical overhauls are not performed, a portion of the inventory remains prone to malfunctioning.<div class="autopermalink" data-description="Paragraph"><a href="#ex-hypergeometric-student-rentals-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-hypergeometric-student-rentals-2-2">Among a specific cluster of eight mini-fridges available today, exactly three are malfunctioning. A student group arrives and needs to lease four mini-fridges. So, four of the eight available  are randomly selected and leased to the students.<div class="autopermalink" data-description="Paragraph"><a href="#ex-hypergeometric-student-rentals-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-hypergeometric-student-rentals-2-3">Enter all answers as decimals. Round probabilities to exactly four decimal places. Round expected values and standard deviations to exactly two decimal places.<div class="autopermalink" data-description="Paragraph"><a href="#ex-hypergeometric-student-rentals-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-rental-at-least-one"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-rental-at-least-one"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-rental-at-least-one-1-1\">Find the probability that the students receive at least one malfunctioning mini-fridge.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-rental-at-least-one-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-rental-at-least-one-1-2\">Probability = <input type=\"text\" id=\"ex-hypergeometric-student-rentals-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-rental-at-least-one-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.9286,0.9286], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.3.a"><a href="#task-rental-at-least-one" title="Copy heading and permalink for Task 5.3.3.a" aria-label="Copy heading and permalink for Task 5.3.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-rental-exactly-two"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-rental-exactly-two"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-rental-exactly-two-1-1\">Find the probability that the students receive exactly two malfunctioning mini fridges.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-rental-exactly-two-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-rental-exactly-two-1-2\">Probability = <input type=\"text\" id=\"ex-hypergeometric-student-rentals-blank1\" size=\"10\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-rental-exactly-two-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.4286,0.4286], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.3.b"><a href="#task-rental-exactly-two" title="Copy heading and permalink for Task 5.3.3.b" aria-label="Copy heading and permalink for Task 5.3.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-rental-expected-value"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-rental-expected-value"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-rental-expected-value-1-1\">Calculate the expected number of malfunctioning appliances the group of students will get.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-rental-expected-value-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-rental-expected-value-1-2\">Expected Value = <input type=\"text\" id=\"ex-hypergeometric-student-rentals-blank1\" size=\"8\"\/> malfunctioning fridges<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-rental-expected-value-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [1.5,1.5], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.3.c"><a href="#task-rental-expected-value" title="Copy heading and permalink for Task 5.3.3.c" aria-label="Copy heading and permalink for Task 5.3.3.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-rental-standard-deviation"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-rental-standard-deviation"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-rental-standard-deviation-1-1\">Compute the standard deviation for the expected number of malfunctioning appliances.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-rental-standard-deviation-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-rental-standard-deviation-1-2\">Standard Deviation = <input type=\"text\" id=\"ex-hypergeometric-student-rentals-blank1\" size=\"8\"\/> malfunctioning fridges<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-rental-standard-deviation-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.73,0.73], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.3.d"><a href="#task-rental-standard-deviation" title="Copy heading and permalink for Task 5.3.3.d" aria-label="Copy heading and permalink for Task 5.3.3.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.3.3: Hypergeometric Distributions: Student Equipment Rentals"><a href="#ex-hypergeometric-student-rentals" title="Copy heading and permalink for Exercise 5.3.3: Hypergeometric Distributions: Student Equipment Rentals" aria-label="Copy heading and permalink for Exercise 5.3.3: Hypergeometric Distributions: Student Equipment Rentals">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 5.3: Interactive Exercises"><a href="#hw-hyper-rv" title="Copy heading and permalink for Exercises 5.3: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 5.3: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-hyper-rv-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<div class="autopermalink" data-description="Exercises 5.3: Written Exercises"><a href="#hw-hyper-rv-turn-in" title="Copy heading and permalink for Exercises 5.3: Written Exercises" aria-label="Copy heading and permalink for Exercises 5.3: Written Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="binomial-approximation-mixed">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Binomial Approximation to the Hypergeometric Distribution</span>
+</h3>
+<div class="para" id="binomial-approximation-mixed-2">Recall that the binomial distribution is used when we want to calculate the likelihood that an event happens a certain number of times during <span class="process-math">\(n\)</span> independent Bernoulli trials. The binomial distribution can be used to approximate the hypergeometric distribution if the sample size, <span class="process-math">\(n\text{,}\)</span> is small relative to the population size <span class="process-math">\(N\)</span> (e.g., the sample is at most 5% of the population, meaning <span class="process-math">\(\frac{n}{N} \le 0.05\)</span>). To understand how and why this works, answer the questions that follow.<div class="autopermalink" data-description="Paragraph"><a href="#binomial-approximation-mixed-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="ex-fish-hypergeometric"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Capture-Recapture Scenario [Revisited].</span>
+</h4>
+<div class="introduction" id="ex-fish-hypergeometric-2">
+<div class="para" id="ex-fish-hypergeometric-2-1">Suppose there are 1,000 fish in a lake. During the first week, 65 fish are captured, tagged, and released. Then, 30 fish are captured two weeks later. Let <span class="process-math">\(X\)</span> be a hypergeometric random variable representing the number of tagged fish found in the sample of size 30.<div class="autopermalink" data-description="Paragraph"><a href="#ex-fish-hypergeometric-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="ex-fish-hypergeometric-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"ex-fish-hypergeometric-3-1-1\">Let <span class=\"process-math\">\\(X\\)<\/span> be a hypergeometric random variable representing the number of tagged fish found in the sample of size 30. What is the probability that 3 of the 30 fish will be tagged? In other words, use the hypergeometric probability distribution to find <span class=\"process-math\">\\(P(X=3)\\text{.}\\)<\/span> Write your answer as a decimal rounded to three places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-3-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-fish-hypergeometric-3-1-2\"><input type=\"text\" id=\"ex-fish-hypergeometric-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-3-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.184,0.184], "feedback": "\n<div class=\"para logical\" id=\"ex-fish-hypergeometric-3-2-1-1-2-1\"><div class=\"para\">Correct! Using the hypergeometric formula:<\/div><div class=\"displaymath process-math\" id=\"ex-fish-hypergeometric-3-2-1-1-2-1-1\">\n\\begin{equation*}\nP(X=3) = \\frac{\\binom{65}{3}\\binom{935}{27}}{\\binom{1000}{30}} \\approx 0.184\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.1.a"><a href="#ex-fish-hypergeometric-3" title="Copy heading and permalink for Task 5.3.1.a" aria-label="Copy heading and permalink for Task 5.3.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-fish-hypergeometric-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<article class="task exercise-like" id="ex-fish-hypergeometric-4-2"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-2-1-1\">What is the probability that the first fish captured is tagged?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-4-2-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-2-1-2\"><input type=\"text\" id=\"ex-fish-hypergeometric-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-4-2-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.065,0.065], "feedback": "\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-2-2-1-1-2-1\">Correct!<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.1.b.i"><a href="#ex-fish-hypergeometric-4-2" title="Copy heading and permalink for Task 5.3.1.b.i" aria-label="Copy heading and permalink for Task 5.3.1.b.i">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-fish-hypergeometric-4-3"><h6 class="heading"><span class="codenumber">(ii)</span></h6>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-3-1-1\">Suppose that the first fish was tagged. What is the probability that the second fish captured is also tagged?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-4-3-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-3-1-2\"><input type=\"text\" id=\"ex-fish-hypergeometric-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-4-3-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0641,0.0641], "feedback": "\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-3-2-1-1-2-1\">Correct!<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.1.b.ii"><a href="#ex-fish-hypergeometric-4-3" title="Copy heading and permalink for Task 5.3.1.b.ii" aria-label="Copy heading and permalink for Task 5.3.1.b.ii">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-fish-hypergeometric-4-4"><h6 class="heading"><span class="codenumber">(iii)</span></h6>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-4-1-1\">Suppose that the first fish was tagged but the second one was not. What is the probability that the third fish captured is tagged?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-4-4-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-4-1-2\"><input type=\"text\" id=\"ex-fish-hypergeometric-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-4-4-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0641,0.0641], "feedback": "\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-4-2-1-1-2-1\">Correct!<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.1.b.iii"><a href="#ex-fish-hypergeometric-4-4" title="Copy heading and permalink for Task 5.3.1.b.iii" aria-label="Copy heading and permalink for Task 5.3.1.b.iii">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-fish-hypergeometric-4-5"><h6 class="heading"><span class="codenumber">(iv)</span></h6>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-5-1-1\">4. Suppose 29 fish have been caught and that two of these were tagged. What is the probability that the last fish captured (number 30 in our sample) is tagged?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-4-5-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-5-1-2\"><input type=\"text\" id=\"ex-fish-hypergeometric-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-4-5-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.0649,0.0649], "feedback": "\n<div class=\"para\" id=\"ex-fish-hypergeometric-4-5-2-1-1-2-1\">Correct!<\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.1.b.iv"><a href="#ex-fish-hypergeometric-4-5" title="Copy heading and permalink for Task 5.3.1.b.iv" aria-label="Copy heading and permalink for Task 5.3.1.b.iv">🔗</a></div>
+</article><div class="autopermalink" data-description="Task 5.3.1.b"><a href="#ex-fish-hypergeometric-4" title="Copy heading and permalink for Task 5.3.1.b" aria-label="Copy heading and permalink for Task 5.3.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-fish-hypergeometric-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" data-multipleanswers="false">
+<div class="para" id="ex-fish-hypergeometric-5-1-1">These trials can be considered Bernoulli trials.<div class="autopermalink" data-description="Paragraph"><a href="#ex-fish-hypergeometric-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<li data-component="answer" id="_opt_t" data-correct=""><p>True.</p></li>
+<li data-component="feedback" id="_opt_t">
+<div class="para" id="ex-fish-hypergeometric-5-2-1">Write.</div>
+</li>
+<li data-component="answer" id="_opt_f"><p>False.</p></li>
+<li data-component="feedback" id="_opt_f">
+<div class="para" id="ex-fish-hypergeometric-5-2-1">Write.</div>
+</li>
+</ul></div></div>
+<div class="autopermalink" data-description="Task 5.3.1.c"><a href="#ex-fish-hypergeometric-5" title="Copy heading and permalink for Task 5.3.1.c" aria-label="Copy heading and permalink for Task 5.3.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-fish-hypergeometric-6"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="ex-fish-hypergeometric-6-1-1">Explain why our random variable <span class="process-math">\(X\)</span> (number of tagged fish found in the sample of size 60) is NOT a binomial random variable. Also tell me, What changes would you have to make to the physical capture-recapture protocol in order for <span class="process-math">\(X\)</span> to be a true binomial random variable?<div class="autopermalink" data-description="Paragraph"><a href="#ex-fish-hypergeometric-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.3.1.d"><a href="#ex-fish-hypergeometric-6" title="Copy heading and permalink for Task 5.3.1.d" aria-label="Copy heading and permalink for Task 5.3.1.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-fish-hypergeometric-7"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"ex-fish-hypergeometric-7-1-1\">Because the sample size is small relative to the population (<span class=\"process-math\">\\(30\/1000 = 0.03 \\lt 0.05\\)<\/span>), the probabilities you calculated earlier quite similar! It is therefore reasonable to just fix the probability of success at <span class=\"process-math\">\\(p = \\frac{65}{1000} = 0.065\\)<\/span> for all 30 trials. This would allow us to use the binomial distribution to get an <em class=\"emphasis\">approximation<\/em> for <span class=\"process-math\">\\(P(X=3)\\text{!}\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-7-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-fish-hypergeometric-7-1-2\">Re-compute the probability that exactly 3 of the 30 fish will be tagged using the binomial approximation. Write your answer as a decimal rounded to three places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-7-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-fish-hypergeometric-7-1-3\">How does this compare to your initial answer using the hypergeometric distribution in Part A?<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-7-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-fish-hypergeometric-7-1-4\"><input type=\"text\" id=\"ex-fish-hypergeometric-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-fish-hypergeometric-7-1-4\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.182,0.182], "feedback": "\n<div class=\"para logical\" id=\"ex-fish-hypergeometric-7-2-1-1-2-1\"><div class=\"para\">Correct! Using the Binomial formula:<\/div><div class=\"displaymath process-math\" id=\"ex-fish-hypergeometric-7-2-1-1-2-1-1\">\n\\begin{equation*}\nP(X=3) = \\binom{30}{3}(0.065)^3(0.935)^{27} \\approx 0.182\n\\end{equation*}\n<\/div><div class=\"para\">Comparing this to the hypergeometric result (<span class=\"process-math\">\\(0.184\\)<\/span>), the binomial approximation is incredibly close and accurate to within two-thousandths.<\/div><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 5.3.1.e"><a href="#ex-fish-hypergeometric-7" title="Copy heading and permalink for Task 5.3.1.e" aria-label="Copy heading and permalink for Task 5.3.1.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.3.1: Capture-Recapture Scenario [Revisited]"><a href="#ex-fish-hypergeometric" title="Copy heading and permalink for Exercise 5.3.1: Capture-Recapture Scenario [Revisited]" aria-label="Copy heading and permalink for Exercise 5.3.1: Capture-Recapture Scenario [Revisited]">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-cookie-analysis"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Analyzing the Cookie Problem Approximation.</span>
+</h4>
+<div class="introduction" id="ex-cookie-analysis-2">
+<div class="para" id="ex-cookie-analysis-2-1">Refer back to the Brussels-Sprout-with-Turnip-Chip cookie problem. You originally used a hypergeometric framework because you sampled a total of 3 cookies from a small batch of 21 cookies (where 8 were Brussels-Sprout-with-Turnip-Chip flavors).<div class="autopermalink" data-description="Paragraph"><a href="#ex-cookie-analysis-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="ex-cookie-analysis-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="ex-cookie-analysis-3-1-1">Comment on whether a binomial approximation is mathematically appropriate for that cookie scenario. Justify your reasoning.<div class="autopermalink" data-description="Paragraph"><a href="#ex-cookie-analysis-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.3.2.a"><a href="#ex-cookie-analysis-3" title="Copy heading and permalink for Task 5.3.2.a" aria-label="Copy heading and permalink for Task 5.3.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-cookie-analysis-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="ex-cookie-analysis-4-1-1">Regardless of appropriateness, let’s see how much error occurs if we force a binomial calculation anyway. Let the constant probability of picking a Brussels-Sprout cookie be <span class="process-math">\(p = \frac{8}{21} \approx 0.38\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-cookie-analysis-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ex-cookie-analysis-4-1-2">Use the binomial distribution to compute the probability of getting exactly one Brussels-Sprout-with-Turnip-Chip cookie in your sample of 3 cookies.<div class="autopermalink" data-description="Paragraph"><a href="#ex-cookie-analysis-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.3.2.b"><a href="#ex-cookie-analysis-4" title="Copy heading and permalink for Task 5.3.2.b" aria-label="Copy heading and permalink for Task 5.3.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-cookie-analysis-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="ex-cookie-analysis-5-1-1">Compare your answers using the hypergeometric and binomial distributions. What do you notice? Why did this occur?<div class="autopermalink" data-description="Paragraph"><a href="#ex-cookie-analysis-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 5.3.2.c"><a href="#ex-cookie-analysis-5" title="Copy heading and permalink for Task 5.3.2.c" aria-label="Copy heading and permalink for Task 5.3.2.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 5.3.2: Analyzing the Cookie Problem Approximation"><a href="#ex-cookie-analysis" title="Copy heading and permalink for Exercise 5.3.2: Analyzing the Cookie Problem Approximation" aria-label="Copy heading and permalink for Exercise 5.3.2: Analyzing the Cookie Problem Approximation">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 5.3: Binomial Approximation to the Hypergeometric Distribution"><a href="#binomial-approximation-mixed" title="Copy heading and permalink for Exercises 5.3: Binomial Approximation to the Hypergeometric Distribution" aria-label="Copy heading and permalink for Exercises 5.3: Binomial Approximation to the Hypergeometric Distribution">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 5.3: Hypergeometric Random Variable"><a href="#sec-section-hypergeometric-DRV" title="Copy heading and permalink for Section 5.3: Hypergeometric Random Variable" aria-label="Copy heading and permalink for Section 5.3: Hypergeometric Random Variable">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-section-binomial-DRV.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-geometric-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

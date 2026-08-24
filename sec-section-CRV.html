@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: bold                         *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Continuous RVs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Probability Theory: Practice Problems">
+<meta property="og:title" content="Probability Theory: Practice Problems">
+<meta property="book:title" content="Probability Theory: Practice Problems">
+<meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<p class="byline">Kristin Kang</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-chapter-Continuous-RVs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Continuous-RVs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-chapter-Common-Continuous-RVs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Practice with Set Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Compute Conditional Probabilities</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Hypergeometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.3</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Geometric Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Negative Binomial Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises">
+<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-section-CRV">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuous RVs</span>
+</h2>
+<section class="introduction" id="sec-section-CRV-2">
+<div class="para logical" id="sec-section-CRV-2-1">
+<div class="para">By completing the problems provided below, you will gain practice with:</div>
+<ul class="disc" id="sec-section-CRV-2-1-1">
+<li id="sec-section-CRV-2-1-1-1">
+<div class="para" id="sec-section-CRV-2-1-1-1-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-CRV-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-CRV-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-CRV-2-1-1-2">
+<div class="para" id="sec-section-CRV-2-1-1-2-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-CRV-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-CRV-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-CRV-2-1-1-3">
+<div class="para" id="sec-section-CRV-2-1-1-3-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-CRV-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-CRV-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-section-CRV-2-1-1-4">
+<div class="para" id="sec-section-CRV-2-1-1-4-1"><div class="autopermalink" data-description="Paragraph"><a href="#sec-section-CRV-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-section-CRV-2-1-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-CRV-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="exercises" id="hw-cont-rv">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-continuous-pdf-all-mc"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of Continuous Density Functions.</span>
+</h4>
+<div class="introduction" id="ex-continuous-pdf-all-mc-2">
+<div class="para logical" id="ex-continuous-pdf-all-mc-2-1">
+<div class="para">Consider a continuous random variable <span class="process-math">\(Y\)</span> defined by the probability density function (PDF):</div>
+<div class="displaymath process-math" id="ex-continuous-pdf-all-mc-2-1-2">
+\begin{equation*}
+f_Y(y) = ky^2, \quad \text{for } 0 \le y \le 2\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(k\)</span> is a constant.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-continuous-pdf-all-mc-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-mc-solve-k"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-mc-solve-k-1-1">What must the value of the constant <span class="process-math">\(k\)</span> equal for <span class="process-math">\(f_Y(y)\)</span> to be a mathematically valid probability density function?<div class="autopermalink" data-description="Paragraph"><a href="#task-mc-solve-k-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-mc-solve-k" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-mc-solve-k_opt_a">
+<div class="para" id="task-mc-solve-k-2-1-1-1"><span class="process-math">\(k = 1/2\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-solve-k_opt_a">
+<div class="para" id="task-mc-solve-k-2-1-2-1">Incorrect. Remember that the total area under the curve from <span class="process-math">\(y=0\)</span> to <span class="process-math">\(y=2\)</span> must integrate to exactly 1.</div>
+</li>
+<li data-component="answer" id="rs-task-mc-solve-k_opt_b">
+<div class="para" id="task-mc-solve-k-2-2-1-1"><span class="process-math">\(k = 1/8\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-solve-k_opt_b">
+<div class="para" id="task-mc-solve-k-2-2-2-1">Incorrect. It looks like you evaluated the anti-derivative boundaries but forgot to incorporate the denominator from the power rule integration.</div>
+</li>
+<li data-component="answer" id="rs-task-mc-solve-k_opt_c" data-correct="">
+<div class="para" id="task-mc-solve-k-2-3-1-1"><span class="process-math">\(k = 3/8\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-solve-k_opt_c">
+<div class="para" id="task-mc-solve-k-2-3-2-1">Correct! Using the total area property:</div> 
+<div class="para logical" id="task-mc-solve-k-2-3-2-2"><div class="displaymath process-math" id="task-mc-solve-k-2-3-2-2-1">
+\begin{equation*}
+\int_{0}^{2} ky^2 \, dy = \left[ \frac{k y^3}{3} \right]_{0}^{2} = \frac{8k}{3} - 0 = 1 \implies k = \frac{3}{8}
+\end{equation*}
+</div></div>
+</li>
+<li data-component="answer" id="rs-task-mc-solve-k_opt_d">
+<div class="para" id="task-mc-solve-k-2-4-1-1"><span class="process-math">\(k = 3/4\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-solve-k_opt_d">
+<div class="para" id="task-mc-solve-k-2-4-2-1">Incorrect. Double-check your calculation when evaluating <span class="process-math">\(y^3\)</span> at the upper bound of 2.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.1.a"><a href="#task-mc-solve-k" title="Copy heading and permalink for Task 6.1.1.a" aria-label="Copy heading and permalink for Task 6.1.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-mc-expected-value"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-mc-expected-value-1-1">Compute the expected value <span class="process-math">\(E(Y)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-mc-expected-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-mc-expected-value" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-mc-expected-value_opt_a">
+<div class="para" id="task-mc-expected-value-2-1-1-1"><span class="process-math">\(E(Y) = 1.00\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-expected-value_opt_a">
+<div class="para" id="task-mc-expected-value-2-1-2-1">Incorrect. Remember that for a continuous variable, <span class="process-math">\(E(Y) = \int y \cdot f_Y(y) \, dy\text{,}\)</span> which shifts the integrand power to <span class="process-math">\(y^3\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-mc-expected-value_opt_b" data-correct="">
+<div class="para" id="task-mc-expected-value-2-2-1-1"><span class="process-math">\(E(Y) = 1.50\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-expected-value_opt_b">
+<div class="para" id="task-mc-expected-value-2-2-2-1">Correct! Setting up the expectation integral:</div> 
+<div class="para logical" id="task-mc-expected-value-2-2-2-2"><div class="displaymath process-math" id="task-mc-expected-value-2-2-2-2-1">
+\begin{equation*}
+E(Y) = \int_{0}^{2} y \cdot \left(\frac{3}{8}y^2\right) \, dy = \frac{3}{8} \int_{0}^{2} y^3 \, dy = \frac{3}{8} \left[ \frac{y^4}{4} \right]_{0}^{2} = \frac{3}{8} \left(\frac{16}{4}\right) = 1.5
+\end{equation*}
+</div></div>
+</li>
+<li data-component="answer" id="rs-task-mc-expected-value_opt_c">
+<div class="para" id="task-mc-expected-value-2-3-1-1"><span class="process-math">\(E(Y) = 1.33\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-expected-value_opt_c">
+<div class="para" id="task-mc-expected-value-2-3-2-1">Incorrect. This looks like the result of calculating the anti-derivative without scaling by the constant factor <span class="process-math">\(k = 3/8\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-mc-expected-value_opt_d">
+<div class="para" id="task-mc-expected-value-2-4-1-1"><span class="process-math">\(E(Y) = 1.75\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-expected-value_opt_d">
+<div class="para" id="task-mc-expected-value-2-4-2-1">Incorrect. Double-check your evaluation steps when raising the upper bound to the 4th power.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.1.b"><a href="#task-mc-expected-value" title="Copy heading and permalink for Task 6.1.1.b" aria-label="Copy heading and permalink for Task 6.1.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-mc-variance"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-mc-variance-1-1">Compute the variance <span class="process-math">\(V(Y)\)</span> for this random variable.<div class="autopermalink" data-description="Paragraph"><a href="#task-mc-variance-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-mc-variance" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-mc-variance_opt_a" data-correct="">
+<div class="para" id="task-mc-variance-2-1-1-1"><span class="process-math">\(V(Y) = 0.15\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-variance_opt_a">
+<div class="para" id="task-mc-variance-2-1-2-1">Correct! First, compute the intermediate term <span class="process-math">\(E(Y^2)\text{:}\)</span>
+</div> 
+<div class="para logical" id="task-mc-variance-2-1-2-2"><div class="displaymath process-math" id="task-mc-variance-2-1-2-2-1">
+\begin{equation*}
+E(Y^2) = \int_{0}^{2} y^2 \cdot \left(\frac{3}{8}y^2\right) \, dy = \frac{3}{8} \left[ \frac{y^5}{5} \right]_{0}^{2} = \frac{3}{8} \left(\frac{32}{5}\right) = \frac{12}{5} = 2.4
+\end{equation*}
+</div></div> 
+<div class="para" id="task-mc-variance-2-1-2-3">Now, use the variance identity <span class="process-math">\(V(Y) = E(Y^2) - [E(Y)]^2\text{:}\)</span>
+</div> 
+<div class="para logical" id="task-mc-variance-2-1-2-4"><div class="displaymath process-math" id="task-mc-variance-2-1-2-4-1">
+\begin{equation*}
+V(Y) = 2.4 - (1.5)^2 = 2.4 - 2.25 = 0.15
+\end{equation*}
+</div></div>
+</li>
+<li data-component="answer" id="rs-task-mc-variance_opt_b">
+<div class="para" id="task-mc-variance-2-2-1-1"><span class="process-math">\(V(Y) = 2.40\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-variance_opt_b">
+<div class="para" id="task-mc-variance-2-2-2-1">Incorrect. This is the value of <span class="process-math">\(E(Y^2)\)</span> before subtracting the squared mean.</div>
+</li>
+<li data-component="answer" id="rs-task-mc-variance_opt_c">
+<div class="para" id="task-mc-variance-2-3-1-1"><span class="process-math">\(V(Y) = 0.25\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-variance_opt_c">
+<div class="para" id="task-mc-variance-2-3-2-1">Incorrect. Make sure to square the mean (<span class="process-math">\(1.5^2 = 2.25\)</span>) when applying the variance formula subtraction step.</div>
+</li>
+<li data-component="answer" id="rs-task-mc-variance_opt_d">
+<div class="para" id="task-mc-variance-2-4-1-1"><span class="process-math">\(V(Y) = 0.90\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-variance_opt_d">
+<div class="para" id="task-mc-variance-2-4-2-1">Incorrect. Ensure you use the formula <span class="process-math">\(E(Y^2) - [E(Y)]^2\)</span> instead of subtracting the raw mean value from <span class="process-math">\(E(Y^2)\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.1.c"><a href="#task-mc-variance" title="Copy heading and permalink for Task 6.1.1.c" aria-label="Copy heading and permalink for Task 6.1.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-mc-interval"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-mc-interval-1-1">Find the probability <span class="process-math">\(P(1 \le Y \le 2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-mc-interval-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-mc-interval" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-mc-interval_opt_a">
+<div class="para" id="task-mc-interval-2-1-1-1"><span class="process-math">\(0.500\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-interval_opt_a">
+<div class="para" id="task-mc-interval-2-1-2-1">Incorrect. Remember that the distribution is skewed toward higher values because of the quadratic weight, so the upper half of the range contains a larger share of the probability.</div>
+</li>
+<li data-component="answer" id="rs-task-mc-interval_opt_b">
+<div class="para" id="task-mc-interval-2-2-1-1"><span class="process-math">\(0.125\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-interval_opt_b">
+<div class="para" id="task-mc-interval-2-2-2-1">Incorrect. This is the lower tail probability <span class="process-math">\(P(0 \le Y \le 1)\text{.}\)</span> Subtract this value from 1 to find the correct upper tail area.</div>
+</li>
+<li data-component="answer" id="rs-task-mc-interval_opt_c" data-correct="">
+<div class="para" id="task-mc-interval-2-3-1-1"><span class="process-math">\(0.875\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-interval_opt_c">
+<div class="para" id="task-mc-interval-2-3-2-1">Correct! Integrating between the specified boundaries:</div> 
+<div class="para logical" id="task-mc-interval-2-3-2-2"><div class="displaymath process-math" id="task-mc-interval-2-3-2-2-1">
+\begin{equation*}
+P(1 \le Y \le 2) = \int_{1}^{2} \frac{3}{8}y^2 \, dy = \left[ \frac{y^3}{8} \right]_{1}^{2} = \frac{2^3}{8} - \frac{1^3}{8} = 1 - \frac{1}{8} = 0.875
+\end{equation*}
+</div></div>
+</li>
+<li data-component="answer" id="rs-task-mc-interval_opt_d">
+<div class="para" id="task-mc-interval-2-4-1-1"><span class="process-math">\(0.750\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-interval_opt_d">
+<div class="para" id="task-mc-interval-2-4-2-1">Incorrect. Double-check your subtraction arithmetic when plugging the lower bound into your anti-derivative tool.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.1.d"><a href="#task-mc-interval" title="Copy heading and permalink for Task 6.1.1.d" aria-label="Copy heading and permalink for Task 6.1.1.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-mc-cdf-derivation"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-mc-cdf-derivation-1-1">Find the cumulative distribution function (CDF), <span class="process-math">\(F_Y(y)\text{,}\)</span> for the interval <span class="process-math">\(0 \le y \le 2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-mc-cdf-derivation-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-mc-cdf-derivation" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-mc-cdf-derivation_opt_a">
+<div class="para" id="task-mc-cdf-derivation-2-1-1-1"><span class="process-math">\(F_Y(y) = \frac{y^3}{3}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-cdf-derivation_opt_a">
+<div class="para" id="task-mc-cdf-derivation-2-1-2-1">Incorrect. You integrated <span class="process-math">\(y^2\)</span> correctly to get <span class="process-math">\(\frac{y^3}{3}\text{,}\)</span> but you forgot to multiply by the constant multiplier <span class="process-math">\(k = \frac{3}{8}\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-mc-cdf-derivation_opt_b" data-correct="">
+<div class="para" id="task-mc-cdf-derivation-2-2-1-1"><span class="process-math">\(F_Y(y) = \frac{y^3}{8}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-cdf-derivation_opt_b">
+<div class="para" id="task-mc-cdf-derivation-2-2-2-1">Correct! To find the general cumulative distribution function, integrate the PDF from the lower limit 0 up to an arbitrary point <span class="process-math">\(y\text{:}\)</span>
+</div> 
+<div class="para logical" id="task-mc-cdf-derivation-2-2-2-2"><div class="displaymath process-math" id="task-mc-cdf-derivation-2-2-2-2-1">
+\begin{equation*}
+F_Y(y) = \int_{0}^{y} \frac{3}{8}t^2 \, dt = \left[ \frac{t^3}{8} \right]_{0}^{y} = \frac{y^3}{8}
+\end{equation*}
+</div></div> 
+<div class="para" id="task-mc-cdf-derivation-2-2-2-3">Evaluating this function at the boundaries confirms the probability from Part D: <span class="process-math">\(F_Y(2) - F_Y(1) = \frac{8}{8} - \frac{1}{8} = 0.875\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-mc-cdf-derivation_opt_c">
+<div class="para" id="task-mc-cdf-derivation-2-3-1-1"><span class="process-math">\(F_Y(y) = \frac{3y^3}{8}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-cdf-derivation_opt_c">
+<div class="para" id="task-mc-cdf-derivation-2-3-2-1">Incorrect. It looks like you forgot to apply the power rule integration denominator (<span class="process-math">\(3\)</span>) to cancel out the numerator coefficient when taking the anti-derivative.</div>
+</li>
+<li data-component="answer" id="rs-task-mc-cdf-derivation_opt_d">
+<div class="para" id="task-mc-cdf-derivation-2-4-1-1"><span class="process-math">\(F_Y(y) = \frac{y^2}{4}\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-mc-cdf-derivation_opt_d">
+<div class="para" id="task-mc-cdf-derivation-2-4-2-1">Incorrect. Remember that integrating a function increases the polynomial power by 1 (<span class="process-math">\(y^2 \rightarrow y^3\)</span>).</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.1.e"><a href="#task-mc-cdf-derivation" title="Copy heading and permalink for Task 6.1.1.e" aria-label="Copy heading and permalink for Task 6.1.1.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-unique-first-quartile"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-unique-first-quartile-1-1">Find the first quartile (<span class="process-math">\(Q_1\)</span>) of this distribution. <span class="process-math">\(Q_1\)</span> is the value below which exactly 25% of the probability mass lies.<div class="autopermalink" data-description="Paragraph"><a href="#task-unique-first-quartile-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-unique-first-quartile" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-unique-first-quartile_opt_a">
+<div class="para" id="task-unique-first-quartile-2-1-1-1"><span class="process-math">\(Q_1 = 0.750\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-unique-first-quartile_opt_a">
+<div class="para" id="task-unique-first-quartile-2-1-2-1">Incorrect. This is the first quartile if the distribution were perfectly uniform over the domain. Because the quadratic curve squashes most of the area to the right, you must travel further down the axis to gather 25% of the total area.</div>
+</li>
+<li data-component="answer" id="rs-task-unique-first-quartile_opt_b" data-correct="">
+<div class="para" id="task-unique-first-quartile-2-2-1-1"><span class="process-math">\(Q_1 \approx 1.889\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-unique-first-quartile_opt_b">
+<div class="para" id="task-unique-first-quartile-2-2-2-1">Correct! To find the first quartile, set the cumulative distribution function (CDF) derived in Part E equal to <span class="process-math">\(0.25\)</span> (or <span class="process-math">\(\frac{1}{4}\)</span>) and isolate <span class="process-math">\(y\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="task-unique-first-quartile-2-2-2-2">
+\begin{equation*}
+F_Y(Q_1) = \frac{Q_1^3}{27} = \frac{1}{4} \implies Q_1^3 = \frac{27}{4} = 6.75
+\end{equation*}
+</div>
+<div class="para" id="task-unique-first-quartile-2-2-2-3">Taking the cube root of both sides yields the final percentile threshold:</div>
+<div class="displaymath process-math" id="task-unique-first-quartile-2-2-2-4">
+\begin{equation*}
+Q_1 = \sqrt[3]{6.75} \approx 1.88948
+\end{equation*}
+</div>
+<div class="para" id="task-unique-first-quartile-2-2-2-5">Rounded to three decimal places, the first quartile is approximately 1.889.</div>
+</li>
+<li data-component="answer" id="rs-task-unique-first-quartile_opt_c">
+<div class="para" id="task-unique-first-quartile-2-3-1-1"><span class="process-math">\(Q_1 \approx 1.442\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-unique-first-quartile_opt_c">
+<div class="para" id="task-unique-first-quartile-2-3-2-1">Incorrect. It looks like you set the expression <span class="process-math">\(\frac{y^3}{3} = 1/4\text{,}\)</span> forgetting to multiply by the baseline constant coefficient divisor of 9 in your integrated functional framework.</div>
+</li>
+<li data-component="answer" id="rs-task-unique-first-quartile_opt_d">
+<div class="para" id="task-unique-first-quartile-2-4-1-1"><span class="process-math">\(Q_1 \approx 2.250\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-unique-first-quartile_opt_d">
+<div class="para" id="task-unique-first-quartile-2-4-2-1">Incorrect. This value matches the distribution mean <span class="process-math">\(E(Y)\)</span> from Part B. For a highly left-skewed curve like this one, the mean is pulled right, so <span class="process-math">\(Q_1 \lt E(Y)\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.1.f"><a href="#task-unique-first-quartile" title="Copy heading and permalink for Task 6.1.1.f" aria-label="Copy heading and permalink for Task 6.1.1.f">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-unique-expected-sqrt"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-unique-expected-sqrt-1-1">Calculate  <span class="process-math">\(E(\sqrt{Y})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-unique-expected-sqrt-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-unique-expected-sqrt" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-unique-expected-sqrt_opt_a">
+<div class="para" id="task-unique-expected-sqrt-2-1-1-1"><span class="process-math">\(E(\sqrt{Y}) = 1.500\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-unique-expected-sqrt_opt_a">
+<div class="para" id="task-unique-expected-sqrt-2-1-2-1">Incorrect. Jensen’s Inequality states that for a concave function like the square root, <span class="process-math">\(E(\sqrt{Y}) \le \sqrt{E(Y)}\text{.}\)</span> Since <span class="process-math">\(\sqrt{2.25} = 1.5\text{,}\)</span> your answer must be strictly less than 1.500. You cannot simply pull the expectation operator inside the radical.</div>
+</li>
+<li data-component="answer" id="rs-task-unique-expected-sqrt_opt_b" data-correct="">
+<div class="para" id="task-unique-expected-sqrt-2-2-1-1"><span class="process-math">\(E(\sqrt{Y}) \approx 1.469\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-unique-expected-sqrt_opt_b">
+<div class="para" id="task-unique-expected-sqrt-2-2-2-1">Correct! By the Law of the Unconscious Statistician (LOTUS), to compute the expected value of a function <span class="process-math">\(g(y) = \sqrt{y}\text{,}\)</span> we integrate <span class="process-math">\(g(y) \cdot f_Y(y)\)</span> over the active domain boundaries:</div>
+<div class="displaymath process-math" id="task-unique-expected-sqrt-2-2-2-2">
+\begin{equation*}
+E(\sqrt{Y}) = \int_{0}^{3} \sqrt{y} \cdot \left(\frac{1}{9}y^2\right) \, dy = \frac{1}{9} \int_{0}^{3} y^{1/2} \cdot y^2 \, dy = \frac{1}{9} \int_{0}^{3} y^{5/2} \, dy
+\end{equation*}
+</div>
+<div class="para" id="task-unique-expected-sqrt-2-2-2-3">Applying the standard power integration rule adds 1 to the exponent (<span class="process-math">\(\frac{5}{2} + 1 = \frac{7}{2}\)</span>) and multiplies by its inverse coefficient multiplier:</div>
+<div class="displaymath process-math" id="task-unique-expected-sqrt-2-2-2-4">
+\begin{equation*}
+= \frac{1}{9} \left[ \frac{2}{7}y^{7/2} \right]_{0}^{3} = \frac{2}{63} \left( 3^{7/2} - 0 \right)
+\end{equation*}
+</div>
+<div class="para" id="task-unique-expected-sqrt-2-2-2-5">Evaluating the fractional radical step:</div>
+<div class="displaymath process-math" id="task-unique-expected-sqrt-2-2-2-6">
+\begin{equation*}
+3^{7/2} = 3^3 \cdot \sqrt{3} = 27\sqrt{3} \implies \frac{2 \cdot 27\sqrt{3}}{63} = \frac{54\sqrt{3}}{63} = \frac{6\sqrt{3}}{7} \approx 1.46899
+\end{equation*}
+</div>
+<div class="para" id="task-unique-expected-sqrt-2-2-2-7">Rounded to three decimal places, the final functional expectation evaluates to approximately 1.469.</div>
+</li>
+<li data-component="answer" id="rs-task-unique-expected-sqrt_opt_c">
+<div class="para" id="task-unique-expected-sqrt-2-3-1-1"><span class="process-math">\(E(\sqrt{Y}) \approx 1.286\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-unique-expected-sqrt_opt_c">
+<div class="para" id="task-unique-expected-sqrt-2-3-2-1">Incorrect. It looks like you evaluated the fraction <span class="process-math">\(\frac{27}{21}\)</span> or dropped the trailing radical variable component during your anti-derivative conversion loop. Re-verify your index fractions.</div>
+</li>
+<li data-component="answer" id="rs-task-unique-expected-sqrt_opt_d">
+<div class="para" id="task-unique-expected-sqrt-2-4-1-1"><span class="process-math">\(E(\sqrt{Y}) \approx 1.714\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-unique-expected-sqrt_opt_d">
+<div class="para" id="task-unique-expected-sqrt-2-4-2-1">Incorrect. Double-check your fractional division hierarchy steps. Remember that dividing by <span class="process-math">\(\frac{7}{2}\)</span> requires multiplying your integrated bracket by its flipped parameter form, <span class="process-math">\(\frac{2}{7}\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.1.g"><a href="#task-unique-expected-sqrt" title="Copy heading and permalink for Task 6.1.1.g" aria-label="Copy heading and permalink for Task 6.1.1.g">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 6.1.1: Properties of Continuous Density Functions"><a href="#ex-continuous-pdf-all-mc" title="Copy heading and permalink for Exercise 6.1.1: Properties of Continuous Density Functions" aria-label="Copy heading and permalink for Exercise 6.1.1: Properties of Continuous Density Functions">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="sec-continuous-pdf-geometry-unique"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuous Distributions: Interpreting PDF Geometry.</span>
+</h4>
+<div class="introduction" id="sec-continuous-pdf-geometry-unique-2">
+<div class="para" id="sec-continuous-pdf-geometry-unique-2-1">The graph below displays the probability density function (PDF), denoted as <span class="process-math">\(f_X(x)\text{,}\)</span> for a random variable <span class="process-math">\(X\text{.}\)</span> Use the graph (and your  understanding of continuous random variables) to to answer the following questions.<div class="autopermalink" data-description="Paragraph"><a href="#sec-continuous-pdf-geometry-unique-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-continuous-pdf-geometry-unique-2-2">
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/tikz-continuous-pdf-curves-shifted.svg" role="img" class="contained" alt="A custom probability density function featuring a wide, flat plateau spanning from x=1 to x=5 and a sharp, narrow peak centered at x=8."></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-continuous-pdf-geometry-unique-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-pdf-point-probability-shifted"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-pdf-point-probability-shifted-1-1">Compare the  probabilities at the two local features. Which is larger: <span class="process-math">\(P(X = 3)\)</span> or <span class="process-math">\(P(X = 8)\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-pdf-point-probability-shifted-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-pdf-point-probability-shifted" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-pdf-point-probability-shifted_opt_a">
+<div class="para" id="task-pdf-point-probability-shifted-2-1-1-1"><span class="process-math">\(P(X = 3)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-point-probability-shifted_opt_a">
+<div class="para" id="task-pdf-point-probability-shifted-2-1-2-1">Incorrect. Remember that for any continuous random variable, the probability of the variable equaling an exact single real-numbered point value is always zero, regardless of the height of the density graph at that coordinate.</div>
+</li>
+<li data-component="answer" id="rs-task-pdf-point-probability-shifted_opt_b">
+<div class="para" id="task-pdf-point-probability-shifted-2-2-1-1"><span class="process-math">\(P(X = 8)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-point-probability-shifted_opt_b">
+<div class="para" id="task-pdf-point-probability-shifted-2-2-2-1">Incorrect. While the spike around <span class="process-math">\(x = 8\)</span> is much higher vertically, the probability at an exact single infinitely thin point coordinate is still zero.</div>
+</li>
+<li data-component="answer" id="rs-task-pdf-point-probability-shifted_opt_c" data-correct="">
+<div class="para" id="task-pdf-point-probability-shifted-2-3-1-1">They are about the same.</div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-point-probability-shifted_opt_c">
+<div class="para" id="task-pdf-point-probability-shifted-2-3-2-1">Correct! Because <span class="process-math">\(X\)</span> is a continuous random variable, the probability at any single exact coordinate is defined mathematically by an integral over an interval of width zero. Therefore, <span class="process-math">\(P(X = 3) = 0\)</span> and <span class="process-math">\(P(X = 8) = 0\text{,}\)</span> making them exactly equal.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.2.a"><a href="#task-pdf-point-probability-shifted" title="Copy heading and permalink for Task 6.1.2.a" aria-label="Copy heading and permalink for Task 6.1.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-pdf-micro-interval-shifted"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-pdf-micro-interval-shifted-1-1">Consider two tiny intervals of equal narrow width (<span class="process-math">\(\Delta x = 0.02\)</span>). Which probability is larger: <span class="process-math">\(P(2.99 \le X \le 3.01)\)</span> or <span class="process-math">\(P(7.99 \le X \le 8.01)\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-pdf-micro-interval-shifted-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-pdf-micro-interval-shifted" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-pdf-micro-interval-shifted_opt_a">
+<div class="para" id="task-pdf-micro-interval-shifted-2-1-1-1"><span class="process-math">\(P(2.99 \le X \le 3.01)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-micro-interval-shifted_opt_a">
+<div class="para" id="task-pdf-micro-interval-shifted-2-1-2-1">Incorrect. The height of the density function determines the concentration of probability per unit width. Since the function is much lower at <span class="process-math">\(x=3\)</span> than at the peak of the spike, a narrow interval here captures less area.</div>
+</li>
+<li data-component="answer" id="rs-task-pdf-micro-interval-shifted_opt_b" data-correct="">
+<div class="para" id="task-pdf-micro-interval-shifted-2-2-1-1">B. <span class="process-math">\(P(7.99 \le X \le 8.01)\)</span>
+</div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-micro-interval-shifted_opt_b">
+<div class="para" id="task-pdf-micro-interval-shifted-2-2-2-1">Correct! For an extremely narrow window centered around a point <span class="process-math">\(c\text{,}\)</span> the area under the curve can be approximated by a rectangle whose height is the density function value: <span class="process-math">\(P(c - \epsilon \le X \le c + \epsilon) \approx f_X(c) \cdot \Delta x\text{.}\)</span> Reading our new shifted graph, the density height at the sharp peak is <span class="process-math">\(f_X(8) \approx 0.76\text{,}\)</span> while the height of the plateau is <span class="process-math">\(f_X(3) = 0.15\text{.}\)</span> Because the curve is much higher at <span class="process-math">\(x = 8\text{,}\)</span> this tiny window traps significantly more area.</div>
+</li>
+<li data-component="answer" id="rs-task-pdf-micro-interval-shifted_opt_c">
+<div class="para" id="task-pdf-micro-interval-shifted-2-3-1-1">C. They are about the same.</div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-micro-interval-shifted_opt_c">
+<div class="para" id="task-pdf-micro-interval-shifted-2-3-2-1">Incorrect. Since the density heights at <span class="process-math">\(x=3\)</span> and <span class="process-math">\(x=8\)</span> are completely different, equal narrow intervals will contain different area allocations.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.2.b"><a href="#task-pdf-micro-interval-shifted" title="Copy heading and permalink for Task 6.1.2.b" aria-label="Copy heading and permalink for Task 6.1.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-pdf-macro-interval-shifted"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-pdf-macro-interval-shifted-1-1">Now look at wider intervals of equal width. Which probability is larger: <span class="process-math">\(P(1 \le X \le 3)\)</span> or <span class="process-math">\(P(7 \le X \le 9)\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-pdf-macro-interval-shifted-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-pdf-macro-interval-shifted" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-pdf-macro-interval-shifted_opt_a" data-correct="">
+<div class="para" id="task-pdf-macro-interval-shifted-2-1-1-1"><span class="process-math">\(P(1 \le X \le 3)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-macro-interval-shifted_opt_a">
+<div class="para logical" id="task-pdf-macro-interval-shifted-2-1-2-1">
+<div class="para">Correct! Probability corresponds to the total area under the density curve over the specified interval. Let us evaluate our new layout’s regions:</div>
+<ul class="disc" id="task-pdf-macro-interval-shifted-2-1-2-1-1">
+<li id="task-pdf-macro-interval-shifted-2-1-2-1-1-1">
+<div class="para" id="task-pdf-macro-interval-shifted-2-1-2-1-1-1-1">The interval <span class="process-math">\(1 \le X \le 3\)</span> spans a width of 2 units over the plateau with a constant height of 0.15. This rectangular area evaluates to: <span class="process-math">\(2 \times 0.15 = 0.30\text{.}\)</span>
+</div>
+</li>
+<li id="task-pdf-macro-interval-shifted-2-1-2-1-1-2">
+<div class="para" id="task-pdf-macro-interval-shifted-2-1-2-1-1-2-1">The interval <span class="process-math">\(7 \le X \le 9\)</span> captures the entire sharp spike centered at <span class="process-math">\(x = 8\text{.}\)</span> Because this spike is extremely narrow, the entire feature contains only about <span class="process-math">\(0.125\)</span> of total area.</div>
+</li>
+</ul>
+<div class="para">Because an area of <span class="process-math">\(0.30\)</span> is significantly larger than <span class="process-math">\(0.125\text{,}\)</span> the plateau interval on the left contains far more probability mass than the tall spike on the right.</div>
+</div>
+</li>
+<li data-component="answer" id="rs-task-pdf-macro-interval-shifted_opt_b">
+<div class="para" id="task-pdf-macro-interval-shifted-2-2-1-1"><span class="process-math">\(P(7 \le X \le 9)\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-macro-interval-shifted_opt_b">
+<div class="para" id="task-pdf-macro-interval-shifted-2-2-2-1">Incorrect. Do not let the maximum height of the spike mislead you. The spike at <span class="process-math">\(x=8\)</span> is so narrow that it contains less total area than a 2-unit slice of our low, wide plateau structure.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.2.c"><a href="#task-pdf-macro-interval-shifted" title="Copy heading and permalink for Task 6.1.2.c" aria-label="Copy heading and permalink for Task 6.1.2.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-pdf-unique-median-position"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-pdf-unique-median-position-1-1">What is the approximate location of the median(<span class="process-math">\(m\)</span>) for this random variable, <span class="process-math">\(X\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-pdf-unique-median-position-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-pdf-unique-median-position" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-pdf-unique-median-position_opt_a" data-correct="">
+<div class="para" id="task-pdf-unique-median-position-2-1-1-1"><span class="process-math">\(m \approx 3.73\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-unique-median-position_opt_a">
+<div class="para" id="task-pdf-unique-median-position-2-1-2-1">Correct! The median splits the entire area under the PDF into two equal halves of <span class="process-math">\(0.50\text{.}\)</span> Because our initial plateau structure is wide (spanning 4 full units from <span class="process-math">\(x = 1\)</span> to <span class="process-math">\(x = 5\)</span>) and holds a constant height of <span class="process-math">\(0.15\text{,}\)</span> the entire plateau contains a massive area block of <span class="process-math">\(4 \times 0.15 = 0.60\text{.}\)</span> Since <span class="process-math">\(0.60 \gt 0.50\text{,}\)</span> we reach the exact halfway area mark well before exiting the plateau. Solving for width <span class="process-math">\(w\)</span> from the left edge: <span class="process-math">\(w \times 0.15 = 0.50 \implies w \approx 2.73\text{.}\)</span> Adding this to our start point gives a median of exactly <span class="process-math">\(x \approx 3.73\)</span>.</div>
+</li>
+<li data-component="answer" id="rs-task-pdf-unique-median-position_opt_b">
+<div class="para" id="task-pdf-unique-median-position-2-2-1-1"><span class="process-math">\(m \approx 5.25\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-unique-median-position_opt_b">
+<div class="para" id="task-pdf-unique-median-position-2-2-2-1">Incorrect. By the time you exit the plateau structure at <span class="process-math">\(x = 5.25\text{,}\)</span> you have already accumulated roughly 63% of the total area under the curve, meaning the median point was already crossed further to the left.</div>
+</li>
+<li data-component="answer" id="rs-task-pdf-unique-median-position_opt_c">
+<div class="para" id="task-pdf-unique-median-position-2-3-1-1"><span class="process-math">\(m \approx 7.50\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-unique-median-position_opt_c">
+<div class="para" id="task-pdf-unique-median-position-2-3-2-1">Incorrect. While the graph reaches its absolute highest peak mode at <span class="process-math">\(x = 7.50\text{,}\)</span> the spike is too narrow to hold significant area mass. By the time you reach this spike, over 65% of the total probability space already sits behind you to the left.</div>
+</li>
+<li data-component="answer" id="rs-task-pdf-unique-median-position_opt_d">
+<div class="para" id="task-pdf-unique-median-position-2-4-1-1"><span class="process-math">\(m \approx 2.50\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-pdf-unique-median-position_opt_d">
+<div class="para" id="task-pdf-unique-median-position-2-4-2-1">Incorrect. At the flat midpoint of the plateau (<span class="process-math">\(x = 2.50\)</span>), the accumulated area from the left edge is only <span class="process-math">\(1.5 \times 0.15 = 0.225\text{,}\)</span> which is far short of the required <span class="process-math">\(0.50\)</span> barrier threshold.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.2.d"><a href="#task-pdf-unique-median-position" title="Copy heading and permalink for Task 6.1.2.d" aria-label="Copy heading and permalink for Task 6.1.2.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 6.1.2: Continuous Distributions: Interpreting PDF Geometry"><a href="#sec-continuous-pdf-geometry-unique" title="Copy heading and permalink for Exercise 6.1.2: Continuous Distributions: Interpreting PDF Geometry" aria-label="Copy heading and permalink for Exercise 6.1.2: Continuous Distributions: Interpreting PDF Geometry">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-int-continuous-prob"><h4 class="heading">
+<span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Analysis: Continuous Asset Metrics.</span>
+</h4>
+<div class="introduction" id="ex-int-continuous-prob-2">
+<div class="para" id="ex-int-continuous-prob-2-1">While the data in <a href="sec-section-DRV.html#ex-int-discrete-prob" class="xref" data-knowl="./knowl/xref/ex-int-discrete-prob.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.1.1: Interactive Analysis: Discrete Asset Metrics">Exercise 4.1.1</a> aggregates timelines into integers, true regulatory pipeline terminations happen continuously down to the exact day. Analysts use a continuous random variable <span class="process-math">\(X\)</span> (measured in years) to evaluate precision biological hardware lifelines spanning an operational domain from 8 to 20 years.<div class="autopermalink" data-description="Paragraph"><a href="#ex-int-continuous-prob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-int-continuous-prob-2-2">
+<div class="para">The probability density function (PDF) for <span class="process-math">\(X\)</span> is defined as:</div>
+<div class="displaymath process-math" id="ex-int-continuous-prob-2-2-2">
+\begin{equation*}
+f(x) = \begin{cases} \frac{1}{72}(20 - x) \amp \text{for } 8 \le x \le 20 \\ 0 \amp \text{elsewhere} \end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-int-continuous-prob-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<div class="introduction" id="ex-int-continuous-prob-3">
+<div class="para" id="ex-int-continuous-prob-3-1">Analyze the continuous density behavior to answer the following problems.<div class="autopermalink" data-description="Paragraph"><a href="#ex-int-continuous-prob-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="ex-int-continuous-prob-4"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="ex-int-continuous-prob-4-1-1">Determine the correct mathematical structure of the Cumulative Distribution Function (CDF), <span class="process-math">\(F(x) = P(X \le x)\text{,}\)</span> across the active operational interval <span class="process-math">\(8 \le x \le 20\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-int-continuous-prob-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false">
+<li data-component="answer" id="_opt_a">
+<div class="para" id="ex-int-continuous-prob-4-2-1-1-1"><span class="process-math">\(F(x) = \frac{1}{72}(20x - \frac{x^2}{2})\)</span></div>
+</li>
+<li data-component="feedback" id="_opt_a">
+<div class="para" id="ex-int-continuous-prob-4-2-1-2-1">Incorrect. This expression forgets to subtract the definite lower-bound accumulation constant evaluated at the start point <span class="process-math">\(x = 8\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="_opt_b" data-correct="">
+<div class="para" id="ex-int-continuous-prob-4-2-2-1-1"><span class="process-math">\(F(x) = 1 - \frac{(20 - x)^2}{144}\)</span></div>
+</li>
+<li data-component="feedback" id="_opt_b">
+<div class="para" id="ex-int-continuous-prob-4-2-2-2-1">Correct! Integrating <span class="process-math">\(\int_{8}^{x} \frac{1}{72}(20-t)\,dt\)</span> and evaluating terms yields <span class="process-math">\(1 - \frac{(20-x)^2}{144}\text{.}\)</span> Note that evaluating at <span class="process-math">\(x=8\)</span> returns 0, and <span class="process-math">\(x=20\)</span> returns 1, matching boundary standards perfectly.</div>
+</li>
+<li data-component="answer" id="_opt_c">
+<div class="para" id="ex-int-continuous-prob-4-2-3-1-1"><span class="process-math">\(F(x) = \frac{(20 - x)^2}{144}\)</span></div>
+</li>
+<li data-component="feedback" id="_opt_c">
+<div class="para" id="ex-int-continuous-prob-4-2-3-2-1">Incorrect. This expression evaluates to the survival probability function <span class="process-math">\(P(X \gt x)\)</span> rather than the left-tailed cumulative distribution probability.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.3.a"><a href="#ex-int-continuous-prob-4" title="Copy heading and permalink for Task 6.1.3.a" aria-label="Copy heading and permalink for Task 6.1.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="ex-int-continuous-prob-5"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"ex-int-continuous-prob-5-1-1\">Using the structural CDF established above, compute the probability that a random continuous bio-hardware patent line operates for more than 12 years: <span class=\"process-math\">\\(P(X \\gt 12)\\text{.}\\)<\/span> Express your response as a fraction or a decimal rounded to four places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-int-continuous-prob-5-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-int-continuous-prob-5-1-2\"><input type=\"text\" id=\"ex-int-continuous-prob-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-int-continuous-prob-5-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.4444,0.4444], "feedback": "\n<div class=\"para\" id=\"ex-int-continuous-prob-5-2-1-1-2-1\">Splendid! Using the complement rule with our CDF framework: <span class=\"process-math\">\\(P(X \\gt 12) = 1 - F(12) = 1 - [1 - \\frac{(20-12)^2}{144}] = \\frac{8^2}{144} = \\frac{64}{144} = \\frac{4}{9} \\approx 0.4444\\text{.}\\)<\/span><\/div>"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.3.b"><a href="#ex-int-continuous-prob-5" title="Copy heading and permalink for Task 6.1.3.b" aria-label="Copy heading and permalink for Task 6.1.3.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 6.1.3: Interactive Analysis: Continuous Asset Metrics"><a href="#ex-int-continuous-prob" title="Copy heading and permalink for Exercise 6.1.3: Interactive Analysis: Continuous Asset Metrics" aria-label="Copy heading and permalink for Exercise 6.1.3: Interactive Analysis: Continuous Asset Metrics">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-continuous-drone-battery"><h4 class="heading">
+<span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reliability Engineering: Drone Battery Lifespans.</span>
+</h4>
+<div class="introduction" id="ex-continuous-drone-battery-2">
+<div class="para logical" id="ex-continuous-drone-battery-2-1">
+<div class="para">The continuous operational lifespan before failure (measured in hundreds of hours) for a high-performance drone battery pack is modeled by a continuous random variable <span class="process-math">\(Y\)</span> with the cumulative distribution function (CDF):</div>
+<div class="displaymath process-math" id="ex-continuous-drone-battery-2-1-2">
+\begin{equation*}
+F_Y(y) = 1 - e^{-y^2}, \quad y \le 0
+\end{equation*}
+</div>
+<div class="para">Complete the multiple-choice tasks below to analyze the reliability profile of these battery components.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-continuous-drone-battery-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-drone-at-least-200"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-drone-at-least-200-1-1">Find the probability that a randomly selected drone battery pack operates continuously for at least 200 hours.<div class="autopermalink" data-description="Paragraph"><a href="#task-drone-at-least-200-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-drone-at-least-200" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-drone-at-least-200_opt_a">
+<div class="para" id="task-drone-at-least-200-2-1-1-1"><span class="process-math">\(0.9817\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-at-least-200_opt_a">
+<div class="para" id="task-drone-at-least-200-2-1-2-1">Incorrect. This is the probability that the battery fails <em class="emphasis">before</em> 200 hours, <span class="process-math">\(P(Y \le 2) = F_Y(2)\text{.}\)</span> You need the complement for "at least".</div>
+</li>
+<li data-component="answer" id="rs-task-drone-at-least-200_opt_b" data-correct="">
+<div class="para" id="task-drone-at-least-200-2-2-1-1"><span class="process-math">\(0.0183\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-at-least-200_opt_b">
+<div class="para" id="task-drone-at-least-200-2-2-2-1">Correct! Since the time unit is in hundreds of hours, 200 hours corresponds to <span class="process-math">\(y = 2\text{.}\)</span>
+</div> 
+<div class="para logical" id="task-drone-at-least-200-2-2-2-2">
+<div class="para">Using the complement rule:</div>
+<div class="displaymath process-math" id="task-drone-at-least-200-2-2-2-2-1">
+\begin{equation*}
+P(Y \ge 2) = 1 - F_Y(2) = 1 - (1 - e^{-2^2}) = e^{-4} \approx 0.0183
+\end{equation*}
+</div>
+</div>
+</li>
+<li data-component="answer" id="rs-task-drone-at-least-200_opt_c">
+<div class="para" id="task-drone-at-least-200-2-3-1-1"><span class="process-math">\(0.1353\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-at-least-200_opt_c">
+<div class="para" id="task-drone-at-least-200-2-3-2-1">Incorrect. It looks like you forgot to square the time parameter in the exponent, computing <span class="process-math">\(e^{-2}\)</span> instead of <span class="process-math">\(e^{-4}\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-drone-at-least-200_opt_d">
+<div class="para" id="task-drone-at-least-200-2-4-1-1"><span class="process-math">\(0.3679\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-at-least-200_opt_d">
+<div class="para" id="task-drone-at-least-200-2-4-2-1">Incorrect. This is the probability of lasting at least 100 hours (<span class="process-math">\(y=1\)</span>). Recompute using the target boundary for 200 hours.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.4.a"><a href="#task-drone-at-least-200" title="Copy heading and permalink for Task 6.1.4.a" aria-label="Copy heading and permalink for Task 6.1.4.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-drone-conditional"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-drone-conditional-1-1">What is the probability that a drone battery pack operates for more than 100 hours given that it operates for at most 200 hours? In other words, evaluate the conditional probability: <span class="process-math">\(P(Y \gt 1 \mid Y \le 2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-drone-conditional-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-drone-conditional" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-drone-conditional_opt_a">
+<div class="para" id="task-drone-conditional-2-1-1-1"><span class="process-math">\(0.3496\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-conditional_opt_a">
+<div class="para" id="task-drone-conditional-2-1-2-1">Incorrect. This is only the numerator value, which is the unconditional interval probability <span class="process-math">\(P(1 \lt Y \le 2)\text{.}\)</span> You must divide this by the condition space <span class="process-math">\(P(Y \le 2)\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-drone-conditional_opt_b" data-correct="">
+<div class="para" id="task-drone-conditional-2-2-1-1"><span class="process-math">\(0.3561\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-conditional_opt_b">
+<div class="para" id="task-drone-conditional-2-2-2-1">Correct! Using the conditional probability identity:</div> 
+<div class="para logical" id="task-drone-conditional-2-2-2-2"><div class="displaymath process-math" id="task-drone-conditional-2-2-2-2-1">
+\begin{equation*}
+P(Y \gt 1 \mid Y \le 2) = \frac{P(1 \lt Y \le 2)}{P(Y \le 2)} = \frac{F_Y(2) - F_Y(1)}{F_Y(2)}
+\end{equation*}
+</div></div> 
+<div class="para logical" id="task-drone-conditional-2-2-2-3">
+<div class="para">Evaluating the individual components:</div>
+<div class="displaymath process-math" id="task-drone-conditional-2-2-2-3-1">
+\begin{align*}
+F_Y(1) \amp = 1 - e^{-1} \approx 0.6321\\
+F_Y(2) \amp = 1 - e^{-4} \approx 0.9817
+\end{align*}
+</div>
+<div class="para">Substituting back into the formula:</div>
+<div class="displaymath process-math" id="task-drone-conditional-2-2-2-3-2">
+\begin{equation*}
+\frac{0.9817 - 0.6321}{0.9817} = \frac{0.3496}{0.9817} \approx 0.3561 \approx 0.36
+\end{equation*}
+</div>
+</div>
+</li>
+<li data-component="answer" id="rs-task-drone-conditional_opt_c">
+<div class="para" id="task-drone-conditional-2-3-1-1"><span class="process-math">\(0.6321\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-conditional_opt_c">
+<div class="para" id="task-drone-conditional-2-3-2-1">Incorrect. This is the baseline probability of failure occurring within the first 100 hours, <span class="process-math">\(F_Y(1)\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-drone-conditional_opt_d">
+<div class="para" id="task-drone-conditional-2-4-1-1"><span class="process-math">\(0.5000\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-conditional_opt_d">
+<div class="para" id="task-drone-conditional-2-4-2-1">Incorrect. Review the conditional division rules for non-linear exponential distribution subsets.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.4.b"><a href="#task-drone-conditional" title="Copy heading and permalink for Task 6.1.4.b" aria-label="Copy heading and permalink for Task 6.1.4.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-drone-pdf-id"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-drone-pdf-id-1-1">Which of the following expressions represents the mathematically valid probability density function (PDF), <span class="process-math">\(f_Y(y)\text{,}\)</span> derived from the baseline battery model?<div class="autopermalink" data-description="Paragraph"><a href="#task-drone-pdf-id-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-drone-pdf-id" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-drone-pdf-id_opt_a">
+<div class="para" id="task-drone-pdf-id-2-1-1-1"><span class="process-math">\(f_Y(y) = e^{-y^2}, \quad y \le 0\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-pdf-id_opt_a">
+<div class="para" id="task-drone-pdf-id-2-1-2-1">Incorrect. This leaves out the necessary chain rule derivative multiplier when dealing with the variable inside the exponent.</div>
+</li>
+<li data-component="answer" id="rs-task-drone-pdf-id_opt_b" data-correct="">
+<div class="para" id="task-drone-pdf-id-2-2-1-1"><span class="process-math">\(f_Y(y) = 2ye^{-y^2}, \quad y \le 0\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-pdf-id_opt_b">
+<div class="para" id="task-drone-pdf-id-2-2-2-1">Correct! To obtain the probability density function <span class="process-math">\(f_Y(y)\)</span> from the cumulative distribution function <span class="process-math">\(F_Y(y)\text{,}\)</span> apply the first derivative with respect to <span class="process-math">\(y\)</span> using the chain rule:</div> 
+<div class="para logical" id="task-drone-pdf-id-2-2-2-2"><div class="displaymath process-math" id="task-drone-pdf-id-2-2-2-2-1">
+\begin{equation*}
+f_Y(y) = \frac{d}{dy}[1 - e^{-y^2}] = 0 - e^{-y^2} \cdot \left(\frac{d}{dy}[-y^2]\right) = -e^{-y^2} \cdot (-2y) = 2ye^{-y^2}
+\end{equation*}
+</div></div>
+</li>
+<li data-component="answer" id="rs-task-drone-pdf-id_opt_c">
+<div class="para" id="task-drone-pdf-id-2-3-1-1"><span class="process-math">\(f_Y(y) = -2ye^{-y^2}, \quad y \le 0\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-pdf-id_opt_c">
+<div class="para" id="task-drone-pdf-id-2-3-2-1">Incorrect. A valid probability density function cannot evaluate to negative values over its valid domain support. Watch your signs when subtracting the internal derivative.</div>
+</li>
+<li data-component="answer" id="rs-task-drone-pdf-id_opt_d">
+<div class="para" id="task-drone-pdf-id-2-4-1-1"><span class="process-math">\(f_Y(y) = y^2 e^{-y^2}, \quad y \le 0\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-drone-pdf-id_opt_d">
+<div class="para" id="task-drone-pdf-id-2-4-2-1">Incorrect. Remember that the power rule derivative of <span class="process-math">\(y^2\)</span> yields <span class="process-math">\(2y\text{,}\)</span> not <span class="process-math">\(y^2\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.4.c"><a href="#task-drone-pdf-id" title="Copy heading and permalink for Task 6.1.4.c" aria-label="Copy heading and permalink for Task 6.1.4.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 6.1.4: Reliability Engineering: Drone Battery Lifespans"><a href="#ex-continuous-drone-battery" title="Copy heading and permalink for Exercise 6.1.4: Reliability Engineering: Drone Battery Lifespans" aria-label="Copy heading and permalink for Exercise 6.1.4: Reliability Engineering: Drone Battery Lifespans">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-continuous-adhesive-matching-mc"><h4 class="heading">
+<span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Materials Engineering: Adhesive Curing Time Analysis.</span>
+</h4>
+<div class="introduction" id="ex-continuous-adhesive-matching-mc-2">
+<div class="para logical" id="ex-continuous-adhesive-matching-mc-2-1">
+<div class="para">The curing time (in hours) of a specialized aerospace structural adhesive sealant is modeled by a continuous random variable <span class="process-math">\(Y\)</span> with the probability density function (PDF):</div>
+<div class="displaymath process-math" id="ex-continuous-adhesive-matching-mc-2-1-2">
+\begin{equation*}
+f_Y(y) = \frac{3}{8}(7-y)^2, \quad \text{for } 5 \le y \le 7
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(f_Y(y) = 0\)</span> elsewhere. Complete the interactive tasks below to evaluate this material.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-continuous-adhesive-matching-mc-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-curing-matching"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-task-curing-matching">
+<span data-subcomponent="question">
+<div class="para" id="task-curing-matching-1-1">Match the requested statistical metric for the adhesive curing time  with its correct numerical calculation.<div class="autopermalink" data-description="Paragraph"><a href="#task-curing-matching-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><li data-subcomponent="draggable" id="rs-task-curing-matching_drag1" data-category="1">
+<div class="para" id="task-curing-matching-2-1-1-1"><span class="process-math">\(\mu_Y\)</span></div>
+</li>
+<li data-subcomponent="dropzone" for="rs-task-curing-matching_drag1" data-category="1">
+<div class="para" id="task-curing-matching-2-1-2-1"><span class="process-math">\(5.5\)</span></div>
+</li>
+<li data-subcomponent="draggable" id="rs-task-curing-matching_drag2" data-category="2">
+<div class="para" id="task-curing-matching-2-2-1-1"><span class="process-math">\(\sigma_Y\)</span></div>
+</li>
+<li data-subcomponent="dropzone" for="rs-task-curing-matching_drag2" data-category="2">
+<div class="para" id="task-curing-matching-2-2-2-1"><span class="process-math">\(0.34\)</span></div>
+</li>
+<li data-subcomponent="dropzone" for="rs-task-curing-matching_drag3" data-category="3">
+<div class="para" id="task-curing-matching-2-3-1-1"><span class="process-math">\(0.15\)</span></div>
+</li>
+<li data-subcomponent="dropzone" for="rs-task-curing-matching_drag4" data-category="4">
+<div class="para" id="task-curing-matching-2-4-1-1"><span class="process-math">\(6.0 \)</span></div>
+</li>
+<li data-subcomponent="dropzone" for="rs-task-curing-matching_drag5" data-category="5">
+<div class="para" id="task-curing-matching-2-5-1-1"><span class="process-math">\(5.75 \)</span></div>
+</li>
+</ul></div></div>
+<div class="autopermalink" data-description="Task 6.1.5.a"><a href="#task-curing-matching" title="Copy heading and permalink for Task 6.1.5.a" aria-label="Copy heading and permalink for Task 6.1.5.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-curing-interpretation-mc"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-curing-interpretation-mc-1-1">Which of the following statements provides the most accurate interpretation of the mean and standard deviation for this adhesive?<div class="autopermalink" data-description="Paragraph"><a href="#task-curing-interpretation-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-curing-interpretation-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-curing-interpretation-mc_opt_a" data-correct="">
+<div class="para" id="task-curing-interpretation-mc-2-1-1-1">The adhesive requires a long-run average curing time of <span class="process-math">\(\mu_Y\)</span> hours per batch, with a typical operational variation of roughly <span class="process-math">\(\sigma_Y\)</span> hours around that mean.</div>
+</li>
+<li data-component="feedback" id="rs-task-curing-interpretation-mc_opt_a">
+<div class="para" id="task-curing-interpretation-mc-2-1-2-1">Correct! The mean represents the long-run center of mass for curing times, while the standard deviation provides a measure of typical spread or variability in the same units (hours).</div>
+</li>
+<li data-component="answer" id="rs-task-curing-interpretation-mc_opt_b">
+<div class="para" id="task-curing-interpretation-mc-2-2-1-1">Every single batch of adhesive will take exactly <span class="process-math">\(\mu_Y\)</span> hours to cure, but up to <span class="process-math">\(\sigma_Y\)</span>% of batches will experience material failure.</div>
+</li>
+<li data-component="feedback" id="rs-task-curing-interpretation-mc_opt_b">
+<div class="para" id="task-curing-interpretation-mc-2-2-2-1">Incorrect. In a continuous random variable model, individual batches will vary due to a smooth probability curve. The standard deviation describes physical spread, not a deterministic percentage of defective units.</div>
+</li>
+<li data-component="answer" id="rs-task-curing-interpretation-mc_opt_c">
+<div class="para" id="task-curing-interpretation-mc-2-3-1-1">The absolute minimum curing time required is <span class="process-math">\(\mu_Y\)</span> hours, and the standard deviation indicates that all batches will finish curing by <span class="process-math">\(\mu_Y\)</span><span class="process-math">\(+\sigma_Y\)</span> hours.</div>
+</li>
+<li data-component="feedback" id="rs-task-curing-interpretation-mc_opt_c">
+<div class="para" id="task-curing-interpretation-mc-2-3-2-1">Incorrect. The support of the density function establishes that the minimum baseline curing time is 5.0 hours, and batches can legally take up to 7.0 hours to cure.</div>
+</li>
+<li data-component="answer" id="rs-task-curing-interpretation-mc_opt_d">
+<div class="para" id="task-curing-interpretation-mc-2-4-1-1">The network averages a <span class="process-math">\(\mu_Y\)</span>% baseline optimization efficiency rate, while experiencing a strict <span class="process-math">\(\sigma_Y\)</span> minute scheduling penalty per manufacturing shift.</div>
+</li>
+<li data-component="feedback" id="rs-task-curing-interpretation-mc_opt_d">
+<div class="para" id="task-curing-interpretation-mc-2-4-2-1">Incorrect. This statement changes the units entirely and applies an out-of-context operational framework. Keep your interpretation grounded strictly in the hours required for chemical curing.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.5.b"><a href="#task-curing-interpretation-mc" title="Copy heading and permalink for Task 6.1.5.b" aria-label="Copy heading and permalink for Task 6.1.5.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 6.1.5: Materials Engineering: Adhesive Curing Time Analysis"><a href="#ex-continuous-adhesive-matching-mc" title="Copy heading and permalink for Exercise 6.1.5: Materials Engineering: Adhesive Curing Time Analysis" aria-label="Copy heading and permalink for Exercise 6.1.5: Materials Engineering: Adhesive Curing Time Analysis">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-gem-purity-pdf-moments"><h4 class="heading">
+<span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuous Distributions: Differentiating CDFs and Linear Transformations.</span>
+</h4>
+<div class="introduction" id="ex-gem-purity-pdf-moments-2">
+<div class="para logical" id="ex-gem-purity-pdf-moments-2-1">
+<div class="para">An archival geological dataset establishes that the random proportion <span class="process-math">\(Y\)</span> of internal structural impurities per raw gemstone sample collected follows a continuous distribution with Cumulative Distribution Function (CDF) given by:</div>
+<div class="displaymath process-math" id="ex-gem-purity-pdf-moments-2-1-2">
+\begin{equation*}
+F(y) = \frac{1}{2}y^3 + \frac{1}{2}y^2,  0 \lt y \lt 1
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-gem-purity-pdf-moments-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ex-gem-purity-pdf-moments-2-2">
+<div class="para">Furthermore, a mineral processing laboratory calculates the net commercial dollar value of each processed gem sample using the linear transformation function:</div>
+<div class="displaymath process-math" id="ex-gem-purity-pdf-moments-2-2-1">
+\begin{equation*}
+W = 5 - 0.5Y
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-gem-purity-pdf-moments-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-gems-find-pdf-mc"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">
+<div class="para" id="task-gems-find-pdf-mc-1-1">Which of the following expressions represents the correct probability density function (PDF), <span class="process-math">\(f(y)\text{,}\)</span> on the interval <span class="process-math">\(0 \lt y \lt 1\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-gems-find-pdf-mc-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-gems-find-pdf-mc" data-multipleanswers="false">
+<li data-component="answer" id="rs-task-gems-find-pdf-mc_opt_a">
+<div class="para" id="task-gems-find-pdf-mc-2-1-1-1"><span class="process-math">\(f(y) = \frac{1}{8}y^4 + \frac{1}{6}y^3\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-gems-find-pdf-mc_opt_a">
+<div class="para" id="task-gems-find-pdf-mc-2-1-2-1">Incorrect. This looks like the result of anti-differentiation (integration) rather than differentiation. To recover a PDF from a known CDF, you must take the first derivative: <span class="process-math">\(f(y) = \frac{d}{dy}F(y)\text{.}\)</span>
+</div>
+</li>
+<li data-component="answer" id="rs-task-gems-find-pdf-mc_opt_b" data-correct="">
+<div class="para" id="task-gems-find-pdf-mc-2-2-1-1"><span class="process-math">\(f(y) = \frac{3}{2}y^2 + y\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-gems-find-pdf-mc_opt_b">
+<div class="para" id="task-gems-find-pdf-mc-2-2-2-1">Correct! By the Fundamental Theorem of Calculus, the density function is the first derivative of the cumulative distribution function:</div>
+<div class="displaymath process-math" id="task-gems-find-pdf-mc-2-2-2-2">
+\begin{equation*}
+f(y) = \frac{d}{dy}\left(\frac{1}{2}y^3 + \frac{1}{2}y^2\right) = \frac{3}{2}y^2 + 2\left(\frac{1}{2}\right)y = \frac{3}{2}y^2 + y
+\end{equation*}
+</div>
+</li>
+<li data-component="answer" id="rs-task-gems-find-pdf-mc_opt_c">
+<div class="para" id="task-gems-find-pdf-mc-2-3-1-1"><span class="process-math">\(f(y) = \frac{1}{2}y^2 + \frac{1}{2}y\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-gems-find-pdf-mc_opt_c">
+<div class="para" id="task-gems-find-pdf-mc-2-3-2-1">Incorrect. Remember to bring down the original polynomial exponents to the front as multipliers when applying the calculus power rule for derivatives.</div>
+</li>
+<li data-component="answer" id="rs-task-gems-find-pdf-mc_opt_d">
+<div class="para" id="task-gems-find-pdf-mc-2-4-1-1"><span class="process-math">\(f(y) = 3y^2 + 2y\)</span></div>
+</li>
+<li data-component="feedback" id="rs-task-gems-find-pdf-mc_opt_d">
+<div class="para" id="task-gems-find-pdf-mc-2-4-2-1">Incorrect. It looks like you took the derivative of the polynomial terms but forgot to multiply them by the baseline constant fractions of <span class="process-math">\(\frac{1}{2}\)</span> already sitting in front of the terms.</div>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.6.a"><a href="#task-gems-find-pdf-mc" title="Copy heading and permalink for Task 6.1.6.a" aria-label="Copy heading and permalink for Task 6.1.6.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-gems-moments-matching"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="ptx-runestone-container"><div data-component="matching" class="runestone" id="rs-task-gems-moments-matching"><script type="text/xml"><matching><statement>
+<div class="para" id="task-gems-moments-matching-1-1">Evaluating Financial Performance Indicators:<div class="autopermalink" data-description="Paragraph"><a href="#task-gems-moments-matching-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="task-gems-moments-matching-1-2">Connect each target operational metric for the gem sample dollar value (<span class="process-math">\(W\)</span>) to its correct rounded decimal calculation value.<div class="autopermalink" data-description="Paragraph"><a href="#task-gems-moments-matching-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></statement><feedback>
+<div class="para" id="task-gems-moments-matching-2-1">Excellent job! You successfully used the derivative to find the PDF and applied linear transformation properties to calculate the gemstone valuation metrics.</div></feedback><premise><id>task-gems-moments-matching-p1</id><label>The expected long-run mean value of the processed gem sample, <span class="process-math">\(E(W)\)</span></label></premise><premise><id>task-gems-moments-matching-p2</id><label>The standard deviation of the processed gem sample value, <span class="process-math">\(\sigma_W\)</span></label></premise><response><id>task-gems-moments-matching-r1</id><label><span class="process-math">\(4.65\)</span></label></response><response><id>task-gems-moments-matching-r2</id><label><span class="process-math">\(0.11\)</span></label></response><response><id>task-gems-moments-matching-r3</id><label><span class="process-math">\(0.71\)</span></label></response><response><id>task-gems-moments-matching-r4</id><label><span class="process-math">\(0.01\)</span></label></response><edge><label>task-gems-moments-matching-p1</label><label>task-gems-moments-matching-r1</label></edge><edge><label>task-gems-moments-matching-p1</label><label>task-gems-moments-matching-r2</label></edge><edge><label>task-gems-moments-matching-p1</label><label>task-gems-moments-matching-r3</label></edge><edge><label>task-gems-moments-matching-p1</label><label>task-gems-moments-matching-r4</label></edge><edge><label>task-gems-moments-matching-p2</label><label>task-gems-moments-matching-r1</label></edge><edge><label>task-gems-moments-matching-p2</label><label>task-gems-moments-matching-r2</label></edge><edge><label>task-gems-moments-matching-p2</label><label>task-gems-moments-matching-r3</label></edge><edge><label>task-gems-moments-matching-p2</label><label>task-gems-moments-matching-r4</label></edge></matching></script></div></div>
+<div class="autopermalink" data-description="Task 6.1.6.b"><a href="#task-gems-moments-matching" title="Copy heading and permalink for Task 6.1.6.b" aria-label="Copy heading and permalink for Task 6.1.6.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-gems-value-probability-input"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="ptx-runestone-container"><div class="runestone">
+<div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-gems-value-probability-input"><script type="application/json">{
+"problemHtml": "\n<div class=\"para\" id=\"task-gems-value-probability-input-1-1\">A jewelry manufacturer establishes a quality threshold rule: any processed gemstone sample with a net commercial value strictly below <span class=\"process-math\">\\(\\$4.60\\)<\/span> is flagged as too highly flawed for premium retail display.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-gems-value-probability-input-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-gems-value-probability-input-1-2\">Calculate the exact probability that a randomly selected gemstone sample will be flagged by this quality rule.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-gems-value-probability-input-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-gems-value-probability-input-1-3\">Probability = <input type=\"text\" id=\"ex-gem-purity-pdf-moments-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-gems-value-probability-input-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"solutionHtml": "",
+"blankNames": {"blank1": 0},
+"feedbackArray": [[{"number": [0.424,0.424], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
+}</script></div>
+</div></div>
+<div class="autopermalink" data-description="Task 6.1.6.c"><a href="#task-gems-value-probability-input" title="Copy heading and permalink for Task 6.1.6.c" aria-label="Copy heading and permalink for Task 6.1.6.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 6.1.6: Continuous Distributions: Differentiating CDFs and Linear Transformations"><a href="#ex-gem-purity-pdf-moments" title="Copy heading and permalink for Exercise 6.1.6: Continuous Distributions: Differentiating CDFs and Linear Transformations" aria-label="Copy heading and permalink for Exercise 6.1.6: Continuous Distributions: Differentiating CDFs and Linear Transformations">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 6.1: Interactive Exercises"><a href="#hw-cont-rv" title="Copy heading and permalink for Exercises 6.1: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 6.1: Interactive Exercises">🔗</a></div>
+</section>
+<section class="exercises" id="hw-cont-rv-turn-in">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex-continuous-fiber-strength"><h4 class="heading">
+<span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Breaking Strength Analysis.</span>
+</h4>
+<div class="introduction" id="ex-continuous-fiber-strength-2">
+<div class="para logical" id="ex-continuous-fiber-strength-2-1">
+<div class="para">The breaking strength (in Newtons) of a new grade of advanced structural carbon fiber cables is modeled by a continuous random variable <span class="process-math">\(X\)</span> with the cumulative distribution function:</div>
+<div class="displaymath process-math" id="ex-continuous-fiber-strength-2-1-2">
+\begin{equation*}
+F_X(x) = 1 - kx^{-3}, \quad x \gt 44000
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(k\)</span> is a positive proportionality constant. Complete the analytical derivations below to evaluate this structural model.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-continuous-fiber-strength-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-fiber-pdf"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="task-fiber-pdf-1-1">
+<div class="para">Show that the probability density function (PDF) for <span class="process-math">\(X\)</span> is given by:</div>
+<div class="displaymath process-math" id="task-fiber-pdf-1-1-2">
+\begin{equation*}
+f_X(x) = 3kx^{-4}, \quad x \gt 44000
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#task-fiber-pdf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 6.1.1.a"><a href="#task-fiber-pdf" title="Copy heading and permalink for Task 6.1.1.a" aria-label="Copy heading and permalink for Task 6.1.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-fiber-constant"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-fiber-constant-1-1">Show that the value of the proportionality constant <span class="process-math">\(k\)</span> must be  <span class="process-math">\(44000^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-fiber-constant-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 6.1.1.b"><a href="#task-fiber-constant" title="Copy heading and permalink for Task 6.1.1.b" aria-label="Copy heading and permalink for Task 6.1.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-fiber-mean"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="task-fiber-mean-1-1">Show that the mean breaking strength, given by this model, is <span class="process-math">\(\mu = E(X) = 66,000\)</span> Newtons.<div class="autopermalink" data-description="Paragraph"><a href="#task-fiber-mean-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 6.1.1.c"><a href="#task-fiber-mean" title="Copy heading and permalink for Task 6.1.1.c" aria-label="Copy heading and permalink for Task 6.1.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-fiber-proportion"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="task-fiber-proportion-1-1">Show that the theoretical proportion of structural cables possessing a breaking strength less than the calculated mean is approximately 70%.<div class="autopermalink" data-description="Paragraph"><a href="#task-fiber-proportion-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 6.1.1.d"><a href="#task-fiber-proportion" title="Copy heading and permalink for Task 6.1.1.d" aria-label="Copy heading and permalink for Task 6.1.1.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 6.1.1: Breaking Strength Analysis"><a href="#ex-continuous-fiber-strength" title="Copy heading and permalink for Exercise 6.1.1: Breaking Strength Analysis" aria-label="Copy heading and permalink for Exercise 6.1.1: Breaking Strength Analysis">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex-butterfly-lifespan-analysis"><h4 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Ecological Lifespan Analysis.</span>
+</h4>
+<div class="introduction" id="ex-butterfly-lifespan-analysis-2">
+<div class="para logical" id="ex-butterfly-lifespan-analysis-2-1">
+<div class="para">The lifespan of a butterfly after emerging from its chrysalis can be modeled by a continuous random variable <span class="process-math">\(T\)</span> (measured in days). The model defines the probability that a butterfly survives for longer than <span class="process-math">\(t\)</span> days using the survival function:</div>
+<div class="displaymath process-math" id="ex-butterfly-lifespan-analysis-2-1-3">
+\begin{equation*}
+P(T \gt t) = \frac{36}{(6+t)^2}, \quad \text{for } t \ge 0
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-butterfly-lifespan-analysis-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<article class="task exercise-like" id="task-butterfly-early-mortality"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="task-butterfly-early-mortality-1-1">What is the probability that a butterfly will die within 6 days of emerging from its chrysalis?<div class="autopermalink" data-description="Paragraph"><a href="#task-butterfly-early-mortality-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 6.1.2.a"><a href="#task-butterfly-early-mortality" title="Copy heading and permalink for Task 6.1.2.a" aria-label="Copy heading and permalink for Task 6.1.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-butterfly-survival-threshold"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="task-butterfly-survival-threshold-1-1">If a large number of butterflies emerges on the same day, after how many days would you expect only <span class="process-math">\(6\%\)</span> to remain alive?<div class="autopermalink" data-description="Paragraph"><a href="#task-butterfly-survival-threshold-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 6.1.2.b"><a href="#task-butterfly-survival-threshold" title="Copy heading and permalink for Task 6.1.2.b" aria-label="Copy heading and permalink for Task 6.1.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="task-butterfly-mean-lifetime"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="task-butterfly-mean-lifetime-1-1">Find the mean (expected) lifetime of a butterfly after emerging from its chrysalis.<div class="autopermalink" data-description="Paragraph"><a href="#task-butterfly-mean-lifetime-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Task 6.1.2.c"><a href="#task-butterfly-mean-lifetime" title="Copy heading and permalink for Task 6.1.2.c" aria-label="Copy heading and permalink for Task 6.1.2.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 6.1.2: Ecological Lifespan Analysis"><a href="#ex-butterfly-lifespan-analysis" title="Copy heading and permalink for Exercise 6.1.2: Ecological Lifespan Analysis" aria-label="Copy heading and permalink for Exercise 6.1.2: Ecological Lifespan Analysis">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 6.1: Written Exercises"><a href="#hw-cont-rv-turn-in" title="Copy heading and permalink for Exercises 6.1: Written Exercises" aria-label="Copy heading and permalink for Exercises 6.1: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 6.1: Continuous RVs"><a href="#sec-section-CRV" title="Copy heading and permalink for Section 6.1: Continuous RVs" aria-label="Copy heading and permalink for Section 6.1: Continuous RVs">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-chapter-Continuous-RVs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-chapter-Common-Continuous-RVs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
