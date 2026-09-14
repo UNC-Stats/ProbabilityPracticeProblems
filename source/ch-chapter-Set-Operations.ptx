@@ -4,13 +4,14 @@
   <title>Set Theory</title>
 
   <introduction>
-    <p> The problem sets provided here will give you practice with ... </p>
+    <p> The way we talk about probability is inherently rooted in set theory; events are simply subsets of a larger sample space. The problems provided here will help you become more comfortable with the fundamental concepts of set theory that are most frequently used in probability. 
+    </p>
+
 
       <p> Each problem set contains two types of problems: interactive exercises and non-interactive ("written") exercises. You will be able to check your answers and get immediate feedback on the interactive portion.
       </p>
 
-      <p> Note: This is a work in progress. These problems sets are still being edited and solutions checked for accuracy and clarity.
-      </p>
+  
   </introduction>
 
   <!-- include sections -->

@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-section-SO" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Practice with Set Operations</title>
+  <title>Set Operations and Probabilities</title>
 
  <introduction>
  <p> 
-    By completing the problems provided below, you will gain practice with: 
+    By completing the problems provided below, you will gain practice with set operations and using set theory to compute probabilities. Specifically, you will practice using: 
     <ul>
       <li>
         <p>
-          
+          Set operations, such as union, intersection, complement, and difference
         </p>
       </li>
       <li>
         <p>
-         
+         De Morgan's Law and the Distributive Law
         </p>
       </li>
       <li>
         <p>
-          
+          The Axioms of Probability
         </p>
       </li>
       <li>
         <p>
-          
+          The Complement Rule and the Inclusion-Exclusion Principle
+        </p>
+      </li>
+      <li>
+        <p>
+          Venn Diagrams
         </p>
       </li>
     </ul>
@@ -38,19 +43,19 @@
 
 
    <exercise xml:id="SO-generic-A">
-    <title>Set Operations and Cardinality</title>
+    <title>Set Operations</title>
     <statement>
         <p>
-            Suppose that the universal set <m>U</m> is defined as <m>U = \{1,2,3,4,5,6,7,8,9,10,11,12\}</m>, and sets <m>A</m>, <m>B</m>, and <m>C</m> are defined as:
+            Suppose that the universal set <m>U</m> is defined as: <me>U = \{1,2,3,4,5,6,7,8,9,10,11,12\}</me>, and sets <m>A</m>, <m>B</m>, and <m>C</m> are defined as:
             <me>A = \{1,2,3\}</me>
             <me>B = \{2,3,4,5,6,7,8\}</me>
-            <me>C = \{6,8,10,12\}</me>
+            <me>C = \{6,8,10,12\}</me>.
         </p>
         <p>
-            Match each set operation on the left with its correct resulting set on the right. Note that there are extra sets on the right that do not match any operation!
+            Match each set operation on the left with its correct resulting set on the right. 
         </p>
     </statement>
-    
+        
     <cardsort>
         <!-- Pair 1 -->
         <match>
@@ -58,6 +63,11 @@
             <response><m>\{1,2,3,4,5,6,7,8\}</m></response>
         </match>
         
+        <!-- DISTRACTOR 3 (Empty Premise) -->
+        <match>
+            <response><m>\{1,10,11,12\}</m></response>
+        </match>
+
         <!-- Pair 2 -->
         <match>
             <premise><m>(A \cup C) - B</m></premise>
@@ -70,33 +80,28 @@
             <response><m>\{2,3,4,5,6,7,8,9,10,11,12\}</m></response>
         </match>
         
+                <!-- DISTRACTOR 1 (Empty Premise) -->
+        <match>
+            <response><m>\{2,3\}</m></response>
+        </match>
+
         <!-- Pair 4 -->
         <match>
             <premise><m>A^c \cap C^c</m></premise>
             <response><m>\{4,5,7,9,11\}</m></response>
         </match>
 
-        <!-- DISTRACTOR 1 (Empty Premise) -->
-        <match>
-            <response><m>\{2,3\}</m></response>
-        </match>
+
 
         <!-- DISTRACTOR 2 (Empty Premise) -->
         <match>
             <response><m>\{6,8\}</m></response>
         </match>
 
-        <!-- DISTRACTOR 3 (Empty Premise) -->
-        <match>
-            <response><m>\{1,10,11,12\}</m></response>
-        </match>
+        
     </cardsort>
 
-    <hint>
-        <p>
-            Remember that <m>\cup</m> represents the union (combining all unique elements), <m>\cap</m> represents the intersection (only elements present in both sets), <m>-</m> represents the relative complement (subtracting elements), and <m>A^c</m> represents all items in <m>U</m> that are not in <m>A</m>.
-        </p>
-    </hint>
+
 
    <!-- <solution>
         <p>
@@ -128,11 +133,11 @@
             <me>|B \cap A_3| = 15</me>
         </p>
         <p>
-            Find the total number of elements in set <m>B</m> (i.e., find <m>|B|</m>). Enter your answer as a whole number.
+            Find the total number of elements in set <m>B</m>. Enter your answer as a whole number.
         </p>
         
         <p>
-        <fillin width="8" answer="45"/>
+        <m>|B|</m>=<fillin width="8" answer="45"/>
       </p>
     </statement>
   
@@ -142,8 +147,13 @@
           <numcmp use-answer="yes"/>
           <feedback>
             <p>
-              Correct! Four out of 8 outcomes in the sample space involve the second child being female.
+              Correct! Because <m>A_1</m>, <m>A_2</m>, and <m>A_3</m> form a partition of the sample space <m>S</m>, they are disjoint (mutually exclusive) subsets whose union equals <m>S</m>.
             </p>
+
+            <p>
+            Consequently, the intersections <m>B \cap A_1</m>, <m>B \cap A_2</m>, and <m>B \cap A_3</m> form a disjoint partition of the set <m>B</m>. By Axiom of Probability #3, we find the cardinality of <m>B</m> by summing the sizes of these individual subsets:
+            <me>|B| = |B \cap A_1| + |B \cap A_2| + |B \cap A_3|</me>
+        </p>
           </feedback>
         </test>
           </evaluate>
@@ -152,20 +162,10 @@
 
     <hint>
         <p>
-            Recall that a partition divides a set into disjoint subsets that do not overlap. This means that the pieces <m>B \cap A_1</m>, <m>B \cap A_2</m>, and <m>B \cap A_3</m> share no elements in common and completely cover the set <m>B</m>. Apply the Addition Rule.
+            Recall that a partition divides a set into disjoint subsets.
         </p>
     </hint>
 
-   <!-- <solution>
-        <p>
-            Because <m>A_1</m>, <m>A_2</m>, and <m>A_3</m> form a partition of the sample space <m>S</m>, they are mutually exclusive (disjoint) sets whose union equals <m>S</m>. 
-        </p>
-        <p>
-            Consequently, the intersections <m>B \cap A_1</m>, <m>B \cap A_2</m>, and <m>B \cap A_3</m> form a disjoint partition of the set <m>B</m> itself. By the Addition Rule for disjoint sets, we can find the total cardinality of <m>B</m> by summing the sizes of these individual components:
-            <me>|B| = |B \cap A_1| + |B \cap A_2| + |B \cap A_3|</me>
-            <me>|B| = 10 + 20 + 15 = 45</me>
-        </p>
-    </solution> -->
 </exercise>
 
 
@@ -173,10 +173,10 @@
 
 
 <exercise label="ex-probability-transit-distribution" xmlns:pi="http://pretextbook.org">
-    <title>Probability Theory: Discrete Transit Distributions</title>
+    <title>Sustainable Transit Methods</title>
     <introduction>
         <p>
-            A university sustainability committee selects a student at random from the campus directory and asks about their primary mode of transportation to campus during the week. Based on comprehensive parking and registration datasets, here are the probabilities for each: 
+            A university sustainability committee keeps track of student transit/transportation methods. The table shows the proportion of students that have historically used each transit method, based on comprehensive parking and registration records. 
         </p>
         <p>
             <table>
@@ -192,22 +192,25 @@
                     </row>
                     <row>
                         <cell>Probability</cell>
-                        <cell><m>0.22</m></cell>
+                        <cell><m>0.16</m></cell>
                         <cell><m>0.09</m></cell>
+                        <cell><m>0.07</m></cell>
                         <cell><m>0.04</m></cell>
-                        <cell><m>0.01</m></cell>
                         <cell><m>0.64</m></cell>
                     </row>
                 </tabular>
             </table>
         </p>
+        <p>
+            The sustainability committee selects a student at random from the campus directory and asks about their primary mode of transportation to campus during the week. Answer the following questions about the randomly selected student. Enter all answers as decimals rounded to two decimal places.
+            </p>
     </introduction>
 
     <!-- Part A: Alternative Transit -->
     <task xml:id="task-transit-alternative">
         <statement>
             <p>
-                What is the probability that a randomly chosen student utilizes a sustainable alternative mode of transit to get to campus (meaning their primary option is any mode <em>other than</em> driving alone)?
+                What is the probability that the student uses a sustainable alternative mode of transit to get to campus (meaning their primary option is any mode <em>other than</em> driving alone)?
             </p>
             <p>
                 Probability = <fillin answer="0.36" width="8"/>
@@ -217,129 +220,131 @@
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback>
+                <p> Correct!
+                Using the Complement Rule:
+                            <me>P(\text{Alternative}) = 1 - P(\text{Drive Alone}) = 1 - 0.64 = 0.36</me>
+                           
+            </p>
+                </feedback>
                 </test>
+                
             </evaluate>
         </evaluation>
-      <!--  <solution>
-            <p>
-                This calculation can be performed efficiently in two different ways using the rules of discrete probability:
-                <ul>
-                    <li>
-                        <p>
-                            <strong>Using the Complement Rule:</strong> Subtract the probability of the unwanted outcome ("Drive Alone") from total certainty (1):
-                            <me>P(\text{Alternative}) = 1 - P(\text{Drive Alone}) = 1 - 0.64 = 0.36</me>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Using the Addition Rule:</strong> Sum the probabilities of all mutually exclusive alternative categories directly:
-                            <me>P(\text{Alternative}) = 0.22 + 0.09 + 0.04 + 0.01 = 0.36</me>
-                        </p>
-                    </li>
-                </ul>
-                The probability is exactly <strong>0.36</strong> (or 36% of the student body).
-            </p>
-        </solution> -->
+
     </task>
 
     <!-- Part B: Bus, Train, or Bicycle -->
     <task xml:id="task-transit-specific-modes">
         <statement>
             <p>
-                 What is the probability that a randomly chosen student commutes to campus specifically via the Bus, Train, or Bicycle?
+                 What is the probability that the student commutes to campus specifically via bus or bicycle?
             </p>
             <p>
-                Probability = <fillin  answer="0.35" width="8"/>
+                Probability = <fillin  answer="0.23" width="8"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                
+                <feedback>
+                <p>
+                Because a student can only select one primary option, these options represent disjoint (mutually exclusive) events. 
+                <me>P(\text{Bus} \cup \text{Bicycle}) = P(\text{Bus}) + P(\text{Bicycle})</me>
+                <me>= 0.16 + 0.07 = 0.23</me>
+
+            </p>
+                </feedback>
                 </test>
             </evaluate>
         </evaluation>
-       <!-- <solution>
-            <p>
-                Because a student can only select one primary option, these options represent completely disjoint (mutually exclusive) events. Apply the addition rule for discrete sets:
-                <me>P(\text{Bus} \cup \text{Train} \cup \text{Bicycle}) = P(\text{Bus}) + P(\text{Train}) + P(\text{Bicycle})</me>
-                <me>= 0.22 + 0.09 + 0.04 = 0.35</me>
-                The probability is exactly <strong>0.35</strong>.
-            </p>
-        </solution> -->
+
     </task>
 
     <!-- Part C: Alternative but not Bicycle -->
     <task xml:id="task-transit-sub-exclusion">
         <statement>
             <p>
-                <strong>Part C:</strong> What is the probability that a randomly chosen student utilizes an alternative mode of transit to get to campus, <em>but does not use a bicycle</em>?
+                What is the probability that the student uses an alternative mode of transit to get to campus, but does not use a bicycle?
             </p>
             <p>
-                Probability = <fillin mode="string" answer="0.32" width="8"/>
+                Probability = <fillin mode="string" answer="0.29" width="8"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+            
+                <feedback>
+<p>
+                We are searching for the probability of selecting an alternative transit option while explicitly excluding the bicycle option.  
+                <me>P(\text{Alternative and Not Bicycle}) = P(\text{Bus}) + P(\text{Train}) + P(\text{All Others})</me>
+                <me>= 0.16 + 0.09 + 0.04 = 0.32</me>
+                </p>
+                <p>
+
+                Alternatively, take your calculation from part (a) and subtract the bicycle probability: <m>0.36 - 0.07 = 0.29</m>. 
+            </p>
+                </feedback>
                 </test>
             </evaluate>
         </evaluation>
-        <!--<solution>
-            <p>
-                We are searching for the probability of selecting an alternative transit option while explicitly excluding the bicycle element. To calculate this subset space, sum the remaining non-driving categories:
-                <me>P(\text{Alternative and Not Bicycle}) = P(\text{Bus}) + P(\text{Train}) + P(\text{All Others})</me>
-                <me>= 0.22 + 0.09 + 0.01 = 0.32</me>
-                Alternatively, take your calculation from Part A and subtract the bicycle probability: <m>0.36 - 0.04 = 0.32</m>. The final probability is exactly <strong>0.32</strong>.
-            </p>
-        </solution> -->
+
     </task>
 </exercise>
 
 
 
 <exercise label="ex-probability-network-alerts" xmlns:pi="http://pretextbook.org">
-    <title>Probability Theory: Analyzing Network System Alerts</title>
+    <title>Analyzing Network System Alerts</title>
     <introduction>
         <p>
-            An automated DevOps monitoring dashboard tracks system alerts across an enterprise cloud network. During peak load windows, let <m>A</m> denote a Security Firewall Alert, let <m>B</m> denote a Server Overload Alert, and let <m>C</m> denote a Database Timeout Alert. 
-        </p>
-        <p>
-            Systems data reveals the following baseline probabilities for these events:
-            <me>P(A) = 0.5, \quad P(B) = 0.6, \quad P(C) = 0.3, \quad \text{and} \quad P(B \cup C) = 0.8</me>
-            Additionally, network engineers note that the probability of experiencing both a Firewall alert and a Server Overload simultaneously is <m>P(A \cap B) = 0.3</m>. Complete the parts below to audit this warning system.
-        </p>
+            An automated DevOps monitoring dashboard tracks system alerts across an enterprise cloud network.  Let <m>A</m> denote a Security Firewall Alert, let <m>B</m> denote a Server Overload Alert, and let <m>C</m> denote a Database Timeout Alert. 
+
+            Systems data reveals the following baseline probabilities for these alerts during peak load windows:
+            <me>P(A) = 0.5, \quad P(B) = 0.6, \quad P(C) = 0.3</me>
+
+            Additionally, network engineers note that the probability of experiencing a Server Overload Alert or a Database Timeout Alert is 0.8, while the probability of experiencing both a Security Firewall Alert and a Server Overload  Alert is 0.15. 
+                </p>
+
+
+       <p>
+          Use this information to answer the following. Enter your answers as decimals rounded to two decimal places.
+       </p>
     </introduction>
 
     <!-- Part A: Finding Intersections -->
     <task xml:id="task-alerts-intersection">
         <statement>
             <p>
-                Find the probability that both a Server Overload alert and a Database Timeout alert occur simultaneously, <m>P(B \cap C)</m>.
+                Find the probability that both a Server Overload alert and a Database Timeout alert occur simultaneously.
             </p>
             <p>
-                Probability = <fillin  answer="0.1" width="8"/>
+                 <m>P(B \cap C)</m> = <fillin  answer="0.10" width="8"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
-                </test>
-            </evaluate>
-        </evaluation>
-       <!-- <solution>
-            <p>
-                By re-arranging the standard general addition rule for the union of two events, <m>P(B \cup C) = P(B) + P(C) - P(B \cap C)</m>, we isolate the intersection:
+                    <feedback>
+                    <p> Correct!
+                By re-arranging the Inclusion-Exclusion Principle for the union of two events, <m>P(B \cup C) = P(B) + P(C) - P(B \cap C)</m>, we isolate the probability of the intersection:
                 <md>
                     <mrow>P(B \cap C) \amp = P(B) + P(C) - P(B \cup C)</mrow>
                     <mrow>\amp = 0.6 + 0.3 - 0.8</mrow>
-                    <mrow>\amp = 0.9 - 0.8 = 0.1</mrow>
+                    <mrow>\amp = 0.1</mrow>
                 </md>
-                The probability of experiencing both alerts simultaneously is exactly <strong>0.1</strong>.
+                
             </p>
-        </solution> -->
+                    </feedback>
+                </test>
+            </evaluate>
+        </evaluation>
+
     </task>
 
     
@@ -350,85 +355,89 @@
     <task xml:id="task-alerts-union-ab">
         <statement>
             <p>
-                 Find the probability that the system experiences a Security Firewall alert, a Server Overload alert, or both, <m>P(A \cup B)</m>.
+                 Find the probability that the system experiences a Security Firewall alert or  a Server Overload alert (or both).
             </p>
             <p>
-                Probability = <fillin answer="0.8" width="8"/>
+                <m>P(A \cup B)</m> = <fillin answer="0.95" width="8"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback>
+                     <p>Correct! 
+                Apply the Inclusion-Exclusion Principle:
+                <md>
+                    <mrow>P(A \cup B) \amp = P(A) + P(B) - P(A \cap B)</mrow>
+                    <mrow>\amp = 0.5 + 0.6 - 0.15</mrow>
+                    <mrow>\amp  = 0.95</mrow>
+                </md>
+              
+            </p>
+                    </feedback>
                 </test>
             </evaluate>
         </evaluation>
-       <!-- <solution>
-            <p>
-                Apply the standard addition rule using the parameters provided in the introduction:
-                <md>
-                    <mrow>P(A \cup B) \amp = P(A) + P(B) - P(A \cap B)</mrow>
-                    <mrow>\amp = 0.5 + 0.6 - 0.3</mrow>
-                    <mrow>\amp = 1.1 - 0.3 = 0.8</mrow>
-                </md>
-                The probability of experiencing alert <m>A</m> or alert <m>B</m> is exactly <strong>0.8</strong>.
-            </p>
-        </solution> -->
+
     </task>
 
     <!-- Part E: Complement Rule -->
     <task xml:id="task-alerts-complement">
         <statement>
             <p>
-                 Find the probability that the network remains completely stable regarding alerts <m>B</m> and <m>C</m> (meaning <em>neither</em> a Server Overload nor a Database Timeout occurs), <m>P((B \cup C)^c)</m>.
+                 Find the probability that the network remains completely stable regarding alerts <m>B</m> and <m>C</m> (meaning neither a Server Overload nor a Database Timeout alert occurs). 
             </p>
             <p>
-                Probability = <fillin  answer="0.2" width="8"/>
+                Probability = <fillin  answer="0.20" width="8"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback>
+                                <p>Correct!
+                                <m>P((B \cup C)^c)</m>.
+                The event that "neither alert happens" is the logical complement of "at least one alert happens," which is represented by the union <m>B \cup C</m>. Apply the basic complement rule:
+                <me>P((B \cup C)^c) = 1 - P(B \cup C) = 1 - 0.8 = 0.2</me>
+                
+            </p>
+                    </feedback>
                 </test>
             </evaluate>
         </evaluation>
-        <!--<solution>
-            <p>
-                The event that "neither alert happens" is the logical complement of "at least one alert happens," which is represented by the union <m>B \cup C</m>. Apply the basic complement rule:
-                <me>P((B \cup C)^c) = 1 - P(B \cup C) = 1 - 0.8 = 0.2</me>
-                The probability is exactly <strong>0.2</strong>.
-            </p>
-        </solution>-->
+
     </task>
 
     <task xml:id="task-alerts-intersection-complement">
         <statement>
             <p>
-                Find the probability that a Security Firewall alert occurs without a concurrent Server Overload alert triggering, <m>P(A \cap B^c)</m>.
+                Find the probability that a Security Firewall alert occurs without a concurrent Server Overload alert triggering.
             </p>
             <p>
-                Probability = <fillin  answer="0.2" width="8"/>
+                Probability = <fillin  answer="0.35" width="8"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
-                </test>
-            </evaluate>
-        </evaluation>
-       <!-- <solution>
-            <p>
+                    <feedback>
+                                <p>
                 To isolate the probability of event <m>A</m> occurring while excluding any overlap with event <m>B</m>, we subtract the intersection of the two events from the total probability of event <m>A</m>:
                 <md>
                     <mrow>P(A \cap B^c) \amp = P(A) - P(A \cap B)</mrow>
-                    <mrow>\amp = 0.5 - 0.3</mrow>
-                    <mrow>\amp = 0.2</mrow>
+                    <mrow>\amp = 0.5 - 0.15</mrow>
+                    <mrow>\amp = 0.35</mrow>
                 </md>
-                The probability that a Firewall alert occurs on its own is exactly <strong>0.2</strong>.
+   
             </p>
-        </solution> -->
+                    </feedback>
+                </test>
+            </evaluate>
+        </evaluation>
+
     </task>
 
     <!-- Part C: Mutual Exclusivity -->
@@ -438,11 +447,11 @@
                  Are events <m>B</m> and <m>C</m> mutually exclusive?
             </p>
         </statement>
-        <choices>
+        <choices randomize="yes">
             <choice correct="yes">
-                <statement><p>No, because <m>P(B \cap C) = 0.1 \neq 0</m>.</p></statement>
+                <statement><p>No, because <m>P(B \cap C)  \neq 0</m>.</p></statement>
                 <feedback>
-                    <p>Correct! Two events are mutually exclusive (disjoint) if and only if they cannot occur at the same time, which means their intersection probability must be exactly zero. Because our calculation yielded <m>0.1</m>, it is entirely possible for both alerts to hit at once.</p>
+                    <p>Correct! Two events are mutually exclusive (disjoint) if and only if they cannot occur at the same time, which means their intersection probability must be  zero. In this case, it  possible for both alerts to hit at the same time. See part (a).</p>
                 </feedback>
             </choice>
             <choice>
@@ -458,9 +467,9 @@
                 </feedback>
             </choice>
             <choice>
-                <statement><p>Yes, because <m>P(B \cap C) \neq P(B) \cdot P(C)</m>.</p></statement>
+                <statement><p>No, because <m>P(B \cap C) \neq P(B) \cdot P(C)</m>.</p></statement>
                 <feedback>
-                    <p>Incorrect. You are confusing mutual exclusivity with mathematical independence. Independence checks multiplication parity, while mutual exclusivity checks for an absolute zero intersection.</p>
+                    <p>Incorrect. You are confusing mutual exclusivity with  independence.</p>
                 </feedback>
             </choice>
             <choice>
@@ -477,70 +486,76 @@
 
 
 <exercise xml:id="SO-ticket-raffle-prob">
-    <title>Campus Ticket Raffle Probability</title>
+    <title>Ticket Raffle </title>
     <statement>
         <p>
-            A high-demand campus music festival has a limited ticket lottery. There are <m>50</m> students who enter the raffle, and the event organizers choose <m>15</m> winners at random. 
+            A high-demand campus music festival has a limited ticket lottery. There are <m>150</m> students who enter the raffle, and the event organizers choose <m>15</m> winners at random. 
         </p>
         <p>
-            What is the probability that either you or your friend Brenda (or both of you) are among the chosen winners?
+            What is the probability that either you or your friend Brenda (or both of you) are among the chosen winners? 
         </p>
     </statement>
     <choices randomize="yes">
         <choice correct="yes">
             <statement>
-                <m>0.514</m>
+                <m>0.191</m>
             </statement>
             <feedback>
                 <p>
-                    Correct! The easiest way to calculate this is by taking the complement of neither you nor Brenda being selected. The number of ways to pick 15 winners entirely from the other 48 students is <m>\binom{48}{15}</m>. Subtracting this ratio from 1 yields: <m>1 - \frac{\binom{48}{15}}{\binom{50}{15}} = 1 - 0.486 = 0.514</m>.
+                    Correct! The easiest way to calculate this is by using the complement rule.
+                    <me>P(\text{neither wins})=\dfrac{\binom{148}{15}}{\binom{150}{15}}</me>,
+
+                    since the number of ways to pick 15 winners entirely from the other 148 students is <m>\binom{148}{15}</m>. Applying the complement rule, we have
+                    
+                    <me>P(\text{you or Brenda wins})=1-P(\text{neither wins})
+                     = 1 - 0.809 = 0.191</me>.
                 </p>
             </feedback>
         </choice>
         <choice>
             <statement>
-                <m>0.486</m>
+                <m>0.809</m>
             </statement>
             <feedback>
                 <p>
-                    Incorrect. This is the probability that <term>neither</term> you nor Brenda get selected (<m>\frac{\binom{48}{15}}{\binom{50}{15}} = 0.486</m>). You must subtract this value from 1 to find the probability that at least one of you is chosen.
+                    Incorrect. This is the probability that neither you nor Brenda win <m>\left(\frac{\binom{148}{15}}{\binom{150}{15}} = 0.809\right)</m>. You must subtract this value from 1 to find the probability that at least one of you is chosen.
                 </p>
             </feedback>
         </choice>
         <choice>
             <statement>
-                <m>0.600</m>
+                <m>0.200</m>
             </statement>
             <feedback>
                 <p>
-                    Incorrect. This is the simple linear ratio of winners to total entrants (<m>2 \times \frac{15}{50} = 0.60</m>). This ignores the fact that selections are made without replacement, which overcounts the scenario where both of you win.
+                    Incorrect. This uses the ratio of winners to total entrants for the probability that each of you win, ignoring the other person (<m>\frac{15}{150} + \frac{15}{150} = 0.20</m>).  This approach over-counts the scenario where both of you win.
                 </p>
             </feedback>
         </choice>
         <choice>
             <statement>
-                <m>0.114</m>
+                <m>0.009</m>
             </statement>
             <feedback>
                 <p>
-                    Incorrect. This result occurs if you accidentally subtract the complement from <m>0.600</m> instead of <m>1</m>.
+                    Incorrect. This is the probability that both of you win!
                 </p>
             </feedback>
         </choice>
         <choice>
             <statement>
-                <m>0.914</m>
+                <m>0.798</m>
             </statement>
             <feedback>
                 <p>
-                    Incorrect. This value represents an arithmetic error in evaluating the combinations pool. Make sure to compute the full combinations <m>\binom{48}{15}</m> and <m>\binom{50}{15}</m> precisely.
+                    Incorrect. This uses the ratio of winners to total entrants that are not you and Brenda to try to compute the probability of the complement (<m>2 \times \frac{15}{148}</m>).  This approach is not correct.
                 </p>
             </feedback>
         </choice>
     </choices>
     <hint>
         <p>
-            Think about the complement of the event. It is much easier to compute the probability that <term>neither</term> you nor Brenda are selected out of the 15 winners. If neither of you win, all 15 winners must be chosen from the remaining 48 students.
+            Think about the complement of the event. It is much easier to compute the probability that <term>neither</term> you nor Brenda are selected as winners.
         </p>
     </hint>
     <!--<solution>
@@ -569,16 +584,28 @@
 
 
 <exercise label="ex-probability-demorgans-matching" exercise-customization="matching">
-    <title>Probability Theory: Set Operations and De Morgan's Laws</title>
+    <title>De Morgan's Laws</title>
     <statement>
         <p>
-            Let <m>A</m> and <m>B</m> be two events defined within a universal sample space. Match each of the compound event expressions on the left with an equivalent symbolic expression on the right. 
+            Let <m>A</m> and <m>B</m> be two events. Match each of the events  on the left with their equivalent symbolic expressions on the right. 
         </p>
     </statement>
     <feedback>
         <p>Excellent job! You have mastered the rules of set complements, intersections, unions, and De Morgan's Laws.</p>
     </feedback>
     <cardsort>
+           <!-- Distractor 1 (Appears in the drag options pool but has no correct partner) -->
+        <match>
+            
+            <response><m>A^c \cup B^c</m></response>
+        </match>
+
+                   <!-- Distractor 1 (Appears in the drag options pool but has no correct partner) -->
+        <match>
+            
+            <response><m>(A^c \cap B)^c</m></response>
+        </match>
+
         <!-- Match 1: De Morgan's Law for Union Complement -->
         <match>
             <premise><m>(A \cup B)^c</m></premise>
@@ -597,17 +624,20 @@
             <response><m>A \cup B^c</m></response>
         </match>
 
+
+                   <!-- Distractor 1 (Appears in the drag options pool but has no correct partner) -->
+        <match>
+            
+            <response><m>(A \cap B)^c</m></response>
+        </match>
+
         <!-- Match 4: Standard double complement / distribution property -->
         <match>
             <premise><m>A \cap B^c</m></premise>
             <response><m>(A^c \cup B)^c</m></response>
         </match>
 
-        <!-- Distractor 1 (Appears in the drag options pool but has no correct partner) -->
-        <match>
-            
-            <response><m>A^c \cup B^c</m></response>
-        </match>
+ 
 
         <!-- Distractor 2 (Appears in the drag options pool but has no correct partner) -->
         <match>
@@ -649,10 +679,10 @@
 
 
 <exercise xml:id="ex-venn-diagram-matching-expanded">
-    <title>Matching Venn Diagrams to Set Expressions</title>
+    <title>Venn Diagrams and Set Operations</title>
     <statement>
         <p>
-            Four different Venn diagrams are rendered below with specific regions shaded. Match each visual diagram on the left with its correct mathematical set description on the right.
+            Four different Venn diagrams are rendered below with specific regions shaded. Connect each visual diagram on the left with its correct set description(s) on the right. [Not all descriptions will be used.]
         </p>
     </statement>
 
@@ -759,7 +789,7 @@
         
         <!-- Diagram 3: B - C -->
 
-            <premise ref="rel-diff2 rel-diff3 rel-diff4">
+            <premise ref="rel-diff2 rel-diff3" >
               <p><term>Diagram 3:</term></p>
                 <image xml:id="tikz-vennD-relative-diff">
                     <description>C or (B minus A)</description>
@@ -797,7 +827,7 @@
                 <m>(C \cup B) \cap (C \cup A^c)</m>
             </response>
 
-            <response xml:id="rel-diff4">
+            <response >
                 <m>A^c  \cup C </m>
             </response>
 
@@ -842,15 +872,15 @@
             </premise>
 
 
-            <response>
-                <m>[C - (A \cup B)] \cup [(A \cap B) - C]</m>
+            <response xml:id="comp">
+                <m>[C - (A \cup B)] \cup (A \cap B) </m>
             </response>
 
-             <response xml:id="comp">
+             <response >
                 <m>(A\cup B)^c \cup (A \cap B)</m>
             </response>
 
-              <response xml:id="comp2">
+              <response >
                 <m>C \cup (A - B)</m>
             </response>
         </matching>
@@ -861,15 +891,15 @@
 
 
 <exercise label="ex-probability-bounds-popculture-all-mc" >
-    <title>Probability Theory: Roster Analytics in a Superhero Franchise</title>
+    <title>Roster Analytics in a Superhero Franchise</title>
     <introduction>
         <p>
             A pop culture media analyst is studying the character roster of a massive superhero comic book publishing franchise. A character is pulled completely at random from the active roster database and evaluated based on two specific traits: they are either a Marvel character (<m>M</m>) or a DC character (<m>D</m>), and they are either a Hero (<m>H</m>) or a Villain (<m>V</m>).
         </p>
         <p>
-            The universal character sample space contains four distinct, mutually exclusive outcomes:
-            <me>\Omega = \{(M,H), (M,V), (D,H), (D,V)\}</me>
-            Let <m>A</m> denote the event that a Marvel character is selected, and let <m>B</m> denote the event that a Hero is selected. Franchise metrics show that <m>P(A) = 0.70</m> (70% of the roster are Marvel properties) and <m>P(B) = 0.55</m> (55% of the roster are classified as Heroes). Complete the tasks below to explore the boundary states of this universe's character alignment.
+            The character sample space therefore contains four distinct, mutually exclusive outcomes:
+            <me>S = \{(M,H), (M,V), (D,H), (D,V)\}</me>
+            Let <m>A</m> denote the event that a Marvel character is selected, and let <m>B</m> denote the event that a Hero is selected. Franchise metrics show that <m>P(A) = 0.70</m>  and <m>P(B) = 0.55</m>. In other words, 70% of the roster are Marvel properties and 55% of the roster are classified as Heroes.
         </p>
     </introduction>
 
@@ -877,22 +907,26 @@
     <task xml:id="task-pop-bounds-largest-mc">
         <statement>
             <p>
-                 Given the provided percentages for <m>P(A)</m> and <m>P(B)</m>, what is the absolute <strong>largest</strong> that the intersection probability <m>P(A \cap B)</m> could possibly be? (i.e., What is the maximum possible proportion of Marvel Heroes?)
+                 Given the above information, what is the <em>largest</em> possible value for the probability of the the intersection, <m>P(A \cap B)</m>? (i.e., What is the maximum possible proportion of Marvel Heroes?)
             </p>
         </statement>
-        <choices>
+        <choices randomize="yes">
             <choice><statement><p><m>1.00</m></p></statement>
                 <feedback><p>Incorrect. The intersection cannot exceed the probability of either individual event since <m>(A \cap B) \subseteq A</m> and <m>(A \cap B) \subseteq B</m>.</p></feedback></choice>
+
             <choice><statement><p><m>0.70</m></p></statement>
                 <feedback><p>Incorrect. If the intersection were 0.70, it would mean there are more Marvel Heroes than there are total Heroes in the entire database (<m>P(B) = 0.55</m>), which is mathematically impossible.</p></feedback></choice>
+
             <choice correct="yes"><statement><p><m>0.55</m></p></statement>
                 <feedback>
-                    <p>Correct! The maximum possible value for an intersection is capped by the smaller of the two individual event probabilities, <m>\min(P(A), P(B))</m>. This boundary state is reached if <m>B \subseteq A</m>, meaning every single Hero in the database happens to belong to the Marvel universe.</p>
+                    <p>Correct! The maximum possible value for an intersection is capped by the smaller of the two individual event probabilities. This maximum is only reached if <m>B \subseteq A</m>, meaning every single Hero in the database happens to belong to the Marvel universe.</p>
                 </feedback></choice>
+
             <choice><statement><p><m>0.25</m></p></statement>
-                <feedback><p>Incorrect. This matches the lower extreme boundary rather than the upper extreme allocation target.</p></feedback></choice>
-            <choice><statement><p><m>0.385</m></p></statement>
-                <feedback><p>Incorrect. This is the intersection value if the two events were completely independent (<m>0.70 \cdot 0.55 = 0.385</m>). However, the question asks for the absolute maximum boundary possible under any extreme structural arrangement.</p></feedback></choice>
+                <feedback><p>Incorrect. This is the <em>smallest</em> possible value for the probability of the intersection.</p></feedback></choice>
+
+            <choice><statement><p><m>0.39</m></p></statement>
+                <feedback><p>Incorrect. This is the intersection value if the two events were completely independent (<m>0.70 \cdot 0.55 = 0.39</m>). However, the question asks for the maximum possible value.</p></feedback></choice>
         </choices>
     </task>
 
@@ -900,68 +934,80 @@
     <task xml:id="task-pop-bounds-largest-elements">
         <statement>
             <p>
-                 If the intersection <m>P(A \cap B)</m> assumes the maximum value you identified in Part A (where all Heroes are Marvel characters), determine the resulting individual probabilities for each item in the sample space:
+                 If the intersection probability, <m>P(A \cap B)</m>, assumes the maximum value you identified in part (a), determine the resulting individual probabilities for each item in the sample space. Write your answers as decimals rounded to two decimals places.
             </p>
-            <p>1. <m>P(\{(M,H)\}) = </m> <fillin  answer="0.55" width="6" name="ans1"/></p>
-            <p>2. <m>P(\{(M,V)\}) = </m> <fillin answer="0.15" width="6" name="ans2"/></p>
-            <p>3. <m>P(\{(D,H)\}) = </m> <fillin  answer="0.0" width="6" name="ans3"/></p>
-            <p>4. <m>P(\{(D,V)\}) = </m> <fillin  answer="0.3" width="6" name="ans4"/></p>
+            <p><m>P(\{(M,H)\}) = </m> <fillin  answer="0.55" width="6" name="ans1"/></p>
+            <p><m>P(\{(M,V)\}) = </m> <fillin answer="0.15" width="6" name="ans2"/></p>
+            <p> <m>P(\{(D,H)\}) = </m> <fillin  answer="0.0" width="6" name="ans3"/></p>
+            <p> <m>P(\{(D,V)\}) = </m> <fillin  answer="0.30" width="6" name="ans4"/></p>
         </statement>
+        <hint>
+            <p>
+                Assuming the maximum value, then every hero in the database belongs to the Marvel universe. 
+            </p>
+        </hint>
         <evaluation>
             <evaluate submit="ans1">
             <test correct="yes">
             <numcmp use-answer="yes"/>
+            <feedback>
+            <p><m>P(\{(M,H)\}) = P(A \cap B) = 0.55</m></p>
+            </feedback>
             </test>
             </evaluate>
      
             <evaluate submit="ans2">
             <test correct="yes">
             <numcmp use-answer="yes"/>
+            <feedback>
+            <p>Since <m>P(A) = P(\{(M,H)\}) + P(\{(M,V)\}) = 0.70</m>, we have <m>P(\{(M,V)\}) = 0.70 - 0.55 = 0.15</m>.</p>
+            </feedback>
           </test></evaluate>
 
             <evaluate submit="ans3">
             <test correct="yes">
             <numcmp use-answer="yes"/>
+            <feedback>
+            <p> If all heroes belong to Marvel, then there are no DC heroes. <m>P(\{(D,H)\}) = 0</m> </p>
+            </feedback>
            </test></evaluate>
 
             <evaluate submit="ans4">
             <test correct="yes">
             <numcmp use-answer="yes"/>
+            <feedback>
+            <p>The total probability space must sum to 1, i.e., <m>P(S)=1</m>. Therefore,  <me>P(\{(D,V)\}) = 1 - (0.55 + 0.15 + 0) = 0.30</me> .
+            </p>
+            </feedback>
            </test> </evaluate>
         </evaluation>
-       <!-- <solution>
-            <p>
-                At the upper limit where <m>B \subseteq A</m>, every hero belongs to Marvel. Thus:
-                <ul>
-                    <li><p><m>P(\{(M,H)\}) = P(A \cap B) = 0.55</m></p></li>
-                    <li><p><m>P(\{(D,H)\}) = 0</m>, since no DC heroes exist in this specific configuration.</p></li>
-                    <li><p>Since <m>P(A) = P(\{(M,H)\}) + P(\{(M,V)\}) = 0.70</m>, we have <m>P(\{(M,V)\}) = 0.70 - 0.55 = 0.15</m> (Marvel Villains).</p></li>
-                    <li><p>The total probability space must sum to 1, leaving <m>P(\{(D,V)\}) = 1 - (0.55 + 0.15 + 0) = 0.30</m> (DC Villains).</p></li>
-                </ul>
-            </p>
-        </solution> -->
+
     </task>
 
     <!-- Part C: Smallest Intersection Boundary (Multiple Choice) -->
     <task xml:id="task-pop-bounds-smallest-mc">
         <statement>
             <p>
-                Given the provided probabilities for <m>P(A)</m> and <m>P(B)</m>, what is the absolute <strong>smallest</strong> that the intersection probability <m>P(A \cap B)</m> could possibly be? (i.e., What is the minimum possible proportion of Marvel Heroes?)
+                Given the provided probabilities for <m>A</m> and <m>B</m>, what is the  <em>smallest</em> possible value for the intersection probability, <m>P(A \cap B)</m>?  (i.e., What is the minimum possible proportion of Marvel Heroes?)
             </p>
         </statement>
-        <choices>
-            <choice><statement><p><m>0.00</m></p></statement>
-                <feedback><p>Incorrect. If the intersection were 0, the union probability would be <m>P(A \cup B) = 0.70 + 0.55 = 1.25</m>. This directly violates the absolute Axiom of Probability that states a probability cannot exceed 1.00.</p></feedback></choice>
+        <choices randomize="yes">
+            <choice><statement><p><m>0</m></p></statement>
+                <feedback><p>Incorrect. If the intersection were 0, the union probability would be <m>P(A \cup B) = 0.70 + 0.55 = 1.25</m>. This violates Probability Axiom 1 that states a probability cannot exceed 1.</p></feedback></choice>
+
             <choice correct="yes"><statement><p><m>0.25</m></p></statement>
                 <feedback>
-                    <p>Correct! By rearranging the addition rule, we know <m>P(A \cup B) = P(A) + P(B) - P(A \cap B) = 1.25 - P(A \cap B)</m>. Because the union space can be at most 1.00 (the total database capacity), the intersection must step up to at least <m>1.25 - 1.00 = 0.25</m> to prevent a probability violation.</p>
+                    <p>Correct! By the Inclusion-Exclusion Principle, we know <m>P(A \cup B) = P(A) + P(B) - P(A \cap B) = 1.25 - P(A \cap B)</m>. Because <m>P(A \cup B)\leq 1 </m>, the intersection probability must be at least <m>0.25</m>.</p>
                 </feedback></choice>
+
             <choice><statement><p><m>0.15</m></p></statement>
-                <feedback><p>Incorrect. Re-evaluate the addition rule parameters using a maximum upper ceiling limit of 1.00 for the total database union.</p></feedback></choice>
+                <feedback><p>Incorrect. This is too small! Try using the Inclusion-Exclusion Principle.</p></feedback></choice>
+
             <choice><statement><p><m>0.55</m></p></statement>
-                <feedback><p>Incorrect. This matches the upper extreme maximum boundary calculated in Part A rather than the minimum required overlap constraint.</p></feedback></choice>
+                <feedback><p>Incorrect. This is the <em>largest</em> possible value for the probability of the intersection.</p></feedback></choice>
+
             <choice><statement><p><m>0.30</m></p></statement>
-                <feedback><p>Incorrect. Double-check your arithmetic subtraction when computing the absolute net difference between 1.25 and 1.00.</p></feedback>
+                <feedback><p>Incorrect. Try using the Inclusion-Exclusion Principle.</p></feedback>
                 </choice>
         </choices>
     </task>
@@ -970,46 +1016,56 @@
     <task xml:id="task-pop-bounds-smallest-elements">
         <statement>
             <p>
-                 If the intersection <m>P(A \cap B)</m> assumes the absolute minimum value you identified in Part C , determine the resulting individual probabilities for each item in the sample space:
+                 If the intersection probability, <m>P(A \cap B)</m>, assumes the minimum value you identified in part (c), determine the resulting individual probabilities for each item in the sample space. Write your answers as decimals rounded to two decimals places.
             </p>
-            <p>1. <m>P(\{(M,H)\}) = </m> <fillin  answer="0.25" width="6" name="ans5"/></p>
-            <p>2. <m>P(\{(M,V)\}) = </m> <fillin  answer="0.45" width="6" name="ans6"/></p>
-            <p>3. <m>P(\{(D,H)\}) = </m> <fillin  answer="0.3" width="6" name="ans7"/></p>
-            <p>4. <m>P(\{(D,V)\}) = </m> <fillin  answer="0.0" width="6" name="ans8"/></p>
+            <p><m>P(\{(M,H)\}) = </m> <fillin  answer="0.25" width="6" name="ans5"/></p>
+            <p><m>P(\{(M,V)\}) = </m> <fillin  answer="0.45" width="6" name="ans6"/></p>
+            <p> <m>P(\{(D,H)\}) = </m> <fillin  answer="0.3" width="6" name="ans7"/></p>
+            <p> <m>P(\{(D,V)\}) = </m> <fillin  answer="0.0" width="6" name="ans8"/></p>
         </statement>
          <evaluation>
             <evaluate submit="ans5">
             <test correct="yes">
             <numcmp use-answer="yes"/>
+            <feedback>
+                <p>
+                    <m>P(\{(M,H)\}) = P(A \cap B) = 0.25</m>
+                </p>
+            </feedback>
             </test>
             </evaluate>
      
             <evaluate submit="ans6">
             <test correct="yes">
             <numcmp use-answer="yes"/>
+                     <feedback>
+                <p>
+                    Since <m>P(A) = P(\{(M,H)\}) + P(\{(M,V)\}) = 0.70</m>, we have <m>P(\{(M,V)\}) = 0.70 - 0.25 = 0.45</m>.
+                </p>
+            </feedback>
          </test> </evaluate>
 
             <evaluate submit="ans7">
             <test correct="yes">
             <numcmp use-answer="yes"/>
+                     <feedback>
+                <p>
+                    Since <m>P(B) = P(\{(M,H)\}) + P(\{(D,H)\}) = 0.55</m>, we have <m>P(\{(D,H)\}) = 0.55 - 0.25 = 0.30</m>.
+                </p>
+            </feedback>
            </test> </evaluate>
 
             <evaluate submit="ans8">
             <test correct="yes">
             <numcmp use-answer="yes"/>
+                     <feedback>
+                <p>
+                    <m>P(B)=0.55</m>. So, <m>P(B^c)=0.45</m>. Since <m>P(\{(M,V)\}) =0.45</m>, there are no DC Villains. In this scenario, all villains belong to Marvel.
+                </p>
+            </feedback>
            </test> </evaluate>
         </evaluation>
-       <!-- <solution>
-            <p>
-                At the lower limit where the union takes up the entire database space (<m>P(A \cup B) = 1.00</m>), there are no characters left outside the categories. Thus:
-                <ul>
-                    <li><p><m>P(\{(M,H)\}) = P(A \cap B) = 0.25</m></p></li>
-                    <li><p>Since <m>P(A) = P(\{(M,H)\}) + P(\{(M,V)\}) = 0.70</m>, we have <m>P(\{(M,V)\}) = 0.70 - 0.25 = 0.45</m> (Marvel Villains).</p></li>
-                    <li><p>Since <m>P(B) = P(\{(M,H)\}) + P(\{(D,H)\}) = 0.55</m>, we have <m>P(\{(D,H)\}) = 0.55 - 0.25 = 0.30</m> (DC Heroes).</p></li>
-                    <li><p><m>P(\{(D,V)\}) = 0</m>, because the combined elements account for 100% of the active database space (<m>0.25 + 0.45 + 0.30 = 1.00</m>), meaning there are no DC Villains in this configuration.</p></li>
-                </ul>
-            </p>
-        </solution> -->
+     
     </task>
 </exercise>
 
@@ -1181,7 +1237,7 @@
     <task>
         <statement>
             <p>
-                Verify your calculation by mapping out the regions of a Venn diagram.
+                Verify your calculation by mapping out the regions on a Venn diagram.
             </p>
         </statement>
         
@@ -1190,7 +1246,7 @@
 
 
 <exercise label="SO-dice-complement">
-<title>Untititled</title>
+<title>Die Rolls</title>
    <introduction>
    <p>
       I roll a six-sided die 15 times. 

@@ -5,26 +5,16 @@
 
 <introduction>
  <p> 
-    By completing the problems provided below, you will gain practice with: 
+    By completing the problems provided below, you will gain practice in proof writing. You will also become more comfortable with and better understand the: 
     <ul>
       <li>
         <p>
-          
+          Axioms of probability
         </p>
       </li>
       <li>
         <p>
-         
-        </p>
-      </li>
-      <li>
-        <p>
-          
-        </p>
-      </li>
-      <li>
-        <p>
-          
+          Definitions for set operations
         </p>
       </li>
     </ul>
@@ -38,7 +28,7 @@
 
 
 <exercise xml:id="ex-demorgan-proof-parsons">
-    <title>Interactive Proof: DeMorgan's Law</title>
+    <title>De Morgan's Law</title>
     <introduction>
         <p>
             In class, we proved one half of DeMorgan's Law: <m>(A \cap B)^c = A^c \cup B^c</m>. Taking the same approach, it is your job to prove the other half: 
@@ -60,7 +50,7 @@
                 
     
                 <p>
-                    Arrange the <term>remaining steps</term> below in the correct logical sequence to complete both the proof. You may or may not use all of the blocks.
+                    Arrange the <term>remaining steps</term> below in the correct logical sequence to complete both the proof. [You may or may not use all of the blocks, but you must use all blocks that you can.]
                 </p>
     </statement>
     
@@ -117,7 +107,7 @@
                 </p>
 
                 <p>
-                    Arrange the remaining steps below in the correct logical sequence to complete the rest of the proof. You may or may not use all of the provided blocks.
+                    Arrange the remaining steps below in the correct logical sequence to complete the rest of the proof. [You may or may not use all of the blocks, but you must use all blocks that you can.]
                 </p>
     </statement>
     
@@ -172,23 +162,17 @@
         </block>
     </blocks>
 
-    
-    
-    <hint>
-        <p>
-            Pay close attention to logical connectives! The negation of an "or" statement (the union) results in an "and" statement. Look for the draggable block that sets up the backward direction (<m>Y \subseteq X</m>) once you finish concluding the forward containment.
-        </p>
-    </hint>
+  
 
     </task>
 </exercise>
 
 
 <exercise xml:id="ex-probability-proof-parsons">
-    <title>Interactive Proof: Probability of a Set Difference</title>
+    <title>Probability of a Set Difference</title>
     <statement>
         <p>
-            During class, we established the following property: For any two events <m>A</m> and <m>B</m>, <me>P(A - B) = P(A) - P(A \cap B)</me> Use the axioms of probability to prove this property by reordering the steps below into the correct logical sequence. You may or may not need to use all of the provided blocks.
+            During class, we established the following property: For any two events <m>A</m> and <m>B</m>, <me>P(A - B) = P(A) - P(A \cap B)</me> Use the axioms of probability to prove this property by reordering the steps below into the correct logical sequence. [You may or may not use all of the blocks, but you must use all blocks that you can.]
         </p>
     </statement>
     <blocks>
@@ -242,7 +226,7 @@
     
     <hint>
         <p>
-            Start by visually partitioning circle <m>A</m> inside a Venn diagram into two non-overlapping pieces: the piece that intersects <m>B</m>, and the piece that does not touch <m>B</m>. Apply the axioms of probability to that structural split.
+            Start by visually partitioning set <m>A</m>, inside a Venn diagram, into two non-overlapping pieces: the piece that intersects <m>B</m>, and the piece that does not touch <m>B</m>. 
         </p>
     </hint>
 </exercise>
@@ -341,7 +325,7 @@
     
     <hint>
         <p>
-            Since you are given the disjoint sets <m>B_i</m> in the problem statement, look for the draggable block that sets up how the finite unions of <m>A_n</m> and <m>B_i</m> match up before you introduce any limits or summation signs.
+            You are given the disjoint sets <m>B_i</m> in step 1 of the proof. How do the finite and infinite unions of the <m>A_i's</m> and <m>B_i's</m> match up? Think about this before you introduce any limits or summations.
         </p>
     </hint>
 </exercise>
