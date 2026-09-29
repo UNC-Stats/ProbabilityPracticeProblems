@@ -207,7 +207,7 @@
         </p>
         <p>
             4. Evaluate the factorials to find the final total:
-            <me>\frac{479,001,600}{6 \times 2 \times 2 \times 2 \times 1 \times 1 \times 1} = \frac{479,001,600}{48} = 1,663,200</me>
+            <me>\frac{479,001,600}{6 \times 2 \times 2 \times 2 \times 1 \times 1 \times 1} = \frac{479,001,600}{48} = 9,979,200</me>
         </p>
     </solution> -->
 </exercise>
@@ -822,7 +822,7 @@ Correct!
             </p>
             <p>
                 3. <term>Combine and Calculate Probability:</term> Adding the favorable layouts gives <m>453,600 + 453,600 = 907,200</m> successful configurations. Dividing by our total from Part 1:
-                <me>P(\text{Rooming Together}) = \frac{907,200}{1,663,200} = \frac{6}{11} \approx 0.5455</me>
+                <me>P(\text{Rooming Together}) = \frac{907,200}{9,979,200} =  \approx 0.091</me>
             </p>
         </solution> -->
 

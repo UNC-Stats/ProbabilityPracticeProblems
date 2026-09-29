@@ -536,7 +536,85 @@
 
     
     
+    <exercise label="ex-static-conditional-convention-merch">
+        <title>Fandom Convention Demographics Analysis</title>
 
+        <introduction>
+            <p>
+        An organizer at a multi-genre pop culture convention conducts an entry poll of attendees. The survey data reveals that 28% of the attendees are wearing apparel from an Anime series. Among those wearing Anime apparel, exactly 25% are also wearing merchandise from a Sci-Fi media franchise. Additionally, it is recorded that 35% of all surveyed convention attendees are wearing merchandise from a Sci-Fi media franchise.
+    </p>
+    <p>
+        Suppose an attendee is selected completely at random from this convention crowd. Complete the analytical steps below to map out the structural probability space.
+    </p>
+        </introduction>
+
+        <!-- Part A: Conditional Probability Calculation -->
+        <task xml:id="task-static-merch-conditional">
+            <statement>
+                <p>
+                     What is the conditional probability that the randomly selected attendee is wearing apparel from an Anime series, given that they are wearing merchandise from a Sci-Fi media franchise?
+                </p>
+            </statement>
+          <!--  <solution>
+                <p>
+                    First, use the multiplicative multiplication rule to calculate the joint intersection probability of an attendee wearing both items simultaneously (<m>P(\text{Anime} \cap \text{Sci-Fi})</m>):
+                    <me>P(\text{Anime} \cap \text{Sci-Fi}) = P(\text{Anime}) \cdot P(\text{Sci-Fi} \mid \text{Anime}) = 0.28 \cdot 0.25 = 0.0700</me>
+                </p>
+                <p>
+                    Now, evaluate the requested conditional probability by restricting the target space to the Sci-Fi attendee universe (<m>P(\text{Sci-Fi}) = 0.35</m>):
+                    <me>P(\text{Anime} \mid \text{Sci-Fi}) = \frac{P(\text{Anime} \cap \text{Sci-Fi})}{P(\text{Sci-Fi})} = \frac{0.0700}{0.3500} = 0.2000</me>
+                    The conditional probability is exactly <strong>0.2000</strong>.
+                </p>
+            </solution>-->
+        </task>
+
+        <!-- Part B: Dependence and Correlation -->
+        <task xml:id="task-static-merch-dependence">
+            <statement>
+                <p>
+                     Determine if the selection of Anime apparel and Sci-Fi media franchise merchandise are independent, positively correlated, or negatively correlated. Mathematically justify your reasoning.
+                </p>
+            </statement>
+           <!-- <solution>
+                <p>
+                    To establish the statistical relationship, compare the conditional probability found in Part A to the unconditional baseline probability:
+                    <ul>
+                        <li><p>Unconditional baseline probability of wearing Anime apparel: <m>P(\text{Anime}) = 0.2800</m></p></li>
+                        <li><p>Conditional probability of wearing Anime apparel given Sci-Fi gear: <m>P(\text{Anime} \mid \text{Sci-Fi}) = 0.2000</m></p></li>
+                    </ul>
+                </p>
+                <p>
+                    Because <m>P(\text{Anime} \mid \text{Sci-Fi}) \neq P(\text{Anime})</m>, the two events are not independent. Furthermore, because <m>P(\text{Anime} \mid \text{Sci-Fi}) \lt P(\text{Anime})</m> (meaning the introduction of the condition reduces the likelihood weight), the events are <strong>negatively correlated</strong>. Alternatively, this is verified because the actual intersection (<m>0.0700</m>) is less than the expected product under independence (<m>0.28 \cdot 0.35 = 0.0980</m>).
+                </p>
+            </solution>-->
+        </task>
+
+        <!-- Part C: Probability of Neither Item -->
+        <task xml:id="task-static-merch-neither">
+            <statement>
+                <p>
+                     What is the probability that a randomly selected convention attendee is wearing <em>neither</em> Anime apparel nor Sci-Fi media franchise merchandise?
+                </p>
+            </statement>
+           <!-- <solution>
+                <p>
+                    To find the probability that an attendee wears neither item, we compute the complement of the union of both events: <m>P((\text{Anime} \cup \text{Sci-Fi})^c) = 1 - P(\text{Anime} \cup \text{Sci-Fi})</m>.
+                </p>
+                <p>
+                    First, apply the general addition rule to calculate the probability that an attendee is wearing at least one of the two types of merchandise:
+                    <md>
+                        <mrow>P(\text{Anime} \cup \text{Sci-Fi}) \amp = P(\text{Anime}) + P(\text{Sci-Fi}) - P(\text{Anime} \cap \text{Sci-Fi})</mrow>
+                        <mrow>\amp = 0.2800 + 0.3500 - 0.0700 = 0.5600</mrow>
+                    </md>
+                </p>
+                <p>
+                    Now, apply the complement rule to calculate the remaining area outside of both sets:
+                    <me>P((\text{Anime} \cup \text{Sci-Fi})^c) = 1 - 0.5600 = 0.4400</me>
+                    The probability that an attendee is wearing neither type of merchandise is exactly <strong>0.4400</strong>.
+                </p>
+            </solution>-->
+        </task>
+    </exercise>
 
     
 
