@@ -5,28 +5,24 @@
 
 <introduction>
  <p> 
-    By completing the problems provided below, you will gain practice with: 
+    By completing the problems provided below, you will gain additional practice computing conditional probability. Specifically, you will practice using: 
     <ul>
       <li>
         <p>
-          
+          Law of Total Probability
         </p>
       </li>
       <li>
         <p>
-         
+         Bayes' Theorem
         </p>
       </li>
       <li>
         <p>
-          
+          Tree Diagrams
         </p>
       </li>
-      <li>
-        <p>
-          
-        </p>
-      </li>
+ 
     </ul>
   </p>
 </introduction>
@@ -37,11 +33,12 @@
 
 
 <exercise xml:id="ex-notification-filter-bayes">
-    <title>Smart Filter Metrics and Bayes' Theorem</title>
+    <title>Smart Filter</title>
     <introduction>
         <p>
-            An AI-powered notification app filters a student's incoming phone pings into three mutually exclusive categories that partition their daily alerts: Academic alerts (<m>A_1</m>), Student Club updates (<m>A_2</m>), and Promotional spam (<m>A_3</m>). The base probabilities for an incoming notification falling into these groups are:
+            An AI-powered application filters incoming phone notifications into three categories that partition a student's daily alerts: academic alerts (<m>A_1</m>), student club updates (<m>A_2</m>), and promotional spam (<m>A_3</m>). The probabilities for incoming notifications are:
             <me>P(A_1) = 0.3, \quad P(A_2) = 0.1, \quad P(A_3) = 0.6</me>
+        
             Let <m>E</m> be the event that a notification triggers an immediate haptic vibration alert. The app's filter settings yield the following conditional probabilities:
             <me>P(E \mid A_1) = 0.3, \quad P(E \mid A_2) = 0.5, \quad P(E \mid A_3) = 0.7</me>
         </p>
@@ -51,92 +48,104 @@
     <task>
         <statement>
             <p>
-                What is the total probability <m>P(E)</m> that a randomly arriving notification will trigger a haptic vibration alert? Enter your answer as a decimal value rounded to two decimal places.
+                What is the probability that a randomly arriving notification will trigger a haptic vibration alert? Enter your answer as a decimal value rounded to two decimal places.
             </p>
        <p>
-        <fillin width="8" answer="0.56"/>
+        <m>P(E)</m>=<fillin width="8" answer="0.56"/>
       </p>
     </statement>
-  
+   <hint>
+            <p>
+                Apply the Law of Total Probability! 
+            </p>
+        </hint>
     <evaluation>
       <evaluate>
         <test correct="yes">
           <numcmp use-answer="yes"/>
           <feedback>
             <p>
-              To find the total probability of event <m>E</m>, we apply the <term>Law of Total Probability</term> across the partition:
+              To find the total probability of event <m>E</m>, we apply the Law of Total Probability: 
                 <md>
-                    <mrow>P(E) \amp = P(E \mid A_1)P(A_1) + P(E \mid A_2)P(A_2) + P(E \mid A_3)P(A_3)</mrow>
-                    <mrow>P(E) \amp = (0.3)(0.3) + (0.5)(0.1) + (0.7)(0.6)</mrow>
-                    <mrow>P(E) \amp = 0.09 + 0.05 + 0.42 = 0.56</mrow>
+                    <mrow>P(E) \amp = P(E \cap A_1) + P(E \cap A_2) + P(E \mid A_3)</mrow>
+                    <mrow>
+                     \amp = P(E \mid A_1)P(A_1) + P(E \mid A_2)P(A_2) + P(E \mid A_3)P(A_3)</mrow>
+                    <mrow> \amp = (0.3)(0.3) + (0.5)(0.1) + (0.7)(0.6)</mrow>
+                    <mrow> \amp = 0.09 + 0.05 + 0.42 = 0.56</mrow>
                 </md>
-                Thus, the overall probability that an incoming alert vibrates is <m>0.56</m>.
             </p>
           </feedback>
         </test>
 </evaluate>
 </evaluation>
-        <hint>
-            <p>
-                Apply the Law of Total Probability: <m>P(E) = P(E \mid A_1)P(A_1) + P(E \mid A_2)P(A_2) + P(E \mid A_3)P(A_3)</m>. Multiply each conditional probability by its corresponding category weight, then add them all together.
-            </p>
-        </hint>
+       
     </task>
 
     <!-- Part 2: Bayes' Theorem (Multiple Choice) -->
     <task>
         <statement>
             <p>
-                Suppose the student's phone vibrates, indicating event <m>E</m> has occurred. What is the updated posterior probability <m>P(A_2 \mid E)</m> that this specific notification came from a Student Club update?
+                Suppose the student's phone vibrates, what is the  probability that this specific notification came from a student club update?
             </p>
         </statement>
+        <hint>
+            <p>
+                Apply Bayes' Theorem. You calculated the denominator in part (a).
+            </p>
+        </hint>
         <choices randomize="yes">
             <choice correct="yes">
                 <statement>
-                    <m>0.0893</m> 
+                    <m>0.089</m> 
                 </statement>
                 <feedback>
                     <p>
-                        Correct! By applying Bayes' Theorem, we calculate the joint intersection of a Club update vibrating divided by the total vibration probability found in Part 1: <m>\frac{P(E \mid A_2)P(A_2)}{P(E)} = \frac{0.5 \times 0.1}{0.56} = \frac{0.05}{0.56} \approx 0.0893</m>.
+                        Correct! We compute <m>P(A_2 \mid E)</m> by applying Bayes' Theorem: <me>P(A_2 \mid E)=\frac{P(E \mid A_2)P(A_2)}{P(E)} = \frac{0.05}{0.56} \approx 0.089</me>.
                     </p>
                 </feedback>
             </choice>
             <choice>
                 <statement>
-                    <m>0.5000</m>
+                    <m>0.500</m>
                 </statement>
                 <feedback>
                     <p>
-                        Incorrect. This is the forward conditional probability <m>P(E \mid A_2)</m>. You must look for the backward posterior probability <m>P(A_2 \mid E)</m> by factoring in how rare Club updates are relative to everything else.
+                        Incorrect. This is the  conditional probability <m>P(E \mid A_2)</m>. You need to compute <m>P(A_2 \mid E)</m>.
                     </p>
                 </feedback>
             </choice>
             <choice>
                 <statement>
-                    <m>0.1000</m>
+                    <m>0.100</m>
                 </statement>
                 <feedback>
                     <p>
-                        Incorrect. This is the prior baseline probability <m>P(A_2)</m> before checking if the phone vibrated. Because Club alerts are less likely to vibrate than promotional updates, knowing that a vibration happened should decrease this probability slightly.
+                        Incorrect. This is the prior  probability <m>P(A_2)</m>. You need to compute <m>P(A_2 \mid E)</m>. [Note: Because student club alerts are less likely to vibrate than other alerts, knowing that a vibration happened should decrease the probability of <m>A_2</m> slightly.
                     </p>
                 </feedback>
             </choice>
             <choice>
                 <statement>
-                    <m>0.1786</m>
+                    <m>0.179</m>
                 </statement>
                 <feedback>
                     <p>
-                        Incorrect. This mistake occurs if you forget to factor in the base rate, dividing <m>P(E \mid A_2)</m> directly by <m>P(E)</m> (<m>0.5 / 0.56</m>). Remember to multiply the numerator by the prior probability weight <m>P(A_2) = 0.1</m>.
+                        Incorrect. You most likely calculated the numerator of Bayes' Theorem incorrectly. Try <m>P(E\cap A_2)=P(E \mid A_2)P(A_2)</m> .
+                    </p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <m>0.893</m>
+                </statement>
+                <feedback>
+                    <p>
+                        Incorrect. You most likely calculated the numerator of Bayes' Theorem incorrectly. Try <m>P(E\cap A_2)=P(E \mid A_2)P(A_2)</m> .
                     </p>
                 </feedback>
             </choice>
         </choices>
-        <hint>
-            <p>
-                Apply Bayes' Theorem: <me>P(A_2 \mid E) = \frac{P(E \mid A_2)P(A_2)}{P(E)}</me> Substitute your individual target segment count into the numerator and utilize the total probability value calculated in Part 1 as your denominator.
-            </p>
-        </hint>
+        
       <!--  <solution>
             <p>
                 To solve for the conditional inverse probability, we employ <term>Bayes' Theorem</term>:
@@ -157,16 +166,16 @@
 
 
 <exercise xml:id="ex-heart-disease-bayes-matching">
-    <title>Periodontal Disease and Heart Attack Risks</title>
+    <title>Gum Disease and Heart Attacks</title>
     <statement>
         <p>
-            Medical researchers have uncovered strong statistical links between oral health and cardiovascular conditions: <m>83\%</m> of people who have suffered a heart attack had periodontal disease (an inflammation of the gums), while only <m>34\%</m> of heart-healthy people have this disease. 
+            Medical researchers have uncovered strong statistical links between oral health and cardiovascular conditions!  <m>83\%</m> of people who have suffered a heart attack had periodontal disease (an inflammation of the gums), while only <m>34\%</m> of heart-healthy people have this disease. 
         </p>
         <p>
-            Suppose that in a certain community, heart attacks occur with a baseline probability of <m>15\%</m>. Let <m>H</m> represent the event that an individual has a heart attack, and let <m>G</m> represent the event that an individual has periodontal gum disease.
+            Suppose that in a certain community, heart attacks occur with a probability of <m>15\%</m>. Let <m>H</m> represent the event that an individual has a heart attack, and let <m>G</m> represent the event that an individual has periodontal gum disease.
         </p>
         <p>
-            Match each probability description or algebraic notation on the left with its correct calculated numerical value or expression on the right. Note that there are extra numbers on the right that act as distractors!
+            Match each of the probabilities given on the left with their corresponding values on the left. 
         </p>
     </statement>
 
@@ -184,6 +193,9 @@
 
 
         <!-- Part 2: Intermediate and Final Computations -->
+            
+            <premise ref="g_and_h"><m>P(G \cap H)</m></premise>
+            <response xml:id="g_and_h"><m>0.1245</m></response>
 
             <premise ref="g"><m>P(G)</m></premise>
             <response xml:id="g"><m>0.4135</m></response>
@@ -194,7 +206,7 @@
 
         <!-- DISTRACTORS (Empty premises create options on the right with no matching pair) -->
   
-            <response><m>0.1245</m></response>
+           
             <response><m>0.0674</m></response>
             <response><m>0.5865</m></response>
 
@@ -202,7 +214,7 @@
     
     <hint>
         <p>
-            First identify your baseline priors: <m>P(H) = 0.15</m> and its complement <m>P(H^c) = 0.85</m>. Then locate the two conditional values from the text. Use the Law of Total Probability to compute the total rate of gum disease <m>P(G) = P(G \mid H)P(H) + P(G \mid H^c)P(H^c)</m> before evaluating your final Bayes' Theorem formula.
+            First identify which probabilities you have been given oin the problem statement. It might be helpful to draw a tree diagram. 
         </p>
     </hint>
     
@@ -240,61 +252,73 @@
 
 
 <exercise xml:id="ex-employment-drug-test-matching">
-    <title>Workplace Drug Testing and Conditional Probability</title>
+    <title>Workplace Drug Testing </title>
     <statement>
         <p>
-            An logistics company uses a rapid oral fluid screening test to determine whether machine operators have controlled substances in their system. The rapid screening kit is not totally reliable:
+            A third-party logistics company called 3PL handles  tasks like storage, packing, and shipping for other businesses.
+            3PL uses a rapid oral screening test to determine whether machine operators have controlled substances in their systems. 
+            </p> 
+            <p>
+                The rapid screening test is not 100% reliable. It is known that:
+                </p>
             <ul>
-                <li><p><m>5\%</m> of employees who <bold>have not</bold> consumed a controlled substance give a false-positive reading (the test indicates drug presence).</p></li>
-                <li><p><m>10\%</m> of employees who <bold>have</bold> consumed a controlled substance give a false-negative reading (the test indicates no drug presence).</p></li>
+                <li><p><m>5\%</m> of employees who have <em>not</em> consumed a controlled substance get a false-positive reading.</p></li>
+
+                <li><p><m>10\%</m> of employees who have consumed a controlled substance get a false-negative reading.</p></li>
             </ul>
-            Suppose that, in fact, <m>17\%</m> of the applicant pool has consumed a controlled substance, and the safety manager tests an employee at random. 
+<p>
+            Suppose that <m>17\%</m> of 3PL's machine operators have consumed a controlled substance, and the safety manager tests an employee at random. 
         </p>
         <p>
-            Match each conditional probability question on the left with its correct calculated value on the right. Note that there are extra numbers on the right that do not match either scenario!
+            Match each conditional probability on the left with its correct calculated value on the right. 
         </p>
     </statement>
 
     <cardsort>
-        <!-- Part A Pair -->
-        <match>
-            <premise>
-                Find the probability that the employee has consumed the substance, given that the test reading is positive.
-            </premise>
-            <response>
-                <m>0.7866</m>
-            </response>
-        </match>
-        
-        <!-- Part B Pair -->
-        <match>
-            <premise>
-                Find the probability that the employee has not consumed the substance, given that the test reading is negative.
-            </premise>
-            <response>
-                <m>0.9789</m>
-            </response>
-        </match>
-
-        <!-- DISTRACTOR 1 (Empty Premise) -->
-        <match>
-            <response><m>0.1945</m></response>
-        </match>
 
         <!-- DISTRACTOR 2 (Empty Premise) -->
         <match>
             <response><m>0.8055</m></response>
         </match>
 
-        <!-- DISTRACTOR 3 (Empty Premise) -->
+        <!-- Part A Pair -->
         <match>
-            <response><m>0.9000</m></response>
+            <premise>
+                Find the probability that the employee has consumed a controlled substance, given that the test reading is positive.
+            </premise>
+            <response>
+                <m>0.7866</m>
+            </response>
         </match>
-    </cardsort>
+
+         <!-- DISTRACTOR 3 (Empty Premise) -->
+        <match>
+            <response><m>0.9500</m></response>
+        </match>
+   
+
+        <!-- Part B Pair -->
+        <match>
+            <premise>
+                The probability that the employee has not consumed a controlled substance, given that the test reading is negative.
+            </premise>
+            <response>
+                <m>0.9789</m>
+            </response>
+        </match>
+
+              <!-- DISTRACTOR 1 (Empty Premise) -->
+        <match>
+            <response><m>0.1945</m></response>
+        </match>
+ </cardsort>
+      
+
+       
     
     <hint>
         <p>
-            Let <m>D</m> be the event the drug is present, and <m>T</m> be a positive test. Organize your components first: <m>P(D) = 0.17</m>, <m>P(T \mid D^c) = 0.05</m>, and <m>P(T^c \mid D) = 0.10</m>. Use the Law of Total Probability to find the baseline denominators <m>P(T)</m> and <m>P(T^c)</m> before finalizing your Bayes' Theorem matrices.
+            Let <m>D</m> be the event the employee has consumed a controlled substance (drug), and let <m>P</m> be a positive test result. Now organize the information you have been given in a tree diagram.
         </p>
     </hint>
     
@@ -331,170 +355,74 @@
 
 
 
-<exercise xml:id="ex-world-cup-bayes-mc">
-    <title>World Cup Tournament Odds and Bayes' Theorem</title>
-    <statement>
-        <p>
-            Your favorite national football team is competing in the FIFA World Cup. Based on their qualifying record and performance metrics (compiled by sports analytics models), you assign an initial probability of <m>64\%</m> that they will win the entire championship. 
-        </p>
-        <p>
-            Historical tournament records indicate that when a team ultimately wins the World Cup, they win their first group stage match <m>71\%</m> of the time. When they fail to win the championship, they win their first group stage match only <m>20\%</m> of the time. 
-        </p>
-        <p>
-            The opening match is over, and your favorite team has lost. Assuming group stage matches cannot end in a draw for this scenario, what is the probability that they will still go on to win the World Cup?
-        </p>
-    </statement>
-    <choices randomize="yes">
-        <choice correct="yes">
-            <statement>
-                <m>0.392</m>
-            </statement>
-            <feedback>
-                <p>
-                    Correct! Let <m>W</m> be winning the tournament and <m>L</m> be losing the first match. We find the conditional complements: <m>P(W^c) = 0.36</m>, <m>P(L \mid W) = 1 - 0.71 = 0.29</m>, and <m>P(L \mid W^c) = 1 - 0.20 = 0.80</m>. Using the Law of Total Probability, the total probability of losing the first match is <m>P(L) = (0.29)(0.64) + (0.80)(0.36) = 0.1856 + 0.2880 = 0.4736</m>. Applying Bayes' Theorem yields <m>P(W \mid L) = \frac{0.1856}{0.4736} \approx 0.3919</m>, which rounds to <m>0.392</m>.
-                </p>
-            </feedback>
-        </choice>
-        <choice>
-            <statement>
-                <m>0.473</m>
-            </statement>
-            <feedback>
-                <p>
-                    Incorrect. This value represents the total probability that the team loses their opening match, <m>P(L) = 0.4736</m>. You must use this value as the denominator in Bayes' Theorem rather than the final conditional answer.
-                </p>
-            </feedback>
-        </choice>
-        <choice>
-            <statement>
-                <m>0.512</m>
-            </statement>
-            <feedback>
-                <p>
-                    Incorrect. This distractor corresponds to an arithmetic tracking error where the forward probability of winning the first match is substituted instead of its complementary loss.
-                </p>
-            </feedback>
-        </choice>
-        <choice>
-            <statement>
-                <m>0.556</m>
-            </statement>
-            <feedback>
-                <p>
-                    Incorrect. This occurs if you fail to calculate the total probability space properly, using un-weighted conditional segments in your denominator.
-                </p>
-            </feedback>
-        </choice>
-        <choice>
-            <statement>
-                <m>0.640</m>
-            </statement>
-            <feedback>
-                <p>
-                    Incorrect. This is your initial prior probability <m>P(W)</m>. Losing the opening game provides new, negative evidence, meaning your updated tournament outlook must be strictly lower than <m>0.640</m>.
-                </p>
-            </feedback>
-        </choice>
-    </choices>
-    <hint>
-        <p>
-            You are looking for the conditional probability <m>P(\text{Win World Cup} \mid \text{Lost First Match})</m>. First, calculate the probability of a team losing their first match given they win the tournament (<m>1 - 0.71 = 0.29</m>) and given they lose the tournament (<m>1 - 0.20 = 0.80</m>). Use these to calculate the total probability of a first-match loss before evaluating Bayes' Theorem.
-        </p>
-    </hint>
-    <!--<solution>
-        <p>
-            We define our events as follows: Let <m>W</m> be the event that the team wins the World Cup championship, and let <m>L</m> be the event that the team loses their first group stage match. We are given:
-            <me>P(W) = 0.64 \implies P(W^c) = 1 - 0.64 = 0.36</me>
-            <me>P(\text{Win First} \mid W) = 0.71 \implies P(L \mid W) = 1 - 0.71 = 0.29</me>
-            <me>P(\text{Win First} \mid W^c) = 0.20 \implies P(L \mid W^c) = 1 - 0.20 = 0.80</me>
-        </p>
-        <p>
-            We want to find the posterior conditional probability <m>P(W \mid L)</m>.
-        </p>
-        <p>
-            1. <term>Find the overall probability of losing the first match, <m>P(L)</m>:</term>
-            Using the Law of Total Probability:
-            <md>
-                <mrow>P(L) \amp = P(L \mid W)P(W) + P(L \mid W^c)P(W^c)</mrow>
-                <mrow>P(L) \amp = (0.29)(0.64) + (0.80)(0.36)</mrow>
-                <mrow>P(L) \amp = 0.1856 + 0.2880 = 0.4736</mrow>
-            </md>
-        </p>
-        <p>
-            2. <term>Apply Bayes' Theorem to calculate the final probability:</term>
-            <me>P(W \mid L) = \frac{P(L \mid W)P(W)}{P(L)} = \frac{0.1856}{0.4736} \approx 0.39189</me>
-            Rounding to three decimal places matches option (a): <m>0.392</m>.
-        </p>
-    </solution>-->
-</exercise>
 
 
 <exercise xml:id="ex-server-filter-bayes">
-    <title>Smart Filter Diagnostics and Bayes' Theorem</title>
+    <title>Email Scanner Diagnostics </title>
     <statement>
         <p>
-            An automated campus server uses a machine learning filter to scan incoming files. Let <m>A</m> be the event that a file is malicious software, and let <m>B</m> be the event that the filter flags the file as a threat. The system analytics provide the following base probabilities:
-            <me>P(A) = 0.44, \quad P(B \mid A) = 0.03, \quad P(B^c \mid A^c) = 0.06</me>
-            If a randomly arriving file is flagged as a threat by the filter, what is the posterior probability <m>P(A \mid B)</m> that it is actually a malicious software file?
+            An automated campus server uses a machine learning algorithm to scan incoming email files. Let <m>M</m> be the event that a file is malicious software, and let <m>T</m> be the event that the scanner flags the file as a threat. The scanner's system analytics provide the following  probabilities:
+            <me>P(M) = 0.14, \quad P(T \mid M) = 0.92, \quad P(T^c \mid M^c) = 0.67</me>
+            If a randomly arriving file is flagged as a threat by the scanner, what is the probability that it is actually a malicious software file?
         </p>
     </statement>
     <choices randomize="yes">
         <choice correct="yes">
             <statement>
-                <m>0.0245</m> 
+                <m>0.312</m> 
             </statement>
             <feedback>
                 <p>
-                    Correct! First, find the complements: <m>P(A^c) = 1 - 0.44 = 0.56</m> and <m>P(B \mid A^c) = 1 - 0.06 = 0.94</m>. Next, apply the Law of Total Probability to find the denominator: <m>P(B) = (0.03)(0.44) + (0.94)(0.56) = 0.0132 + 0.5264 = 0.5396</m>. Finally, apply Bayes' Theorem: <m>P(A \mid B) = \frac{0.0132}{0.5396} \approx 0.0245</m>.
+                    Correct!  Apply Bayes' Theorem: <me>P(M \mid T) = \frac{0.1288}{0.4126} \approx 0.312</me>.  
                 </p>
             </feedback>
         </choice>
         <choice>
             <statement>
-                <m>0.5396</m>
+                <m>0.413</m>
             </statement>
             <feedback>
                 <p>
-                    Incorrect. This value is the total probability that a file gets flagged by the filter, <m>P(B)</m>. You must use this number as your denominator in Bayes' Theorem to find the conditional probability <m>P(A \mid B)</m>.
+                    Incorrect. This value is the total probability that a file gets flagged as a threat by the scanner, <m>P(T)</m>. You must use this number as your denominator in Bayes' Theorem to find the conditional probability <m>P(M \mid T)</m>.
                 </p>
             </feedback>
         </choice>
         <choice>
             <statement>
-                <m>0.0132</m>
+                <m>0.129</m>
             </statement>
             <feedback>
                 <p>
-                    Incorrect. This value is the joint probability of the intersection <m>P(A \cap B) = P(B \mid A)P(A) = 0.0132</m>. Remember to divide this numerator by the total probability space <m>P(B)</m>.
+                    Incorrect. This value is the probability of the intersection <m>P(M \cap T)</m>. You must use this number as your numerator in Bayes' Theorem to find the conditional probability <m>P(M \mid T)</m>.
                 </p>
             </feedback>
         </choice>
         <choice>
             <statement>
-                <m>0.9400</m>
+                <m>0.920</m>
             </statement>
             <feedback>
                 <p>
-                    Incorrect. This value is the false positive rate condition, <m>P(B \mid A^c) = 1 - P(B^c \mid A^c) = 0.94</m>. This represents the probability of a safe file being flagged, not a flagged file being malicious.
+                    Incorrect. This value is the true positive rate (conditional probability) that is given. You need to find <m>P(M \mid T)</m>.
                 </p>
             </feedback>
         </choice>
         <choice>
             <statement>
-                <m>0.0236</m>
+                <m>0.688</m>
             </statement>
             <feedback>
                 <p>
-                    Incorrect. This result stems from a minor arithmetic carrying error when computing the intersection components. Double-check your decimals during the summation phase.
+                    Incorrect. This is <m>P(M^c \mid T)</m>, which is the complement of what you need to find.
                 </p>
             </feedback>
         </choice>
     </choices>
-    <hint>
+    <!--<hint>
         <p>
             You need to set up Bayes' Theorem: <m>P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}</m>. Before calculating, look closely at your given values: you are given <m>P(B^c \mid A^c) = 0.06</m>, which means its conditional complement is <m>P(B \mid A^c) = 1 - 0.06 = 0.94</m>. Use that to find <m>P(B)</m> first.
         </p>
-    </hint>
+    </hint> -->
    <!-- <solution>
         <p>
             To evaluate the conditional probability <m>P(A \mid B)</m>, we utilize the conditional base rules and apply Bayes' Theorem:
@@ -529,95 +457,56 @@
 
 <exercises xml:id="hw-CP-Bayes-turn-in" >
    <title>Written Exercises</title>
- 
-
 
 
 
     
-    
-    <exercise label="ex-static-conditional-convention-merch">
-        <title>Fandom Convention Demographics Analysis</title>
-
-        <introduction>
-            <p>
-        An organizer at a multi-genre pop culture convention conducts an entry poll of attendees. The survey data reveals that 28% of the attendees are wearing apparel from an Anime series. Among those wearing Anime apparel, exactly 25% are also wearing merchandise from a Sci-Fi media franchise. Additionally, it is recorded that 35% of all surveyed convention attendees are wearing merchandise from a Sci-Fi media franchise.
-    </p>
-    <p>
-        Suppose an attendee is selected completely at random from this convention crowd. Complete the analytical steps below to map out the structural probability space.
-    </p>
-        </introduction>
-
-        <!-- Part A: Conditional Probability Calculation -->
-        <task xml:id="task-static-merch-conditional">
-            <statement>
-                <p>
-                     What is the conditional probability that the randomly selected attendee is wearing apparel from an Anime series, given that they are wearing merchandise from a Sci-Fi media franchise?
-                </p>
-            </statement>
-          <!--  <solution>
-                <p>
-                    First, use the multiplicative multiplication rule to calculate the joint intersection probability of an attendee wearing both items simultaneously (<m>P(\text{Anime} \cap \text{Sci-Fi})</m>):
-                    <me>P(\text{Anime} \cap \text{Sci-Fi}) = P(\text{Anime}) \cdot P(\text{Sci-Fi} \mid \text{Anime}) = 0.28 \cdot 0.25 = 0.0700</me>
-                </p>
-                <p>
-                    Now, evaluate the requested conditional probability by restricting the target space to the Sci-Fi attendee universe (<m>P(\text{Sci-Fi}) = 0.35</m>):
-                    <me>P(\text{Anime} \mid \text{Sci-Fi}) = \frac{P(\text{Anime} \cap \text{Sci-Fi})}{P(\text{Sci-Fi})} = \frac{0.0700}{0.3500} = 0.2000</me>
-                    The conditional probability is exactly <strong>0.2000</strong>.
-                </p>
-            </solution>-->
-        </task>
-
-        <!-- Part B: Dependence and Correlation -->
-        <task xml:id="task-static-merch-dependence">
-            <statement>
-                <p>
-                     Determine if the selection of Anime apparel and Sci-Fi media franchise merchandise are independent, positively correlated, or negatively correlated. Mathematically justify your reasoning.
-                </p>
-            </statement>
-           <!-- <solution>
-                <p>
-                    To establish the statistical relationship, compare the conditional probability found in Part A to the unconditional baseline probability:
-                    <ul>
-                        <li><p>Unconditional baseline probability of wearing Anime apparel: <m>P(\text{Anime}) = 0.2800</m></p></li>
-                        <li><p>Conditional probability of wearing Anime apparel given Sci-Fi gear: <m>P(\text{Anime} \mid \text{Sci-Fi}) = 0.2000</m></p></li>
-                    </ul>
-                </p>
-                <p>
-                    Because <m>P(\text{Anime} \mid \text{Sci-Fi}) \neq P(\text{Anime})</m>, the two events are not independent. Furthermore, because <m>P(\text{Anime} \mid \text{Sci-Fi}) \lt P(\text{Anime})</m> (meaning the introduction of the condition reduces the likelihood weight), the events are <strong>negatively correlated</strong>. Alternatively, this is verified because the actual intersection (<m>0.0700</m>) is less than the expected product under independence (<m>0.28 \cdot 0.35 = 0.0980</m>).
-                </p>
-            </solution>-->
-        </task>
-
-        <!-- Part C: Probability of Neither Item -->
-        <task xml:id="task-static-merch-neither">
-            <statement>
-                <p>
-                     What is the probability that a randomly selected convention attendee is wearing <em>neither</em> Anime apparel nor Sci-Fi media franchise merchandise?
-                </p>
-            </statement>
-           <!-- <solution>
-                <p>
-                    To find the probability that an attendee wears neither item, we compute the complement of the union of both events: <m>P((\text{Anime} \cup \text{Sci-Fi})^c) = 1 - P(\text{Anime} \cup \text{Sci-Fi})</m>.
-                </p>
-                <p>
-                    First, apply the general addition rule to calculate the probability that an attendee is wearing at least one of the two types of merchandise:
-                    <md>
-                        <mrow>P(\text{Anime} \cup \text{Sci-Fi}) \amp = P(\text{Anime}) + P(\text{Sci-Fi}) - P(\text{Anime} \cap \text{Sci-Fi})</mrow>
-                        <mrow>\amp = 0.2800 + 0.3500 - 0.0700 = 0.5600</mrow>
-                    </md>
-                </p>
-                <p>
-                    Now, apply the complement rule to calculate the remaining area outside of both sets:
-                    <me>P((\text{Anime} \cup \text{Sci-Fi})^c) = 1 - 0.5600 = 0.4400</me>
-                    The probability that an attendee is wearing neither type of merchandise is exactly <strong>0.4400</strong>.
-                </p>
-            </solution>-->
-        </task>
-    </exercise>
-
-    
-
+<exercise xml:id="ex-world-cup-bayes-mc">
+    <title>World Cup</title>
+    <statement>
+        <p>
+            Your favorite national football team is competing in the FIFA World Cup. Based on their qualifying record and performance metrics (compiled by sports analytics models), you assign an initial probability of <m>64\%</m> that they will win the entire championship. 
+        </p>
+        <p>
+            Historical tournament records indicate that when a team ultimately wins the World Cup, they win their first group stage match <m>71\%</m> of the time. When they fail to win the championship, they win their first group stage match only <m>20\%</m> of the time. 
+        </p>
+        <p>
+            The opening match is over, and your team has not won.  What is the probability that they will still go on to win the World Cup?
+        </p>
+    </statement>
+   
+    <hint>
+        <p>
+            If you're not sure where to start, then try using the complement rule to find the probability that  the team does not win their first match, given they win the tournament. </p>
+            <p>How will this help you compute the desired probability? 
+        </p>
+    </hint>
+    <!--<solution>
+        <p>
+            We define our events as follows: Let <m>W</m> be the event that the team wins the World Cup championship, and let <m>L</m> be the event that the team loses their first group stage match. We are given:
+            <me>P(W) = 0.64 \implies P(W^c) = 1 - 0.64 = 0.36</me>
+            <me>P(\text{Win First} \mid W) = 0.71 \implies P(L \mid W) = 1 - 0.71 = 0.29</me>
+            <me>P(\text{Win First} \mid W^c) = 0.20 \implies P(L \mid W^c) = 1 - 0.20 = 0.80</me>
+        </p>
+        <p>
+            We want to find the posterior conditional probability <m>P(W \mid L)</m>.
+        </p>
+        <p>
+            1. <term>Find the overall probability of losing the first match, <m>P(L)</m>:</term>
+            Using the Law of Total Probability:
+            <md>
+                <mrow>P(L) \amp = P(L \mid W)P(W) + P(L \mid W^c)P(W^c)</mrow>
+                <mrow>P(L) \amp = (0.29)(0.64) + (0.80)(0.36)</mrow>
+                <mrow>P(L) \amp = 0.1856 + 0.2880 = 0.4736</mrow>
+            </md>
+        </p>
+        <p>
+            2. <term>Apply Bayes' Theorem to calculate the final probability:</term>
+            <me>P(W \mid L) = \frac{P(L \mid W)P(W)}{P(L)} = \frac{0.1856}{0.4736} \approx 0.39189</me>
+            Rounding to three decimal places matches option (a): <m>0.392</m>.
+        </p>
+    </solution>-->
+</exercise>
 
 
     <exercise label="ex-bayes-custom-dice">
@@ -656,7 +545,7 @@
         <task xml:id="task-dice-bayes-single">
             <statement>
                 <p>
-                    Suppose the store owner picks a die completely at random and rolls it once, and it lands on a critical hit. Given this outcome, what is the  probability that the dice is one of the counterfeits?
+                    Suppose the store owner picks a die completely at random and rolls it once, and it lands on a critical hit. Given this outcome, what is the  probability that the die is one of the counterfeits?
                 </p>
             </statement>
             <!--<solution>
@@ -709,6 +598,83 @@ Suppose the store owner picks a die completely at random and rolls <em>that same
 
 
 
+    <exercise label="ex-static-conditional-convention-merch">
+        <title>[Review Question] Fandom Convention Analytics</title>
+
+        <introduction>
+            <p>
+        An organizer at a multi-genre pop culture convention conducts an entry poll of attendees. The survey data reveals that 28% of the attendees are wearing apparel from an anime series. Among those wearing anime apparel, exactly 25% are also wearing merchandise from a sci-fi media franchise. Additionally, it is recorded that 35% of all surveyed convention attendees are wearing merchandise from a sci-fi media franchise.
+        </p>
+    
+        </introduction>
+
+        <!-- Part A: Conditional Probability Calculation -->
+        <task xml:id="task-static-merch-conditional">
+            <statement>
+                <p>
+                      Suppose an attendee is selected  at random from this convention crowd. What is the  probability that the randomly selected attendee is wearing apparel from an anime series, given that they are wearing merchandise from a sci-fi media franchise?
+                </p>
+            </statement>
+          <!--  <solution>
+                <p>
+                    First, use the multiplicative multiplication rule to calculate the joint intersection probability of an attendee wearing both items simultaneously (<m>P(\text{Anime} \cap \text{Sci-Fi})</m>):
+                    <me>P(\text{Anime} \cap \text{Sci-Fi}) = P(\text{Anime}) \cdot P(\text{Sci-Fi} \mid \text{Anime}) = 0.28 \cdot 0.25 = 0.0700</me>
+                </p>
+                <p>
+                    Now, evaluate the requested conditional probability by restricting the target space to the Sci-Fi attendee universe (<m>P(\text{Sci-Fi}) = 0.35</m>):
+                    <me>P(\text{Anime} \mid \text{Sci-Fi}) = \frac{P(\text{Anime} \cap \text{Sci-Fi})}{P(\text{Sci-Fi})} = \frac{0.0700}{0.3500} = 0.2000</me>
+                    The conditional probability is exactly <strong>0.2000</strong>.
+                </p>
+            </solution>-->
+        </task>
+
+        <!-- Part B: Dependence and Correlation -->
+        <task xml:id="task-static-merch-dependence">
+            <statement>
+                <p>
+                     Determine if the selection of anime apparel and sci-fi media franchise merchandise are independent, positively correlated, or negatively correlated. Justify your reasoning.
+                </p>
+            </statement>
+           <!-- <solution>
+                <p>
+                    To establish the statistical relationship, compare the conditional probability found in Part A to the unconditional baseline probability:
+                    <ul>
+                        <li><p>Unconditional baseline probability of wearing Anime apparel: <m>P(\text{Anime}) = 0.2800</m></p></li>
+                        <li><p>Conditional probability of wearing Anime apparel given Sci-Fi gear: <m>P(\text{Anime} \mid \text{Sci-Fi}) = 0.2000</m></p></li>
+                    </ul>
+                </p>
+                <p>
+                    Because <m>P(\text{Anime} \mid \text{Sci-Fi}) \neq P(\text{Anime})</m>, the two events are not independent. Furthermore, because <m>P(\text{Anime} \mid \text{Sci-Fi}) \lt P(\text{Anime})</m> (meaning the introduction of the condition reduces the likelihood weight), the events are <strong>negatively correlated</strong>. Alternatively, this is verified because the actual intersection (<m>0.0700</m>) is less than the expected product under independence (<m>0.28 \cdot 0.35 = 0.0980</m>).
+                </p>
+            </solution>-->
+        </task>
+
+        <!-- Part C: Probability of Neither Item -->
+        <task xml:id="task-static-merch-neither">
+            <statement>
+                <p>
+                     What is the probability that a randomly selected convention attendee is wearing <em>neither</em> anime apparel nor sci-fi media franchise merchandise?
+                </p>
+            </statement>
+           <!-- <solution>
+                <p>
+                    To find the probability that an attendee wears neither item, we compute the complement of the union of both events: <m>P((\text{Anime} \cup \text{Sci-Fi})^c) = 1 - P(\text{Anime} \cup \text{Sci-Fi})</m>.
+                </p>
+                <p>
+                    First, apply the general addition rule to calculate the probability that an attendee is wearing at least one of the two types of merchandise:
+                    <md>
+                        <mrow>P(\text{Anime} \cup \text{Sci-Fi}) \amp = P(\text{Anime}) + P(\text{Sci-Fi}) - P(\text{Anime} \cap \text{Sci-Fi})</mrow>
+                        <mrow>\amp = 0.2800 + 0.3500 - 0.0700 = 0.5600</mrow>
+                    </md>
+                </p>
+                <p>
+                    Now, apply the complement rule to calculate the remaining area outside of both sets:
+                    <me>P((\text{Anime} \cup \text{Sci-Fi})^c) = 1 - 0.5600 = 0.4400</me>
+                    The probability that an attendee is wearing neither type of merchandise is exactly <strong>0.4400</strong>.
+                </p>
+            </solution>-->
+        </task>
+    </exercise>
 
 
 
