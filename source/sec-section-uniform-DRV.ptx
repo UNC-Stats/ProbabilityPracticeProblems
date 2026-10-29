@@ -5,40 +5,12 @@
 
  <introduction>
  <p> 
-    By completing the problems provided below, you will gain practice with: 
-    <ul>
-      <li>
-        <p>
-          
-        </p>
-      </li>
-      <li>
-        <p>
-         
-        </p>
-      </li>
-      <li>
-        <p>
-          
-        </p>
-      </li>
-      <li>
-        <p>
-          
-        </p>
-      </li>
-    </ul>
+   This section is different from the others in this chapter. Here you will learn about the discrete uniform random variable through a set of written and interactive exercises. (Complete the written exercises first. Do not move on to the interactive problems until you have completed the written part.) You will ultimately derive its probability distribution function and other properties.
   </p>
 </introduction>
 
 
- <exercises xml:id="hw-uniform-rv" >
-   <title>Interactive Exercises</title>
  
-
-
-   </exercises>
-
 
 
 <exercises xml:id="hw-uniform-rv-turn-in" >
@@ -48,18 +20,18 @@
 
 
 <exercise label="ex-discrete-uniform-complete">
-    <title>The Discrete Uniform Random Variable</title>
-    <statement>
-        <p>
-            Through this comprehensive exercise, you will explore the properties of the discrete uniform random variable, analyze an intuitive dice-rolling scenario, and ultimately derive its general theoretical formulas.
-        </p>
-    </statement>
+    <title>Rolling a Die</title>
+    <introduction>
+    <p>
+       Suppose you roll a single, fair, 6-sided die. Let the random variable <m>X</m> represent the  number that is rolled. 
+       </p>
+    </introduction>
 
     <!-- Task A: Dice PMF -->
     <task xml:id="task-dice-pmf">
         <statement>
             <p>
-                <strong>Part A:</strong> Suppose you roll a single fair 6-sided die. Let the random variable <m>X</m> represent the exact number that is rolled. Find the probability distribution function <m>p(x)</m> for <m>X</m>.
+              Find the probability distribution function, <m>p(x)</m>, for the random variable <m>X</m>.
             </p>
         </statement>
      <!--   <solution>
@@ -74,7 +46,7 @@
     <task xml:id="task-dice-ev-var">
         <statement>
             <p>
-                <strong>Part B:</strong> For the single 6-sided die roll described in Part A, compute the expected value <m>E(X)</m> and the variance <m>V(X)</m>.
+                Compute the expected value, <m>E(X)</m>, and the variance, <m>V(X)</m>, for the random variable <m>X</m>.
             </p>
         </statement>
        <!-- <solution>
@@ -95,7 +67,7 @@
     <task xml:id="task-uniform-justification">
         <statement>
             <p>
-                <strong>Part C:</strong> The discrete uniform random variable is used to model experiments where there are a finite number, <m>n</m>, of equally likely outcomes. Based on this definition, explain why the random variable <m>X</m> from Part A is uniform.
+                The discrete uniform random variable is used to model experiments where there are a finite number, <m>n</m>, of equally likely outcomes. Based on this definition, explain why the random variable <m>X</m> can be considered a discrete  uniform random variable.
             </p>
         </statement>
       <!--  <solution>
@@ -109,7 +81,7 @@
     <task xml:id="task-student-scenario">
         <statement>
             <p>
-                <strong>Part D:</strong> Provide another real-world scenario where the variable of interest would be a discrete uniform random variable. Fully describe it here: make sure to explicitly define your random variable, state its probability distribution, and explain why your random variable is uniform.
+              Provide another real-world scenario where the variable of interest would be a discrete uniform random variable. Fully describe it here.  Make sure to define the random variable and provide its probability distribution. Also, explain why your random variable would be considered uniform.
             </p>
         </statement>
      <!--   <solution>
@@ -126,7 +98,7 @@
     <task xml:id="task-general-pmf">
         <statement>
             <p>
-                <strong>Part E:</strong> Write a general formula that can be used for the probability distribution function of <em>any</em> discrete uniform random variable. Assume the random variable takes on values 1 through <m>n</m>. Explain the reasoning behind your answer.
+               Write a general formula that can be used for the probability distribution function of <em>any</em> discrete uniform random variable. Assume the random variable takes on values 1 through <m>n</m>. Explain the reasoning behind your answer.
             </p>
         </statement>
        <!-- <solution>
@@ -142,14 +114,19 @@
     <task xml:id="task-theoretical-derivations">
         <statement>
             <p>
-                <strong>Part F:</strong> Use your generalized formula from Part E to analytically derive the theoretical formulas for the expected value <m>E(X)</m> and variance <m>V(X)</m> of a general uniform random variable.
+                Show that the expected value and variance for a discrete uniform random variable, that takes on values 1 through <m>n</m>, can be expressed as:  
+                <me>E(X)=\dfrac{n+1}{2}\quad V(X)=\dfrac{n^2-1}{12}</me>
+            </p>
+            <p>
+                Use your generalized probability distribution function from from part (e) to analytically derive the theoretical formulas.
+                      
             </p>
         </statement>
         <hint>
             <p>
-                Review your foundational algebraic summation shortcuts for common integer series:
-                <me>\text{Arithmetic Series Shortcut: } \sum_{i=1}^{n} i = \frac{n(n+1)}{2}</me>
-                <me>\text{Sum of Squares Shortcut: } \sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}</me>
+                You may want to review your summation formulas for common sequences/series, e.g., the geometric series. I have provided two more examples below.
+                <me>\text{Arithmetic Series: } \sum_{i=1}^{n} i = \frac{n(n+1)}{2}</me>
+                <me>\text{Sum of Squares: } \sum_{i=1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}</me>
             </p>
         </hint>
        <!-- <solution>
@@ -183,141 +160,258 @@
 </exercise>
 
 
-<exercise xml:id="ex-tetris-bag-distance-rv">
-    <title>Advanced Discrete Variables: Block Game Spawn Gaps</title>
-    <introduction>
-        <p>
-            Recall the block-matching game, Tetris, that utilizes a <term>7-Bag Random Generator</term>. The engine places exactly one copy of each of the seven unique shapes (<m>I, J, L, O, S, T, Z</m>) into a bag, shuffles them completely, dispenses all seven, and then immediately repeats the process with a fresh bag.
-        </p>
-        <p>
-            A player tracks the game queue across two consecutive bags (Bag 1 followed by Bag 2). Let the discrete random variable <m>D</m> represent the <term>spawn distance gap</term> between the first bag's <m>I</m>-piece and the second bag's <m>I</m>-piece. 
-        </p>
-        <p>
-            We define this distance by counting the steps from one piece to the next. For example, if the first <m>I</m>-piece is the last card in Bag 1 (position 7) and the next <m>I</m>-piece is the first card in Bag 2 (position 8), the distance is <m>D = 8 - 7 = 1</m>.
-        </p>
-    </introduction>
-    
-    <hint>
-        <p>
-            Let <m>X_1</m> be the position of the <m>I</m>-piece in Bag 1 (ranging from 1 to 7) and <m>X_2</m> be its relative position inside Bag 2 (ranging from 1 to 7). The absolute index position in Bag 2 is <m>7 + X_2</m>. Therefore, the distance random variable can be written as: <me>D = (7 + X_2) - X_1 = 7 + X_2 - X_1</me> Remember that because each bag is shuffled independently, <m>X_1</m> and <m>X_2</m> are independent discrete uniform random variables on the integer interval <m>[1, 7]</m>.
-        </p>
-    </hint>
 
-    <!-- Part 1: Bounded Support Space -->
-    <task xml:id="task-tetris-distance-support">
-        <statement>
-            <p>
-                Determine the finite support space (the set of all possible integer values) for the random variable <m>D</m>. What are the minimum and maximum possible spawn distances between two consecutive <m>I</m>-pieces?
-            </p>
-        </statement>
-       <!-- <solution>
-            <p>
-                Using our distance equation <m>D = 7 + X_2 - X_1</m>:
-                <ul>
-                    <li>
-                        <p>
-                            <term>Minimum Distance:</term> This occurs when the first <m>I</m>-piece is as late as possible in Bag 1 (<m>X_1 = 7</m>) and the second <m>I</m>-piece arrives as early as possible in Bag 2 (<m>X_2 = 1</m>):
-                            <me>D_{\min} = 7 + 1 - 7 = 1 \text{ piece apart}</me>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <term>Maximum Distance:</term> This occurs when the first <m>I</m>-piece arrives as early as possible in Bag 1 (<m>X_1 = 1</m>) and the second <m>I</m>-piece is buried at the very end of Bag 2 (<m>X_2 = 7</m>):
-                            <me>D_{\max} = 7 + 7 - 1 = 13 \text{ pieces apart}</me>
-                        </p>
-                    </li>
-                </ul>
-                Because <m>X_1</m> and <m>X_2</m> take any integer values between 1 and 7, the support space for <m>D</m> is the set of all integers from 1 to 13:
-                <me>\text{Support}(D) = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13\}</me>
-            </p>
-        </solution> -->
-    </task>
-
-<task xml:id="task-tetris-distance-var-type">
-        <statement>
-            <p>
-                Independent discrete uniform random variables on the integer interval <m>[1, 7]</m>. Is <m>D</m> also uniform? Explain your answer. 
-            </p>
-        </statement>
-       <!-- <solution>
-            <p>
-               
-               </p>
- 
-        </solution> -->
-    </task>
-
-    <!-- Part 2: Boundary Probabilities -->
-    <task xml:id="task-tetris-distance-extreme-prob">
-        <statement>
-            <p>
-                Calculate the probability of experiencing the absolute minimum distance gap (<m>P(D = 1)</m>) and the absolute maximum distance gap (<m>P(D = 13)</m>).
-            </p>
-        </statement>
-        <!--<solution>
-            <p>
-                Since Bag 1 and Bag 2 are shuffled completely independently, the positions <m>X_1</m> and <m>X_2</m> each have a uniform distribution where <m>P(X_1 = x_1) = \frac{1}{7}</m> and <m>P(X_2 = x_2) = \frac{1}{7}</m>. The total number of equally likely position configurations is <m>7 \times 7 = 49</m> coordinate pairs.
-                <ul>
-                    <li>
-                        <p>
-                            To get a distance of <m>D = 1</m>, we must uniquely have <m>X_1 = 7</m> and <m>X_2 = 1</m>. This is exactly <m>1</m> out of the <m>49</m> possible outcomes:
-                            <me>P(D = 1) = P(X_1 = 7 \cap X_2 = 1) = \frac{1}{7} \times \frac{1}{7} = \frac{1}{49} \approx 0.0204</me>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            To get a distance of <m>D = 13</m>, we must uniquely have <m>X_1 = 1</m> and <m>X_2 = 7</m>. This is also exactly <m>1</m> out of the <m>49</m> outcomes:
-                            <me>P(D = 13) = P(X_1 = 1 \cap X_2 = 7) = \frac{1}{7} \times \frac{1}{7} = \frac{1}{49} \approx 0.0204</me>
-                        </p>
-                    </li>
-                </ul>
-            </p>
-        </solution> -->
-    </task>
-
-    <task xml:id="task-tetris-distance-expected-gap">
-        <statement>
-            <p>
-                How far apart would you expect the I pieces to be? In other words, what is the expected spawn gap? 
-            </p>
-        </statement>
-       <!-- <solution>
-            <p>
-               Find <m>E(D)=7</m>.
-               </p>
- 
-        </solution> -->
-    </task>
-
-
-    
-
-    <!-- Part 4: Center Peak Probability -->
-    <task xml:id="task-tetris-distance-peak-prob">
-        <statement>
-            <p>
-                Calculate the probability of experiencing a spawn distance gap of exactly seven pieces (<m>P(D = 7)</m>). 
-            </p>
-        </statement>
-       <!-- <solution>
-            <p>
-                We want to find how many coordinate pairs <m>(X_1, X_2)</m> satisfy our distance equation for <m>D = 7</m>:
-                <me>7 = 7 + X_2 - X_1 \implies X_2 - X_1 = 0 \implies X_1 = X_2</me>
-                This condition is satisfied whenever the <m>I</m>-piece lands in the exact same relative position in both bags. We count the matching configurations:
-                <me>(1,1), (2,2), (3,3), (4,4), (5,5), (6,6), (7,7)</me>
-                There are exactly <m>7</m> favorable outcomes out of the <m>49</m> total sample space configurations. Therefore:
-                <me>P(D = 7) = \frac{7}{49} = \frac{1}{7} \approx 0.1429</me>
-                <p>
-                    <em>Note for further study:</em> Because the distribution counts matching differences between two independent uniform variables, the resulting probability mass function forms a symmetric triangular distribution that peaks at <m>D = 7</m> with a probability of <m>\frac{7}{49}</m> and tapers down linearly to <m>\frac{1}{49}</m> at the outer edges (<m>D=1</m> and <m>D=13</m>).
-                </p>
-            </p>
-        </solution> -->
-    </task>
-</exercise>
    </exercises>
 
 
 
+
+<exercises xml:id="hw-uniform-rv" >
+   <title>Interactive Exercises</title>
+ 
+<exercise label="parsons-discrete-uniform-mgf" interactive="parsons">
+    <title>Derivation of the MGF</title>
+    <statement>
+        <p>
+            Let $X$ be a discrete uniform random variable on the support <m>\{1, 2, \dots, n\}</m>, with probability distribution function <m>P(X = x) =p(x)= \frac{1}{n}</m>. Derive the moment generating function for <m>X</m>.
+        </p>
+        <p>
+            Reorder the blocks below to derive <m>M_{X}(s)</m>. (Go step by step! Don't skip or combine steps.) You may or may not use all provided blocks.
+        </p>
+    </statement>
+    <hint>
+        <p>
+            Recall the geometric series, specifically the sum of the first n terms:
+            <me>S_n=\sum_{k=0}^{n-1}ar^k=a\left(\frac{1-r^n}{1-r}\right) \text{ for } r\neq 1</me>
+        </p>
+    </hint>
+    <blocks>
+        <block order="1">
+            <p>
+                By definition:
+                 <me>M_X(s) = E[e^{sX}] = \sum_{x=1}^{n} e^{sx} \cdot p(x)</me> 
+            </p>
+        </block>
+        <block order="2">
+            <p>
+                Substitute <m>p(x) = \frac{1}{n}</m> into the summation:
+              <me>M_X(s) = \sum_{x=1}^{n} e^{sx} \frac{1}{n}</me> 
+            </p>
+        </block>
+        <block order="3">
+            <p>
+                Reindex the summation to start at zero:
+                <me>M_X(s) =\sum_{x=0}^{n-1} \frac{1}{n} e^{s(x+1)} </me>
+            </p>
+        </block>
+        <block order="4">
+            <p>
+                Rewrite the summation to look like a geometric series (see hint):
+                <me>M_X(s) =\sum_{x=0}^{n-1} \left(\frac{1}{n}e^{s}\right) \left(e^s\right)^x</me>
+            </p>
+        </block>
+        <block order="5">
+            <p>
+                Apply the finite geometric series formula: 
+                <me>
+                 M_{X}(s) = \frac{1}{n}e^s \left(\frac{1 - (e^{s})^{n}}{1 - e^{s}}\right)
+                </me>
+            </p>
+        </block>
+        <block order="6">
+            <p>
+                Simplify to arrive at the final expression:
+               <me>
+                 M_{X}(s) = \frac{e^s}{n} \left(\frac{1 - e^{sn}}{1 - e^{s}}\right)
+                </me>
+            </p>
+        </block>
+    </blocks>
+</exercise>
+
+
+
+
+<exercise xml:id="ex-tetris-bag-distance-rv">
+    <title>Tetris Game Mechanics</title>
+    <introduction>
+        <p>
+            Recall the tile-matching block game Tetris, that utilizes a 7-bag random generator. The algorithm places exactly one copy of each of the seven unique shapes (<em>I, J, L, O, S, T, Z</em>) into a bag, shuffles them completely, dispenses all seven, and then immediately repeats the process with a fresh bag.
+        </p>
+        
+    </introduction>
+    
+   
+<task>
+    <statement correct="yes">
+        <p>
+            Let <m>X_1</m> be the position of the <m>I</m>-piece in the first 7-bag  that is generated. Random variable <m>X_1</m> therefore ranges from 1 to 7. Is <m>X_1</m> a uniform random variable?
+        </p>
+    </statement>
+
+    <feedback>
+    <p>
+        The finite number of outcomes are equally likely. </p>
+    </feedback>
+</task>
+
+
+    <!-- Part 1: Bounded Support Space (Interactive Fill-in-the-blank) -->
+    
+    
+    <task xml:id="task-tetris-distance-support" interactive="fill-in-the-blank">
+        <statement correct="yes">
+            <p>
+            A player tracks the game queue across two consecutive 7-bags (bag 1 followed by bag 2). Similar to <m>X_1</m>, define <m>X_2</m> to be the position of the <m>I</m>-piece in the second 7-bag  that is generated. The random variables <m>X_1</m> and <m>X_2</m> are independent.
+            </p>
+
+          </statement>
+          <feedback>
+    <p>
+        The two 7-bags are treated as completely independent in the system, so the positioning of the <m>I</m>-piece in the second 7-bag will not be affected by the position of the <m>I</m>-piece in the first 7-bag. </p>
+    </feedback>
+          </task>  
+            
+        <task xml:id="task-tetris-distance-support-names-wrong" interactive="fill-in-the-blank">
+        <statement>
+            <p>
+            Now define random variable <m>D</m> to be the <em>spawn distance</em> between the first bag's <m>I</m>-piece and the second bag's <m>I</m>-piece. 
+            [For example, if the first <m>I</m>-piece is the sixth shape in bag 1, and the next <m>I</m>-piece is the second shape in bag 2, the distance is <m>D = 3</m> pieces.]
+           </p>
+
+           <p>
+                Determine the finite support space for the random variable <m>D</m>. In other words, what values can <m>D</m> take on? Fill in the blanks below to answer this question. Your answers should be integers
+            </p>
+
+          <p> Minimum distance: <m>min(D)=</m> <fillin  answer="1" width="8" name="min"/> piece(s) apart</p>
+            <p>Maximum distance: <m>max(D)=</m> <fillin answer="13" width="8" name="max"/> piece(s) apart</p>
+        </statement>
+
+        <evaluation>
+            <evaluate submit="min"><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+             <evaluate submit="max"><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+        </evaluation>
+
+
+    </task>
+
+    <!-- Part 2: Distribution Type (Interactive Multiple Choice) -->
+    <task xml:id="task-tetris-distance-var-type" interactive="multiple-choice">
+        <statement>
+            <p>
+                <m>D</m> can be expressed as a linear combination of <m>X_1</m> and <m>X_2</m>: <me>D = (X_2+7)-X_1</me>.
+            </p>
+            <p>
+                Is <m>D</m> a uniform random variable? Or in other words, is a linear combination of uniform random variables also itself uniform? Explain why or why not. 
+            </p>
+        </statement>
+        <choices ranomize = "yes">
+            <choice correct="no">
+                <statement><p>Yes, because linear combinations of independent random variables keep the same distribution type.</p></statement>
+                
+                <feedback><p>Incorrect. Combining two independent uniform random variables does not yield another uniform random variable. (Also, think about the Binomial random variable, which is a linear combination of Bernoulli random variables.)</p></feedback>
+
+            </choice>
+            <choice correct="yes">
+                <statement><p>No, because different values of <m>D</m> are associated with a varying number of combinations of <m>X_1</m> and <m>X_2</m>.</p></statement>
+                <feedback><p>Correct! Extreme values like <m>D=1</m> can only happen 1 way, while middle values can happen in multiple ways, creating a non-uniform probability distribution.</p></feedback>
+            </choice>
+            <choice correct="no">
+                <statement><p>No, because <m>X_1</m> and <m>X_2</m> are independent.</p></statement>
+                <feedback><p>Incorrect. While it is true that <m>D</m> is not unfiorm, the reasoning is unrelated to the relationship between <m>X_1</m> and <m>X_2</m>.</p></feedback>
+            </choice>
+            <choice correct="no">
+                <statement><p>Yes, because <m>D</m> takes on a finite number of values.</p></statement>
+                <feedback><p>Incorrect. While it is true that <m>D</m> takes on a finite number of values, the probabilities for each value are not the same.</p></feedback>
+            </choice>
+        </choices>
+    </task>
+
+    <!-- Part 3: Boundary Probabilities (Interactive Fill-in-the-blank with fraction/tolerance) -->
+    <task xml:id="task-tetris-distance-extreme-prob" interactive="fill-in-the-blank">
+        <statement>
+            <p>
+                Calculate the probability of experiencing the minimum distance gap. Express your answer as a decimal rounded to two decimal places.
+            </p>
+
+               
+         <p>Probability = <fillin answer="0.02" width="8"/> </p>
+        </statement>
+
+        <evaluation>
+            <evaluate><test correct="yes">
+            <numcmp use-answer="yes"/>
+             <feedback><p>Correct! There is exactly <m>1</m> favorable pair out of the <m>7 \times 7 = 49</m> possible independent arrangements.</p></feedback>
+            </test>         
+</evaluate>
+        </evaluation>
+    </task>
+
+    <!-- Part 4: Expected Value (Interactive Fill-in-the-blank) -->
+    <task xml:id="task-tetris-distance-expected-gap" interactive="fill-in-the-blank">
+        <statement>
+            <p>
+                How far apart would you expect the <m>I</m>-pieces to be on average? In other words, what is the expected spawn gap? 
+            </p>
+            <p>
+                <m>E[D] = </m> <fillin answer="7" width="8"/> piece(s) apart.
+            </p>
+        </statement>
+
+        <evaluation>
+            <evaluate><test correct="yes">
+            <numcmp use-answer="yes"/>
+              <feedback><p>Correct! By linearity of expectation: <m>E[X_2 +7 - X_1] =  E[X_2] +7 - E[X_1]</m>. Since both uniforms random variables have an expected value of 4, <m>E(D)= 4 +7 - 4 = 7</m>.</p></feedback>
+            </test>         
+</evaluate>
+        </evaluation>
+    </task>
+
+    <!-- Part 5: Center Peak Probability (Interactive Multiple Choice) -->
+    <task xml:id="task-tetris-distance-peak-prob" interactive="multiple-choice">
+        <statement>
+            <p>
+                Calculate the probability of experiencing a spawn distance gap of exactly seven pieces, <m>P(D = 7)</m>. 
+            </p>
+        </statement>
+        <choices randomize="yes">
+            <choice correct="no">
+                <statement><p><m>\frac{1}{49}</m></p></statement>
+                <feedback><p>Incorrect. This is the probability for the edge cases (<m>D=1</m> or <m>D=13</m>).</p></feedback>
+            </choice>
+            <choice correct="no">
+                <statement><p><m>\frac{3}{49}</m></p></statement>
+                <feedback><p>Incorrect. This would apply to a distance gap of 3 or 11.</p></feedback>
+            </choice>
+            <choice correct="yes">
+                <statement><p><m>\frac{7}{49}</m></p></statement>
+                <feedback><p>Correct! The condition <m>7 = 7 + X_2 - X_1</m> implies <m>X_1 = X_2</m>. There are exactly 7 matching pairs: <m>(1,1), (2,2), \dots, (7,7)</m> out of 49 total outcomes.</p></feedback>
+            </choice>
+            <choice correct="no">
+                <statement><p><m>\frac{6}{49}</m></p></statement>
+                <feedback><p>Incorrect. This would apply to a distance gap of 6 or 8.</p></feedback>
+            </choice>
+            <choice correct="no">
+                <statement><p><m>\frac{5}{49}</m></p></statement>
+                <feedback><p>Incorrect. This would apply to a distance gap of 5 or 9.</p></feedback>
+            </choice>
+        </choices>
+    </task>
+</exercise>
+
+
+
+
+
+
+
+
+
+   </exercises>
 
 
 

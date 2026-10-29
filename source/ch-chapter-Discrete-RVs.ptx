@@ -4,13 +4,11 @@
   <title>Discrete Random Variables</title>
 
   <introduction>
-    <p> The problem sets provided here will give you practice with ... </p>
+    <p> The problem sets provided here will give you practice with discrete random variables, functions whose domain is the sample space of a probability experiment with a finite or countably infinite number of outcomes. The functions map sample spaces to the real numbers. You will explore all of the major formulas and properties associated with discrete random variables. </p>
 
       <p> Each problem set contains two types of problems: interactive exercises and non-interactive ("written") exercises. You will be able to check your answers and get immediate feedback on the interactive portion.
       </p>
 
-      <p> Note: This is a work in progress. These problems sets are still being edited and solutions checked for accuracy and clarity.
-      </p>
   </introduction>
 
   <!-- include sections -->

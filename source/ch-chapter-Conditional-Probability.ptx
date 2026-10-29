@@ -4,13 +4,11 @@
   <title>Conditional Probability</title>
 
   <introduction>
-    <p> The problem sets provided here will give you practice with ... </p>
+    <p> The problem sets provided here will give you practice with updating probabilities based on prior knowledge that you have about of the scenario or probability experiment. This is called a conditional probability. You will also gain experience in determining when two events' probabilities are conditional versus independent.   </p>
 
       <p> Each problem set contains two types of problems: interactive exercises and non-interactive ("written") exercises. You will be able to check your answers and get immediate feedback on the interactive portion.
       </p>
 
-      <p> Note: This is a work in progress. Problems set 3.2 is still being edited and solutions checked for accuracy and clarity.
-      </p>
   </introduction>
 
   <!-- include sections -->

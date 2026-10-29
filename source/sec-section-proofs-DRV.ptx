@@ -5,29 +5,7 @@
 
 <introduction>
  <p> 
-    By completing the problems provided below, you will gain practice with: 
-    <ul>
-      <li>
-        <p>
-          
-        </p>
-      </li>
-      <li>
-        <p>
-         
-        </p>
-      </li>
-      <li>
-        <p>
-          
-        </p>
-      </li>
-      <li>
-        <p>
-          
-        </p>
-      </li>
-    </ul>
+    By completing the problems provided below, you will gain some practice with proof writing (though these are mostly formula derivations). You will also become more comfortable with key properties of random variables that we have been using in class.
   </p>
 </introduction>
 
@@ -37,6 +15,7 @@
 
 
 <exercise label="parsons-expectation-proof-discrete-distractors">
+ <title>Property of Expectation</title>
     <statement>
         <p>
             Let <m>Y=aX+b</m> be a linear transformation of random variable <m>X</m>, where <m>a</m> and <m>b</m> are constants. Then, 
@@ -55,12 +34,12 @@
         </block>
         <block order="2" >
             <p>
-              <m>  = \sum_{x} \left[ axP(X = x) + bP(X = x) \right] \quad</m> (distribute)
+              <me>  = \sum_{x} \left[ axP(X = x) + bP(X = x) \right] \quad</me> (distribute)
             </p>
         </block>
         <block order="3">
             <p>
-                <m> = \sum_{x} axP(X = x) + \sum_{x} bP(X = x) \quad</m> (property of sums)
+                <me> = \sum_{x} axP(X = x) + \sum_{x} bP(X = x) \quad</me> (property of sums)
             </p>
         </block>
         <block order="4">
@@ -72,27 +51,36 @@
         <block order="5">
             <p>
                 
-                <me> = aE(X)  + b \sum_{x} P(X = x) \quad</me> (by definition)
+                <me> = aE(X)  + b \sum_{x} P(X = x) \quad</me> (by definition of <m>E(X)</m>)
             </p>
         </block>
                 <block order="6">
             <p>
-                <me>  = aE(X) + b(1) = aE(X) + b,</me>
+                <me>  = aE(X) + b(1),</me>
                 since <m>\sum_{x} P(X = x)=1</m>
             </p>
         </block>
+
+<block order="7">
+            <p>
+                <me> = aE(X)  + b \quad \quad</me> (simplify)
+            </p>
+        </block>
+
+
+
         <!-- Distractor 1 -->
         <block  correct="no">
             <p>
 
-                <m>= \sum_{x} axP(X = x) + bP(X = x) \quad</m> (distribute)
+                <me>= \sum_{x} axP(X = x) + bP(X = x) \quad</me> (distribute)
             </p>
         </block>
         <!-- Distractor 2 -->
         <block correct="no">
             <p>
 
-                <m>= \left(\sum_{all \, x} (ax + b)\right) \cdot \left(\sum_{all \, x} P(X = x)\right)\quad </m> (property of sums)
+                <me>= \left(\sum_{x} (ax + b)\right) \cdot \left(\sum_{x} P(X = x)\right)\quad </me> (property of sums)
             </p>
         </block>
     </blocks>
@@ -100,13 +88,13 @@
 
 
 <exercise xml:id="ex-variance-shortcut-proof-parsons">
-    <title>Interactive Proof: The Variance Shortcut Formula</title>
+    <title>The Variance Shortcut Formula</title>
     <statement>
         <p>
             The variance of a random variable <m>X</m> measures the expected value of the squared deviations around its mean, <m>\mu = E(X)</m>. Thus, the formula for variance can be written as:
             <me>V(X) = E\left[(X - E(X))^2\right] = E\left[(X - \mu)^2\right]</me>
             
-            Prove that, from this definition, we can derive the variance shortcut formula:
+            Prove that, from this definition, we can derive the following variance shortcut formula:
             <me>V(X) = E(X^2) - [E(X)]^2 =  E(X^2) - \mu^2  </me>
         </p>
         
@@ -115,14 +103,23 @@
         </p>
     </statement>
     <blocks>
-        <block order="1">
+     <block  order="1">
+            <p>
+                By definition:
+                <me>
+                    V(X)  = E\left[(X - \mu)^2\right] 
+                </me>
+            </p>
+        </block>
+
+        <block order="2">
             <p>
              Expand the perfect square polynomial inside the expectation brackets:
             <me>\implies V(X) = E\left[X^2 - 2\mu X + \mu^2\right]</me>
         </p>
         </block>
         <!-- Step 2 -->
-        <block order="2">
+        <block order="3">
             <p>
                 Apply the linearity property of expectations to split the expression into three terms:
                 <me>
@@ -132,7 +129,7 @@
         </block>
         
         <!-- Step 3 -->
-        <block order="3">
+        <block order="4">
             <p>
                 Apply the linearity property of expectations to handle the constant terms and simplify the expression:
                 <me>
@@ -142,7 +139,7 @@
         </block>
         
         <!-- Step 4 -->
-        <block order="4">
+        <block order="5">
             <p>
                 Substitute the identity <m>E(X) = \mu</m> into the linear expression:
                 <me>
@@ -152,7 +149,7 @@
         </block>
 
         <!-- Step 5 -->
-        <block order="4">
+        <block order="6">
             <p>
                 Combine like terms:
                 <me>
@@ -160,30 +157,17 @@
                 </me>
             </p>
         </block>
-
-        <!-- DISTRACTOR (Incorrect linearity handling) -->
-        <block  correct="no">
-            <p>
-                Distribute the expectation operator inside the square brackets:
-                <me>
-                   \implies V(X)  = \left[E(X) - E(\mu)\right]^2 
-                </me>
-            </p>
-        </block>
+       
     </blocks>
     
-    <hint>
-        <p>
-            Remember that the expectation operator <m>E</m> is linear, so it distributes across addition and subtraction. Once distributed, remember that <m>\mu</m> and <m>\mu^2</m> are static numbers, which means <m>E(\mu^2) = \mu^2</m>. Look for the block that distributes the expectation operator across the polynomial first.
-        </p>
-    </hint>
+
 </exercise>
 
 
 
 
    <exercise xml:id="ex-mgf-sum-independent-proof">
-    <title>Interactive Proof: MGF of a Sum of Independent Variables</title>
+    <title>MGF of a Sum of Independent Variables</title>
     <statement>
         <p>
             Let <m>Y = X_1 + X_2 + \dots + X_n</m>, where the <m>X_i</m>'s are mutually independent random variables. Prove the multiplicative property for moment generating functions:
@@ -197,7 +181,7 @@
     <blocks>
 <block order="1">
     <p>
-            By definition of a moment generating function:
+            By definition:
             <me>M_Y(s) = E\left[e^{sY}\right]</me>
         </p>
 </block>
@@ -266,9 +250,21 @@
 <exercises xml:id="hw-proof-disc-rv-turn-in" >
    <title>Written Exercises</title>
 
+<exercise xml:id="ex-linear-transform-proof-variance">
+    <title>Property of Variance</title>
+    <statement>
+        <p>
+          Let <m>Y=aX+b</m> be a linear transformation of random variable <m>X</m>, where <m>a</m> and <m>b</m> are constants. Then, 
+            <me>V(Y)=V(aX + b) = a^2V(X) </me>. 
+Prove that this property is true.
+
+        </p>
+    </statement>
+    </exercise>
+
 
 <exercise xml:id="ex-mgf-linear-transform-proof-static">
-    <title>Proof: Linear Transformations of MGFs</title>
+    <title>MGF of a Linear Transformation of a Random Variable</title>
     <statement>
         <p>
             Let <m>X</m> be a random variable with moment generating function <m>M_X(s)</m>, and let <m>a</m> and <m>b</m> be constant scalars. Prove the linear transformation property for moment generating functions:
@@ -278,7 +274,7 @@
     
     <hint>
         <p>
-            Start with the definition of a moment generating function, <m>M_Z(s) = E\left[e^{sZ}\right]</m>, substituting <m>Z = aX + b</m>. Distribute the parameter <m>s</m> inside the exponent, split the exponential term into a product, and identify which component behaves as a deterministic constant relative to the expectation operator.
+            Start with the definition of a moment generating function, <m>M_Z(s) = E\left[e^{sZ}\right]</m>, substituting <m>Z = aX + b</m>. 
         </p>
     </hint>
 
