@@ -4,12 +4,12 @@
   <title>Common Discrete Random Variables</title>
 
   <introduction>
-    <p> The problem sets provided here will give you more practice with discrete random variables. The first six sections each focus on a different common discrete random variable. The final section will challenge your ability to identify which random variables are appropriate in various scenarios.  </p>
+    <p> The problem sets provided here will give you more practice with discrete random variables. The first six sections each focus on different common discrete random variables. The final section will challenge your ability to identify which random variables are appropriate in various scenarios.  </p>
 
       <p> Each problem set contains two types of problems: interactive exercises and non-interactive ("written") exercises. You will be able to check your answers and get immediate feedback on the interactive portion.
       </p>
 
-      <p> Note: This is a work in progress. These problems sets for 5.2-5.7  are still being edited and solutions checked for accuracy and clarity.
+      <p> Note: This is a work in progress. These problems sets for 5.4-5.7  are still being edited and solutions checked for accuracy and clarity.
       </p>
   </introduction>
 
@@ -17,9 +17,9 @@
 
    <xi:include href="sec-section-uniform-DRV.ptx" /> 
    <xi:include href="sec-section-binomial-DRV.ptx" /> 
-   <xi:include href="sec-section-hypergeometric-DRV.ptx" /> 
    <xi:include href="sec-section-geometric-DRV.ptx" /> 
   <xi:include href="sec-section-neg-binomial-DRV.ptx" /> 
+  <xi:include href="sec-section-hypergeometric-DRV.ptx" /> 
   <xi:include href="sec-section-poisson-DRV.ptx" /> 
   <xi:include href="sec-section-mixed-DRV.ptx" /> 
   

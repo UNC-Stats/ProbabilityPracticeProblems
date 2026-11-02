@@ -5,26 +5,26 @@
 
  <introduction>
  <p> 
-    By completing the problems provided below, you will gain practice with: 
+    By completing the problems provided below, you will gain experience using the Bernoulli and Binomial random variables to answer questions involving random outcomes and probabilities. You will practice:     
     <ul>
-      <li>
+        <li>
         <p>
-          
+          Identifying when the Bernoulli and Binomial distributions can be used to model a scenario. 
         </p>
       </li>
       <li>
         <p>
-         
+          Using the Binomial probability distribution function to compute probabilities.
         </p>
       </li>
       <li>
         <p>
-          
+         Constructing the cumulative distributions functions for a Binomial random variable.
         </p>
       </li>
       <li>
         <p>
-          
+         Using the expected value and variance formulas for a Binomial random variable.
         </p>
       </li>
     </ul>
@@ -36,33 +36,176 @@
    <title>Interactive Exercises</title>
 
 
+   <exercise xml:id="ex-binomial-approximation-scenarios" interactive="multiple-choice">
+    <title>Is this Binomial? [Part 1]</title>
+    <statement>
+       <p>
+            In a recent year, the nationwide average score on the National Academic Assessment (NAA) was 1050. Suppose that exactly 54% of all high school graduates took this exam, and that female students comprise 51% of all high school graduates nationwide. 
+        </p>
+
+        <p>
+            A random sample of 120 high school graduates is selected from across the country.  Below you are presented with multiple random variables related to this scenario.  Select all that can be be considered Binomial/can be modeled with a Binomial distribution.
+        </p>
+
+    </statement>
+   <hint>
+        <p>
+            To determine if a variable fits the binomial model, check if it satisfies the following assumptions:
+            </p>
+            <ul>
+                <li>
+                    <p>Binary - Are there exactly two complementary outcomes for each trial (e.g., Success vs. Failure)? Bernoulli trials!</p>
+                </li>
+                <li>
+                    <p> Independent - Does the outcome of one trial have no effect on the outcome of another?</p>
+                </li>
+                <li>
+                    <p> Fixed Number of Trials - Is the sample size (<m>n</m>) established before counting begins?</p>
+                </li>
+                <li>
+                    <p> Constant Probability of Success - Does the probability (<m>p</m>) stay constant for every single trial?</p>
+                </li>
+            </ul>
+      
+    </hint>
+
+
+    <choices multiple="yes" randomize="yes">
+        <choice correct="yes">
+           <statement>
+                     <p> The number of students in the sample who took the NAA.</p>
+                </statement>
+
+                <feedback>
+                <p>Correct! This counts independent "successes" (taking the test) out of a fixed number of trials. Here, <m>n = 120</m> and <m>p = 0.54</m>.</p>
+            </feedback>
+        </choice>
+        <choice correct="no">
+            <statement>
+                <p>The individual exam scores of the 120 students in the sample.</p>
+            </statement>
+            <feedback>
+                <p>Incorrect. These are numerical values measured on a continuous scale, not a count of binary successes/failures.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+                <p>The number of students in the sample who scored above average on the NAA.</p>
+            </statement>
+            <feedback>
+                <p>Correct! Each student either scored above average or they did not (binary outcomes). While <m>n = 120</m>, the exact value of <m>p</m> is  unknown based on the given information.</p>
+            </feedback>
+        </choice>
+        <choice correct="no">
+            <statement>
+                <p>The amount of time required by each student in the sample to complete the NAA.</p>
+            </statement>
+            <feedback>
+                <p>Incorrect. Time is a continuous quantitative random variable, not a discrete count of binary events.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+                        <statement>
+                <p>The number of female high school graduates in the sample.</p>
+            </statement>
+            <feedback>
+                <p>Correct! This is a classic binomial counting scenario with a fixed sample size. Each student is either female or not (binary outcomes). Here, <m>n = 120</m> and <m>p = 0.51</m>.</p>
+            </feedback>
+
+        </choice>
+    </choices>
+</exercise>
+
+
+
+
+<exercise xml:id="ex-identifying-discrete-distributions" interactive="multiple-choice">
+    <title>Is this Binomial? [Part 2]</title>
+    <statement>
+        <p>
+            An electronics logistics warehouse receives a batch of 80 smart sensors, exactly 8 of which have a calibration defect. A quality control engineer plans to audit the shipment under various testing protocols. 
+        </p>
+        <p>
+            Select all of the following random variables that can be modeled using a Binomial distribution (or are well-approximated by one).
+        </p>
+    </statement>
+   
+    <choices multiple="yes" randomize="yes">
+        <choice correct="yes">
+            <statement>
+                <p>The engineer randomly selects 5 sensors with replacement (testing and returning each one before picking the next), and records the number of defective sensors found.</p>
+            </statement>
+            <feedback>
+                <p>Correct! Because sampling is done with replacement, the trials are independent and the probability of finding a defect stays perfectly constant at <m>p = 8/80 = 0.10</m> across a fixed <m>n = 5</m> trials. </p>
+            </feedback>
+        </choice>
+        <choice correct="no">
+            <statement>
+                <p>The engineer randomly selects 5 sensors without replacement from the batch of 80, and records the number of defective sensors found.</p>
+            </statement>
+            <feedback>
+                <p>Incorrect. Because the batch is small (<m>N = 80</m>) and sampling is done without replacement, the trials are dependent—the probability of a defect changes with each pull. This describes a Hypergeometric distribution, not a Binomial one.</p>
+            </feedback>
+        </choice>
+        <choice correct="no">
+            <statement>
+                <p>The engineer tests sensors one by one with replacement and records the total number of sensors they must test until they discover their very first defective unit.</p>
+            </statement>
+            <feedback>
+                <p>Incorrect. This scenario counts the number of trials required to achieve the first success, which defines a Geometric distribution, not a Binomial one.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+                <p>The warehouse receives a massive new fleet of 15,000 components from an assembly line where 2% are known to be defective. The engineer randomly selects 50 components without replacement and counts the defective units.</p>
+            </statement>
+            <feedback>
+                <p>Correct! While sampling is technically without replacement, the sample size (<m>n = 50</m>) is less than 10% of the massive population (<m>N = 15,000</m>). The independence assumption holds, making the Binomial approximation to the hypergeometric perfectly appropriate here (<m>n=50, p=0.02</m>).</p>
+            </feedback>
+        </choice>
+        <choice correct="no">
+            <statement>
+                <p>The engineer randomly selects 5 sensors with replacement and records the total weight of the selected units.</p>
+            </statement>
+            <feedback>
+                <p>Incorrect. Total weight is a continuous quantitative metric, not a discrete count of binary success events.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
 
 <exercise label="ex-binomial-colorado-energy-realistic" xmlns:pi="http://pretextbook.org">
-    <title>Binomial Distributions: Colorado Energy Conservation Audits</title>
+    <title>Colorado Energy Conservation</title>
     <introduction>
         <p>
-            Many utility companies promote environmental sustainability and energy conservation by offering discount rates to consumers who keep their monthly energy usage below certain established subsidy standards. A recent state environmental report notes that 35% of residential energy consumers in Colorado have reduced their home electricity usage sufficiently to qualify for these discounted rates. 
+            Many utility companies promote environmental sustainability and energy conservation by offering discount rates to consumers who keep their monthly energy usage below certain levels. A recent state environmental report notes that 35% of residential energy consumers in Colorado have reduced their home electricity usage sufficiently to qualify for these discounted rates. 
         </p>
         <p>
-            Suppose an energy inspector randomly selects a sample of 5 residential subscribers from Denver, Colorado. Let <m>X</m> denote the number of chosen subscribers who qualify for the favorable discounted rates. 
+            Suppose an inspector randomly selects a sample of 5 residential energy consumers from Denver. Let <m>X</m> denote the number of consumers who qualify for the discounted rates. 
         </p>
-
     </introduction>
 
     <!-- Part A: Probability Calculation (At least 4) -->
     <task xml:id="task-colorado-energy-prob-at-least-4">
         <statement>
             <p>
-                Find the probability that at least four of the five randomly selected residential subscribers qualify for the favorable discounted energy rates.
+                Find the probability that at least four of the five randomly selected residential consumers qualify for the discounted energy rates. Enter your answer as a decimal rounded to three decimal places.
             </p>
             <p>
-                Probability = <fillin  answer="0.0540" width="10"/>
+                Probability = <fillin  answer="0.054" width="10"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback>
+                    <p> Correct! <m>X \sim \text{Binomial}(n = 5, p = 0.35)</m>, and
+                    <me>P(X \ge 4) = P(X = 4) + P(X = 5) = 0.04877 + 0.00525 = 0.05402,</me>
+
+where           <me>P(X = 4) = \binom{5}{4} (0.35)^4 (0.65)^1,</me> and       <me>P(X = 5) = \binom{5}{5} (0.35)^5 (0.65)^0 </me>.  </p>
+                    </feedback>
                 </test>
             </evaluate>
         </evaluation>
@@ -103,16 +246,23 @@
     <task xml:id="task-colorado-energy-prob-fewer-than-2">
         <statement>
             <p>
-                Find the probability that fewer than two of the five randomly selected residential subscribers qualify for the favorable discounted energy rates.
+                Find the probability that fewer than two of the five randomly selected residential consumers qualify for the discounted energy rates. Enter your answer as a decimal rounded to three decimal places.
             </p>
             <p>
-                Probability = <fillin answer="0.4284" width="10"/>
+                Probability = <fillin answer="0.428" width="10"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                     <feedback>
+                    <p> Correct! <m>X \sim \text{Binomial}(n = 5, p = 0.35)</m>, and
+                    <me>P(X \lt 2) = P(X = 0) + P(X = 1) = 0.116029+0.312386 \approx 0.428,</me>
+
+where           <me>P(X = 0) = \binom{5}{0} (0.35)^0 (0.65)^5,</me> and       
+<me>P(X = 1) = \binom{5}{1} (0.35)^1 (0.65)^4 </me>.  </p>
+                    </feedback>
                 </test>
             </evaluate>
         </evaluation>
@@ -152,45 +302,49 @@
         <statement>
 
             <p>
-                Calculate the expected number and the variance of qualifying households within a random sample of  <m>5</m> subscribers. Which option correctly identifies these values and delivers the most accurate  interpretation of their meaning?
+                Calculate the expected value and the standard deviation for the number of qualifying residential consumers in the random sample of  <m>5</m>. Which option correctly identifies these values and delivers the most accurate  interpretation of their meaning?
             </p>
         </statement>
-        <choices>
-            <choice>
+        <choices randomize="yes">
+        <choice correct="yes">
                 <statement>
-                    <p><m>E(X) = 3.50</m> households, <m>\text{Var}(X) = 1.05</m>. This indicates that a clear majority of the sampled households will reliably qualify for the subsidy standard during most audit cycles.</p>
+                    <p> We expect nearly 2 residential consumers (<m>E(X) = 1.75</m>) to qualify, though this could vary by 1.07 residential consumers.</p>
                 </statement>
                 <feedback>
-                    <p>Incorrect. This configuration uses a success probability of <m>p = 0.70</m> from the old scenario. With Colorado's realistic baseline rate of 35%, the mean must shift lower, indicating that qualifying is the minority outcome state rather than the majority default.</p>
-                </feedback>
-            </choice>
-            <choice correct="yes">
-                <statement>
-                    <p><m>E(X) = 1.75</m> households, <m>\text{Var}(X) = 1.14</m>. This indicates that while you expect nearly 2 households to qualify on average, a variance close to the mean reveals high relative sample-to-sample volatility.</p>
-                </statement>
-                <feedback>
-                    <p>Correct! For any valid discrete random variable following a standard Binomial distribution, we evaluate the summary moments using algebraic parameter shortcuts:</p>
-                    <ul>
-                        <li><p><strong>Expected Value (Mean):</strong> <m>E(X) = n \cdot p = 5 \cdot 0.35 = 1.75</m> households.</p></li>
-                        <li><p><strong>Variance:</strong> <m>\text{Var}(X) = n \cdot p \cdot (1 - p) = 5 \cdot 0.35 \cdot 0.65 = 1.1375 \approx 1.14</m>.</p></li>
-                    </ul>
-                    <p><strong>Strategic Interpretation:</strong> In a small sample of 5, an expected value of 1.75 paired with a variance of 1.14 tells auditors to expect massive cluster fluctuations. Because the variance is high relative to the mean, drawing a sample with absolutely 0 qualifiers or a sample where 4 out of 5 qualify are both standard operational occurrences, rather than highly unusual anomalies.</p>
+                    <p>Correct! <m>E(X) = n \cdot p = 5 \cdot 0.35 = 1.75</m>  and <m>V(X) = n \cdot p \cdot (1 - p) = 5 \cdot 0.35 \cdot 0.65 = 1.1375 \approx 1.14</m>. Then <m>\sqrt{V(X)}=1.07</m></p>
                 </feedback>
             </choice>
             <choice>
                 <statement>
-                    <p><m>E(X) = 1.75</m> households, <m>\text{Var}(X) = 1.75</m>. This indicates that the system behaves as a standard Poisson stream where the arrival count and dispersion are perfectly locked.</p>
+                    <p>  We expect 3-4 residential consumers (<m>E(X) = 3.25</m>) to qualify, give or take 1.07 residential consumers.</p>
                 </statement>
                 <feedback>
-                    <p>Incorrect. While a Poisson distribution features an identical mean and variance (<m>\mu = \sigma^2</m>), a Binomial distribution's variance formula incorporates a regular dampening multiplier for failures, <m>(1 - p)</m>. Because <m>1 - 0.35 = 0.65 \lt 1</m>, the variance must be strictly smaller than the mean: <m>1.14 \lt 1.75</m>.</p>
+                    <p>Incorrect. This configuration uses a success probability of <m>p = 0.65</m> rather than the correct <m>p = 0.35</m>.</p>
+                </feedback>
+            </choice>
+            <choice >
+                <statement>
+                     <p>  We expect 1-2 residential consumers (<m>E(X) = 1.75</m>) to qualify, give or take 1.14 residential consumers.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This answer uses the variance, rather than standard deviation.
+                    </p>
                 </feedback>
             </choice>
             <choice>
                 <statement>
-                    <p><m>E(X) = 2.50</m> households, <m>\text{Var}(X) = 1.25</m>. This indicates a perfectly symmetric, unskewed coin-tossing model where succeeding or failing to qualify are completely equally likely.</p>
+ <p>  We expect approximately 3 residential consumers (<m>E(X) = 3.25</m>) to qualify, though this could vary by 1.14 residential consumers.</p>
                 </statement>
                 <feedback>
-                    <p>Incorrect. This matches a uniform or fair-coin system where <m>p = 0.50</m>. Because Colorado's actual conservation rate is lower (<m>p = 0.35</m>), the center of gravity shifts left and the distribution is right-skewed.</p>
+                   <p>Incorrect. This uses a success probability of <m>p = 0.65</m> rather than the correct <m>p = 0.35</m>. Also, this answer uses the variance, rather than the standard deviation.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                     <p>  We expect maybe 1 residential consumers (<m>E(X) = 0.35</m>) to qualify, give or take 0.48 residential consumers.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. This answer gives the mean and standard deviation for a Bernoulli random variable, rather than a Binomial.</p>
                 </feedback>
             </choice>
         </choices>
@@ -199,13 +353,13 @@
 
 
 <exercise label="ex-binomial-drone-thrusters" xmlns:pi="http://pretextbook.org">
-    <title>Binomial Distributions: Redundant Engineering Systems in Gaming Tech</title>
+    <title>Redundant Engineering Systems</title>
     <introduction>
         <p>
             During a championship sci-fi esports tournament, a media production company deploys an automated broadcast drone array to hover over the arena. To ensure stability, the drone's primary stabilization subsystem features a redundant bank of four identical hover-thrusters. Each individual thruster operates completely independently of the others.
         </p>
         <p>
-            Due to the extreme heat during the live event match, each individual thruster has a probability of <m>p = 0.20</m> of overheating and failing before the 1,000-second match countdown timer finishes. Crucially, the stabilization subsystem is designed with fail-safes: it will keep the drone airborne if any two of the  four thrusters  remain operational.
+            Due to the extreme heat during the live event match, each individual thruster has a probability of <m>p = 0.20</m> of overheating and failing before the 1,000-second match countdown timer finishes. Crucially, the stabilization subsystem is designed with fail-safes: it will keep the drone airborne if at least two of the  four thrusters  remain operational.
         </p>
 
     </introduction>
@@ -214,17 +368,24 @@
     <task xml:id="task-drone-exact-failures-input">
 <statement>
             <p>
-                Calculate the  probability that  3 of the 4 thrusters will fail during the match.
+                Calculate the  probability that  3 of the 4 thrusters will fail during the match. Write your answer as a decimal rounded to 4 decimal places.
             </p>
             
             <p>
-                Probability (rounded to four decimal places) = <fillin  answer="0.0256" width="10"/>
+                Probability  = <fillin  answer="0.0256" width="10"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback> <p>Correct! Let <m>Y</m> be the number of thrusters that do NOT fail. Then, the answer is:
+                   <me>P(Y=1)= \binom{4}{1} (0.80)^1 (0.20)^3</me> </p>
+<p>                    
+                    Or alternatively, let <m>Y</m> be the number of thrusters that fail. Then, we need:
+                    <me>P(Y=3)= \binom{4}{3} (0.20)^3 (0.80)^1</me> </p>
+</feedback>
+
                 </test>
             </evaluate>
         </evaluation>
@@ -250,48 +411,40 @@
         <statement>
 
             <p>
-                Calculate the  probability that the drone stabilization subsystem successfully operates longer than the 1,000-second tournament window.
+                Calculate the  probability that the drone remains airborne throughout the entire 1,000-second tournament match.
             </p>
 
             
         </statement>
        <choices>
             <choice>
-                <statement><p>A. <m>0.1536</m></p></statement>
+                <statement><p><m>0.1536</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This is the isolated point probability that exactly two components survive (<m>P(X = 2)</m>). The drone subsystem remains operational if <m>two, three, \text{ or } four</m> components function cleanly, so you must find the cumulative area for the entire interval.</p>
+                    <p>Incorrect. This is the probability that exactly two thrusters are working. You need to compute the probability that <em>at least</em> two are working.</p>
                 </feedback>
             </choice>
             <choice>
-                <statement><p>B. <m>0.0272</m></p></statement>
+                <statement><p> <m>0.0272</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This is the catastrophic failure rate (<m>P(X \lt 2)</m>), which counts the scenarios where either 0 or only 1 thruster stays online. Subtract this value from total certainty (1.00) to isolate the successful operating space.</p>
+                    <p>Incorrect. This is the probability that the drone does NOT remain airborne, i.e., the probability that  either 0 or 1 thruster continues working. </p>
                 </feedback>
             </choice>
             <choice correct="yes">
-                <statement><p>C. <m>0.9728</m></p></statement>
+                <statement><p> <m>0.9728</m></p></statement>
                 <feedback>
-                    <p>Correct! Because we have a fixed set of independent components (<m>n = 4</m>) where each has a constant binary success rate of remaining online (<m>p_{\text{success}} = 1 - 0.20 = 0.80</m>), the random count <m>X</m> follows a standard Binomial profile: <m>X \sim \text{Binomial}(n = 4, p = 0.80)</m>.</p>
-                    <p>The system successfully operates if <m>X \ge 2</m>. Applying the <strong>Complement Rule</strong> makes this check highly efficient:</p>
-                    <me>P(X \ge 2) = 1 - P(X \lt 2) = 1 - \left[ P(X = 0) + P(X = 1) \right]</me>
-                    <p>Evaluating the individual failure states using the Binomial PMF:</p>
-                    <ul>
-                        <li><p>Exactly 0 components survive: <m>\binom{4}{0} (0.80)^0 (0.20)^4 = 1 \cdot 1 \cdot 0.0016 = 0.0016</m></p></li>
-                        <li><p>Exactly 1 component survives: <m>\binom{4}{1} (0.80)^1 (0.20)^3 = 4 \cdot 0.80 \cdot 0.0080 = 0.0256</m></p></li>
-                    </ul>
-                    <p>Summing these lower tail blocks and subtracting from 1 yields: <m>1 - (0.0016 + 0.0256) = 1 - 0.0272 = 0.9728</m>. The cluster completes its run with a 97.28% reliability rate.</p>
+                    <p>Correct! To remain airborne: 2, 3, or 4 thrusters must continue to work. We can compute the probability for each of these scenarios using the Binomial probability distribution function and then add them together. </p>
                 </feedback>
             </choice>
             <choice>
-                <statement><p>D. <m>0.8192</m></p></statement>
+                <statement><p> <m>0.8192</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This represents the probability that the system encounters at most one failure, but the calculation step forgot to include the perfect scenario where absolutely zero thrusters overheat (<m>P(X = 4)</m>).</p>
+                    <p>Incorrect. This represents the probability that more than two thrusters remain functional. However, the drone will remain airborne when only two are working. You must include this scenario in your answer. </p>
                 </feedback>
             </choice>
             <choice>
-                <statement><p>E. <m>0.4096</m></p></statement>
+                <statement><p> <m>0.4096</m></p></statement>
                 <feedback>
-                    <p>Incorrect. This looks like the isolated point probability that exactly three components survive (<m>P(X = 3)</m>). Make sure to gather the full structural interval area across all operating states.</p>
+                    <p>Incorrect. This is the probability that all four thrusters remain functional. [It is also the probability that exactly 3 thrusters remain functional.] However, the drone stays airborne as long as at least two thrusters remain operational. You want to find the probability of this occurring.</p>
                 </feedback>
             </choice>
         </choices>
@@ -303,48 +456,23 @@
         <statement>
 
             <p>
-                Calculate the  expected number and the variance of surviving thrusters in this 4-element array block. Which option correctly identifies these values and maps out the true risk behavior of the tech array?
+                Calculate the  expected value and the variance for the number of functioning thrusters (<m>Y</m>). Enter your answers as decimals rounded to 2 decimal places.
             </p>
+
+<p>  <m>E(Y)=</m> <fillin  answer="3.20" width="8" name="e"/> </p>
+            <p> <m>V(Y)=</m> <fillin answer="0.64" width="8" name="v"/> </p>
         </statement>
-        <choices>
-            <choice>
-                <statement>
-                    <p><m>E(X) = 0.80</m> thrusters, <m>\text{Var}(X) = 0.64</m>. This indicates that under normal conditions, almost all thrusters are expected to burn out immediately during the countdown launch sequence.</p>
-                </statement>
-                <feedback>
-                    <p>Incorrect. This option swaps the probability parameters, using the failure rate of 0.20 as the target success probability. Because each thruster has a dominant 80% chance of staying online, the expected survival count must be high.</p>
-                </feedback>
-            </choice>
-            <choice correct="yes">
-                <statement>
-                    <p><m>E(X) = 3.20</m> thrusters, <m>\text{Var}(X) = 0.64</m>. This confirms that while the vast majority of parts stay operational on average, a low variance keeps the cluster highly clustered around safe operating levels.</p>
-                </statement>
-                <feedback>
-                    <p>Correct! For any valid discrete random variable following a standard Binomial distribution, we evaluate the summary moments using algebraic parameter shortcuts based on our success parameters (<m>n = 4</m>, <m>p = 0.80</m>):</p>
-                    <ul>
-                        <li><p><strong>Expected Value (Mean):</strong> <m>E(X) = n \cdot p = 4 \cdot 0.80 = 3.20</m> operational thrusters.</p></li>
-                        <li><p><strong>Variance:</strong> <m>\text{Var}(X) = n \cdot p \cdot (1 - p) = 4 \cdot 0.80 \cdot 0.20 = 0.64</m>.</p></li>
-                    </ul>
-                    <p><strong>Operational Interpretation:</strong> An expected value of 3.20 proves that the system is engineered defensively. Since you only need 2 thrusters to survive, a mean of 3.20 paired with a very tight variance of 0.64 ensures that the random outcome is strongly squashed against the upper boundary, making a catastrophic drop down to 0 or 1 active thrusters an exceedingly rare edge case anomaly.</p>
-                </feedback>
-            </choice>
-            <choice>
-                <statement>
-                    <p><m>E(X) = 3.20</m> thrusters, <m>\text{Var}(X) = 3.20</m>. This implies the system's failure patterns behave like a standard continuous Poisson decay field.</p>
-                </statement>
-                <feedback>
-                    <p>Incorrect. While a Poisson system features a locked mean and variance, a Binomial distribution dampens its variance by multiplying by the failure weight, <m>(1-p)</m>. Since <m>0.20 \lt 1</m>, the variance must be strictly smaller than the mean: <m>0.64 \lt 3.20</m>.</p>
-                </feedback>
-            </choice>
-            <choice>
-                <statement>
-                    <p><m>E(X) = 2.00</m> thrusters, <m>\text{Var}(X) = 1.00</m>. This models a perfectly balanced system where turning on or burning out are entirely equally likely.</p>
-                </statement>
-                <feedback>
-                    <p>Incorrect. This matches a fair coin model where <m>p = 0.50</m>. Because the components are high-grade and heavily biased toward survival (<m>p = 0.80</m>), the center of mass sits much further right.</p>
-                </feedback>
-            </choice>
-        </choices>
+
+        <evaluation>
+            <evaluate submit="e"><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+             <evaluate submit="v"><test correct="yes">
+            <numcmp use-answer="yes"/>
+            </test></evaluate>
+        </evaluation>
+
+
     </task>
 </exercise>
 
@@ -359,27 +487,23 @@
 
 
 <exercise xml:id="ex-antenna-network-binomial">
-    <title>Discrete Distributions: Smart Antenna Connectivity</title>
+    <title> Smart Antenna Connectivity</title>
     <introduction>
         <p>
-            A high-performance mobile streaming device utilizes three redundant cellular data antennas acting independently of each other. The device succeeds in sending a data packet if any one or more of the antennas successfully establish a connection with the local network hub.
+            A high-performance mobile streaming device utilizes multiple cellular data antennas acting independently of each other. The device succeeds in sending a data packet if any one or more of the antennas successfully establish a connection with the local network hub.  During peak hours, each individual antenna possesses a probability of <m>p = 0.92</m> of successfully establishing a network connection.
         </p>
         <p>
-            During peak hours, each individual antenna possesses a baseline probability of <m>p = 0.8</m> of successfully establishing a network connection. Suppose the device attempts to send a packet during peak hours. Let the random variable <m>X_i</m> indicate whether antenna <m>i</m> successfully connects (for <m>i=1,2,3</m>), and let <m>Y = \sum_{i=1}^3 X_i</m> represent the total number of operational antennas.
+            Suppose the device has 3 antennas and attempts to send a data packet during peak hours. Let the random variable <m>X_i</m> indicate whether antenna <m>i</m> successfully connects (for <m>i=1,2,3</m>), and let <m>Y = \sum_{i=1}^3 X_i</m> represent the total number of antennas that connect.
         </p>
     </introduction>
     
-    <hint>
-        <p>
-            
-        </p>
-    </hint>
+
 
     <!-- Part 1: Random Variable Identification -->
     <task xml:id="task-network-rv-classification">
         <statement>
             <p>
-                What type of random variables are <m>X_i</m> (for <m>i=1,2,3</m>) and <m>Y</m>? Explain your reasoning.
+                What type of random variables are  <m>X_i</m>, <m>i=1,2,3</m>, and  <m>Y</m>? Explain your reasoning.
             </p>
         </statement>
        <!-- <solution>
@@ -404,7 +528,7 @@
     <task xml:id="task-network-pmfs-and-graphs">
         <statement>
             <p>
-                Specify the probability distribution functions (PMFs) for the random variables <m>X_i</m> and <m>Y</m>, plugging in the correct values for the parameter(s). Also sketch graphs (bar charts) of the resulting distributions.
+                Specify the probability distribution functions for the random variables <m>X_3</m> and <m>Y</m>, plugging in the correct values for the parameter(s). Also sketch graphs (bar charts) of the resulting probability distributions.
             </p>
         </statement>
        <!-- <solution>
@@ -532,7 +656,7 @@
 <task xml:id="task-network-prob-sent">
         <statement>
             <p>
-                Copmute the probability that the device succeeds in sending a data packet during peak usage hours.
+                Compute the probability that the device succeeds in sending a data packet during peak usage hours.
             </p>
         </statement>
         </task>
