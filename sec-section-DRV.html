@@ -17,17 +17,21 @@
 <title>Discrete RVs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-1 { system: extends lower-roman; prefix: ''; suffix: ' '; }
+@counter-style ptx-marker-2 { system: extends decimal; prefix: ''; suffix: ' '; }
+</style>
 <script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
 startMathJax({
 hasWebworkReps: false,
 hasSage: false,
 isReact: false,
 htmlPresentation: false,
+lang: "en-US",
 });
-</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+</script><script defer data-pretext-mathjax="true" onerror="this.dataset.loadFailed = 'true';" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
 <meta name="twitter:title" content="Probability Theory: Practice Problems">
@@ -36,7 +40,7 @@ htmlPresentation: false,
 <meta name="twitter:description" content="A simple string (no markup is allowed) to describe your book.">
 <meta property="og:description" content="A simple string (no markup is allowed) to describe your book.">
 <meta name="twitter:card" content="summary">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.42"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.56"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.56"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -58,34 +62,61 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.3.6';
+eBookConfig.runestone_version = '8.4.1';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.4beca1fdeed766a2.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.ebd33f6a21eed414.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.9963089870a016c8.css">
+<script src="_static/prefix-runtime.82b21a4699b89209.bundle.js"></script><script src="_static/prefix-23.7d27cb317c36911a.bundle.js"></script><script src="_static/prefix-runestone.35a40fea06647cf2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-runestone.7062ede5334282a6.css">
 <script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body id="changeme" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="workbook.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></h1>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="workbook.html"><span class="title">Probability Theory</span> <span class="subtitle">Practice Problems</span></a></div>
 <p class="byline">Kristin Kang</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
-<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search book" commandfor="ptx-search-dialog" command="show-modal"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog" closedby="closerequest"><div class="ptx-search-dialog-controls">
-<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close search" id="ptx-search-close" class="ptx-search-close" commandfor="ptx-search-dialog" command="close"><span class="material-symbols-outlined">close</span></button>
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
 <div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
-<h2 class="ptx-search-results-heading">Search Results: </h2>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
 <div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
 <ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-chapter-Discrete-RVs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Discrete-RVs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-proofs-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="ch-chapter-Discrete-RVs-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-chapter-Discrete-RVs.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-section-proofs-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -94,34 +125,35 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-frontmatter" class="structural toc-item-list">
 <li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
 <li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-chapter-Basic-Probability.html" class="internal"><span class="codenumber">1</span> <span class="title">Probability Concepts and Combinatorics</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-chapter-Basic-Probability" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-chapter-Basic-Probability-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-BP.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introductory Concepts</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-BP" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts" class="internal"><span class="codenumber">1.1</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-BP.html#hw-basic-probability-concepts-turn-in" class="internal"><span class="codenumber">1.1</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-counting-simple.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Fundamental Counting Techniques</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-counting-simple" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple" class="internal"><span class="codenumber">1.2</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-simple.html#hw-counting-simple-turn-in" class="internal"><span class="codenumber">1.2</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-counting-harder.html" class="internal"><span class="codenumber">1.3</span> <span class="title">More Counting Practice</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-counting-harder" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder" class="internal"><span class="codenumber">1.3</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-counting-harder.html#hw-counting-harder-turn-in" class="internal"><span class="codenumber">1.3</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
@@ -130,17 +162,18 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-chapter-Set-Operations.html" class="internal"><span class="codenumber">2</span> <span class="title">Set Theory</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-chapter-Set-Operations" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-chapter-Set-Operations-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-SO.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Set Operations and Probabilities</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-SO" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations" class="internal"><span class="codenumber">2.1</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO.html#hw-set-operations-turn-in" class="internal"><span class="codenumber">2.1</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-SO-proofs.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Proofs!</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-SO-proofs" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs" class="internal"><span class="codenumber">2.2</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-SO-proofs.html#hw-set-proofs-turn-in" class="internal"><span class="codenumber">2.2</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
@@ -149,17 +182,18 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-chapter-Conditional-Probability.html" class="internal"><span class="codenumber">3</span> <span class="title">Conditional Probability</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-chapter-Conditional-Probability" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-chapter-Conditional-Probability-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-CP.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Conditional Probabilities and Independence</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-CP" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob" class="internal"><span class="codenumber">3.1</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP.html#hw-cond-prob-turn-in" class="internal"><span class="codenumber">3.1</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-CP-Bayes.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bayes’ Theorem</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-CP-Bayes" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes" class="internal"><span class="codenumber">3.2</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CP-Bayes.html#hw-CP-Bayes-turn-in" class="internal"><span class="codenumber">3.2</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
@@ -168,17 +202,18 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-chapter-Discrete-RVs.html" class="internal"><span class="codenumber">4</span> <span class="title">Discrete Random Variables</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-chapter-Discrete-RVs">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-chapter-Discrete-RVs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-section-DRV.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Discrete RVs</span></a></div>
-<ul class="structural toc-item-list active">
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec-section-DRV">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv" class="internal"><span class="codenumber">4.1</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-DRV.html#hw-discrete-rv-turn-in" class="internal"><span class="codenumber">4.1</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-proofs-DRV.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Property Derivations</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-proofs-DRV" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv" class="internal"><span class="codenumber">4.2</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-proofs-DRV.html#hw-proof-disc-rv-turn-in" class="internal"><span class="codenumber">4.2</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
@@ -187,162 +222,85 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs.html" class="internal"><span class="codenumber">5</span> <span class="title">Common Discrete Random Variables</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch-chapter-Common-Discrete-RVs" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-chapter-Common-Discrete-RVs-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-uniform-DRV.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Uniform Random Variable</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-uniform-DRV" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv-turn-in" class="internal"><span class="codenumber">5.1</span> <span class="title">Written Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-DRV.html#hw-uniform-rv" class="internal"><span class="codenumber">5.1</span> <span class="title">Interactive Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-binomial-DRV.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Bernoulli and Binomial Random Variables</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-binomial-DRV" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv" class="internal"><span class="codenumber">5.2</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-binomial-DRV.html#hw-binom-rv-turn-in" class="internal"><span class="codenumber">5.2</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-geometric-DRV.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Geometric Random Variable</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-geometric-DRV" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv" class="internal"><span class="codenumber">5.3</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-geometric-DRV.html#hw-geo-rv-turn-in" class="internal"><span class="codenumber">5.3</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Negative Binomial Random Variable</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-neg-binomial-DRV" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv" class="internal"><span class="codenumber">5.4</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-neg-binomial-DRV.html#hw-neg-binom-rv-turn-in" class="internal"><span class="codenumber">5.4</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Hypergeometric Random Variable</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec-section-hypergeometric-DRV" class="structural toc-item-list">
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv" class="internal"><span class="codenumber">5.5</span> <span class="title">Interactive Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#hw-hyper-rv-turn-in" class="internal"><span class="codenumber">5.5</span> <span class="title">Written Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-hypergeometric-DRV.html#binomial-approximation-mixed" class="internal"><span class="codenumber">5.5</span> <span class="title">Binomial Approximation to the Hypergeometric Distribution</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-section-poisson-DRV.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Poisson Random Variable</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv" class="internal"><span class="codenumber">5.6</span> <span class="title">Interactive Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-poisson-DRV.html#hw-poisson-rv-turn-in" class="internal"><span class="codenumber">5.6</span> <span class="title">Written Exercises</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Mixed Bag Practice</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-mixed" class="internal"><span class="codenumber">5.7</span> <span class="title">Interactive Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-mixed-common-DRV.html#hw-common-discrete-rv-turn-in" class="internal"><span class="codenumber">5.7</span> <span class="title">Written Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-chapter-Continuous-RVs.html" class="internal"><span class="codenumber">6</span> <span class="title">Continuous Random Variables</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-section-CRV.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Continuous RVs</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv" class="internal"><span class="codenumber">6.1</span> <span class="title">Interactive Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-CRV.html#hw-cont-rv-turn-in" class="internal"><span class="codenumber">6.1</span> <span class="title">Written Exercises</span></a></div></li>
-</ul>
-</li></ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-chapter-Common-Continuous-RVs.html" class="internal"><span class="codenumber">7</span> <span class="title">Common Continuous Random Variables</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-section-uniform-CRV.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Random Variable</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv" class="internal"><span class="codenumber">7.1</span> <span class="title">Interactive Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-uniform-CRV.html#hw-uniform-cont-rv-turn-in" class="internal"><span class="codenumber">7.1</span> <span class="title">Written Exercises</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-section-exponential-CRV.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Exponential Random Variable</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv" class="internal"><span class="codenumber">7.2</span> <span class="title">Interactive Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-exponential-CRV.html#hw-exponential-rv-turn-in" class="internal"><span class="codenumber">7.2</span> <span class="title">Written Exercises</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-section-normal-CRV.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Normal Random Variable</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv" class="internal"><span class="codenumber">7.3</span> <span class="title">Interactive Exercises</span></a></div></li>
-<li class="toc-item toc-exercises">
-<div class="toc-title-box"><a href="sec-section-normal-CRV.html#hw-normal-rv-turn-in" class="internal"><span class="codenumber">7.3</span> <span class="title">Written Exercises</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-section-normal-CRV.html#sec-distribution-selection" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Identifying and Selecting Probability Models</span></a></div></li></ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-section-gamma-CRV.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Gamma Random Variable</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv" class="internal"><span class="codenumber">7.4</span> <span class="title">Interactive Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-gamma-CRV.html#hw-gamma-rv-turn-in" class="internal"><span class="codenumber">7.4</span> <span class="title">Written Exercises</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-section-beta-CRV.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Beta Random Variable</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv" class="internal"><span class="codenumber">7.5</span> <span class="title">Interactive Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-beta-CRV.html#hw-beta-rv-turn-in" class="internal"><span class="codenumber">7.5</span> <span class="title">Written Exercises</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-chapter-Joint-RVs.html" class="internal"><span class="codenumber">8</span> <span class="title">Jointly Distributed Random Variables</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-section-discrete-joint.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Joint Discrete Random Variables</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv" class="internal"><span class="codenumber">8.1</span> <span class="title">Interactive Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-section-discrete-joint.html#hw-joint-rv-turn-in" class="internal"><span class="codenumber">8.1</span> <span class="title">Written Exercises</span></a></div></li>
-</ul>
-</li></ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="sec-section-DRV">
-<h2 class="heading hide-type">
+<h1 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discrete RVs</span>
-</h2>
+</h1>
 <section class="introduction" id="sec-section-DRV-2">
 <div class="para logical" id="sec-section-DRV-2-1">
 <div class="para">By completing the problems provided below, you will gain practice with computing and using the properties and formulas associated with discrete random variables. This includes:</div>
 <ul class="disc" id="sec-section-DRV-2-1-1">
 <li id="sec-section-DRV-2-1-1-1">
-<div class="para" id="sec-section-DRV-2-1-1-1-1">Probability Distributions and Cumulative Distributions<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-DRV-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-section-DRV-2-1-1-1-1">Probability Distributions and Cumulative Distributions<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-section-DRV-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#sec-section-DRV-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-section-DRV-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="sec-section-DRV-2-1-1-2">
-<div class="para" id="sec-section-DRV-2-1-1-2-1">Expected Value and Variance<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-DRV-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-section-DRV-2-1-1-2-1">Expected Value and Variance<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-section-DRV-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#sec-section-DRV-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-section-DRV-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="sec-section-DRV-2-1-1-3">
-<div class="para" id="sec-section-DRV-2-1-1-3-1">Moment Generating Functions<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-DRV-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-section-DRV-2-1-1-3-1">Moment Generating Functions<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-section-DRV-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#sec-section-DRV-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-section-DRV-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec-section-DRV-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-section-DRV-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section>
 <section class="exercises" id="hw-discrete-rv">
-<h3 class="heading hide-type">
+<h2 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Exercises</span>
-</h3>
-<article class="exercise exercise-like" id="ex-int-discrete-prob"><h4 class="heading">
+</h2>
+<article class="exercise exercise-like" id="ex-int-discrete-prob"><h3 class="heading">
 <span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Patent Life.</span>
-</h4>
+</h3>
 <div class="introduction" id="ex-int-discrete-prob-2">
-<div class="para" id="ex-int-discrete-prob-2-1">When evaluating market assets, analysts use probabilistic frameworks to model the time remaining on a product’s patent after deducting regulatory delays. A biomedical firm tracks the actual commercial patent life, <span class="process-math">\(Y\text{,}\)</span> rounded to the nearest integer year, for a recent portfolio of medical software systems. The probability distribution of <span class="process-math">\(Y\)</span> is given in the table below:<div class="autopermalink" data-description="Paragraph"><a href="#ex-int-discrete-prob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-int-discrete-prob-2-1">When evaluating market assets, analysts use probabilistic frameworks to model the time remaining on a product’s patent after deducting regulatory delays. A biomedical firm tracks the actual commercial patent life, <span class="process-math">\(Y\text{,}\)</span> rounded to the nearest integer year, for a recent portfolio of medical software systems. The probability distribution of <span class="process-math">\(Y\)</span> is given in the table below:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-int-discrete-prob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="table table-like" id="ex-int-discrete-prob-2-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 4.1.1"><a href="#ex-int-discrete-prob-2-2" title="Copy heading and permalink for Table 4.1.1" aria-label="Copy heading and permalink for Table 4.1.1">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figure class="table table-like" id="ex-int-discrete-prob-2-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Table 4.1.1"><a tabindex="-1" href="#ex-int-discrete-prob-2-2" title="Copy heading and permalink for Table 4.1.1" aria-label="Copy heading and permalink for Table 4.1.1">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="c m b1 r1 l1 t1 lines">Actual Patent Life, <span class="process-math">\(Y\)</span> (years)</th>
 <th scope="col" class="c m b1 r1 l0 t1 lines">Probability, <span class="process-math">\(P(y)\)</span>
@@ -375,10 +333,10 @@ eBookConfig.enable_chatcodes =  false;
 </table></div>
 </figure>
 </div>
-<article class="task exercise-like" id="ex-int-discrete-prob-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<article class="task exercise-like" id="ex-int-discrete-prob-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
 <div class="exercise-statement">
-<div class="para" id="ex-int-discrete-prob-3-1-1">Calculate the probability that a randomly chosen software portfolio piece features a commercial patent lifespan of at least 8 years; that is, find <span class="process-math">\(P(Y \ge 8)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-int-discrete-prob-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-int-discrete-prob-3-1-1">Calculate the probability that a randomly chosen software portfolio piece features a commercial patent lifespan of at least 8 years; that is, find <span class="process-math">\(P(Y \ge 8)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-int-discrete-prob-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
 <ul data-component="multiplechoice" class="exercise-interactives" data-multipleanswers="false" data-random="">
@@ -417,47 +375,47 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </div></div>
-<div class="autopermalink" data-description="Task 4.1.1.a"><a href="#ex-int-discrete-prob-3" title="Copy heading and permalink for Task 4.1.1.a" aria-label="Copy heading and permalink for Task 4.1.1.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.1.a"><a tabindex="-1" href="#ex-int-discrete-prob-3" title="Copy heading and permalink for Task 4.1.1.a" aria-label="Copy heading and permalink for Task 4.1.1.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="ex-int-discrete-prob-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<article class="task exercise-like" id="ex-int-discrete-prob-4"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone">
 <div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
-"problemHtml": "\n<div class=\"para\" id=\"ex-int-discrete-prob-4-1-1\">Calculate the expected value of the commercial patent life for these software products. Input your answer as a decimal rounded to two decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-int-discrete-prob-4-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-int-discrete-prob-4-1-2\"><span class=\"process-math\">\\(\\mu = E(Y) = \\)<\/span><input type=\"text\" id=\"ex-int-discrete-prob-blank1\" size=\"8\"\/> years<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-int-discrete-prob-4-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"problemHtml": "\n<div class=\"para\" id=\"ex-int-discrete-prob-4-1-1\">Calculate the expected value of the commercial patent life for these software products. Input your answer as a decimal rounded to two decimal places.<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#ex-int-discrete-prob-4-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-int-discrete-prob-4-1-2\"><span class=\"process-math\">\\(\\mu = E(Y) = \\)<\/span><input type=\"text\" id=\"ex-int-discrete-prob-blank1\" size=\"8\"\/> years<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#ex-int-discrete-prob-4-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
 "solutionHtml": "",
 "blankNames": {"blank1": 0},
 "feedbackArray": [[{"number": [6.85,6.85], "feedback": "\n<div class=\"para\" id=\"ex-int-discrete-prob-4-2-1-1-2-1\">Excellent! The expected value is the probability-weighted sum of all outcomes (weighted mean): <span class=\"process-math\">\\(4(0.05) + 5(0.10) + 6(0.20) + 7(0.35) + 8(0.20) + 9(0.10) = 0.20 + 0.50 + 1.20 + 2.45 + 1.60 + 0.90 = 6.85\\)<\/span> years.<\/div>"}, {"feedback": "Incorrect."}]]
 }</script></div>
 </div></div>
-<div class="autopermalink" data-description="Task 4.1.1.b"><a href="#ex-int-discrete-prob-4" title="Copy heading and permalink for Task 4.1.1.b" aria-label="Copy heading and permalink for Task 4.1.1.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.1.b"><a tabindex="-1" href="#ex-int-discrete-prob-4" title="Copy heading and permalink for Task 4.1.1.b" aria-label="Copy heading and permalink for Task 4.1.1.b">🔗</a></div>
 </article>
-<article class="task exercise-like" id="ex-int-discrete-prob-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<article class="task exercise-like" id="ex-int-discrete-prob-5"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone">
 <div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
-"problemHtml": "\n<div class=\"para\" id=\"ex-int-discrete-prob-5-1-1\">Also find <span class=\"process-math\">\\(F(6)\\text{.}\\)<\/span> Input your answer as a decimal rounded to two decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-int-discrete-prob-5-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-int-discrete-prob-5-1-2\"><span class=\"process-math\">\\(F(6)=\\)<\/span><input type=\"text\" id=\"ex-int-discrete-prob-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-int-discrete-prob-5-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"problemHtml": "\n<div class=\"para\" id=\"ex-int-discrete-prob-5-1-1\">Also find <span class=\"process-math\">\\(F(6)\\text{.}\\)<\/span> Input your answer as a decimal rounded to two decimal places.<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#ex-int-discrete-prob-5-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-int-discrete-prob-5-1-2\"><span class=\"process-math\">\\(F(6)=\\)<\/span><input type=\"text\" id=\"ex-int-discrete-prob-blank1\" size=\"8\"\/><div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#ex-int-discrete-prob-5-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
 "solutionHtml": "",
 "blankNames": {"blank1": 0},
 "feedbackArray": [[{"number": [0.35,0.35], "feedback": "\n<div class=\"para\" id=\"ex-int-discrete-prob-5-2-1-1-2-1\">Yes! <span class=\"process-math\">\\(F(6)=P(Y\\leq 6)=0.05 + 0.10 + 0.20   = 0.35\\)<\/span> years.<\/div>"}, {"feedback": "Incorrect."}]]
 }</script></div>
 </div></div>
-<div class="autopermalink" data-description="Task 4.1.1.c"><a href="#ex-int-discrete-prob-5" title="Copy heading and permalink for Task 4.1.1.c" aria-label="Copy heading and permalink for Task 4.1.1.c">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.1.c"><a tabindex="-1" href="#ex-int-discrete-prob-5" title="Copy heading and permalink for Task 4.1.1.c" aria-label="Copy heading and permalink for Task 4.1.1.c">🔗</a></div>
 </article>
-<article class="task exercise-like" id="ex-int-discrete-prob-6"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<article class="task exercise-like" id="ex-int-discrete-prob-6"><h4 class="heading"><span class="codenumber">(d)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone">
 <div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;"><script type="application/json">{
-"problemHtml": "\n<div class=\"para\" id=\"ex-int-discrete-prob-6-1-1\">What is the probability that that a company has at most 6 years to recover research and development costs and make a profit? Input your final value as an exact decimal.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-int-discrete-prob-6-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-int-discrete-prob-6-1-2\">Probability = <input type=\"text\" id=\"ex-int-discrete-prob-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#ex-int-discrete-prob-6-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"problemHtml": "\n<div class=\"para\" id=\"ex-int-discrete-prob-6-1-1\">What is the probability that that a company has at most 6 years to recover research and development costs and make a profit? Input your final value as an exact decimal.<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#ex-int-discrete-prob-6-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"ex-int-discrete-prob-6-1-2\">Probability = <input type=\"text\" id=\"ex-int-discrete-prob-blank1\" size=\"8\"\/><div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#ex-int-discrete-prob-6-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
 "solutionHtml": "",
 "blankNames": {"blank1": 0},
 "feedbackArray": [[{"number": [0.35,0.35], "feedback": "\n<div class=\"para\" id=\"ex-int-discrete-prob-6-2-1-1-2-1\">Yes! This is <span class=\"process-math\">\\(F(6)\\text{,}\\)<\/span> which you already computed!<\/div>"}, {"feedback": "Incorrect."}]]
 }</script></div>
 </div></div>
-<div class="autopermalink" data-description="Task 4.1.1.d"><a href="#ex-int-discrete-prob-6" title="Copy heading and permalink for Task 4.1.1.d" aria-label="Copy heading and permalink for Task 4.1.1.d">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercise 4.1.1: Patent Life"><a href="#ex-int-discrete-prob" title="Copy heading and permalink for Exercise 4.1.1: Patent Life" aria-label="Copy heading and permalink for Exercise 4.1.1: Patent Life">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.1.d"><a tabindex="-1" href="#ex-int-discrete-prob-6" title="Copy heading and permalink for Task 4.1.1.d" aria-label="Copy heading and permalink for Task 4.1.1.d">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 4.1.1: Patent Life"><a tabindex="-1" href="#ex-int-discrete-prob" title="Copy heading and permalink for Exercise 4.1.1: Patent Life" aria-label="Copy heading and permalink for Exercise 4.1.1: Patent Life">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="ex-drone-coverage-distribution"><h4 class="heading">
+<article class="exercise exercise-like" id="ex-drone-coverage-distribution"><h3 class="heading">
 <span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Drone Delivery Service.</span>
-</h4>
+</h3>
 <div class="introduction" id="ex-drone-coverage-distribution-2">
-<div class="para" id="ex-drone-coverage-distribution-2-1">An automated campus drone delivery service operates from a central hub. The total number of student housing units, <span class="process-math">\(N\text{,}\)</span> that the service can reliably reach depends directly on the maximum flight distance <span class="process-math">\(R\)</span> (measured in hundreds of meters) of the drones.<div class="autopermalink" data-description="Paragraph"><a href="#ex-drone-coverage-distribution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-drone-coverage-distribution-2-1">An automated campus drone delivery service operates from a central hub. The total number of student housing units, <span class="process-math">\(N\text{,}\)</span> that the service can reliably reach depends directly on the maximum flight distance <span class="process-math">\(R\)</span> (measured in hundreds of meters) of the drones.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-drone-coverage-distribution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-drone-coverage-distribution-2-2">
 <div class="para">The coverage area scales radially outward from the central hub, so the number of reachable units is proportional to the area of a circle defined by radius <span class="process-math">\(R\text{,}\)</span> yielding the model:</div>
@@ -467,11 +425,11 @@ N = C \pi R^2
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(C\)</span> is a spatial density constant.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-drone-coverage-distribution-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-drone-coverage-distribution-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-drone-coverage-distribution-2-3">For this specific campus cluster, <span class="process-math">\(C = 6\text{,}\)</span> and the probability distribution for the  maximum flight distance <span class="process-math">\(R\)</span> is given below. Note: <span class="process-math">\(R\)</span> varies based on uncontrollable factors such as weather and interference thresholds.<div class="autopermalink" data-description="Paragraph"><a href="#ex-drone-coverage-distribution-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-drone-coverage-distribution-2-3">For this specific campus cluster, <span class="process-math">\(C = 6\text{,}\)</span> and the probability distribution for the  maximum flight distance <span class="process-math">\(R\)</span> is given below. Note: <span class="process-math">\(R\)</span> varies based on uncontrollable factors such as weather and interference thresholds.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-drone-coverage-distribution-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="table table-like" id="table-drone-pmf"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Table 4.1.2"><a href="#table-drone-pmf" title="Copy heading and permalink for Table 4.1.2" aria-label="Copy heading and permalink for Table 4.1.2">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figure class="table table-like" id="table-drone-pmf"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" aria-hidden="true" data-description="Table 4.1.2"><a tabindex="-1" href="#table-drone-pmf" title="Copy heading and permalink for Table 4.1.2" aria-label="Copy heading and permalink for Table 4.1.2">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b1 r1 l1 t1 lines"><span class="process-math">\(R\)</span></td>
 <td class="c m b1 r1 l0 t1 lines">21</td>
@@ -493,21 +451,21 @@ N = C \pi R^2
 </table></div>
 </figure>
 </div>
-<article class="task exercise-like" id="task-drone-mean-r"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<article class="task exercise-like" id="task-drone-mean-r"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone">
 <div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-drone-mean-r"><script type="application/json">{
-"problemHtml": "\n<div class=\"para\" id=\"task-drone-mean-r-1-1\">Find the expected value for the flight distance, <span class=\"process-math\">\\(R\\text{.}\\)<\/span> Enter your answer as a decimal rounded to two decimal places.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-drone-mean-r-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-drone-mean-r-1-2\"><span class=\"process-math\">\\(\\mu_R=E(R)=\\)<\/span><input type=\"text\" id=\"ex-drone-coverage-distribution-blank1\" size=\"8\"\/> (in hundreds of meters)<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-drone-mean-r-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"problemHtml": "\n<div class=\"para\" id=\"task-drone-mean-r-1-1\">Find the expected value for the flight distance, <span class=\"process-math\">\\(R\\text{.}\\)<\/span> Enter your answer as a decimal rounded to two decimal places.<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-drone-mean-r-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-drone-mean-r-1-2\"><span class=\"process-math\">\\(\\mu_R=E(R)=\\)<\/span><input type=\"text\" id=\"ex-drone-coverage-distribution-blank1\" size=\"8\"\/> (in hundreds of meters)<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-drone-mean-r-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
 "solutionHtml": "",
 "blankNames": {"blank1": 0},
 "feedbackArray": [[{"number": [23.4,23.4], "feedback": "\n<div class=\"para logical\" id=\"task-drone-mean-r-2-1-1-2-1\"><div class=\"para\">Correct! The expected flight distance is <span class=\"process-math\">\\(\\mu_R = 23.40\\)<\/span> (in hundreds of meters):<\/div><div class=\"displaymath process-math\" id=\"task-drone-mean-r-2-1-1-2-1-2\">\n\\begin{align*}\nE(R) \\amp = (21)(0.05) + (22)(0.20) + (23)(0.30) + (24)(0.25) + (25)(0.15) + (26)(0.05)\\\\\nE(R) \\amp = 1.05 + 4.40 + 6.90 + 6.00 + 3.75 + 1.30 = 23.40\n\\end{align*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
 }</script></div>
 </div></div>
-<div class="autopermalink" data-description="Task 4.1.2.a"><a href="#task-drone-mean-r" title="Copy heading and permalink for Task 4.1.2.a" aria-label="Copy heading and permalink for Task 4.1.2.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.2.a"><a tabindex="-1" href="#task-drone-mean-r" title="Copy heading and permalink for Task 4.1.2.a" aria-label="Copy heading and permalink for Task 4.1.2.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-drone-var-r"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<article class="task exercise-like" id="task-drone-var-r"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
 <div class="exercise-statement">
-<div class="para" id="task-drone-var-r-1-1">Find the variance for the expected clearance distance, <span class="process-math">\(V(R)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-drone-var-r-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="task-drone-var-r-1-1">Find the variance for the expected clearance distance, <span class="process-math">\(V(R)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-drone-var-r-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
 <ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-drone-var-r" data-multipleanswers="false" data-random="">
@@ -537,17 +495,17 @@ N = C \pi R^2
 <div class="solutions">
 <details id="task-drone-var-r-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="hint solution-like knowl__content">
-<div class="para" id="task-drone-var-r-3-1">Use the variance short-cut formula: <span class="process-math">\(V(R) = E(R^2) - [E(R)]^2\text{.}\)</span> Find <span class="process-math">\(E(R^2)\)</span> by evaluating <span class="process-math">\(\sum r^2 \cdot P(R = r)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-drone-var-r-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="task-drone-var-r-3-1">Use the variance short-cut formula: <span class="process-math">\(V(R) = E(R^2) - [E(R)]^2\text{.}\)</span> Find <span class="process-math">\(E(R^2)\)</span> by evaluating <span class="process-math">\(\sum r^2 \cdot P(R = r)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-drone-var-r-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 4.1.2.b.1"><a href="#task-drone-var-r-3" title="Copy heading and permalink for Hint 4.1.2.b.1" aria-label="Copy heading and permalink for Hint 4.1.2.b.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 4.1.2.b.1"><a tabindex="-1" href="#task-drone-var-r-3" title="Copy heading and permalink for Hint 4.1.2.b.1" aria-label="Copy heading and permalink for Hint 4.1.2.b.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 4.1.2.b"><a href="#task-drone-var-r" title="Copy heading and permalink for Task 4.1.2.b" aria-label="Copy heading and permalink for Task 4.1.2.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.2.b"><a tabindex="-1" href="#task-drone-var-r" title="Copy heading and permalink for Task 4.1.2.b" aria-label="Copy heading and permalink for Task 4.1.2.b">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-drone-mean-n"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<article class="task exercise-like" id="task-drone-mean-n"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
 <div class="exercise-statement">
-<div class="para" id="task-drone-mean-n-1-1">Now, compute the expected value for <span class="process-math">\(N\text{,}\)</span> the total number of student housing units that the drone platform can serve. You may estimate <span class="process-math">\(\pi \approx 3.14\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-drone-mean-n-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="task-drone-mean-n-1-1">Now, compute the expected value for <span class="process-math">\(N\text{,}\)</span> the total number of student housing units that the drone platform can serve. You may estimate <span class="process-math">\(\pi \approx 3.14\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-drone-mean-n-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
 <ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-drone-mean-n" data-multipleanswers="false" data-random="">
@@ -586,51 +544,51 @@ N = C \pi R^2
 <div class="solutions">
 <details id="task-drone-mean-n-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="hint solution-like knowl__content">
-<div class="para" id="task-drone-mean-n-3-1">Use our property for expectation that says you can factor out constants: <span class="process-math">\(E(6 \pi R^2) = 6 \pi E(R^2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-drone-mean-n-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="task-drone-mean-n-3-1">Use our property for expectation that says you can factor out constants: <span class="process-math">\(E(6 \pi R^2) = 6 \pi E(R^2)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-drone-mean-n-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 4.1.2.c.1"><a href="#task-drone-mean-n-3" title="Copy heading and permalink for Hint 4.1.2.c.1" aria-label="Copy heading and permalink for Hint 4.1.2.c.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 4.1.2.c.1"><a tabindex="-1" href="#task-drone-mean-n-3" title="Copy heading and permalink for Hint 4.1.2.c.1" aria-label="Copy heading and permalink for Hint 4.1.2.c.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 4.1.2.c"><a href="#task-drone-mean-n" title="Copy heading and permalink for Task 4.1.2.c" aria-label="Copy heading and permalink for Task 4.1.2.c">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercise 4.1.2: Drone Delivery Service"><a href="#ex-drone-coverage-distribution" title="Copy heading and permalink for Exercise 4.1.2: Drone Delivery Service" aria-label="Copy heading and permalink for Exercise 4.1.2: Drone Delivery Service">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.2.c"><a tabindex="-1" href="#task-drone-mean-n" title="Copy heading and permalink for Task 4.1.2.c" aria-label="Copy heading and permalink for Task 4.1.2.c">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 4.1.2: Drone Delivery Service"><a tabindex="-1" href="#ex-drone-coverage-distribution" title="Copy heading and permalink for Exercise 4.1.2: Drone Delivery Service" aria-label="Copy heading and permalink for Exercise 4.1.2: Drone Delivery Service">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="ex-api-demand-mgf-complex"><h4 class="heading">
+<article class="exercise exercise-like" id="ex-api-demand-mgf-complex"><h3 class="heading">
 <span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">API Call Demands.</span>
-</h4>
+</h3>
 <div class="introduction" id="ex-api-demand-mgf-complex-2">
-<div class="para" id="ex-api-demand-mgf-complex-2-1">A backend system developer constructs a discrete probability distribution (see below) for the daily demand for a specific cloud-hosted premium API script. Let the random variable <span class="process-math">\(Y\)</span> represent the number of daily execution blocks, measured in hundreds of calls (e.g., <span class="process-math">\(Y = 2\)</span> means 200 calls).<div class="autopermalink" data-description="Paragraph"><a href="#ex-api-demand-mgf-complex-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-api-demand-mgf-complex-2-1">A backend system developer constructs a discrete probability distribution (see below) for the daily demand for a specific cloud-hosted premium API script. Let the random variable <span class="process-math">\(Y\)</span> represent the number of daily execution blocks, measured in hundreds of calls (e.g., <span class="process-math">\(Y = 2\)</span> means 200 calls).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-api-demand-mgf-complex-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <ul class="disc" id="ex-api-demand-mgf-complex-2-2">
 <li id="ex-api-demand-mgf-complex-2-2-1">
 <div class="para" id="ex-api-demand-mgf-complex-2-2-1-1">
-<span class="process-math">\(P(Y = 0) = 0.1\)</span> (0 calls are made)<div class="autopermalink" data-description="Paragraph"><a href="#ex-api-demand-mgf-complex-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(P(Y = 0) = 0.1\)</span> (0 calls are made)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-api-demand-mgf-complex-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#ex-api-demand-mgf-complex-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ex-api-demand-mgf-complex-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="ex-api-demand-mgf-complex-2-2-2">
 <div class="para" id="ex-api-demand-mgf-complex-2-2-2-1">
-<span class="process-math">\(P(Y = 1) = 0.3\)</span> (100 calls are made)<div class="autopermalink" data-description="Paragraph"><a href="#ex-api-demand-mgf-complex-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(P(Y = 1) = 0.3\)</span> (100 calls are made)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-api-demand-mgf-complex-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#ex-api-demand-mgf-complex-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ex-api-demand-mgf-complex-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="ex-api-demand-mgf-complex-2-2-3">
 <div class="para" id="ex-api-demand-mgf-complex-2-2-3-1">
-<span class="process-math">\(P(Y = 2) = 0.4\)</span> (200 calls are made)<div class="autopermalink" data-description="Paragraph"><a href="#ex-api-demand-mgf-complex-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(P(Y = 2) = 0.4\)</span> (200 calls are made)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-api-demand-mgf-complex-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#ex-api-demand-mgf-complex-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ex-api-demand-mgf-complex-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="ex-api-demand-mgf-complex-2-2-4">
 <div class="para" id="ex-api-demand-mgf-complex-2-2-4-1">
-<span class="process-math">\(P(Y = 3) = 0.2\)</span> (300 calls are made)<div class="autopermalink" data-description="Paragraph"><a href="#ex-api-demand-mgf-complex-2-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(P(Y = 3) = 0.2\)</span> (300 calls are made)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-api-demand-mgf-complex-2-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#ex-api-demand-mgf-complex-2-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ex-api-demand-mgf-complex-2-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
 </div>
-<article class="task exercise-like" id="task-mgf-base-v5"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<article class="task exercise-like" id="task-mgf-base-v5"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
 <div class="exercise-statement">
-<div class="para" id="task-mgf-base-v5-1-1">Find the moment generating function <span class="process-math">\(M_Y(s)\)</span> for the random variable <span class="process-math">\(Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-mgf-base-v5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="task-mgf-base-v5-1-1">Find the moment generating function <span class="process-math">\(M_Y(s)\)</span> for the random variable <span class="process-math">\(Y\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-mgf-base-v5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
 <ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-mgf-base-v5" data-multipleanswers="false" data-random="">
@@ -667,17 +625,17 @@ N = C \pi R^2
 M_Y(s) = E[e^{sY}] = \sum e^{sy} \cdot P(Y = y)\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#task-mgf-base-v5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-mgf-base-v5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 4.1.3.a.1"><a href="#task-mgf-base-v5-3" title="Copy heading and permalink for Hint 4.1.3.a.1" aria-label="Copy heading and permalink for Hint 4.1.3.a.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 4.1.3.a.1"><a tabindex="-1" href="#task-mgf-base-v5-3" title="Copy heading and permalink for Hint 4.1.3.a.1" aria-label="Copy heading and permalink for Hint 4.1.3.a.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 4.1.3.a"><a href="#task-mgf-base-v5" title="Copy heading and permalink for Task 4.1.3.a" aria-label="Copy heading and permalink for Task 4.1.3.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.3.a"><a tabindex="-1" href="#task-mgf-base-v5" title="Copy heading and permalink for Task 4.1.3.a" aria-label="Copy heading and permalink for Task 4.1.3.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-mgf-cost-v5"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<article class="task exercise-like" id="task-mgf-cost-v5"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
 <div class="exercise-statement">
-<div class="para" id="task-mgf-cost-v5-1-1">The platform bills the developer at a basic linear rate of <span class="process-math">\(\$0.10\)</span> per single API execution, which equates to a flat cost of <span class="process-math">\(\$10\)</span> per unit block of 100 calls. Find the moment generating function, <span class="process-math">\(M_C(s)\text{,}\)</span> for the daily operational cost <span class="process-math">\(C = 10Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-mgf-cost-v5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="task-mgf-cost-v5-1-1">The platform bills the developer at a basic linear rate of <span class="process-math">\(\$0.10\)</span> per single API execution, which equates to a flat cost of <span class="process-math">\(\$10\)</span> per unit block of 100 calls. Find the moment generating function, <span class="process-math">\(M_C(s)\text{,}\)</span> for the daily operational cost <span class="process-math">\(C = 10Y\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-mgf-cost-v5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
 <ul data-component="multiplechoice" class="exercise-interactives" id="rs-task-mgf-cost-v5" data-multipleanswers="false" data-random="">
@@ -706,12 +664,12 @@ M_Y(s) = E[e^{sY}] = \sum e^{sy} \cdot P(Y = y)\text{.}
 </li>
 </ul>
 </div></div>
-<div class="autopermalink" data-description="Task 4.1.3.b"><a href="#task-mgf-cost-v5" title="Copy heading and permalink for Task 4.1.3.b" aria-label="Copy heading and permalink for Task 4.1.3.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.3.b"><a tabindex="-1" href="#task-mgf-cost-v5" title="Copy heading and permalink for Task 4.1.3.b" aria-label="Copy heading and permalink for Task 4.1.3.b">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-mgf-expectation-v5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<article class="task exercise-like" id="task-mgf-expectation-v5"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone">
 <div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-mgf-expectation-v5"><script type="application/json">{
-"problemHtml": "\n<div class=\"para\" id=\"task-mgf-expectation-v5-1-1\">Use your moment generating function from part (b) to find the expected daily linear cost. Enter your answer as an integer dollar value.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-mgf-expectation-v5-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-mgf-expectation-v5-1-2\"><span class=\"process-math\">\\(\\mu_C=E(C)=$\\)<\/span><input type=\"text\" id=\"ex-api-demand-mgf-complex-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-mgf-expectation-v5-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"problemHtml": "\n<div class=\"para\" id=\"task-mgf-expectation-v5-1-1\">Use your moment generating function from part (b) to find the expected daily linear cost. Enter your answer as an integer dollar value.<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-mgf-expectation-v5-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-mgf-expectation-v5-1-2\"><span class=\"process-math\">\\(\\mu_C=E(C)=$\\)<\/span><input type=\"text\" id=\"ex-api-demand-mgf-complex-blank1\" size=\"8\"\/><div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-mgf-expectation-v5-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
 "solutionHtml": "",
 "blankNames": {"blank1": 0},
 "feedbackArray": [[{"number": [17,17], "feedback": "\n<div class=\"para\" id=\"task-mgf-expectation-v5-2-1-1-2-1\">Correct! The expected daily server cost is <span class=\"process-math\">\\(\\$17\\text{:}\\)<\/span><\/div> \n<div class=\"para logical\" id=\"task-mgf-expectation-v5-2-1-1-2-2\"><div class=\"para\">We differentiate <span class=\"process-math\">\\(M_C(s)\\)<\/span> with respect to <span class=\"process-math\">\\(s\\text{:}\\)<\/span><\/div><div class=\"displaymath process-math\" id=\"task-mgf-expectation-v5-2-1-1-2-2-3\">\n\\begin{equation*}\nM_C'(s) = 0 + 0.3(10)e^{10s} + 0.4(20)e^{20s} + 0.2(30)e^{30s} = 3e^{10s} + 8e^{20s} + 6e^{30s}\n\\end{equation*}\n<\/div><div class=\"para\">Evaluating this first derivative at <span class=\"process-math\">\\(s = 0\\)<\/span> gives the first moment, which is the expected value:<\/div><div class=\"displaymath process-math\" id=\"task-mgf-expectation-v5-2-1-1-2-2-5\">\n\\begin{equation*}\nE(C) = M_C'(0) = 3e^{0} + 8e^{0} + 6e^{0} = 3(1) + 8(1) + 6(1) = 17\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
@@ -720,17 +678,17 @@ M_Y(s) = E[e^{sY}] = \sum e^{sy} \cdot P(Y = y)\text{.}
 <div class="solutions">
 <details id="task-mgf-expectation-v5-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="hint solution-like knowl__content">
-<div class="para" id="task-mgf-expectation-v5-3-1">The first derivative of the moment generating function evaluated at <span class="process-math">\(s=0\)</span> gives the  first moment: <span class="process-math">\(E(C) = M_C'(0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-mgf-expectation-v5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="task-mgf-expectation-v5-3-1">The first derivative of the moment generating function evaluated at <span class="process-math">\(s=0\)</span> gives the  first moment: <span class="process-math">\(E(C) = M_C'(0)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-mgf-expectation-v5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 4.1.3.c.1"><a href="#task-mgf-expectation-v5-3" title="Copy heading and permalink for Hint 4.1.3.c.1" aria-label="Copy heading and permalink for Hint 4.1.3.c.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 4.1.3.c.1"><a tabindex="-1" href="#task-mgf-expectation-v5-3" title="Copy heading and permalink for Hint 4.1.3.c.1" aria-label="Copy heading and permalink for Hint 4.1.3.c.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 4.1.3.c"><a href="#task-mgf-expectation-v5" title="Copy heading and permalink for Task 4.1.3.c" aria-label="Copy heading and permalink for Task 4.1.3.c">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.3.c"><a tabindex="-1" href="#task-mgf-expectation-v5" title="Copy heading and permalink for Task 4.1.3.c" aria-label="Copy heading and permalink for Task 4.1.3.c">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-mgf-variance-v5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<article class="task exercise-like" id="task-mgf-variance-v5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone">
 <div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-mgf-variance-v5"><script type="application/json">{
-"problemHtml": "\n<div class=\"para\" id=\"task-mgf-variance-v5-1-1\">Use your moment generating function from part (b) to find the variance for the expected daily cost. Enter your answer as an integer.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-mgf-variance-v5-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-mgf-variance-v5-1-2\"><span class=\"process-math\">\\(\\sigma^2_C=V(C)=\\)<\/span><input type=\"text\" id=\"ex-api-demand-mgf-complex-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-mgf-variance-v5-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"problemHtml": "\n<div class=\"para\" id=\"task-mgf-variance-v5-1-1\">Use your moment generating function from part (b) to find the variance for the expected daily cost. Enter your answer as an integer.<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-mgf-variance-v5-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-mgf-variance-v5-1-2\"><span class=\"process-math\">\\(\\sigma^2_C=V(C)=\\)<\/span><input type=\"text\" id=\"ex-api-demand-mgf-complex-blank1\" size=\"8\"\/><div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-mgf-variance-v5-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
 "solutionHtml": "",
 "blankNames": {"blank1": 0},
 "feedbackArray": [[{"number": [81,81], "feedback": "\n<div class=\"para\" id=\"task-mgf-variance-v5-2-1-1-2-1\">Correct! The variance for the daily operational cost is <span class=\"process-math\">\\(81\\text{.}\\)<\/span><\/div> \n<div class=\"para logical\" id=\"task-mgf-variance-v5-2-1-1-2-2\"><div class=\"para\">1. Take the second derivative of the cost MGF:<\/div><div class=\"displaymath process-math\" id=\"task-mgf-variance-v5-2-1-1-2-2-1\">\n\\begin{equation*}\nM_C''(s) = 3(10)e^{10s} + 8(20)e^{20s} + 6(30)e^{30s} = 30e^{10s} + 160e^{20s} + 180e^{30s}\n\\end{equation*}\n<\/div><\/div> \n<div class=\"para logical\" id=\"task-mgf-variance-v5-2-1-1-2-3\"><div class=\"para\">2. Evaluate this second derivative at <span class=\"process-math\">\\(s = 0\\)<\/span> to get the second moment:<\/div><div class=\"displaymath process-math\" id=\"task-mgf-variance-v5-2-1-1-2-3-2\">\n\\begin{equation*}\nE(C^2) = M_C''(0) = 30e^{0} + 160e^{0} + 180e^{0} = 30 + 160 + 180 = 370\n\\end{equation*}\n<\/div><\/div> \n<div class=\"para logical\" id=\"task-mgf-variance-v5-2-1-1-2-4\"><div class=\"para\">3. Apply the variance shortcut formula:<\/div><div class=\"displaymath process-math\" id=\"task-mgf-variance-v5-2-1-1-2-4-1\">\n\\begin{equation*}\nV(C) = E(C^2) - [E(C)]^2 = 370 - (17)^2 = 370 - 289 = 81\n\\end{equation*}\n<\/div><\/div>"}, {"feedback": "Incorrect."}]]
@@ -739,35 +697,35 @@ M_Y(s) = E[e^{sY}] = \sum e^{sy} \cdot P(Y = y)\text{.}
 <div class="solutions">
 <details id="task-mgf-variance-v5-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="hint solution-like knowl__content">
-<div class="para" id="task-mgf-variance-v5-3-1">The second derivative of the moment generating function evaluated at <span class="process-math">\(s = 0\)</span> gives the second moment: <span class="process-math">\(E(C^2) = M_C''(0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-mgf-variance-v5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="task-mgf-variance-v5-3-1">The second derivative of the moment generating function evaluated at <span class="process-math">\(s = 0\)</span> gives the second moment: <span class="process-math">\(E(C^2) = M_C''(0)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-mgf-variance-v5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 4.1.3.d.1"><a href="#task-mgf-variance-v5-3" title="Copy heading and permalink for Hint 4.1.3.d.1" aria-label="Copy heading and permalink for Hint 4.1.3.d.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 4.1.3.d.1"><a tabindex="-1" href="#task-mgf-variance-v5-3" title="Copy heading and permalink for Hint 4.1.3.d.1" aria-label="Copy heading and permalink for Hint 4.1.3.d.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 4.1.3.d"><a href="#task-mgf-variance-v5" title="Copy heading and permalink for Task 4.1.3.d" aria-label="Copy heading and permalink for Task 4.1.3.d">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.3.d"><a tabindex="-1" href="#task-mgf-variance-v5" title="Copy heading and permalink for Task 4.1.3.d" aria-label="Copy heading and permalink for Task 4.1.3.d">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-mgf-variance-to-sd"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<article class="task exercise-like" id="task-mgf-variance-to-sd"><h4 class="heading"><span class="codenumber">(e)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone">
 <div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-mgf-variance-to-sd"><script type="application/json">{
-"problemHtml": "\n<div class=\"para\" id=\"task-mgf-variance-to-sd-1-1\">Now find the standard deviation for the expected daily cost. Enter your answer as an integer dollar value.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-mgf-variance-to-sd-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-mgf-variance-to-sd-1-2\"><span class=\"process-math\">\\(\\sigma_C=$\\)<\/span>=<input type=\"text\" id=\"ex-api-demand-mgf-complex-blank1\" size=\"8\"\/><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-mgf-variance-to-sd-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"problemHtml": "\n<div class=\"para\" id=\"task-mgf-variance-to-sd-1-1\">Now find the standard deviation for the expected daily cost. Enter your answer as an integer dollar value.<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-mgf-variance-to-sd-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-mgf-variance-to-sd-1-2\"><span class=\"process-math\">\\(\\sigma_C=$\\)<\/span>=<input type=\"text\" id=\"ex-api-demand-mgf-complex-blank1\" size=\"8\"\/><div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-mgf-variance-to-sd-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
 "solutionHtml": "",
 "blankNames": {"blank1": 0},
 "feedbackArray": [[{"number": [9,9], "feedback": "\n<div class=\"para\" id=\"task-mgf-variance-to-sd-2-1-1-2-1\">Correct! The standard deviation is the square root of the variance.<\/div>"}, {"feedback": "Incorrect."}]]
 }</script></div>
 </div></div>
-<div class="autopermalink" data-description="Task 4.1.3.e"><a href="#task-mgf-variance-to-sd" title="Copy heading and permalink for Task 4.1.3.e" aria-label="Copy heading and permalink for Task 4.1.3.e">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercise 4.1.3: API Call Demands"><a href="#ex-api-demand-mgf-complex" title="Copy heading and permalink for Exercise 4.1.3: API Call Demands" aria-label="Copy heading and permalink for Exercise 4.1.3: API Call Demands">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.3.e"><a tabindex="-1" href="#task-mgf-variance-to-sd" title="Copy heading and permalink for Task 4.1.3.e" aria-label="Copy heading and permalink for Task 4.1.3.e">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 4.1.3: API Call Demands"><a tabindex="-1" href="#ex-api-demand-mgf-complex" title="Copy heading and permalink for Exercise 4.1.3: API Call Demands" aria-label="Copy heading and permalink for Exercise 4.1.3: API Call Demands">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="ex-housing-rooms-cdf-matching"><h4 class="heading">
+<article class="exercise exercise-like" id="ex-housing-rooms-cdf-matching"><h3 class="heading">
 <span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Game Inventory System.</span>
-</h4>
+</h3>
 <div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-ex-housing-rooms-cdf-matching">
 <span data-subcomponent="question">
-<div class="para" id="ex-housing-rooms-cdf-matching-2-1">In a popular survival-action video game, players collect loot items that take up different amounts of space in their inventories. Let the discrete random variable <span class="process-math">\(X\)</span> represent the total number of inventory slots required to carry a randomly dropped heavy weapon.<div class="autopermalink" data-description="Paragraph"><a href="#ex-housing-rooms-cdf-matching-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-housing-rooms-cdf-matching-2-1">In a popular survival-action video game, players collect loot items that take up different amounts of space in their inventories. Let the discrete random variable <span class="process-math">\(X\)</span> represent the total number of inventory slots required to carry a randomly dropped heavy weapon.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-housing-rooms-cdf-matching-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="ex-housing-rooms-cdf-matching-2-2">A table displaying the cumulative distribution function (CDF) of <span class="process-math">\(X\)</span> is presented below. This is followed by its corresponding graph. Recall: <span class="process-math">\(F(x) = P(X \le x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-housing-rooms-cdf-matching-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-housing-rooms-cdf-matching-2-2">A table displaying the cumulative distribution function (CDF) of <span class="process-math">\(X\)</span> is presented below. This is followed by its corresponding graph. Recall: <span class="process-math">\(F(x) = P(X \le x)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-housing-rooms-cdf-matching-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="ex-housing-rooms-cdf-matching-2-3">Match the probability descriptions about <span class="process-math">\(X\)</span> on the left with their matching values on the right.<div class="autopermalink" data-description="Paragraph"><a href="#ex-housing-rooms-cdf-matching-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-housing-rooms-cdf-matching-2-3">Match the probability descriptions about <span class="process-math">\(X\)</span> on the left with their matching values on the right.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-housing-rooms-cdf-matching-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
 <div class="para" id="ex-housing-rooms-cdf-matching-2-4">
 <div class="sidebyside">
@@ -798,11 +756,11 @@ M_Y(s) = E[e^{sY}] = \sum e^{sy} \cdot P(Y = y)\text{.}
 </table></div>
 </div>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-housing-rooms-cdf-matching-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-housing-rooms-cdf-matching-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
 <div class="para" id="ex-housing-rooms-cdf-matching-2-5">
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/tikz-inventory-cdf-graph.svg" role="img" class="contained" alt="A step function graph representing the Cumulative Distribution Function F(x) from x = 2 to 11."></div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-housing-rooms-cdf-matching-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-housing-rooms-cdf-matching-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></span><li data-subcomponent="dropzone" for="rs-ex-housing-rooms-cdf-matching_drag1" data-category="1"><span class="process-math">\(0\)</span></li>
 <li data-subcomponent="dropzone" for="rs-ex-housing-rooms-cdf-matching_drag2" data-category="2"><span class="process-math">\(0.02\)</span></li>
 <li data-subcomponent="draggable" id="rs-ex-housing-rooms-cdf-matching_drag1" data-category="3">
@@ -823,44 +781,44 @@ M_Y(s) = E[e^{sY}] = \sum e^{sy} \cdot P(Y = y)\text{.}
 <span class="process-math">\(P(X \neq 10)\text{,}\)</span> the probability that a randomly dropped heavy weapon item does not take 10 slots.</li>
 <li data-subcomponent="dropzone" for="rs-ex-housing-rooms-cdf-matching_drag9" data-category="9"><span class="process-math">\(0.98\)</span></li>
 </ul></div></div>
-<div class="autopermalink" data-description="Exercise 4.1.4: Game Inventory System"><a href="#ex-housing-rooms-cdf-matching" title="Copy heading and permalink for Exercise 4.1.4: Game Inventory System" aria-label="Copy heading and permalink for Exercise 4.1.4: Game Inventory System">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 4.1.4: Game Inventory System"><a tabindex="-1" href="#ex-housing-rooms-cdf-matching" title="Copy heading and permalink for Exercise 4.1.4: Game Inventory System" aria-label="Copy heading and permalink for Exercise 4.1.4: Game Inventory System">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="ex-roulette-expectations-variance"><h4 class="heading">
+<article class="exercise exercise-like" id="ex-roulette-expectations-variance"><h3 class="heading">
 <span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Roulette.</span>
-</h4>
+</h3>
 <div class="introduction" id="ex-roulette-expectations-variance-2">
 <div class="para" id="ex-roulette-expectations-variance-2-1">An American roulette wheel contains 38 slots numbered 1 through 36, along with 0 and 00. Assuming the wheel is perfectly fair, all 38 outcomes are equally likely on a single spin. The numbers 1-36 consist of exactly 18 red and 18 black numbers, while 0 and 00 are green.  See the image of a roulette wheel below. <div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="external/Images/roulette-wheel.png" class="contained"></div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex-roulette-expectations-variance-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-roulette-expectations-variance-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-roulette-expectations-variance-2-2">Suppose you have one dollar to wager on a single spin.  Evaluate the expected profit and variance for different wagering strategies. Enter all answers as decimals rounded to three decimal places. Include negative signs when appropriate.<div class="autopermalink" data-description="Paragraph"><a href="#ex-roulette-expectations-variance-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-roulette-expectations-variance-2-2">Suppose you have one dollar to wager on a single spin.  Evaluate the expected profit and variance for different wagering strategies. Enter all answers as decimals rounded to three decimal places. Include negative signs when appropriate.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-roulette-expectations-variance-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
-<article class="task exercise-like" id="task-roulette-dollar-red"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<article class="task exercise-like" id="task-roulette-dollar-red"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone">
 <div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-roulette-dollar-red"><script type="application/json">{
-"problemHtml": "\n<div class=\"para\" id=\"task-roulette-dollar-red-1-1\">Strategy: Bet $1 on red which pays off at 1:1.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-roulette-dollar-red-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-dollar-red-1-2\">This means that if the ball lands on a red number, you win $1 profit (and keep your initial bet). If the ball lands on anything else, you lose your $1. So, if you bet a dollar, your <em class=\"emphasis\">profit<\/em> would be either +1 or -1.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-roulette-dollar-red-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-dollar-red-1-3\">Expected Profit = <input type=\"text\" id=\"ex-roulette-expectations-variance-e1\" name=\"e1\" size=\"8\"\/> dollars<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-roulette-dollar-red-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-dollar-red-1-4\">Variance = <input type=\"text\" id=\"ex-roulette-expectations-variance-v1\" name=\"v1\" size=\"8\"\/> dollars<span class=\"process-math\">\\(^2\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-roulette-dollar-red-1-4\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"problemHtml": "\n<div class=\"para\" id=\"task-roulette-dollar-red-1-1\">Strategy: Bet $1 on red which pays off at 1:1.<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-roulette-dollar-red-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-dollar-red-1-2\">This means that if the ball lands on a red number, you win $1 profit (and keep your initial bet). If the ball lands on anything else, you lose your $1. So, if you bet a dollar, your <em class=\"emphasis\">profit<\/em> would be either +1 or -1.<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-roulette-dollar-red-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-dollar-red-1-3\">Expected Profit = <input type=\"text\" id=\"ex-roulette-expectations-variance-e1\" name=\"e1\" size=\"8\"\/> dollars<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-roulette-dollar-red-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-dollar-red-1-4\">Variance = <input type=\"text\" id=\"ex-roulette-expectations-variance-v1\" name=\"v1\" size=\"8\"\/> dollars<span class=\"process-math\">\\(^2\\)<\/span><div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-roulette-dollar-red-1-4\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
 "solutionHtml": "",
 "blankNames": {"e1": 0, "v1": 1},
 "feedbackArray": [[{"number": [-0.053,-0.053], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.997,0.997], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
 }</script></div>
 </div></div>
-<div class="autopermalink" data-description="Task 4.1.5.a"><a href="#task-roulette-dollar-red" title="Copy heading and permalink for Task 4.1.5.a" aria-label="Copy heading and permalink for Task 4.1.5.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.5.a"><a tabindex="-1" href="#task-roulette-dollar-red" title="Copy heading and permalink for Task 4.1.5.a" aria-label="Copy heading and permalink for Task 4.1.5.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-roulette-dollar-single-number"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<article class="task exercise-like" id="task-roulette-dollar-single-number"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone">
 <div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-roulette-dollar-single-number"><script type="application/json">{
-"problemHtml": "\n<div class=\"para\" id=\"task-roulette-dollar-single-number-1-1\">Strategy: Bet $1 on the number 13 which pays off at 35:1.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-roulette-dollar-single-number-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-dollar-single-number-1-2\">Expected Profit = <input type=\"text\" id=\"ex-roulette-expectations-variance-e2\" name=\"e2\" size=\"8\"\/> dollars<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-roulette-dollar-single-number-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-dollar-single-number-1-3\">Variance = <input type=\"text\" id=\"ex-roulette-expectations-variance-v2\" name=\"v2\" size=\"8\"\/> dollars<span class=\"process-math\">\\(^2\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-roulette-dollar-single-number-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"problemHtml": "\n<div class=\"para\" id=\"task-roulette-dollar-single-number-1-1\">Strategy: Bet $1 on the number 13 which pays off at 35:1.<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-roulette-dollar-single-number-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-dollar-single-number-1-2\">Expected Profit = <input type=\"text\" id=\"ex-roulette-expectations-variance-e2\" name=\"e2\" size=\"8\"\/> dollars<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-roulette-dollar-single-number-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-dollar-single-number-1-3\">Variance = <input type=\"text\" id=\"ex-roulette-expectations-variance-v2\" name=\"v2\" size=\"8\"\/> dollars<span class=\"process-math\">\\(^2\\)<\/span><div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-roulette-dollar-single-number-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
 "solutionHtml": "",
 "blankNames": {"e2": 0, "v2": 1},
 "feedbackArray": [[{"number": [-0.053,-0.053], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [33.208,33.208], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
 }</script></div>
 </div></div>
-<div class="autopermalink" data-description="Task 4.1.5.b"><a href="#task-roulette-dollar-single-number" title="Copy heading and permalink for Task 4.1.5.b" aria-label="Copy heading and permalink for Task 4.1.5.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.5.b"><a tabindex="-1" href="#task-roulette-dollar-single-number" title="Copy heading and permalink for Task 4.1.5.b" aria-label="Copy heading and permalink for Task 4.1.5.b">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-roulette-split-combo"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<article class="task exercise-like" id="task-roulette-split-combo"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <div class="ptx-runestone-container"><div class="runestone">
 <div data-component="fillintheblank" class="fillintheblank" style="visibility: hidden;" id="rs-task-roulette-split-combo"><script type="application/json">{
-"problemHtml": "\n<div class=\"para\" id=\"task-roulette-split-combo-1-1\">Strategy: Bet 50 cents on red AND 50 cents on odd simultaneously<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-roulette-split-combo-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-split-combo-1-2\">(Both bets are determined by the exact same single spin of the wheel.) Betting on odd pays out at 1:1. Note that 0 and 00 are considered neither even nor odd.<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-roulette-split-combo-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-split-combo-1-3\">Expected Profit = <input type=\"text\" id=\"ex-roulette-expectations-variance-e3\" name=\"e3\" size=\"8\"\/> dollars<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-roulette-split-combo-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-split-combo-1-4\">Variance = <input type=\"text\" id=\"ex-roulette-expectations-variance-v3\" name=\"v3\" size=\"8\"\/> dollars<span class=\"process-math\">\\(^2\\)<\/span><div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#task-roulette-split-combo-1-4\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
+"problemHtml": "\n<div class=\"para\" id=\"task-roulette-split-combo-1-1\">Strategy: Bet 50 cents on red AND 50 cents on odd simultaneously<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-roulette-split-combo-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-split-combo-1-2\">(Both bets are determined by the exact same single spin of the wheel.) Betting on odd pays out at 1:1. Note that 0 and 00 are considered neither even nor odd.<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-roulette-split-combo-1-2\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-split-combo-1-3\">Expected Profit = <input type=\"text\" id=\"ex-roulette-expectations-variance-e3\" name=\"e3\" size=\"8\"\/> dollars<div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-roulette-split-combo-1-3\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>\n<div class=\"para\" id=\"task-roulette-split-combo-1-4\">Variance = <input type=\"text\" id=\"ex-roulette-expectations-variance-v3\" name=\"v3\" size=\"8\"\/> dollars<span class=\"process-math\">\\(^2\\)<\/span><div class=\"autopermalink\" aria-hidden=\"true\" data-description=\"Paragraph\"><a tabindex=\"-1\" href=\"#task-roulette-split-combo-1-4\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>",
 "solutionHtml": "",
 "blankNames": {"e3": 0, "v3": 1},
 "feedbackArray": [[{"number": [-0.053,-0.053], "feedback": "Correct!"}, {"feedback": "Incorrect."}], [{"number": [0.576,0.576], "feedback": "Correct!"}, {"feedback": "Incorrect."}]]
@@ -869,97 +827,97 @@ M_Y(s) = E[e^{sY}] = \sum e^{sy} \cdot P(Y = y)\text{.}
 <div class="solutions">
 <details id="task-roulette-split-combo-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="hint solution-like knowl__content">
-<div class="para" id="task-roulette-split-combo-3-1">What is the profit if the ball lands on an even red number? Here, you’ve won one bet but lost the other.<div class="autopermalink" data-description="Paragraph"><a href="#task-roulette-split-combo-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="task-roulette-split-combo-3-1">What is the profit if the ball lands on an even red number? Here, you’ve won one bet but lost the other.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-roulette-split-combo-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 4.1.5.c.1"><a href="#task-roulette-split-combo-3" title="Copy heading and permalink for Hint 4.1.5.c.1" aria-label="Copy heading and permalink for Hint 4.1.5.c.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 4.1.5.c.1"><a tabindex="-1" href="#task-roulette-split-combo-3" title="Copy heading and permalink for Hint 4.1.5.c.1" aria-label="Copy heading and permalink for Hint 4.1.5.c.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 4.1.5.c"><a href="#task-roulette-split-combo" title="Copy heading and permalink for Task 4.1.5.c" aria-label="Copy heading and permalink for Task 4.1.5.c">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercise 4.1.5: Roulette"><a href="#ex-roulette-expectations-variance" title="Copy heading and permalink for Exercise 4.1.5: Roulette" aria-label="Copy heading and permalink for Exercise 4.1.5: Roulette">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercises 4.1: Interactive Exercises"><a href="#hw-discrete-rv" title="Copy heading and permalink for Exercises 4.1: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 4.1: Interactive Exercises">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.5.c"><a tabindex="-1" href="#task-roulette-split-combo" title="Copy heading and permalink for Task 4.1.5.c" aria-label="Copy heading and permalink for Task 4.1.5.c">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 4.1.5: Roulette"><a tabindex="-1" href="#ex-roulette-expectations-variance" title="Copy heading and permalink for Exercise 4.1.5: Roulette" aria-label="Copy heading and permalink for Exercise 4.1.5: Roulette">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 4.1: Interactive Exercises"><a tabindex="-1" href="#hw-discrete-rv" title="Copy heading and permalink for Exercises 4.1: Interactive Exercises" aria-label="Copy heading and permalink for Exercises 4.1: Interactive Exercises">🔗</a></div>
 </section>
 <section class="exercises" id="hw-discrete-rv-turn-in">
-<h3 class="heading hide-type">
+<h2 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Written Exercises</span>
-</h3>
-<article class="exercise exercise-like" id="ex-matching-children-distribution"><h4 class="heading">
+</h2>
+<article class="exercise exercise-like" id="ex-matching-children-distribution"><h3 class="heading">
 <span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matching Animals.</span>
-</h4>
+</h3>
 <div class="introduction" id="ex-matching-children-distribution-2">
-<div class="para" id="ex-matching-children-distribution-2-1">A problem on a test given to small children asks them to match each of three pictures of animals to the word identifying that animal. Define the random variable <span class="process-math">\(Y\)</span> to be the number of correct matches.<div class="autopermalink" data-description="Paragraph"><a href="#ex-matching-children-distribution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-matching-children-distribution-2-1">A problem on a test given to small children asks them to match each of three pictures of animals to the word identifying that animal. Define the random variable <span class="process-math">\(Y\)</span> to be the number of correct matches.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-matching-children-distribution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-matching-children-distribution-2-2">Suppose a child assigns the three words completely at random to the three pictures.<div class="autopermalink" data-description="Paragraph"><a href="#ex-matching-children-distribution-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-matching-children-distribution-2-2">Suppose a child assigns the three words completely at random to the three pictures.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-matching-children-distribution-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
-<article class="task exercise-like" id="task-matching-probability-dist"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<article class="task exercise-like" id="task-matching-probability-dist"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="introduction" id="task-matching-probability-dist-1">
-<div class="para" id="task-matching-probability-dist-1-1">Find the probability distribution for the random variable <span class="process-math">\(Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-matching-probability-dist-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="task-matching-probability-dist-1-1">Find the probability distribution for the random variable <span class="process-math">\(Y\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-matching-probability-dist-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
-<div class="autopermalink" data-description="Task 4.1.1.a"><a href="#task-matching-probability-dist" title="Copy heading and permalink for Task 4.1.1.a" aria-label="Copy heading and permalink for Task 4.1.1.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.1.a"><a tabindex="-1" href="#task-matching-probability-dist" title="Copy heading and permalink for Task 4.1.1.a" aria-label="Copy heading and permalink for Task 4.1.1.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-matching-expected-value"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="task-matching-expected-value-1-1">Find the expected number of matches, <span class="process-math">\(E(Y)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-matching-expected-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="task-matching-expected-value"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="task-matching-expected-value-1-1">Find the expected number of matches, <span class="process-math">\(E(Y)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-matching-expected-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.1.1.b"><a href="#task-matching-expected-value" title="Copy heading and permalink for Task 4.1.1.b" aria-label="Copy heading and permalink for Task 4.1.1.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.1.b"><a tabindex="-1" href="#task-matching-expected-value" title="Copy heading and permalink for Task 4.1.1.b" aria-label="Copy heading and permalink for Task 4.1.1.b">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-matching-variance-sd"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="task-matching-variance-sd-1-1">Find the variance and standard deviation for the expected number of matches. Use the  definition of variance (rather than the short-cut formula): <span class="process-math">\(V(Y) = E[(Y - \mu_Y)^2]\text{,}\)</span> where <span class="process-math">\(\mu_Y = E(Y)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-matching-variance-sd-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="task-matching-variance-sd"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="task-matching-variance-sd-1-1">Find the variance and standard deviation for the expected number of matches. Use the  definition of variance (rather than the short-cut formula): <span class="process-math">\(V(Y) = E[(Y - \mu_Y)^2]\text{,}\)</span> where <span class="process-math">\(\mu_Y = E(Y)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-matching-variance-sd-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.1.1.c"><a href="#task-matching-variance-sd" title="Copy heading and permalink for Task 4.1.1.c" aria-label="Copy heading and permalink for Task 4.1.1.c">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.1.c"><a tabindex="-1" href="#task-matching-variance-sd" title="Copy heading and permalink for Task 4.1.1.c" aria-label="Copy heading and permalink for Task 4.1.1.c">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-matching-interpretation"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<div class="para" id="task-matching-interpretation-1-1">Write a one-sentence interpretation, in the context of the scenario, for the mean (expected value) and standard deviation that you computed.<div class="autopermalink" data-description="Paragraph"><a href="#task-matching-interpretation-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="task-matching-interpretation"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="task-matching-interpretation-1-1">Write a one-sentence interpretation, in the context of the scenario, for the mean (expected value) and standard deviation that you computed.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-matching-interpretation-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.1.1.d"><a href="#task-matching-interpretation" title="Copy heading and permalink for Task 4.1.1.d" aria-label="Copy heading and permalink for Task 4.1.1.d">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercise 4.1.1: Matching Animals"><a href="#ex-matching-children-distribution" title="Copy heading and permalink for Exercise 4.1.1: Matching Animals" aria-label="Copy heading and permalink for Exercise 4.1.1: Matching Animals">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.1.d"><a tabindex="-1" href="#task-matching-interpretation" title="Copy heading and permalink for Task 4.1.1.d" aria-label="Copy heading and permalink for Task 4.1.1.d">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 4.1.1: Matching Animals"><a tabindex="-1" href="#ex-matching-children-distribution" title="Copy heading and permalink for Exercise 4.1.1: Matching Animals" aria-label="Copy heading and permalink for Exercise 4.1.1: Matching Animals">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="ex-server-security-distribution"><h4 class="heading">
+<article class="exercise exercise-like" id="ex-server-security-distribution"><h3 class="heading">
 <span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Server Security Audits.</span>
-</h4>
+</h3>
 <div class="introduction" id="ex-server-security-distribution-2">
-<div class="para" id="ex-server-security-distribution-2-1">During a campus hackathon, the computer science department audited student web servers for two critical security configuration vulnerabilities. The automated scanner found that <span class="process-math">\(20\%\)</span> of the student servers had neither vulnerability, <span class="process-math">\(40\%\)</span> had vulnerability A, and <span class="process-math">\(50\%\)</span> had vulnerability B (and of course, some had both vulnerabilities).<div class="autopermalink" data-description="Paragraph"><a href="#ex-server-security-distribution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-server-security-distribution-2-1">During a campus hackathon, the computer science department audited student web servers for two critical security configuration vulnerabilities. The automated scanner found that <span class="process-math">\(20\%\)</span> of the student servers had neither vulnerability, <span class="process-math">\(40\%\)</span> had vulnerability A, and <span class="process-math">\(50\%\)</span> had vulnerability B (and of course, some had both vulnerabilities).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-server-security-distribution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-server-security-distribution-2-2">Suppose a student web server is randomly selected. Define the discrete random variable <span class="process-math">\(X\)</span> to be the total number of security vulnerabilities found on that server.<div class="autopermalink" data-description="Paragraph"><a href="#ex-server-security-distribution-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-server-security-distribution-2-2">Suppose a student web server is randomly selected. Define the discrete random variable <span class="process-math">\(X\)</span> to be the total number of security vulnerabilities found on that server.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-server-security-distribution-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
-<article class="task exercise-like" id="task-security-pmf"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="task-security-pmf-1-1">Find the probability distribution for the random variable <span class="process-math">\(X\)</span> AND sketch a graph of the resulting probability distribution.<div class="autopermalink" data-description="Paragraph"><a href="#task-security-pmf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="task-security-pmf"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="task-security-pmf-1-1">Find the probability distribution for the random variable <span class="process-math">\(X\)</span> AND sketch a graph of the resulting probability distribution.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-security-pmf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.1.2.a"><a href="#task-security-pmf" title="Copy heading and permalink for Task 4.1.2.a" aria-label="Copy heading and permalink for Task 4.1.2.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.2.a"><a tabindex="-1" href="#task-security-pmf" title="Copy heading and permalink for Task 4.1.2.a" aria-label="Copy heading and permalink for Task 4.1.2.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-security-cdf"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="task-security-cdf-1-1">Find the cumulative distribution for the random variable <span class="process-math">\(X\)</span> AND sketch a graph of the result. Recall: <span class="process-math">\(F_X(x) = P(X \le x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-security-cdf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="task-security-cdf"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="task-security-cdf-1-1">Find the cumulative distribution for the random variable <span class="process-math">\(X\)</span> AND sketch a graph of the result. Recall: <span class="process-math">\(F_X(x) = P(X \le x)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-security-cdf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.1.2.b"><a href="#task-security-cdf" title="Copy heading and permalink for Task 4.1.2.b" aria-label="Copy heading and permalink for Task 4.1.2.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.2.b"><a tabindex="-1" href="#task-security-cdf" title="Copy heading and permalink for Task 4.1.2.b" aria-label="Copy heading and permalink for Task 4.1.2.b">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-security-expected-value"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="task-security-expected-value-1-1">Compute the expected number of vulnerabilities, <span class="process-math">\(E(X)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-security-expected-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="task-security-expected-value"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="task-security-expected-value-1-1">Compute the expected number of vulnerabilities, <span class="process-math">\(E(X)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-security-expected-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.1.2.c"><a href="#task-security-expected-value" title="Copy heading and permalink for Task 4.1.2.c" aria-label="Copy heading and permalink for Task 4.1.2.c">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.2.c"><a tabindex="-1" href="#task-security-expected-value" title="Copy heading and permalink for Task 4.1.2.c" aria-label="Copy heading and permalink for Task 4.1.2.c">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-security-variance"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<div class="para" id="task-security-variance-1-1">Compute the variance for the expected number of vulnerabilities. Use the variance shortcut formula: <span class="process-math">\(V(X) = E(X^2) - [E(X)]^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-security-variance-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="task-security-variance"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="task-security-variance-1-1">Compute the variance for the expected number of vulnerabilities. Use the variance shortcut formula: <span class="process-math">\(V(X) = E(X^2) - [E(X)]^2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-security-variance-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.1.2.d"><a href="#task-security-variance" title="Copy heading and permalink for Task 4.1.2.d" aria-label="Copy heading and permalink for Task 4.1.2.d">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercise 4.1.2: Server Security Audits"><a href="#ex-server-security-distribution" title="Copy heading and permalink for Exercise 4.1.2: Server Security Audits" aria-label="Copy heading and permalink for Exercise 4.1.2: Server Security Audits">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.2.d"><a tabindex="-1" href="#task-security-variance" title="Copy heading and permalink for Task 4.1.2.d" aria-label="Copy heading and permalink for Task 4.1.2.d">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 4.1.2: Server Security Audits"><a tabindex="-1" href="#ex-server-security-distribution" title="Copy heading and permalink for Exercise 4.1.2: Server Security Audits" aria-label="Copy heading and permalink for Exercise 4.1.2: Server Security Audits">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="ex-server-security-distribution-mgf"><h4 class="heading">
+<article class="exercise exercise-like" id="ex-server-security-distribution-mgf"><h3 class="heading">
 <span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Server Security Audits - Part 2.</span>
-</h4>
+</h3>
 <div class="introduction" id="ex-server-security-distribution-mgf-2">
-<div class="para" id="ex-server-security-distribution-mgf-2-1">Refer to the previous problem where the computer science department was auditing student web servers (during a campus hackathon) for two critical security configuration vulnerabilities. We defined the discrete random variable <span class="process-math">\(X\)</span> to be the total number of security vulnerabilities found on a randomly selected student server.<div class="autopermalink" data-description="Paragraph"><a href="#ex-server-security-distribution-mgf-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex-server-security-distribution-mgf-2-1">Refer to the previous problem where the computer science department was auditing student web servers (during a campus hackathon) for two critical security configuration vulnerabilities. We defined the discrete random variable <span class="process-math">\(X\)</span> to be the total number of security vulnerabilities found on a randomly selected student server.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-server-security-distribution-mgf-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
-<article class="task exercise-like" id="task-security-mgf"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="task-security-mgf-1-1">Find the moment generating function (MGF) for random variable <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-security-mgf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="task-security-mgf"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="task-security-mgf-1-1">Find the moment generating function (MGF) for random variable <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-security-mgf-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="task-security-mgf-1-2">Recall: <span class="process-math">\(M_X (s)=E(e^{sX})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#task-security-mgf-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="task-security-mgf-1-2">Recall: <span class="process-math">\(M_X (s)=E(e^{sX})\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-security-mgf-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.1.3.a"><a href="#task-security-mgf" title="Copy heading and permalink for Task 4.1.3.a" aria-label="Copy heading and permalink for Task 4.1.3.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.3.a"><a tabindex="-1" href="#task-security-mgf" title="Copy heading and permalink for Task 4.1.3.a" aria-label="Copy heading and permalink for Task 4.1.3.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-security-mgf-expected-value"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<div class="para" id="task-security-mgf-expected-value-1-1">Use the MGF to recompute the expected number of vulnerabilities.<div class="autopermalink" data-description="Paragraph"><a href="#task-security-mgf-expected-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="task-security-mgf-expected-value"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="task-security-mgf-expected-value-1-1">Use the MGF to recompute the expected number of vulnerabilities.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-security-mgf-expected-value-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
 <div class="para logical" id="task-security-mgf-expected-value-1-2">
 <div class="para">Recall:</div>
@@ -968,25 +926,25 @@ M_Y(s) = E[e^{sY}] = \sum e^{sy} \cdot P(Y = y)\text{.}
 M_X^{(k)} (0)=E(X^k)
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#task-security-mgf-expected-value-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-security-mgf-expected-value-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.1.3.b"><a href="#task-security-mgf-expected-value" title="Copy heading and permalink for Task 4.1.3.b" aria-label="Copy heading and permalink for Task 4.1.3.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.3.b"><a tabindex="-1" href="#task-security-mgf-expected-value" title="Copy heading and permalink for Task 4.1.3.b" aria-label="Copy heading and permalink for Task 4.1.3.b">🔗</a></div>
 </article>
-<article class="task exercise-like" id="task-security-mgf-variance"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<div class="para" id="task-security-mgf-variance-1-1">Use the moment generating function to recompute the variance for the expected number of impurities. More specifically, use the MGF to find the second moment, and then apply the variance shortcut formula.<div class="autopermalink" data-description="Paragraph"><a href="#task-security-mgf-variance-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="task exercise-like" id="task-security-mgf-variance"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="task-security-mgf-variance-1-1">Use the moment generating function to recompute the variance for the expected number of impurities. More specifically, use the MGF to find the second moment, and then apply the variance shortcut formula.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#task-security-mgf-variance-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.1.3.c"><a href="#task-security-mgf-variance" title="Copy heading and permalink for Task 4.1.3.c" aria-label="Copy heading and permalink for Task 4.1.3.c">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercise 4.1.3: Server Security Audits - Part 2"><a href="#ex-server-security-distribution-mgf" title="Copy heading and permalink for Exercise 4.1.3: Server Security Audits - Part 2" aria-label="Copy heading and permalink for Exercise 4.1.3: Server Security Audits - Part 2">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercises 4.1: Written Exercises"><a href="#hw-discrete-rv-turn-in" title="Copy heading and permalink for Exercises 4.1: Written Exercises" aria-label="Copy heading and permalink for Exercises 4.1: Written Exercises">🔗</a></div>
-</section><div class="autopermalink" data-description="Section 4.1: Discrete RVs"><a href="#sec-section-DRV" title="Copy heading and permalink for Section 4.1: Discrete RVs" aria-label="Copy heading and permalink for Section 4.1: Discrete RVs">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 4.1.3.c"><a tabindex="-1" href="#task-security-mgf-variance" title="Copy heading and permalink for Task 4.1.3.c" aria-label="Copy heading and permalink for Task 4.1.3.c">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 4.1.3: Server Security Audits - Part 2"><a tabindex="-1" href="#ex-server-security-distribution-mgf" title="Copy heading and permalink for Exercise 4.1.3: Server Security Audits - Part 2" aria-label="Copy heading and permalink for Exercise 4.1.3: Server Security Audits - Part 2">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 4.1: Written Exercises"><a tabindex="-1" href="#hw-discrete-rv-turn-in" title="Copy heading and permalink for Exercises 4.1: Written Exercises" aria-label="Copy heading and permalink for Exercises 4.1: Written Exercises">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 4.1: Discrete RVs"><a tabindex="-1" href="#sec-section-DRV" title="Copy heading and permalink for Section 4.1: Discrete RVs" aria-label="Copy heading and permalink for Section 4.1: Discrete RVs">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="ch-chapter-Discrete-RVs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-proofs-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-chapter-Discrete-RVs-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-section-proofs-DRV.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" alt="Runestone Academy logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAABgCAMAAAD/9nalAAABgFBMVEXqZAYScdXkjhrZKQDpVQvsjRF6aXFYYJFnkJevKwCcRzQxbbGHT1nKLwDeQQo/P38AJP94jYKZmWbhKgD/sBHMmWYAAAABfvYBhP0AfvzSPQr1og/yhwvrRgoAAP/+fgD0lg3/AAAAffUAqv8A///0eAoAfvb1pA4AVf8AfvYAffYAfvb0Rgr8qQPaQAoAffb1Zwq+PgD3WAr//wDGNgXzRgnyhAoAgPrJOQoAh/v2pAwAhfn+VQDyhgkAgfz1pQ4AhfwAg/z1pQ0Ah/oAf7+6NgrSKwDrRgnMOQfLOguqVQDxJAD5VwnyeAn0mg35PQHoRgr0oQ71Zwnyegn0mg0AlP/IOAjzmAwAaP/oJgDpRAvxHQDmRQoAVap/AAC2OBG/fwDHOQr1WAn3VgnyeAn0lgzdQAryiQrEOAnyaQkAkP8BkP/xRwf1eQnylgzaJwDUQg75Zwj1aAn0dwnxmRDxoA4Af38Alf/1WQnyiArxmw7/ugN/fwDTQA/anQD0Ugr9ymCvAAAAgHRSTlMhDVAaUyMOGB0HGhgZhrAEB0oFYP8FAPz9B/z8/vwBA/0BLgMB/NCNA09vr3MF/I39Bf0Bj4p10a0TcC0EirBRbo8uTwSPb08S0AMvjY0QB9GrkHWvLm7MB02sLC8DAnEEUm2rVJHTri9zSP8O0E9YcK/RrXPWAgXMzS4GAokHWscQg/MAAArDSURBVHjavZqJW9rKGodj957l7nfIFEkMRExYpAiCyiIULaJVsa51qbVu97THLlq7ntP+6+ebSQIzkwSw2js+T60KefP75lsnSKjHpWP4B4fD4XH4HsHockvq8XWEE67KgUAgWq6EETJ2/h9YjHAlL7dWCsBKRP/R2AgKAyzgLPh/uUB+vfNDsRgVGKgNzlfobr//YVgd4zxPtclVsDUyDOXHYCMo7qaykqf0H4CNIFN2A8mi38smkC/qXt2xCsZRWWAKkmMAVq4YO4ViPCafMsMYj9OvcNiMpcguY4SvFIsxZtXJcmxcfMmHWvllvg/jq8RGUIql5sF5sYF1RdFhvcc4giPwKlMuo4hydViDJApGaxh9cF1diZBXVS9i5u5YNnhkE214vuwDcGPgBleE5YNHjvsq2gDHi8FNXglW0dn8JMsFxfANM5SXwwq+EizmgkeOIr2jE8R7ltsNy7lxpZPXkBRqosjVYDmHCnfCGkpBjm5g5fJYBbF5ES7aMQUaF5DbEauj8YDM+jF7TS1tLa2NBbm4N7lSZxtz2FiXhLBD5eLLYxUmauUAu7UamtnbW1u7kahLSGN3F2P9sliuvsMVGfupaCx0L0TWKEoz+ftlrKfd7YTFOmfjFCP2KZq5B2t4OBRq/t6Si3WoVuO9lCKp96hlbZxGaxRL5NZRsS039jKFLofFfPGJspumFRu2WGLlFlYx9DjcnnEJrCLkCtaPZ9H/7rWwobaV6a3me/Aqqdd8HMBK+2JFlHVMHAqNfNMWmZxhQnxvKN+L5U1MxEbY6CFiQ3+rU+w++DV7t+DNH74TK1JlVqztUKFtNEqwI8W2lck7q92ThuRL5QYBTiyEzxihHkmzdUK9/xwtsi0OcMERlAtjFReVy7Wa5VChN0idaQJ25GNGY99toArUSOM71Jr8qMVXlrTtUNvgWqNAHbkvsbtLuGaXjk7yHAOqApWvPSjdoDZGT4tom2Ifs1amnVW4c+GQunXG1J+4hFdEe9TGCZKMix+Bev9U1dzRZ3aws+RRdsKCVuECs9ShhocXwbUW0SOCHTxoZyqrUht94Pz+aUPqPlZCDWAb4KdO0JL9LCKJYudR0iUXsrPRM5Z0gDw1rnNjhhO0dVrwtMWP9wE7qCLezLoC1ct/HpO6jpV5rHAHBdrThm1jAgIrU+yBprrK18tYz1hxhpbFgmJXAag7s1a5lyj2DKnuNAeNgdITVlFwgMeKd+wErVNlteLpIGDByqq72TX9xiKp4wztilgwbJqKPZqxN1NFjwE62J9zYRXTf2ZyqY3KgolFsXtUbKuDAitT7CeUcbWdsq9TSUJjzNvYPTxaVWA4JFlbS/T/cUKw/Te9rdwLdoePHqjtQiFxqsDRrNbuIZf7gTpQcmNjrj3yxk7xfiy7uk8raIdDCe33YnpxcVElSyJi+z9JmubWMO49v0idekXo2sQ33W3YxYddJ0DtH7gmZCo6QfkMRVKHxOjeWacKNNF2vf7t+fPnv8Fanh+k2JKYIMlw4pMxRJdiJzyua2OqACk+zRFS32mmGOy3sAMLgjNbm9sdq6CNqOxXAtqt2zC0qImQjaVcugZeCQmSZLyo9+ZK/vHj7rMdh9qEtyVGWmod7Irgy5hcznsUl4Q8yjqULpZLDTXsxJimhXaEE0us/IfLeGZ3rMHGj9sbnCpAxgCtiPbv8zYeCL5zyY3Lqe5YLmzd5nGqAC0+mirtszYGscF1l0+l5KiidDdyuxDIUfFUXEN37zHFR0XFU97GAwOfebm0imL0viu2nS3c1kk7QVt0glg6ZcWC3CEeS3zFO2FIftnC/XLVrgKt4lOkxYcRGzxf4HsbRY96b67kcwxFjIOF2mMNl5AYHUlJJPHY4AM+UxHzxb2O7oR00coWED6KV9CCjZnJQ0UHDBWwQzyW9oPYgyv5JCmwjWBjLW0FbYKdAEjVY8QGg194Z9ZpNZjqiGWTlCtqraAdJjbWuA0vDbTFBoOT2jPeypAf+9zTnyQ6noOtCZnRGeA3eWcFCnDb2CVerULkepwZ+WILaMezCiTax1B0ZYqZ4zY1GBQSJC0H7hNByeeIUVTrVAFIjE+FuMqo6wx2QkiQBop7HJFJPuVWTOGaHbSbrdaN2d6b6y1q8FxMkOSBDharil+WEqJcdRyqrqVdbplENweCDhZC1111XWEhVKCC7N2XO1WAPYNiuZ+DrTUkdpAk92HhKYJfmZejbFegITtoR1Haq0dR0asW9vyL5p4hxZlT8jm25o/K7VnAOq7wWl8Y7mexlSPH6sJDE1+1XE6zB/hQc8ZvTv6KJtpWFrGK66GJX3fBYa0BftjXxpadhxzugnscikMeMFxYO7uzngz9vC4ELVt8XAvS1ZKNnUTP/J8RZTKsWlVNZpASYSoQs7fabGOYuHFTlMGlK/WLxf3Pkmhl0BOFHimiZVSVUat+XqB/TLY/cMB5sjY7dq9xdNSs+ziUY+aFpeD5+bk7hCCGanL+zi0abLQToNjkxNDQxORnBf0jRR+3e/TmM+mZmbtdjk3BFMkvX79+dW+A+q9bUXkD3ZwE0CS5KYqdPbj2ivxmaOLBnVg8StE1LktpzL8duBkHzyKf0Z/vXKPaXh1I5O+Wka/lSvPLwCZ/mbj2z5qZimP1v0nm/RpZ3Z8BZDT4ciGTk/TCrw6W50u5m6REUexiIlG/cZDLlZaXc7l39K4eLFhpL6n2APP0bNW664UHxIzvcrnlUi53cKOeqNt7OzX19+16YnQ0kUjcACz8Nffu3RBlU9dQnyUzF2SqySSHJOvgW4JAvm3v9GE7gNamd3f34E4SwIahdZm+7vCQopMXlM0hD+mVln97TmXV93Z3s3uk6ZAQNmvh23NzTx5mpwH+JkEXYRPlBE3YUiu2e0NOEmSpBB4DRLre7O5OZ9eezF3vK9TCoDZFPqRSrlZWC7/MPfk3ha9Z8EePHs/Pw3sPD5d6kG0jkwS5QpHzjx+NWsTp6ezDJ3OLePVFtUziJCzRjtz6hEy+XK2t4p9AOIFn/3xDNsNmH66sUDZNexlxt1mVKyuUCEiw659Zizgzvlqr5m0OtKUSeSrg/GTDK7XVvpkWHN5N2I/nS8cEPdRy8mdqRkAurawclwiRIHkix4iPw6btkM/FxAMBEf6i8PN1gP+anR7LZi32/NnxsSXbkgu7Tb/ZyOMzS2Q2O0aIW0Cs2Bqd60ZTMfIhPslJRhjgkKBaydGCV0H57bmt1w/hSmNjm5ub+/tv354dr6+vLw3Zu02Q6+ufjs/e7u9vbsKrskTjT75EetgskSNkAzvPAnDBjJWjvHDib4XCLQofo3Bgn518IuwJijx5+9YijmUfzm39UnhRKXNEGYgFbD8lwobOlHmFfChHaSlPxaOi1am/bVF4o3HUbH48PTnp7z85/dhsHjWA+Hpr65ZIDATKKdMm6lOU6HXCqtufCKINbjjmAa/UCji9NUfZjWYzdNRoAHHu+u1CTSBG46maQ8TC4wrPx086hhtzhNdiqaiXv/Vd34IU8+vrres/g6uWAwLRDGOnPcf6RZ7f6syW+/jbi1UnAbSJ5YoZ7rOJEdzbob3HIzADT71v+5todZaYj8ccjTv+xJ6wHv5WMKvxqBP+TnAA0f6wmtGFeAFs29+Mlr9VUiTSAkw4okgvxAtjnedo2IF/CJsXJ9L1F+diDpU1L1tmAAAAAElFTkSuQmCC"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" alt="MathJax logo" src="data:image/png;base64,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"></a>
 </div>
 </body>
 </html>
