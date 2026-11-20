@@ -5,26 +5,26 @@
 
 <introduction>
  <p> 
-    By completing the problems provided below, you will gain practice with: 
+    By completing the problems provided below, you will gain experience using the Hypergeometric random variable. Specifically, you will practice: 
     <ul>
       <li>
         <p>
-          
+          Identifying when the Hypergeometric distribution can be used to model a scenario.
         </p>
       </li>
       <li>
         <p>
-         
+         Identifying when the Hypergeometric distribution can be approximated by the Binomial distribution. 
         </p>
       </li>
       <li>
         <p>
-          
+          Using the Hypergeometric probability distribution function to compute probabilities.
         </p>
       </li>
       <li>
         <p>
-          
+            Using the expected value and variance formulas for a Hypergeometric random variable.
         </p>
       </li>
     </ul>
@@ -37,15 +37,167 @@
 
 
 
+<exercise label="ex-is-this-hypergeometric">
+  <title>Is this Hypergeometric? </title>
+  <statement>
+    <p>
+      Which of the following random variables <m>X</m> can be modeled using a 
+     Hypergeometric distribution? Select all that apply.
+    </p>
+  </statement>
+
+  <choices randomize="yes">
+    <!-- CORRECT: Classic finite population without replacement (lot inspection) -->
+    <choice correct="yes">
+      <statement>
+        <p>
+          A shipping crate contains <m>30</m> ceramic mugs, of which <m>5</m> have hairline 
+          cracks. A quality inspector randomly selects a sample of <m>6</m> mugs from the crate. Let <m>X</m> be the number of cracked mugs in the sample.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Correct! We are drawing a fixed sample of size <m>n = 6</m> <em>without replacement</em> (implied) 
+          from a finite population of <m>N = 30</m> mugs containing <m>A = 5</m> 
+          cracked mugs (<q>successes</q>) and <m>B=25</m> ok mugs, and we are counting how many successes appear in the sample.
+        </p>
+      </feedback>
+    </choice>
+
+    <!-- CORRECT: Committee/team selection without replacement -->
+    <choice correct="yes">
+      <statement>
+        <p>
+          A university department has <m>5</m> statisticians,  <m>3</m> data scientists, <m>9</m> mathematicians, and <m>7</m> computer scientists. 
+          A curriculum committee of <m>4</m> faculty members is formed by selecting names at random from a hat. Let <m>X</m> be the number of statisticians 
+          chosen for the committee.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Correct! The population consists of <m>N = 24</m> faculty members, which can be split into two 
+          groups (<m>A = 5</m> statisticians and <m>B=19</m> other faculty), and we draw a sample of
+          <m>n = 4</m> individuals <em>without replacement</em> (implied) while counting the number from the first group in the sample.
+        </p>
+      </feedback>
+    </choice>
+
+    <!-- DISTRACTOR 1: Sampling WITH replacement (Binomial) -->
+    <choice correct="no">
+      <statement>
+        <p>
+          A bag contains <m>12</m> red marbles and <m>18</m> blue marbles. A student draws 
+          a marble at random, records its color, and places it back into the bag before 
+          shaking and drawing again. This is repeated <m>8</m> times. Let <m>X</m> be the 
+          number of red marbles drawn.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. Because each marble is returned to the bag before the next draw, the 
+          trials are independent with a constant success probability (<m>p = 12/30 = 0.4</m>). 
+          This describes a Binomial random variable, rather than a Hypergeometric one.
+        </p>
+      </feedback>
+    </choice>
+
+    <!-- DISTRACTOR 2: Waiting for r-th success without replacement (Negative Hypergeometric) -->
+    <choice correct="no">
+      <statement>
+        <p>
+          A standard <m>52</m>-card deck is thoroughly shuffled, and cards are dealt one at a 
+          time without replacement until the <m>2\text{nd}</m> Heart is revealed. Let 
+          <m>X</m> be the total number of cards dealt.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. While this involves sampling without replacement from a finite deck, the 
+          sample size is random — we stop upon reaching <m>2</m> successes, rather than 
+          taking a fixed sample of size <m>n</m>. 
+        </p>
+      </feedback>
+    </choice>
+
+    <!-- DISTRACTOR 3: Large/infinite population with constant p (Binomial) -->
+    <choice correct="no">
+      <statement>
+        <p>
+          At a large automated bottling plant, <m>2\%</m> of all bottles produced are underfilled, 
+          independently from bottle to bottle. An auditor pulls <m>25</m> bottles from the 
+          continuous production line to test them. Let <m>X</m> be the number of underfilled 
+          bottles in the sample.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. The bottles are produced independently from a continuous process with a 
+          constant defect rate <m>p = 0.02</m>, rather than being drawn without replacement 
+          from a small, fixed finite batch. This follows a Binomial distribution.
+        </p>
+      </feedback>
+    </choice>
+
+    <!-- DISTRACTOR 4: More than two categories (Multivariate Hypergeometric) 
+    <choice correct="no">
+      <statement>
+        <p>
+          A box holds <m>10</m> dark chocolates, <m>10</m> milk chocolates, and <m>10</m> white 
+          chocolates. You grab <m>6</m> chocolates at random without replacement and record the 
+          vector <m>(X_1, X_2, X_3)</m> giving the count of each flavor selected.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. A univariate hypergeometric random variable counts successes from a single 
+          binary classification ("success" vs. "failure"). Tracking counts across three distinct 
+          categories simultaneously requires a <strong>multivariate hypergeometric</strong> distribution.
+        </p>
+      </feedback>
+    </choice>-->
+  </choices>
+
+   <hint>
+        <p>
+      To determine if a variable fits the hypergeometric model, check for these three features:
+</p>
+    <ul>
+      <li>
+        <p>
+          Binary - Can the population be divided 
+          into two mutually exclusive groups with <m>A</m> items classified as Type I (or "successes") and 
+          <m>B</m> items classified as Type II (or "failures"), where the total population size is <m>N=A+B?</m>
+        </p>
+      </li>
+      
+      <li>
+        <p>
+ Fixed sample size - Is a sample with a fixed size, <m>n \le N</m>, drawn from the population?
+        </p>
+      </li>
+<li>
+        <p>
+      Sampling without replacement - When the sample is drawn, are items selected without replacement, 
+          so trials are <em>not</em> independent and the probability of success changes from draw to draw?
+        </p>
+      </li>
+
+    </ul>
+  </hint>
+
+</exercise>
+
+
+<!--start here-->
 <exercise xml:id="ex-cookie-jar-hypergeometric-expanded">
-    <title>Discrete Distributions: The Cookie Jar Selection</title>
+    <title> The Cookie Jar Problem</title>
     <introduction>
         <p>
-            A cookie jar currently holds <m>21</m> total cookies: <m>13</m> are chocolate-chip cookies, and <m>8</m> are brussels-sprout-with-turnip-chip cookies. You pick <m>3</m> cookies at random from the jar without looking.
+            A cookie jar currently holds <m>21</m> total cookies: <m>13</m> are chocolate-chip cookies, and <m>8</m> are brussels-sprout-with-turnip-chip cookies. You pick <m>3</m> cookies at random from the jar without looking. Let the random variable <m>X</m> represent the number of brussels-sprout-with-turnip-chip cookies found in your sample.
         </p>
     </introduction>
 
-    <!-- Part 1: Explaining WHY it is Hypergeometric -->
+    <!-- Part 1: Explaining WHY it is Hypergeometric 
     <task xml:id="task-cookie-rv-why-hypergeometric-v2">
         <statement>
             <p>
@@ -94,7 +246,7 @@
                 </feedback>
             </choice>
         </choices>
-    </task>
+    </task> -->
 
     <!-- Part 2: Probability of None -->
     <task xml:id="task-cookie-prob-none-v2">
@@ -103,7 +255,7 @@
                 Find the probability that you get none of the brussels-sprout-with-turnip-chip cookies. Enter your answer as a decimal rounded to three decimal places.
             </p>
         <p>
-        <fillin width="8" answer="0.215"/>
+       Probability = <fillin width="8" answer="0.215"/>
       </p>
     </statement>
   
@@ -113,24 +265,14 @@
           <numcmp use-answer="yes"/>
           <feedback>
             <p>
-              Correct! We compute the combination footprints for the total sample space and successful subset partitions:
-                <ul>
-                    <li><p>Total ways to pick any 3 cookies out of 21: <me>\binom{21}{3} = \frac{21 \times 20 \times 19}{3 \times 2 \times 1} = 1330</me></p></li>
-                    <li><p>Ways to choose 0 brussels-sprout cookies (meaning all 3 are chocolate-chip): <me>\binom{8}{0} \times \binom{13}{3} = 1 \times \frac{13 \times 12 \times 11}{3 \times 2 \times 1} = 286</me></p></li>
-                </ul>
-                Dividing the favorable outcomes by the sample space yields:
-                <me>P(X = 0) = \frac{286}{1330} = \frac{143}{665} \approx 0.215</me>
+              Correct! <me>P(X = 0) = \frac{\binom{8}{0} \times \binom{13}{3}}{\binom{21}{3}} =\frac{286}{1330}  \approx 0.215</me>
             </p>
           </feedback>
         </test>
 </evaluate>
 </evaluation>
 
-        <hint>
-            <p>
-                Use combinations to find the ratio: <me>P(X = 0) = \frac{\binom{8}{0} \times \binom{13}{3}}{\binom{21}{3}}</me> Find how many ways to pick 3 cookies exclusively from the 13 chocolate-chip options, and divide by the total ways to draw any 3 cookies from the jar.
-            </p>
-        </hint>
+
 
     </task>
 
@@ -138,10 +280,10 @@
     <task xml:id="task-cookie-prob-at-most-one-v2">
         <statement>
             <p>
-                Compute the probability that your sample contains at most one (<m>X \le 1</m>) brussels-sprout-with-turnip-chip cookie. Enter your answer as a decimal rounded to three decimal places.
+                Compute the probability that your sample contains at most one brussels-sprout-with-turnip-chip cookie. Enter your answer as a decimal rounded to three decimal places.
             </p>
                <p>
-        <fillin width="8" answer="0.684"/>
+       Probability = <fillin width="8" answer="0.684"/>
       </p>
     </statement>
   
@@ -152,28 +294,22 @@
           <feedback>
             <p>
               Correct! <p>
-                "At most one" means we calculate the combined probabilities for <m>X = 0</m> and <m>X = 1</m>:
-                <me>P(X \le 1) = P(X = 0) + P(X = 1)</me>
+                At most one means we calculate the combined probabilities for <m>X = 0</m> and <m>X = 1</m>. You found <m>P(X = 0)</m> in part (a). 
             </p>
             <p>
-                1. Calculate the probability of choosing exactly 1 brussels-sprout cookie and 2 chocolate-chip cookies:
+                Now, calculate the probability of choosing exactly 1 brussels-sprout cookie and 2 chocolate-chip cookies:
                 <me>P(X = 1) = \frac{\binom{8}{1} \times \binom{13}{2}}{\binom{21}{3}} = \frac{8 \times 78}{1330} = \frac{624}{1330} \approx 0.469</me>
             </p>
-            <p>
-                2. Sum the two discrete probabilities together:
-                <me>P(X \le 1) = \frac{286}{1330} + \frac{624}{1330} = \frac{910}{1330} = \frac{455}{665} = \frac{13}{19} \approx 0.684</me>
-                Thus, the cumulative probability of drawing at most one brussels-sprout cookie is <m>0.684</m>.
+            <p> Then,
+                <me>P(X \le 1) = P(X = 0) + P(X = 1)
+                0.215 + 0.469 = 0.684</me>
+                
             </p>
             </p>
           </feedback>
         </test>
 </evaluate>
 </evaluation>
-        <hint>
-            <p>
-                To find <m>P(X \le 1)</m>, calculate the sum of the two disjoint cases: <m>P(X = 0) + P(X = 1)</m>. You found <m>P(X = 0) = \frac{286}{1330}</m> in the previous part. Now evaluate <m>P(X = 1) = \frac{\binom{8}{1} \times \binom{13}{2}}{\binom{21}{3}}</m> and combine them.
-            </p>
-        </hint>
 
     </task>
 
@@ -181,63 +317,25 @@
     <task xml:id="task-cookie-expected-value">
         <statement>
             <p>
-                Compute the expected number of brussels-sprout-with-turnip-chip cookies in your sample, <m>E(X)</m>, and select its correct long-term interpretation.
+                Compute the expected number of brussels-sprout-with-turnip-chip cookies in your sample. Enter your answer as a decimal rounded to three decimal places.
             </p>
-        </statement>
-        <choices randomize="yes">
-            <choice correct="yes">
-                <statement>
-                    <m>E(X) \approx 1.143</m>. If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 1.143 brussels-sprout cookies per sample.
-                </statement>
-                <feedback>
-                    <p>
-                        Correct! For a hypergeometric distribution, the expected value formula is <m>E(X) = n \left(\frac{r}{N}\right)</m>, where <m>n=3</m> is the sample size, <m>r=8</m> is the number of target items (brussels-sprout cookies), and <m>N=21</m> is the total population. This yields <m>3 \times \left(\frac{8}{21}\right) = \frac{24}{21} = \frac{8}{7} \approx 1.143</m>.
-                    </p>
-                </feedback>
-            </choice>
-            <choice>
-                <statement>
-                    <m>E(X) \approx 1.857</m>. If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 1.857 brussels-sprout cookies per sample.
-                </statement>
-                <feedback>
-                    <p>
-                        Incorrect. This calculation uses the wrong category pool in the numerator, solving for the expected number of <term>chocolate-chip</term> cookies instead: <m>3 \times \left(\frac{13}{21}\right) \approx 1.857</m>.
-                    </p>
-                </feedback>
-            </choice>
-            <choice>
-                <statement>
-                    <m>E(X) = 1.143</m>. In any given single sample of 3 cookies, you are guaranteed to get exactly 1 full brussels-sprout cookie and a fraction of another.
-                </statement>
-                <feedback>
-                    <p>
-                        Incorrect. The value is mathematically right, but the interpretation is wrong. Expected values represent long-run averages over repeated trials; a single discrete draw can only yield integer values (0, 1, 2, or 3 cookies), never a fractional decimal amount.
-                    </p>
-                </feedback>
-            </choice>
-            <choice>
-                <statement>
-                    <m>E(X) = 0.381</m>. If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of about 0.381 brussels-sprout cookies per sample.
-                </statement>
-                <feedback>
-                    <p>
-                      Incorrect. This is the simple ratio of brussels-sprout cookies in the jar (\frac{8}{21} \approx 0.381). You forgot to multiply by the sample size multiplier (n = 3).
-                      </p>
-</feedback>
-</choice>
-<choice>
-  <statement>
-    <p>
-      E(X) = 1.500. If you repeatedly sample 3 cookies from this jar over many days, you will draw an average of exactly 1.500 brussels-sprout cookies per sample.
-    </p>
-  </statement>
-  <feedback>
-    <p>
-      Incorrect. This is a blind guess assuming the two cookie types split the sample capacity perfectly in half (3/2 = 1.5), which ignores the actual proportions of cookies in the jar.
-    </p>
-  </feedback>
-</choice>      
-</choices>     
+ <p>
+       <m>E(X)</m> = <fillin width="8" answer="1.143"/>
+      </p>
+    </statement>
+  
+    <evaluation>
+      <evaluate>
+        <test correct="yes">
+          <numcmp use-answer="yes"/>
+          <feedback>
+            <p>
+              Correct! For a hypergeometric distribution, the expected value formula is <m>E(X) = n \left(\frac{A}{A+B}\right)</m>, where <m>n=3</m> is the sample size, <m>A=8</m> is the number of brussels-sprout cookies, and <m>B=13</m> is the number of chocolate-chip cookies. This yields <m>3 \times \left(\frac{8}{21}\right) \approx 1.143</m>.
+            </p>
+          </feedback>
+        </test>
+</evaluate>
+</evaluation>
 </task>           
         </exercise>      
 
@@ -245,25 +343,22 @@
 
 
 <exercise label="ex-hypergeometric-aerospace-assembly" xmlns:pi="http://pretextbook.org">
-    <title>Hypergeometric Distributions: Sampling Without Replacement in Precision Assembly</title>
+    <title>Satellite Assembly </title>
     <introduction>
         <p>
             An aerospace cleanroom facility assembles tracking  modules onto satellite chassis blocks. A plug-and-play module with properly drilled alignment holes takes exactly 1 minute to secure. However, if the mounting holes were improperly drilled at the supplier facility, the technicians must manually re-drill the bracket, stretching the installation time out to 10 minutes.
         </p>
         <p>
-            The staging inventory area holds a total batch of 20 modules in stock, of which exactly 2 contain improperly drilled alignment holes. A technician randomly selects a subset of 5 tracking modules from the 20 available items to install on the next 5 satellites on the floor. 
+            The staging inventory area holds a total of 20 modules in stock, of which exactly 2 contain improperly drilled holes. A technician randomly selects a sample of 5 tracking modules from the 20 available to install onto the next 5 satellites on the floor. 
         </p>
-       
-        <p>
-            Note: Enter all final probability and timing answers as decimals rounded to exactly three decimal places.
-        </p>
+
     </introduction>
 
     <!-- Part A: Probability all 5 fit perfectly -->
     <task xml:id="task-hyper-perfect-fit-probability">
         <statement>
             <p>
-                 Find the probability that all 5 randomly selected tracking modules fit properly on the first attempt, requiring zero re-drilling work.
+                 Find the probability that all 5 randomly selected tracking modules fit properly on the first attempt, requiring zero re-drilling work. Enter answer as a decimal rounded to three decimal places.
             </p>
             <p>
                 <m>P(X = 0)</m> = <fillin answer="0.553" width="8"/>
@@ -273,6 +368,11 @@
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback>
+                    <p>
+                        Correct! <me>P(X = 0) = \frac{\binom{2}{0}\binom{18}{5}}{\binom{20}{5}} = \frac{8568}{15504} \approx 0.553</me>
+                        </p>
+                    </feedback>
                 </test>
             </evaluate>
         </evaluation>
@@ -290,24 +390,35 @@
     <task xml:id="task-hyper-mean-time">
         <statement>
             <p>
-                 Let the  random variable <m>T</m> represent the total combined time (in minutes) required to complete the installation of all 5 selected tracking modules. Find the expected mean and standard deviation for the installation time.
+                 Let the  random variable <m>T</m> represent the total combined time (in minutes) required to complete the installation of all 5 selected tracking modules. Find the expected installation time.
             </p>
             <p>
-                Expected Mean Time = <fillin  answer="9.500" width="8" name="mean_install"/> minutes
-                Standard Deviation = <fillin  answer="5.394" width="8" name= "sd_install"/> minutes
+                Expected Mean Time = <fillin  answer="9.500" width="8"/> minutes
+                
             </p>
         </statement>
         <evaluation>
-            <evaluate submit="mean_install">
+            <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback>
+                    <p> Correct! <me>E(X) = 5 \cdot \left(\frac{2}{20}\right) = 5 \cdot 0.10 = 0.50 \text{ expected defective modules}</me></p>
+
+                        <p>
+                Next, define the linear time function, <m>T</m>. Each of the <m>X</m> defective units takes 10 minutes, while each of the remaining <m>(5 - X)</m> working units takes 1 minute:
+                <me>T = 10X + 1(5 - X) = 9X + 5</me>
+            </p>
+            <p>
+                By the linear properties of expected value, 
+                <me>E(T) = E(9X + 5) = 9E(X) + 5 = 9(0.50) + 5 = 4.50 + 5 = 9.50</me>
+            </p>
+            <p>
+                The expected time to finish the entire assembly sequence is 9.500 minutes.
+            </p>
+                    </feedback>
                 </test>
             </evaluate>
-             <evaluate submit="sd_install">
-                <test correct="yes">
-                    <numcmp use-answer="yes"/>
-                </test>
-            </evaluate>
+             
         </evaluation>
        <!-- <solution>
             <p>
@@ -344,17 +455,84 @@
         </solution>-->
     </task>
 
+
+<task xml:id="task-hyper-sd-time">
+        <statement>
+            <p>
+                 Let the  random variable <m>T</m> represent the total combined time (in minutes) required to complete the installation of all 5 selected tracking modules. Find the standard deviation for the expected installation time.
+            </p>
+            </statement>
+
+            <choices randomize="yes">
+
+             <choice correct="yes">
+             <statement><p><m>5.364</m> minutes</p></statement>
+                <feedback>
+                    <p>Correct! First, determine the variance of X:
+                    <me>V(X) = n \cdot \left(\frac{A}{A+B}\right) \cdot \left(\frac{B}{A+B}\right) \cdot \left(\frac{A+B-n}{A+B-1}\right) = 
+                    5 \cdot \left(\frac{2}{20}\right) \cdot \left(\frac{18}{20}\right) \cdot \left(\frac{15}{19}\right)\approx 0.355263</me>
+                </p> 
+ <p>
+                Next, define the linear time function, <m>T</m>. Each of the <m>X</m> defective units takes 10 minutes, while each of the remaining <m>(5 - X)</m> working units takes 1 minute:
+                <me>T = 10X + 1(5 - X) = 9X + 5</me>
+            </p>
+            <p>
+                Then, by our variance properties, we have
+                <me>V(T) = V(9X + 5) = 9^2V(X) =81(0.355263) \approx 28.776</me>.
+            </p>
+            <p>
+                Last, take the square root to get the standard deviation of 5.364 minutes.
+            </p>
+                </feedback></choice>
+            
+            <choice> 
+            <statement><p><m>28.776</m> minutes</p></statement>
+              <feedback>
+              <p> Incorrect. This is the variance for <m>T</m>, rather than the standard deviation.</p>
+                </feedback>
+            </choice>
+
+            <choice> 
+            <statement><p><m>0.596</m> minutes</p></statement>
+              <feedback>
+              <p> Incorrect. This is the standard deviation for <m>X</m>, rather than for <m>T</m>.</p>
+                </feedback>
+            </choice>
+
+             <choice> 
+            <statement><p><m>0.355</m> minutes</p></statement>
+              <feedback>
+              <p> Incorrect. This is the variance for <m>X</m>, rather than the standard deviation for <m>T</m>.</p>
+                </feedback>
+            </choice>
+
+            <choice> 
+            <statement><p><m>1.788</m> minutes</p></statement>
+              <feedback>
+              <p> Incorrect. Most likely, the variance property was applied incorrectly.</p>
+                </feedback>
+            </choice>
+
+            <choice> 
+            <statement><p><m>3.197</m> minutes</p></statement>
+              <feedback>
+              <p> Incorrect. This is the variance for <m>T</m>, rather than the standard deviation. Also, the variance property was applied incorrectly.</p>
+                </feedback>
+            </choice>
+
+            </choices>
+            </task>
+
+
         <!-- Part D: Time Threshold Inequality Probability (Short Answer Entry) -->
     <task xml:id="task-hyper-time-threshold-probability">
         <statement>
+            
             <p>
-                <strong>Part D: Downside Schedule Risk Assessment</strong>
+                A project manager flags any assembly block sequence that takes strictly longer than 10 minutes to complete, as it threatens to bottleneck the downstream cleanroom satellite assembly schedule.
             </p>
             <p>
-                A project manager flags any assembly block sequence that takes strictly longer than 10 minutes to complete, as it threatens to bottleneck the downstream cleanroom satellite alignment schedule.
-            </p>
-            <p>
-                Calculate the  probability that the installation of the 5 chosen modules takes longer than 10 minutes.
+                Calculate the  probability that the installation of the 5 chosen tracking modules takes longer than 10 minutes.
             </p>
             <p>
                 <m>P(T \gt 10)</m> = <fillin answer="0.447" width="8"/>
@@ -364,6 +542,8 @@
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback><p>
+                    Correct! If any of the tracking modules have improperly drilled holes, then installation will take more than 10 minutes. So, <m>P(T \gt 10) = P(X>0)=1-P(X=0)</m>, and we found <m>P(X=0)=0.553</m> in part (a).</p></feedback>
                 </test>
             </evaluate>
         </evaluation>
@@ -391,34 +571,38 @@
 
 
 <exercise label="ex-hypergeometric-student-rentals" xmlns:pi="http://pretextbook.org">
-    <title>Hypergeometric Distributions: Student Equipment Rentals</title>
+    <title>Student Equipment Rentals</title>
     <introduction>
         <p>
-            At the beginning of the semester, a campus student housing agency prepares a batch of used dorm mini-fridges that were returned by departing students, cleaned, and processed to go back out on lease agreements. Because major mechanical overhauls are not performed, a portion of the inventory remains prone to malfunctioning. 
+            At the beginning of the semester, a campus student housing agency prepares a batch of used dorm mini-fridges that were returned by departing students, cleaned, and processed to go back out on lease agreements. Because major mechanical overhauls are not performed, a portion of the inventory is prone to malfunctioning. 
         </p>
         <p>
             Among a specific cluster of eight mini-fridges available today, exactly three are malfunctioning. A student group arrives and needs to lease four mini-fridges. So, four of the eight available  are randomly selected and leased to the students.
         </p>
         
-        <p>
-           Enter all answers as decimals. Round probabilities to exactly four decimal places. Round expected values and standard deviations to exactly two decimal places.
-        </p>
     </introduction>
 
     <!-- Part A: Probability of at least one malfunctioning -->
     <task xml:id="task-rental-at-least-one">
         <statement>
             <p>
-                Find the probability that the students receive at least one malfunctioning mini-fridge.
+                Find the probability that the students receive exactly one malfunctioning mini-fridge. Enter your answer as a decimal rounded to three decimal places.
             </p>
             <p>
-                Probability = <fillin mode="string" answer="0.9286" width="10"/>
+                Probability = <fillin mode="string" answer="0.429" width="10"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                    <feedback>
+                    <p>Correct! We track a total population of <m>N =A+B= 8</m> fridges, containing <m>A = 3</m> defective units. A sample size of <m>n = 4</m> is drawn without replacement.  
+                    <me>P(X = 1)=\frac{\binom{3}{1}\binom{5}{3}}{\binom{8}{4}} \approx 0.429 </me>
+                      </p>
+                    </feedback>
+
+
                 </test>
             </evaluate>
         </evaluation>
@@ -443,16 +627,21 @@
     <task xml:id="task-rental-exactly-two">
         <statement>
             <p>
-               Find the probability that the students receive exactly two malfunctioning mini fridges.
+               Find the probability that the students receive exactly two malfunctioning mini fridges. Enter your answer as a decimal rounded to three decimal places.
             </p>
             <p>
-                Probability = <fillin  answer="0.4286" width="10"/>
+                Probability = <fillin  answer="0.429" width="10"/>
             </p>
         </statement>
         <evaluation>
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                             <feedback>
+                    <p>Correct! 
+                    <me>P(X = 2)=\frac{\binom{3}{2}\binom{5}{2}}{\binom{8}{4}}\approx 0.429</me>
+                      </p>
+                    </feedback>
                 </test>
             </evaluate>
         </evaluation>
@@ -469,7 +658,7 @@
     <task xml:id="task-rental-expected-value">
         <statement>
             <p>
-                 Calculate the expected number of malfunctioning appliances the group of students will get. 
+                 Calculate the expected number of malfunctioning appliances the group of students will get. Enter your answer as a decimal rounded to two decimal places.
             </p>
             <p>
                 Expected Value = <fillin answer="1.50" width="8"/> malfunctioning fridges
@@ -479,6 +668,13 @@
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+
+                     <feedback>
+                    <p>Correct! 
+                    <me>E(X) =4 \times \frac{3}{8}=1.50</me>
+                      </p>
+                    </feedback>
+
                 </test>
             </evaluate>
         </evaluation>
@@ -495,7 +691,7 @@
     <task xml:id="task-rental-standard-deviation">
         <statement>
             <p>
-                 Compute the standard deviation for the expected number of malfunctioning appliances.
+                 Compute the standard deviation for the expected number of malfunctioning appliances. Enter your answer as a decimal rounded to two decimal places.
             </p>
             <p>
                 Standard Deviation = <fillin  answer="0.73" width="8"/> malfunctioning fridges
@@ -505,6 +701,11 @@
             <evaluate>
                 <test correct="yes">
                     <numcmp use-answer="yes"/>
+                     <feedback>
+                    <p>Correct! Compute variance, and then take the square root.
+                    <me>\sqrt{V(X)} = \sqrt{4 \left( \frac{3}{8}\right) \left( \frac{5}{8}\right) \left( \frac{4}{7}\right)} \approx 0.7319</me>
+                      </p>
+                    </feedback>
                 </test>
             </evaluate>
         </evaluation>
@@ -530,21 +731,15 @@
 
 <exercises xml:id="hw-hyper-rv-turn-in" >
    <title>Written Exercises</title>
-
-
-   </exercises>
-
-
-
-<exercises xml:id="binomial-approximation-mixed">
-    <title>Binomial Approximation to the Hypergeometric Distribution</title>
-    
-    <p>
-        Recall that the binomial distribution is used when we want to calculate the likelihood that an event happens a certain number of times during <m>n</m> independent Bernoulli trials. The binomial distribution can be used to approximate the hypergeometric distribution if the sample size, <m>n</m>, is small relative to the population size <m>N</m> (e.g., the sample is at most 5% of the population, meaning <m>\frac{n}{N} \le 0.05</m>). To understand how and why this works, answer the questions that follow.
+     <p>
+        Recall that the binomial distribution is used when we want to calculate the likelihood that an event happens a certain number of times during <m>n</m> independent Bernoulli trials. The hypergeometric model handles dependent trials (e.g., sampling without replacement). 
+     </p>
+     <p>
+        However, the binomial distribution can be used to <em>approximate</em> the hypergeometric distribution in certain circumstances. To better understand this approximation, answer the questions that follow.
     </p>
 
     <exercise label="ex-fish-hypergeometric">
-        <title>Capture-Recapture Scenario [Revisited]</title>
+        <title>Capture-Recapture Scenario</title>
         <introduction>
             <p>
                 Suppose there are 1,000 fish in a lake. During the first week, 65 fish are captured, tagged, and released. Then, 30 fish are captured two weeks later. Let <m>X</m> be a hypergeometric random variable representing the number of tagged fish found in the sample of size 30.
@@ -554,15 +749,15 @@
         <task>
         <statement>
           <p>
-            	Let <m>X</m> be a hypergeometric random variable representing the number of tagged fish found in the sample of size 30. What is the probability that 3 of the 30 fish will be tagged? In other words, use the hypergeometric probability distribution to find <m>P(X=3)</m>.  
-              Write your answer as a decimal rounded to three places. 
+             What is the probability that 3 of the 30 fish will be tagged? In other words, use the hypergeometric probability distribution to find <m>P(X=3)</m>.  
+              
             </p>
-            <p>
+         <!--    <p>
         <fillin width="8" answer="0.184"/>
-      </p>
+      </p> -->
     </statement>
   
-    <evaluation>
+  <!-- <evaluation>
       <evaluate>
         <test correct="yes">
           <numcmp use-answer="yes"/>
@@ -574,26 +769,29 @@
           </feedback>
         </test>
         </evaluate>
-        </evaluation>
+        </evaluation> -->
 </task>
 
     <task> 
-        <statement>
+        <introduction>
             <p>
-                Consider the capture of each fish to be a trial. If the sample is taken without replacement, then we have 30 trials.  Compute each of the following probabilities. Write your answer as a decimal rounded to four decimal places. Remember - The sample of size 30 is taken <em>without replacement</em>.
+                Consider the second sample of size 30. Compute each of the following probabilities. Write your answer as a decimal rounded to four decimal places.
             </p>
-        </statement>
+            <p>
+                Remember, the sample is taken <em>without replacement</em>. 
+            </p>
+        </introduction>
         
         <!-- Part B1: First fish -->
         <task>
             <statement>
                 <p>What is the probability that the first fish captured is tagged?
                 </p> 
-                <p>
-        <fillin width="8" answer="0.0650"/>
-      </p>
+       <!--         <p>
+         <fillin width="8" answer="0.0650"/>
+      </p>-->
     </statement>
-            <evaluation>
+        <!--    <evaluation>
       <evaluate>
         <test correct="yes">
           <numcmp use-answer="yes"/>
@@ -604,17 +802,17 @@
           </feedback>
         </test>
         </evaluate>
-        </evaluation>
+        </evaluation>-->
 </task>
         <!-- Part B2: Second fish -->
         <task>
             <statement>
                 <p>Suppose that the first fish was tagged. What is the probability that the second fish captured is also tagged?</p>
-                  <p>
+         <!--         <p>
           <fillin width="8" answer="0.0641"/>
-      </p>
+      </p>-->
     </statement>
-            <evaluation>
+        <!--    <evaluation>
       <evaluate>
         <test correct="yes">
           <numcmp use-answer="yes"/>
@@ -625,18 +823,18 @@
           </feedback>
         </test>
         </evaluate>
-        </evaluation>
+        </evaluation>-->
         </task>
 
         <!-- Part B3: Third fish -->
         <task>
             <statement>
-                <p>Suppose that the first fish was tagged but the second one was not. What is the probability that the third fish captured is tagged?</p>
-                  <p>
+                <p>Suppose that the first fish was tagged but the second fish was not. What is the probability that the third fish captured is tagged?</p>
+              <!--    <p>
          <fillin width="8" answer="0.0641"/>
-      </p>
+      </p>-->
     </statement>
-            <evaluation>
+      <!--      <evaluation>
       <evaluate>
         <test correct="yes">
           <numcmp use-answer="yes"/>
@@ -647,19 +845,19 @@
           </feedback>
         </test>
         </evaluate>
-        </evaluation>
+        </evaluation>-->
         </task>
 
         <!-- Part B4: Last fish -->
         <task>
             <statement>
-                <p>4. Suppose 29 fish have been caught and that two of these were tagged. What is the probability that the last fish captured (number 30 in our sample) is tagged?</p>
+                <p>Suppose 29 fish have been caught and that two of these fish were tagged. What is the probability that the last fish captured (number 30 in our sample) is tagged?</p>
 
-                  <p>
+            <!--      <p>
            <fillin width="8" answer="0.0649"/>
-      </p>
+      </p>-->
     </statement>
-            <evaluation>
+        <!--    <evaluation>
       <evaluate>
         <test correct="yes">
           <numcmp use-answer="yes"/>
@@ -670,57 +868,46 @@
           </feedback>
         </test>
         </evaluate>
-        </evaluation>
+        </evaluation>-->
         </task>
     </task>
 
     <!-- Non-interactive conceptual explanations using essay text boxes -->
    <task>
-     <statement correct="yes">
+     <statement >
     <p>
-      These trials can be considered Bernoulli trials.
+      Referring to part (b), explain why these trials can be considered Bernoulli trials but not <em>independent and identically distributed</em> Bernoulli trials (which we need in order to use the Binomial distribution). 
     </p>
   </statement>
-
-  <feedback>
-    <p>
-      Write.
-    </p>
-  </feedback>
-
     </task>
-
-    <task>
-        <statement>
-            <p>
-                Explain why our random variable <m>X</m> (number of tagged fish found in the sample of size 60) is NOT a binomial random variable. Also tell me, What changes would you have to make to the physical capture-recapture protocol in order for <m>X</m> to be a true binomial random variable?
-            </p>
-        </statement>
-         <response/>
+        
        <!-- <solution>
             <p>
                 It is not binomial because true binomial distribution requires completely independent trials with a constant probability of success. To make it a true binomial setup, you would have to sample <strong>with replacement</strong>: throw each fish back into the lake immediately after checking it before drawing the next one.
             </p>
         </solution>-->
-    </task>
+ 
 
     <task>
         <statement>
             <p>
-                Because the sample size is small relative to the population (<m>30/1000 = 0.03 \lt 0.05</m>), the probabilities you calculated earlier quite similar! It is therefore reasonable to just fix the probability of success at <m>p = \frac{65}{1000} = 0.065</m> for all 30 trials. This would allow us to use the binomial distribution to get an <em>approximation</em> for <m>P(X=3)</m>! 
+                Because the sample size is small relative to the size of the population (30 vs 1,000), the probabilities you calculated in part (b) are quite similar!
             </p>
             <p>
-                 Re-compute the probability that exactly 3 of the 30 fish will be tagged using the binomial approximation. Write your answer as a decimal rounded to three places. 
-                 
-                 </p>
-                  <p>
-                  How does this compare to your initial answer using the hypergeometric distribution in Part A? 
+                Is it therefore reasonable to just fix the probability of success at <m>p = \frac{65}{1000} = 0.065</m> for all 30 trials (and pretend they are independent)?
+
+                If so, this would allow us to use the binomial distribution!
             </p>
-         <p>
+            <p>
+                Determine whether the binomial distribution can provide an accurate approximation for the probability in part (a). In other words, re-compute the probability that exactly 3 of the 30 fish will be tagged using the binomial distribution with <m>p = \frac{65}{1000} = 0.065</m>. Then, compare your answer to your initial answer using the hypergeometric distribution.
+            </p>
+
+            
+        <!--  <p>
            <fillin width="8" answer="0.182"/>
-      </p>
+      </p>-->
     </statement>
-            <evaluation>
+          <!--   <evaluation>
       <evaluate>
         <test correct="yes">
           <numcmp use-answer="yes"/>
@@ -733,7 +920,18 @@
           </feedback>
         </test>
         </evaluate>
-        </evaluation>
+        </evaluation> -->
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              In general, if the sample size is at most 5% of the population, then we can use the binomial distribution to approximate the hypergeometric.
+            </p>
+            <p>
+              Is the sample size (<m>n=30</m>)for the capture-recapture scenario less than 5% of the population? Justify your answer.
+            </p>
+          </statement>
         </task>
         </exercise>
 
@@ -741,17 +939,19 @@
 
 
 <exercise label="ex-cookie-analysis">
-        <title>Analyzing the Cookie Problem Approximation</title>
+        <title>The Cookie Jar Problem [Revisited]</title>
         <introduction>
             <p>
-                Refer back to the Brussels-Sprout-with-Turnip-Chip cookie problem. You originally used a hypergeometric framework because you sampled a total of 3 cookies from a small batch of 21 cookies (where 8 were Brussels-Sprout-with-Turnip-Chip flavors).
+                <p>
+            A cookie jar currently holds <m>21</m> total cookies: <m>13</m> are chocolate-chip cookies, and <m>8</m> are brussels-sprout-with-turnip-chip cookies. You pick <m>3</m> cookies at random from the jar without looking. Let the random variable <m>X</m> represent the number of brussels-sprout-with-turnip-chip cookies found in your sample.
+        </p>
             </p>
             </introduction>
 
             <task>
               <statement>
                 <p>
-                 Comment on whether a binomial approximation is mathematically appropriate for that cookie scenario. Justify your reasoning.
+                 You orignally used a hypergeometric distribution for <m>X</m>. Comment on whether a binomial approximation would be appropriate in this cookie scenario. Justify your reasoning.
                 </p>
               </statement>
             
@@ -765,11 +965,9 @@
     <task>
         <statement>
             <p>
-                Regardless of appropriateness, let's see how much error occurs if we force a binomial calculation anyway. Let the constant probability of picking a Brussels-Sprout cookie be <m>p = \frac{8}{21} \approx 0.38</m>.
+                Regardless of your answer to part (a), use the binomial distribution to approximate the probability of getting exactly one Brussels-Sprout-with-Turnip-Chip cookie in your sample of 3 cookies. Let the constant probability of sucess (picking a Brussels-Sprout cookie) be <m>p = \frac{8}{21} \approx 0.38</m>.
             </p>
-            <p>
-                 Use the binomial distribution to compute the probability of getting exactly one Brussels-Sprout-with-Turnip-Chip cookie in your sample of 3 cookies.
-            </p>
+            
         </statement>
         <!-- <solution>
             <p>
@@ -780,7 +978,7 @@
         <task>
           <statement>
             <p>
-              Compare your answers using the hypergeometric and binomial distributions. What do you notice? Why did this occur?
+              Compare your answer in part (b) to the probability value you get when using the  hypergeometric distribution. What do you notice? Why did this occur?
             </p>
           </statement>
         <!--  <solution>

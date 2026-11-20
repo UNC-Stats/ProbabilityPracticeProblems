@@ -123,10 +123,6 @@
           </feedback>
           </test>
         </evaluate>
-        <evaluate>
-          <test>6.5</test>
-          <feedback><p>Incorrect. It appears you calculated an unweighted average of the years rather than applying their respective probabilities.</p></feedback>
-        </evaluate>
       </evaluation>
     </task>
 

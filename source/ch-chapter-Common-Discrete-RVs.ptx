@@ -17,10 +17,14 @@
 
    <xi:include href="sec-section-uniform-DRV.ptx" /> 
    <xi:include href="sec-section-binomial-DRV.ptx" /> 
-   <xi:include href="sec-section-geometric-DRV.ptx" /> 
+    <xi:include href="sec-section-geometric-DRV.ptx" /> 
   <xi:include href="sec-section-neg-binomial-DRV.ptx" /> 
-  <xi:include href="sec-section-hypergeometric-DRV.ptx" /> 
+<xi:include href="sec-section-hypergeometric-DRV.ptx" /> 
+
+
+  <!-- include
   <xi:include href="sec-section-poisson-DRV.ptx" /> 
-  <xi:include href="sec-section-mixed-DRV.ptx" /> 
-  
+  <xi:include href="sec-section-mixed-DRV.ptx" />
+  -->
+
 </chapter>

@@ -654,11 +654,6 @@
             </test>
             </evaluate>
 
-            <evaluate submit="ansAc|C_v2">
-            <test correct="yes">
-            <numcmp use-answer="yes"/>
-            </test>
-            </evaluate>
 
             <evaluate submit="ansAB|C">
             <test correct="yes">
