@@ -5,26 +5,27 @@
 
 <introduction>
  <p> 
-    By completing the problems provided below, you will gain practice with: 
+    By completing the problems provided below, you will gain experience using the Poisson random variable. Specifically, you will practice: 
     <ul>
       <li>
         <p>
-          
+          Identifying when the Poisson distribution can be used to model a scenario.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Using the Poisson probability distribution function to compute probabilities.
         </p>
       </li>
       <li>
         <p>
-         
+            Determining the Poisson rate parameter for a specified interval.
         </p>
       </li>
       <li>
         <p>
-          
-        </p>
-      </li>
-      <li>
-        <p>
-          
+            Using the expected value and variance formulas for a Poisson random variable.
         </p>
       </li>
     </ul>
@@ -36,49 +37,210 @@
    <title>Interactive Exercises</title>
 
 
+<exercise label="ex-is-it-poisson">
+  <title>Is it Poisson?</title>
+  <statement>
+    <p>
+      Which of the following random variables <m>Z</m> can be appropriately modeled using a 
+      Poisson distribution? Select all that apply.
+    </p>
+  </statement>
+
+  <choices randomize="yes">
+    <!-- CORRECT: Classic temporal Poisson process -->
+    <choice correct="yes">
+      <statement>
+        <p>
+          A university IT help desk receives support tickets  at an  
+          average rate of <m>4.5</m> tickets per hour during weekday mornings. Let <m>Z</m> 
+          be the number of tickets received between 8:30AM and 11:30AM
+          on a randomly chosen Tuesday.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Correct! Tickets arrive at a constant average rate over a fixed, 
+          continuous time interval, and <m>Z </m> counts the number of occurrences.
+        </p>
+      </feedback>
+    </choice>
+
+    <!-- CORRECT: Spatial Poisson process -->
+    <choice correct="yes">
+      <statement>
+        <p>
+          Minor typographical errors occur randomly throughout a <m>500</m>-page 
+          manuscript at an average rate of <m>3</m> typos per 5 pages. Let <m>Z</m> be the total 
+          number of typos found in a randomly selected <m>5</m>-page section.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Correct! A Poisson process can occur across space, just as it does 
+          across time. Here, typos occur at a constant average rate over a fixed <m>5</m>-page interval, and <m>Z </m> counts the number of occurrences.
+        </p>
+      </feedback>
+    </choice>
+
+    <!-- DISTRACTOR 1: Clustered / simultaneous arrivals (violates independence & single-occurrence) -->
+    <choice correct="no">
+      <statement>
+        <p>
+          Customers arrive at a family restaurant for dinner, mostly in groups of <m>2</m> to 
+          <m>6</m> people together. On average, <m>18</m> customers enter the restaurant 
+          per hour. Let <m>Z
+          </m> be the number of individual customers who enter between 
+          <m>6:00\text{ PM}</m> and <m>7:00\text{ PM}</m>.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. Because customers arrive in groups rather than individually, counts are clustered, and the independence assumption is violated. 
+           While the number of dining parties might 
+          be Poisson, the number of <em>individual</em>  customers is not.
+        </p>
+      </feedback>
+    </choice>
+
+    <!-- DISTRACTOR 2: Non-homogeneous / time-varying rate -->
+    <choice correct="no">
+      <statement>
+        <p>
+          Cars pass through a highway toll plaza at an average rate of <m>20</m> cars per hour 
+          during late-night hours, surging to <m>150</m> cars per hour during morning rush hour. 
+          Let <m>Z</m> be the number of cars passing through during a randomly selected 
+          <m>1</m>-hour window of the day.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. The arrival rate is not constant. It changes dramatically 
+          between late night and rush hour. A standard Poisson model requires a constant 
+          average rate <m>\lambda</m> over the entire observation window.
+        </p>
+      </feedback>
+    </choice>
+
+    <!-- DISTRACTOR 3: Exponential waiting time (continuous vs. discrete count) -->
+    <choice correct="no">
+      <statement>
+        <p>
+          Radioactive particles emitted by a sample are detected by a Geiger counter independently 
+          at a constant average rate of <m>3.2</m> particles per minute. Let <m>Z</m> be the 
+          elapsed time (in minutes) until the next particle is detected.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. Even though the underlying arrivals form a Poisson process, <m>Z</m> measures 
+          a continuous <em>waiting time</em>, rather than a discrete <em>count</em> of events. 
+        </p>
+      </feedback>
+    </choice>
+
+    <!-- DISTRACTOR 4: Bounded Binomial with small n and high p -->
+    <choice correct="no">
+      <statement>
+        <p>
+          A commuter passes through <m>4</m> independent traffic lights on the way to work, 
+          each of which is red with probability <m>0.50</m>. Let <m>Z</m> be the number of 
+          red lights the commuter hits on a morning drive.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Incorrect. <m>Z</m> is Binomial with <m>n = 4</m> 
+          (traffic lights) and <m>p = 0.50</m>. We are considering a fixed number of trials here, rather than a continuous interval of time or space. 
+        </p>
+      </feedback>
+    </choice>
+  </choices>
+
+  <hint>
+    
+    <p>
+      To verify if a random variable <m>Z</m> follows a Poisson distribution, check for these  
+      conditions:
+    </p>
+    <ul>
+      <li>
+        <p>
+          Discrete count in a continuous interval: <m>Z</m> counts the number of 
+          occurrences of an event within a fixed, continuous, interval of time or space.
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          Constant rate of Occurrence: The average rate of occurrence (<m>\lambda</m>)
+          is proportional to the length/size of the interval and does not otherwise change over time or space.
+        </p>
+      </li>
+      <li>
+        <p>
+          Independence: Events occur independently of one another, i.e., the number of 
+          occurrences in one interval does not affect the number in any non-overlapping interval.
+        </p>
+      </li>
+    </ul>
+  </hint>
+</exercise>
+
+
+
+
+
 
 <exercise label="ex-poisson-er-triage">
     <title>Emergency Room Patient Intake</title>
     <statement>
         <p>
-            During a busy weekend shift, trauma patients arrive at an urban emergency room triage desk according to a Poisson process with a mean rate of 80 patients per hour. If the triage nurse steps away to grab a clean stethoscope, leaving the desk unattended for exactly one minute, what is the probability that at least 1 patient arrives during that brief interval?
+            During a busy weekend shift, trauma patients arrive at an urban emergency room according to a Poisson process with a mean rate of 45 patients per hour. If the front desk nurse steps away to grab a clean stethoscope, leaving the desk unattended for two minutes, what is the probability that more than 1 patient arrives during that brief interval?
         </p>
     </statement>
-    <choices>
+    <choices randomize="yes">
         <choice>
-            <statement><p><m>0.2636</m></p></statement>
+            <statement><p><m>0.7769</m></p></statement>
             <feedback>
                 <p>
-                    Incorrect. This is the probability that <em>zero</em> patients arrive during the one-minute window (<m>P(Y=0)</m>). Remember to use the complement rule to find the probability of <m>\text{at least } 1</m> arrival.
+                    Incorrect. This is the probability that 1 or more patients arrive during the two-minute window (<m>P(Z \ge 1)</m>). 
+                </p>
+            </feedback>
+        </choice>
+         <choice>
+            <statement><p><m>0.5578</m></p></statement>
+            <feedback>
+                <p>
+                    Incorrect. This is the probability that at most 1 patient arrives during the two-minute window (<m>P(Z \le 1)</m>). 
                 </p>
             </feedback>
         </choice>
         <choice correct="yes">
-            <statement><p><m>0.7364</m></p></statement>
+            <statement><p><m>0.4422</m></p></statement>
             <feedback>
                 <p>
                     Correct! 
-                    First, convert the hourly arrival rate to a 1-minute time block: <m>\lambda = \frac{80 \text{ patients}}{60 \text{ minutes}} = \frac{4}{3} \approx 1.3333</m> arrivals per minute.
+                    First, convert the hourly arrival rate to a 2-minute arrival rate: <me>\lambda = \frac{45 \text{ patients}}{60 \text{ minutes}}\times 2 =  1.5</me>.
                 </p>
                 <p>
                     Then, apply the complement rule: 
-                    <me>P(Y \ge 1) = 1 - P(Y = 0) = 1 - \frac{(1.3333)^0 e^{-1.3333}}{0!} = 1 - e^{-1.3333} \approx 1 - 0.2636 = 0.7364</me>
+                    <me>P(Z \gt 1) = 1 - [P(Z = 0)+P(Z=1)] = 1 - \left[\frac{e^{-1.5}(1.5)^0 }{0!} + \frac{e^{-1.5}(1.5)^1 }{1!}\right]= 1 - 0.5578 = 0.4422</me>
                 </p>
             </feedback>
         </choice>
         <choice>
-            <statement><p><m>0.3515</m></p></statement>
+            <statement><p><m>0.3347</m></p></statement>
             <feedback>
                 <p>
-                    Incorrect. This is the probability that <em>exactly</em> one patient arrives (<m>P(Y=1)</m>). The question requires the probability of <m>\text{at least } 1</m>, which accounts for multiple simultaneous patient walk-ins.
+                    Incorrect. This is the probability that one patient arrives (<m>P(Z=1)</m>) during the two-minute time window. 
                 </p>
             </feedback>
         </choice>
         <choice>
-            <statement><p><m>0.5488</m></p></statement>
+            <statement><p><m>0.1734</m></p></statement>
             <feedback>
                 <p>
-                    Incorrect. It looks like you didn't properly scale your time interval or miscalculated the exponent. Double-check your calculation for converting 80 patients per hour down to a single minute.
+                    Incorrect. It's possible that you did not properly scale your rate <m>\lambda</m>. Double-check your calculation for converting 45 patients per hour down to a two-minute time interval.
                 </p>
             </feedback>
         </choice>
@@ -88,18 +250,19 @@
 
 
 <exercise label="ex-poisson-campus-security">
-    <title>Campus Security Patrol Allocation</title>
+    <title>Campus Security Patrols</title>
     <introduction>
         <p>
-            Suppose that a campus security department devises a randomized patrol pattern to ensure unpredictability. A security vehicle may visit a high-priority quad location <m>Y = 0, 1, 2, 3, \dots</m> times per one-hour night shift block. Over a long observation window, records show each location is visited an average of once per hour. Assume that <m>Y</m> follows a Poisson probability distribution.
+            Suppose that a campus security department devises a randomized patrol pattern to ensure unpredictability. A security vehicle may visit a high-priority quad location <m>Y = 0, 1, 2, 3, \dots</m> times per hour  during the night shift.
+            Over a long observation window, records show each location is visited an average of once per hour. Assume that <m>Y</m> follows a Poisson probability distribution.
         </p>
     </introduction>
 
     <!-- Task 1: Identification Criteria & Lambda Identification -->
-    <task xml:id="task-poisson-id">
+ <!--   <task xml:id="task-poisson-id">
         <statement>
             <p>
-                How could you identify that <m>Y</m> is a Poisson random variable if that information had not been explicitly provided? 
+                How could you identify that <m>Y</m> is a Poisson random variable if that information had not been  provided? 
             </p>
         </statement>
         <choices>
@@ -136,16 +299,16 @@
                 <feedback><p>Incorrect. That description applies to a Hypergeometric distribution, not a time-series event sequence.</p></feedback>
             </choice>
         </choices>
-    </task>
+    </task> -->
 
     <!-- Task 2: Calculate Missing Probability -->
     <task xml:id="task-poisson-miss">
         <statement>
             <p>
-                Calculate the probability that the campus security officer will completely miss a given high-priority location during a specific one-hour time period. In other words, compute  <m>P(Y = 0)</m>. Write your answer as a decimal rounded to three decimal places.
+                Calculate the probability that the campus security officer will completely miss a given high-priority location during a specific one-hour time period.  Write your answer as a decimal rounded to three decimal places.
             </p>
         <p>
-        <fillin width="8" answer="0.368"/>
+       <m>P(Z = 0) =</m> <fillin width="8" answer="0.368"/>
       </p>
     </statement>
   
@@ -155,8 +318,8 @@
           <numcmp use-answer="yes"/>
           <feedback>
             <p>
-              Correct! Using the Poisson probability mass function <m>P(Y = y) = \frac{\lambda^y e^{-\lambda}}{y!}</m> with parameter <m>\lambda = 1</m>:
-                <me>P(Y = 0) = \frac{1^0 \cdot e^{-1}}{0!} = \frac{1 \cdot e^{-1}}{1} = e^{-1} \approx 0.368</me>
+              Correct! Using the Poisson probability distribution function <m>P(Z = z) = \frac{ e^{-\lambda} \lambda^z}{z!}</m> with parameter <m>\lambda = 1</m>:
+                <me>P(Z = 0) = \frac{  e^{-1}1^0}{0!} = e^{-1} \approx 0.368</me>
             </p>
           </feedback>
         </test>
@@ -169,10 +332,10 @@
     <task xml:id="task-poisson-more">
         <statement>
             <p>
-                 What is the probability that the location will be visited more than once during a single one-hour shift block?
+                 What is the probability that the location will be visited twice during the one-hour time period? Write your answer as a decimal rounded to three decimal places.
             </p>
                <p>
-        <fillin width="8" answer="0.264"/>
+        <m>P(Z = 2) =</m><fillin width="8" answer="0.184"/>
       </p>
     </statement>
   
@@ -182,13 +345,9 @@
           <numcmp use-answer="yes"/>
           <feedback>
             <p>
-              Correct!                 To find <m>P(Y \gt 1)</m>, we utilize the complement rule: 
-                <me>P(Y \gt 1) = 1 - P(Y \le 1) = 1 - [P(Y = 0) + P(Y = 1)]</me>
-                We already know <m>P(Y = 0) \approx 0.3679</m>. Next, calculate <m>P(Y = 1)</m>:
-                <me>P(Y = 1) = \frac{1^1 \cdot e^{-1}}{1!} = e^{-1} \approx 0.3679</me>
-                Combine and subtract from 1:
-                <me>P(Y \gt 1) = 1 - (0.3679 + 0.3679) = 1 - 0.7358 = 0.2642</me>
-                Rounded to three decimal places, the final probability value is <m>0.264</m>.
+              Correct!          
+                <me>P(Z=2) = \frac{  e^{-1} 1^2}{2!} = \frac{e^{-1}}{2} \approx 0.1839</me>
+                
             </p>
           </feedback>
         </test>
@@ -198,13 +357,10 @@
 </exercise>
 
 <exercise label="ex-poisson-panel-flaws" xmlns:pi="http://pretextbook.org">
-    <title>Poisson Processes: Aerospace Structural Integrity Audits</title>
+    <title>Manufacturing Defects</title>
     <introduction>
         <p>
-            An aerospace manufacturing quality control audit shows that microscopic surface material flaws in high-performance carbon-fiber fuselage panels occur completely randomly and independently at a constant average rate of one flaw every 270 square feet. A technician pulls a newly manufactured rectangular section measuring exactly 9 feet by 13 feet for testing.
-        </p>
-        <p>
-            Let <m>X</m> denote the total number of structural flaws contained within this specific panel segment. Because flaws are distributed randomly across a continuous spatial region, <m>X</m> follows a Poisson distribution. 
+            Microscopic flaws in manufactured carbon-fiber panels occur randomly, and independently, at an average rate of 5 flaws per 270 square feet. A technician inspects a rectangular panel measuring 9 feet by 13 feet. Let <m>Z</m> denote the total number of structural flaws contained within this specific panel.  
         </p>
     </introduction>
 
@@ -212,27 +368,42 @@
     <task xml:id="task-panel-find-lambda">
         <statement>
             <p>
-                Determine the appropriate expected rate parameter <m>\lambda</m> (the mean number of flaws) for this specific 9-foot by 13-foot fuselage panel. 
+                Determine the expected number of flaws for this specific 9 by 13-foot panel, as well as the standard deviation. Write your answers as decimals rounded to three decimal places.
              </p>
              <p>
-        <fillin width="8" answer="0.4333"/>
+        <m>\mu_Z=</m> <fillin width="8" answer="2.167" name="m"/> flaws.
+             </p>
+             <p>
+        <m>\sigma_Z=</m> <fillin width="8" answer="1.472" name="sd"/> flaws.
       </p>
+
+      
     </statement>
   
-    <evaluation>
-      <evaluate>
-        <test correct="yes">
-          <numcmp use-answer="yes"/>
-          <feedback>
+ <evaluation>
+            <evaluate submit="m"><test correct="yes">
+            <numcmp use-answer="yes"/>
+             <feedback>
+            <p> Correct!
+             First, calculate the total surface area of the panel by multiplying its length and width:
+                <me>Area = 9 \text{ ft} \times 13 \text{ ft} = 117 \text{ sq ft}</me>
+                Next, scale the 270 square feet flaw rate down to a 117 square feet rate: 
+                <me>\lambda =  \frac{5 \text{ flaws}}{270 \text{ sq ft}} \cdot 117 \text{ sq ft} \approx 2.167</me>
+            </p>
             <p>
-             First, calculate the total surface area (<m>A</m>) of the inspected fuselage panel by multiplying its physical length and width dimensions:
-                <me>A = 9 \text{ ft} \times 13 \text{ ft} = 117 \text{ sq ft}</me>
-                Next, scale the baseline spatial material flaw density rate (<m>\alpha = \frac{1}{270}</m> flaws per square foot) by the target panel area to find the segment's expected value parameter <m>\lambda</m>:
-                <me>\lambda = \alpha \cdot A = \frac{1 \text{ flaw}}{270 \text{ sq ft}} \cdot 117 \text{ sq ft} = \frac{117}{270} = \frac{13}{30} \approx 0.433333</me>
+             This is the answer since <m>\mu_Z=E(Z)=\lambda</m> for a Poisson random variable.
             </p>
           </feedback>
-        </test>
-       </evaluate>
+            </test></evaluate>
+             <evaluate submit="sd"><test correct="yes">
+            <numcmp use-answer="yes"/>
+             <feedback>
+            <p>
+             Correct! For a Poisson random variable <m>E(Z)=V(Z)=\lambda</m>. So, the standard deviation will be <m>\sigma_Z=\sqrt{\lambda}</m>.
+            </p>
+            
+          </feedback>
+            </test></evaluate>
         </evaluation>
 
     </task>
@@ -241,10 +412,9 @@
     <task xml:id="task-panel-compute-prob">
         <statement>
             <p>
-                 Using your  rate parameter from Part A, calculate the probability that this specific aerospace panel contains absolutely no flaws.
-                 </p>
-                       <p>
-        <fillin width="8" answer="0.6483"/>
+                 Given that the panel contains at least 1 flaw, compute the conditional probability that the panel  contains at most 3 flaws. Use your  rate parameter from part (a). Write your answer as a decimal rounded to three decimal places.
+                     </p>  <p>
+        <fillin width="8" answer="0.803"/>
       </p>
     </statement>
   
@@ -253,10 +423,9 @@
         <test correct="yes">
           <numcmp use-answer="yes"/>
           <feedback>
-            <p>
-         To find the probability of observing exactly zero events in a continuous spatial Poisson process, evaluate the Poisson probability mass function (PMF) at <m>k = 0</m> using your unrounded rate parameter <m>\lambda = \frac{13}{30}</m>:
-                <me>P(X = k) = \frac{\lambda^k \cdot e^{-\lambda}}{k!}</me>
-                <me>P(X = 0) = \frac{\left(\frac{13}{30}\right)^0 \cdot e^{-\frac{13}{30}}}{0!} = \frac{1 \cdot e^{-0.433333}}{1} \approx 0.648344</me> Rounded to four decimal places, the final probability that the high-performance structural panel contains no surface flaws is approximately <strong>0.6483</strong> (or a 64.83% chance).
+            <p> Correct!
+         Use the conditional probability formula and then the complement rule (denominator): <me>P(Z\le 3 | Z\ge 1)=\frac{P(1\le Z \le 3)}{P(Z\ge 1)} = \frac{P(Z =1)+P(Z=2)+P(Z=3) }{1-P(Z=0)}</me>
+         Then use the Poisson probability distribution function with  <m>\lambda=2.167</m> to compute the required individual probabilities.
             </p>
           </feedback>
         </test>
@@ -276,7 +445,7 @@
 
 
     <exercise label="ex-static-bitcoin-poisson">
-        <title>Analyzing Cryptographic Hashing Probabilities</title>
+        <title>Cryptographic Hashing</title>
 <introduction>
     <p>
         Bitcoin mining utilizes an algorithmic process called cryptographic hashing, which structurally behaves like a sequence of millions of independent Bernoulli trials. Each time a computing node performs a single hash, it has a tiny probability of <m>p = 1.15 \times 10^{-23}</m> of successfully solving the current network difficulty puzzle. Solving a block rewards the miner with a subsidy of <m>3.125</m> Bitcoins. 
@@ -309,7 +478,7 @@
         <task xml:id="task-bitcoin-binomial-parameters">
             <statement>
                 <p>
-                    Let <m>X</m> represent the exact number of blocks successfully mined by the farm array during the year. Explain why <m>X</m> can be modeled as a Binomial random variable, and define its structural distribution parameters.
+                    Let <m>X</m> represent the exact number of blocks successfully mined by the farm array during the year. Explain why <m>X</m> can be modeled as a Binomial random variable, and define its distribution parameters.
                 </p>
             </statement>
            <!-- <solution>
@@ -330,7 +499,7 @@
         <task xml:id="task-bitcoin-poisson-lambda">
             <statement>
                 <p>
-                    Explain why the Binomial model defined in Part B can be well approximated by a Poisson distribution, and calculate the appropriate value for the rate parameter <m>\lambda</m>.
+                    Explain why the Binomial model defined in part (b) can be well approximated by a Poisson distribution, and calculate the appropriate value for the rate parameter <m>\lambda</m>.
                 </p>
             </statement>
           <!--  <solution>
@@ -348,13 +517,15 @@
 
         <!-- Part D: Complement Probability Analysis -->
         <task xml:id="task-bitcoin-prob-at-least-one">
+            
             <statement>
                 <p>
-                     Using your Poisson approximation model, determine the mathematical probability that the hardware cluster successfully mines at least one block over the course of the year (<m>P(X \ge 1)</m>).
+                     Using your Poisson approximation model, determine the  probability that the hardware cluster successfully mines exactly one block over the course of the year.
                 </p>
             </statement>
           <!--  <solution>
-                <p>
+                <p>0.24 is correct.
+
                     To compute <m>P(X \ge 1)</m> efficiently, we apply the standard **Complement Rule**: <m>P(X \ge 1) = 1 - P(X = 0)</m>. First, isolate the baseline probability of mining absolutely zero blocks using our Poisson PMF:
                     <me>P(X = 0) = \frac{\lambda^0 \cdot e^{-\lambda}}{0!} = \frac{1 \cdot e^{-0.3373}}{1} \approx 0.7137</me>
                 </p>
@@ -370,7 +541,7 @@
         <task xml:id="task-bitcoin-prob-interval">
             <statement>
                 <p>
-                    Find the probability that the mining operation secures between 2 and 4 blocks inclusive over the annual tracking window. In other words, compute <m>P(2 \le X \le 4)</m>.
+                    Find the probability that the hardware cluster secures between 2 and 4 blocks, inclusive, over the annual tracking window.
                 </p>
             </statement>
           <!--  <solution>
@@ -390,6 +561,13 @@
                 </p>
             </solution> -->
         </task>
+        <task>
+         <statement>
+                <p>
+                     Determine the probability that the mining operation is completely unsuccessful over the course of the year, i.e., <m>P(Z=0)</m>.
+                </p>
+            </statement>
+            </task>
     </exercise>
 
 
